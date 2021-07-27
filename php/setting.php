@@ -1,3 +1,7 @@
+<?php
+include "forms/_index.php";
+?>
+
 <div id="setting-section" class="setting-section">
         <div class="text-center setting-panel hide">
                 <div class="setting-panel-content">
@@ -36,10 +40,10 @@
                                                         <p class="radio-title">Border style</p>
                                                         <div class="radio-group">
                                                                 <?php
-                                                                radioButton('solid-border', 0);
-                                                                radioButton('double-border', 1);
-                                                                radioButton('dotted-border', 2);
-                                                                radioButton('dashed-border', 3);
+                                                                Radio('solid-border', 0);
+                                                                Radio('double-border', 1);
+                                                                Radio('dotted-border', 2);
+                                                                Radio('dashed-border', 3);
                                                                 ?>
                                                         </div>
                                                 </div>
@@ -132,19 +136,6 @@ function rangeSlider($label, $id, $min, $max, $step = 0.1)
                 <label for='$id'>$label</label>
                 <input class='range-slider__range' id='$id' type='range' min='$min' max='$max' step='$step'>
                 <span class='range-slider__value'></span>
-        </div>
-        ";
-}
-
-function radioButton($id, $value)
-{
-        echo "
-        <div class='radio-button-wrapper'>
-                <input class='state' type='radio' name='app' id='$id' value='$value'>
-                <label class='label' for='$id'>
-                        <div class='indicator'></div>
-                        <span class='text'></span>
-                </label>
         </div>
         ";
 }

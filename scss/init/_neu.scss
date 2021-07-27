@@ -22,6 +22,28 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
 
 .neu-style {
 
+        /*-------------------------
+      FORMS
+-------------------------*/
+        .radio-group {
+                $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px $darkenSchemeColor,
+                        4px 2px 8px 0px $lightenSchemeColor;
+                $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px $lightenSchemeColor,
+                        4px 2px 8px 0px $darkenSchemeColor;
+
+                .indicator {
+                        box-shadow: $dropBoxShadow;
+                }
+
+                .indicator::before {
+                        box-shadow: $radioIndicatorUncheckedBoxShadow;
+                }
+
+                .indicator::after {
+                        box-shadow: $radioIndicatorCheckedBoxShadow;
+                }
+        }
+
         /* TEXT DROP SHADOW */
         // $x: 2.5;
         // $y: 2.5;
