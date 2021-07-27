@@ -455,6 +455,92 @@ Init values for dynamic properties to reduce  page load time
   border: 4px dashed #4D4D4D;
 }
 
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+/* FONT */
+.range-slider {
+  width: 100%;
+  margin: 10px 0 10px 0;
+  display: inline !important;
+}
+
+.range-slider label {
+  font-size: 1.1rem !important;
+  display: block;
+  margin: 0px 0 0px;
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  width: calc(75% - (2.5rem));
+  height: 10px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.range-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider__range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
+}
+
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  line-height: 20px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100%;
+  background: #a6c3e0;
+  margin-left: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-style: italic;
+  font-size: 1rem !important;
+}
+
+.range-slider__value .after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #a6c3e0;
+  border-bottom: 7px solid transparent;
+  content: '';
+}
+
+::-moz-range-track {
+  background: #d7dcdf;
+  border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+
 /*-------------------------
       FLAT STYLE LIGHT
 -------------------------*/
@@ -676,6 +762,19 @@ Init values for dynamic properties to reduce  page load time
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
+/*-------------------------
+      FORMS
+-------------------------*/
+.range-slider label,
+.range-slider .range-slider__value {
+  border-radius: 9px;
+  color: #4D4D4D;
+}
+
+.range-slider .range-slider__range {
+  border-radius: 9px;
+}
+
 .section,
 .display-content > .container,
 body,
@@ -734,8 +833,6 @@ body,
 .hero-content p,
 .title-wrapper span,
 .form-control,
-.range-slider label,
-.range-slider__value,
 .form-control:-ms-input-placeholder,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
@@ -747,8 +844,6 @@ body,
 .hero-content p,
 .title-wrapper span,
 .form-control,
-.range-slider label,
-.range-slider__value,
 .form-control::-ms-input-placeholder,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
@@ -760,8 +855,6 @@ body,
 .hero-content p,
 .title-wrapper span,
 .form-control,
-.range-slider label,
-.range-slider__value,
 .form-control::placeholder,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
@@ -862,11 +955,9 @@ body,
 .segmented-control,
 .radio-selection,
 .checkbox label,
-.range-slider__range,
 .modal-content,
 table,
 .display-content > .container,
-.range-slider__value,
 .portfolio-item-content,
 .portfolio-icon a,
 .portfolio-single img,
@@ -957,6 +1048,30 @@ Init values for dynamic properties to reduce  page load time
           box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
 }
 
+.neu-style .range-slider .range-slider__value {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider .range-slider__range {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider ::-webkit-slider-thumb {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider ::-webkit-slider-thumb:hover,
+.neu-style .range-slider input[type=range]:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
 .neu-style .button-border,
 .neu-style .box-border,
 .neu-style .image-border,
@@ -968,7 +1083,6 @@ Init values for dynamic properties to reduce  page load time
 .neu-style .blog-intro,
 .neu-style table,
 .neu-style table thead,
-.neu-style .range-slider__value,
 .neu-style .form-group input:focus,
 .neu-style .form-group textarea:focus,
 .neu-style .setting-panel,
@@ -985,7 +1099,6 @@ Init values for dynamic properties to reduce  page load time
 .neu-style .skill-boxes .box-border,
 .neu-style .setting-section .scrollable,
 .neu-style .timeline-items.box-border,
-.neu-style .range-slider__range,
 .neu-style .radio-selection {
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
@@ -1009,8 +1122,6 @@ Init values for dynamic properties to reduce  page load time
 .neu-style .segmented-control,
 .neu-style .checkbox label,
 .neu-style .portfolio-single .modal-content,
-.neu-style .range-slider__range,
-.neu-style .range-slider__value,
 .neu-style ::-webkit-scrollbar-track {
   background-color: #D4D4D4;
 }
@@ -1059,18 +1170,6 @@ Init values for dynamic properties to reduce  page load time
   -webkit-box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
           box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
   background-color: #D4D4D4;
-}
-
-.neu-style ::-webkit-slider-thumb {
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style ::-webkit-slider-thumb:hover,
-.neu-style input[type=range]:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
 /*

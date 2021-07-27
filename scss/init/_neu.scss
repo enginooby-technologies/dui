@@ -44,6 +44,29 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
                 }
         }
 
+        .range-slider {
+                .range-slider__value {
+                        background-color: $schemeColor;
+                        box-shadow: $dropBoxShadow;
+                }
+
+                .range-slider__range {
+                        background-color: $schemeColor;
+                        box-shadow: $insetBoxShadow;
+                }
+
+                ::-webkit-slider-thumb {
+                        background-color: $schemeColor;
+                        box-shadow: $dropBoxShadow;
+                }
+
+                ::-webkit-slider-thumb:hover,
+                input[type=range]:focus {
+                        box-shadow: #{$concaveBoxShadow};
+                }
+        }
+
+
         /* TEXT DROP SHADOW */
         // $x: 2.5;
         // $y: 2.5;
@@ -77,7 +100,6 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         .blog-intro,
         table,
         table thead,
-        .range-slider__value,
         .form-group input:focus,
         .form-group textarea:focus,
         .setting-panel,
@@ -94,7 +116,6 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         //setting panel
         .setting-section .scrollable,
         .timeline-items.box-border,
-        .range-slider__range,
         .radio-selection {
                 box-shadow: $insetBoxShadow;
         }
@@ -117,8 +138,6 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         .segmented-control,
         .checkbox label,
         .portfolio-single .modal-content,
-        .range-slider__range,
-        .range-slider__value,
         ::-webkit-scrollbar-track {
                 background-color: $schemeColor;
         }
@@ -167,16 +186,5 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         ::-webkit-scrollbar-thumb {
                 box-shadow: $thumbScrollbarBoxShadow;
                 background-color: $schemeColor;
-        }
-
-        // RANGE SLIDER 
-        ::-webkit-slider-thumb {
-                background-color: $schemeColor;
-                box-shadow: $dropBoxShadow;
-        }
-
-        ::-webkit-slider-thumb:hover,
-        input[type=range]:focus {
-                box-shadow: #{$concaveBoxShadow};
         }
 }

@@ -1,4 +1,21 @@
+// TODO: Separate this file to each component file
 @import "../base/_variables";
+
+/*-------------------------
+      FORMS
+-------------------------*/
+.range-slider {
+
+        label,
+        .range-slider__value {
+                border-radius: $borderRadius;
+                color: $mutedBaseColor;
+        }
+
+        .range-slider__range {
+                border-radius: $borderRadius;
+        }
+}
 
 .section,
 .display-content>.container,
@@ -59,8 +76,6 @@ body,
 .hero-content p,
 .title-wrapper span,
 .form-control,
-.range-slider label,
-.range-slider__value,
 // #color-panel label,
 // .setting-panel-content p,
 //contact
@@ -166,11 +181,9 @@ body,
 .segmented-control,
 .radio-selection,
 .checkbox label,
-.range-slider__range,
 .modal-content,
 table,
 .display-content>.container,
-.range-slider__value,
 .portfolio-item-content,
 .portfolio-icon a,
 .portfolio-single img,

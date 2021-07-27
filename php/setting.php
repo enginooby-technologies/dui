@@ -28,13 +28,13 @@ include "forms/_index.php";
                                         <div class="customizer" id="neu-customizer">
                                                 <h6 class="text-center mt-0">Neu Customizer</h6>
                                                 <?php
-                                                rangeSlider('Distance X', 'neu-distance-x', 0, 20);
-                                                rangeSlider('Distance Y', 'neu-distance-y', 0, 20);
-                                                rangeSlider('Blur', 'blur', 0, 20);
-                                                rangeSlider('Spread', 'neu-spread', -5, 5);
-                                                rangeSlider('Light intensity', 'light-intensity', 1, 20);
-                                                rangeSlider('Dark intensity', 'dark-intensity', 1, 20);
-                                                rangeSlider('Surface curvature', 'surface-curvature', -20, 20);
+                                                RangeSlider('Distance X', 'neu-distance-x', 0, 20);
+                                                RangeSlider('Distance Y', 'neu-distance-y', 0, 20);
+                                                RangeSlider('Blur', 'blur', 0, 20);
+                                                RangeSlider('Spread', 'neu-spread', -5, 5);
+                                                RangeSlider('Light intensity', 'light-intensity', 1, 20);
+                                                RangeSlider('Dark intensity', 'dark-intensity', 1, 20);
+                                                RangeSlider('Surface curvature', 'surface-curvature', -20, 20);
                                                 ?>
                                                 <div id="neu-border-style-options">
                                                         <p class="radio-title">Border style</p>
@@ -48,8 +48,8 @@ include "forms/_index.php";
                                                         </div>
                                                 </div>
                                                 <?php
-                                                rangeSlider('Border width', 'neu-border-width', 0, 10);
-                                                rangeSlider('Border brightness', 'neu-border-brightness', -100, 100);
+                                                RangeSlider('Border width', 'neu-border-width', 0, 10);
+                                                RangeSlider('Border brightness', 'neu-border-brightness', -100, 100);
                                                 ?>
                                         </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
@@ -58,9 +58,9 @@ include "forms/_index.php";
                                         <div class="customizer" id="glass-customizer">
                                                 <h6 class="text-center mt-0"> Glass Customizer</h6>
                                                 <?php
-                                                rangeSlider('Transparency', 'glass-transparency', 0, 1);
-                                                rangeSlider('Blur', 'glass-blur', 0, 30);
-                                                rangeSlider('Border size', 'glass-border-size', 0, 10);
+                                                RangeSlider('Transparency', 'glass-transparency', 0, 1);
+                                                RangeSlider('Blur', 'glass-blur', 0, 30);
+                                                RangeSlider('Border size', 'glass-border-size', 0, 10);
                                                 ?>
                                                 <div class="background-gallery">
                                                         <p>Background</p>
@@ -104,7 +104,7 @@ include "forms/_index.php";
                                 <div id="border-panel" class="mt-3 mb-3">
                                         <h6 class="text-center "> Border</h6>
                                         <?php
-                                        rangeSlider('Radius', 'border-radius', 0, 50);
+                                        RangeSlider('Radius', 'border-radius', 0, 50);
                                         ?>
                                 </div>
                         </div>
@@ -127,16 +127,3 @@ include "forms/_index.php";
                 </div>
         </div>
 </div>
-
-<?php
-function rangeSlider($label, $id, $min, $max, $step = 0.1)
-{
-        echo "
-        <div class='range-slider'>
-                <label for='$id'>$label</label>
-                <input class='range-slider__range' id='$id' type='range' min='$min' max='$max' step='$step'>
-                <span class='range-slider__value'></span>
-        </div>
-        ";
-}
-?>
