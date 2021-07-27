@@ -40,10 +40,10 @@ include "forms/_index.php";
                                                         <p class="radio-title">Border style</p>
                                                         <div class="radio-group">
                                                                 <?php
-                                                                Radio('solid-border', 0);
-                                                                Radio('double-border', 1);
-                                                                Radio('dotted-border', 2);
-                                                                Radio('dashed-border', 3);
+                                                                Radio('solid-border', 0, '');
+                                                                Radio('double-border', 1, '');
+                                                                Radio('dotted-border', 2, '');
+                                                                Radio('dashed-border', 3, '');
                                                                 ?>
                                                         </div>
                                                 </div>

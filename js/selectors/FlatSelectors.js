@@ -15,6 +15,7 @@ export const bgLightenSchemeSelectors = [
     ".setting-button-border",
     ".setting-panel",
     ".setting-button",
+    ".setting-button a",
     "::-webkit-scrollbar-track"
 ];
 export const bgHighlightSelectors = [

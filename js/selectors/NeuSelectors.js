@@ -3,6 +3,7 @@ export const backgroundSchemeColorSelectors = [
     ".display-content",
     "::-webkit-scrollbar-track",
     "::-webkit-scrollbar-thumb",
+    ".setting-button a"
 ];
 export const colorHighlightColorSelectors = [
     ".button",

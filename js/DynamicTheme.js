@@ -62,9 +62,9 @@ export function changeStyle(newStyle) {
     currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.onDisable();
     currentStyle = newStyle;
     $(".customizer").hide();
-    currentStyle.onEnable();
     $("body").removeClass();
     $("body").addClass(currentStyle.name);
+    currentStyle.onEnable();
     updateChangesFromLastStyle();
 }
 function updateChangesFromLastStyle() {
@@ -81,18 +81,24 @@ function updateChangesFromLastStyle() {
         stylesWithUpdatedBaseColor.push(currentStyle.name);
     }
 }
-loadSettingPanel();
-function loadSettingPanel() {
-    $.get(settingFilePath, function (data) {
+loadSettingPanel(settingFilePath)
+    // ad-hoc solution to load file for the demo page this framework
+    .fail(() => loadSettingPanel('setting.html'))
+    .fail(() => loadSettingPanel('php/setting.php'));
+function loadSettingPanel(filePath) {
+    return $.get(filePath, function (data) {
         $('body').append(data);
     }).done(function () {
-        initSettingPanel();
-        setupSettingEvents();
-        $squareImg = $(".hero-image .square img");
-        styleSheet = createStyleSheet();
-        cssRules = styleSheet.cssRules || styleSheet.rules;
-        new StyleRegistry();
+        setup();
     });
+}
+function setup() {
+    initSettingPanel();
+    setupSettingEvents();
+    $squareImg = $(".hero-image .square img");
+    styleSheet = createStyleSheet();
+    cssRules = styleSheet.cssRules || styleSheet.rules;
+    new StyleRegistry();
 }
 function initSettingPanel() {
     $("#scheme-color-picker").attr('value', schemeColor.hex);

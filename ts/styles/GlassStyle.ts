@@ -5,6 +5,7 @@ import { TinyColor } from '../base/TinyColor.js';
 
 // CAUTION: FlatStyle dependent
 //TODO: DRY with FlatStyle
+import * as GlassSelectors from '../selectors/GlassSelectors.js'
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { StyleName } from '../Config.js';
 
@@ -40,7 +41,7 @@ export class GlassStyle extends Style {
         private colorMutedBaseRule?: CSSStyleRule;
 
         // lazy initializations
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(FlatSelectors.bgSchemeSelectors));
+        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
         getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
         getBgHighlightRule = () => this.bgHighlightRule ?? (this.bgHighlightRule = this.insertEmptyRule(FlatSelectors.bgHighlightSelectors));
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
@@ -54,9 +55,10 @@ export class GlassStyle extends Style {
 
         init() {
                 this.initRangeSliders();
-                $('section, #personal-website-portfolio .image-border').each((index, element) => {
+                $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
                         element.classList.add(this.currentBackground);
-                })
+                        console.log(this.currentBackground);
+                });
         }
 
         onDisable(): void { }
@@ -94,7 +96,7 @@ export class GlassStyle extends Style {
                         const lastBackground: string = this.currentBackground;
                         this.currentBackground = event.currentTarget.id;
 
-                        $('section, #personal-website-portfolio .image-border').each((index, element) => {
+                        $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
                                 element.classList.remove(lastBackground);
                                 element.classList.add(this.currentBackground);
                         })

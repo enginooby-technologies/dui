@@ -5,6 +5,7 @@ export const bgHighlightSelectors = formatString([
 ]);
 
 export const bgSchemeSelectors = formatString([
+        "body:not(.glass-style)",
         ".section",
         // ".hero-03",
         ".segmented-control",
@@ -124,6 +125,7 @@ export const borderRadiusSelectors = formatString([
         ".setting-section .setting-panel",
         ".setting-section .setting-button-border",
         ".setting-button",
+        ".setting-button a",
         ".color-scheme li a",
 
         // SELF-EDUCATION
