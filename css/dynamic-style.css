@@ -247,8 +247,8 @@ body {
   transition: 1s background ease;
 }
 
-.display-content {
-  background-color: transparent !important;
+.display-content:not(.injected-section .display-content) {
+  background-color: transparent;
 }
 
 .full-screen {
@@ -1324,7 +1324,6 @@ Init values for dynamic properties to reduce  page load time
 
 .neu-style .section,
 .neu-style .display-content > .container,
-.neu-style .display-content,
 .neu-style .button,
 .neu-style .setting-button,
 .neu-style .setting-button a,
@@ -1431,7 +1430,6 @@ Init values for dynamic properties to reduce  page load time
 }
 
 .flat-style .display-content > .container,
-.flat-style .display-content,
 .flat-style .range-slider__range,
 .flat-style .range-slider__value,
 .flat-style .modal-content {

@@ -32,8 +32,8 @@ body {
         transition: 1s background ease;
 }
 
-.display-content {
-        background-color: transparent !important;
+.display-content:not(.injected-section .display-content) {
+        background-color: transparent;
 }
 
 .full-screen {

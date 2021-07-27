@@ -6,7 +6,6 @@ export const bgHighlightSelectors = formatString([
 
 export const bgSchemeSelectors = formatString([
         "body:not(.glass-style)",
-        ".section",
         // ".hero-03",
         ".segmented-control",
         ".image-border",

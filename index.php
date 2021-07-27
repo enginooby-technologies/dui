@@ -17,25 +17,7 @@
 </head>
 
 <body class="neu-style">
-        <?php include "php/forms/_index.php"; ?>
-
-        <div class="display-table">
-                <div class="display-content">
-                        <div class="container">
-                                <h5>Forms</h5>
-                                <?php
-                                RangeSlider('A cool slider', 'slider1', 1, 100, 1, 69);
-                                ?>
-                                <br><br>
-                                <div class="radio-group">
-                                        <?php
-                                        Radio('radio1', 1, 'Cat');
-                                        Radio('radio2', 2, 'Dog');
-                                        ?>
-                                </div>
-                        </div>
-                </div>
-        </div>
+        <?php include "index-injectable.php"; ?>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
