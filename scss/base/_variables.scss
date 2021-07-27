@@ -1,0 +1,36 @@
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+$schemeColor:#D4D4D4;
+$highlightColor:#004b97;
+$baseColor:black;
+$mutedBaseColor:#4D4D4D; //lightMuted: #b2b2b2
+
+$colorfull1: #01724b;
+$colorfull2: #bc5b00;
+$colorfull3: #c40639;
+$contrastColorfull1: white;
+$contrastColorfull2: white;
+$contrastColorfull3: white;
+
+$borderRadius: 9px;
+
+/* FONT */
+$fontRegular:"Agency FB",
+sans-serif;
+$fontBold:"Agency FB Bold",
+sans-serif;
+$fontTitle:"Poppins",
+sans-serif;
+$fontScale: 1;
+$fontTitleScale: 1;
+$sliderMargin:0px;
+$badgeIconScale:1;
+
+// $fontRegular:"Press Start 2P";
+// $fontBold:"Press Start 2P";
+// $fontTitle:"Press Start 2P";
+// $fontScale: .53;
+// $fontTitleScale: .9;
+// $sliderMargin:8px;
+// $badgeIconScale:.75;

@@ -1,0 +1,160 @@
+@import "../base/_variables";
+
+$distanceX:3;
+$distanceY:3;
+$blur:4;
+$spread:0;
+$lightenSchemeColor:#e6e6e6;
+$darkenSchemeColor: #c2c2c2;
+
+$dropBoxShadow : #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
+-#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
+
+$insetBoxShadow : inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
+inset -#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
+
+$concaveBoxShadow:"#{$dropBoxShadow},  #{$insetBoxShadow}";
+
+$thumbScrollbarBoxShadow:inset -#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
+inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
+
+
+
+.neu-style {
+
+        /* TEXT DROP SHADOW */
+        // $x: 2.5;
+        // $y: 2.5;
+        // $z: 3;
+        // $textDropShadow : -#{$x}px -#{$y}px #{$z}px #{$lightenSchemeColor},
+        // #{$x}px #{$y}px #{$z}px #{$darkenSchemeColor};
+        // .title-wrapper {
+        //         opacity: 1;
+        //         margin-bottom: 2rem;
+        //         margin-top: -1.5rem !important;
+        // }
+
+        // .title-wrapper span {
+        //         text-shadow: $textDropShadow;
+        //         color: $schemeColor;
+        //         font-size: 3.5rem;
+        // }
+
+        // .title-content {
+        //         display: none;
+        // }
+
+        .button-border,
+        .box-border,
+        .image-border,
+        .badge-border,
+        .setting-button-border,
+        .segmented-control,
+        .hero-03 .personal-image img,
+        .checkbox label,
+        .blog-intro,
+        table,
+        table thead,
+        .range-slider__value,
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .setting-panel,
+        .toggle .indicator {
+                box-shadow: $dropBoxShadow;
+        }
+
+        .button.active,
+        .setting-button.active,
+        .radio-button-group .button.active,
+        .custom-scrollbar,
+        .blog .blog-image .after,
+        .skill-boxes .box-border,
+        //setting panel
+        .setting-section .scrollable,
+        .timeline-items.box-border,
+        .range-slider__range,
+        .radio-selection {
+                box-shadow: $insetBoxShadow;
+        }
+
+        //    .form-group,
+        .toggle,
+        .form-group input,
+        .form-group textarea,
+        .skill-box .skillbar {
+                box-shadow: #{$concaveBoxShadow}; //unquote
+        }
+
+        .section,
+        .display-content>.container,
+        .display-content,
+        .button,
+        .setting-button,
+        .setting-panel,
+        .contact .form-item .form-group,
+        .segmented-control,
+        .checkbox label,
+        .portfolio-single .modal-content,
+        .range-slider__range,
+        .range-slider__value,
+        ::-webkit-scrollbar-track {
+                background-color: $schemeColor;
+        }
+
+        // RADIO
+        .segmented-control>input:not(:checked):not(:hover)+label {
+                color: $mutedBaseColor;
+        }
+
+        .button,
+        .segmented-control>input:checked+label,
+        .segmented-control>input:hover+label {
+                color: $highlightColor;
+        }
+
+        // HOVER
+        .button:hover,
+        .badge-border:hover,
+        table>tbody>tr:hover,
+        .setting-button:hover {
+                box-shadow: $insetBoxShadow;
+        }
+
+        // CHECKBOX
+        .checkbox input:checked~label {
+                box-shadow: $insetBoxShadow;
+        }
+
+        .checkbox input:not(:checked):not(:hover)~label i,
+        .checkbox input:not(:checked)~label+.name {
+                color: $mutedBaseColor;
+        }
+
+        .checkbox input:checked~label+.name,
+        .checkbox input:checked~label i,
+        .checkbox input:hover~label i {
+                color: $highlightColor;
+        }
+
+        // SCROLLBAR
+        ::-webkit-scrollbar-track {
+                box-shadow: $insetBoxShadow;
+                background-color: $schemeColor;
+        }
+
+        ::-webkit-scrollbar-thumb {
+                box-shadow: $thumbScrollbarBoxShadow;
+                background-color: $schemeColor;
+        }
+
+        // RANGE SLIDER 
+        ::-webkit-slider-thumb {
+                background-color: $schemeColor;
+                box-shadow: $dropBoxShadow;
+        }
+
+        ::-webkit-slider-thumb:hover,
+        input[type=range]:focus {
+                box-shadow: #{$concaveBoxShadow};
+        }
+}

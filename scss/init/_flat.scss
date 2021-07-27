@@ -1,0 +1,95 @@
+@import "../base/_variables";
+
+$lightenSchemeColor:#e1e1e1; // distinct sub-containers from container
+$darkenShecmeColor:#c7c7c7;
+$darkenHighlightColor:#033669; // hover, active button
+$contrastHighlightColor: #EBEBEB;
+
+.flat-style {
+
+        .button:not(.radio-button-group .button),
+        .radio-button-group .button.active,
+        .radio-button-group .button:not(.active):hover,
+        .radio-selection,
+        table>tbody>tr:hover {
+                background-color: $highlightColor;
+                color: $contrastHighlightColor;
+        }
+
+        .box-border,
+        .image-border,
+        .contact .form-item .form-group,
+        .segmented-control,
+        .checkbox label,
+        .setting-button-border,
+        .setting-panel,
+        .setting-button {
+                background-color: $lightenSchemeColor;
+                color: $baseColor;
+        }
+
+        .display-content>.container,
+        .display-content,
+        .range-slider__range,
+        .range-slider__value,
+        .modal-content {
+                background-color: $schemeColor;
+                color: $baseColor;
+        }
+
+        .radio-button-group .button:not(.active) {
+                color: $highlightColor;
+        }
+
+        //HOVER
+        .button:hover {
+                background-color: $darkenHighlightColor;
+        }
+
+        // RADIO
+        .segmented-control>input:not(:checked):not(:hover)+label {
+                color: $mutedBaseColor;
+        }
+
+        .segmented-control>input:hover+label {
+                color: $highlightColor;
+        }
+
+        .segmented-control>input:checked+label {
+                color: $contrastHighlightColor;
+        }
+
+        // CHECKBOX
+        .checkbox input:not(:checked):not(:hover)~label i,
+        .checkbox input:not(:checked)~label+.name {
+                color: $mutedBaseColor;
+        }
+
+        .checkbox input:checked~label+.name,
+        .checkbox input:checked~label i,
+        .checkbox input:hover~label i {
+                color: $highlightColor;
+        }
+
+        // SCROLLBAR
+        ::-webkit-scrollbar-track {
+                background-color: $lightenSchemeColor;
+        }
+
+        ::-webkit-scrollbar-thumb {
+                background-color: $highlightColor;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+                background: $darkenHighlightColor;
+        }
+
+        // RANGE SLIDER 
+        ::-webkit-slider-thumb {
+                background-color: $highlightColor;
+        }
+
+        ::-webkit-slider-thumb:hover {
+                background-color: $darkenHighlightColor;
+        }
+}
