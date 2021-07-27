@@ -100,12 +100,12 @@ function updateChangesFromLastStyle() {
 loadSettingPanel();
 
 function loadSettingPanel() {
-        $.get('sections/setting.php', function (data) {
+        $.get('DynamicStyle/php/setting.php', function (data) {
                 $('body').append(data);
         }).done(function () {
                 initSettingPanel();
                 setupSettingEvents();
-                $squareImg = $(".hero-image .square img");
+                $squareImg = $(".hero-image .square img"); // TODO: specific element
                 styleSheet = createStyleSheet();
                 cssRules = styleSheet.cssRules || styleSheet.rules;
                 new StyleRegistry();
