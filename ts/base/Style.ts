@@ -1,9 +1,10 @@
+import { StyleName } from '../Config.js';
 export abstract class Style {
         private styleSheet?: CSSStyleSheet;
         private cssRules?: CSSRuleList;
-        name: string = '';
+        name: StyleName;
 
-        constructor(name: string) {
+        constructor(name: StyleName) {
                 this.styleSheet = this.createStyleSheet();
                 this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
                 this.name = name;

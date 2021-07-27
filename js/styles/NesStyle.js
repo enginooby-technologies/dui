@@ -1,9 +1,10 @@
 import * as DynamicTheme from '../DynamicTheme.js';
 import * as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
+import { StyleName } from '../Config.js';
 export class NesStyle extends Style {
     constructor() {
-        super('nes-style');
+        super(StyleName.Nes);
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors)); };

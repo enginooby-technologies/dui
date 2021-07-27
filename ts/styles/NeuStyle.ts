@@ -1,6 +1,7 @@
 import * as DynamicTheme from '../DynamicTheme.js';
 import * as NeuSelectors from '../selectors/NeuSelectors.js'
 import { Style } from '../base/Style.js';
+import { StyleName } from '../Config.js';
 
 enum BorderStyle { solid, double, dotted, dashed }; // order must matchs with id from HTML radio
 
@@ -8,7 +9,7 @@ enum BorderStyle { solid, double, dotted, dashed }; // order must matchs with id
 export class NeuStyle extends Style {
         //  Singleton Pattern
         private static _instance: NeuStyle = new NeuStyle();
-        private constructor() { super('neu-style') }
+        private constructor() { super(StyleName.Neu) }
         public static get Instance(): NeuStyle {
                 NeuStyle._instance ??= new NeuStyle();
                 return NeuStyle._instance;

@@ -4,10 +4,15 @@ For the purpose of effortless transforming any projects using CSS for styling (t
 
 ## Styles   (w/ class names)
 ### Current
+<a id="style-names"></a>
 + Flat: ```flat-style```
 + Neumorphism: ```neu-style```
 + Glassmorphism: ```glass-style```
-### Plan
+
+<details>
+<summary><i>Plan</i></summary>
+<!--Blank line on purpuse-->
+
 + Material
 + Skeuomorphism
 + Gradient
@@ -18,7 +23,8 @@ For the purpose of effortless transforming any projects using CSS for styling (t
 + Grid
 + Windows
 + Monograph
-  
+</details>
+
 ## Dependencies
   + Bootstrap 4
   + jQuery
@@ -37,11 +43,12 @@ Skip if just use the framework without modification
   <link rel="stylesheet" href="<framework_folder_path>/css/dynamic-style.css" title="dynamic-style" type="text/css">
   ```  
 If the styles are not applied,  the workaroud is importing ```dynamic-style.scss``` or ```dynamic-style.css``` in the project style sheet to compile into one CSS file.  
-3 - Add class name of the first wanted style to ```<body>```. Thoses class names are set in its style TS files.  
+3 - Add [class name](#style-names) of the first wanted style to ```<body>```. Thoses class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in init SCSS file.  
 Recommend: use Critical to extract critical CSS rules after this step. The rest of styles which are not applied at the first time have many unused rules slowing down page load time.  
 4 - Reference to the framework script:  
 ```  
 <script async src="<framework_folder_path>/built/DynamicTheme.js" type="module"></script>
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This mean the script could be skip if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
-After loaded, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.
+After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.
+5 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/php/setting.php```

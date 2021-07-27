@@ -1,11 +1,12 @@
 import * as DynamicTheme from '../DynamicTheme.js';
 import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
+import { StyleName } from '../Config.js';
 
 export class NesStyle extends Style {
         //  Singleton Pattern
         private static _instance: NesStyle = new NesStyle();
-        private constructor() { super('nes-style') }
+        private constructor() { super(StyleName.Nes) }
         public static get Instance(): NesStyle {
                 NesStyle._instance ??= new NesStyle();
                 return NesStyle._instance;

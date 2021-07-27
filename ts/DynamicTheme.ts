@@ -1,3 +1,4 @@
+import { settingFilePath, StyleName } from './Config.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js'
 import { Style } from './base/Style.js'
 import { StyleRegistry } from './StyleRegistry.js';
@@ -6,7 +7,7 @@ import { TinyColor } from './base/TinyColor.js';
 
 // TODO: create class
 
-//elements for this specific projects
+//TODO; elements for specific project
 let $squareImg: JQuery<HTMLElement>;
 
 export let colorfull1: Color = new TinyColor("#01724b");
@@ -25,9 +26,9 @@ let borderRadius: number = 9;
 export let currentStyle: Style;
 
 //populate all style names since we have init css files
-let stylesWithUpdatedSchemeColor: string[] = ['flat-style', 'neu-style', 'glass-style'];
-let stylesWithUpdatedHighlightColor: string[] = ['flat-style', 'neu-style', 'glass-style'];
-let stylesWithUpdatedBaseColor: string[] = ['flat-style', 'neu-style', 'glass-style'];
+let stylesWithUpdatedSchemeColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
+let stylesWithUpdatedHighlightColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
+let stylesWithUpdatedBaseColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
 
 let styleSheet: CSSStyleSheet;
 let cssRules: CSSRuleList;
@@ -100,12 +101,12 @@ function updateChangesFromLastStyle() {
 loadSettingPanel();
 
 function loadSettingPanel() {
-        $.get('DynamicStyle/php/setting.php', function (data) {
+        $.get(settingFilePath, function (data) {
                 $('body').append(data);
         }).done(function () {
                 initSettingPanel();
                 setupSettingEvents();
-                $squareImg = $(".hero-image .square img"); // TODO: specific element
+                $squareImg = $(".hero-image .square img");
                 styleSheet = createStyleSheet();
                 cssRules = styleSheet.cssRules || styleSheet.rules;
                 new StyleRegistry();

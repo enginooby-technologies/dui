@@ -1,9 +1,10 @@
 import * as DynamicTheme from '../DynamicTheme.js';
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { Style } from '../base/Style.js';
+import { StyleName } from '../Config.js';
 export class FlatStyle extends Style {
     constructor() {
-        super('flat-style');
+        super(StyleName.Flat);
         this.lightSchemeIntensity = 5;
         this.lightenSchemeColor = "#e1e1e1";
         // darkenSchemeColor: string = "#c7c7c7";

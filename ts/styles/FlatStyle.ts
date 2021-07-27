@@ -1,11 +1,12 @@
 import * as DynamicTheme from '../DynamicTheme.js';
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { Style } from '../base/Style.js';
+import { StyleName } from '../Config.js';
 
 export class FlatStyle extends Style {
         // Singleton Pattern
         private static _instance: FlatStyle;
-        private constructor() { super('flat-style') }
+        private constructor() { super(StyleName.Flat) }
         public static get Instance(): FlatStyle {
                 FlatStyle._instance ??= new FlatStyle();
                 return FlatStyle._instance;

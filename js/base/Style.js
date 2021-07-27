@@ -1,6 +1,5 @@
 export class Style {
     constructor(name) {
-        this.name = '';
         this.insertEmptyRule = (selectors) => this.cssRules[this.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
         this.styleSheet = this.createStyleSheet();
         this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;

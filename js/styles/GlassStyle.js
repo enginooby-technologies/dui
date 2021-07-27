@@ -4,9 +4,10 @@ import { TinyColor } from '../base/TinyColor.js';
 // CAUTION: FlatStyle dependent
 //TODO: DRY with FlatStyle
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
+import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
     constructor() {
-        super('glass-style');
+        super(StyleName.Glass);
         this.currentBackground = "background-3";
         this.blur = '2';
         this.transparency = '0.6';

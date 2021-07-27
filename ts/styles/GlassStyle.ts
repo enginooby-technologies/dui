@@ -6,11 +6,12 @@ import { TinyColor } from '../base/TinyColor.js';
 // CAUTION: FlatStyle dependent
 //TODO: DRY with FlatStyle
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
+import { StyleName } from '../Config.js';
 
 export class GlassStyle extends Style {
         // Singleton Pattern
         private static _instance: GlassStyle;
-        private constructor() { super('glass-style') }
+        private constructor() { super(StyleName.Glass) }
         public static get Instance(): GlassStyle {
                 GlassStyle._instance ??= new GlassStyle();
                 return GlassStyle._instance;
