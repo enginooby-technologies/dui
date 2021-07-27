@@ -1,5 +1,6 @@
 <?php
 include "forms/_index.php";
+include "elements/_index.php";
 ?>
 
 <div id="setting-section" class="setting-section">
@@ -8,18 +9,11 @@ include "forms/_index.php";
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
                                 <h6 class="text-center mt-0 mb-3">UI Style</h6>
                                 <!-- TODO: make buttons  equal widths -->
-                                <div class="button-border">
-                                        <a href="#" class="button" id="flat-skin-button">Flat</a>
-                                </div>
-                                <!-- <div class="button-border">
-                                        <a href="#" class="button" id="nes-skin-button">NES</a>
-                                </div> -->
-                                <div class="button-border">
-                                        <a href="#" class="button" id="neu-skin-button">Neumorphism</a>
-                                </div>
-                                <div class="button-border">
-                                        <a href="#" class="button" id="glass-skin-button">Glassmorphism</a>
-                                </div>
+                                <?php
+                                Button('Flat', 'flat-skin-button');
+                                Button('Neumorphism', 'neu-skin-button');
+                                Button('Glassmorphism', 'glass-skin-button');
+                                ?>
                         </ul>
 
                         <div class="scrollable ">

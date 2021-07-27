@@ -27,6 +27,7 @@ export class GlassStyle extends Style {
         lightenSchemeColor: Color = new TinyColor('#fafafa');
         darkenHighlightColor: Color = new TinyColor('#033669');
 
+        private bgSelectors = ' #personal-website-portfolio .image-border, body';
         private bgColorfull1Rule?: CSSStyleRule;
         private bgColorfull2Rule?: CSSStyleRule;
         private bgColorfull3Rule?: CSSStyleRule;
@@ -55,9 +56,8 @@ export class GlassStyle extends Style {
 
         init() {
                 this.initRangeSliders();
-                $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
+                $(this.bgSelectors).each((index, element) => {
                         element.classList.add(this.currentBackground);
-                        console.log(this.currentBackground);
                 });
         }
 
@@ -96,7 +96,7 @@ export class GlassStyle extends Style {
                         const lastBackground: string = this.currentBackground;
                         this.currentBackground = event.currentTarget.id;
 
-                        $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
+                        $(this.bgSelectors).each((index, element) => {
                                 element.classList.remove(lastBackground);
                                 element.classList.add(this.currentBackground);
                         })

@@ -49,7 +49,7 @@ Recommend: use Critical to extract critical CSS rules after this step. The rest 
 ```  
 <script async src="<framework_folder_path>/built/DynamicTheme.js" type="module"></script>
 ```  
-This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This mean the script could be skip if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
+This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This means the script could be skipped if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
 After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.  
 5 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/php/setting.php```
 
@@ -59,9 +59,9 @@ After load, the script will AJAX load ```setting.php``` which is a setting panel
 + Border radius
 + Font
 ### Style Domain
-|       #       | Containers |     |       | Elements            |        |       |            |      |          |      |        |            |              |        |     |       |   Forms  |       |          |       |        |                   |
-|:-------------:|:----------:|-----|-------|:-------------------:|:------:|-------|------------|------|----------|------|--------|------------|--------------|--------|-----|-------|:--------:|:-----:|----------|-------|--------|-------------------|
-|               |    Image   | Box | Modal | Alert               | Button | Badge | Breadcrumb | Card | Dropdown | Icon | Navbar | Pagination | Progress bar | Select | Tab | Toast | Checkbox | Input | Textarea | Radio | Switch | Segmented control |
-|      Flat     |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |       |        |         ✓         |
-|  Neumorphism  |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |   ✓   |    ✓   |         ✓         |
-| Glassmorphism |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |       |        |         ✓         |
+|       #       | Containers |     |       | Elements |        |       |            |      |          |      |        |            |              |        |     |       |  Forms   |       |          |       |        |                   |
+| :-----------: | :--------: | --- | ----- | :------: | :----: | ----- | ---------- | ---- | -------- | ---- | ------ | ---------- | ------------ | ------ | --- | ----- | :------: | :---: | -------- | ----- | ------ | ----------------- |
+|               |   Image    | Box | Modal |  Alert   | Button | Badge | Breadcrumb | Card | Dropdown | Icon | Navbar | Pagination | Progress bar | Select | Tab | Toast | Checkbox | Input | Textarea | Radio | Switch | Segmented control |
+|     Flat      |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        |       |        | ✓                 |
+|  Neumorphism  |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        | ✓     | ✓      | ✓                 |
+| Glassmorphism |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        |       |        | ✓                 |

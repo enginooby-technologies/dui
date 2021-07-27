@@ -7,9 +7,33 @@ $contrastHighlightColor: #EBEBEB;
 
 .flat-style {
 
-        .button:not(.radio-button-group .button),
-        .radio-button-group .button.active,
-        .radio-button-group .button:not(.active):hover,
+        /*-------------------------
+      ELEMENTS
+-------------------------*/
+        //BUTTON
+        .button:not(.radio-button-group .button) {
+                background-color: $highlightColor;
+                color: $contrastHighlightColor;
+        }
+
+        .button:hover {
+                background-color: $darkenHighlightColor;
+        }
+
+        //  BUTTON RADIO
+        .radio-button-group {
+
+                .button.active,
+                .button:not(.active):hover {
+                        background-color: $highlightColor;
+                        color: $contrastHighlightColor;
+                }
+
+                .button:not(.active) {
+                        color: $highlightColor;
+                }
+        }
+
         .radio-selection,
         table>tbody>tr:hover {
                 background-color: $highlightColor;
@@ -37,16 +61,7 @@ $contrastHighlightColor: #EBEBEB;
                 color: $baseColor;
         }
 
-        .radio-button-group .button:not(.active) {
-                color: $highlightColor;
-        }
-
-        //HOVER
-        .button:hover {
-                background-color: $darkenHighlightColor;
-        }
-
-        // RADIO
+        // SEGMENTED CONTROL
         .segmented-control>input:not(:checked):not(:hover)+label {
                 color: $mutedBaseColor;
         }

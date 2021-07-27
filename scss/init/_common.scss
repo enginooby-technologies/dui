@@ -1,21 +1,6 @@
 // TODO: Separate this file to each component file
 @import "../base/_variables";
 
-/*-------------------------
-      FORMS
--------------------------*/
-.range-slider {
-
-        label,
-        .range-slider__value {
-                border-radius: $borderRadius;
-                color: $mutedBaseColor;
-        }
-
-        .range-slider__range {
-                border-radius: $borderRadius;
-        }
-}
 
 .section,
 .display-content>.container,
@@ -46,7 +31,6 @@ body,
 }
 
 .highlight-color,
-.button,
 .overlay-menu a.active,
 .timeline-year,
 .portfolio .radio-button-group li a,
@@ -161,11 +145,9 @@ body,
 .comments-devider,
 .contact .form-item .form-group,
 .contact #message.toast,
-.button,
 .setting-button,
 .setting-button a,
 .nes-btn::after,
-.button-border,
 .image-border img,
 .image-border,
 .setting-section .setting-panel,
@@ -218,7 +200,6 @@ table,
                 // cursor: default;
         }
 
-        .button,
         .radio-group .label,
         .checkbox label,
         i,

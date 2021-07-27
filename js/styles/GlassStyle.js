@@ -17,6 +17,7 @@ export class GlassStyle extends Style {
         this.darkHighlightIntensity = 15;
         this.lightenSchemeColor = new TinyColor('#fafafa');
         this.darkenHighlightColor = new TinyColor('#033669');
+        this.bgSelectors = ' #personal-website-portfolio .image-border, body';
         // lazy initializations
         this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
@@ -37,9 +38,8 @@ export class GlassStyle extends Style {
     }
     init() {
         this.initRangeSliders();
-        $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
+        $(this.bgSelectors).each((index, element) => {
             element.classList.add(this.currentBackground);
-            console.log(this.currentBackground);
         });
     }
     onDisable() { }
@@ -73,7 +73,7 @@ export class GlassStyle extends Style {
         $('.background-item').on('click', (event) => {
             const lastBackground = this.currentBackground;
             this.currentBackground = event.currentTarget.id;
-            $('section, #personal-website-portfolio .image-border, body').each((index, element) => {
+            $(this.bgSelectors).each((index, element) => {
                 element.classList.remove(lastBackground);
                 element.classList.add(this.currentBackground);
             });

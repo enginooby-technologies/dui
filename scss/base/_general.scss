@@ -27,8 +27,13 @@ $agencyFbBold: '/assets/fonts/agency-fb-bold/AgencyFB-Bold';
         font-display: swap;
 }
 
-.section {
-        overflow-x: hidden !important;
+body {
+        height: 100vh;
+        transition: 1s background ease;
+}
+
+.display-content {
+        background-color: transparent !important;
 }
 
 .full-screen {
@@ -41,7 +46,6 @@ $transition_duration: 0.8s;
 .image-border,
 .box-border,
 .form-group,
-.button-border,
 .blog-intro,
 .blog-image,
 .checkbox label,
@@ -156,37 +160,12 @@ button {
         outline: none !important;
 }
 
-.setting-button a {
-        // background-color: black;
-        // opacity: 1;
-}
-
 .box-border {
         background-color: #f1f3f6;
         padding: 15px 20px 7px;
 }
 
-.button-border button {
-        background-color: transparent;
-}
 
-.button-border {
-        display: inline-block;
-        padding: 1px;
-}
-
-.button {
-        // border: none;
-        padding: 10px 30px;
-        transition: all 0.3s ease;
-        font-size: 22px *$fontScale;
-        font-weight: 500 !important;
-        display: inline-block;
-}
-
-.button i {
-        font-size: 15px;
-}
 
 // IMAGE
 .image-caption {
