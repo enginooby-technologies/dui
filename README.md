@@ -59,54 +59,9 @@ After load, the script will AJAX load ```setting.php``` which is a setting panel
 + Border radius
 + Font
 ### Style Domain
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-c3ow"></th>
-    <th class="tg-7btt">Elements</th>
-    <th class="tg-7btt"></th>
-    <th class="tg-7btt"></th>
-    <th class="tg-7btt"></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-7btt"></td>
-    <td class="tg-c3ow">Button</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-7btt">Flat</td>
-    <td class="tg-c3ow">✔</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-7btt">Neumorphism</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-  <tr>
-    <td class="tg-7btt">Glassmorphism</td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"></td>
-  </tr>
-</tbody>
-</table>
+|       #       | Containers |     |       | Elements            |        |       |            |      |          |      |        |            |              |        |     |       |   Forms  |       |          |       |        |                   |
+|:-------------:|:----------:|-----|-------|:-------------------:|:------:|-------|------------|------|----------|------|--------|------------|--------------|--------|-----|-------|:--------:|:-----:|----------|-------|--------|-------------------|
+|               |    Image   | Box | Modal | Alert               | Button | Badge | Breadcrumb | Card | Dropdown | Icon | Navbar | Pagination | Progress bar | Select | Tab | Toast | Checkbox | Input | Textarea | Radio | Switch | Segmented control |
+|      Flat     |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |       |        |         ✓         |
+|  Neumorphism  |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |   ✓   |    ✓   |         ✓         |
+| Glassmorphism |      ✓     |  ✓  |       |                     |    ✓   |   ✓   |            |      |          |      |        |            |       ✓      |        |     |       |     ✓    |   ✓   |     ✓    |       |        |         ✓         |
