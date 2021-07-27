@@ -1,0 +1,344 @@
+<div id="setting-section" class="setting-section">
+  <div class="text-center setting-panel hide">
+    <div class="setting-panel-content">
+      <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
+        <h6 class="text-center mt-0 mb-3">UI Style</h6>
+        <!-- TODO: make buttons  equal widths -->
+        <div class="button-border">
+          <a href="#" class="button" id="flat-skin-button">Flat</a>
+        </div>
+        <!-- <div class="button-border">
+                                        <a href="#" class="button" id="nes-skin-button">NES</a>
+                                </div> -->
+        <div class="button-border">
+          <a href="#" class="button" id="neu-skin-button">Neumorphism</a>
+        </div>
+        <div class="button-border">
+          <a href="#" class="button" id="glass-skin-button">Glassmorphism</a>
+        </div>
+      </ul>
+
+      <div class="scrollable">
+        <!-- STYLE CUSTOMIZER -->
+        <div id="customizer-panel">
+          <div class="customizer" id="neu-customizer">
+            <h6 class="text-center mt-0">Neu Customizer</h6>
+
+            <div class="range-slider">
+              <label for="neu-distance-x">Distance X</label>
+              <input
+                class="range-slider__range"
+                id="neu-distance-x"
+                type="range"
+                min="0"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="neu-distance-y">Distance Y</label>
+              <input
+                class="range-slider__range"
+                id="neu-distance-y"
+                type="range"
+                min="0"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="blur">Blur</label>
+              <input
+                class="range-slider__range"
+                id="blur"
+                type="range"
+                min="0"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="neu-spread">Spread</label>
+              <input
+                class="range-slider__range"
+                id="neu-spread"
+                type="range"
+                min="-5"
+                max="5"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="light-intensity">Light intensity</label>
+              <input
+                class="range-slider__range"
+                id="light-intensity"
+                type="range"
+                min="1"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="dark-intensity">Dark intensity</label>
+              <input
+                class="range-slider__range"
+                id="dark-intensity"
+                type="range"
+                min="1"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="surface-curvature">Surface curvature</label>
+              <input
+                class="range-slider__range"
+                id="surface-curvature"
+                type="range"
+                min="-20"
+                max="20"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+            <div id="neu-border-style-options">
+              <p class="radio-title">Border style</p>
+              <div class="radio-group">
+                <div class="radio-button-wrapper">
+                  <input
+                    class="state"
+                    type="radio"
+                    name="app"
+                    id="solid-border"
+                    value="0"
+                  />
+                  <label class="label" for="solid-border">
+                    <div class="indicator"></div>
+                    <span class="text"></span>
+                  </label>
+                </div>
+
+                <div class="radio-button-wrapper">
+                  <input
+                    class="state"
+                    type="radio"
+                    name="app"
+                    id="double-border"
+                    value="1"
+                  />
+                  <label class="label" for="double-border">
+                    <div class="indicator"></div>
+                    <span class="text"></span>
+                  </label>
+                </div>
+
+                <div class="radio-button-wrapper">
+                  <input
+                    class="state"
+                    type="radio"
+                    name="app"
+                    id="dotted-border"
+                    value="2"
+                  />
+                  <label class="label" for="dotted-border">
+                    <div class="indicator"></div>
+                    <span class="text"></span>
+                  </label>
+                </div>
+
+                <div class="radio-button-wrapper">
+                  <input
+                    class="state"
+                    type="radio"
+                    name="app"
+                    id="dashed-border"
+                    value="3"
+                  />
+                  <label class="label" for="dashed-border">
+                    <div class="indicator"></div>
+                    <span class="text"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="range-slider">
+              <label for="neu-border-width">Border width</label>
+              <input
+                class="range-slider__range"
+                id="neu-border-width"
+                type="range"
+                min="0"
+                max="10"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="neu-border-brightness">Border brightness</label>
+              <input
+                class="range-slider__range"
+                id="neu-border-brightness"
+                type="range"
+                min="-100"
+                max="100"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+          </div>
+          <div class="customizer" id="flat-customizer-in-progress">
+            <h6 class="text-center mt-0">Flat Customizer</h6>
+          </div>
+          <div class="customizer" id="glass-customizer">
+            <h6 class="text-center mt-0">Glass Customizer</h6>
+
+            <div class="range-slider">
+              <label for="glass-transparency">Transparency</label>
+              <input
+                class="range-slider__range"
+                id="glass-transparency"
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="glass-blur">Blur</label>
+              <input
+                class="range-slider__range"
+                id="glass-blur"
+                type="range"
+                min="0"
+                max="30"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+
+            <div class="range-slider">
+              <label for="glass-border-size">Border size</label>
+              <input
+                class="range-slider__range"
+                id="glass-border-size"
+                type="range"
+                min="0"
+                max="10"
+                step="0.1"
+              />
+              <span class="range-slider__value"></span>
+            </div>
+            <div class="background-gallery">
+              <p>Background</p>
+              <div class="row px-4">
+                <div class="col-4 background-item" id="background-1"></div>
+                <div class="col-4 background-item" id="background-2"></div>
+                <div class="col-4 background-item" id="background-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- GLOBAL CUSTOMIZER -->
+        <div id="color-panel">
+          <h6 class="text-center mt-3">Colour</h6>
+          <div class="row px-4">
+            <div class="col-6 p-0">
+              <label for="highlight-color-picker">Highlight</label>
+              <input type="color" id="highlight-color-picker" value="#0000ff" />
+            </div>
+            <div class="col-6 p-0">
+              <label for="scheme-color-picker">Scheme</label>
+              <input type="color" id="scheme-color-picker" value="#f1f3f6" />
+            </div>
+          </div>
+          <div class="row mt-3 px-4 justify-content-center">
+            <label>Classification</label>
+          </div>
+          <div class="row mt-1 px-4">
+            <div class="col-4 p-0">
+              <input
+                class="color-picker"
+                type="color"
+                id="colorfull1-picker"
+                value="#01724b"
+              />
+            </div>
+            <div class="col-4 p-0">
+              <input
+                class="color-picker"
+                type="color"
+                id="colorfull2-picker"
+                value="#b44700"
+              />
+            </div>
+            <div class="col-4 p-0">
+              <input
+                class="color-picker"
+                type="color"
+                id="colorfull3-picker"
+                value="#c40639"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div id="border-panel" class="mt-3 mb-3">
+          <h6 class="text-center">Border</h6>
+
+          <div class="range-slider">
+            <label for="border-radius">Radius</label>
+            <input
+              class="range-slider__range"
+              id="border-radius"
+              type="range"
+              min="0"
+              max="50"
+              step="0.1"
+            />
+            <span class="range-slider__value"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-save-panel">
+        <label class="label">
+          <div class="toggle">
+            <input
+              class="toggle-state"
+              type="checkbox"
+              name="check"
+              value="check"
+            />
+            <div class="indicator"></div>
+          </div>
+          <div class="label-text">Save</div>
+          <!-- TODO: Random button-->
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="setting-button-border hide animate__animated animate__backInLeft">
+    <div class="setting-button">
+      <a href="#" class="cp-toggle"
+        ><i class="fa fa-cog fa-spin" aria-label="Toggle setting button"></i
+      ></a>
+    </div>
+  </div>
+</div>
