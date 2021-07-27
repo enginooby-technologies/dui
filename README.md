@@ -50,5 +50,63 @@ Recommend: use Critical to extract critical CSS rules after this step. The rest 
 <script async src="<framework_folder_path>/built/DynamicTheme.js" type="module"></script>
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This mean the script could be skip if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
-After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.
+After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.  
 5 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/php/setting.php```
+
+## Stylizing
+### Global
++ Colours: scheme, highlight, classification (3 elements).
++ Border radius
++ Font
+### Style Domain
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-7btt">Elements</th>
+    <th class="tg-7btt"></th>
+    <th class="tg-7btt"></th>
+    <th class="tg-7btt"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt"></td>
+    <td class="tg-c3ow">Button</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Flat</td>
+    <td class="tg-c3ow">✔</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Neumorphism</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Glassmorphism</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+</tbody>
+</table>
