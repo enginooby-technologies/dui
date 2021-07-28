@@ -1,10 +1,13 @@
 <?php
-function Radio($id, $value, $label = '')
+
+declare(strict_types=1);
+
+function Radio(string $id, float $value, string $label = '')
 {
         include "_radio.php";
 }
 
-function RangeSlider($id, $label, $min = 0, $max, $step = 0.1, $value = null)
+function RangeSlider(string $id, string $label, float  $min = 0, float $max, float $step = 0.1, float $value = null)
 {
         $value = $value ?? $min;
         include "_range-slider.php";
