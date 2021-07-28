@@ -141,6 +141,7 @@ export const borderRadiusSelectors = formatString([
 
         ".modal-content",
         ".portfolio-item-content::before",
+        ".display-content",
         ".display-content>.container",
         ".testimonial .owl-carousel .owl-dot span",
         ".skill-item",
