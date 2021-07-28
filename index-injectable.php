@@ -27,13 +27,15 @@
                                         Radio(id: 'radio2', value: 2, label: 'Radio 2');
                                         ?>
                                 </div>
+                                <!-- TODO: Strip first empty line in the code block -->
                                 <?= CodeBlock('php', "                                
                                 <div class='radio-group'>
                                         <?=
                                         Radio(id: 'radio1', value: 1, label: 'Radio 1');
                                         Radio(id: 'radio2', value: 2, label: 'Radio 2');
                                         ?>
-                                </div>", 2) ?>
+                                </div>
+                                ", 4); ?>
 
                                 <h5 class="my-4">V - Navigation Components</h5>
                                 <?= CodeBlock('php', '<?= include_once "components/navigation/_index.php";?>') ?>

@@ -1,3 +1,3 @@
 <div class="code-block">
-        <pre><code class="language-<?= $language; ?>"><?= $code; ?></code></pre>
+        <pre><code class="no-whitespace-normalization language-<?= $language; ?>"><?= $code; ?></code></pre>
 </div>

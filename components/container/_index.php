@@ -12,6 +12,7 @@ function CodeBlock(string $language, string $code, int $outdent = 0,  int $curre
         include "_code-block.php";
 }
 
+
 function formatSpecialCharacters(string &$code)
 {
         $code = str_replace("<", "&lt;", $code);

@@ -588,7 +588,7 @@ Init values for dynamic properties to reduce  page load time
 }
 
 .code-block pre code {
-  text-shadow: 0 0.5px #4D4D4D;
+  text-shadow: 0 0.5px black;
   display: block;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;

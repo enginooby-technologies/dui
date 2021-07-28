@@ -239,6 +239,7 @@ function onBaseColorChanged() {
         getColorMutedBaseRule().style.setProperty('color', mutedBaseColor, 'important');
         getBgBaseRule().style.setProperty('background-color', baseColor, 'important');
         $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${baseColor}`);
+        $('.code-block pre code').css('text-shadow', `0 .5px  ${baseColor}`);
         currentStyle.onBaseColorUpdated();
         stylesWithUpdatedBaseColor.length = 0;
         stylesWithUpdatedBaseColor.push(currentStyle.name);
