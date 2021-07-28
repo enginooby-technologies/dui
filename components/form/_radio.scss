@@ -10,6 +10,13 @@
 
         .radio-button-wrapper {
                 display: inline-block;
+
+                input {
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                        visibility: hidden;
+                }
         }
 
         .state {

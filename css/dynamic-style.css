@@ -612,6 +612,13 @@ Init values for dynamic properties to reduce  page load time
   display: inline-block;
 }
 
+.radio-group .radio-button-wrapper input {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
+}
+
 .radio-group .state {
   position: absolute;
   top: 0;
