@@ -126,6 +126,7 @@ export const borderRadiusSelectors = formatString([
     ".portfolio-item-content",
     ".portfolio-icon a",
     ".portfolio-single img",
+    ".injected-section",
     ".modal-content",
     ".portfolio-item-content::before",
     ".display-content>.container",
