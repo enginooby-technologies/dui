@@ -117,7 +117,7 @@ include_once "../components/basic/_index.php";
         </div>
         <div class="setting-button-border hide animate__animated animate__backInLeft">
                 <div class="setting-button ">
-                        <a href="#" class="cp-toggle"><i class="fa fa-cog fa-spin" aria-label="Toggle setting button"></i></a>
+                        <a href="javascript:;" class="cp-toggle"><i class="fa fa-cog fa-spin" aria-label="Toggle setting button"></i></a>
                 </div>
         </div>
 </div>
