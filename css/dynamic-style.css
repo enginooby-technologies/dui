@@ -272,7 +272,7 @@ body {
   -webkit-transition: 0.4s all ease !important;
 }
 
-/* TEXT */
+/* CONTAINER COMPONENTS */
 h1,
 h2,
 h3,
@@ -553,6 +553,52 @@ Init values for dynamic properties to reduce  page load time
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
+.button-border {
+  display: inline-block;
+  padding: 1px;
+  border-radius: 9px;
+  transition: 0.8s all ease !important;
+  -webkit-transition: 0.8s all ease !important;
+}
+
+.button {
+  color: #004b97;
+  border-radius: 9px;
+  padding: 10px 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 22px;
+  font-weight: 500 !important;
+  display: inline-block;
+}
+
+.button i {
+  font-size: 15px;
+}
+
+.code-block {
+  font-style: italic;
+  margin: 10px 0 40px;
+  font-size: 1rem;
+  border-radius: 9px;
+}
+
+.code-block pre {
+  background-color: transparent;
+}
+
+.code-block pre code {
+  text-shadow: 0 0.5px #4D4D4D;
+  display: block;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+/* FONT */
 .radio-title {
   font-size: 1.1rem !important;
   color: black;
@@ -748,33 +794,6 @@ Init values for dynamic properties to reduce  page load time
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
-}
-
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
-.button-border {
-  display: inline-block;
-  padding: 1px;
-  border-radius: 9px;
-  transition: 0.8s all ease !important;
-  -webkit-transition: 0.8s all ease !important;
-}
-
-.button {
-  color: #004b97;
-  border-radius: 9px;
-  padding: 10px 30px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-size: 22px;
-  font-weight: 500 !important;
-  display: inline-block;
-}
-
-.button i {
-  font-size: 15px;
 }
 
 /*-------------------------
@@ -1240,7 +1259,10 @@ Init values for dynamic properties to reduce  page load time
 /* FONT */
 .neu-style {
   /*-------------------------
-      FORMS
+      FORM COMPONENTS
+-------------------------*/
+  /*-------------------------
+      CONTAINER COMPONENTS
 -------------------------*/
   /* TEXT DROP SHADOW */
 }
@@ -1282,6 +1304,11 @@ Init values for dynamic properties to reduce  page load time
 .neu-style .range-slider input[type=range]:focus {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .code-block {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
 .neu-style .button-border,
@@ -1390,8 +1417,15 @@ Init values for dynamic properties to reduce  page load time
 /* FONT */
 .flat-style {
   /*-------------------------
+      CONTAINER COMPONENTS
+-------------------------*/
+  /*-------------------------
       ELEMENTS
 -------------------------*/
+}
+
+.flat-style .code-block {
+  background-color: #e1e1e1;
 }
 
 .flat-style .button {

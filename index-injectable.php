@@ -1,23 +1,45 @@
+        <?php include_once "components/container/_index.php"; ?>
         <?php include_once "components/form/_index.php"; ?>
 
         <div class="display-table">
                 <div class="display-content">
-                        <div class="container">
-                                <h3 class="text-center p-3">Dynamic UI Framework</h3>
-                                <hr><br><br>
-                                <h5>Form</h5>
-                                <?php
-                                RangeSlider(label: 'A cool slider', id: 'slider1', min: 1, max: 100, value: 69);
-                                RangeSlider(label: 'Another cool slider', id: 'slider2', min: 1, max: 100, value: 96);
-                                RangeSlider(label: 'Another cool slider 2', id: 'slider4', min: 4, max: 5, value: 1);
-                                ?>
-                                <br><br>
-                                <div class="radio-group">
-                                        <?php
-                                        Radio(id: 'radio1', value: 1, label: 'Cat');
-                                        Radio(id: 'radio2', value: 2, label: 'Dog');
+                        <div class="container ">
+                                <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
+                                <hr>
+
+                                <h5 class="my-4">I - Basic Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/basic/_index.php";?>') ?>
+
+                                <h5 class="my-4">II - Container Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/container/_index.php";?>') ?>
+
+                                <h5 class="my-4">III - Content Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/content/_index.php";?>') ?>
+
+                                <h5 class="my-4">IV - Form Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>') ?>
+                                <?= RangeSlider(label: 'Slider label', id: 'slider1', min: 1, max: 100, value: 69); ?>
+                                <?= CodeBlock('php', '<?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?>') ?>
+
+                                <div class='radio-group'>
+                                        <?=
+                                        Radio(id: 'radio1', value: 1, label: 'Radio 1');
+                                        Radio(id: 'radio2', value: 2, label: 'Radio 2');
                                         ?>
                                 </div>
+                                <?= CodeBlock('php', "                                
+                                <div class='radio-group'>
+                                        <?=
+                                        Radio(id: 'radio1', value: 1, label: 'Radio 1');
+                                        Radio(id: 'radio2', value: 2, label: 'Radio 2');
+                                        ?>
+                                </div>", 2) ?>
+
+                                <h5 class="my-4">V - Navigation Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/navigation/_index.php";?>') ?>
+
+                                <h5 class="my-4">VI - Advanced Components</h5>
+                                <?= CodeBlock('php', '<?= include_once "components/advanced/_index.php";?>') ?>
                         </div>
                 </div>
         </div>

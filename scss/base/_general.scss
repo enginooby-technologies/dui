@@ -60,7 +60,9 @@ $transition_duration: 0.8s;
         -webkit-transition: 0.4s all ease !important;
 }
 
-/* TEXT */
+/* CONTAINER COMPONENTS */
+
+
 h1,
 h2,
 h3,
@@ -145,6 +147,7 @@ p {
         font-weight: 600;
         margin-bottom: 0.2rem /$fontScale;
 }
+
 
 .max-width-450 {
         max-width: 450px;
