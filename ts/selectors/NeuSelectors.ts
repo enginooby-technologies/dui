@@ -1,6 +1,7 @@
 
 export const backgroundSchemeColorSelectors = [
         ".display-content>.container",
+        ".injected-section .display-content",
         "::-webkit-scrollbar-track",
         "::-webkit-scrollbar-thumb",
         ".setting-button a"

@@ -1,6 +1,6 @@
 <?php
 // TODO: RadioGroup()
-function Radio($id, $value, $label)
+function Radio($id, $value, $label = '')
 {
         echo "
         <div class='radio-button-wrapper'>

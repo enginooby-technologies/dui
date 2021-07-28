@@ -1,6 +1,6 @@
-# Dynamic UI Style Framework
+# Dynamic UI  Framework
 
-For the purpose of effortless transforming any projects using CSS for styling (typically websites) with any UI styles,  while providing the flexibility for customizaztion at the runtime.
+For the purpose of effortless transforming any projects using CSS for styling (typically websites) with any UI styles,  while providing the flexibility for customization at the runtime. The framework manipulates CSSStyleRule to achieve dynamic customization and PHP for component resusing. 
 
 ## Styles   (w/ class names)
 ### Current

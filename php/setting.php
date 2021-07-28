@@ -10,9 +10,9 @@ include "elements/_index.php";
                                 <h6 class="text-center mt-0 mb-3">UI Style</h6>
                                 <!-- TODO: make buttons  equal widths -->
                                 <?php
-                                Button('Flat', 'flat-skin-button');
-                                Button('Neumorphism', 'neu-skin-button');
-                                Button('Glassmorphism', 'glass-skin-button');
+                                Button(label: 'Flat', id: 'flat-skin-button');
+                                Button(label: 'Neumorphism', id: 'neu-skin-button');
+                                Button(label: 'Glassmorphism', id: 'glass-skin-button');
                                 ?>
                         </ul>
 
@@ -22,28 +22,28 @@ include "elements/_index.php";
                                         <div class="customizer" id="neu-customizer">
                                                 <h6 class="text-center mt-0">Neu Customizer</h6>
                                                 <?php
-                                                RangeSlider('Distance X', 'neu-distance-x', 0, 20);
-                                                RangeSlider('Distance Y', 'neu-distance-y', 0, 20);
-                                                RangeSlider('Blur', 'blur', 0, 20);
-                                                RangeSlider('Spread', 'neu-spread', -5, 5);
-                                                RangeSlider('Light intensity', 'light-intensity', 1, 20);
-                                                RangeSlider('Dark intensity', 'dark-intensity', 1, 20);
-                                                RangeSlider('Surface curvature', 'surface-curvature', -20, 20);
+                                                RangeSlider(label: 'Distance X', id: 'neu-distance-x',  max: 20);
+                                                RangeSlider(label: 'Distance Y', id: 'neu-distance-y', max: 20);
+                                                RangeSlider(label: 'Blur', id: 'blur', max: 20);
+                                                RangeSlider(label: 'Spread', id: 'neu-spread', min: -5, max: 5);
+                                                RangeSlider(label: 'Light intensity', id: 'light-intensity', max: 20);
+                                                RangeSlider(label: 'Dark intensity', id: 'dark-intensity', max: 20);
+                                                RangeSlider(label: 'Surface curvature', id: 'surface-curvature', min: -20, max: 20);
                                                 ?>
                                                 <div id="neu-border-style-options">
                                                         <p class="radio-title">Border style</p>
                                                         <div class="radio-group">
                                                                 <?php
-                                                                Radio('solid-border', 0, '');
-                                                                Radio('double-border', 1, '');
-                                                                Radio('dotted-border', 2, '');
-                                                                Radio('dashed-border', 3, '');
+                                                                Radio(id: 'solid-border', value: 0);
+                                                                Radio(id: 'double-border', value: 1);
+                                                                Radio(id: 'dotted-border', value: 2);
+                                                                Radio(id: 'dashed-border', value: 3);
                                                                 ?>
                                                         </div>
                                                 </div>
                                                 <?php
-                                                RangeSlider('Border width', 'neu-border-width', 0, 10);
-                                                RangeSlider('Border brightness', 'neu-border-brightness', -100, 100);
+                                                RangeSlider(label: 'Border width', id: 'neu-border-width',  max: 10);
+                                                RangeSlider(label: 'Border brightness', id: 'neu-border-brightness', min: -100, max: 100);
                                                 ?>
                                         </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
@@ -52,9 +52,9 @@ include "elements/_index.php";
                                         <div class="customizer" id="glass-customizer">
                                                 <h6 class="text-center mt-0"> Glass Customizer</h6>
                                                 <?php
-                                                RangeSlider('Transparency', 'glass-transparency', 0, 1);
-                                                RangeSlider('Blur', 'glass-blur', 0, 30);
-                                                RangeSlider('Border size', 'glass-border-size', 0, 10);
+                                                RangeSlider(label: 'Transparency', id: 'glass-transparency',  max: 1);
+                                                RangeSlider(label: 'Blur', id: 'glass-blur', max: 30);
+                                                RangeSlider(label: 'Border size', id: 'glass-border-size', max: 10);
                                                 ?>
                                                 <div class="background-gallery">
                                                         <p>Background</p>
@@ -98,7 +98,7 @@ include "elements/_index.php";
                                 <div id="border-panel" class="mt-3 mb-3">
                                         <h6 class="text-center "> Border</h6>
                                         <?php
-                                        RangeSlider('Radius', 'border-radius', 0, 50);
+                                        RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
                                         ?>
                                 </div>
                         </div>

@@ -1,17 +1,19 @@
         <?php include "php/forms/_index.php"; ?>
 
+        <h3 class="text-center p-3">Dynamic UI Framework</h3>
+        <hr>
         <div class="display-table">
                 <div class="display-content">
                         <div class="container">
-                                <h5>Forms</h5>
+                                <h5>Form</h5>
                                 <?php
-                                RangeSlider('A cool slider', 'slider1', 1, 100, 1, 69);
+                                RangeSlider(label: 'A cool slider', id: 'slider1', min: 1, max: 100, value: 69);
                                 ?>
                                 <br><br>
                                 <div class="radio-group">
                                         <?php
-                                        Radio('radio1', 1, 'Cat');
-                                        Radio('radio2', 2, 'Dog');
+                                        Radio(id: 'radio1', value: 1, label: 'Cat');
+                                        Radio(id: 'radio2', value: 2, label: 'Dog');
                                         ?>
                                 </div>
                         </div>
