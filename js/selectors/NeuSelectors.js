@@ -56,6 +56,10 @@ export const insetBoxShadowSelectors = [
     "table>tbody>tr:hover",
     ".setting-button:hover",
     ".radio-selection",
+    /*-------------------------
+CONTAINER COMPONENTS
+-------------------------*/
+    ".code-block",
 ];
 export const concaveBoxShadowSelectors = [
     ".skill-box .skillbar",
@@ -68,6 +72,10 @@ export const concaveBoxShadowSelectors = [
     ".toggle",
 ];
 export const borderSelectors = [
+    /*-------------------------
+CONTAINER COMPONENTS
+-------------------------*/
+    ".code-block",
     //COMMON
     ".ELEMENTS",
     ".button",
@@ -97,6 +105,10 @@ export const borderSelectors = [
     ".form-group textarea",
 ];
 export const surfaceSelectors = [
+    /*-------------------------
+CONTAINER COMPONENTS
+-------------------------*/
+    ".code-block",
     ".button",
     ".setting-button",
     ".box-border",

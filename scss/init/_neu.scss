@@ -1,5 +1,7 @@
 @import "../base/_variables";
 
+//TODO: Init border and surface
+
 $distanceX:3;
 $distanceY:3;
 $blur:4;
@@ -70,9 +72,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
       CONTAINER COMPONENTS
 -------------------------*/
         .code-block {
-                        box-shadow: $insetBoxShadow;
-                &:hover{
-                }
+                box-shadow: $insetBoxShadow;
         }
 
         /* TEXT DROP SHADOW */
