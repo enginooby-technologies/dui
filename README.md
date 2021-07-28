@@ -43,7 +43,7 @@ Skip if just use the framework without modification
   <link rel="stylesheet" href="<framework_folder_path>/css/dynamic-style.css" title="dynamic-style" type="text/css">
   ```  
 If the styles are not applied,  the workaroud is importing ```dynamic-style.scss``` or ```dynamic-style.css``` in the project style sheet to compile into one CSS file.  
-3 - Add [class name](#style-names) of the first wanted style to ```<body>```. Thoses class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in init SCSS file.  
+3 - Add [class name](#style-names) of the initial style to ```<body>```. Thoses class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in init SCSS file.  
 Recommend: use Critical to extract critical CSS rules after this step. The rest of styles which are not applied at the first time have many unused rules slowing down page load time.  
 4 - Reference to the framework script:  
 ```  
@@ -58,10 +58,51 @@ After load, the script will AJAX load ```setting.php``` which is a setting panel
 + Colours: scheme, highlight, classification (3 elements).
 + Border radius
 + Font
-### Style Domain
-|       #       | Containers |     |       | Elements |        |       |            |      |          |      |        |            |              |        |     |       |  Forms   |       |          |       |        |                   |
-| :-----------: | :--------: | --- | ----- | :------: | :----: | ----- | ---------- | ---- | -------- | ---- | ------ | ---------- | ------------ | ------ | --- | ----- | :------: | :---: | -------- | ----- | ------ | ----------------- |
-|               |   Image    | Box | Modal |  Alert   | Button | Badge | Breadcrumb | Card | Dropdown | Icon | Navbar | Pagination | Progress bar | Select | Tab | Toast | Checkbox | Input | Textarea | Radio | Switch | Segmented control |
-|     Flat      |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        |       |        | ✓                 |
-|  Neumorphism  |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        | ✓     | ✓      | ✓                 |
-| Glassmorphism |     ✓      | ✓   |       |          |   ✓    | ✓     |            |      |          |      |        |            | ✓            |        |     |       |    ✓     |   ✓   | ✓        |       |        | ✓                 |
++ Background image
++  Particle
+  
+### Basic Components
+
+|               	| Button 	| Badge 	| Divider 	| Spinner 	| Progress bar 	|
+|:-------------:	|:------:	|:-----:	|:-------:	|:-------:	|:------------:	|
+|      Flat     	|    ✓   	|   ✓   	|         	|         	|              	|
+|  Neumorphism  	|    ✓   	|   ✓   	|         	|         	|              	|
+| Glassmorphism 	|    ✓   	|   ✓   	|         	|         	|              	||              	|
+
+
+### Container Components
+> Wrappers for other components
+
+|               	| Table 	| Box 	| Modal 	| Alert 	| Card 	| Carousel 	| Toast 	| Tab 	| Tooltip 	|
+|:-------------:	|:-----:	|:---:	|:-----:	|:-----:	|:----:	|:--------:	|:-----:	|:---:	|:-------:	|
+|      Flat     	|       	|     	|       	|       	|      	|          	|       	|     	|         	|
+|  Neumorphism  	|       	|     	|       	|       	|      	|          	|       	|     	|         	|
+| Glassmorphism 	|       	|     	|       	|       	|      	|          	|       	|     	|         	|
+
+
+### Content Components
+> Messages, media
+
+|               	| Heading 	| Title 	| Paragraph 	| Quote 	| Icon 	| Image 	| Video 	| Iframe 	|
+|:-------------:	|:-------:	|:-----:	|:---------:	|:-----:	|:----:	|:-----:	|:-----:	|:------:	|
+|      Flat     	|         	|       	|           	|       	|      	|       	|       	|        	|
+|  Neumorphism  	|         	|       	|           	|       	|      	|       	|       	|        	|
+| Glassmorphism 	|         	|       	|           	|       	|      	|       	|       	|        	|
+
+### Form Components
+> Taking input to perform actions
+
+|               	| Checkbox 	| File 	| Input 	| Text area 	| Dropdown/Select 	| Multiple select 	| Radio 	| Segmented control 	| Range slider 	| Switch 	| Color picker 	|
+|:-------------:	|:--------:	|:----:	|:-----:	|:---------:	|:---------------:	|:---------------:	|:-----:	|:-----------------:	|:------------:	|:------:	|:------------:	|
+|      Flat     	|     ✓    	|      	|   ✓   	|     ✓     	|                 	|                 	|   ✓   	|         ✓         	|              	|        	|              	|
+|  Neumorphism  	|     ✓    	|      	|   ✓   	|     ✓     	|                 	|                 	|   ✓   	|         ✓         	|       ✓      	|    ✓   	|              	|
+| Glassmorphism 	|          	|      	|       	|           	|                 	|                 	|       	|         ✓         	|              	|        	|              	|
+
+### Navigation Components
+> Navigating on the page
+
+|               	| Navbar 	| Scrollbar 	| Pagination 	| Bread crumb 	|
+|:-------------:	|:------:	|:---------:	|:----------:	|:-----------:	|
+|      Flat     	|        	|           	|            	|             	|
+|  Neumorphism  	|        	|           	|            	|             	|
+| Glassmorphism 	|        	|           	|            	|             	|
