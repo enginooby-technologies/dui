@@ -553,33 +553,6 @@ Init values for dynamic properties to reduce  page load time
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
-.button-border {
-  display: inline-block;
-  padding: 1px;
-  border-radius: 9px;
-  transition: 0.8s all ease !important;
-  -webkit-transition: 0.8s all ease !important;
-}
-
-.button {
-  color: #004b97;
-  border-radius: 9px;
-  padding: 10px 30px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-size: 22px;
-  font-weight: 500 !important;
-  display: inline-block;
-}
-
-.button i {
-  font-size: 15px;
-}
-
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .radio-title {
   font-size: 1.1rem !important;
   color: black;
@@ -775,6 +748,33 @@ Init values for dynamic properties to reduce  page load time
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
+}
+
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+/* FONT */
+.button-border {
+  display: inline-block;
+  padding: 1px;
+  border-radius: 9px;
+  transition: 0.8s all ease !important;
+  -webkit-transition: 0.8s all ease !important;
+}
+
+.button {
+  color: #004b97;
+  border-radius: 9px;
+  padding: 10px 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 22px;
+  font-weight: 500 !important;
+  display: inline-block;
+}
+
+.button i {
+  font-size: 15px;
 }
 
 /*-------------------------
