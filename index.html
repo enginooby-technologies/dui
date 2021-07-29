@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +10,7 @@
 
         <!-- OPTIONAL -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -18,42 +18,76 @@
 </head>
 
 <body class="neu-style">
-        
+                        
         <div class="display-table">
                 <div class="display-content">
-                        <div class="container">
-                                <h5>Forms</h5>
-                                
-        <div class='range-slider'>
-                <label for='slider1'>A cool slider</label>
-                <input class='range-slider__range' id='slider1' type='range' min='1' max='100' step='1'>
+                        <div class="container ">
+                                <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
+                                <hr>
+
+                                <h5 class="my-4">I - Basic Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">II - Container Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">III - Content Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/content/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">IV - Form Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
+</div>                                        <div class='range-slider'>
+                <label for='slider1'>Slider label</label>
+                <input class='range-slider__range' id='slider1' type='range' min='1' max='100' step='0.1' value='69'>
                 <span class='range-slider__value'>69</span>
-        </div>
-                                        <br><br>
-                                <div class="radio-group">
-                                        
-        <div class='radio-button-wrapper'>
-                <input class='state' type='radio' name='app' id='radio1' value='1'>
-                <label class='label' for='radio1'>
-                        <div class='indicator'></div>
-                        <span class='text'>Cat</span>
-                </label>
-        </div>                  
-        
-        <div class='radio-button-wrapper'>
-                <input class='state' type='radio' name='app' id='radio2' value='2'>
-                <label class='label' for='radio2'>
-                        <div class='indicator'></div>
-                        <span class='text'>Dog</span>
-                </label>
-        </div>                  
-                                        </div>
-                        </div>
+        </div>                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?&gt;</code></pre>
+</div>
+                                <div class='radio-group'>
+                                        <div class='radio-button-wrapper'>
+        <input class='state' type='radio' name='app' id='radio1' value='1'>
+        <label class='label' for='radio1'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 1</span>
+        </label>
+</div><div class='radio-button-wrapper'>
+        <input class='state' type='radio' name='app' id='radio2' value='2'>
+        <label class='label' for='radio2'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 2</span>
+        </label>
+</div>                                </div>
+                                <!-- TODO: Strip first empty line in the code block -->
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">
+&lt;div class='radio-group'&gt;
+  &lt;?=
+  Radio(id: 'radio1', value: 1, label: 'Radio 1');
+  Radio(id: 'radio2', value: 2, label: 'Radio 2');
+  ?&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+                                <h5 class="my-4">V - Navigation Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/navigation/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">VI - Advanced Components</h5>
+                                <div class="code-block">
+        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/advanced/_index.php";?&gt;</code></pre>
+</div>                        </div>
                 </div>
         </div>
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js" integrity="sha512-hM0R3pW9UdoNG9T+oIW5pG9ndvy3OKChFfVTKzjyxNW9xrt6vAbD3OeFWdSLQ8mjKSgd9dSO3RXn3tojQtiA8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-xCfKr8zIONbip3Q1XG/u5x40hoJ0/DtP1bxyMEi0GWzUFoUffE+Dfw1Br8j55RRt9qG7bGKsh+4tSb1CvFHPSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js" integrity="sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script async src="js/DynamicTheme.js" type="module"></script>
         <!-- Fallback for CSS async loading when JS is disabled, generated by Critical npm-->

@@ -1,6 +1,6 @@
 <?php
-include_once "../components/form/_index.php";
-include_once "../components/basic/_index.php";
+include_once "components/form/_index.php";
+include_once "components/basic/_index.php";
 ?>
 
 <div id="setting-section" class="setting-section">
