@@ -24,7 +24,7 @@ function Radio(string $id = null, float $value, string $label, string $group): s
 
 function RangeSlider(string $id = null, string $label, float  $min = 0, float $max, float $step = 0.1, float $value = null)
 {
-        $id = $id ?? formatToId($label);
+        $id = $id ?? "range-slider_" . formatToId($label);
         $value = $value ?? $min;
 
         ob_start();
@@ -35,7 +35,7 @@ function RangeSlider(string $id = null, string $label, float  $min = 0, float $m
 //TODO: use string type for value to cover more cases
 function Toggle(string $label, string $id = null, string $name = null, float $value = 0)
 {
-        $id = $id ?? formatToId($label);
+        $id = $id ?? "toggle_" . formatToId($label);
         $name = $name ?? formatToId($label);
 
         ob_start();
@@ -45,7 +45,7 @@ function Toggle(string $label, string $id = null, string $name = null, float $va
 
 function Checkbox(string $name, string $id = null, string $value = null)
 {
-        $id = $id ?? formatToId($name);
+        $id = $id ?? "checkbox_" . formatToId($name);
         $value = $value ?? formatToId($name);
 
         ob_start();

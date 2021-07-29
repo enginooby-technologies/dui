@@ -42,8 +42,8 @@
         <pre><code class="language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
 </div><div class=" d-flex justify-content-center">
                                 <div class='range-slider'>
-                <label for='dynamic-slider'>Dynamic slider</label>
-                <input class='range-slider__range' id='dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
+                <label for='range-slider_dynamic-slider'>Dynamic slider</label>
+                <input class='range-slider__range' id='range-slider_dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
                 <span class='range-slider__value'>0</span>
         </div>        </div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
@@ -69,7 +69,7 @@ echo Radio(label: "Radio 2", value: 2, group: "group-1");
 </code></pre>
 </div><div class=" d-flex justify-content-center">
                         <label class="toggle-label">
-        <div class="toggle" id="dynamic-toggle">
+        <div class="toggle" id="toggle_dynamic-toggle">
                 <input class="toggle-state" type="checkbox" name="dynamic-toggle" value="0" />
                 <div class="indicator"></div>
         </div>
@@ -80,8 +80,8 @@ echo Toggle(label: "Dynamic toggle");
 </code></pre>
 </div><div class=" d-flex justify-content-center">
                         <div class="checkbox">
-        <input id="dynamic-checkbox" type="checkbox" value="dynamic-checkbox">
-        <label for="dynamic-checkbox">
+        <input id="checkbox_dynamic-checkbox" type="checkbox" value="dynamic-checkbox">
+        <label for="checkbox_dynamic-checkbox">
                 <i class="fas fa-check"></i>
         </label>
         <div class="name">Dynamic checkbox</div>
