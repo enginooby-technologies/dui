@@ -21,6 +21,7 @@
                                 <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
 
                                 Flexbox(
+                                        null,
                                         RangeSlider(label: "Dynamic slider",  max: 100)
                                 );
                                 CodeBlock('php', '// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
@@ -28,8 +29,9 @@
                                 ', 4);
 
                                 Flexbox(
-                                        Radio(label: "Radio 1", value: 1, group: "group-1") .
-                                                Radio(label: "Radio 2", value: 2, group: "group-1"),
+                                        null,
+                                        Radio(label: "Radio 1", value: 1, group: "group-1"),
+                                        Radio(label: "Radio 2", value: 2, group: "group-1"),
                                 );
                                 CodeBlock('php', '// optional params: string $id = format($label)                                
                                         echo Radio(label: "Radio 1", value: 1, group: "group-1");
@@ -37,6 +39,7 @@
                                         ', 5);
 
                                 Flexbox(
+                                        null,
                                         Toggle(label: "Dynamic toggle")
                                 );
                                 CodeBlock('php', '// optional params: string $id = $name = format($label), float $value = 0
@@ -44,6 +47,7 @@
                                 ', 4);
 
                                 Flexbox(
+                                        null,
                                         Checkbox(name: "Dynamic checkbox")
                                 );
                                 CodeBlock('php', '// optional params: string $id = $value = format($name)

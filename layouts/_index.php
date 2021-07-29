@@ -1,14 +1,15 @@
 <?php
 
 declare(strict_types=1);
-// https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content
-include_once "FlexboxOptions.php";
+// https://getbootstrap.com/docs/4.0/utilities/flex
+include_once "FlexboxOption.php";
 
-//CONSIDER: use variadic param for $component
-//, downside: must use ...$component  as final param -> must to specify even optional params each invoke
-function Flexbox(string $components, JustifyContent $justifyContent = null, Direction $direction = null)
+// usage 1: Flexbox(null, $component1, $component2...); // pass null option
+// usage 2: Flexbox(components: $component1.$component2....) // use named arg with only 1 param - combination of variadic params
+// usage 3: Flexbox(new FlexboxOption(Direction::Coloumn()), $component1, $component2...); // pass any number of options for FlexboxOption
+function Flexbox(FlexboxOption $option = null, string ...$components)
 {
-        $justifyContent = $justifyContent ?? JustifyContent::Center();
-        $direction = $direction ?? Direction::Row();
+        $justifyContent = $option?->justifyContent ?? JustifyContent::Center();
+        $direction = $option?->direction ?? Direction::Row();
         include "_flexbox.php";
 }

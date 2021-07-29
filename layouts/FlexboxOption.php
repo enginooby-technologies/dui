@@ -4,6 +4,15 @@ use MyCLabs\Enum\Enum;
 
 include dirname(__FILE__) . "/../Enum.php";
 
+class FlexboxOption
+{
+        public function __construct(
+                // can not init default enum value => init when create flexbox instead 
+                public ?JustifyContent $justifyContent = null,
+                public ?Direction $direction = null,
+        ) {
+        }
+}
 final class JustifyContent extends Enum
 {
         const Start = "start";
