@@ -12,3 +12,11 @@ final class Justify extends Enum
         const Between = "between";
         const Around = "around";
 }
+
+final class Direction extends Enum
+{
+        const Row = "row";
+        const RowReverse = "row-reverse";
+        const Column = "column";
+        const ColumnReverse = "column-reverse";
+}

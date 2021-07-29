@@ -40,52 +40,52 @@
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <div class="code-block">
         <pre><code class="language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
-</div><div class=" d-flex justify-content-center">
-                                <div class='range-slider'>
+</div><div class=" d-flex justify-content-center flex-row">
+                <div class='range-slider'>
                 <label for='range-slider_dynamic-slider'>Dynamic slider</label>
                 <input class='range-slider__range' id='range-slider_dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
                 <span class='range-slider__value'>0</span>
-        </div>        </div><div class="code-block">
+        </div></div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
 echo RangeSlider(label: "Dynamic slider",  max: 100);
 </code></pre>
-</div><div class=" d-flex justify-content-center">
-                        <div class='dui-radio'>
+</div><div class=" d-flex justify-content-center flex-row">
+        <div class='dui-radio'>
         <input class='state' type='radio' name='group-1' id='radio-1' value='1'>
         <label class='label' for='radio-1'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 1</span>
         </label>
-</div>                        <div class='dui-radio'>
+</div><div class='dui-radio'>
         <input class='state' type='radio' name='group-1' id='radio-2' value='2'>
         <label class='label' for='radio-2'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 2</span>
         </label>
-</div>        </div><div class="code-block">
+</div></div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = format($label)        
 echo Radio(label: "Radio 1", value: 1, group: "group-1");
 echo Radio(label: "Radio 2", value: 2, group: "group-1");
 </code></pre>
-</div><div class=" d-flex justify-content-center">
-                        <label class="toggle-label">
+</div><div class=" d-flex justify-content-center flex-row">
+        <label class="toggle-label">
         <div class="toggle" id="toggle_dynamic-toggle">
                 <input class="toggle-state" type="checkbox" name="dynamic-toggle" value="0" />
                 <div class="indicator"></div>
         </div>
         <div class="label-text">Dynamic toggle</div>
-</label>        </div><div class="code-block">
+</label></div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = $name = format($label), float $value = 0
 echo Toggle(label: "Dynamic toggle");
 </code></pre>
-</div><div class=" d-flex justify-content-center">
-                        <div class="checkbox">
+</div><div class=" d-flex justify-content-center flex-row">
+        <div class="checkbox">
         <input id="checkbox_dynamic-checkbox" type="checkbox" value="dynamic-checkbox">
         <label for="checkbox_dynamic-checkbox">
                 <i class="fas fa-check"></i>
         </label>
         <div class="name">Dynamic checkbox</div>
-</div>        </div><div class="code-block">
+</div></div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = $value = format($name)
 echo Checkbox(name:"Dynamic checkbox");
 </code></pre>
