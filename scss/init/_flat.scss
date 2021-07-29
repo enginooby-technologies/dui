@@ -6,12 +6,14 @@ $darkenHighlightColor:#033669; // hover, active button
 $contrastHighlightColor: #EBEBEB;
 
 .flat-style {
-     /*-------------------------
+
+        /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
-     .code-block {
-             background-color: $lightenSchemeColor;
-     }
+        .code-block {
+                background-color: $lightenSchemeColor;
+        }
+
         /*-------------------------
       ELEMENTS
 -------------------------*/

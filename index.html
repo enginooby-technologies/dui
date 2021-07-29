@@ -73,7 +73,17 @@ Radio(label: "Radio 2", value: 2, group: "group-1");
         <div class="label-text">Dynamic toggle</div>
 </label><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = $name = format($label), float $value = 0
-Toggle("Dynamic toggle");
+Toggle(label: "Dynamic toggle");
+</code></pre>
+</div><div class="checkbox">
+        <input id="dynamic-checkbox" type="checkbox" value="dynamic-checkbox">
+        <label for="dynamic-checkbox">
+                <i class="fas fa-check"></i>
+        </label>
+        <div class="name">Dynamic checkbox</div>
+</div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = $value = format($name)
+Checkbox(name:"Dynamic checkbox");
 </code></pre>
 </div>
                                 <h5 class="my-4">V - Navigation Components</h5>

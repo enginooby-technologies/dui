@@ -1,0 +1,6 @@
+//content: text, i...
+@mixin center_content_in_div() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}

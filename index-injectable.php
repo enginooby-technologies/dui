@@ -31,9 +31,14 @@
                                 Radio(label: "Radio 2", value: 2, group: "group-1");
                                 ', 4);
 
-                                Toggle("Dynamic toggle");
+                                Toggle(label: "Dynamic toggle");
                                 CodeBlock('php', '// optional params: string $id = $name = format($label), float $value = 0
-                                Toggle("Dynamic toggle");
+                                Toggle(label: "Dynamic toggle");
+                                ', 4);
+
+                                Checkbox(name: "Dynamic checkbox");
+                                CodeBlock('php', '// optional params: string $id = $value = format($name)
+                                Checkbox(name:"Dynamic checkbox");
                                 ', 4);
                                 ?>
 
