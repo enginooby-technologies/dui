@@ -18,7 +18,35 @@
                                 <div id="customizer-panel">
                                         <div class="customizer" id="neu-customizer">
                                                 <h6 class="text-center mt-0">Neu Customizer</h6>
-                                                
+                                                        <div class='range-slider'>
+                <label for='neu-distance-x'>Distance X</label>
+                <input class='range-slider__range' id='neu-distance-x' type='range' min='0' max='20' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='neu-distance-y'>Distance Y</label>
+                <input class='range-slider__range' id='neu-distance-y' type='range' min='0' max='20' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='blur'>Blur</label>
+                <input class='range-slider__range' id='blur' type='range' min='0' max='20' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='neu-spread'>Spread</label>
+                <input class='range-slider__range' id='neu-spread' type='range' min='-5' max='5' step='0.1' value='-5'>
+                <span class='range-slider__value'>-5</span>
+        </div>        <div class='range-slider'>
+                <label for='light-intensity'>Light intensity</label>
+                <input class='range-slider__range' id='light-intensity' type='range' min='0' max='20' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='dark-intensity'>Dark intensity</label>
+                <input class='range-slider__range' id='dark-intensity' type='range' min='0' max='20' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='surface-curvature'>Surface curvature</label>
+                <input class='range-slider__range' id='surface-curvature' type='range' min='-20' max='20' step='0.1' value='-20'>
+                <span class='range-slider__value'>-20</span>
+        </div>
                                                 <p>Border style</p>
                                                 <div class="radio-group-wrapper">
                                                         <div class='dui-radio'>
@@ -27,14 +55,52 @@
                 <div class='indicator'></div>
                 <span class='text'></span>
         </label>
+</div><div class='dui-radio'>
+        <input class='state' type='radio' name='neu-border-style' id='double-border' value='1'>
+        <label class='label' for='double-border'>
+                <div class='indicator'></div>
+                <span class='text'></span>
+        </label>
+</div><div class='dui-radio'>
+        <input class='state' type='radio' name='neu-border-style' id='dotted-border' value='2'>
+        <label class='label' for='dotted-border'>
+                <div class='indicator'></div>
+                <span class='text'></span>
+        </label>
+</div><div class='dui-radio'>
+        <input class='state' type='radio' name='neu-border-style' id='dashed-border' value='3'>
+        <label class='label' for='dashed-border'>
+                <div class='indicator'></div>
+                <span class='text'></span>
+        </label>
 </div>                                                </div>
-                                                                                        </div>
+                                                        <div class='range-slider'>
+                <label for='neu-border-width'>Border width</label>
+                <input class='range-slider__range' id='neu-border-width' type='range' min='0' max='10' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='neu-border-brightness'>Border brightness</label>
+                <input class='range-slider__range' id='neu-border-brightness' type='range' min='-100' max='100' step='0.1' value='-100'>
+                <span class='range-slider__value'>-100</span>
+        </div>                                        </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
                                                 <h6 class="text-center mt-0"> Flat Customizer</h6>
                                         </div>
                                         <div class="customizer" id="glass-customizer">
                                                 <h6 class="text-center mt-0"> Glass Customizer</h6>
-                                                                                                <div class="background-gallery">
+                                                        <div class='range-slider'>
+                <label for='glass-transparency'>Transparency</label>
+                <input class='range-slider__range' id='glass-transparency' type='range' min='0' max='1' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='glass-blur'>Blur</label>
+                <input class='range-slider__range' id='glass-blur' type='range' min='0' max='30' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        <div class='range-slider'>
+                <label for='glass-border-size'>Border size</label>
+                <input class='range-slider__range' id='glass-border-size' type='range' min='0' max='10' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>                                                <div class="background-gallery">
                                                         <p>Background</p>
                                                         <div class="row px-4">
                                                                 <div class="col-4 background-item " id="background-1"> </div>
@@ -75,7 +141,11 @@
 
                                 <div id="border-panel" class="mt-3 mb-3">
                                         <h6 class="text-center "> Border</h6>
-                                                                        </div>
+                                                <div class='range-slider'>
+                <label for='border-radius'>Radius</label>
+                <input class='range-slider__range' id='border-radius' type='range' min='0' max='50' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>                                </div>
                         </div>
 
                         <div class="setting-save-panel">

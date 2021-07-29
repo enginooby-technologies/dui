@@ -22,27 +22,28 @@ include_once "components/basic/_index.php";
                                         <div class="customizer" id="neu-customizer">
                                                 <h6 class="text-center mt-0">Neu Customizer</h6>
                                                 <?php
-                                                RangeSlider(label: 'Distance X', id: 'neu-distance-x',  max: 20);
-                                                RangeSlider(label: 'Distance Y', id: 'neu-distance-y', max: 20);
-                                                RangeSlider(label: 'Blur', id: 'blur', max: 20);
-                                                RangeSlider(label: 'Spread', id: 'neu-spread', min: -5, max: 5);
-                                                RangeSlider(label: 'Light intensity', id: 'light-intensity', max: 20);
-                                                RangeSlider(label: 'Dark intensity', id: 'dark-intensity', max: 20);
-                                                RangeSlider(label: 'Surface curvature', id: 'surface-curvature', min: -20, max: 20);
+                                                // NOTICE: echo can only used in "<?php", not "<=?"
+                                                echo RangeSlider(label: 'Distance X', id: 'neu-distance-x',  max: 20);
+                                                echo  RangeSlider(label: 'Distance Y', id: 'neu-distance-y', max: 20);
+                                                echo RangeSlider(label: 'Blur', id: 'blur', max: 20);
+                                                echo RangeSlider(label: 'Spread', id: 'neu-spread', min: -5, max: 5);
+                                                echo RangeSlider(label: 'Light intensity', id: 'light-intensity', max: 20);
+                                                echo RangeSlider(label: 'Dark intensity', id: 'dark-intensity', max: 20);
+                                                echo RangeSlider(label: 'Surface curvature', id: 'surface-curvature', min: -20, max: 20);
                                                 ?>
 
                                                 <p>Border style</p>
                                                 <div class="radio-group-wrapper">
-                                                        <?=
-                                                        Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '');
-                                                        Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '');
-                                                        Radio(id: 'dotted-border', value: 2, group: 'neu-border-style', label: '');
-                                                        Radio(id: 'dashed-border', value: 3, group: 'neu-border-style', label: '');
+                                                        <?php
+                                                        echo Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '');
+                                                        echo Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '');
+                                                        echo Radio(id: 'dotted-border', value: 2, group: 'neu-border-style', label: '');
+                                                        echo Radio(id: 'dashed-border', value: 3, group: 'neu-border-style', label: '');
                                                         ?>
                                                 </div>
                                                 <?php
-                                                RangeSlider(label: 'Border width', id: 'neu-border-width',  max: 10);
-                                                RangeSlider(label: 'Border brightness', id: 'neu-border-brightness', min: -100, max: 100);
+                                                echo RangeSlider(label: 'Border width', id: 'neu-border-width',  max: 10);
+                                                echo RangeSlider(label: 'Border brightness', id: 'neu-border-brightness', min: -100, max: 100);
                                                 ?>
                                         </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
@@ -51,9 +52,9 @@ include_once "components/basic/_index.php";
                                         <div class="customizer" id="glass-customizer">
                                                 <h6 class="text-center mt-0"> Glass Customizer</h6>
                                                 <?php
-                                                RangeSlider(label: 'Transparency', id: 'glass-transparency',  max: 1);
-                                                RangeSlider(label: 'Blur', id: 'glass-blur', max: 30);
-                                                RangeSlider(label: 'Border size', id: 'glass-border-size', max: 10);
+                                                echo RangeSlider(label: 'Transparency', id: 'glass-transparency',  max: 1);
+                                                echo RangeSlider(label: 'Blur', id: 'glass-blur', max: 30);
+                                                echo RangeSlider(label: 'Border size', id: 'glass-border-size', max: 10);
                                                 ?>
                                                 <div class="background-gallery">
                                                         <p>Background</p>
@@ -97,7 +98,7 @@ include_once "components/basic/_index.php";
                                 <div id="border-panel" class="mt-3 mb-3">
                                         <h6 class="text-center "> Border</h6>
                                         <?php
-                                        RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
+                                        echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
                                         ?>
                                 </div>
                         </div>
