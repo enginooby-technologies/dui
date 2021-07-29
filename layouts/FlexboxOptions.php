@@ -4,7 +4,7 @@ use MyCLabs\Enum\Enum;
 
 include dirname(__FILE__) . "/../Enum.php";
 
-final class Justify extends Enum
+final class JustifyContent extends Enum
 {
         const Start = "start";
         const End = "end";

@@ -29,7 +29,7 @@
 
                                 Flexbox(
                                         Radio(label: "Radio 1", value: 1, group: "group-1") .
-                                                Radio(label: "Radio 2", value: 2, group: "group-1")
+                                                Radio(label: "Radio 2", value: 2, group: "group-1"),
                                 );
                                 CodeBlock('php', '// optional params: string $id = format($label)                                
                                         echo Radio(label: "Radio 1", value: 1, group: "group-1");

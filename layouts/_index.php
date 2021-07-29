@@ -6,9 +6,9 @@ include_once "FlexboxOptions.php";
 
 //CONSIDER: use variadic param for $component
 //, downside: must use ...$component  as final param -> must to specify even optional params each invoke
-function Flexbox(string $components, Justify $justify = null, Direction $direction = null)
+function Flexbox(string $components, JustifyContent $justifyContent = null, Direction $direction = null)
 {
-        $justify = $justify ?? Justify::Center();
+        $justifyContent = $justifyContent ?? JustifyContent::Center();
         $direction = $direction ?? Direction::Row();
         include "_flexbox.php";
 }

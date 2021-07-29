@@ -1,3 +1,3 @@
-<div class=" d-flex justify-content-<?= $justify ?> flex-<?= $direction ?>">
+<div class=" d-flex justify-content-<?= $justifyContent ?> flex-<?= $direction ?>">
         <?php echo $components; ?>
 </div>
