@@ -101,8 +101,9 @@ function updateChangesFromLastStyle() {
 
 loadSettingPanel(settingFilePath)
         // ad-hoc solution to load file for the demo page this framework
-        // .fail(() => loadSettingPanel('setting.html'))
-        .fail(() => loadSettingPanel('php/setting.php'))
+        .fail(() => loadSettingPanel('setting.php')
+                .fail(() => loadSettingPanel('setting.html')))
+
 
 function loadSettingPanel(filePath: string) {
         return $.get(filePath, function (data) {
