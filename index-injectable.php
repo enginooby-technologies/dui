@@ -21,34 +21,15 @@
                                 <?= RangeSlider(label: 'Slider label', id: 'slider1', min: 1, max: 100, value: 69); ?>
                                 <?= CodeBlock('php', '<?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?>') ?>
 
-                                <div class='radio-group'>
-                                        <?=
-                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
-                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
-                                        ?>
-                                </div>
-                                <!-- TODO: Strip first empty line in the code block -->
-                                <?= CodeBlock('php', "// warp inside HTML tag group                                
-                                <div class='radio-group'>
-                                        <?=
-                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
-                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
-                                        ?>
-                                </div>
-                                ", 4); ?>
-
                                 <?=
-                                RadioGroup(
-                                        new Radio('radio2-1', 'Radio 1', '1', 'group-2'),
-                                        new Radio('radio2-2', 'Radio 2', '2', 'group-2')
-                                )
+                                Radio(label: 'Radio 1', id: 'radio1-1', value: 1, group: 'group-1');
+                                Radio(label: 'Radio 2', id: 'radio1-2', value: 2, group: 'group-1');
                                 ?>
-                                <?= CodeBlock('php', "// use pure PHP function                                
+                                <!-- TODO: Strip first empty line in the code block -->
+                                <?= CodeBlock('php', "//                              
                                 <?=
-                                RadioGroup(
-                                        new Radio('radio3', 'Radio 1', '1', 'group-2'),
-                                        new Radio('radio4', 'Radio 2', '2', 'group-2')
-                                )
+                                Radio(label: 'Radio 1', id: 'radio1-1', value: 1, group: 'group-1');
+                                Radio(label: 'Radio 2', id: 'radio1-2', value: 2, group: 'group-1');
                                 ?>
                                 ", 4); ?>
 

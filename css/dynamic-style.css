@@ -23,8 +23,24 @@ Init values for dynamic properties to reduce  page load time
   padding: 8px 20px;
 }
 
-.setting-section .setting-panel .radio-group {
+.setting-section .setting-panel .radio-group-wrapper {
   padding: 1px 64px;
+}
+
+.setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
+  border: 4px solid #4D4D4D;
+}
+
+.setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
+  border: 4px double #4D4D4D;
+}
+
+.setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
+  border: 4px dotted #4D4D4D;
+}
+
+.setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
+  border: 4px dashed #4D4D4D;
 }
 
 .setting-panel.hide {
@@ -590,6 +606,7 @@ Init values for dynamic properties to reduce  page load time
 .code-block pre code {
   text-shadow: 0 0.5px black;
   display: block;
+  color: gray;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
@@ -599,27 +616,18 @@ Init values for dynamic properties to reduce  page load time
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
-.radio-title {
-  font-size: 1.1rem !important;
-  color: black;
-}
-
-.radio-group {
-  padding-bottom: 0;
-}
-
-.radio-group .radio-button-wrapper {
+.radio-wrapper {
   display: inline-block;
 }
 
-.radio-group .radio-button-wrapper input {
+.radio-wrapper input {
   position: absolute;
   top: -9999px;
   left: -9999px;
   visibility: hidden;
 }
 
-.radio-group .state {
+.radio-wrapper .state {
   position: absolute;
   top: 0;
   right: 0;
@@ -627,16 +635,19 @@ Init values for dynamic properties to reduce  page load time
   pointer-events: none;
 }
 
-.radio-group .label {
+.radio-wrapper .label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  color: #4D4D4D;
+  color: black;
   font-size: 1.1rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.radio-group .text {
+.radio-wrapper .text {
   -webkit-transition: -webkit-transform .2s ease-out;
   transition: -webkit-transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -646,7 +657,7 @@ Init values for dynamic properties to reduce  page load time
   padding: 5px 15px;
 }
 
-.radio-group .indicator {
+.radio-wrapper .indicator {
   position: relative;
   height: 25px;
   width: 25px;
@@ -654,8 +665,8 @@ Init values for dynamic properties to reduce  page load time
   overflow: hidden;
 }
 
-.radio-group .indicator::before,
-.radio-group .indicator::after {
+.radio-wrapper .indicator::before,
+.radio-wrapper .indicator::after {
   content: '';
   position: absolute;
   top: 10%;
@@ -665,7 +676,7 @@ Init values for dynamic properties to reduce  page load time
   border-radius: 50%;
 }
 
-.radio-group .indicator::after {
+.radio-wrapper .indicator::after {
   background-color: #D4D4D4;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
@@ -675,41 +686,25 @@ Init values for dynamic properties to reduce  page load time
   transition: opacity .25s ease-in-out, transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
 }
 
-.radio-group .state:checked ~ .label .indicator::after,
-.radio-group .label:hover .indicator::after {
+.radio-wrapper .state:checked ~ .label .indicator::after,
+.radio-wrapper .label:hover .indicator::after {
   -webkit-transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
           transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
   opacity: 0;
 }
 
-.radio-group .state:checked ~ .label .text {
+.radio-wrapper .state:checked ~ .label .text {
   color: #004b97;
 }
 
-.radio-group .state:focus ~ .label .text {
+.radio-wrapper .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
           transform: translate3d(8px, 0, 0);
   color: #004b97;
 }
 
-.radio-group .label:hover .text {
+.radio-wrapper .label:hover .text {
   color: #004b97;
-}
-
-#solid-border ~ label .text {
-  border: 4px solid #4D4D4D;
-}
-
-#double-border ~ label .text {
-  border: 4px double #4D4D4D;
-}
-
-#dotted-border ~ label .text {
-  border: 4px dotted #4D4D4D;
-}
-
-#dashed-border ~ label .text {
-  border: 4px dashed #4D4D4D;
 }
 
 /*
@@ -724,7 +719,7 @@ Init values for dynamic properties to reduce  page load time
 
 .range-slider label {
   border-radius: 9px;
-  color: #4D4D4D;
+  color: black;
   font-size: 1.1rem !important;
   display: block;
   margin: 0px 0 0px;
@@ -1224,17 +1219,17 @@ table,
   color: #4D4D4D;
 }
 
-.flat-style .radio-group .label,
+.flat-style .radio-wrapper .label,
 .flat-style .checkbox label,
 .flat-style i,
 .flat-style .overlay-menu-toggler,
 .flat-style input[type=color],
-.neu-style .radio-group .label,
+.neu-style .radio-wrapper .label,
 .neu-style .checkbox label,
 .neu-style i,
 .neu-style .overlay-menu-toggler,
 .neu-style input[type=color],
-.glass-style .radio-group .label,
+.glass-style .radio-wrapper .label,
 .glass-style .checkbox label,
 .glass-style i,
 .glass-style .overlay-menu-toggler,
@@ -1242,17 +1237,17 @@ table,
   cursor: pointer;
 }
 
-.flat-style .radio-group .label *,
+.flat-style .radio-wrapper .label *,
 .flat-style .checkbox label *,
 .flat-style i *,
 .flat-style .overlay-menu-toggler *,
 .flat-style input[type=color] *,
-.neu-style .radio-group .label *,
+.neu-style .radio-wrapper .label *,
 .neu-style .checkbox label *,
 .neu-style i *,
 .neu-style .overlay-menu-toggler *,
 .neu-style input[type=color] *,
-.glass-style .radio-group .label *,
+.glass-style .radio-wrapper .label *,
 .glass-style .checkbox label *,
 .glass-style i *,
 .glass-style .overlay-menu-toggler *,
@@ -1274,17 +1269,17 @@ Init values for dynamic properties to reduce  page load time
   /* TEXT DROP SHADOW */
 }
 
-.neu-style .radio-group .indicator {
+.neu-style .radio-wrapper .indicator {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
-.neu-style .radio-group .indicator::before {
+.neu-style .radio-wrapper .indicator::before {
   -webkit-box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
           box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
 }
 
-.neu-style .radio-group .indicator::after {
+.neu-style .radio-wrapper .indicator::after {
   -webkit-box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
           box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
 }

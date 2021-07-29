@@ -16,6 +16,7 @@ $panelWidth:180px;
         width: $panelWidth;
         left: 55px;
 
+        // BUTTON-RADIO 
         .radio-button-group .button-border {
 
                 display: inline-block;
@@ -25,8 +26,26 @@ $panelWidth:180px;
                 }
         }
 
-        .radio-group {
+        // RADIO
+        .radio-group-wrapper {
                 padding: 1px 64px;
+                $borderWidthDemo: 4px;
+
+                #solid-border~label .text {
+                        border: $borderWidthDemo solid $mutedBaseColor;
+                }
+
+                #double-border~label .text {
+                        border: $borderWidthDemo double $mutedBaseColor;
+                }
+
+                #dotted-border~label .text {
+                        border: $borderWidthDemo dotted $mutedBaseColor;
+                }
+
+                #dashed-border~label .text {
+                        border: $borderWidthDemo dashed $mutedBaseColor;
+                }
         }
 }
 

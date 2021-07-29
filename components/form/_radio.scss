@@ -1,22 +1,13 @@
 @import "../../scss/base/variables";
 
-.radio-title {
-        font-size: 1.1rem !important;
-        color: $baseColor;
-}
+.radio-wrapper {
+        display: inline-block;
 
-.radio-group {
-        padding-bottom: 0;
-
-        .radio-button-wrapper {
-                display: inline-block;
-
-                input {
-                        position: absolute;
-                        top: -9999px;
-                        left: -9999px;
-                        visibility: hidden;
-                }
+        input {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+                visibility: hidden;
         }
 
         .state {
@@ -30,8 +21,9 @@
         .label {
                 align-items: center;
                 cursor: pointer;
-                color: $mutedBaseColor;
+                color: $baseColor;
                 font-size: 1.1rem;
+                display: inline-flex;
         }
 
         .text {
@@ -60,8 +52,6 @@
                 border-radius: 50%;
         }
 
-        .indicator::before {}
-
         .indicator::after {
                 background-color: $schemeColor;
                 transform: scale3d(1, 1, 1);
@@ -86,22 +76,4 @@
         .label:hover .text {
                 color: $highlightColor;
         }
-}
-
-$borderWidthDemo:4px;
-
-#solid-border~label .text {
-        border: $borderWidthDemo solid $mutedBaseColor;
-}
-
-#double-border~label .text {
-        border: $borderWidthDemo double $mutedBaseColor;
-}
-
-#dotted-border~label .text {
-        border: $borderWidthDemo dotted $mutedBaseColor;
-}
-
-#dashed-border~label .text {
-        border: $borderWidthDemo dashed $mutedBaseColor;
 }

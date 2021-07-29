@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Dynamic Style</title>
+        <title>Dynamic Framework</title>
         <meta charset="UTF-8" />
         <meta name="author" content="enginoobz" />
         <meta name="description" content="Demo page for Dynamic Style Framework" />

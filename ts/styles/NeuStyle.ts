@@ -61,8 +61,8 @@ export class NeuStyle extends Style {
         getThumbScrollbarBoxShadowRule = () => this.thumbScrollbarBoxShadowRule ?? (this.thumbScrollbarBoxShadowRule = this.insertEmptyRule(['::-webkit-scrollbar-thumb']));
         getBorderRule = () => this.borderRule ?? (this.borderRule = this.insertEmptyRule(NeuSelectors.borderSelectors));
         getSurfaceRule = () => this.surfaceRule ?? (this.surfaceRule = this.insertEmptyRule(NeuSelectors.surfaceSelectors));
-        getRadioIndicatorUncheckedRule = () => this.radioIndicatorUncheckedRule ?? (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.radio-group .indicator::before']));
-        getRadioIndicatorCheckedRule = () => this.radioIndicatorCheckedRule ?? (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.radio-group .indicator::after']));
+        getRadioIndicatorUncheckedRule = () => this.radioIndicatorUncheckedRule ?? (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.radio-wrapper .indicator::before']));
+        getRadioIndicatorCheckedRule = () => this.radioIndicatorCheckedRule ?? (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.radio-wrapper .indicator::after']));
 
         init() {
                 this.initRangeSliders();
@@ -150,7 +150,7 @@ export class NeuStyle extends Style {
 
         onBaseColorUpdated(): void {
                 this.getColorMutedBaseColorRule().style.setProperty('color', DynamicTheme.mutedBaseColor, 'important');
-                $('.radio-group label .text').each((index, element) => {
+                $('.radio-wrapper label .text').each((index, element) => {
                         element.style.borderColor = DynamicTheme.mutedBaseColor;
                 });
         }

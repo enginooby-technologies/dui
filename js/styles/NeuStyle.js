@@ -44,8 +44,8 @@ export class NeuStyle extends Style {
         this.getThumbScrollbarBoxShadowRule = () => { var _a; return (_a = this.thumbScrollbarBoxShadowRule) !== null && _a !== void 0 ? _a : (this.thumbScrollbarBoxShadowRule = this.insertEmptyRule(['::-webkit-scrollbar-thumb'])); };
         this.getBorderRule = () => { var _a; return (_a = this.borderRule) !== null && _a !== void 0 ? _a : (this.borderRule = this.insertEmptyRule(NeuSelectors.borderSelectors)); };
         this.getSurfaceRule = () => { var _a; return (_a = this.surfaceRule) !== null && _a !== void 0 ? _a : (this.surfaceRule = this.insertEmptyRule(NeuSelectors.surfaceSelectors)); };
-        this.getRadioIndicatorUncheckedRule = () => { var _a; return (_a = this.radioIndicatorUncheckedRule) !== null && _a !== void 0 ? _a : (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.radio-group .indicator::before'])); };
-        this.getRadioIndicatorCheckedRule = () => { var _a; return (_a = this.radioIndicatorCheckedRule) !== null && _a !== void 0 ? _a : (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.radio-group .indicator::after'])); };
+        this.getRadioIndicatorUncheckedRule = () => { var _a; return (_a = this.radioIndicatorUncheckedRule) !== null && _a !== void 0 ? _a : (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.radio-wrapper .indicator::before'])); };
+        this.getRadioIndicatorCheckedRule = () => { var _a; return (_a = this.radioIndicatorCheckedRule) !== null && _a !== void 0 ? _a : (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.radio-wrapper .indicator::after'])); };
     }
     static get Instance() {
         var _a;
@@ -130,7 +130,7 @@ export class NeuStyle extends Style {
     }
     onBaseColorUpdated() {
         this.getColorMutedBaseColorRule().style.setProperty('color', DynamicTheme.mutedBaseColor, 'important');
-        $('.radio-group label .text').each((index, element) => {
+        $('.radio-wrapper label .text').each((index, element) => {
             element.style.borderColor = DynamicTheme.mutedBaseColor;
         });
     }

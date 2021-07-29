@@ -27,7 +27,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         /*-------------------------
       FORM COMPONENTS
 -------------------------*/
-        .radio-group {
+        .radio-wrapper {
                 $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px $darkenSchemeColor,
                         4px 2px 8px 0px $lightenSchemeColor;
                 $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px $lightenSchemeColor,

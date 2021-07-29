@@ -30,15 +30,14 @@ include_once "components/basic/_index.php";
                                                 RangeSlider(label: 'Dark intensity', id: 'dark-intensity', max: 20);
                                                 RangeSlider(label: 'Surface curvature', id: 'surface-curvature', min: -20, max: 20);
                                                 ?>
-                                                <div id="neu-border-style-options">
-                                                        <p class="radio-title">Border style</p>
+
+                                                <p>Border style</p>
+                                                <div class="radio-group-wrapper">
                                                         <?=
-                                                        RadioGroup(
-                                                                new Radio('solid-border', '', '0', 'border-style'),
-                                                                new Radio('double-border', '', '1', 'border-style'),
-                                                                new Radio('dotted-border', '', '2', 'border-style'),
-                                                                new Radio('dashed-border', '', '3', 'border-style')
-                                                        )
+                                                        Radio(id: 'solid-border', value: 0, group: 'neu-border-style');
+                                                        Radio(id: 'double-border', value: 1, group: 'neu-border-style');
+                                                        Radio(id: 'dotted-border', value: 2, group: 'neu-border-style');
+                                                        Radio(id: 'dashed-border', value: 3, group: 'neu-border-style');
                                                         ?>
                                                 </div>
                                                 <?php

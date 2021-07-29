@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Dynamic Style</title>
+        <title>Dynamic Framework</title>
         <meta charset="UTF-8" />
         <meta name="author" content="enginoobz" />
         <meta name="description" content="Demo page for Dynamic Style Framework" />
@@ -47,53 +47,24 @@
         </div>                                <div class="code-block">
         <pre><code class="language-php">&lt;?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?&gt;</code></pre>
 </div>
-                                <div class='radio-group'>
-                                        <div class='radio-button-wrapper'>
+                                <div class='radio-wrapper'>
         <input class='state' type='radio' name='group-1' id='radio1-1' value='1'>
         <label class='label' for='radio1-1'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 1</span>
         </label>
-</div><div class='radio-button-wrapper'>
+</div><div class='radio-wrapper'>
         <input class='state' type='radio' name='group-1' id='radio1-2' value='2'>
         <label class='label' for='radio1-2'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 2</span>
         </label>
-</div>                                </div>
-                                <!-- TODO: Strip first empty line in the code block -->
+</div>                                <!-- TODO: Strip first empty line in the code block -->
                                 <div class="code-block">
-        <pre><code class="language-php">// warp inside HTML tag group
-&lt;div class='radio-group'&gt;
-  &lt;?=
-  Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
-  Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
-  ?&gt;
-&lt;/div&gt;
-</code></pre>
-</div>
-                                <div class='radio-group'>
-                        <div class='radio-button-wrapper'>
-                        <input class='state' type='radio' name='group-2' id='radio2-1' value='1'>
-                        <label class='label' for='radio2-1'>
-                                <div class='indicator'></div>
-                                <span class='text'>Radio 1</span>
-                        </label>
-                </div>
-                        <div class='radio-button-wrapper'>
-                        <input class='state' type='radio' name='group-2' id='radio2-2' value='2'>
-                        <label class='label' for='radio2-2'>
-                                <div class='indicator'></div>
-                                <span class='text'>Radio 2</span>
-                        </label>
-                </div>
-        </div>                                <div class="code-block">
-        <pre><code class="language-php">// use pure PHP function
+        <pre><code class="language-php">//            
 &lt;?=
-RadioGroup(
-  new Radio('radio3', 'Radio 1', '1', 'group-2'),
-  new Radio('radio4', 'Radio 2', '2', 'group-2')
-)
+Radio(label: 'Radio 1', id: 'radio1-1', value: 1, group: 'group-1');
+Radio(label: 'Radio 2', id: 'radio1-2', value: 2, group: 'group-1');
 ?&gt;
 </code></pre>
 </div>

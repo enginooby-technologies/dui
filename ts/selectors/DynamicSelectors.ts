@@ -15,7 +15,7 @@ export const bgSchemeSelectors = formatString([
         ".blog .blog-item .before",
         "#overlayer",
         ".toggle .indicator",
-        ".radio-group .indicator::after"
+        ".radio-wrapper .indicator::after"
 ]);
 
 export const bgBaseSelectors = formatString([
@@ -36,7 +36,7 @@ export const colorHighlightSelectors = formatString([
         ".overlay-menu-toggler:hover",
         " #myMenu li a:hover",
         // COMMON
-        ".radio-group .label:hover .text"
+        ".radio-wrapper .label:hover .text"
 ]);
 
 export const colorBaseSelectors = formatString([
@@ -71,7 +71,7 @@ export const colorMutedBaseSelectors = formatString([
         // ".form-control:-ms-input-placeholder",         /* Internet Explorer 10-11 */
         // ".form-control::-ms-input-placeholder"         /* Microsoft Edge */
         //COMMON
-        ".radio-group .label",
+        ".radio-wrapper .label",
 ]);
 
 export const borderRadiusSelectors = formatString([
@@ -118,7 +118,7 @@ export const borderRadiusSelectors = formatString([
         ".checkbox label",
         ".toggle",
         ".toggle .indicator",
-        ".radio-group .text",
+        ".radio-wrapper .text",
 
         // SETTING
         ".setting-section .setting-panel",

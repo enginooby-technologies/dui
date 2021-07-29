@@ -7,12 +7,6 @@ function Radio(string $id, float $value, string $label = '', string $group)
         include "_radio.php";
 }
 
-require "Radio.php";
-function RadioGroup(Radio ...$Radioes)
-{
-        include "_radio-group.php";
-}
-
 function RangeSlider(string $id, string $label, float  $min = 0, float $max, float $step = 0.1, float $value = null)
 {
         $value = $value ?? $min;
