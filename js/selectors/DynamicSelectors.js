@@ -22,6 +22,10 @@ export const bgBaseSelectors = formatString([
 export const colorHighlightSelectors = formatString([
     // FORM COMPONENTS
     ".dui-radio .state:checked~.label .text",
+    // CONTAINER COMPONENTS
+    ".code-block .token.atrule",
+    ".code-block .token.attr-value",
+    ".code-block .token.keyword",
     ".highlight-color",
     ".overlay-menu a.active",
     ".timeline-year",
@@ -36,6 +40,26 @@ export const colorHighlightSelectors = formatString([
     " #myMenu li a:hover",
     // COMMON
     ".dui-radio .label:hover .text"
+]);
+export const colorColorfull1Selectors = formatString([
+    // CONTAINER COMPONENTS
+    ".code-block .token.attr-name",
+    ".code-block .token.builtin",
+    ".code-block .token.char",
+    " .code-block .token.inserted",
+    " .code-block .token.selector",
+    " .code-block .token.string",
+]);
+export const colorColorfull2Selectors = formatString([
+    // CONTAINER COMPONENTS
+    ".code-block .token.important",
+    ".code-block .token.regex",
+    ".code-block .token.variable",
+]);
+export const colorColorfull3Selectors = formatString([
+    // CONTAINER COMPONENTS
+    ".code-block .token.class-name",
+    ".code-block .token.function",
 ]);
 export const colorBaseSelectors = formatString([
     "body",
@@ -57,6 +81,12 @@ export const colorBaseSelectors = formatString([
     // "#pp-nav li .pp-tooltip"
 ]);
 export const colorMutedBaseSelectors = formatString([
+    // CONTAINER COMPONENTS
+    ".code-block code",
+    ".code-block .token.cdata",
+    ".code-block .token.comment",
+    ".code-block .token.doctype",
+    " .code-block .token.prolog",
     ".blog-content .list-inline-item span",
     ".contact-info-text small",
     ".hero-content p",

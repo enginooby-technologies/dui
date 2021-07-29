@@ -50,6 +50,9 @@ let bgBaseRule: CSSStyleRule;
 let colorHighlightRule: CSSStyleRule;
 let colorBaseRule: CSSStyleRule;
 let colorMutedBaseRule: CSSStyleRule;
+let colorColorfull1Rule: CSSStyleRule;
+let colorColorfull2Rule: CSSStyleRule;
+let colorColorfull3Rule: CSSStyleRule;
 
 function getBgHighlightRule(): CSSStyleRule {
         return bgHighlightRule ?? (bgHighlightRule = insertEmptyRule(DynamicSelectors.bgHighlightSelectors));
@@ -71,6 +74,15 @@ function getColorMutedBaseRule(): CSSStyleRule {
 }
 function getBorderRadiusRule(): CSSStyleRule {
         return borderRadiusRule ?? (borderRadiusRule = insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
+}
+function getColorfull1Rule(): CSSStyleRule {
+        return colorColorfull1Rule ?? (colorColorfull1Rule = insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
+}
+function getColorfull2Rule(): CSSStyleRule {
+        return colorColorfull2Rule ?? (colorColorfull2Rule = insertEmptyRule(DynamicSelectors.colorColorfull2Selectors));
+}
+function getColorfull3Rule(): CSSStyleRule {
+        return colorColorfull3Rule ?? (colorColorfull3Rule = insertEmptyRule(DynamicSelectors.colorColorfull3Selectors));
 }
 
 export function changeStyle(newStyle: Style) {
@@ -97,7 +109,6 @@ function updateChangesFromLastStyle() {
                 stylesWithUpdatedBaseColor.push(currentStyle.name);
         }
 }
-
 
 loadSettingPanel(settingFilePath)
         // ad-hoc solution to load file for the demo page this framework
@@ -189,14 +200,17 @@ function updateColorfull(colorfullNumber: number) {
         if (colorfullNumber == 1) {
                 colorfull = colorfull1;
                 timelineSelector = '#education-timeline';
+                getColorfull1Rule().style.setProperty('color', colorfull1.hex, 'important');
         }
         if (colorfullNumber == 2) {
                 colorfull = colorfull2;
                 timelineSelector = '#experience-timeline';
+                getColorfull2Rule().style.setProperty('color', colorfull2.hex, 'important');
         }
         if (colorfullNumber == 3) {
                 colorfull = colorfull3;
                 timelineSelector = '#achievements-timeline';
+                getColorfull3Rule().style.setProperty('color', colorfull3.hex, 'important');
         }
 
         $(`.colorfull${colorfullNumber}, .background-colorfull${colorfullNumber}>.badge`).css('color', colorfull!.hex);

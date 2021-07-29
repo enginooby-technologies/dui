@@ -37,6 +37,9 @@ let bgBaseRule;
 let colorHighlightRule;
 let colorBaseRule;
 let colorMutedBaseRule;
+let colorColorfull1Rule;
+let colorColorfull2Rule;
+let colorColorfull3Rule;
 function getBgHighlightRule() {
     return bgHighlightRule !== null && bgHighlightRule !== void 0 ? bgHighlightRule : (bgHighlightRule = insertEmptyRule(DynamicSelectors.bgHighlightSelectors));
 }
@@ -57,6 +60,15 @@ function getColorMutedBaseRule() {
 }
 function getBorderRadiusRule() {
     return borderRadiusRule !== null && borderRadiusRule !== void 0 ? borderRadiusRule : (borderRadiusRule = insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
+}
+function getColorfull1Rule() {
+    return colorColorfull1Rule !== null && colorColorfull1Rule !== void 0 ? colorColorfull1Rule : (colorColorfull1Rule = insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
+}
+function getColorfull2Rule() {
+    return colorColorfull2Rule !== null && colorColorfull2Rule !== void 0 ? colorColorfull2Rule : (colorColorfull2Rule = insertEmptyRule(DynamicSelectors.colorColorfull2Selectors));
+}
+function getColorfull3Rule() {
+    return colorColorfull3Rule !== null && colorColorfull3Rule !== void 0 ? colorColorfull3Rule : (colorColorfull3Rule = insertEmptyRule(DynamicSelectors.colorColorfull3Selectors));
 }
 export function changeStyle(newStyle) {
     currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.onDisable();
@@ -161,14 +173,17 @@ function updateColorfull(colorfullNumber) {
     if (colorfullNumber == 1) {
         colorfull = colorfull1;
         timelineSelector = '#education-timeline';
+        getColorfull1Rule().style.setProperty('color', colorfull1.hex, 'important');
     }
     if (colorfullNumber == 2) {
         colorfull = colorfull2;
         timelineSelector = '#experience-timeline';
+        getColorfull2Rule().style.setProperty('color', colorfull2.hex, 'important');
     }
     if (colorfullNumber == 3) {
         colorfull = colorfull3;
         timelineSelector = '#achievements-timeline';
+        getColorfull3Rule().style.setProperty('color', colorfull3.hex, 'important');
     }
     $(`.colorfull${colorfullNumber}, .background-colorfull${colorfullNumber}>.badge`).css('color', colorfull.hex);
     $(`.background-colorfull${colorfullNumber}`).css('background-color', colorfull.hex);

@@ -571,10 +571,43 @@ Init values for dynamic properties to reduce  page load time
 .code-block pre code {
   text-shadow: 0 0.5px black;
   display: block;
-  color: gray;
+  color: #4D4D4D;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
+}
+
+.code-block .token.atrule,
+.code-block .token.attr-value,
+.code-block .token.keyword {
+  color: #004b97;
+}
+
+.code-block .token.attr-name,
+.code-block .token.builtin,
+.code-block .token.char,
+.code-block .token.inserted,
+.code-block .token.selector,
+.code-block .token.string {
+  color: #01724b;
+}
+
+.code-block .token.important,
+.code-block .token.regex,
+.code-block .token.variable {
+  color: #bc5b00;
+}
+
+.code-block .token.class-name,
+.code-block .token.function {
+  color: #c40639;
+}
+
+.code-block .token.cdata,
+.code-block .token.comment,
+.code-block .token.doctype,
+.code-block .token.prolog {
+  color: #4D4D4D;
 }
 
 /*
