@@ -18,19 +18,23 @@
 
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
-                                RangeSlider(label: 'Slider', id: 'slider1', min: 1, max: 100, value: 69);
-                                CodeBlock('php', 'RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ');
 
-                                Radio(label: 'Radio 1', id: 'radio-1', value: 1, group: 'group-1');
-                                Radio(label: 'Radio 2', id: 'radio-2', value: 2, group: 'group-1');
-                                //  TODO: Strip first empty line in the code block 
-                                CodeBlock('php', "//                              
-                                Radio(label: 'Radio 1', id: 'radio-1', value: 1, group: 'group-1');
-                                Radio(label: 'Radio 2', id: 'radio-2', value: 2, group: 'group-1');
-                                ", 4);
+                                RangeSlider(label: "Dynamic slider",  max: 100);
+                                CodeBlock('php', '// optional params: string $id = format($label), float min = 0, float step = 0.1, float $value = $min
+                                RangeSlider(label: "Dynamic slider",  max: 100);
+                                ', 4);
 
-                                Toggle('Toggle', 'demo-toggle');
-                                CodeBlock('php', 'Toggle(string $label, string $id, string $name = null, string $value = "");');
+                                Radio(label: 'Radio 1', value: 1, group: 'group-1');
+                                Radio(label: 'Radio 2', value: 2, group: 'group-1');
+                                CodeBlock('php', '// optional params: string $id = format($label)                                
+                                Radio(label: "Radio 1", value: 1, group: "group-1");
+                                Radio(label: "Radio 2", value: 2, group: "group-1");
+                                ', 4);
+
+                                Toggle("Dynamic toggle");
+                                CodeBlock('php', '// optional params: string $id = string $name = format($label), float $value = 0
+                                Toggle("Dynamic toggle");
+                                ', 4);
                                 ?>
 
                                 <h5 class="my-4">V - Navigation Components</h5>

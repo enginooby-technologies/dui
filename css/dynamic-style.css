@@ -380,7 +380,7 @@ button {
 .display-content {
   vertical-align: middle;
   display: table-cell;
-  padding: 5rem 0;
+  padding: 3.5rem 0;
 }
 
 .center-item {
@@ -530,6 +530,15 @@ video.lazy.loaded {
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
+@media (min-width: 1200px) {
+  .display-content > .container {
+    max-width: 1100px;
+  }
+  .display-content > .container {
+    padding: 40px;
+  }
+}
+
 /*
 Init values for dynamic properties to reduce  page load time 
 */

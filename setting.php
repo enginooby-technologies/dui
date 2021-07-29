@@ -34,10 +34,10 @@ include_once "components/basic/_index.php";
                                                 <p>Border style</p>
                                                 <div class="radio-group-wrapper">
                                                         <?=
-                                                        Radio(id: 'solid-border', value: 0, group: 'neu-border-style');
-                                                        Radio(id: 'double-border', value: 1, group: 'neu-border-style');
-                                                        Radio(id: 'dotted-border', value: 2, group: 'neu-border-style');
-                                                        Radio(id: 'dashed-border', value: 3, group: 'neu-border-style');
+                                                        Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '');
+                                                        Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '');
+                                                        Radio(id: 'dotted-border', value: 2, group: 'neu-border-style', label: '');
+                                                        Radio(id: 'dashed-border', value: 3, group: 'neu-border-style', label: '');
                                                         ?>
                                                 </div>
                                                 <?php
