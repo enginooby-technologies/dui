@@ -36,7 +36,7 @@ $range-label-width: 2rem !default;
 .range-slider__range {
         border-radius: $borderRadius;
         -webkit-appearance: none;
-        width: calc(75% - (#{$range-label-width + 0.5rem}));
+        width: calc(100% - (#{$range-label-width + .8rem}));
         height: $range-track-height;
         outline: none;
         padding: 0;

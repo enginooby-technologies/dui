@@ -22,14 +22,14 @@
                                 <?= CodeBlock('php', '<?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?>') ?>
 
                                 <?=
-                                Radio(label: 'Radio 1', id: 'radio1-1', value: 1, group: 'group-1');
-                                Radio(label: 'Radio 2', id: 'radio1-2', value: 2, group: 'group-1');
+                                Radio(label: 'Radio 1', id: 'radio-1', value: 1, group: 'group-1');
+                                Radio(label: 'Radio 2', id: 'radio-2', value: 2, group: 'group-1');
                                 ?>
                                 <!-- TODO: Strip first empty line in the code block -->
                                 <?= CodeBlock('php', "//                              
                                 <?=
-                                Radio(label: 'Radio 1', id: 'radio1-1', value: 1, group: 'group-1');
-                                Radio(label: 'Radio 2', id: 'radio1-2', value: 2, group: 'group-1');
+                                Radio(label: 'Radio 1', id: 'radio-1', value: 1, group: 'group-1');
+                                Radio(label: 'Radio 2', id: 'radio-2', value: 2, group: 'group-1');
                                 ?>
                                 ", 4); ?>
 

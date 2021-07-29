@@ -39,7 +39,7 @@ export const dropBoxShadowSelectors = [
         ".range-slider__value",
         ".setting-panel",
         "::-webkit-slider-thumb",
-        ".radio-wrapper .indicator",
+        ".dui-radio .indicator",
         //contact
         ".form-group input:focus",
         ".form-group textarea:focus",

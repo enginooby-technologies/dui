@@ -43,6 +43,10 @@ Init values for dynamic properties to reduce  page load time
   border: 4px dashed #4D4D4D;
 }
 
+.setting-section .setting-panel .range-slider__range {
+  width: 6rem;
+}
+
 .setting-panel.hide {
   opacity: 0;
   visibility: hidden;
@@ -616,18 +620,18 @@ Init values for dynamic properties to reduce  page load time
 Init values for dynamic properties to reduce  page load time 
 */
 /* FONT */
-.radio-wrapper {
+.dui-radio {
   display: inline-block;
 }
 
-.radio-wrapper input {
+.dui-radio input {
   position: absolute;
   top: -9999px;
   left: -9999px;
   visibility: hidden;
 }
 
-.radio-wrapper .state {
+.dui-radio .state {
   position: absolute;
   top: 0;
   right: 0;
@@ -635,7 +639,7 @@ Init values for dynamic properties to reduce  page load time
   pointer-events: none;
 }
 
-.radio-wrapper .label {
+.dui-radio .label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -647,7 +651,7 @@ Init values for dynamic properties to reduce  page load time
   display: inline-flex;
 }
 
-.radio-wrapper .text {
+.dui-radio .text {
   -webkit-transition: -webkit-transform .2s ease-out;
   transition: -webkit-transform .2s ease-out;
   transition: transform .2s ease-out;
@@ -657,7 +661,7 @@ Init values for dynamic properties to reduce  page load time
   padding: 5px 15px;
 }
 
-.radio-wrapper .indicator {
+.dui-radio .indicator {
   position: relative;
   height: 25px;
   width: 25px;
@@ -665,8 +669,8 @@ Init values for dynamic properties to reduce  page load time
   overflow: hidden;
 }
 
-.radio-wrapper .indicator::before,
-.radio-wrapper .indicator::after {
+.dui-radio .indicator::before,
+.dui-radio .indicator::after {
   content: '';
   position: absolute;
   top: 10%;
@@ -676,7 +680,7 @@ Init values for dynamic properties to reduce  page load time
   border-radius: 50%;
 }
 
-.radio-wrapper .indicator::after {
+.dui-radio .indicator::after {
   background-color: #D4D4D4;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
@@ -686,24 +690,24 @@ Init values for dynamic properties to reduce  page load time
   transition: opacity .25s ease-in-out, transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
 }
 
-.radio-wrapper .state:checked ~ .label .indicator::after,
-.radio-wrapper .label:hover .indicator::after {
+.dui-radio .state:checked ~ .label .indicator::after,
+.dui-radio .label:hover .indicator::after {
   -webkit-transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
           transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
   opacity: 0;
 }
 
-.radio-wrapper .state:checked ~ .label .text {
+.dui-radio .state:checked ~ .label .text {
   color: #004b97;
 }
 
-.radio-wrapper .state:focus ~ .label .text {
+.dui-radio .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
           transform: translate3d(8px, 0, 0);
   color: #004b97;
 }
 
-.radio-wrapper .label:hover .text {
+.dui-radio .label:hover .text {
   color: #004b97;
 }
 
@@ -728,7 +732,7 @@ Init values for dynamic properties to reduce  page load time
 .range-slider__range {
   border-radius: 9px;
   -webkit-appearance: none;
-  width: calc(75% - (2.5rem));
+  width: calc(100% - (2.8rem));
   height: 10px;
   outline: none;
   padding: 0;
@@ -1219,17 +1223,17 @@ table,
   color: #4D4D4D;
 }
 
-.flat-style .radio-wrapper .label,
+.flat-style .dui-radio .label,
 .flat-style .checkbox label,
 .flat-style i,
 .flat-style .overlay-menu-toggler,
 .flat-style input[type=color],
-.neu-style .radio-wrapper .label,
+.neu-style .dui-radio .label,
 .neu-style .checkbox label,
 .neu-style i,
 .neu-style .overlay-menu-toggler,
 .neu-style input[type=color],
-.glass-style .radio-wrapper .label,
+.glass-style .dui-radio .label,
 .glass-style .checkbox label,
 .glass-style i,
 .glass-style .overlay-menu-toggler,
@@ -1237,17 +1241,17 @@ table,
   cursor: pointer;
 }
 
-.flat-style .radio-wrapper .label *,
+.flat-style .dui-radio .label *,
 .flat-style .checkbox label *,
 .flat-style i *,
 .flat-style .overlay-menu-toggler *,
 .flat-style input[type=color] *,
-.neu-style .radio-wrapper .label *,
+.neu-style .dui-radio .label *,
 .neu-style .checkbox label *,
 .neu-style i *,
 .neu-style .overlay-menu-toggler *,
 .neu-style input[type=color] *,
-.glass-style .radio-wrapper .label *,
+.glass-style .dui-radio .label *,
 .glass-style .checkbox label *,
 .glass-style i *,
 .glass-style .overlay-menu-toggler *,
@@ -1269,17 +1273,17 @@ Init values for dynamic properties to reduce  page load time
   /* TEXT DROP SHADOW */
 }
 
-.neu-style .radio-wrapper .indicator {
+.neu-style .dui-radio .indicator {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
-.neu-style .radio-wrapper .indicator::before {
+.neu-style .dui-radio .indicator::before {
   -webkit-box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
           box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
 }
 
-.neu-style .radio-wrapper .indicator::after {
+.neu-style .dui-radio .indicator::after {
   -webkit-box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
           box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
 }

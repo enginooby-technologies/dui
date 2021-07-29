@@ -47,6 +47,10 @@ $panelWidth:180px;
                         border: $borderWidthDemo dashed $mutedBaseColor;
                 }
         }
+
+        .range-slider__range {
+                width: 6rem;
+        }
 }
 
 .setting-panel.hide {

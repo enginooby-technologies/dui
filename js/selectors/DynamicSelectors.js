@@ -14,12 +14,14 @@ export const bgSchemeSelectors = formatString([
     ".blog .blog-item .before",
     "#overlayer",
     ".toggle .indicator",
-    ".radio-wrapper .indicator::after"
+    ".dui-radio .indicator::after"
 ]);
 export const bgBaseSelectors = formatString([
     "#pp-nav li :not(.active) span"
 ]);
 export const colorHighlightSelectors = formatString([
+    // FORM COMPONENTS
+    ".dui-radio .state:checked~.label .text",
     ".highlight-color",
     ".overlay-menu a.active",
     ".timeline-year",
@@ -33,7 +35,7 @@ export const colorHighlightSelectors = formatString([
     ".overlay-menu-toggler:hover",
     " #myMenu li a:hover",
     // COMMON
-    ".radio-wrapper .label:hover .text"
+    ".dui-radio .label:hover .text"
 ]);
 export const colorBaseSelectors = formatString([
     "body",
@@ -66,7 +68,7 @@ export const colorMutedBaseSelectors = formatString([
     // ".form-control:-ms-input-placeholder",         /* Internet Explorer 10-11 */
     // ".form-control::-ms-input-placeholder"         /* Microsoft Edge */
     //COMMON
-    ".radio-wrapper .label",
+    ".dui-radio .label",
 ]);
 export const borderRadiusSelectors = formatString([
     // BLOG
@@ -110,7 +112,7 @@ export const borderRadiusSelectors = formatString([
     ".checkbox label",
     ".toggle",
     ".toggle .indicator",
-    ".radio-wrapper .text",
+    ".dui-radio .text",
     // SETTING
     ".setting-section .setting-panel",
     ".setting-section .setting-button-border",
