@@ -23,8 +23,8 @@
 
                                 <div class='radio-group'>
                                         <?=
-                                        Radio(id: 'radio1', value: 1, label: 'Radio 1');
-                                        Radio(id: 'radio2', value: 2, label: 'Radio 2');
+                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', groupName: 'group-1');
+                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', groupName: 'group-1');
                                         ?>
                                 </div>
                                 <!-- TODO: Strip first empty line in the code block -->
@@ -35,6 +35,21 @@
                                         Radio(id: 'radio2', value: 2, label: 'Radio 2');
                                         ?>
                                 </div>
+                                ", 4); ?>
+
+                                <?=
+                                RadioGroup(
+                                        new Radio('radio3', 'Radio 1', '1', 'group-2'),
+                                        new Radio('radio4', 'Radio 2', '2', 'group-2')
+                                )
+                                ?>
+                                <?= CodeBlock('php', "                                
+                                <?=
+                                RadioGroup(
+                                        new Radio('radio3', 'Radio 1', '1', 'group-2'),
+                                        new Radio('radio4', 'Radio 2', '2', 'group-2')
+                                )
+                                ?>
                                 ", 4); ?>
 
                                 <h5 class="my-4">V - Navigation Components</h5>

@@ -27,43 +27,43 @@
 
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
 </div>
                                 <h5 class="my-4">II - Container Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
 </div>
                                 <h5 class="my-4">III - Content Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/content/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/content/_index.php";?&gt;</code></pre>
 </div>
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
 </div>                                        <div class='range-slider'>
                 <label for='slider1'>Slider label</label>
                 <input class='range-slider__range' id='slider1' type='range' min='1' max='100' step='0.1' value='69'>
                 <span class='range-slider__value'>69</span>
         </div>                                <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= RangeSlider(string $id, string $label, float $min = 0, float $max, float $step = 0.1, float $value = null); ?&gt;</code></pre>
 </div>
                                 <div class='radio-group'>
                                         <div class='radio-button-wrapper'>
-        <input class='state' type='radio' name='app' id='radio1' value='1'>
-        <label class='label' for='radio1'>
+        <input class='state' type='radio' name='group-1' id='radio1-1' value='1'>
+        <label class='label' for='radio1-1'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 1</span>
         </label>
 </div><div class='radio-button-wrapper'>
-        <input class='state' type='radio' name='app' id='radio2' value='2'>
-        <label class='label' for='radio2'>
+        <input class='state' type='radio' name='group-1' id='radio1-2' value='2'>
+        <label class='label' for='radio1-2'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 2</span>
         </label>
 </div>                                </div>
                                 <!-- TODO: Strip first empty line in the code block -->
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">
+        <pre><code class="language-php">
 &lt;div class='radio-group'&gt;
   &lt;?=
   Radio(id: 'radio1', value: 1, label: 'Radio 1');
@@ -72,13 +72,38 @@
 &lt;/div&gt;
 </code></pre>
 </div>
+                                <div class='radio-group'>
+                        <div class='radio-button-wrapper'>
+                        <input class='state' type='radio' name='group-2' id='radio3' value='1'>
+                        <label class='label' for='radio3'>
+                                <div class='indicator'></div>
+                                <span class='text'>Radio 1</span>
+                        </label>
+                </div>
+                        <div class='radio-button-wrapper'>
+                        <input class='state' type='radio' name='group-2' id='radio4' value='2'>
+                        <label class='label' for='radio4'>
+                                <div class='indicator'></div>
+                                <span class='text'>Radio 2</span>
+                        </label>
+                </div>
+        </div>                                <div class="code-block">
+        <pre><code class="language-php">
+&lt;?=
+RadioGroup(
+  new Radio('radio3', 'Radio 1', '1', 'group-2'),
+  new Radio('radio4', 'Radio 2', '2', 'group-2')
+)
+?&gt;
+</code></pre>
+</div>
                                 <h5 class="my-4">V - Navigation Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/navigation/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/navigation/_index.php";?&gt;</code></pre>
 </div>
                                 <h5 class="my-4">VI - Advanced Components</h5>
                                 <div class="code-block">
-        <pre><code class="no-whitespace-normalization language-php">&lt;?= include_once "components/advanced/_index.php";?&gt;</code></pre>
+        <pre><code class="language-php">&lt;?= include_once "components/advanced/_index.php";?&gt;</code></pre>
 </div>                        </div>
                 </div>
         </div>

@@ -32,14 +32,14 @@ include_once "components/basic/_index.php";
                                                 ?>
                                                 <div id="neu-border-style-options">
                                                         <p class="radio-title">Border style</p>
-                                                        <div class="radio-group">
-                                                                <?php
-                                                                Radio(id: 'solid-border', value: 0);
-                                                                Radio(id: 'double-border', value: 1);
-                                                                Radio(id: 'dotted-border', value: 2);
-                                                                Radio(id: 'dashed-border', value: 3);
-                                                                ?>
-                                                        </div>
+                                                        <?=
+                                                        RadioGroup(
+                                                                new Radio('solid-border', '', '0', 'border-style'),
+                                                                new Radio('double-border', '', '1', 'border-style'),
+                                                                new Radio('dotted-border', '', '2', 'border-style'),
+                                                                new Radio('dashed-border', '', '3', 'border-style')
+                                                        )
+                                                        ?>
                                                 </div>
                                                 <?php
                                                 RangeSlider(label: 'Border width', id: 'neu-border-width',  max: 10);
