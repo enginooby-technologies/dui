@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-include "utils/formatter.php";
+include dirname(__FILE__) . "/../../utils/formatter.php";
 
 function Radio(string $id = null, float $value, string $label, string $group)
 {

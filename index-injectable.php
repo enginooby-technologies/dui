@@ -20,19 +20,19 @@
                                 <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
 
                                 RangeSlider(label: "Dynamic slider",  max: 100);
-                                CodeBlock('php', '// optional params: string $id = format($label), float min = 0, float step = 0.1, float $value = $min
+                                CodeBlock('php', '// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
                                 RangeSlider(label: "Dynamic slider",  max: 100);
                                 ', 4);
 
-                                Radio(label: 'Radio 1', value: 1, group: 'group-1');
-                                Radio(label: 'Radio 2', value: 2, group: 'group-1');
+                                Radio(label: "Radio 1", value: 1, group: "group-1");
+                                Radio(label: "Radio 2", value: 2, group: "group-1");
                                 CodeBlock('php', '// optional params: string $id = format($label)                                
                                 Radio(label: "Radio 1", value: 1, group: "group-1");
                                 Radio(label: "Radio 2", value: 2, group: "group-1");
                                 ', 4);
 
                                 Toggle("Dynamic toggle");
-                                CodeBlock('php', '// optional params: string $id = string $name = format($label), float $value = 0
+                                CodeBlock('php', '// optional params: string $id = $name = format($label), float $value = 0
                                 Toggle("Dynamic toggle");
                                 ', 4);
                                 ?>
