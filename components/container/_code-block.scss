@@ -8,10 +8,11 @@
         pre {
                 background-color: transparent;
 
+                // TODO:  Override Prism colors with classification colors
                 code {
                         text-shadow: 0 .5px $baseColor;
                         display: block;
-                        color: gray; //TODO: Dynamic (comment in code)
+                        color: gray; //TODO: Dynamic (comment in code) 
                         // white-space: pre;
                         white-space: pre-wrap;
                         white-space: -moz-pre-wrap;

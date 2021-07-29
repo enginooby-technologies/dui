@@ -87,10 +87,6 @@ $panelWidth:180px;
         border-top-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
 
-        &.active {
-                // left: $panelWidth;
-        }
-
         .setting-button {
                 border-top-left-radius: 0 !important;
                 border-bottom-left-radius: 0 !important;
@@ -138,46 +134,6 @@ $panelWidth:180px;
         }
 }
 
-// TOGGLE BUTTON
-.setting-section {
-        .label {
-                display: inline-flex;
-                align-items: center;
-                cursor: pointer;
-                // color: #394a56;
-        }
-
-        .label-text {
-                margin-left: 16px;
-                font-size: 1.2rem *$fontScale;
-                font-weight: 700;
-        }
-
-        .toggle {
-                isolation: isolate;
-                position: relative;
-                height: 25px;
-                width: 60px;
-                // border-radius: 15px;
-                overflow: hidden;
-        }
-
-        .toggle-state {
-                display: none;
-        }
-
-        .indicator {
-                height: 100%;
-                width: 200%;
-                // border-radius: 15px;
-                transform: translate3d(-75%, 0, 0);
-                transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-        }
-
-        .toggle-state:checked~.indicator {
-                transform: translate3d(25%, 0, 0);
-        }
-}
 
 $scrollbarRadius: 16px;
 

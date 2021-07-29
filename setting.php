@@ -103,14 +103,8 @@ include_once "components/basic/_index.php";
                         </div>
 
                         <div class="setting-save-panel">
-                                <label class="label">
-                                        <div class="toggle">
-                                                <input class="toggle-state" type="checkbox" name="check" value="check" />
-                                                <div class="indicator"></div>
-                                        </div>
-                                        <div class="label-text">Save</div>
-                                        <!-- TODO: Random button-->
-                                </label>
+                                <?= Toggle('Save', 'setting-save-button') ?>
+                                <!-- TODO: Random button-->
                         </div>
                 </div>
         </div>

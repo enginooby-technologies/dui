@@ -125,50 +125,6 @@ Init values for dynamic properties to reduce  page load time
   margin-bottom: 10px !important;
 }
 
-.setting-section .label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.setting-section .label-text {
-  margin-left: 16px;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.setting-section .toggle {
-  isolation: isolate;
-  position: relative;
-  height: 25px;
-  width: 60px;
-  overflow: hidden;
-}
-
-.setting-section .toggle-state {
-  display: none;
-}
-
-.setting-section .indicator {
-  height: 100%;
-  width: 200%;
-  -webkit-transform: translate3d(-75%, 0, 0);
-          transform: translate3d(-75%, 0, 0);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35), -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-}
-
-.setting-section .toggle-state:checked ~ .indicator {
-  -webkit-transform: translate3d(25%, 0, 0);
-          transform: translate3d(25%, 0, 0);
-}
-
 .setting-section .scrollable::-webkit-scrollbar {
   width: 7px !important;
 }
@@ -802,6 +758,56 @@ input::-moz-focus-outer {
   border: 0;
 }
 
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+/* FONT */
+.toggle-label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.toggle-label .label-text {
+  margin-left: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.toggle {
+  isolation: isolate;
+  position: relative;
+  height: 25px;
+  width: 60px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.toggle .toggle-state {
+  display: none;
+}
+
+.toggle .indicator {
+  height: 100%;
+  width: 200%;
+  border-radius: 9px;
+  -webkit-transform: translate3d(-75%, 0, 0);
+          transform: translate3d(-75%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35), -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+
+.toggle .toggle-state:checked ~ .indicator {
+  -webkit-transform: translate3d(25%, 0, 0);
+          transform: translate3d(25%, 0, 0);
+}
+
 /*-------------------------
       FLAT STYLE LIGHT
 -------------------------*/
@@ -1213,8 +1219,6 @@ table,
 .portfolio-item-content::before,
 .form-group input,
 .form-group textarea,
-.toggle,
-.toggle .indicator,
 .video-container {
   border-radius: 9px;
 }
