@@ -1,5 +1,5 @@
 //TODO: Find a solution so that no need to modify this path for each project
-export const settingFilePath = `DynamicStyle/setting.php`;
+export const settingFilePath = `dynamic-ui-framework/setting.php`;
 export var StyleName;
 (function (StyleName) {
     StyleName["Flat"] = "flat-style";
