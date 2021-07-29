@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function Radio(string $id, float $value, string $label = '', string $groupName)
+function Radio(string $id, float $value, string $label = '', string $group)
 {
         include "_radio.php";
 }

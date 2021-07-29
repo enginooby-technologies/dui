@@ -23,27 +23,27 @@
 
                                 <div class='radio-group'>
                                         <?=
-                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', groupName: 'group-1');
-                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', groupName: 'group-1');
+                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
+                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
                                         ?>
                                 </div>
                                 <!-- TODO: Strip first empty line in the code block -->
-                                <?= CodeBlock('php', "                                
+                                <?= CodeBlock('php', "// warp inside HTML tag group                                
                                 <div class='radio-group'>
                                         <?=
-                                        Radio(id: 'radio1', value: 1, label: 'Radio 1');
-                                        Radio(id: 'radio2', value: 2, label: 'Radio 2');
+                                        Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
+                                        Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
                                         ?>
                                 </div>
                                 ", 4); ?>
 
                                 <?=
                                 RadioGroup(
-                                        new Radio('radio3', 'Radio 1', '1', 'group-2'),
-                                        new Radio('radio4', 'Radio 2', '2', 'group-2')
+                                        new Radio('radio2-1', 'Radio 1', '1', 'group-2'),
+                                        new Radio('radio2-2', 'Radio 2', '2', 'group-2')
                                 )
                                 ?>
-                                <?= CodeBlock('php', "                                
+                                <?= CodeBlock('php', "// use pure PHP function                                
                                 <?=
                                 RadioGroup(
                                         new Radio('radio3', 'Radio 1', '1', 'group-2'),

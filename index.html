@@ -63,32 +63,32 @@
 </div>                                </div>
                                 <!-- TODO: Strip first empty line in the code block -->
                                 <div class="code-block">
-        <pre><code class="language-php">
+        <pre><code class="language-php">// warp inside HTML tag group
 &lt;div class='radio-group'&gt;
   &lt;?=
-  Radio(id: 'radio1', value: 1, label: 'Radio 1');
-  Radio(id: 'radio2', value: 2, label: 'Radio 2');
+  Radio(id: 'radio1-1', value: 1, label: 'Radio 1', group: 'group-1');
+  Radio(id: 'radio1-2', value: 2, label: 'Radio 2', group: 'group-1');
   ?&gt;
 &lt;/div&gt;
 </code></pre>
 </div>
                                 <div class='radio-group'>
                         <div class='radio-button-wrapper'>
-                        <input class='state' type='radio' name='group-2' id='radio3' value='1'>
-                        <label class='label' for='radio3'>
+                        <input class='state' type='radio' name='group-2' id='radio2-1' value='1'>
+                        <label class='label' for='radio2-1'>
                                 <div class='indicator'></div>
                                 <span class='text'>Radio 1</span>
                         </label>
                 </div>
                         <div class='radio-button-wrapper'>
-                        <input class='state' type='radio' name='group-2' id='radio4' value='2'>
-                        <label class='label' for='radio4'>
+                        <input class='state' type='radio' name='group-2' id='radio2-2' value='2'>
+                        <label class='label' for='radio2-2'>
                                 <div class='indicator'></div>
                                 <span class='text'>Radio 2</span>
                         </label>
                 </div>
         </div>                                <div class="code-block">
-        <pre><code class="language-php">
+        <pre><code class="language-php">// use pure PHP function
 &lt;?=
 RadioGroup(
   new Radio('radio3', 'Radio 1', '1', 'group-2'),
