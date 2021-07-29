@@ -1,6 +1,6 @@
 # Dynamic UI  Framework
 
-The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component resusing and delegates layouting  to Bootstrap with supporting OOP ("strongly-typed Bootstrap").
+The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component reusing and delegates layouting  to Bootstrap with supporting OOP ("strongly-typed Bootstrap").
 
 ## Styles   (w/ class names)
 ### Current
