@@ -25,6 +25,11 @@ Init values for dynamic properties to reduce  page load time
 
 .setting-section .setting-panel .radio-group-wrapper {
   padding: 1px 64px;
+  margin-left: -10px;
+}
+
+.setting-section .setting-panel .radio-group-wrapper .text {
+  margin-left: 10px;
 }
 
 .setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {

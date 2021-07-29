@@ -6,6 +6,8 @@ export const bgSchemeSelectors = [
     ".radio-button-group .button:not(.active)",
 ];
 export const bgLightenSchemeSelectors = [
+    // CONTAINER COMPONENT
+    ".code-block",
     ".box-border",
     ".image-border",
     ".contact .form-item .form-group",

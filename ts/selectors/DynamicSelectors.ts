@@ -78,6 +78,9 @@ export const colorMutedBaseSelectors = formatString([
 ]);
 
 export const borderRadiusSelectors = formatString([
+        // CONTAINER COMPONENTS
+        ".code-block",
+
         // BLOG
         ".blog .blog-image",
         ".blog .blog-image .after",

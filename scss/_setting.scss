@@ -30,6 +30,13 @@ $panelWidth:180px;
         .radio-group-wrapper {
                 padding: 1px 64px;
                 $borderWidthDemo: 4px;
+                margin-left: -10px;
+
+                .text {
+                        margin-left: 10px;
+                }
+
+
 
                 #solid-border~label .text {
                         border: $borderWidthDemo solid $mutedBaseColor;

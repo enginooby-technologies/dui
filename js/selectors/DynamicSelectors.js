@@ -71,6 +71,8 @@ export const colorMutedBaseSelectors = formatString([
     ".dui-radio .label",
 ]);
 export const borderRadiusSelectors = formatString([
+    // CONTAINER COMPONENTS
+    ".code-block",
     // BLOG
     ".blog .blog-image",
     ".blog .blog-image .after",
