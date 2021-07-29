@@ -1,5 +1,6 @@
         <?php include_once "components/container/_index.php"; ?>
         <?php include_once "components/form/_index.php"; ?>
+        <?php include_once "layouts/_index.php"; ?>
 
         <div class="display-table">
                 <div class="display-content">
@@ -19,26 +20,28 @@
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
 
-                                RangeSlider(label: "Dynamic slider",  max: 100);
+                                RowCenter(RangeSlider(label: "Dynamic slider",  max: 100));
                                 CodeBlock('php', '// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
-                                RangeSlider(label: "Dynamic slider",  max: 100);
+                                echo RangeSlider(label: "Dynamic slider",  max: 100);
                                 ', 4);
 
-                                Radio(label: "Radio 1", value: 1, group: "group-1");
-                                Radio(label: "Radio 2", value: 2, group: "group-1");
+                                RowCenter(
+                                        Radio(label: "Radio 1", value: 1, group: "group-1"),
+                                        Radio(label: "Radio 2", value: 2, group: "group-1")
+                                );
                                 CodeBlock('php', '// optional params: string $id = format($label)                                
-                                Radio(label: "Radio 1", value: 1, group: "group-1");
-                                Radio(label: "Radio 2", value: 2, group: "group-1");
-                                ', 4);
+                                        echo Radio(label: "Radio 1", value: 1, group: "group-1");
+                                        echo Radio(label: "Radio 2", value: 2, group: "group-1");
+                                        ', 5);
 
-                                Toggle(label: "Dynamic toggle");
+                                RowCenter(Toggle(label: "Dynamic toggle"));
                                 CodeBlock('php', '// optional params: string $id = $name = format($label), float $value = 0
-                                Toggle(label: "Dynamic toggle");
+                                echo Toggle(label: "Dynamic toggle");
                                 ', 4);
 
-                                Checkbox(name: "Dynamic checkbox");
+                                RowCenter(Checkbox(name: "Dynamic checkbox"));
                                 CodeBlock('php', '// optional params: string $id = $value = format($name)
-                                Checkbox(name:"Dynamic checkbox");
+                                echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);
                                 ?>
 
