@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-function RowCenter(string ...$components)
+include_once "Justify.php";
+
+// https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content
+function Flexbox(Justify $justify, string ...$components)
 {
-        include "_row-center.php";
+        include "_flexbox.php";
 }

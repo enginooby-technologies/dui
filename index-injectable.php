@@ -20,12 +20,16 @@
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
 
-                                RowCenter(RangeSlider(label: "Dynamic slider",  max: 100));
+                                Flexbox(
+                                        Justify::Center(),
+                                        RangeSlider(label: "Dynamic slider",  max: 100)
+                                );
                                 CodeBlock('php', '// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
                                 echo RangeSlider(label: "Dynamic slider",  max: 100);
                                 ', 4);
 
-                                RowCenter(
+                                Flexbox(
+                                        Justify::Center(),
                                         Radio(label: "Radio 1", value: 1, group: "group-1"),
                                         Radio(label: "Radio 2", value: 2, group: "group-1")
                                 );
@@ -34,12 +38,18 @@
                                         echo Radio(label: "Radio 2", value: 2, group: "group-1");
                                         ', 5);
 
-                                RowCenter(Toggle(label: "Dynamic toggle"));
+                                Flexbox(
+                                        Justify::Center(),
+                                        Toggle(label: "Dynamic toggle")
+                                );
                                 CodeBlock('php', '// optional params: string $id = $name = format($label), float $value = 0
                                 echo Toggle(label: "Dynamic toggle");
                                 ', 4);
 
-                                RowCenter(Checkbox(name: "Dynamic checkbox"));
+                                Flexbox(
+                                        Justify::Center(),
+                                        Checkbox(name: "Dynamic checkbox")
+                                );
                                 CodeBlock('php', '// optional params: string $id = $value = format($name)
                                 echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);
