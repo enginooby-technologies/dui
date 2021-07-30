@@ -8,8 +8,7 @@ import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
     constructor() {
-        super(StyleName.Glass);
-        this.currentBackground = "background-3";
+        super(StyleName.Glass, 'background-3');
         this.blur = '2';
         this.transparency = '0.6';
         this.borderSize = '1';
@@ -17,7 +16,6 @@ export class GlassStyle extends Style {
         this.darkHighlightIntensity = 15;
         this.lightenSchemeColor = new TinyColor('#fafafa');
         this.darkenHighlightColor = new TinyColor('#033669');
-        this.bgSelectors = ' #personal-website-portfolio .image-border, body';
         // lazy initializations
         this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
@@ -38,9 +36,6 @@ export class GlassStyle extends Style {
     }
     init() {
         this.initRangeSliders();
-        $(this.bgSelectors).each((index, element) => {
-            element.classList.add(this.currentBackground);
-        });
     }
     onDisable() { }
     initRangeSliders() {
@@ -69,14 +64,6 @@ export class GlassStyle extends Style {
                     this.updateBorderSize();
                     break;
             }
-        });
-        $('.background-item').on('click', (event) => {
-            const lastBackground = this.currentBackground;
-            this.currentBackground = event.currentTarget.id;
-            $(this.bgSelectors).each((index, element) => {
-                element.classList.remove(lastBackground);
-                element.classList.add(this.currentBackground);
-            });
         });
     }
     updateBlur() {

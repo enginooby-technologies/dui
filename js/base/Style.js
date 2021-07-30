@@ -1,9 +1,10 @@
 export class Style {
-    constructor(name) {
+    constructor(name, preferredBg) {
         this.insertEmptyRule = (selectors) => this.cssRules[this.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
         this.styleSheet = this.createStyleSheet();
         this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
         this.name = name;
+        this.preferredBg = preferredBg !== null && preferredBg !== void 0 ? preferredBg : 'background-0';
     }
     createStyleSheet() {
         var style = document.createElement("style");

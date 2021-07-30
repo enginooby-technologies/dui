@@ -12,13 +12,12 @@ import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
         // Singleton Pattern
         private static _instance: GlassStyle;
-        private constructor() { super(StyleName.Glass) }
+        private constructor() { super(StyleName.Glass, 'background-3') }
         public static get Instance(): GlassStyle {
                 GlassStyle._instance ??= new GlassStyle();
                 return GlassStyle._instance;
         }
 
-        currentBackground: string = "background-3";
         blur = '2';
         transparency = '0.6';
         borderSize = '1';
@@ -27,7 +26,6 @@ export class GlassStyle extends Style {
         lightenSchemeColor: Color = new TinyColor('#fafafa');
         darkenHighlightColor: Color = new TinyColor('#033669');
 
-        private bgSelectors = ' #personal-website-portfolio .image-border, body';
         private bgColorfull1Rule?: CSSStyleRule;
         private bgColorfull2Rule?: CSSStyleRule;
         private bgColorfull3Rule?: CSSStyleRule;
@@ -56,9 +54,6 @@ export class GlassStyle extends Style {
 
         init() {
                 this.initRangeSliders();
-                $(this.bgSelectors).each((index, element) => {
-                        element.classList.add(this.currentBackground);
-                });
         }
 
         onDisable(): void { }
@@ -90,16 +85,6 @@ export class GlassStyle extends Style {
                                         this.updateBorderSize();
                                         break;
                         }
-                });
-
-                $('.background-item').on('click', (event) => {
-                        const lastBackground: string = this.currentBackground;
-                        this.currentBackground = event.currentTarget.id;
-
-                        $(this.bgSelectors).each((index, element) => {
-                                element.classList.remove(lastBackground);
-                                element.classList.add(this.currentBackground);
-                        })
                 });
         }
 

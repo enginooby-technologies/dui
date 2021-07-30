@@ -1,3 +1,4 @@
+export const bgSelectors = ' body';
 export const bgHighlightSelectors = formatString([
     ".bg-highlight-color",
     ".border-style",

@@ -10,6 +10,8 @@ import { TinyColor } from './base/TinyColor.js';
 //TODO; elements for specific project
 let $squareImg: JQuery<HTMLElement>;
 
+let $body: JQuery<HTMLElement>;
+
 export let colorfull1: Color = new TinyColor("#01724b");
 export let colorfull2: Color = new TinyColor("#bc5b00");
 export let colorfull3: Color = new TinyColor("#c40639");
@@ -20,6 +22,12 @@ export let baseColor: string = 'black';
 const lightMutedBaseColor: string = "#b2b2b2";
 const darkMutedBaseColor: string = "#4D4D4D";
 export let mutedBaseColor: string = darkMutedBaseColor;
+
+let currentBg: string;
+// although we select global bg for all UI styles, at the first time before doing that, 
+// each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
+// only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
+let updateGlobalBgTriggered: boolean = false;
 
 let borderRadius: number = 9;
 
@@ -87,10 +95,15 @@ function getColorfull3Rule(): CSSStyleRule {
 
 export function changeStyle(newStyle: Style) {
         currentStyle?.onDisable();
+        $body.removeClass(currentStyle?.name);
+        if (!updateGlobalBgTriggered) $body.removeClass(currentStyle?.preferredBg);
+
         currentStyle = newStyle;
+        $body.addClass(currentStyle.name);
+        if (!updateGlobalBgTriggered) $body.addClass(currentStyle?.preferredBg);
+        currentBg = currentStyle?.preferredBg;
+
         $(".customizer").hide();
-        $("body").removeClass();
-        $("body").addClass(currentStyle.name);
         currentStyle.onEnable();
         updateChangesFromLastStyle();
 }
@@ -124,14 +137,19 @@ function loadSettingPanel(filePath: string) {
         });
 }
 
-
 function setup() {
         initSettingPanel();
         setupSettingEvents();
         $squareImg = $(".hero-image .square img");
+        $body = $("body");
         styleSheet = createStyleSheet();
         cssRules = styleSheet.cssRules || styleSheet.rules;
         new StyleRegistry();
+        $body.addClass(currentStyle?.preferredBg);
+        // $(DynamicSelectors.bgSelectors).each((index, element) => {
+        //         element.classList.add(currentBackground);
+        // });
+        // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
 }
 
 function initSettingPanel() {
@@ -153,6 +171,19 @@ function setupSettingEvents() {
         });
         setupColorPickerEvents();
         setupRangeSliderEvents();
+
+        $('.background-item').on('click', (event) => {
+                updateGlobalBgTriggered = true;
+                const lastBg: string = currentBg;
+                currentBg = event.currentTarget.id;
+
+                $body.removeClass(lastBg);
+                $body.addClass(currentBg);
+                // $(DynamicSelectors.bgSelectors).each((index, element) => {
+                //         element.classList.remove(lastBackground);
+                //         element.classList.add(currentBackground);
+                // })
+        });
 }
 
 function setupColorPickerEvents() {

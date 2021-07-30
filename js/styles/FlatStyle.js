@@ -4,7 +4,7 @@ import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
 export class FlatStyle extends Style {
     constructor() {
-        super(StyleName.Flat);
+        super(StyleName.Flat, 'background-2');
         this.lightSchemeIntensity = 5;
         this.lightenSchemeColor = "#e1e1e1";
         // darkenSchemeColor: string = "#c7c7c7";

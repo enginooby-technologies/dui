@@ -25,8 +25,9 @@ $panelWidth:180px;
                 text-align: center;
                 font-size: 1.4rem * $fontScale;
                 margin-top: 10px;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
                 font-weight: 800;
+                display: block;
         }
 
         .customizer p.option-label {
@@ -74,6 +75,14 @@ $panelWidth:180px;
         // RANGE SLIDER
         .range-slider__range {
                 width: 6rem;
+        }
+
+        // BACKGROUND OPTION
+        .background-item {
+                height: 250px;
+                zoom: 0.15;
+                border-radius: 60px;
+                cursor: pointer;
         }
 }
 
@@ -141,7 +150,7 @@ $panelWidth:180px;
         border-radius: 0;
         overflow-y: auto;
         overflow-x: hidden;
-        height: 370px; //TODO: caculate this for reponsiveness
+        height: 360px; //TODO: caculate this for reponsiveness
 }
 
 .setting-save-panel {
@@ -217,8 +226,6 @@ $scrollbarRadius: 16px;
         padding: 1px;
         margin-bottom: 12px;
 }
-
-
 
 
 //TODO:  COLOR PICKERS

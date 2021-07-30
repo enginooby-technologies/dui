@@ -19,7 +19,7 @@ include_once "components/basic/_index.php";
                         <div class="scrollable ">
                                 <!-- STYLE CUSTOMIZER -->
                                 <div id="customizer-panel">
-                                        <div class="customizer" id="neu-customizer">
+                                        <div class="customizer  option-panel mb-4" id="neu-customizer">
                                                 <p class="option-label">Neu Custom</p>
                                                 <?php
                                                 // NOTICE: echo can only used in "<?php", not "<=?"
@@ -59,7 +59,7 @@ include_once "components/basic/_index.php";
                                         </div>
                                 </div>
                                 <!-- GLOBAL CUSTOMIZER -->
-                                <div id="color-panel">
+                                <div id="color-panel" class="option-panel mb-4">
                                         <p class="option-label">Colour</p>
                                         <div class="row px-4">
                                                 <div class="col-6 p-0">
@@ -71,9 +71,7 @@ include_once "components/basic/_index.php";
                                                         <input type="color" id="scheme-color-picker" value="#f1f3f6">
                                                 </div>
                                         </div>
-                                        <div class="row mt-3 px-4 justify-content-center">
-                                                <p class="option-label">Classification</p>
-                                        </div>
+                                        <p>Classification</p>
                                         <div class="row mt-1 px-4">
                                                 <div class="col-4 p-0 ">
                                                         <input class="color-picker" type="color" id="colorfull1-picker" value="#01724b">
@@ -87,16 +85,17 @@ include_once "components/basic/_index.php";
                                         </div>
                                 </div>
 
-                                <div class="row mt-3 px-4 justify-content-center">
+                                <!-- BACKGROUND -->
+                                <div id="background-panel" class="option-panel mb-4">
                                         <p class="option-label">Background</p>
-                                        <div class="row px-4">
+                                        <div class="row px-4 justify-content-center">
                                                 <div class="col-4 background-item " id="background-1"> </div>
                                                 <div class="col-4 background-item " id="background-2"> </div>
                                                 <div class="col-4 background-item " id="background-3"> </div>
                                         </div>
                                 </div>
 
-                                <div id="border-panel" class="mt-3 mb-3">
+                                <div id="border-panel" class="option-panel mb-4">
                                         <p class="option-label">Border</p>
                                         <?php
                                         echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
