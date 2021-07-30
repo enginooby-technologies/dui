@@ -10,6 +10,7 @@ import { TinyColor } from './base/TinyColor.js';
 //TODO; elements for specific project
 let $squareImg: JQuery<HTMLElement>;
 
+// TODO: cache all jQuery selectors
 let $body: JQuery<HTMLElement>;
 
 export let colorfull1: Color = new TinyColor("#01724b");
@@ -284,8 +285,10 @@ function onBaseColorChanged() {
         getColorBaseRule().style.setProperty('color', baseColor, 'important');
         getColorMutedBaseRule().style.setProperty('color', mutedBaseColor, 'important');
         getBgBaseRule().style.setProperty('background-color', baseColor, 'important');
+        // specific elements affected by base color
         $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${baseColor}`);
         $('.code-block pre code').css('text-shadow', `0 .5px  ${schemeColor.getInvert()}`);
+        $('.setting-section .setting-panel .background-item').css('border', `${mutedBaseColor} 2px solid`)
         currentStyle.onBaseColorUpdated();
         stylesWithUpdatedBaseColor.length = 0;
         stylesWithUpdatedBaseColor.push(currentStyle.name);

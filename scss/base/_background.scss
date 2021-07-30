@@ -1,4 +1,13 @@
+@import "variables";
+
 body {
+
+        .background-0,
+        &.background-0 {
+                /* background by SVGBackgrounds.com */
+                background-color: $schemeColor;
+                background-image: none;
+        }
 
         .background-1,
         &.background-1,

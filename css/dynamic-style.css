@@ -74,6 +74,7 @@ Init values for dynamic properties to reduce  page load time
   height: 250px;
   zoom: 0.15;
   border-radius: 60px;
+  border: #4D4D4D 2px solid;
   cursor: pointer;
 }
 
@@ -553,6 +554,16 @@ Init values for dynamic properties to reduce  page load time
   .display-content > .container {
     padding: 40px;
   }
+}
+
+/*
+Init values for dynamic properties to reduce  page load time 
+*/
+/* FONT */
+body .background-0, body.background-0 {
+  /* background by SVGBackgrounds.com */
+  background-color: #D4D4D4;
+  background-image: none;
 }
 
 body .background-1, body.background-1,

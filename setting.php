@@ -89,6 +89,11 @@ include_once "components/basic/_index.php";
                                 <div id="background-panel" class="option-panel mb-4">
                                         <p class="option-label">Background</p>
                                         <div class="row px-4 justify-content-center">
+                                                <!-- <div class="col-4 background-item " id="background-1"> </div> -->
+                                                <div class="col-4 background-item " id="background-0"> </div>
+                                                <!-- <div class="col-4 background-item " id="background-3"> </div> -->
+                                        </div>
+                                        <div class="row px-4 justify-content-center">
                                                 <div class="col-4 background-item " id="background-1"> </div>
                                                 <div class="col-4 background-item " id="background-2"> </div>
                                                 <div class="col-4 background-item " id="background-3"> </div>
