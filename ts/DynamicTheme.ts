@@ -10,9 +10,6 @@ import { TinyColor } from './base/TinyColor.js';
 //TODO; elements for specific project
 let $squareImg: JQuery<HTMLElement>;
 
-// TODO: cache all jQuery selectors
-let $body: JQuery<HTMLElement>;
-
 export let colorfull1: Color = new TinyColor("#01724b");
 export let colorfull2: Color = new TinyColor("#bc5b00");
 export let colorfull3: Color = new TinyColor("#c40639");
@@ -24,7 +21,12 @@ const lightMutedBaseColor: string = "#b2b2b2";
 const darkMutedBaseColor: string = "#4D4D4D";
 export let mutedBaseColor: string = darkMutedBaseColor;
 
-let currentBg: string;
+// TODO: cache all jQuery selectors
+let $body: JQuery<HTMLElement>; //outer background
+// TODO: find a way to cache $(innerBgSelector)
+let innerBgSelector: string = ".display-content>.container"; // inner background, default is the scheme color
+let currentOuterBg: string;
+let currentInnerBg: string;
 // although we select global bg for all UI styles, at the first time before doing that, 
 // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
 // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
@@ -97,12 +99,23 @@ function getColorfull3Rule(): CSSStyleRule {
 export function changeStyle(newStyle: Style) {
         currentStyle?.onDisable();
         $body.removeClass(currentStyle?.name);
-        if (!updateGlobalBgTriggered) $body.removeClass(currentStyle?.preferredBg);
+        if (!updateGlobalBgTriggered) {
+                $body.removeClass(currentStyle?.preferredOuterBg);
+                $(innerBgSelector).each((index, element) => {
+                        element.classList.remove(currentStyle?.preferredInnerBg);
+                })
+        }
 
         currentStyle = newStyle;
         $body.addClass(currentStyle.name);
-        if (!updateGlobalBgTriggered) $body.addClass(currentStyle?.preferredBg);
-        currentBg = currentStyle?.preferredBg;
+        if (!updateGlobalBgTriggered) {
+                $body.addClass(currentStyle?.preferredOuterBg);
+                $(innerBgSelector).each((index, element) => {
+                        element.classList.add(currentStyle?.preferredInnerBg);
+                })
+                currentOuterBg = currentStyle?.preferredOuterBg;
+                currentInnerBg = currentStyle?.preferredInnerBg;
+        }
 
         $(".customizer").hide();
         currentStyle.onEnable();
@@ -142,14 +155,15 @@ function setup() {
         initSettingPanel();
         setupSettingEvents();
         $squareImg = $(".hero-image .square img");
-        $body = $("body");
+        $body = $('body');
         styleSheet = createStyleSheet();
         cssRules = styleSheet.cssRules || styleSheet.rules;
         new StyleRegistry();
-        $body.addClass(currentStyle?.preferredBg);
-        // $(DynamicSelectors.bgSelectors).each((index, element) => {
-        //         element.classList.add(currentBackground);
-        // });
+
+        $body.addClass(currentStyle?.preferredOuterBg);
+        $(innerBgSelector).each((index, element) => {
+                element.classList.add(currentStyle?.preferredInnerBg);
+        })
         // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
 }
 
@@ -173,17 +187,27 @@ function setupSettingEvents() {
         setupColorPickerEvents();
         setupRangeSliderEvents();
 
-        $('.background-item').on('click', (event) => {
+        $('#outer-background-panel .background-item').on('click', (event) => {
                 updateGlobalBgTriggered = true;
-                const lastBg: string = currentBg;
-                currentBg = event.currentTarget.id;
-
-                $body.removeClass(lastBg);
-                $body.addClass(currentBg);
+                const lastOuterBg: string = currentOuterBg;
+                currentOuterBg = event.currentTarget.id;
+                $body.removeClass(lastOuterBg);
+                $body.addClass(currentOuterBg);
                 // $(DynamicSelectors.bgSelectors).each((index, element) => {
-                //         element.classList.remove(lastBackground);
-                //         element.classList.add(currentBackground);
-                // })
+                //         element.classList.remove(lastOuterBg);
+                //         element.classList.add(currentOuterBg);
+                // });
+        });
+
+        $('#inner-background-panel .background-item').on('click', (event) => {
+                updateGlobalBgTriggered = true;
+                const lastInnerBg: string = currentInnerBg;
+                currentInnerBg = event.currentTarget.id;
+
+                $(innerBgSelector).each((index, element) => {
+                        element.classList.remove(lastInnerBg);
+                        element.classList.add(currentInnerBg);
+                })
         });
 }
 

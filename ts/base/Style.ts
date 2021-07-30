@@ -5,13 +5,15 @@ export abstract class Style {
         name: StyleName;
         // preffered properies are applied to a style at the first time, 
         //util we update the property for global from setting panel
-        preferredBg: string;
+        preferredOuterBg: string;
+        preferredInnerBg: string;
 
-        constructor(name: StyleName, preferredBg?: string) {
+        constructor(name: StyleName, preferredOuterBg?: string, preferredInnerBg?: string) {
                 this.styleSheet = this.createStyleSheet();
                 this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
                 this.name = name;
-                this.preferredBg = preferredBg ?? 'background-0';
+                this.preferredOuterBg = preferredOuterBg ?? 'background-0';
+                this.preferredInnerBg = preferredInnerBg ?? 'background-0';
         }
 
         private createStyleSheet(): CSSStyleSheet {

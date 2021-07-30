@@ -1,4 +1,7 @@
-export const bgSelectors = ' body';
+export const bgSelectors = formatString([
+        ' body',
+        '.display-content>.container'
+])
 
 export const bgHighlightSelectors = formatString([
         ".bg-highlight-color",

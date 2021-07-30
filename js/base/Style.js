@@ -1,10 +1,11 @@
 export class Style {
-    constructor(name, preferredBg) {
+    constructor(name, preferredOuterBg, preferredInnerBg) {
         this.insertEmptyRule = (selectors) => this.cssRules[this.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
         this.styleSheet = this.createStyleSheet();
         this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
         this.name = name;
-        this.preferredBg = preferredBg !== null && preferredBg !== void 0 ? preferredBg : 'background-0';
+        this.preferredOuterBg = preferredOuterBg !== null && preferredOuterBg !== void 0 ? preferredOuterBg : 'background-0';
+        this.preferredInnerBg = preferredInnerBg !== null && preferredInnerBg !== void 0 ? preferredInnerBg : 'background-0';
     }
     createStyleSheet() {
         var style = document.createElement("style");
