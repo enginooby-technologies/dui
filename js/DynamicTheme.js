@@ -141,6 +141,12 @@ function setup() {
         element.classList.add(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);
     });
     // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
+    $(".status_change .dropdown-item").click(function () {
+        var getStatusText = $(this).text();
+        $(this).closest(".status_dropdown").find(".status__btn").text(getStatusText);
+        var generateStatusClass = `${$(this).attr('data-class')}-status`;
+        $(this).closest(".status_dropdown").attr("data-color", `${generateStatusClass}`);
+    });
 }
 function initSettingPanel() {
     $("#scheme-color-picker").attr('value', schemeColor.hex);

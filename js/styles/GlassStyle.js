@@ -9,7 +9,7 @@ import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
     constructor() {
         super(StyleName.Glass, 'background-3');
-        this.blur = '2';
+        this.blur = '10';
         this.transparency = '0.6';
         this.borderSize = '1';
         this.lightenSchemeIntensity = 15;

@@ -85,6 +85,14 @@ include_once "components/basic/_index.php";
                                         </div>
                                 </div>
 
+                                <!-- BORDER -->
+                                <div id="border-panel" class="option-panel mb-4">
+                                        <p class="option-label">Border</p>
+                                        <?php
+                                        echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
+                                        ?>
+                                </div>
+
                                 <!-- BACKGROUND -->
                                 <div id="background-panel" class="option-panel mb-4">
                                         <p class="option-label">Background</p>
@@ -97,6 +105,13 @@ include_once "components/basic/_index.php";
                                                         <div class="col-4 background-item " id="background-1"> </div>
                                                         <div class="col-4 background-item " id="background-2"> </div>
                                                         <div class="col-4 background-item " id="background-3"> </div>
+                                                        <div class="col-4 background-item " id="background-4"> </div>
+                                                        <div class="col-4 background-item " id="background-5"> </div>
+                                                        <div class="col-4 background-item " id="background-6"> </div>
+                                                        <div class="col-4 background-item " id="background-7"> </div>
+                                                        <div class="col-4 background-item " id="background-8"> </div>
+                                                        <div class="col-4 background-item " id="background-9"> </div>
+
                                                 </div>
                                         </div>
                                         <div id="inner-background-panel" class="mt-3">
@@ -108,15 +123,15 @@ include_once "components/basic/_index.php";
                                                         <div class="col-4 background-item " id="background-1"> </div>
                                                         <div class="col-4 background-item " id="background-2"> </div>
                                                         <div class="col-4 background-item " id="background-3"> </div>
+                                                        <div class="col-4 background-item " id="background-4"> </div>
+                                                        <div class="col-4 background-item " id="background-5"> </div>
+                                                        <div class="col-4 background-item " id="background-6"> </div>
+                                                        <div class="col-4 background-item " id="background-7"> </div>
+                                                        <div class="col-4 background-item " id="background-8"> </div>
+                                                        <div class="col-4 background-item " id="background-9"> </div>
+
                                                 </div>
                                         </div>
-                                </div>
-
-                                <div id="border-panel" class="option-panel mb-4">
-                                        <p class="option-label">Border</p>
-                                        <?php
-                                        echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
-                                        ?>
                                 </div>
                         </div>
 

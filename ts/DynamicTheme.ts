@@ -165,6 +165,13 @@ function setup() {
                 element.classList.add(currentStyle?.preferredInnerBg);
         })
         // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
+
+        $(".status_change .dropdown-item").click(function () {
+                var getStatusText = $(this).text();
+                $(this).closest(".status_dropdown").find(".status__btn").text(getStatusText);
+                var generateStatusClass = `${$(this).attr('data-class')}-status`
+                $(this).closest(".status_dropdown").attr("data-color", `${generateStatusClass}`);
+        })
 }
 
 function initSettingPanel() {

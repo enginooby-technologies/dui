@@ -6,7 +6,7 @@ import { StyleName } from '../Config.js';
 export class FlatStyle extends Style {
         // Singleton Pattern
         private static _instance: FlatStyle;
-        private constructor() { super(StyleName.Flat, 'background-1') }
+        private constructor() { super(StyleName.Flat) }
         public static get Instance(): FlatStyle {
                 FlatStyle._instance ??= new FlatStyle();
                 return FlatStyle._instance;

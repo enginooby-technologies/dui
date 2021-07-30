@@ -3,8 +3,9 @@
         <?php include_once "layouts/_index.php"; ?>
 
         <div class="display-table">
-                <div class="display-content">
+                <div class="display-content ">
                         <div class="container ">
+
                                 <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
                                 <hr>
 

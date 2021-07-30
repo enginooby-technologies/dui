@@ -18,7 +18,7 @@ export class GlassStyle extends Style {
                 return GlassStyle._instance;
         }
 
-        blur = '2';
+        blur = '10';
         transparency = '0.6';
         borderSize = '1';
         lightenSchemeIntensity = 15;
