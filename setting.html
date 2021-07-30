@@ -3,7 +3,7 @@
         <div class="text-center setting-panel hide">
                 <div class="setting-panel-content">
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
-                                <h6 class="text-center mt-0 mb-3">UI Style</h6>
+                                <p class="option-label">UI Style</p>
                                 <!-- TODO: make buttons  equal widths -->
                                   <div class='button-border'>
           <a href='javascript:;' class='button' id='flat-skin-button'>Flat</a>
@@ -17,7 +17,7 @@
                                 <!-- STYLE CUSTOMIZER -->
                                 <div id="customizer-panel">
                                         <div class="customizer" id="neu-customizer">
-                                                <h6 class="text-center mt-0">Neu Customizer</h6>
+                                                <p class="option-label">Neu Custom</p>
                                                         <div class='range-slider'>
                 <label for='neu-distance-x'>Distance X</label>
                 <input class='range-slider__range' id='neu-distance-x' type='range' min='0' max='20' step='0.1' value='0'>
@@ -84,10 +84,10 @@
                 <span class='range-slider__value'>-100</span>
         </div>                                        </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
-                                                <h6 class="text-center mt-0"> Flat Customizer</h6>
+                                                <p class="option-label">Flat Custom</p>
                                         </div>
                                         <div class="customizer" id="glass-customizer">
-                                                <h6 class="text-center mt-0"> Glass Customizer</h6>
+                                                <p class="option-label">Glass Custom</p>
                                                         <div class='range-slider'>
                 <label for='glass-transparency'>Transparency</label>
                 <input class='range-slider__range' id='glass-transparency' type='range' min='0' max='1' step='0.1' value='0'>
@@ -100,19 +100,11 @@
                 <label for='glass-border-size'>Border size</label>
                 <input class='range-slider__range' id='glass-border-size' type='range' min='0' max='10' step='0.1' value='0'>
                 <span class='range-slider__value'>0</span>
-        </div>                                                <div class="background-gallery">
-                                                        <p>Background</p>
-                                                        <div class="row px-4">
-                                                                <div class="col-4 background-item " id="background-1"> </div>
-                                                                <div class="col-4 background-item " id="background-2"> </div>
-                                                                <div class="col-4 background-item " id="background-3"> </div>
-                                                        </div>
-                                                </div>
-                                        </div>
+        </div>                                        </div>
                                 </div>
                                 <!-- GLOBAL CUSTOMIZER -->
                                 <div id="color-panel">
-                                        <h6 class="text-center mt-3"> Colour</h6>
+                                        <p class="option-label">Colour</p>
                                         <div class="row px-4">
                                                 <div class="col-6 p-0">
                                                         <label for="highlight-color-picker">Highlight</label>
@@ -124,7 +116,7 @@
                                                 </div>
                                         </div>
                                         <div class="row mt-3 px-4 justify-content-center">
-                                                <label>Classification</label>
+                                                <p class="option-label">Classification</p>
                                         </div>
                                         <div class="row mt-1 px-4">
                                                 <div class="col-4 p-0 ">
@@ -139,8 +131,17 @@
                                         </div>
                                 </div>
 
+                                <div class="row mt-3 px-4 justify-content-center">
+                                        <p class="option-label">Background</p>
+                                        <div class="row px-4">
+                                                <div class="col-4 background-item " id="background-1"> </div>
+                                                <div class="col-4 background-item " id="background-2"> </div>
+                                                <div class="col-4 background-item " id="background-3"> </div>
+                                        </div>
+                                </div>
+
                                 <div id="border-panel" class="mt-3 mb-3">
-                                        <h6 class="text-center "> Border</h6>
+                                        <p class="option-label">Border</p>
                                                 <div class='range-slider'>
                 <label for='border-radius'>Radius</label>
                 <input class='range-slider__range' id='border-radius' type='range' min='0' max='50' step='0.1' value='0'>

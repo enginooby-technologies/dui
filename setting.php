@@ -7,7 +7,7 @@ include_once "components/basic/_index.php";
         <div class="text-center setting-panel hide">
                 <div class="setting-panel-content">
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
-                                <h6 class="text-center mt-0 mb-3">UI Style</h6>
+                                <p class="option-label">UI Style</p>
                                 <!-- TODO: make buttons  equal widths -->
                                 <?php
                                 Button(label: 'Flat', id: 'flat-skin-button');
@@ -20,7 +20,7 @@ include_once "components/basic/_index.php";
                                 <!-- STYLE CUSTOMIZER -->
                                 <div id="customizer-panel">
                                         <div class="customizer" id="neu-customizer">
-                                                <h6 class="text-center mt-0">Neu Customizer</h6>
+                                                <p class="option-label">Neu Custom</p>
                                                 <?php
                                                 // NOTICE: echo can only used in "<?php", not "<=?"
                                                 echo RangeSlider(label: 'Distance X', id: 'neu-distance-x',  max: 20);
@@ -47,28 +47,20 @@ include_once "components/basic/_index.php";
                                                 ?>
                                         </div>
                                         <div class="customizer" id="flat-customizer-in-progress">
-                                                <h6 class="text-center mt-0"> Flat Customizer</h6>
+                                                <p class="option-label">Flat Custom</p>
                                         </div>
                                         <div class="customizer" id="glass-customizer">
-                                                <h6 class="text-center mt-0"> Glass Customizer</h6>
+                                                <p class="option-label">Glass Custom</p>
                                                 <?php
                                                 echo RangeSlider(label: 'Transparency', id: 'glass-transparency',  max: 1);
                                                 echo RangeSlider(label: 'Blur', id: 'glass-blur', max: 30);
                                                 echo RangeSlider(label: 'Border size', id: 'glass-border-size', max: 10);
                                                 ?>
-                                                <div class="background-gallery">
-                                                        <p>Background</p>
-                                                        <div class="row px-4">
-                                                                <div class="col-4 background-item " id="background-1"> </div>
-                                                                <div class="col-4 background-item " id="background-2"> </div>
-                                                                <div class="col-4 background-item " id="background-3"> </div>
-                                                        </div>
-                                                </div>
                                         </div>
                                 </div>
                                 <!-- GLOBAL CUSTOMIZER -->
                                 <div id="color-panel">
-                                        <h6 class="text-center mt-3"> Colour</h6>
+                                        <p class="option-label">Colour</p>
                                         <div class="row px-4">
                                                 <div class="col-6 p-0">
                                                         <label for="highlight-color-picker">Highlight</label>
@@ -80,7 +72,7 @@ include_once "components/basic/_index.php";
                                                 </div>
                                         </div>
                                         <div class="row mt-3 px-4 justify-content-center">
-                                                <label>Classification</label>
+                                                <p class="option-label">Classification</p>
                                         </div>
                                         <div class="row mt-1 px-4">
                                                 <div class="col-4 p-0 ">
@@ -95,8 +87,17 @@ include_once "components/basic/_index.php";
                                         </div>
                                 </div>
 
+                                <div class="row mt-3 px-4 justify-content-center">
+                                        <p class="option-label">Background</p>
+                                        <div class="row px-4">
+                                                <div class="col-4 background-item " id="background-1"> </div>
+                                                <div class="col-4 background-item " id="background-2"> </div>
+                                                <div class="col-4 background-item " id="background-3"> </div>
+                                        </div>
+                                </div>
+
                                 <div id="border-panel" class="mt-3 mb-3">
-                                        <h6 class="text-center "> Border</h6>
+                                        <p class="option-label">Border</p>
                                         <?php
                                         echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);
                                         ?>

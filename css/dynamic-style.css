@@ -15,6 +15,23 @@ Init values for dynamic properties to reduce  page load time
   left: 55px;
 }
 
+.setting-section .setting-panel p:not(.option-label) {
+  font-size: 1.1rem !important;
+  margin-bottom: 10px !important;
+}
+
+.setting-section .setting-panel p.option-label {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.setting-section .setting-panel .customizer p.option-label {
+  margin-top: 0;
+}
+
 .setting-section .setting-panel .radio-button-group .button-border {
   display: inline-block;
 }
@@ -119,15 +136,6 @@ Init values for dynamic properties to reduce  page load time
 .setting-save-panel {
   height: 45px;
   padding-top: 8px;
-}
-
-.setting-panel-content {
-  direction: ltr;
-}
-
-.setting-panel-content p {
-  font-size: 1.1rem !important;
-  margin-bottom: 10px !important;
 }
 
 .setting-section .scrollable::-webkit-scrollbar {

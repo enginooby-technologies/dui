@@ -8,7 +8,6 @@
 $panelWidth:180px;
 
 .setting-section .setting-panel {
-        // direction: rtl;
         top: 75px;
         z-index: 1000;
         position: fixed;
@@ -16,11 +15,30 @@ $panelWidth:180px;
         width: $panelWidth;
         left: 55px;
 
+        // TEXT
+        p:not(.option-label) {
+                font-size: 1.1rem *$fontScale !important;
+                margin-bottom: 10px !important;
+        }
+
+        p.option-label {
+                text-align: center;
+                font-size: 1.4rem * $fontScale;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: 800;
+        }
+
+        .customizer p.option-label {
+                margin-top: 0;
+        }
+
         // BUTTON-RADIO 
         .radio-button-group .button-border {
 
                 display: inline-block;
 
+                // BUTTON
                 .button {
                         padding: 8px 20px;
                 }
@@ -35,8 +53,6 @@ $panelWidth:180px;
                 .text {
                         margin-left: 10px;
                 }
-
-
 
                 #solid-border~label .text {
                         border: $borderWidthDemo solid $mutedBaseColor;
@@ -55,6 +71,7 @@ $panelWidth:180px;
                 }
         }
 
+        // RANGE SLIDER
         .range-slider__range {
                 width: 6rem;
         }
@@ -131,16 +148,6 @@ $panelWidth:180px;
         height: 45px;
         padding-top: 8px;
 }
-
-.setting-panel-content {
-        direction: ltr;
-
-        p {
-                font-size: 1.1rem *$fontScale !important;
-                margin-bottom: 10px !important;
-        }
-}
-
 
 $scrollbarRadius: 16px;
 
