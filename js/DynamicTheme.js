@@ -20,6 +20,8 @@ let $body; //outer background
 let innerBgSelector = ".display-content>.container"; // inner background, default is the scheme color
 let currentOuterBg;
 let currentInnerBg;
+let hasCustomBg; // if the main project using this framework has its own bg, use "custom-background" class in <body>
+const customBgClassName = "custom-background";
 // although we select global bg for all UI styles, at the first time before doing that, 
 // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
 // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
@@ -84,7 +86,8 @@ export function changeStyle(newStyle) {
     currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.onDisable();
     $body.removeClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.name);
     if (!updateGlobalBgTriggered) {
-        $body.removeClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
+        if (!hasCustomBg)
+            $body.removeClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
         $(innerBgSelector).each((index, element) => {
             element.classList.remove(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);
         });
@@ -92,7 +95,8 @@ export function changeStyle(newStyle) {
     currentStyle = newStyle;
     $body.addClass(currentStyle.name);
     if (!updateGlobalBgTriggered) {
-        $body.addClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
+        if (!hasCustomBg)
+            $body.addClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
         $(innerBgSelector).each((index, element) => {
             element.classList.add(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);
         });
@@ -136,13 +140,18 @@ function setup() {
     $body = $('body');
     styleSheet = createStyleSheet();
     cssRules = styleSheet.cssRules || styleSheet.rules;
+    hasCustomBg = $body.hasClass(customBgClassName);
+    if (hasCustomBg)
+        $(`.setting-panel .${customBgClassName}`).removeClass('hide');
+    // if (!hasCustomBg) {
+    //         $body.addClass(currentStyle?.preferredOuterBg);
+    // }
+    // $(innerBgSelector).each((index, element) => {
+    //         element.classList.add(currentStyle?.preferredInnerBg);
+    // })
+    // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
     const initStyleName = (_a = $body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
     new StyleRegistry(initStyleName);
-    $body.addClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
-    $(innerBgSelector).each((index, element) => {
-        element.classList.add(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);
-    });
-    // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
     $(".status_change .dropdown-item").click(function () {
         var getStatusText = $(this).text();
         $(this).closest(".status_dropdown").find(".status__btn").text(getStatusText);

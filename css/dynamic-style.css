@@ -78,6 +78,10 @@ Init values for dynamic properties to reduce  page load time
   cursor: pointer;
 }
 
+.setting-section .setting-panel #custom-background.hide {
+  display: none;
+}
+
 .setting-panel.hide {
   opacity: 0;
   visibility: hidden;

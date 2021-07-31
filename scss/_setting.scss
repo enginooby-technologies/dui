@@ -85,6 +85,10 @@ $panelWidth:180px;
                 border: $mutedBaseColor 2px solid;
                 cursor: pointer;
         }
+
+        #custom-background.hide {
+                display: none;
+        }
 }
 
 .setting-panel.hide {

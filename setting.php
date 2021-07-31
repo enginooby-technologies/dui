@@ -100,6 +100,7 @@ include_once "components/basic/_index.php";
                                                 <p> Outer </p>
                                                 <div class="row px-4 justify-content-center">
                                                         <div class="col-4 background-item " id="background-0"> </div>
+                                                        <div class="col-4 background-item custom-background hide" id="custom-background"> </div>
                                                 </div>
                                                 <div class="row px-4 justify-content-center">
                                                         <div class="col-4 background-item " id="background-1"> </div>
