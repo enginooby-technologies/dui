@@ -19,7 +19,7 @@ include_once "components/basic/_index.php";
                         <div class="scrollable ">
                                 <!-- STYLE CUSTOMIZER -->
                                 <div id="customizer-panel">
-                                        <div class="customizer  option-panel mb-4" id="neu-customizer">
+                                        <div class="customizer  option-panel mb-3" id="neu-customizer">
                                                 <p class="option-label">Neu Custom</p>
                                                 <?php
                                                 // NOTICE: echo can only used in "<?php", not "<=?"
@@ -59,7 +59,7 @@ include_once "components/basic/_index.php";
                                         </div>
                                 </div>
                                 <!-- GLOBAL CUSTOMIZER -->
-                                <div id="color-panel" class="option-panel mb-4">
+                                <div id="color-panel" class="option-panel mb-3">
                                         <p class="option-label">Colour</p>
                                         <div class="row px-4">
                                                 <div class="col-6 p-0">
@@ -86,7 +86,7 @@ include_once "components/basic/_index.php";
                                 </div>
 
                                 <!-- BORDER -->
-                                <div id="border-panel" class="option-panel mb-4">
+                                <div id="border-panel" class="option-panel mb-3">
                                         <p class="option-label">Border</p>
                                         <?php
                                         echo RangeSlider(label: 'Radius', id: 'border-radius', max: 50);

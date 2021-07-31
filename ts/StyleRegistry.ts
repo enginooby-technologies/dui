@@ -7,6 +7,7 @@ import { FlatStyle } from "./styles/FlatStyle.js";
 import { NeuStyle } from "./styles/NeuStyle.js";
 import { GlassStyle } from "./styles/GlassStyle.js";
 import { NesStyle } from "./styles/NesStyle.js";
+import { StyleName } from "./Config.js";
 
 const FLAT_OPTION_SELECTOR: string = '#flat-skin-button';
 const NES_OPTION_SELECTOR: string = '#nes-skin-button';
@@ -14,16 +15,28 @@ const NEU_OPTION_SELECTOR: string = '#neu-skin-button';
 const GLASS_OPTION_SELECTOR: string = '#glass-skin-button';
 
 export class StyleRegistry {
-        constructor() {
+        constructor(initSytle: string = StyleName.Neu) {
                 this.init();
-                // changeStyle(GlassStyle.Instance);
-                // $(GLASS_OPTION_SELECTOR).children('.button').addClass('active');
-                changeStyle(NeuStyle.Instance);
-                $(NEU_OPTION_SELECTOR).addClass('active');
+                switch (initSytle) {
+                        case StyleName.Flat:
+                                changeStyle(FlatStyle.Instance);
+                                $(FLAT_OPTION_SELECTOR).children('.button').addClass('active');
+                                break;
+                        case StyleName.Neu:
+                                changeStyle(NeuStyle.Instance);
+                                $(NEU_OPTION_SELECTOR).addClass('active');
+                                break;
+                        case StyleName.Glass:
+                                changeStyle(GlassStyle.Instance);
+                                $(GLASS_OPTION_SELECTOR).addClass('active');
+                                break;
+                        default:
+                                changeStyle(NeuStyle.Instance);
+                                $(NEU_OPTION_SELECTOR).addClass('active');
+                                break;
+                }
                 // changeStyle(NesStyle.Instance);
                 // $(NES_OPTION_SELECTOR).children('.button').addClass('active');
-                // changeStyle(FlatStyle.Instance);
-                // $(FLAT_OPTION_SELECTOR).children('.button').addClass('active');
         }
 
         public init() {

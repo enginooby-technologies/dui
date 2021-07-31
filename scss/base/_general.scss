@@ -2,6 +2,20 @@
 /*-------------------------
          GENERAL
 -------------------------*/
+// FORM COMPONENTS
+
+.form-group,
+.form-control,
+.form-control:focus,
+.form-control:hover {
+        background-color: transparent;
+}
+
+label.form-control {
+        background: none;
+        border: none;
+}
+
 $agencyFbRegular: '/assets/fonts/agency-fb-regular/AgencyFB-Reg';
 $agencyFbBold: '/assets/fonts/agency-fb-bold/AgencyFB-Bold';
 

@@ -8,7 +8,6 @@ body,
 .box-border,
 .segmented-control,
 .image-border,
-.form-group,
 .skill-box .skillbar,
 .blog .blog-image,
 .blog .blog-item .before,
@@ -181,7 +180,8 @@ table,
 .portfolio-item-content::before,
 .form-group input,
 .form-group textarea,
-.video-container {
+.video-container,
+.alert {
         border-radius: $borderRadius;
 }
 

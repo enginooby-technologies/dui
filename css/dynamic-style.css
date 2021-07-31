@@ -225,6 +225,18 @@ Init values for dynamic properties to reduce  page load time
 /*-------------------------
          GENERAL
 -------------------------*/
+.form-group,
+.form-control,
+.form-control:focus,
+.form-control:hover {
+  background-color: transparent;
+}
+
+label.form-control {
+  background: none;
+  border: none;
+}
+
 @font-face {
   font-family: "Agency FB";
   src: url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.ttf");
@@ -1410,6 +1422,9 @@ Init values for dynamic properties to reduce  page load time
 .glass-style .setting-button-border {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+}
+
+.glass-style .button-border {
   background: transparent !important;
 }
 
@@ -1435,7 +1450,6 @@ body,
 .box-border,
 .segmented-control,
 .image-border,
-.form-group,
 .skill-box .skillbar,
 .blog .blog-image,
 .blog .blog-item .before,
@@ -1624,7 +1638,8 @@ table,
 .portfolio-item-content::before,
 .form-group input,
 .form-group textarea,
-.video-container {
+.video-container,
+.alert {
   border-radius: 9px;
 }
 

@@ -129,13 +129,15 @@ function loadSettingPanel(filePath) {
     });
 }
 function setup() {
+    var _a;
     initSettingPanel();
     setupSettingEvents();
     $squareImg = $(".hero-image .square img");
     $body = $('body');
     styleSheet = createStyleSheet();
     cssRules = styleSheet.cssRules || styleSheet.rules;
-    new StyleRegistry();
+    const initStyleName = (_a = $body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
+    new StyleRegistry(initStyleName);
     $body.addClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
     $(innerBgSelector).each((index, element) => {
         element.classList.add(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);

@@ -158,7 +158,9 @@ function setup() {
         $body = $('body');
         styleSheet = createStyleSheet();
         cssRules = styleSheet.cssRules || styleSheet.rules;
-        new StyleRegistry();
+
+        const initStyleName = $body!.attr('class')!.match(/\S*-style\b/i)?.toString();
+        new StyleRegistry(initStyleName);
 
         $body.addClass(currentStyle?.preferredOuterBg);
         $(innerBgSelector).each((index, element) => {

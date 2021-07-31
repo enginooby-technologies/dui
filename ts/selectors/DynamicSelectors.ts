@@ -15,7 +15,6 @@ export const bgSchemeSelectors = formatString([
         // ".hero-03",
         ".segmented-control",
         ".image-border",
-        ".form-group",
         ".skill-box .skillbar",
         ".blog .blog-image",
         ".blog .blog-item .before",
@@ -121,6 +120,7 @@ export const colorMutedBaseSelectors = formatString([
 export const borderRadiusSelectors = formatString([
         // CONTAINER COMPONENTS
         ".code-block",
+        ".alert",
 
         // BLOG
         ".blog .blog-image",

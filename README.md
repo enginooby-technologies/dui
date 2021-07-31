@@ -19,10 +19,14 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 + Neon
 + Cyberpunk
 + Metalic
-+ NES/Pixel
++ NES/Pixel/Arcade
 + Grid
++ 3D
 + Windows
 + Monograph
++ Vintage/Retro
++ Rainbow
++ Textbook
 </details>
 
 ## Dependencies
