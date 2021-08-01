@@ -1761,10 +1761,6 @@ Init values for dynamic properties to reduce  page load time
   background-size: cover;
 }
 
-.background-item.liquid-cheese-bg {
-  background-image: url("../backgrounds/_liquid-cheese-thumbnail.jpg");
-}
-
 .protruding-squares-bg {
   background-color: #ee5522;
   /* background by SVGBackgrounds.com */
