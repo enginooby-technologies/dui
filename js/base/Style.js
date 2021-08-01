@@ -1,20 +1,13 @@
+import { DynamicUI } from '../DynamicUI.js';
 export class Style {
     constructor(name, preferredOuterBg, preferredInnerBg) {
-        this.insertEmptyRule = (selectors) => this.cssRules[this.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
-        this.styleSheet = this.createStyleSheet();
-        this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
+        this.insertEmptyRule = (selectors) => DynamicUI.cssRules[DynamicUI.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
         this.name = name;
         this.preferredOuterBg = preferredOuterBg !== null && preferredOuterBg !== void 0 ? preferredOuterBg : 'none-bg';
         this.preferredInnerBg = preferredInnerBg !== null && preferredInnerBg !== void 0 ? preferredInnerBg : 'none-bg';
     }
-    createStyleSheet() {
-        var style = document.createElement("style");
-        document.head.appendChild(style);
-        return style.sheet;
-    }
     formatSelectorsArray(array) {
         return array.map(selector => `.${this.name} ${selector}`).join(", ");
-        // return array.join(", ");
     }
     onEnable() {
         this.init();

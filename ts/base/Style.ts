@@ -1,8 +1,7 @@
 import { StyleName } from '../Config.js';
+import { DynamicUI } from '../DynamicUI.js';
 
 export abstract class Style {
-        private styleSheet?: CSSStyleSheet;
-        private cssRules?: CSSRuleList;
         name: StyleName;
         // preffered properies are applied to a style at the first time, 
         //util we update the property for global from setting panel
@@ -10,24 +9,15 @@ export abstract class Style {
         preferredInnerBg: string;
 
         constructor(name: StyleName, preferredOuterBg?: string, preferredInnerBg?: string) {
-                this.styleSheet = this.createStyleSheet();
-                this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
                 this.name = name;
                 this.preferredOuterBg = preferredOuterBg ?? 'none-bg';
                 this.preferredInnerBg = preferredInnerBg ?? 'none-bg';
         }
 
-        private createStyleSheet(): CSSStyleSheet {
-                var style = document.createElement("style");
-                document.head.appendChild(style);
-                return style.sheet!;
-        }
-
-        protected insertEmptyRule = (selectors: string[]): CSSStyleRule => this.cssRules![this.styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
+        protected insertEmptyRule = (selectors: string[]): CSSStyleRule => DynamicUI.cssRules![DynamicUI.styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
 
         private formatSelectorsArray(array: string[]): string {
                 return array.map(selector => `.${this.name} ${selector}`).join(", ");
-                // return array.join(", ");
         }
 
         onEnable(): void {

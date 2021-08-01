@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Dynamic Framework</title>
+        <title>Dynamic UI Framework</title>
         <meta charset="UTF-8" />
         <meta name="author" content="enginoobz" />
         <meta name="description" content="Demo page for Dynamic Style Framework" />

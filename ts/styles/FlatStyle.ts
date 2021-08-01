@@ -1,7 +1,7 @@
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
-import { DynamicUI } from '../DynamicUI.js';
+import { DynamicColor } from '../DynamicColor.js';
 
 export class FlatStyle extends Style {
         // Singleton Pattern
@@ -42,33 +42,33 @@ export class FlatStyle extends Style {
         setupCustomizeEvents(): void { }
 
         onHighlightColorUpdated(): void {
-                this.darkenHighlightColor = DynamicUI.highlightColor!.getDarken(this.darkHighlightIntensity);
+                this.darkenHighlightColor = DynamicColor.highlightColor!.getDarken(this.darkHighlightIntensity);
                 this.updateBgHighlight();
                 this.updateColorHighlight();
         }
 
         private updateBgHighlight() {
-                this.getBgHighlightRule().style.setProperty('background-color', DynamicUI.highlightColor!.hex, 'important');
-                this.getBgHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.getInvertBlackWhite(), 'important');
+                this.getBgHighlightRule().style.setProperty('background-color', DynamicColor.highlightColor!.hex, 'important');
+                this.getBgHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
                 this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-                this.getBgDarkenHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.getInvertBlackWhite(), 'important');
+                this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
         }
 
         public updateColorHighlight() {
-                this.getColorHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.hex, 'important');
-                this.getColorContrastHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.getInvertBlackWhite(), 'important');
+                this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.hex, 'important');
+                this.getColorContrastHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
         }
 
         onSchemeColorUpdated(): void {
-                this.lightenSchemeColor = DynamicUI.schemeColor!.getLighten(this.lightSchemeIntensity);
-                this.getBgSchemeRule().style.setProperty('background-color', DynamicUI.schemeColor!.hex, 'important');
-                this.getBgSchemeRule().style.setProperty('color', DynamicUI.schemeColor!.getInvertBlackWhite(), 'important');
+                this.lightenSchemeColor = DynamicColor.schemeColor!.getLighten(this.lightSchemeIntensity);
+                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor!.hex, 'important');
+                this.getBgSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
                 this.getBgLightenSchemeRule().style.setProperty('background-color', this.lightenSchemeColor, 'important');
-                this.getBgLightenSchemeRule().style.setProperty('color', DynamicUI.schemeColor!.getInvertBlackWhite(), 'important');
+                this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
         }
 
         public onBaseColorUpdated(): void {
-                this.getColorBaseRule().style.setProperty('color', DynamicUI.baseColor!, 'important');
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicUI.mutedBaseColor!, 'important');
+                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor!, 'important');
+                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor!, 'important');
         }
 }

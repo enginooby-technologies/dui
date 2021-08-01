@@ -7,7 +7,7 @@ import { TinyColor } from '../base/TinyColor.js';
 import * as GlassSelectors from '../selectors/GlassSelectors.js'
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { StyleName } from '../Config.js';
-import { DynamicUI } from '../DynamicUI.js';
+import { DynamicColor } from '../DynamicColor.js';
 
 export class GlassStyle extends Style {
         // Singleton Pattern
@@ -153,36 +153,36 @@ export class GlassStyle extends Style {
         }
 
         private updateTransparencySchemeColor() {
-                this.setToCurrentTransparency(this.getBgSchemeRule(), DynamicUI.schemeColor!);
+                this.setToCurrentTransparency(this.getBgSchemeRule(), DynamicColor.schemeColor!);
                 this.setToCurrentTransparency(this.getBgLightenSchemeRule(), this.lightenSchemeColor);
         }
 
         private updateTransparencyHighlightColor() {
-                this.setToCurrentTransparency(this.getBgHighlightRule(), DynamicUI.highlightColor!);
-                this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicUI.highlightColor!);
+                this.setToCurrentTransparency(this.getBgHighlightRule(), DynamicColor.highlightColor!);
+                this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicColor.highlightColor!);
         }
 
         private updateTransparencyColorfull() {
                 //CONSIDER: Separate update functions if optimization needed
-                this.setToCurrentTransparency(this.getBgColorfull1Rule(), DynamicUI.colorfull1!);
-                this.setToCurrentTransparency(this.getBgColorfull2Rule(), DynamicUI.colorfull2!);
-                this.setToCurrentTransparency(this.getBgColorfull3Rule(), DynamicUI.colorfull3!);
+                this.setToCurrentTransparency(this.getBgColorfull1Rule(), DynamicColor.colorfull1!);
+                this.setToCurrentTransparency(this.getBgColorfull2Rule(), DynamicColor.colorfull2!);
+                this.setToCurrentTransparency(this.getBgColorfull3Rule(), DynamicColor.colorfull3!);
         }
 
         onHighlightColorUpdated(): void {
-                this.darkenHighlightColor.setHex(DynamicUI.highlightColor!.getLighten(this.darkHighlightIntensity));
+                this.darkenHighlightColor.setHex(DynamicColor.highlightColor!.getLighten(this.darkHighlightIntensity));
                 this.updateTransparencyHighlightColor();
-                this.getColorHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.hex, 'important');
-                this.getColorContrastHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.getInvertBlackWhite(), 'important');
+                this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.hex, 'important');
+                this.getColorContrastHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
         }
 
         onSchemeColorUpdated(): void {
-                this.lightenSchemeColor.setHex(DynamicUI.schemeColor!.getLighten(this.lightenSchemeIntensity));
+                this.lightenSchemeColor.setHex(DynamicColor.schemeColor!.getLighten(this.lightenSchemeIntensity));
                 this.updateTransparencySchemeColor();
         }
 
         onBaseColorUpdated(): void {
-                this.getColorBaseRule().style.setProperty('color', DynamicUI.baseColor!, 'important');
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicUI.mutedBaseColor!, 'important');
+                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor!, 'important');
+                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor!, 'important');
         }
 }

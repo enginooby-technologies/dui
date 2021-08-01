@@ -1,7 +1,7 @@
 import * as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
-import { DynamicUI } from '../DynamicUI.js';
+import { DynamicColor } from '../DynamicColor.js';
 export class NesStyle extends Style {
     constructor() {
         super(StyleName.Nes);
@@ -40,11 +40,11 @@ export class NesStyle extends Style {
         });
     }
     onHighlightColorUpdated() {
-        this.darkenHighlightColor = DynamicUI.highlightColor.getDarken(this.darkHighlightIntensity);
-        this.getBgHighlightRule().style.setProperty('background-color', DynamicUI.highlightColor.hex, 'important');
-        this.getBgHighlightRule().style.setProperty('color', DynamicUI.highlightColor.getInvertBlackWhite(), 'important');
+        this.darkenHighlightColor = DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity);
+        this.getBgHighlightRule().style.setProperty('background-color', DynamicColor.highlightColor.hex, 'important');
+        this.getBgHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
         this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-        // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicUI.highlightColor.getInvertBlackWhite(), 'important');
+        // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
     }
     onSchemeColorUpdated() {
     }
