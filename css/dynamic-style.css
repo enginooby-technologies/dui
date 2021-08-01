@@ -928,201 +928,6 @@ input::-moz-focus-outer {
           align-items: center;
 }
 
-.neu-style {
-  /*-------------------------
-      FORM COMPONENTS
--------------------------*/
-  /*-------------------------
-      CONTAINER COMPONENTS
--------------------------*/
-  /* TEXT DROP SHADOW */
-}
-
-.neu-style .dui-radio .indicator {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dui-radio .indicator::before {
-  -webkit-box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
-          box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
-}
-
-.neu-style .dui-radio .indicator::after {
-  -webkit-box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
-          box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
-}
-
-.neu-style .range-slider .range-slider__value {
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .range-slider .range-slider__range {
-  background-color: #D4D4D4;
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .range-slider ::-webkit-slider-thumb {
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .range-slider ::-webkit-slider-thumb:hover,
-.neu-style .range-slider input[type=range]:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown button.focus,
-.neu-style .dropdown button:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown button:hover {
-  color: #004b97;
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-label {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-toggle,
-.neu-style .dropdown .dropdown-toggle:focus {
-  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
-          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-menu {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-item:hover {
-  color: #004b97;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
-}
-
-.neu-style .dropdown.show .dropdown-toggle {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .code-block {
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .button-border,
-.neu-style .box-border,
-.neu-style .image-border,
-.neu-style .badge-border,
-.neu-style .setting-button-border,
-.neu-style .segmented-control,
-.neu-style .hero-03 .personal-image img,
-.neu-style .checkbox label,
-.neu-style .blog-intro,
-.neu-style table,
-.neu-style table thead,
-.neu-style .form-group input:focus,
-.neu-style .form-group textarea:focus,
-.neu-style .setting-panel,
-.neu-style .toggle .indicator {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .button.active,
-.neu-style .setting-button.active,
-.neu-style .radio-button-group .button.active,
-.neu-style .custom-scrollbar,
-.neu-style .blog .blog-image .after,
-.neu-style .skill-boxes .box-border,
-.neu-style .setting-section .scrollable,
-.neu-style .timeline-items.box-border,
-.neu-style .radio-selection {
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .toggle,
-.neu-style .form-group input,
-.neu-style .form-group textarea,
-.neu-style .skill-box .skillbar {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .section,
-.neu-style .display-content > .container.none-bg,
-.neu-style .button,
-.neu-style .setting-button,
-.neu-style .setting-button a,
-.neu-style .setting-panel,
-.neu-style .contact .form-item .form-group,
-.neu-style .segmented-control,
-.neu-style .checkbox label,
-.neu-style .portfolio-single .modal-content,
-.neu-style ::-webkit-scrollbar-track {
-  background-color: #D4D4D4;
-}
-
-.neu-style .segmented-control > input:not(:checked):not(:hover) + label {
-  color: #4D4D4D;
-}
-
-.neu-style .button,
-.neu-style .segmented-control > input:checked + label,
-.neu-style .segmented-control > input:hover + label {
-  color: #004b97;
-}
-
-.neu-style .button:hover,
-.neu-style .badge-border:hover,
-.neu-style table > tbody > tr:hover,
-.neu-style .setting-button:hover {
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .checkbox input:checked ~ label {
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .checkbox input:not(:checked):not(:hover) ~ label i,
-.neu-style .checkbox input:not(:checked) ~ label + .name {
-  color: #4D4D4D;
-}
-
-.neu-style .checkbox input:checked ~ label + .name,
-.neu-style .checkbox input:checked ~ label i,
-.neu-style .checkbox input:hover ~ label i {
-  color: #004b97;
-}
-
-.neu-style ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
-}
-
-.neu-style ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
-          box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
-}
-
 .dropdown {
   margin-top: .5rem;
   margin-bottom: .5rem;
@@ -1143,7 +948,6 @@ input::-moz-focus-outer {
   border-width: 0;
   border-radius: 9px;
   color: black;
-  background-color: #D4D4D4;
   padding: .375rem .75rem;
 }
 
@@ -1198,7 +1002,6 @@ input::-moz-focus-outer {
   color: #4D4D4D;
   text-align: left;
   list-style: none;
-  background-color: #D4D4D4;
   background-clip: padding-box;
   border-width: 0;
   border-radius: 9px;
@@ -1661,44 +1464,35 @@ table,
 }
 
 .neu-style .dropdown button.focus,
-.neu-style .dropdown button:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown button:hover {
-  color: #004b97;
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-label {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.neu-style .dropdown .dropdown-toggle,
-.neu-style .dropdown .dropdown-toggle:focus {
-  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
-          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
-}
-
+.neu-style .dropdown button:focus,
+.neu-style .dropdown .dropdown-label,
 .neu-style .dropdown .dropdown-menu {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
+.neu-style .dropdown button,
+.neu-style .dropdown .dropdown-menu,
+.neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  color: #004b97;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
   background-color: #D4D4D4;
 }
 
-.neu-style .dropdown.show .dropdown-toggle {
+.neu-style .dropdown.show .dropdown-toggle,
+.neu-style .dropdown .dropdown-item:hover,
+.neu-style .dropdown button:hover {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown button:hover,
+.neu-style .dropdown .dropdown-item:hover {
+  color: #004b97;
+}
+
+.neu-style .dropdown .dropdown-toggle {
+  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
 }
 
 .neu-style .code-block {

@@ -1,11 +1,20 @@
 export const backgroundSchemeColorSelectors = [
+    // FORM COMPONENTS
+    ".dropdown button",
+    ".dropdown-menu",
+    ".dropdown button:hover",
+    ".dropdown-item:hover",
     ".display-content>.container.none-bg",
     ".injected-section .display-content",
     "::-webkit-scrollbar-track",
     "::-webkit-scrollbar-thumb",
-    ".setting-button a"
+    ".setting-button a",
 ];
 export const colorHighlightColorSelectors = [
+    // FORM COMPONENTS
+    ".dropdown button:hover",
+    ".dropdown .dropdown-item:hover",
+    ".dropdown-toggle",
     ".button",
     " .checkbox input:checked~label+.name",
     ".checkbox input:checked~label i",
@@ -19,6 +28,11 @@ export const colorMutedBaseColorSelectors = [
     ".segmented-control>input:not(:checked):not(:hover)+label"
 ];
 export const dropBoxShadowSelectors = [
+    // FORM COMPONENTS
+    ".dropdown button.focus",
+    ".dropdown button:focus",
+    ".dropdown-label",
+    ".dropdown-menu",
     //COMMON
     ".toggle .indicator",
     ".button-border",
@@ -62,6 +76,10 @@ CONTAINER COMPONENTS
     ".code-block",
 ];
 export const concaveBoxShadowSelectors = [
+    // FORM COMPONENTS
+    ".dropdown button:hover",
+    ".dropdown-item:hover",
+    ".dropdown.show .dropdown-toggle",
     ".skill-box .skillbar",
     // ".form-group",
     "input[type=range]:focus",

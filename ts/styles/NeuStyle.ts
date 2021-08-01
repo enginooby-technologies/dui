@@ -50,6 +50,7 @@ export class NeuStyle extends Style {
         private surfaceRule?: CSSStyleRule;
         private radioIndicatorUncheckedRule?: CSSStyleRule;
         private radioIndicatorCheckedRule?: CSSStyleRule;
+        private dropdownBoxShadowRule?: CSSStyleRule;
 
         // lazy initializations
         getBackgroundSchemeColorRule = () => this.backgroundSchemeColorRule ?? (this.backgroundSchemeColorRule = this.insertEmptyRule(NeuSelectors.backgroundSchemeColorSelectors));
@@ -63,6 +64,7 @@ export class NeuStyle extends Style {
         getSurfaceRule = () => this.surfaceRule ?? (this.surfaceRule = this.insertEmptyRule(NeuSelectors.surfaceSelectors));
         getRadioIndicatorUncheckedRule = () => this.radioIndicatorUncheckedRule ?? (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.dui-radio .indicator::before']));
         getRadioIndicatorCheckedRule = () => this.radioIndicatorCheckedRule ?? (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.dui-radio .indicator::after']));
+        getDropdownBoxShadowRule = () => this.dropdownBoxShadowRule ?? (this.dropdownBoxShadowRule = this.insertEmptyRule(['.dropdown .dropdown-toggle']));
 
         init() {
                 this.initRangeSliders();
@@ -144,11 +146,10 @@ export class NeuStyle extends Style {
                 this.updateBoxShadows();
                 this.updateSurface();
                 this.updateBorder();
-                this.updateRadio();
         }
 
         onBaseColorUpdated(): void {
-                this.getColorMutedBaseColorRule().style.setProperty('color', DynamicColor.mutedBaseColor!, 'important');
+                this.getColorMutedBaseColorRule().style.setProperty('color', DynamicColor.mutedBaseColor!);
                 $('.dui-radio label .text').each((index, element) => {
                         element.style.borderColor = DynamicColor.mutedBaseColor!;
                 });
@@ -166,6 +167,9 @@ export class NeuStyle extends Style {
                 this.getInsetBoxShadowRule().style.setProperty('box-shadow', this.insetBoxShadow, 'important');
                 this.getConcaveBoxShadowRule().style.setProperty('box-shadow', this.pressedBoxShadow, 'important');
                 this.getThumbScrollbarBoxShadowRule().style.setProperty('box-shadow', this.thumbScrollbarBoxShadow, 'important');
+                // special box shadow
+                this.updateRadio();
+                this.updateDropdown();
         }
 
         private updateSurface() {
@@ -183,9 +187,18 @@ export class NeuStyle extends Style {
 
         private updateRadio() {
                 //TODO: Variablize
-                const checkBoxShadow = `-4px -2px 4px 0px ${this.lightenSchemeColor}, 4px 2px 8px 0px ${this.darkenSchemeColor}`
-                const uncheckBoxShadow = `-4px -2px 4px 0px ${this.darkenSchemeColor}, 4px 2px 8px 0px ${this.lightenSchemeColor}`
+                const checkBoxShadow = `-4px -2px 4px 0px ${this.lightenSchemeColor}, 4px 2px 8px 0px ${this.darkenSchemeColor}`;
+                const uncheckBoxShadow = `-4px -2px 4px 0px ${this.darkenSchemeColor}, 4px 2px 8px 0px ${this.lightenSchemeColor}`;
                 this.getRadioIndicatorCheckedRule().style.setProperty('box-shadow', checkBoxShadow, 'important');
                 this.getRadioIndicatorUncheckedRule().style.setProperty('box-shadow', uncheckBoxShadow, 'important');
+        }
+
+        private updateDropdown() {
+                //TODO: Variablize
+                const dropdownBoxShadow: string = `3px 3px 4px 0px ${this.darkenSchemeColor}, 0px -3px -4px 0px ${this.lightenSchemeColor}`;
+                // TOFIX: can not set dropdownBoxShadow 
+                // this.getDropdownBoxShadowRule().style.setProperty('box-shadow', dropdownBoxShadow, 'important');
+                this.getDropdownBoxShadowRule().style.setProperty('box-shadow', this.dropBoxShadow, 'important');
+                // console.log(this.getDropdownBoxShadowRule().selectorText);
         }
 }

@@ -167,8 +167,8 @@ export class DynamicColor {
                 DynamicColor.mutedBaseColor = (DynamicColor.baseColor == '#ffffff') ? lightMutedBaseColor : darkMutedBaseColor;
                 const heroImg = (DynamicColor.baseColor == '#ffffff') ? "light-element_square" : "dark-element_square";
                 this.$squareImg!.attr('src', `assets/img/${heroImg}.png`);
-                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor, 'important');
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor, 'important');
+                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor);
+                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor);
                 this.getBgBaseRule().style.setProperty('background-color', DynamicColor.baseColor, 'important');
                 // specific elements affected by base color
                 $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${DynamicColor.baseColor}`);

@@ -73,39 +73,34 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         .dropdown {
 
                 button.focus,
-                button:focus {
-                        box-shadow: $dropBoxShadow;
-                }
-
-                button:hover {
-                        color: $highlightColor;
-                        background-color: $schemeColor;
-                        box-shadow: #{$concaveBoxShadow};
-                }
-
-                .dropdown-label {
-                        box-shadow: $dropBoxShadow;
-                }
-
-                .dropdown-toggle,
-                .dropdown-toggle:focus {
-                        box-shadow: 3px 3px 4px $darkenSchemeColor,
-                                0px -3px 4px $lightenSchemeColor;
-                }
-
+                button:focus,
+                .dropdown-label,
                 .dropdown-menu {
                         box-shadow: $dropBoxShadow;
                 }
 
+                button,
+                .dropdown-menu,
+                button:hover,
                 .dropdown-item:hover {
-                        color: $highlightColor;
-                        box-shadow: #{$concaveBoxShadow};
                         background-color: $schemeColor;
                 }
 
-                &.show .dropdown-toggle {
+                &.show .dropdown-toggle,
+                .dropdown-item:hover,
+                button:hover {
                         box-shadow: #{$concaveBoxShadow};
                 }
+
+                button:hover,
+                .dropdown-item:hover {
+                        color: $highlightColor;
+                }
+        }
+
+        .dropdown .dropdown-toggle {
+                box-shadow: 3px 3px 4px $darkenSchemeColor,
+                        0px -3px 4px $lightenSchemeColor;
         }
 
         /*-------------------------

@@ -66,6 +66,8 @@ export const colorColorfull3Selectors = formatString([
     ".code-block .token.function",
 ]);
 export const colorBaseSelectors = formatString([
+    // FORM COMPONENTS
+    ".dropdown button",
     "body",
     ".logo",
     ".setting-section .setting-button-border i",
@@ -82,7 +84,6 @@ export const colorBaseSelectors = formatString([
     ".portfolio-single .close",
     ".pp-tooltip",
     ".blog-label a",
-    // "#pp-nav li .pp-tooltip"
 ]);
 export const colorMutedBaseSelectors = formatString([
     // CONTAINER COMPONENTS
@@ -91,6 +92,8 @@ export const colorMutedBaseSelectors = formatString([
     ".code-block .token.comment",
     ".code-block .token.doctype",
     " .code-block .token.prolog",
+    // FORM COMPONENTS
+    ".dropdown-item",
     ".blog-content .list-inline-item span",
     ".contact-info-text small",
     ".hero-content p",
