@@ -1,7 +1,7 @@
-import * as DynamicTheme from '../DynamicTheme.js';
 import * as NeuSelectors from '../selectors/NeuSelectors.js'
 import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
+import { DynamicUI } from '../DynamicUI.js';
 
 enum BorderStyle { solid, double, dotted, dashed }; // order must matchs with id from HTML radio
 
@@ -131,17 +131,16 @@ export class NeuStyle extends Style {
 
                 $('#neu-customizer #neu-border-style-options input').on('input', event => {
                         this.borderStyle = parseInt(event.currentTarget.getAttribute('value')!);
-                        console.log(this.borderStyle);
                         this.updateBorder();
                 });
         }
 
         onHighlightColorUpdated(): void {
-                this.getColorHighlightColorRule().style.setProperty('color', DynamicTheme.highlightColor.hex, 'important');
+                this.getColorHighlightColorRule().style.setProperty('color', DynamicUI.highlightColor!.hex, 'important');
         }
 
         onSchemeColorUpdated(): void {
-                this.getBackgroundSchemeColorRule().style.setProperty('background', DynamicTheme.schemeColor.hex, 'important');
+                this.getBackgroundSchemeColorRule().style.setProperty('background', DynamicUI.schemeColor!.hex, 'important');
                 this.updateBoxShadows();
                 this.updateSurface();
                 this.updateBorder();
@@ -149,15 +148,15 @@ export class NeuStyle extends Style {
         }
 
         onBaseColorUpdated(): void {
-                this.getColorMutedBaseColorRule().style.setProperty('color', DynamicTheme.mutedBaseColor, 'important');
+                this.getColorMutedBaseColorRule().style.setProperty('color', DynamicUI.mutedBaseColor!, 'important');
                 $('.dui-radio label .text').each((index, element) => {
-                        element.style.borderColor = DynamicTheme.mutedBaseColor;
+                        element.style.borderColor = DynamicUI.mutedBaseColor!;
                 });
         }
 
         private updateBoxShadows() {
-                this.lightenSchemeColor = DynamicTheme.schemeColor.getLighten(this.lightenIntensity);
-                this.darkenSchemeColor = DynamicTheme.schemeColor.getDarken(this.darkenIntensity);
+                this.lightenSchemeColor = DynamicUI.schemeColor!.getLighten(this.lightenIntensity);
+                this.darkenSchemeColor = DynamicUI.schemeColor!.getDarken(this.darkenIntensity);
                 this.dropBoxShadow = `${this.distanceX}px ${this.distanceY}px ${this.blur}px ${this.spread}px ${this.darkenSchemeColor}, -${this.distanceX}px -${this.distanceY}px ${this.blur}px ${this.spread}px ${this.lightenSchemeColor}`;
                 this.insetBoxShadow = `inset ${this.distanceX}px ${this.distanceY}px ${this.blur}px ${this.spread}px ${this.darkenSchemeColor}, inset -${this.distanceX}px -${this.distanceY}px ${this.blur}px ${this.spread}px ${this.lightenSchemeColor}`;
                 this.pressedBoxShadow = `${this.dropBoxShadow}, ${this.insetBoxShadow}`; // TODO: Does not look good!
@@ -167,21 +166,17 @@ export class NeuStyle extends Style {
                 this.getInsetBoxShadowRule().style.setProperty('box-shadow', this.insetBoxShadow, 'important');
                 this.getConcaveBoxShadowRule().style.setProperty('box-shadow', this.pressedBoxShadow, 'important');
                 this.getThumbScrollbarBoxShadowRule().style.setProperty('box-shadow', this.thumbScrollbarBoxShadow, 'important');
-
-                // const s: number = 0.4; //personal website portfolio scale
-                // const scaledDropBoxShadow = `${this.distance / s}px ${this.distance / s}px ${this.blur / s}px ${this.darkenSchemeColor}, -${this.distance / s}px -${this.distance / s}px ${this.blur / s}px ${this.lightenSchemeColor}`;
-                // (document.querySelector('#personal-website-portfolio')?.querySelector('.image-border') as HTMLElement).style.setProperty('box-shadow', scaledDropBoxShadow, 'important');
         }
 
         private updateSurface() {
-                const leftSurfaceColor = DynamicTheme.schemeColor.getLighten(this.surfaceCurvature);
-                const rightSurfaceColor = DynamicTheme.schemeColor.getDarken(this.surfaceCurvature);
+                const leftSurfaceColor = DynamicUI.schemeColor!.getLighten(this.surfaceCurvature);
+                const rightSurfaceColor = DynamicUI.schemeColor!.getDarken(this.surfaceCurvature);
                 this.bgSurface = `linear-gradient(145deg, ${leftSurfaceColor}, ${rightSurfaceColor})`
                 this.getSurfaceRule().style.setProperty('background', this.bgSurface, 'important');
         }
 
         private updateBorder() {
-                const borderColor: string = DynamicTheme.schemeColor.getLighten(this.borderBrightness);
+                const borderColor: string = DynamicUI.schemeColor!.getLighten(this.borderBrightness);
                 const borderStyle: string = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
                 this.getBorderRule().style.setProperty('border', borderStyle);
         }

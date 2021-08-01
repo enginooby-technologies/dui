@@ -1,4 +1,5 @@
 import { StyleName } from '../Config.js';
+
 export abstract class Style {
         private styleSheet?: CSSStyleSheet;
         private cssRules?: CSSRuleList;

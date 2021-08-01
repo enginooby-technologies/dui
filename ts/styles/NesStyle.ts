@@ -1,7 +1,7 @@
-import * as DynamicTheme from '../DynamicTheme.js';
 import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
+import { DynamicUI } from '../DynamicUI.js';
 
 export class NesStyle extends Style {
         //  Singleton Pattern
@@ -51,11 +51,11 @@ export class NesStyle extends Style {
         }
 
         onHighlightColorUpdated(): void {
-                this.darkenHighlightColor = DynamicTheme.highlightColor.getDarken(this.darkHighlightIntensity);
-                this.getBgHighlightRule().style.setProperty('background-color', DynamicTheme.highlightColor.hex, 'important');
-                this.getBgHighlightRule().style.setProperty('color', DynamicTheme.highlightColor.getInvertBlackWhite(), 'important');
+                this.darkenHighlightColor = DynamicUI.highlightColor!.getDarken(this.darkHighlightIntensity);
+                this.getBgHighlightRule().style.setProperty('background-color', DynamicUI.highlightColor!.hex, 'important');
+                this.getBgHighlightRule().style.setProperty('color', DynamicUI.highlightColor!.getInvertBlackWhite(), 'important');
                 this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-                // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicTheme.highlightColor.getInvertBlackWhite(), 'important');
+                // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicUI.highlightColor.getInvertBlackWhite(), 'important');
         }
         onSchemeColorUpdated(): void {
         }
