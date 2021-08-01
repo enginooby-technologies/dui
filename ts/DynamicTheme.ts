@@ -140,12 +140,9 @@ function updateChangesFromLastStyle() {
 }
 
 loadSettingPanel(settingFilePath)
-        // ad-hoc solution to load file for the demo page of this framework
-        .fail(() => loadSettingPanel('setting.html')
-                .fail(() => loadSettingPanel('setting.php')
-                        // ad-hoc fallback to load file on remote server for different projects
-                        // TODO: resolve CORS or use CDN
-                        .fail(() => loadSettingPanel('https://enginoobz.com/dynamic-ui-framework/setting.php')))
+        // ad-hoc fallback to load file on remote server for different projects
+        // TODO: resolve CORS or use CDN
+        .fail(() => loadSettingPanel('https://enginoobz.com/dynamic-ui-framework/setting.html')
         );
 
 function loadSettingPanel(filePath: string) {
