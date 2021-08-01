@@ -26,6 +26,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         /*-------------------------
       FORM COMPONENTS
 -------------------------*/
+        //RADIO
         .dui-radio {
                 $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px $darkenSchemeColor,
                         4px 2px 8px 0px $lightenSchemeColor;
@@ -45,6 +46,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
                 }
         }
 
+        // RANGE SLIDER
         .range-slider {
                 .range-slider__value {
                         background-color: $schemeColor;
@@ -63,6 +65,45 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
 
                 ::-webkit-slider-thumb:hover,
                 input[type=range]:focus {
+                        box-shadow: #{$concaveBoxShadow};
+                }
+        }
+
+        // DROPDOWN
+        .dropdown {
+
+                button.focus,
+                button:focus {
+                        box-shadow: $dropBoxShadow;
+                }
+
+                button:hover {
+                        color: $highlightColor;
+                        background-color: $schemeColor;
+                        box-shadow: #{$concaveBoxShadow};
+                }
+
+                .dropdown-label {
+                        box-shadow: $dropBoxShadow;
+                }
+
+                .dropdown-toggle,
+                .dropdown-toggle:focus {
+                        box-shadow: 3px 3px 4px $darkenSchemeColor,
+                                0px -3px 4px $lightenSchemeColor;
+                }
+
+                .dropdown-menu {
+                        box-shadow: $dropBoxShadow;
+                }
+
+                .dropdown-item:hover {
+                        color: $highlightColor;
+                        box-shadow: #{$concaveBoxShadow};
+                        background-color: $schemeColor;
+                }
+
+                &.show .dropdown-toggle {
                         box-shadow: #{$concaveBoxShadow};
                 }
         }

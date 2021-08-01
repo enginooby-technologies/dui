@@ -977,6 +977,47 @@ input::-moz-focus-outer {
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
+.neu-style .dropdown button.focus,
+.neu-style .dropdown button:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown button:hover {
+  color: #004b97;
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-label {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-toggle,
+.neu-style .dropdown .dropdown-toggle:focus {
+  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-menu {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-item:hover {
+  color: #004b97;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+  background-color: #D4D4D4;
+}
+
+.neu-style .dropdown.show .dropdown-toggle {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
 .neu-style .code-block {
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
@@ -1106,24 +1147,9 @@ input::-moz-focus-outer {
   padding: .375rem .75rem;
 }
 
-.dropdown > button.focus,
-.dropdown > button:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-}
-
-.dropdown > button:hover {
-  color: #004b97;
-  background-color: #D4D4D4;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-}
-
 .dropdown-label {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
 .dropdown-toggle::after {
@@ -1139,8 +1165,6 @@ input::-moz-focus-outer {
 .dropdown-toggle,
 .dropdown-toggle:focus {
   white-space: nowrap;
-  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
-          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
 }
 
 .dropdown .dropdown-arrow {
@@ -1153,18 +1177,9 @@ input::-moz-focus-outer {
           transform: rotate(180deg);
 }
 
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
+.show > .dropdown-toggle {
   color: #004b97;
   background-color: #D4D4D4;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
 .dropdown-toggle-split {
@@ -1187,8 +1202,6 @@ input::-moz-focus-outer {
   background-clip: padding-box;
   border-width: 0;
   border-radius: 9px;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
 .dropdown-item {
@@ -1197,13 +1210,6 @@ input::-moz-focus-outer {
   transition: all 0.2s ease;
   border-radius: 9px;
   padding: .5rem 1rem;
-}
-
-.dropdown-item:hover {
-  color: #004b97;
-  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
 }
 
 /*-------------------------
@@ -1650,6 +1656,47 @@ table,
 
 .neu-style .range-slider ::-webkit-slider-thumb:hover,
 .neu-style .range-slider input[type=range]:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown button.focus,
+.neu-style .dropdown button:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown button:hover {
+  color: #004b97;
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-label {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-toggle,
+.neu-style .dropdown .dropdown-toggle:focus {
+  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-menu {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dropdown .dropdown-item:hover {
+  color: #004b97;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+  background-color: #D4D4D4;
+}
+
+.neu-style .dropdown.show .dropdown-toggle {
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }

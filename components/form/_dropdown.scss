@@ -21,23 +21,11 @@
         padding: .375rem .75rem;
 }
 
-.dropdown>button.focus,
-.dropdown>button:focus {
-        box-shadow: $dropBoxShadow;
-}
-
-.dropdown>button:hover {
-        color: $highlightColor;
-        background-color: $schemeColor;
-        // box-shadow: $insetBoxShadow;
-        box-shadow: #{$concaveBoxShadow};
-}
 
 // LABEL LEFT BUTTON
 .dropdown-label {
         border-top-right-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
-        box-shadow: $dropBoxShadow;
 }
 
 // TOGGLE RIGHT BUTTON
@@ -55,8 +43,6 @@
 .dropdown-toggle,
 .dropdown-toggle:focus {
         white-space: nowrap;
-        box-shadow: 3px 3px 4px $darkenSchemeColor,
-                0px -3px 4px $lightenSchemeColor;
 }
 
 .dropdown .dropdown-arrow {
@@ -67,17 +53,9 @@
         transform: rotate(180deg);
 }
 
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled).active,
-.show>.btn-primary.dropdown-toggle {
+.show>.dropdown-toggle {
         color: $highlightColor;
         background-color: $schemeColor;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus,
-.btn-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-primary.dropdown-toggle:focus {
-        box-shadow: #{$concaveBoxShadow};
 }
 
 .dropdown-toggle-split {
@@ -101,7 +79,6 @@
         background-clip: padding-box;
         border-width: 0;
         border-radius: $borderRadius;
-        box-shadow: $dropBoxShadow;
 }
 
 .dropdown-item {
@@ -109,11 +86,4 @@
         transition: all 0.2s ease;
         border-radius: $borderRadius;
         padding: .5rem 1rem;
-}
-
-.dropdown-item:hover {
-        color: $highlightColor;
-        // box-shadow: $insetBoxShadow;
-        box-shadow: #{$concaveBoxShadow};
-        background-color: $schemeColor;
 }
