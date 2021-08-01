@@ -30,40 +30,52 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 </details>
 
 ## Dependencies
-  + Bootstrap 4
-  + jQuery
-  + TinyColor
+  + Bootstrap 4 [.css,  .js] (for layout, will be updated to version 5 to be independent with jQuery & FontAwesome)
+  + jQuery [.js] (will be removed)
+  + FontAwesome [.css] (for icons, )
+  + TinyColor [.js] (for color manipulation, will be removed)
+  + Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight)
+  + Animate [.css] (for animation)
 
-## Setup (optional)
+## Development Setup (optional)
 Skip if just use the framework without modification
 1. SCSS
 2. PHP: If not use PHP, simply convert into HTML files
-3. TypeScript
+3. TypeScript & npm
+4. Gulp
 
 ## Usage
-1 - Reference to all of the dependencies CSS & JS.  
-2 - Reference to the framework style sheet (after project style sheet):  
+### Setup
+1 - Refer to all of the dependencies CSS & JS.  
+2 - Refer to the framework style sheet (after project style sheet):  
 ```      
-  <link rel="stylesheet" href="<framework_folder_path>/css/dynamic-style.css" title="dynamic-style" type="text/css">
+  <link rel="stylesheet" href="<framework_folder_path>/css/dynamic-style.css" type="text/css">
   ```  
-If the styles are not applied,  the workaroud is importing ```dynamic-style.scss``` or ```dynamic-style.css``` in the project style sheet to compile into one CSS file.  
-3 - Add [class name](#style-names) of the initial style to ```<body>```. Thoses class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in init SCSS file.  
-Recommend: use Critical to extract critical CSS rules after this step. The rest of styles which are not applied at the first time have many unused rules slowing down page load time.  
-4 - Reference to the framework script:  
+3 - Refer to the framework script:  
 ```  
 <script async src="<framework_folder_path>/built/DynamicTheme.js" type="module"></script>
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This means the script could be skipped if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
 After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.  
-5 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/php/setting.php```
+4 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/setting.php``` or ```<framework_folder_path>/setting.html``` 
+### Initializations
+Any dynamic properties could be initialized at the first time by simply adding pre-defined class names or re-setting SCSS variables:
+  + Initial style: add style [class name](#style-names) to ```<body>```. Class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in [initial SCSS files](./scss/init).  
+  + Initial style properties
+  + Initial color
+  + Initial background: add pre-defined background class name or a custom background with name of ```custom-background```  to ```<body>```
+  + Initial border
+  + Initial overlay
+  + Initial font
 
+Recommend: use Critical to extract critical CSS rules after all initializations. The rest of styles which are not applied at the first time have many unused rules slowing down page load time.  
 ## Stylizing
 ### Global
 + Colours: scheme, highlight, classification (3 elements).
-+ Border radius
++ Border: radius
 + Font
-+ Background image
-+  Particle
++ Background outer & inner
++ Overlay
   
 ### Basic Components
 
