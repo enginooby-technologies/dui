@@ -5,13 +5,20 @@
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
                                 <p class="option-label">UI Style</p>
                                 <!-- TODO: make buttons  equal widths -->
-                                  <div class='button-border'>
-          <a href='javascript:;' class='button' id='flat-skin-button'>Flat</a>
-  </div>  <div class='button-border'>
-          <a href='javascript:;' class='button' id='neu-skin-button'>Neumorphism</a>
-  </div>  <div class='button-border'>
-          <a href='javascript:;' class='button' id='glass-skin-button'>Glassmorphism</a>
-  </div>                        </ul>
+                                <div class="dropdown" id="dropdown-ui-style">
+        <button type="button" class="dropdown-label">Select style</button>
+        <button type="button" class=" btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="fas fa-angle-down dropdown-arrow"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="javascript:;" value="flat-style">Flat</a>
+                                        <a class="dropdown-item" href="javascript:;" value="neu-style">Neumorphism</a>
+                                        <a class="dropdown-item" href="javascript:;" value="glass-style">Glassmorphism</a>
+                                <!-- <div class="dropdown-divider"></div> -->
+                <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+        </div>
+</div>                        </ul>
 
                         <div class="scrollable ">
                                 <!-- STYLE CUSTOMIZER -->

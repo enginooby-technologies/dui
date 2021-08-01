@@ -33,6 +33,10 @@ Init values for dynamic properties to reduce  page load time
   margin-top: 0;
 }
 
+.setting-section .setting-panel .dropdown .dropdown-label {
+  min-width: 115px;
+}
+
 .setting-section .setting-panel .radio-button-group .button-border {
   display: inline-block;
 }
@@ -143,7 +147,7 @@ Init values for dynamic properties to reduce  page load time
   border-radius: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 360px;
+  height: 475px;
 }
 
 .setting-save-panel {
@@ -1094,7 +1098,7 @@ input::-moz-focus-outer {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   letter-spacing: 0.025em;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-width: 0;
   border-radius: 9px;
   color: black;

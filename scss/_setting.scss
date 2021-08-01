@@ -32,6 +32,11 @@ $panelWidth:180px;
                 margin-top: 0;
         }
 
+        // DROPDOWN
+        .dropdown .dropdown-label {
+                min-width: 115px;
+        }
+
         // BUTTON-RADIO 
         .radio-button-group .button-border {
 
@@ -87,6 +92,7 @@ $panelWidth:180px;
         #custom-background.hide {
                 display: none;
         }
+
 }
 
 .setting-panel.hide {
@@ -153,7 +159,7 @@ $panelWidth:180px;
         border-radius: 0;
         overflow-y: auto;
         overflow-x: hidden;
-        height: 360px; //TODO: caculate this for reponsiveness
+        height: 475px; //TODO: caculate this for reponsiveness
 }
 
 .setting-save-panel {
