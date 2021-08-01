@@ -222,10 +222,6 @@ Init values for dynamic properties to reduce  page load time
   display: block;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 /*-------------------------
          GENERAL
 -------------------------*/
@@ -560,10 +556,6 @@ video.lazy.loaded {
   opacity: 1;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 @media (min-width: 1200px) {
   .display-content > .container {
     max-width: 1100px;
@@ -573,10 +565,6 @@ Init values for dynamic properties to reduce  page load time
   }
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .button-border {
   display: inline-block;
   padding: 1px;
@@ -653,10 +641,6 @@ Init values for dynamic properties to reduce  page load time
   color: #4D4D4D;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .dui-radio {
   display: inline-block;
 }
@@ -747,10 +731,6 @@ Init values for dynamic properties to reduce  page load time
   color: #004b97;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .range-slider {
   width: 100%;
   margin: 10px 0 10px 0;
@@ -838,10 +818,6 @@ input::-moz-focus-outer {
   border: 0;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .toggle-label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -946,6 +922,284 @@ Init values for dynamic properties to reduce  page load time
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.neu-style {
+  /*-------------------------
+      FORM COMPONENTS
+-------------------------*/
+  /*-------------------------
+      CONTAINER COMPONENTS
+-------------------------*/
+  /* TEXT DROP SHADOW */
+}
+
+.neu-style .dui-radio .indicator {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .dui-radio .indicator::before {
+  -webkit-box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
+          box-shadow: -4px -2px 4px 0px #c2c2c2, 4px 2px 8px 0px #e6e6e6;
+}
+
+.neu-style .dui-radio .indicator::after {
+  -webkit-box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
+          box-shadow: -4px -2px 4px 0px #e6e6e6, 4px 2px 8px 0px #c2c2c2;
+}
+
+.neu-style .range-slider .range-slider__value {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider .range-slider__range {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider ::-webkit-slider-thumb {
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .range-slider ::-webkit-slider-thumb:hover,
+.neu-style .range-slider input[type=range]:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .code-block {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .button-border,
+.neu-style .box-border,
+.neu-style .image-border,
+.neu-style .badge-border,
+.neu-style .setting-button-border,
+.neu-style .segmented-control,
+.neu-style .hero-03 .personal-image img,
+.neu-style .checkbox label,
+.neu-style .blog-intro,
+.neu-style table,
+.neu-style table thead,
+.neu-style .form-group input:focus,
+.neu-style .form-group textarea:focus,
+.neu-style .setting-panel,
+.neu-style .toggle .indicator {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .button.active,
+.neu-style .setting-button.active,
+.neu-style .radio-button-group .button.active,
+.neu-style .custom-scrollbar,
+.neu-style .blog .blog-image .after,
+.neu-style .skill-boxes .box-border,
+.neu-style .setting-section .scrollable,
+.neu-style .timeline-items.box-border,
+.neu-style .radio-selection {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .toggle,
+.neu-style .form-group input,
+.neu-style .form-group textarea,
+.neu-style .skill-box .skillbar {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .section,
+.neu-style .display-content > .container.none-bg,
+.neu-style .button,
+.neu-style .setting-button,
+.neu-style .setting-button a,
+.neu-style .setting-panel,
+.neu-style .contact .form-item .form-group,
+.neu-style .segmented-control,
+.neu-style .checkbox label,
+.neu-style .portfolio-single .modal-content,
+.neu-style ::-webkit-scrollbar-track {
+  background-color: #D4D4D4;
+}
+
+.neu-style .segmented-control > input:not(:checked):not(:hover) + label {
+  color: #4D4D4D;
+}
+
+.neu-style .button,
+.neu-style .segmented-control > input:checked + label,
+.neu-style .segmented-control > input:hover + label {
+  color: #004b97;
+}
+
+.neu-style .button:hover,
+.neu-style .badge-border:hover,
+.neu-style table > tbody > tr:hover,
+.neu-style .setting-button:hover {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .checkbox input:checked ~ label {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.neu-style .checkbox input:not(:checked):not(:hover) ~ label i,
+.neu-style .checkbox input:not(:checked) ~ label + .name {
+  color: #4D4D4D;
+}
+
+.neu-style .checkbox input:checked ~ label + .name,
+.neu-style .checkbox input:checked ~ label i,
+.neu-style .checkbox input:hover ~ label i {
+  color: #004b97;
+}
+
+.neu-style ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+  background-color: #D4D4D4;
+}
+
+.neu-style ::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
+          box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
+  background-color: #D4D4D4;
+}
+
+.dropdown {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.dropdown button {
+  margin: 0;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  letter-spacing: 0.025em;
+  font-size: 1rem;
+  border-width: 0;
+  border-radius: 9px;
+  color: black;
+  background-color: #D4D4D4;
+  padding: .375rem .75rem;
+}
+
+.dropdown > button.focus,
+.dropdown > button:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.dropdown > button:hover {
+  color: #004b97;
+  background-color: #D4D4D4;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.dropdown-label {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-toggle {
+  color: #004b97;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.dropdown-toggle,
+.dropdown-toggle:focus {
+  white-space: nowrap;
+  -webkit-box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+          box-shadow: 3px 3px 4px #c2c2c2, 0px -3px 4px #e6e6e6;
+}
+
+.dropdown .dropdown-arrow {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.dropdown.show .dropdown-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #004b97;
+  background-color: #D4D4D4;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+}
+
+.dropdown-toggle-split {
+  padding-right: 0.7125rem;
+  padding-left: 0.7125rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  padding: 0;
+  margin: 10px 0 0;
+  color: #4D4D4D;
+  text-align: left;
+  list-style: none;
+  background-color: #D4D4D4;
+  background-clip: padding-box;
+  border-width: 0;
+  border-radius: 9px;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
+}
+
+.dropdown-item {
+  color: #4D4D4D;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 9px;
+  padding: .5rem 1rem;
+}
+
+.dropdown-item:hover {
+  color: #004b97;
+  -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+          box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6,  inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
+  background-color: #D4D4D4;
 }
 
 /*-------------------------
@@ -1108,10 +1362,6 @@ Init values for dynamic properties to reduce  page load time
   width: 8px !important;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .section,
 .display-content > .container.none-bg,
 body,
@@ -1351,10 +1601,6 @@ table,
   cursor: pointer;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .neu-style {
   /*-------------------------
       FORM COMPONENTS
@@ -1509,10 +1755,6 @@ Init values for dynamic properties to reduce  page load time
   background-color: #D4D4D4;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .flat-style {
   /*-------------------------
       CONTAINER COMPONENTS
@@ -1621,10 +1863,6 @@ Init values for dynamic properties to reduce  page load time
   width: 20px;
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .glass-style .button,
 .glass-style .radio-button-group .button.active,
 .glass-style .radio-button-group .button:not(.active):hover,
@@ -1745,10 +1983,6 @@ Init values for dynamic properties to reduce  page load time
   border: 1px solid rgba(209, 213, 219, 0.6);
 }
 
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
-/* FONT */
 .none-bg {
   background-color: #D4D4D4;
   background-image: none;

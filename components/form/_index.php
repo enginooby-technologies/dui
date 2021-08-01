@@ -52,3 +52,10 @@ function Checkbox(string $name, string $id = null, string $value = null)
         include "_checkbox.php";
         return getHtmlOutputFromBuffer();
 }
+
+function Dropdown(string $label, string $id, array ...$items)
+{
+        ob_start();
+        include "_dropdown.php";
+        return getHtmlOutputFromBuffer();
+}

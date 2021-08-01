@@ -94,6 +94,7 @@ export class DynamicUI {
                         $('.theme-skin.radio-button-group .button').removeClass('active');
                         $(event.currentTarget).addClass('active')
                 });
+
                 this.setupRangeSliderEvents();
         }
 

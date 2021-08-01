@@ -32,7 +32,8 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 ## Dependencies
   + Bootstrap 4 [.css,  .js] (for layout, will be updated to version 5 to be independent with jQuery & FontAwesome)
   + jQuery [.js] (will be removed)
-  + FontAwesome [.css] (for icons, )
+  + Popper [.js] (will be removed)
+  + FontAwesome [.css] (for icons, will be removed)
   + TinyColor [.js] (for color manipulation, will be removed)
   + Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight)
   + Animate [.css] (for animation)
@@ -40,7 +41,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 ## Development Setup (optional)
 Skip if just use the framework without modification
 1. SCSS
-2. PHP: If not use PHP, simply convert into HTML files
+2. PHP
 3. TypeScript & npm
 4. Gulp
 
@@ -53,17 +54,16 @@ Skip if just use the framework without modification
   ```  
 3 - Refer to the framework script:  
 ```  
-<script async src="<framework_folder_path>/built/DynamicTheme.js" type="module"></script>
+<script async src="<framework_folder_path>/built/DynamicUI.js" type="module"></script>
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This means the script could be skipped if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
-After load, the script will AJAX load ```setting.php``` which is a setting panel for dynamic customization.  
-4 - Modify ```setting.php``` file path in [Config.ts](ts/Config.ts) based on the project: ```<framework_folder_path>/setting.php``` or ```<framework_folder_path>/setting.html``` 
+After load, the script will AJAX load ```setting.html``` which is a setting panel for dynamic customization.  
 ### Initializations
 Any dynamic properties could be initialized at the first time by simply adding pre-defined class names or re-setting SCSS variables:
   + Initial style: add style [class name](#style-names) to ```<body>```. Class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in [initial SCSS files](./scss/init).  
   + Initial style properties
   + Initial color
-  + Initial background: add pre-defined background class name or a custom background with name of ```custom-background```  to ```<body>```
+  + Initial background: add pre-defined [background class name](./backgrounds) or a custom background with name of ```custom-background```  to ```<body>```
   + Initial border
   + Initial overlay
   + Initial font

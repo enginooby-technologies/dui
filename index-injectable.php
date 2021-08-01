@@ -54,6 +54,25 @@
                                 CodeBlock('php', '// optional params: string $id = $value = format($name)
                                 echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);
+
+                                Flexbox(
+                                        null,
+                                        Dropdown(
+                                                "Dynamic dropdown",
+                                                "dropdown-demo",
+                                                ["label" => "Option 1", "value" => 1],
+                                                ["label" => "Option 2", "value" => 2],
+                                                ["label" => "Option 3", "value" => 3],
+                                        )
+                                );
+                                CodeBlock('php', '// optional dropdown item keys: "href" => "javascript:;", "value" = 0
+                                        echo Dropdown(
+                                                "Dynamic dropdown",
+                                                "dropdown-demo",
+                                                ["label" => "Option 1", "value" => 1],
+                                                ["label" => "Option 2", "value" => 2],
+                                                ["label" => "Option 3", "value" => 3],
+                                        )', 5);
                                 ?>
 
                                 <h5 class="my-4">V - Navigation Components</h5>
