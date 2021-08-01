@@ -122,7 +122,7 @@ function updateChangesFromLastStyle() {
     }
 }
 loadSettingPanel(settingFilePath)
-    // ad-hoc solution to load file for the demo page this framework
+    // ad-hoc solution to load file for the demo page of this framework
     .fail(() => loadSettingPanel('setting.html')
     .fail(() => loadSettingPanel('setting.php'))
     // ad-hoc fallback to load file on remote server for different projects
@@ -146,12 +146,13 @@ function setup() {
     hasCustomBg = $body.hasClass(customBgClassName);
     if (hasCustomBg)
         $(`.setting-panel .${customBgClassName}`).removeClass('hide');
-    // if (!hasCustomBg) {
-    //         $body.addClass(currentStyle?.preferredOuterBg);
-    // }
-    // $(innerBgSelector).each((index, element) => {
-    //         element.classList.add(currentStyle?.preferredInnerBg);
-    // })
+    if (!hasCustomBg) {
+        $body.addClass(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredOuterBg);
+    }
+    // TOFIX: not cover all elements if loading them dynamically after page load
+    $(innerBgSelector).each((index, element) => {
+        element.classList.add(currentStyle === null || currentStyle === void 0 ? void 0 : currentStyle.preferredInnerBg);
+    });
     // TODO: Toggle setting panel/button & scrollbar box-shadow according to current background so that does not look weird
     const initStyleName = (_a = $body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
     new StyleRegistry(initStyleName);
@@ -181,6 +182,13 @@ function setupSettingEvents() {
     setupColorPickerEvents();
     setupRangeSliderEvents();
     $('#outer-background-panel .background-item').on('click', (event) => {
+        // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
+        // therefore all elements with innerBgSelector are not set currentInnerBg yet
+        if (!updateGlobalBgTriggered) {
+            $(innerBgSelector).each((index, element) => {
+                element.classList.add(currentInnerBg);
+            });
+        }
         updateGlobalBgTriggered = true;
         const lastOuterBg = currentOuterBg;
         currentOuterBg = event.currentTarget.id;
