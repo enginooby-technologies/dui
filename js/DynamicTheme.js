@@ -182,6 +182,7 @@ function setupSettingEvents() {
     setupColorPickerEvents();
     setupRangeSliderEvents();
     $('#outer-background-panel .background-item').on('click', (event) => {
+        var _a, _b;
         // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
         // therefore all elements with innerBgSelector are not set currentInnerBg yet
         if (!updateGlobalBgTriggered) {
@@ -191,13 +192,9 @@ function setupSettingEvents() {
         }
         updateGlobalBgTriggered = true;
         const lastOuterBg = currentOuterBg;
-        currentOuterBg = event.currentTarget.id;
+        currentOuterBg = (_b = (_a = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : 'none-bg';
         $body.removeClass(lastOuterBg);
         $body.addClass(currentOuterBg);
-        // $(DynamicSelectors.bgSelectors).each((index, element) => {
-        //         element.classList.remove(lastOuterBg);
-        //         element.classList.add(currentOuterBg);
-        // });
     });
     $('#inner-background-panel .background-item').on('click', (event) => {
         updateGlobalBgTriggered = true;

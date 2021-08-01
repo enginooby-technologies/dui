@@ -4,8 +4,8 @@ export class Style {
         this.styleSheet = this.createStyleSheet();
         this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
         this.name = name;
-        this.preferredOuterBg = preferredOuterBg !== null && preferredOuterBg !== void 0 ? preferredOuterBg : 'background-0';
-        this.preferredInnerBg = preferredInnerBg !== null && preferredInnerBg !== void 0 ? preferredInnerBg : 'background-0';
+        this.preferredOuterBg = preferredOuterBg !== null && preferredOuterBg !== void 0 ? preferredOuterBg : 'none-bg';
+        this.preferredInnerBg = preferredInnerBg !== null && preferredInnerBg !== void 0 ? preferredInnerBg : 'none-bg';
     }
     createStyleSheet() {
         var style = document.createElement("style");

@@ -12,8 +12,8 @@ export abstract class Style {
                 this.styleSheet = this.createStyleSheet();
                 this.cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
                 this.name = name;
-                this.preferredOuterBg = preferredOuterBg ?? 'background-0';
-                this.preferredInnerBg = preferredInnerBg ?? 'background-0';
+                this.preferredOuterBg = preferredOuterBg ?? 'none-bg';
+                this.preferredInnerBg = preferredInnerBg ?? 'none-bg';
         }
 
         private createStyleSheet(): CSSStyleSheet {

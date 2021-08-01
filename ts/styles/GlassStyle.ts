@@ -12,7 +12,7 @@ import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
         // Singleton Pattern
         private static _instance: GlassStyle;
-        private constructor() { super(StyleName.Glass, 'background-3') }
+        private constructor() { super(StyleName.Glass, 'animated-gradient-bg') }
         public static get Instance(): GlassStyle {
                 GlassStyle._instance ??= new GlassStyle();
                 return GlassStyle._instance;

@@ -8,7 +8,7 @@ import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { StyleName } from '../Config.js';
 export class GlassStyle extends Style {
     constructor() {
-        super(StyleName.Glass, 'background-3');
+        super(StyleName.Glass, 'animated-gradient-bg');
         this.blur = '10';
         this.transparency = '0.6';
         this.borderSize = '1';

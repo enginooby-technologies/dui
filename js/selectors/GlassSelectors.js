@@ -1,5 +1,5 @@
 export const bgSchemeSelectors = [
-    ".display-content>.container.background-0",
+    ".display-content>.container.none-bg",
     ".range-slider__range",
     ".range-slider__value",
     ".modal-content",

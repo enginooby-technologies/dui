@@ -214,15 +214,12 @@ function setupSettingEvents() {
                                 element.classList.add(currentInnerBg);
                         })
                 }
+
                 updateGlobalBgTriggered = true;
                 const lastOuterBg: string = currentOuterBg;
-                currentOuterBg = event.currentTarget.id;
+                currentOuterBg = event.currentTarget.getAttribute('class')!.match(/\S*-bg\b/i)?.toString() ?? 'none-bg';
                 $body.removeClass(lastOuterBg);
                 $body.addClass(currentOuterBg);
-                // $(DynamicSelectors.bgSelectors).each((index, element) => {
-                //         element.classList.remove(lastOuterBg);
-                //         element.classList.add(currentOuterBg);
-                // });
         });
 
         $('#inner-background-panel .background-item').on('click', (event) => {

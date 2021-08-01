@@ -45,7 +45,7 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
                 @include blur-and-border();
         }
 
-        .display-content>.container.background-0,
+        .display-content>.container.none-bg,
         .range-slider__range,
         .range-slider__value,
         .modal-content {
