@@ -37,6 +37,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
   + TinyColor [.js] (for color manipulation, will be removed)
   + Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight)
   + Animate [.css] (for animation)
+  + Webfont [.js] (for dynamic font loading)
 
 ## Development Setup (optional)
 Skip if just use the framework without modification

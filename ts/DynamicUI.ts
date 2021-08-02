@@ -1,12 +1,14 @@
-import { fallbackSettingFilePath, settingFilePath, StyleName } from './Config.js';
+import { fallbackSettingFilePath, settingFilePath } from './Config.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js'
 import { Style } from './base/Style.js'
 import { StyleRegistry } from './StyleRegistry.js';
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
+import { DynamicFont } from './DynamicFont.js';
 
 export class DynamicUI {
         dynamicColor?: DynamicColor;
+        dynamicFont?: DynamicFont;
         dynamicBackground?: DynamicBackground;
         static currentStyle?: Style;
 
@@ -66,6 +68,7 @@ export class DynamicUI {
                 this.setupSettingEvents();
                 this.$body = $('body');
                 this.dynamicColor = new DynamicColor();
+                this.dynamicFont = new DynamicFont();
                 this.dynamicBackground = new DynamicBackground();
 
                 const initStyleName = this.$body!.attr('class')!.match(/\S*-style\b/i)?.toString();

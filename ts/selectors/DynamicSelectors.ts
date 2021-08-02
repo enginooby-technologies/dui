@@ -201,6 +201,10 @@ export const borderRadiusSelectors = formatString([
         ".skill-item",
 ]);
 
+export const fontSelectors = formatString([
+        "*:not(i):not(.fas):not(.fa)"
+]);
+
 //HELPER
 function formatString(selectorsArray: string[]): string {
         return selectorsArray.join(", ");

@@ -101,6 +101,23 @@ include_once "components/basic/_index.php";
                                         ?>
                                 </div>
 
+                                <!-- FONT -->
+                                <div id="font-panel" class="option-panel mb-4">
+                                        <p class="option-label">Font</p>
+                                        <div id="font-family-panel">
+                                                <p>Family</p>
+                                                <?php
+                                                echo Dropdown(
+                                                        "Agency FB",
+                                                        "dropdown-font-family",
+                                                        ["label" => "Palette Mosaic"],
+                                                        ["label" => "Style Script"],
+                                                        ["label" => "Ubuntu"],
+                                                )
+                                                ?>
+                                        </div>
+                                </div>
+
                                 <!-- BACKGROUND -->
                                 <div id="background-panel" class="option-panel mb-4">
                                         <p class="option-label">Background</p>
@@ -134,6 +151,7 @@ include_once "components/basic/_index.php";
                                                 </div>
                                         </div>
                                 </div>
+
                         </div>
 
                         <div class="setting-save-panel">

@@ -178,6 +178,9 @@ export const borderRadiusSelectors = formatString([
     ".testimonial .owl-carousel .owl-dot span",
     ".skill-item",
 ]);
+export const fontSelectors = formatString([
+    "*:not(i):not(.fas):not(.fa)"
+]);
 //HELPER
 function formatString(selectorsArray) {
     return selectorsArray.join(", ");

@@ -3,6 +3,7 @@ import * as DynamicSelectors from './selectors/DynamicSelectors.js';
 import { StyleRegistry } from './StyleRegistry.js';
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
+import { DynamicFont } from './DynamicFont.js';
 export class DynamicUI {
     constructor() {
         this.borderRadius = 9;
@@ -49,6 +50,7 @@ export class DynamicUI {
         this.setupSettingEvents();
         this.$body = $('body');
         this.dynamicColor = new DynamicColor();
+        this.dynamicFont = new DynamicFont();
         this.dynamicBackground = new DynamicBackground();
         const initStyleName = (_a = this.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
         new StyleRegistry(this, initStyleName);

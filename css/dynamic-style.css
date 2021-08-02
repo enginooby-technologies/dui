@@ -34,7 +34,7 @@ Init values for dynamic properties to reduce  page load time
 }
 
 .setting-section .setting-panel .dropdown .dropdown-label {
-  min-width: 115px;
+  min-width: 110px;
 }
 
 .setting-section .setting-panel .radio-button-group .button-border {
