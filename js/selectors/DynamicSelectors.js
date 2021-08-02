@@ -185,6 +185,7 @@ export const fontSelectors = formatString([
     "code",
     "span:not(.fa):not(.fas):not(.follow-label span)",
     "a",
+    "button",
     ".pp-tooltip",
     "h1, h2, h3, h4, h5, h6",
 ]);

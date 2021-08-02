@@ -3,9 +3,12 @@ import * as DynamicSelectors from './selectors/DynamicSelectors.js';
 import { DynamicUI } from "./DynamicUI.js";
 export class DynamicFont {
     constructor() {
+        // uniform properties
+        this.currentLetterSpacing = 1;
         this.currentLineHeight = 1.45;
         this.getFontRule = () => { var _a; return (_a = this.fontRule) !== null && _a !== void 0 ? _a : (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors)); };
         this.initRangeSlider("#range-slider_line-height", this.currentLineHeight);
+        this.initRangeSlider("#range-slider_letter-spacing", this.currentLetterSpacing);
         this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
         this.setupEvents();
     }
@@ -31,8 +34,15 @@ export class DynamicFont {
                     this.currentLineHeight = parseFloat(newValue);
                     this.updateLineHeight();
                     break;
+                case 'range-slider_letter-spacing':
+                    this.currentLineHeight = parseFloat(newValue);
+                    this.updateLetterSpacing();
+                    break;
             }
         });
+    }
+    updateLetterSpacing() {
+        this.getFontRule().style.setProperty('letter-spacing', `${this.currentLineHeight / 100}rem`, 'important');
     }
     updateLineHeight() {
         this.getFontRule().style.setProperty('line-height', this.currentLineHeight.toString());

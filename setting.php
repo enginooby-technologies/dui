@@ -115,6 +115,7 @@ include_once "components/basic/_index.php";
                                                         ["label" => "Ubuntu"],
                                                 );
                                                 echo RangeSlider(label: "Line height", min: 1, max: 2, step: 0.05);
+                                                echo RangeSlider(label: "Letter spacing", min: -10, max: 20);
                                                 ?>
                                         </div>
                                 </div>
