@@ -28,6 +28,7 @@ export class GlassStyle extends Style {
         this.getBgColorfull1Rule = () => { var _a; return (_a = this.bgColorfull1Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)'])); };
         this.getBgColorfull2Rule = () => { var _a; return (_a = this.bgColorfull2Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)'])); };
         this.getBgColorfull3Rule = () => { var _a; return (_a = this.bgColorfull3Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)'])); };
+        this.getInnerBgRule = () => { var _a; return (_a = this.innerBgRule) !== null && _a !== void 0 ? _a : (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before'])); };
     }
     static get Instance() {
         var _a;
@@ -115,7 +116,10 @@ export class GlassStyle extends Style {
         this.updateTransparencySchemeColor();
         this.updateTransparencyHighlightColor();
         this.updateTransparencyColorfull();
+        this.getInnerBgRule().style.setProperty('opacity', this.transparency);
     }
+    //CONSIDER: update ::before opacity instead
+    // https://coder-coder.com/background-image-opacity/
     setToCurrentTransparency(rule, color) {
         const formattedColor = `rgba(${color.rValue}, ${color.gValue}, ${color.bValue}, ${this.transparency})`;
         const contrastColor = color.getInvertBlackWhite();

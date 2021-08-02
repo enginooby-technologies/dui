@@ -20,6 +20,10 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
 
 .glass-style {
 
+        .display-content>.container::before {
+                opacity: $transparency;
+        }
+
         .button:not(.radio-button-group .button),
         .radio-button-group .button.active,
         .radio-button-group .button:not(.active):hover,

@@ -37,6 +37,7 @@ export class GlassStyle extends Style {
         private colorContrastHighlightRule?: CSSStyleRule;
         private colorBaseRule?: CSSStyleRule;
         private colorMutedBaseRule?: CSSStyleRule;
+        private innerBgRule?: CSSStyleRule;
 
         // lazy initializations
         getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
@@ -50,6 +51,7 @@ export class GlassStyle extends Style {
         getBgColorfull1Rule = () => this.bgColorfull1Rule ?? (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)']));
         getBgColorfull2Rule = () => this.bgColorfull2Rule ?? (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)']));
         getBgColorfull3Rule = () => this.bgColorfull3Rule ?? (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)']));
+        getInnerBgRule = () => this.innerBgRule ?? (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before']));
 
         init() {
                 this.initRangeSliders();
@@ -142,8 +144,11 @@ export class GlassStyle extends Style {
                 this.updateTransparencySchemeColor();
                 this.updateTransparencyHighlightColor();
                 this.updateTransparencyColorfull();
+                this.getInnerBgRule().style.setProperty('opacity', this.transparency);
         }
 
+        //CONSIDER: update ::before opacity instead
+        // https://coder-coder.com/background-image-opacity/
         setToCurrentTransparency(rule: CSSStyleRule, color: Color) {
                 const formattedColor: string = `rgba(${color.rValue}, ${color.gValue}, ${color.bValue}, ${this.transparency})`;
                 const contrastColor: string = color.getInvertBlackWhite();
