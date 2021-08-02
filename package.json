@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/enginoobz-projects/dynamic-ui-framework/issues"
   },
-  "homepage": "https://github.com/enginoobz-projects/dynamic-ui-framework#readme"
+  "homepage": "https://github.com/enginoobz-projects/dynamic-ui-framework#readme",
+  "devDependencies": {
+    "@types/css-font-loading-module": "0.0.6"
+  }
 }
