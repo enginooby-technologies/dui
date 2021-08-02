@@ -4,18 +4,29 @@ import { DynamicUI } from "./DynamicUI.js";
 
 export class DynamicFont {
         currentFamily?: string;
-        currentScale?: number;
+        currentScale?: number; // font-size
+        currentLetterSpacing?: number;
+        currentLineHeight: number = 1.45;
+        //font-weight
+
         $dropdownLabelFontFamily: JQuery<HTMLElement>;
         fontRule?: CSSStyleRule;
-
         getFontRule = () => this.fontRule ?? (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors));
 
         constructor() {
+                this.initRangeSlider("#range-slider_line-height", this.currentLineHeight);
                 this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
-                this.setupEvent();
+                this.setupEvents();
         }
 
-        private setupEvent() {
+        //HELPER
+        initRangeSlider(selector: string, value: number) {
+                const $slider = $(selector);
+                $slider.attr('value', value);
+                $slider.next('.range-slider__value').html(value.toString());
+        }
+
+        private setupEvents() {
                 $("#dropdown-font-family .dropdown-item").each((index, element) => {
                         $(element).on("click", (event) => {
                                 const fontName = $(element).text();
@@ -23,6 +34,21 @@ export class DynamicFont {
                                 this.loadFontByWebFontLoader(fontName);
                         })
                 })
+
+                $("#font-panel ,range-slider input").on('input', (event) => {
+                        const newValue = (event.target as HTMLInputElement).value;
+                        $("#" + event.target.id).next('.range-slider__value').text(newValue);
+                        switch (event.target.id) {
+                                case 'range-slider_line-height':
+                                        this.currentLineHeight = parseFloat(newValue);
+                                        this.updateLineHeight();
+                                        break;
+                        }
+                });
+        }
+
+        private updateLineHeight() {
+                this.getFontRule().style.setProperty('line-height', this.currentLineHeight.toString());
         }
 
         private loadFontByWebFontLoader(fontFamily: string) {

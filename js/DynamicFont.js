@@ -3,11 +3,19 @@ import * as DynamicSelectors from './selectors/DynamicSelectors.js';
 import { DynamicUI } from "./DynamicUI.js";
 export class DynamicFont {
     constructor() {
+        this.currentLineHeight = 1.45;
         this.getFontRule = () => { var _a; return (_a = this.fontRule) !== null && _a !== void 0 ? _a : (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors)); };
+        this.initRangeSlider("#range-slider_line-height", this.currentLineHeight);
         this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
-        this.setupEvent();
+        this.setupEvents();
     }
-    setupEvent() {
+    //HELPER
+    initRangeSlider(selector, value) {
+        const $slider = $(selector);
+        $slider.attr('value', value);
+        $slider.next('.range-slider__value').html(value.toString());
+    }
+    setupEvents() {
         $("#dropdown-font-family .dropdown-item").each((index, element) => {
             $(element).on("click", (event) => {
                 const fontName = $(element).text();
@@ -15,6 +23,19 @@ export class DynamicFont {
                 this.loadFontByWebFontLoader(fontName);
             });
         });
+        $("#font-panel ,range-slider input").on('input', (event) => {
+            const newValue = event.target.value;
+            $("#" + event.target.id).next('.range-slider__value').text(newValue);
+            switch (event.target.id) {
+                case 'range-slider_line-height':
+                    this.currentLineHeight = parseFloat(newValue);
+                    this.updateLineHeight();
+                    break;
+            }
+        });
+    }
+    updateLineHeight() {
+        this.getFontRule().style.setProperty('line-height', this.currentLineHeight.toString());
     }
     loadFontByWebFontLoader(fontFamily) {
         // @ts-ignore

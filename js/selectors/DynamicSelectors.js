@@ -179,7 +179,14 @@ export const borderRadiusSelectors = formatString([
     ".skill-item",
 ]);
 export const fontSelectors = formatString([
-    "*:not(i):not(.fas):not(.fa)"
+    // "*:not(i):not(.fas):not(.fa)",
+    "body",
+    "p",
+    "code",
+    "span:not(.fa):not(.fas):not(.follow-label span)",
+    "a",
+    ".pp-tooltip",
+    "h1, h2, h3, h4, h5, h6",
 ]);
 //HELPER
 function formatString(selectorsArray) {

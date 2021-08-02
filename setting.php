@@ -113,7 +113,8 @@ include_once "components/basic/_index.php";
                                                         ["label" => "Palette Mosaic"],
                                                         ["label" => "Style Script"],
                                                         ["label" => "Ubuntu"],
-                                                )
+                                                );
+                                                echo RangeSlider(label: "Line height", min: 1, max: 2, step: 0.05);
                                                 ?>
                                         </div>
                                 </div>
