@@ -105,7 +105,7 @@ include_once "components/basic/_index.php";
                                 <div id="font-panel" class="option-panel mb-4">
                                         <p class="option-label">Text</p>
                                         <div id="font-family-panel">
-                                                <p>Font</p>
+                                                <p class="mb-0">Font</p>
                                                 <?php
                                                 echo Dropdown(
                                                         "Agency FB",

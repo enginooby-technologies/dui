@@ -17,7 +17,7 @@ Init values for dynamic properties to reduce  page load time
 
 .setting-section .setting-panel p:not(.option-label) {
   font-size: 1.1rem !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 6px !important;
 }
 
 .setting-section .setting-panel p.option-label {
