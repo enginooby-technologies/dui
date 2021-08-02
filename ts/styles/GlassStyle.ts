@@ -38,6 +38,8 @@ export class GlassStyle extends Style {
         private colorBaseRule?: CSSStyleRule;
         private colorMutedBaseRule?: CSSStyleRule;
         private innerBgRule?: CSSStyleRule;
+        private innerBgContainerRule?: CSSStyleRule;
+
 
         // lazy initializations
         getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
@@ -52,6 +54,7 @@ export class GlassStyle extends Style {
         getBgColorfull2Rule = () => this.bgColorfull2Rule ?? (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)']));
         getBgColorfull3Rule = () => this.bgColorfull3Rule ?? (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)']));
         getInnerBgRule = () => this.innerBgRule ?? (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before']));
+        getInnerBgContainerRule = () => this.innerBgContainerRule ?? (this.innerBgContainerRule = this.insertEmptyRule(['.display-content>.container']));
 
         init() {
                 this.initRangeSliders();
@@ -97,7 +100,9 @@ export class GlassStyle extends Style {
                         this.getBgDarkenHighlightRule(),
                         this.getBgColorfull1Rule(),
                         this.getBgColorfull2Rule(),
-                        this.getBgColorfull3Rule()
+                        this.getBgColorfull3Rule(),
+                        // this.getInnerBgRule(), //TOFIX: blur does not have effect on this
+                        this.getInnerBgContainerRule(),
                 ]);
         }
 
@@ -117,6 +122,8 @@ export class GlassStyle extends Style {
                         this.getBgColorfull1Rule(),
                         this.getBgColorfull2Rule(),
                         this.getBgColorfull3Rule(),
+                        // this.getInnerBgRule(),
+                        this.getInnerBgContainerRule(),
                 ]);
 
                 // update limit

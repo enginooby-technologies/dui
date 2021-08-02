@@ -273,6 +273,7 @@ body::before {
   opacity: 1;
   position: fixed;
   height: 100%;
+  z-index: -2;
 }
 
 @font-face {
@@ -1745,6 +1746,12 @@ table,
 
 .glass-style .display-content > .container::before {
   opacity: 0.6;
+}
+
+.glass-style .display-content > .container {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(209, 213, 219, 0.6);
 }
 
 .glass-style .button,

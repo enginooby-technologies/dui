@@ -37,6 +37,7 @@ body::before {
         // set background coverring whole page
         position: fixed;
         height: 100%;
+        z-index: -2;
 }
 
 $agencyFbRegular: '/assets/fonts/agency-fb-regular/AgencyFB-Reg';

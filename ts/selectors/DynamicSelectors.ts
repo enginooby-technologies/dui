@@ -127,6 +127,7 @@ export const borderRadiusSelectors = formatString([
         ".code-block",
         ".alert",
         ".display-content>.container::before",
+        ".display-content>.container",
 
         // BLOG
         ".blog .blog-image",

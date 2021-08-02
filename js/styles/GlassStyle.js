@@ -29,6 +29,7 @@ export class GlassStyle extends Style {
         this.getBgColorfull2Rule = () => { var _a; return (_a = this.bgColorfull2Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)'])); };
         this.getBgColorfull3Rule = () => { var _a; return (_a = this.bgColorfull3Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)'])); };
         this.getInnerBgRule = () => { var _a; return (_a = this.innerBgRule) !== null && _a !== void 0 ? _a : (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before'])); };
+        this.getInnerBgContainerRule = () => { var _a; return (_a = this.innerBgContainerRule) !== null && _a !== void 0 ? _a : (this.innerBgContainerRule = this.insertEmptyRule(['.display-content>.container'])); };
     }
     static get Instance() {
         var _a;
@@ -75,7 +76,9 @@ export class GlassStyle extends Style {
             this.getBgDarkenHighlightRule(),
             this.getBgColorfull1Rule(),
             this.getBgColorfull2Rule(),
-            this.getBgColorfull3Rule()
+            this.getBgColorfull3Rule(),
+            // this.getInnerBgRule(), //TOFIX: blur does not have effect on this
+            this.getInnerBgContainerRule(),
         ]);
     }
     setToCurrentBlur(rules) {
@@ -93,6 +96,8 @@ export class GlassStyle extends Style {
             this.getBgColorfull1Rule(),
             this.getBgColorfull2Rule(),
             this.getBgColorfull3Rule(),
+            // this.getInnerBgRule(),
+            this.getInnerBgContainerRule(),
         ]);
         // update limit
         const borderSizeNumber = parseFloat(this.borderSize);

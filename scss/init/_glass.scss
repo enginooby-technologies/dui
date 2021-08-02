@@ -22,6 +22,11 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
 
         .display-content>.container::before {
                 opacity: $transparency;
+                // @include blur-and-border();
+        }
+
+        .display-content>.container {
+                @include blur-and-border();
         }
 
         .button:not(.radio-button-group .button),
