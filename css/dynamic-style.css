@@ -95,7 +95,7 @@ Init values for dynamic properties to reduce  page load time
   left: 0px;
 }
 
-.setting-section .setting-panel #custom-background.hide {
+.setting-section .setting-panel .background-item.hide {
   display: none;
 }
 

@@ -15,7 +15,8 @@ export class DynamicBackground {
         // although we select global bg for all UI styles, at the first time before doing that, 
         // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
         // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
-        updateGlobalBgTriggered: boolean = false;
+        updateGlobalOuterBgTriggered: boolean = false;
+        updateGlobalInnerBgTriggered: boolean = false;
 
         constructor() {
                 this.$body = $('body');
@@ -38,8 +39,11 @@ export class DynamicBackground {
         }
 
         public removeStylePreferredBgs(style: Style) {
-                if (!this.updateGlobalBgTriggered) {
+                if (!this.updateGlobalOuterBgTriggered) {
                         if (!this.hasCustomBg) this.$body!.removeClass(style.preferredOuterBg);
+                }
+
+                if (!this.updateGlobalInnerBgTriggered) {
                         $(this.innerBgSelector).each((index, element) => {
                                 element.classList.remove(style.preferredInnerBg!);
                         })
@@ -47,12 +51,15 @@ export class DynamicBackground {
         }
 
         public addStylePreferredBgs(style: Style) {
-                if (!this.updateGlobalBgTriggered) {
+                if (!this.updateGlobalOuterBgTriggered) {
                         if (!this.hasCustomBg) this.$body!.addClass(style.preferredOuterBg);
+                        this.currentOuterBg = style.preferredOuterBg;
+                }
+
+                if (!this.updateGlobalInnerBgTriggered) {
                         $(this.innerBgSelector).each((index, element) => {
                                 element.classList.add(style.preferredInnerBg!);
                         })
-                        this.currentOuterBg = style.preferredOuterBg;
                         this.currentInnerBg = style.preferredInnerBg;
                 }
         }
@@ -65,7 +72,7 @@ export class DynamicBackground {
         private setupOuterBgEvent() {
                 $('#outer-background-panel .background-item').on('click', (event) => {
                         //first time  select outer bg 
-                        if (!this.updateGlobalBgTriggered) {
+                        if (!this.updateGlobalOuterBgTriggered) {
                                 // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
                                 // therefore all elements with innerBgSelector are not set currentInnerBg yet
                                 $(this.innerBgSelector).each((index, element) => {
@@ -75,7 +82,7 @@ export class DynamicBackground {
                                 this.$body!.removeClass(this.customBgClassName);
                         }
 
-                        this.updateGlobalBgTriggered = true;
+                        this.updateGlobalOuterBgTriggered = true;
                         const lastOuterBg: string = this.currentOuterBg!;
                         this.currentOuterBg = event.currentTarget.getAttribute('class')!.match(/\S*-bg\b/i)?.toString() ?? 'none-bg';
                         this.$body!.removeClass(lastOuterBg);
@@ -83,13 +90,12 @@ export class DynamicBackground {
                 });
         }
 
-        // TODO: update inner  bg transparency in case of Glassmorphism
         private setupInnerBgEvent() {
                 $('#inner-background-panel .background-item').on('click', (event) => {
-                        // this.updateGlobalBgTriggered = true;
+                        this.updateGlobalInnerBgTriggered = true;
                         const lastInnerBg: string = this.currentInnerBg!;
                         this.currentInnerBg = event.currentTarget.getAttribute('class')!.match(/\S*-bg\b/i)?.toString() ?? 'none-bg';
-                        console.log(this.currentInnerBg);
+                        // console.log(this.currentInnerBg);
 
                         $(this.innerBgSelector).each((index, element) => {
                                 element.classList.remove(lastInnerBg);

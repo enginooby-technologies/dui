@@ -8,7 +8,8 @@ export class DynamicBackground {
         // although we select global bg for all UI styles, at the first time before doing that, 
         // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
         // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
-        this.updateGlobalBgTriggered = false;
+        this.updateGlobalOuterBgTriggered = false;
+        this.updateGlobalInnerBgTriggered = false;
         this.$body = $('body');
         this.hasCustomBg = this.$body.hasClass(this.customBgClassName);
         if (this.hasCustomBg) {
@@ -27,22 +28,26 @@ export class DynamicBackground {
         this.setupEvents();
     }
     removeStylePreferredBgs(style) {
-        if (!this.updateGlobalBgTriggered) {
+        if (!this.updateGlobalOuterBgTriggered) {
             if (!this.hasCustomBg)
                 this.$body.removeClass(style.preferredOuterBg);
+        }
+        if (!this.updateGlobalInnerBgTriggered) {
             $(this.innerBgSelector).each((index, element) => {
                 element.classList.remove(style.preferredInnerBg);
             });
         }
     }
     addStylePreferredBgs(style) {
-        if (!this.updateGlobalBgTriggered) {
+        if (!this.updateGlobalOuterBgTriggered) {
             if (!this.hasCustomBg)
                 this.$body.addClass(style.preferredOuterBg);
+            this.currentOuterBg = style.preferredOuterBg;
+        }
+        if (!this.updateGlobalInnerBgTriggered) {
             $(this.innerBgSelector).each((index, element) => {
                 element.classList.add(style.preferredInnerBg);
             });
-            this.currentOuterBg = style.preferredOuterBg;
             this.currentInnerBg = style.preferredInnerBg;
         }
     }
@@ -54,7 +59,7 @@ export class DynamicBackground {
         $('#outer-background-panel .background-item').on('click', (event) => {
             var _a, _b;
             //first time  select outer bg 
-            if (!this.updateGlobalBgTriggered) {
+            if (!this.updateGlobalOuterBgTriggered) {
                 // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
                 // therefore all elements with innerBgSelector are not set currentInnerBg yet
                 $(this.innerBgSelector).each((index, element) => {
@@ -63,21 +68,20 @@ export class DynamicBackground {
                 // remove custom bg also
                 this.$body.removeClass(this.customBgClassName);
             }
-            this.updateGlobalBgTriggered = true;
+            this.updateGlobalOuterBgTriggered = true;
             const lastOuterBg = this.currentOuterBg;
             this.currentOuterBg = (_b = (_a = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : 'none-bg';
             this.$body.removeClass(lastOuterBg);
             this.$body.addClass(this.currentOuterBg);
         });
     }
-    // TODO: update inner  bg transparency in case of Glassmorphism
     setupInnerBgEvent() {
         $('#inner-background-panel .background-item').on('click', (event) => {
             var _a, _b;
-            // this.updateGlobalBgTriggered = true;
+            this.updateGlobalInnerBgTriggered = true;
             const lastInnerBg = this.currentInnerBg;
             this.currentInnerBg = (_b = (_a = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : 'none-bg';
-            console.log(this.currentInnerBg);
+            // console.log(this.currentInnerBg);
             $(this.innerBgSelector).each((index, element) => {
                 element.classList.remove(lastInnerBg);
                 element.classList.add(this.currentInnerBg);
