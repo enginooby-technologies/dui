@@ -73,15 +73,6 @@ export class DynamicFont {
                                 const fontName = $(element).text();
                                 this.$dropdownLabelFontFamily.text(fontName);
                                 this.loadFontByWebFontLoader(fontName);
-
-                                this.fontPresets.forEach(preset => {
-                                        if (preset.fontFamily == fontName) {
-                                                this.previousFontPreset = this.currentFontPreset;
-                                                this.currentFontPreset = preset;
-                                                this.applyCurrentFontPreset();
-                                                return;
-                                        }
-                                })
                         })
                 })
 
@@ -143,10 +134,27 @@ export class DynamicFont {
                         timeout: 2000,
                         active: () => {
                                 this.applyFontFamily(fontFamily);
+                                let preset: FontPreset | null = this.getFontPresetByFamily(fontFamily);
+                                if (!preset) {
+                                        preset = new FontPreset(fontFamily, 1, 1.45, 1);
+                                        this.fontPresets.push(preset);
+                                }
+                                this.previousFontPreset = this.currentFontPreset;
+                                this.currentFontPreset = preset;
+                                this.applyCurrentFontPreset();
                         },
                         inactive: () => {
                         }
                 });
+        }
+
+        private getFontPresetByFamily(fontFamily: string): FontPreset | null {
+                for (let i = 0; i < this.fontPresets.length; i++) {
+                        if (this.fontPresets[i].fontFamily == fontFamily) {
+                                return this.fontPresets[i];
+                        }
+                }
+                return null;
         }
 
         private applyFontFamily(fontFamily: string) {
