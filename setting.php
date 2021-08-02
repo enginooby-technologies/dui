@@ -103,9 +103,9 @@ include_once "components/basic/_index.php";
 
                                 <!-- FONT -->
                                 <div id="font-panel" class="option-panel mb-4">
-                                        <p class="option-label">Font</p>
+                                        <p class="option-label">Text</p>
                                         <div id="font-family-panel">
-                                                <p>Family</p>
+                                                <p>Font</p>
                                                 <?php
                                                 echo Dropdown(
                                                         "Agency FB",
@@ -114,6 +114,7 @@ include_once "components/basic/_index.php";
                                                         ["label" => "Style Script"],
                                                         ["label" => "Ubuntu"],
                                                 );
+                                                echo RangeSlider(label: "Size scale", min: 0.8, max: 1.4, step: 0.01);
                                                 echo RangeSlider(label: "Line height", min: 1, max: 2, step: 0.05);
                                                 echo RangeSlider(label: "Letter spacing", min: -10, max: 20);
                                                 ?>

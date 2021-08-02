@@ -151,7 +151,7 @@ Init values for dynamic properties to reduce  page load time
 }
 
 .setting-section .setting-button-border i {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 40px;
 }
 
@@ -200,7 +200,7 @@ Init values for dynamic properties to reduce  page load time
   padding: 8px 0;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .color-scheme li a.light-scheme:hover,
@@ -343,8 +343,12 @@ h6,
 
 body {
   font-family: "Agency FB", sans-serif;
-  font-size: 1.35rem !important;
+  font-size: 1.35rem;
   font-weight: 400;
+}
+
+p {
+  font-size: 1.35rem;
 }
 
 h1,
@@ -478,7 +482,7 @@ button {
 
 .title-wrapper {
   text-align: center;
-  font-size: 56px;
+  font-size: 3.5rem;
   font-weight: 900;
   opacity: 0.12;
   font-family: "Poppins", sans-serif;
@@ -618,13 +622,13 @@ video.lazy.loaded {
   padding: 10px 30px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 22px;
+  font-size: 1.3rem;
   font-weight: 500 !important;
   display: inline-block;
 }
 
 .button i {
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .code-block {

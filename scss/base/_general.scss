@@ -122,8 +122,12 @@ h6,
 
 body {
         font-family: $fontRegular;
-        font-size: 1.35rem * $fontScale !important;
+        font-size: 1.35rem * $fontScale;
         font-weight: 400;
+}
+
+p {
+        font-size: 1.35rem *$fontScale;
 }
 
 
@@ -255,7 +259,7 @@ button {
 
 .title-wrapper {
         text-align: center;
-        font-size: 56px *$fontTitleScale;
+        font-size: 3.5rem *$fontTitleScale;
         font-weight: 900;
         opacity: 0.12;
         font-family: $fontTitle;
