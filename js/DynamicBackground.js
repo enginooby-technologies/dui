@@ -47,12 +47,15 @@ export class DynamicBackground {
     setupEvents() {
         $('#outer-background-panel .background-item').on('click', (event) => {
             var _a, _b;
-            // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
-            // therefore all elements with innerBgSelector are not set currentInnerBg yet
+            //first time  select outer bg 
             if (!this.updateGlobalBgTriggered) {
+                // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
+                // therefore all elements with innerBgSelector are not set currentInnerBg yet
                 $(this.innerBgSelector).each((index, element) => {
                     element.classList.add(this.currentInnerBg);
                 });
+                // remove custom bg also
+                this.$body.removeClass(this.customBgClassName);
             }
             this.updateGlobalBgTriggered = true;
             const lastOuterBg = this.currentOuterBg;

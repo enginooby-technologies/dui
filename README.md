@@ -54,7 +54,7 @@ Skip if just use the framework without modification
   ```  
 3 - Refer to the framework script:  
 ```  
-<script async src="<framework_folder_path>/built/DynamicUI.js" type="module"></script>
+<script async src="<framework_folder_path>/js/DynamicUI.js" type="module"></script>
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This means the script could be skipped if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
 After load, the script will AJAX load ```setting.html``` which is a setting panel for dynamic customization.  

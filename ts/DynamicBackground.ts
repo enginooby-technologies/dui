@@ -9,7 +9,8 @@ export class DynamicBackground {
         innerBgSelector: string = ".display-content>.container"; // inner background, default is the scheme color
         currentOuterBg?: string;
         currentInnerBg?: string;
-        hasCustomBg?: boolean; // if the main project using this framework has its own bg, use "custom-background" class in <body>
+        // if the main project using this framework has its own bg, use "custom-background" class in <body>
+        hasCustomBg?: boolean;  // for now replace only outer background
         customBgClassName: string = "custom-background"
         // although we select global bg for all UI styles, at the first time before doing that, 
         // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
@@ -55,12 +56,15 @@ export class DynamicBackground {
 
         private setupEvents() {
                 $('#outer-background-panel .background-item').on('click', (event) => {
-                        // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
-                        // therefore all elements with innerBgSelector are not set currentInnerBg yet
+                        //first time  select outer bg 
                         if (!this.updateGlobalBgTriggered) {
+                                // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
+                                // therefore all elements with innerBgSelector are not set currentInnerBg yet
                                 $(this.innerBgSelector).each((index, element) => {
                                         element.classList.add(this.currentInnerBg!);
-                                })
+                                });
+                                // remove custom bg also
+                                this.$body!.removeClass(this.customBgClassName);
                         }
 
                         this.updateGlobalBgTriggered = true;
