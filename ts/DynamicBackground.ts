@@ -11,7 +11,7 @@ export class DynamicBackground {
         currentInnerBg?: string;
         // if the main project using this framework has its own bg, use "custom-background" class in <body>
         hasCustomBg?: boolean;  // for now replace only outer background
-        customBgClassName: string = "custom-background"
+        customBgClassName: string = "custom-bg"
         // although we select global bg for all UI styles, at the first time before doing that, 
         // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
         // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
@@ -20,7 +20,10 @@ export class DynamicBackground {
         constructor() {
                 this.$body = $('body');
                 this.hasCustomBg = this.$body.hasClass(this.customBgClassName);
-                if (this.hasCustomBg) $(`.setting-panel .${this.customBgClassName}`).removeClass('hide');
+                if (this.hasCustomBg) {
+                        this.currentOuterBg = this.customBgClassName;
+                        $(`.setting-panel .${this.customBgClassName}`).removeClass('hide');
+                }
                 if (!this.hasCustomBg) {
                         this.$body.addClass(DynamicUI.currentStyle?.preferredOuterBg!);
                 }
@@ -55,6 +58,11 @@ export class DynamicBackground {
         }
 
         private setupEvents() {
+                this.setupOuterBgEvent();
+                this.setupInnerBgEvent();
+        }
+
+        private setupOuterBgEvent() {
                 $('#outer-background-panel .background-item').on('click', (event) => {
                         //first time  select outer bg 
                         if (!this.updateGlobalBgTriggered) {
@@ -73,17 +81,20 @@ export class DynamicBackground {
                         this.$body!.removeClass(lastOuterBg);
                         this.$body!.addClass(this.currentOuterBg);
                 });
+        }
 
+        // TODO: update inner  bg transparency in case of Glassmorphism
+        private setupInnerBgEvent() {
                 $('#inner-background-panel .background-item').on('click', (event) => {
-                        this.updateGlobalBgTriggered = true;
+                        // this.updateGlobalBgTriggered = true;
                         const lastInnerBg: string = this.currentInnerBg!;
                         this.currentInnerBg = event.currentTarget.getAttribute('class')!.match(/\S*-bg\b/i)?.toString() ?? 'none-bg';
+                        console.log(this.currentInnerBg);
 
                         $(this.innerBgSelector).each((index, element) => {
                                 element.classList.remove(lastInnerBg);
                                 element.classList.add(this.currentInnerBg!);
-                        })
+                        });
                 });
         }
-
 }

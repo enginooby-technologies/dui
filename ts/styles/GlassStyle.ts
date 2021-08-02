@@ -1,7 +1,6 @@
 import { Color } from '../base/Color.js';
 import { Style } from '../base/Style.js';
 import { TinyColor } from '../base/TinyColor.js';
-
 // CAUTION: FlatStyle dependent
 //TODO: DRY with FlatStyle
 import * as GlassSelectors from '../selectors/GlassSelectors.js'

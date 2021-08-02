@@ -89,6 +89,19 @@ $panelWidth:180px;
                 cursor: pointer;
         }
 
+        .background-item::before {
+                opacity: 1;
+                border-radius: 60px;
+                z-index: -1;
+                content: "";
+                background-size: cover;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+        }
+
         #custom-background.hide {
                 display: none;
         }

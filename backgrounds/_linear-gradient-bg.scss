@@ -1,5 +1,6 @@
 // https: //codepen.io/hexagoncircle/pen/Exyewjv
-.linear-gradient-bg {
+
+.linear-gradient-bg::before {
         --s: 25vmin;
         --p: calc(var(--s) / 2);
         --c1: pink;

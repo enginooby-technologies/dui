@@ -63,7 +63,7 @@ Any dynamic properties could be initialized at the first time by simply adding p
   + Initial style: add style [class name](#style-names) to ```<body>```. Class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in [initial SCSS files](./scss/init).  
   + Initial style properties
   + Initial color
-  + Initial background: add pre-defined [background class name](./backgrounds) or a custom background with name of ```custom-background```  to ```<body>```
+  + Initial background: add pre-defined [background class name](./backgrounds) or a custom background with name of ```custom-bg```  to ```<body>```
   + Initial border
   + Initial overlay
   + Initial font

@@ -15,6 +15,31 @@ label.form-control {
         border: none;
 }
 
+// CONTAINER COMPONENTS
+.display-content>.container {
+        position: relative;
+}
+
+.display-content>.container::before,
+body::before {
+        // set background (regardless of its background-color)opacity without affect child elements (require parent with position: relative)
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5; // TODO: Dynamic
+        z-index: -1;
+}
+
+body::before {
+        opacity: 1;
+        // set background coverring whole page
+        position: fixed;
+        height: 100%;
+}
+
 $agencyFbRegular: '/assets/fonts/agency-fb-regular/AgencyFB-Reg';
 $agencyFbBold: '/assets/fonts/agency-fb-bold/AgencyFB-Bold';
 
