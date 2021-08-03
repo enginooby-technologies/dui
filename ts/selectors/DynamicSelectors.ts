@@ -219,9 +219,11 @@ export const fontScaleSelectors = formatString([
         "h1,h2,h3,h4,h5,h6",
         "p, .title-wrapper, small, label",
         "  .button, button, .button i",
-        " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li, .pp-tooltip",
+        " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li",
         ".range-slider__value",
-        ".toggle-label>.label-text"
+        ".toggle-label>.label-text",
+        // project-domain
+        ".follow-label, .logo, #pp-nav li .pp-tooltip"
 ])
 
 //HELPER
