@@ -1,10 +1,11 @@
 /*
 Init values for dynamic properties to reduce  page load time 
 */
-$schemeColor:#D4D4D4;
-$highlightColor:#004b97;
-$baseColor:black;
-$mutedBaseColor:#4D4D4D; //lightMuted: #b2b2b2
+$schemeColor: #d4d4d4;
+$highlightColor: #004b97;
+$contrastHighlightColor: #d4d4d4;
+$baseColor: black;
+$mutedBaseColor: #4d4d4d; //lightMuted: #b2b2b2
 
 $colorfull1: #01724b;
 $colorfull2: #bc5b00;
@@ -17,16 +18,13 @@ $borderRadius: 9px;
 $transitionDuration: 0.8s;
 
 /* FONT */
-$fontRegular:"Agency FB",
-sans-serif;
-$fontBold:"Agency FB Bold",
-sans-serif;
-$fontTitle:"Poppins",
-sans-serif;
+$fontRegular: "Agency FB", sans-serif;
+$fontBold: "Agency FB Bold", sans-serif;
+$fontTitle: "Poppins", sans-serif;
 $fontScale: 1;
 $fontTitleScale: 1;
-$sliderMargin:0px;
-$badgeIconScale:1;
+$sliderMargin: 0px;
+$badgeIconScale: 1;
 
 // $fontRegular:"Press Start 2P";
 // $fontBold:"Press Start 2P";

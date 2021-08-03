@@ -2,11 +2,12 @@
 import * as DynamicSelectors from './selectors/DynamicSelectors.js';
 import { DynamicUI } from "./DynamicUI.js";
 class FontPreset {
-    constructor(fontFamily, scale, lineHeight, letterSpacing) {
+    constructor(fontFamily, scale, lineHeight, letterSpacing, fallbackFonts = "") {
         this.fontFamily = fontFamily;
         this.scale = scale;
         this.lineHeight = lineHeight;
         this.letterSpacing = letterSpacing;
+        this.fallbackFonts = fallbackFonts;
     }
 }
 // TODO: cache all selectors
@@ -22,7 +23,7 @@ export class DynamicFont {
             new FontPreset('BioRhyme', 0.81, 1.35, -8.3),
             new FontPreset('Roboto', 0.96, 1.25, -8.7),
             new FontPreset('Special Elite', 0.84, 1.45, -7),
-            // new FontPreset('Press Start 2P', 0.81, 1.35, -8.3),
+            new FontPreset('Press Start 2P', 0.58, 1.6, -10, ', cursive'),
         ];
         this.currentFontPreset = this.fontPresets[0];
         this.previousFontPreset = this.fontPresets[0];
@@ -117,7 +118,6 @@ export class DynamicFont {
         });
     }
     applyFontFamily(fontFamily) {
-        this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
         let preset = this.getFontPresetByFamily(fontFamily);
         if (!preset) {
             preset = new FontPreset(fontFamily, 1, 1.45, 1);
@@ -125,6 +125,7 @@ export class DynamicFont {
         }
         this.previousFontPreset = this.currentFontPreset;
         this.currentFontPreset = preset;
+        this.getFontRule().style.setProperty('font-family', `'${preset.fontFamily}' ${preset.fallbackFonts}`, 'important');
         this.applyFontPreset(this.currentFontPreset);
     }
     getFontPresetByFamily(fontFamily) {
@@ -136,10 +137,8 @@ export class DynamicFont {
         return null;
     }
     setSizeScale(scale) {
-        // 1: selectors for scaling can not be overlap, for e.g. if <span> text inside <p>, it will be scaled twice!
-        //2: use relative units like rem
         // TOFIX: missing elements when try caching this JQuery<HTMLElement>
-        $('h1,h2,h3,h4,h5,h6, p, .button, button, .title-wrapper, table th, table tbody, .badge-pill, label, .checkbox .name, .button i, input, textarea, small, a.dropdown-item').each((index, element) => {
+        $(DynamicSelectors.fontScaleSelectors).each((index, element) => {
             const $text = $(element);
             const currentSizeText = $text.css('font-size');
             const currentSize = parseFloat(currentSizeText.replace('px', ''));

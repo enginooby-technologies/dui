@@ -9,8 +9,8 @@ Init values for dynamic properties to reduce  page load time
   top: 75px;
   z-index: 1000;
   position: fixed;
-  -webkit-transition: opacity .3s ease;
-  transition: opacity .3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   width: 180px;
   left: 55px;
 }
@@ -55,19 +55,19 @@ Init values for dynamic properties to reduce  page load time
 }
 
 .setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
-  border: 4px solid #4D4D4D;
+  border: 4px solid #4d4d4d;
 }
 
 .setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
-  border: 4px double #4D4D4D;
+  border: 4px double #4d4d4d;
 }
 
 .setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
-  border: 4px dotted #4D4D4D;
+  border: 4px dotted #4d4d4d;
 }
 
 .setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
-  border: 4px dashed #4D4D4D;
+  border: 4px dashed #4d4d4d;
 }
 
 .setting-section .setting-panel .range-slider__range {
@@ -78,7 +78,7 @@ Init values for dynamic properties to reduce  page load time
   height: 250px;
   zoom: 0.15;
   border-radius: 60px;
-  border: #4D4D4D 2px solid;
+  border: #4d4d4d 2px solid;
   cursor: pointer;
 }
 
@@ -122,8 +122,8 @@ Init values for dynamic properties to reduce  page load time
   position: fixed;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-transition: left .7s ease;
-  transition: left .7s ease;
+  -webkit-transition: left 0.7s ease;
+  transition: left 0.7s ease;
   display: block;
   height: 40px;
   left: 0;
@@ -523,10 +523,6 @@ button {
   height: 45px;
 }
 
-.course-item b {
-  font-size: 1.15rem !important;
-}
-
 .form-control::-webkit-input-placeholder {
   opacity: 1;
 }
@@ -590,8 +586,8 @@ table.neumorphic td:hover::after {
 img.lazy,
 video.lazy {
   opacity: 0;
-  -webkit-transition: opacity .8s ease;
-  transition: opacity .8s ease;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 
 img.lazy.loaded,
@@ -645,7 +641,7 @@ video.lazy.loaded {
 .code-block pre code {
   text-shadow: 0 0.5px black;
   display: block;
-  color: #4D4D4D;
+  color: #4d4d4d;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
@@ -681,7 +677,7 @@ video.lazy.loaded {
 .code-block .token.comment,
 .code-block .token.doctype,
 .code-block .token.prolog {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .dui-radio {
@@ -744,7 +740,7 @@ video.lazy.loaded {
 }
 
 .dui-radio .indicator::after {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   -webkit-transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
@@ -836,7 +832,7 @@ video.lazy.loaded {
   font-style: italic;
   font-size: 1rem !important;
   border-radius: 9px;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .range-slider__value .after {
@@ -1022,7 +1018,7 @@ input::-moz-focus-outer {
 
 .show > .dropdown-toggle {
   color: #004b97;
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .dropdown-toggle-split {
@@ -1038,7 +1034,7 @@ input::-moz-focus-outer {
   display: none;
   padding: 0;
   margin: 10px 0 0;
-  color: #4D4D4D;
+  color: #4d4d4d;
   text-align: left;
   list-style: none;
   background-clip: padding-box;
@@ -1047,7 +1043,7 @@ input::-moz-focus-outer {
 }
 
 .dropdown-item {
-  color: #4D4D4D;
+  color: #4d4d4d;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: 9px;
@@ -1110,11 +1106,24 @@ input::-moz-focus-outer {
   width: 7px;
 }
 
+.nes-style {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
+}
+
+.nes-style .button,
+.nes-style button,
+.nes-style input,
+.nes-style a,
+.nes-style .dui-radio span.text {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+}
+
 .nes-style input#border-radius {
   pointer-events: none;
 }
 
-.nes-style .button {
+.nes-style .button,
+.nes-style .cp-toggle {
   border-radius: 0 !important;
   border-image-slice: 2;
   border-image-width: 2;
@@ -1128,14 +1137,14 @@ input::-moz-focus-outer {
   margin: 4px;
   text-align: center;
   vertical-align: middle;
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.nes-style .button::after {
+.nes-style .button::after,
+.nes-style .cp-toggle::after {
   border-radius: 0 !important;
   position: absolute;
   top: -4px;
@@ -1145,6 +1154,17 @@ input::-moz-focus-outer {
   content: "";
   -webkit-box-shadow: inset -4px -4px #006bb3;
           box-shadow: inset -4px -4px #006bb3;
+}
+
+.nes-style .cp-toggle {
+  background-color: #004b97;
+}
+
+.nes-style .cp-toggle i {
+  color: #d4d4d4 !important;
+  position: relative;
+  top: -5px;
+  left: -0.5px;
 }
 
 .nes-style .dui-radio > input {
@@ -1168,7 +1188,6 @@ input::-moz-focus-outer {
 
 .nes-style .dui-radio span.text {
   position: relative;
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
 }
 
 .nes-style .dui-radio span.text::before {
@@ -1304,7 +1323,7 @@ body,
 .blog .blog-image,
 .blog .blog-item .before,
 .toggle .indicator {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .bg-highlight-color,
@@ -1354,7 +1373,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .blog-content .list-inline-item span,
@@ -1365,7 +1384,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .blog-content .list-inline-item span,
@@ -1376,7 +1395,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .colorfull1,
@@ -1434,7 +1453,7 @@ body,
 }
 
 #overlayer {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .blog .blog-image,
@@ -1495,24 +1514,24 @@ table,
 }
 
 .checkbox i {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .flat-style .dui-radio .label,
 .flat-style .checkbox label,
 .flat-style i,
 .flat-style .overlay-menu-toggler,
-.flat-style input[type=color],
+.flat-style input[type="color"],
 .neu-style .dui-radio .label,
 .neu-style .checkbox label,
 .neu-style i,
 .neu-style .overlay-menu-toggler,
-.neu-style input[type=color],
+.neu-style input[type="color"],
 .glass-style .dui-radio .label,
 .glass-style .checkbox label,
 .glass-style i,
 .glass-style .overlay-menu-toggler,
-.glass-style input[type=color] {
+.glass-style input[type="color"] {
   cursor: pointer;
 }
 
@@ -1520,17 +1539,17 @@ table,
 .flat-style .checkbox label *,
 .flat-style i *,
 .flat-style .overlay-menu-toggler *,
-.flat-style input[type=color] *,
+.flat-style input[type="color"] *,
 .neu-style .dui-radio .label *,
 .neu-style .checkbox label *,
 .neu-style i *,
 .neu-style .overlay-menu-toggler *,
-.neu-style input[type=color] *,
+.neu-style input[type="color"] *,
 .glass-style .dui-radio .label *,
 .glass-style .checkbox label *,
 .glass-style i *,
 .glass-style .overlay-menu-toggler *,
-.glass-style input[type=color] * {
+.glass-style input[type="color"] * {
   cursor: pointer;
 }
 
@@ -1560,19 +1579,19 @@ table,
 }
 
 .neu-style .range-slider .range-slider__value {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
 .neu-style .range-slider .range-slider__range {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
@@ -1595,7 +1614,7 @@ table,
 .neu-style .dropdown .dropdown-menu,
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .neu-style .dropdown.show .dropdown-toggle,
@@ -1671,11 +1690,11 @@ table,
 .neu-style .checkbox label,
 .neu-style .portfolio-single .modal-content,
 .neu-style ::-webkit-scrollbar-track {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .neu-style .segmented-control > input:not(:checked):not(:hover) + label {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .neu-style .button,
@@ -1699,7 +1718,7 @@ table,
 
 .neu-style .checkbox input:not(:checked):not(:hover) ~ label i,
 .neu-style .checkbox input:not(:checked) ~ label + .name {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .neu-style .checkbox input:checked ~ label + .name,
@@ -1711,13 +1730,13 @@ table,
 .neu-style ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
           box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .flat-style {
@@ -1774,12 +1793,12 @@ table,
 .flat-style .range-slider__range,
 .flat-style .range-slider__value,
 .flat-style .modal-content {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   color: black;
 }
 
 .flat-style .segmented-control > input:not(:checked):not(:hover) + label {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .flat-style .segmented-control > input:hover + label {
@@ -1792,7 +1811,7 @@ table,
 
 .flat-style .checkbox input:not(:checked):not(:hover) ~ label i,
 .flat-style .checkbox input:not(:checked) ~ label + .name {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .flat-style .checkbox input:checked ~ label + .name,
@@ -1901,7 +1920,7 @@ table,
 }
 
 .glass-style .segmented-control > input:not(:checked):not(:hover) + label {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .glass-style .segmented-control > input:hover + label {
@@ -1914,7 +1933,7 @@ table,
 
 .glass-style .checkbox input:not(:checked):not(:hover) ~ label i,
 .glass-style .checkbox input:not(:checked) ~ label + .name {
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .glass-style .checkbox input:checked ~ label + .name,
@@ -1959,7 +1978,7 @@ table,
 }
 
 .none-bg {
-  background-color: #D4D4D4;
+  background-color: #d4d4d4;
   background-image: none;
 }
 

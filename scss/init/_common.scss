@@ -1,6 +1,6 @@
 // TODO: Separate this file to each component type
 .section,
-.display-content>.container.none-bg,
+.display-content > .container.none-bg,
 body,
 .box-border,
 .segmented-control,
@@ -9,21 +9,21 @@ body,
 .blog .blog-image,
 .blog .blog-item .before,
 .toggle .indicator {
-        background-color: $schemeColor;
+  background-color: $schemeColor;
 }
 
 .bg-highlight-color,
 .border-style {
-        background-color: $highlightColor;
+  background-color: $highlightColor;
 }
 
 // PAGE PILLING
 #pp-nav li :not(.active) span {
-        background-color: $baseColor;
+  background-color: $baseColor;
 }
 
 #pp-nav li .active span {
-        background-color: $highlightColor;
+  background-color: $highlightColor;
 }
 
 .highlight-color,
@@ -33,7 +33,7 @@ body,
 .contact .form-item .form-control,
 .highlight-portfolio-item.fa-star,
 .portfolio .portfolio-icon a:hover {
-        color: $highlightColor;
+  color: $highlightColor;
 }
 
 body,
@@ -49,7 +49,7 @@ body,
 .portfolio-single .close,
 .pp-tooltip,
 .blog-label a {
-        color: $baseColor;
+  color: $baseColor;
 }
 
 .blog-content .list-inline-item span,
@@ -63,67 +63,67 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-        color: $mutedBaseColor;
+  color: $mutedBaseColor;
 }
 
 .colorfull1,
-.background-colorfull1>.badge {
-        color: $colorfull1;
+.background-colorfull1 > .badge {
+  color: $colorfull1;
 }
 
 .colorfull2,
-.background-colorfull2>.badge {
-        color: $colorfull2;
+.background-colorfull2 > .badge {
+  color: $colorfull2;
 }
 
 .colorfull3,
-.background-colorfull3>.badge {
-        color: $colorfull3;
+.background-colorfull3 > .badge {
+  color: $colorfull3;
 }
 
 .background-colorfull1 {
-        background-color: $colorfull1;
-        color: $contrastColorfull1;
+  background-color: $colorfull1;
+  color: $contrastColorfull1;
 }
 
 .background-colorfull2 {
-        background-color: $colorfull2;
-        color: $contrastColorfull2;
+  background-color: $colorfull2;
+  color: $contrastColorfull2;
 }
 
 .background-colorfull3 {
-        background-color: $colorfull3;
-        color: $contrastColorfull3;
+  background-color: $colorfull3;
+  color: $contrastColorfull3;
 }
 
 #education-timeline .timeline-items .timeline-border {
-        border-color: $colorfull1;
+  border-color: $colorfull1;
 }
 
 #experience-timeline .timeline-items .timeline-border {
-        border-color: $colorfull2;
+  border-color: $colorfull2;
 }
 
 #achievements-timeline .timeline-items .timeline-border {
-        border-color: $colorfull3;
+  border-color: $colorfull3;
 }
 
 .overlay-menu-toggler:hover,
-.checkbox input:checked~label i,
+.checkbox input:checked ~ label i,
 .social i:hover,
 .list-inline.socials li a i:hover,
 #myMenu li a:hover {
-        color: $highlightColor;
+  color: $highlightColor;
 }
 
 // PRELOADER
 .loader {
-        // border-color: $baseColor;
-        border-top-color: $highlightColor;
+  // border-color: $baseColor;
+  border-top-color: $highlightColor;
 }
 
 #overlayer {
-        background-color: $schemeColor;
+  background-color: $schemeColor;
 }
 
 .blog .blog-image,
@@ -154,7 +154,7 @@ body,
 .badge,
 .badge-border,
 .course-item img,
-.book-item>img,
+.book-item > img,
 .skill-box .skillbar,
 .skill-box .fill-skillbar,
 .segmented-control,
@@ -164,8 +164,8 @@ body,
 table,
 .injected-section,
 .display-content,
-.display-content>.container,
-.display-content>.container::before,
+.display-content > .container,
+.display-content > .container::before,
 .portfolio-item-content,
 .portfolio-icon a,
 .portfolio-single img,
@@ -180,33 +180,34 @@ table,
 .form-group textarea,
 .video-container,
 .alert {
-        border-radius: $borderRadius;
+  border-radius: $borderRadius;
 }
 
 //TODO: radius for border-background
-.nes-btn {}
+.nes-btn {
+}
 
 .checkbox i {
-        color: $mutedBaseColor;
+  color: $mutedBaseColor;
 }
 
 // CURSOR
 .flat-style,
 .neu-style,
 .glass-style {
-        * {
-                // cursor: default;
-        }
+  * {
+    // cursor: default;
+  }
 
-        .dui-radio .label,
-        .checkbox label,
-        i,
-        .overlay-menu-toggler,
-        input[type=color] {
-                * {
-                        cursor: pointer;
-                }
+  .dui-radio .label,
+  .checkbox label,
+  i,
+  .overlay-menu-toggler,
+  input[type="color"] {
+    * {
+      cursor: pointer;
+    }
 
-                cursor: pointer;
-        }
+    cursor: pointer;
+  }
 }

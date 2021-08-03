@@ -4,7 +4,7 @@ import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
 export class NesStyle extends Style {
     constructor() {
-        super(StyleName.Nes, 'none-bg', 'none-bg', 'BioRhyme');
+        super(StyleName.Nes, 'none-bg', 'none-bg', 'Press Start 2P');
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors)); };
@@ -19,33 +19,14 @@ export class NesStyle extends Style {
     setupCustomizeEvents() {
     }
     init() {
-        // $('.button, .setting-button').each((index, element) => {
-        //         $(element).addClass('nes-btn');
-        // });
-        // $(' input[type=checkbox]').each((index, element) => {
-        //         // $(element).addClass('nes-checkbox ');
-        // });
-        // $('.box-border, .image-border, .setting-panel').each((index, element) => {
-        //         $(element).addClass('nes-container').addClass('is-rounded');
-        // });
-        // $('.badge').each((index, element) => {
-        //         // $(element).addClass('nes-badge');
-        // });
     }
     onDisable() {
-        // $('.button,.setting-button').each((index, element) => {
-        //         $(element).removeClass('nes-btn');
-        // });
-        // $('.box-border, .image-border, .setting-panel').each((index, element) => {
-        //         $(element).removeClass('nes-container').removeClass('is-rounded');
-        // });
     }
     onHighlightColorUpdated() {
         this.darkenHighlightColor = DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity);
         this.getBgHighlightRule().style.setProperty('background-color', DynamicColor.highlightColor.hex, 'important');
         this.getBgHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
         this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-        // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
         this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
     }
     onSchemeColorUpdated() {

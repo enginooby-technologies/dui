@@ -205,14 +205,22 @@ export const fontSelectors = formatString([
         // "*:not(i):not(.fas):not(.fa)",
         "body",
         "p",
-        "code",
-        // "span:not(.fa):not(.fas):not(.follow-label span)",
+        // "code",
         "li>span, .title-wrapper>span, span.badge",
         "a",
         "button",
         ".pp-tooltip",
         "h1, h2, h3, h4, h5, h6",
 ]);
+
+// 1: selectors for scaling can not be overlapping, for e.g. if <span> text inside <p>, it will be scaled twice!
+//2: use relative units like rem
+export const fontScaleSelectors = formatString([
+        "h1,h2,h3,h4,h5,h6",
+        "p, .title-wrapper, small, label",
+        "  .button, button, .button i",
+        " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li, .pp-tooltip"
+])
 
 //HELPER
 function formatString(selectorsArray: string[]): string {
