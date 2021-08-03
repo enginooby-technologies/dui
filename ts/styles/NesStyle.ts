@@ -16,6 +16,8 @@ export class NesStyle extends Style {
         // border-image - repeat: space;
         // border - image - repeat: stretch;
 
+        //param: border width
+
         darkHighlightIntensity: number = 15;
         darkenHighlightColor: string = "#033669"
 

@@ -8,6 +8,7 @@ export class NesStyle extends Style {
         // param: border style
         // border-image - repeat: space;
         // border - image - repeat: stretch;
+        //param: border width
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors)); };
