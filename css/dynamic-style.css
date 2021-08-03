@@ -1393,6 +1393,19 @@ input::-moz-focus-outer {
   border-image-outset: 2;
 }
 
+.nes-style .image-border > img,
+.nes-style .image-border > .duties-item,
+.nes-style .image-border > .portfolio-item-content {
+  border-image-width: 4.4;
+  border-width: 3px;
+  border-radius: 0;
+}
+
+.nes-style .image-border.course-item > .portfolio-item-content img {
+  position: relative;
+  left: -2.7px;
+}
+
 .nes-style .display-content > .container {
   background-color: #d4d4d4;
 }

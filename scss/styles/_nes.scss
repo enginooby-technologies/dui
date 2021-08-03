@@ -282,6 +282,20 @@
     border-image-outset: 2;
   }
 
+  .image-border > img,
+  .image-border > .duties-item,
+  .image-border > .portfolio-item-content {
+    border-image-width: 4.4;
+    border-width: 3px;
+    border-radius: 0;
+  }
+
+  .image-border.course-item > .portfolio-item-content img {
+    //     width: 90%;
+    position: relative;
+    left: -2.7px;
+  }
+
   .display-content > .container {
     background-color: $schemeColor; //TODO: Dynamic
   }
