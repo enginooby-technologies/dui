@@ -1,8 +1,8 @@
-@mixin nes_border() {
+@mixin nes_border($repeat_mode) {
   border-image-slice: 2;
   border-image-width: 2;
-  border-image-repeat: stretch;
-  border-image-repeat: space;
+  //   border-image-repeat: stretch;
+  border-image-repeat: $repeat_mode;
   border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
   border-image-outset: 2;
   background-clip: padding-box;
@@ -94,7 +94,7 @@
   }
 
   .skillbar {
-    @include nes_border();
+    @include nes_border(space);
     margin-top: 5px;
     margin-bottom: 5px;
   }
@@ -164,7 +164,7 @@
 
   .form-group input,
   textarea {
-    @include nes_border();
+    @include nes_border(space);
     width: calc(100% - 8px);
     padding: 0.5rem 1rem;
     margin: 4px;
@@ -208,6 +208,23 @@
     pointer-events: none;
     content: "";
     zoom: 0.5;
+  }
+
+  /*  Segmented Control*/
+  .segmented-control {
+    @include nes_border(space);
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .segmented-control .radio-selection {
+    @include nes_border(stretch);
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .segmented-control input:checked + label {
+    color: $contrastHighlightColor;
   }
 
   // CONTENT COMPONENTS

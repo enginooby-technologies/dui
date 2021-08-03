@@ -151,7 +151,7 @@ export class DynamicFont {
                 return null;
         }
 
-        // TOFIX: this will not affect texts which appears after scaling, consider using CSSStyleRule
+        // TOFIX: this will not affect texts which appears after scaling (e.g. texts in lazy loaded modals), consider using CSSStyleRule
         private setSizeScale(scale: number) {
                 // TOFIX: missing elements when try caching this JQuery<HTMLElement>
                 $(DynamicSelectors.fontScaleSelectors).each((index, element) => {
