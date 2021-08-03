@@ -15,12 +15,10 @@ include_once "components/basic/_index.php";
                                         "dropdown-ui-style",
                                         // match with style class name
                                         ["label" => "Flat", "value" => "flat-style"],
+                                        ["label" => "NES", "value" => "nes-style"],
                                         ["label" => "Neumorphism", "value" => "neu-style"],
                                         ["label" => "Glassmorphism", "value" => "glass-style"],
                                 );
-                                // Button(label: 'Flat', id: 'flat-skin-button');
-                                // Button(label: 'Neumorphism', id: 'neu-skin-button');
-                                // Button(label: 'Glassmorphism', id: 'glass-skin-button');
                                 ?>
                         </ul>
 
@@ -110,9 +108,13 @@ include_once "components/basic/_index.php";
                                                 echo Dropdown(
                                                         "Agency FB",
                                                         "dropdown-font-family",
-                                                        ["label" => "Palette Mosaic"],
+                                                        ["label" => "Agency FB"],
                                                         ["label" => "Style Script"],
                                                         ["label" => "Ubuntu"],
+                                                        ["label" => "BioRhyme"],
+                                                        ["label" => "Roboto"],
+                                                        ["label" => "Special Elite"],
+                                                        // ["label" => "Press Start 2P"],
                                                 );
                                                 echo RangeSlider(label: "Size scale", min: 0.8, max: 1.4, step: 0.01);
                                                 echo RangeSlider(label: "Line height", min: 1, max: 2, step: 0.05);

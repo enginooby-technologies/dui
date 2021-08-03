@@ -8,6 +8,7 @@ import { GlassStyle } from "./styles/GlassStyle.js";
 import { StyleName } from "./Config.js";
 import { DynamicUI } from "./DynamicUI.js";
 import { Style } from "./base/Style.js";
+import { NesStyle } from "./styles/NesStyle.js";
 
 export class StyleRegistry {
         private dynamicUI: DynamicUI;
@@ -39,6 +40,7 @@ export class StyleRegistry {
                 if (name == StyleName.Flat) return FlatStyle.Instance;
                 if (name == StyleName.Neu) return NeuStyle.Instance;
                 if (name == StyleName.Glass) return GlassStyle.Instance;
+                if (name == StyleName.Nes) return NesStyle.Instance;
 
                 throw Error("Style instance not found!");
         }

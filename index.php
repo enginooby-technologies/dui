@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/dynamic-style.css" type="text/css" />
 </head>
 
-<body class="neu-style ">
+<body class="nes-style ">
         <?php include "index-injectable.php"; ?>
         <!-- <div class="overlay-bg background-2"></div> -->
         <!-- <div class="overlay-bg background-1"></div> -->

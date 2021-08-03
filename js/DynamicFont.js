@@ -9,10 +9,6 @@ class FontPreset {
         this.letterSpacing = letterSpacing;
     }
 }
-//Font presets: font family _ scale _ line height _ letter spacing
-// Agency FB/Style Script _ 1_1.45_1
-// Ubuntu _0.88_1.35_-4.7
-// Palette Mosaic _ 0.8 _ 1.3 _ -7.5
 // TODO: cache all selectors
 export class DynamicFont {
     constructor() {
@@ -22,6 +18,10 @@ export class DynamicFont {
             new FontPreset('Agency FB', 1, 1.45, 1),
             new FontPreset('Ubuntu', 0.8, 1.4, 0.5),
             new FontPreset('Style Script', 1, 1.45, 2.3),
+            new FontPreset('BioRhyme', 0.81, 1.35, -8.3),
+            new FontPreset('Roboto', 0.96, 1.25, -8.7),
+            new FontPreset('Special Elite', 0.84, 1.45, -7),
+            // new FontPreset('Press Start 2P', 0.81, 1.35, -8.3),
         ];
         this.currentFontPreset = this.fontPresets[0];
         this.applyCurrentFontPreset();
@@ -47,7 +47,7 @@ export class DynamicFont {
             setTimeout(() => {
                 this.setSizeScale(this.currentFontPreset.scale);
                 $("input#range-slider_size-scale ").prop('disabled', false);
-            }, 300);
+            }, 150);
         }
     }
     //HELPER
@@ -140,6 +140,7 @@ export class DynamicFont {
         return null;
     }
     applyFontFamily(fontFamily) {
+        console.log(fontFamily);
         this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
     }
     loadFontByFontFace() {

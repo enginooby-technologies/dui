@@ -6,6 +6,7 @@ import { FlatStyle } from "./styles/FlatStyle.js";
 import { NeuStyle } from "./styles/NeuStyle.js";
 import { GlassStyle } from "./styles/GlassStyle.js";
 import { StyleName } from "./Config.js";
+import { NesStyle } from "./styles/NesStyle.js";
 export class StyleRegistry {
     constructor(dynamicUI, initStyle = StyleName.Neu) {
         this.dynamicUI = dynamicUI;
@@ -34,6 +35,8 @@ export class StyleRegistry {
             return NeuStyle.Instance;
         if (name == StyleName.Glass)
             return GlassStyle.Instance;
+        if (name == StyleName.Nes)
+            return NesStyle.Instance;
         throw Error("Style instance not found!");
     }
 }
