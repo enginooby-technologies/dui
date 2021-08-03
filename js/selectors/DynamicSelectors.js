@@ -195,7 +195,9 @@ export const fontScaleSelectors = formatString([
     "h1,h2,h3,h4,h5,h6",
     "p, .title-wrapper, small, label",
     "  .button, button, .button i",
-    " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li, .pp-tooltip"
+    " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li, .pp-tooltip",
+    ".range-slider__value",
+    ".toggle-label>.label-text"
 ]);
 //HELPER
 function formatString(selectorsArray) {

@@ -51,7 +51,7 @@
                                         null,
                                         Checkbox(name: "Dynamic checkbox")
                                 );
-                                CodeBlock('php', '// optional params: string $id = $value = format($name)
+                                CodeBlock('php', '// optional params: string $id = $value = format($name), bool $checked = false  
                                 echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);
 

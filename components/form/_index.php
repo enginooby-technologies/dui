@@ -43,10 +43,11 @@ function Toggle(string $label, string $id = null, string $name = null, float $va
         return getHtmlOutputFromBuffer();
 }
 
-function Checkbox(string $name, string $id = null, string $value = null)
+function Checkbox(string $name, string $id = null, string $value = null, bool $checked = false)
 {
         $id = $id ?? "checkbox_" . formatToId($name);
         $value = $value ?? formatToId($name);
+        $checkedAttr = ($checked) ? "checked" : "";
 
         ob_start();
         include "_checkbox.php";
