@@ -220,6 +220,7 @@ export const fontScaleSelectors = formatString([
         "p, .title-wrapper, small, label",
         "  .button, button, .button i",
         " table th, table tbody, .badge-pill, .checkbox .name, input, textarea, a.dropdown-item, .blog-link>a, li",
+        ".alert",
         ".range-slider__value",
         ".toggle-label>.label-text",
         // project-domain

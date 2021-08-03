@@ -1,3 +1,15 @@
+@mixin nes_border() {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-repeat: space;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 4px;
+}
+
 .nes-style {
   // CURSOR
   cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=),
@@ -81,6 +93,12 @@
     box-shadow: inset -4px -4px #006bb3; // TODO: Dynamic
   }
 
+  .skillbar {
+    @include nes_border();
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
   // FORM COMPONENTS
   .dui-radio > input {
     margin-right: 20px;
@@ -146,18 +164,10 @@
 
   .form-group input,
   textarea {
-    border-image-slice: 2;
-    border-image-width: 2;
-    border-image-repeat: stretch;
-    border-image-repeat: space;
-    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
-    border-image-outset: 2;
+    @include nes_border();
     width: calc(100% - 8px);
     padding: 0.5rem 1rem;
     margin: 4px;
-    background-clip: padding-box;
-    border-style: solid;
-    border-width: 4px;
   }
 
   .dropdown,
@@ -174,7 +184,7 @@
   }
 
   .dropdown button {
-    background: none;
+    background-color: $schemeColor;
     padding: 3px 5px;
   }
 
@@ -201,15 +211,23 @@
   }
 
   // CONTENT COMPONENTS
-  .image-border {
+  // TOFIX: :not() not compiled to CSS!
+  .image-border :not(#selfEducation .image-border) {
     padding: 0;
     margin: 0;
+  }
+
+  // TODO: Project-domain
+  #selfEducation .image-border {
+    padding: 5px;
+    margin: 10px;
   }
 
   .code-block,
   .box-border,
   .setting-panel ,
   .display-content>.container,
+  .alert,
   // TODO: project-domain
   .image-border > img,
   .image-border > .duties-item,
