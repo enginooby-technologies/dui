@@ -1,3 +1,14 @@
+export const bgSchemeSelectors = [
+        // CONTAINER
+        ".display-content > .container",
+        ".setting-panel",
+
+        //FORM
+        ".dropdown button",
+        ".dropdown-menu",
+        ".box-border"
+]
+
 export const bgHighlightSelectors = [
         ".radio-selection",
         ".radio-button-group .button.active",
@@ -18,4 +29,15 @@ export const bgDarkenHighlightSelectors = [
 export const colorHighlightSelectors = [
         // FORM COMPONENTS
         " .dui-radio span.text::before"
+]
+
+export const borderInputSelectors = [
+        // BASIC
+        ".skillbar",
+        ".badge.badge-pill",
+        ".form-group input",
+        "textarea",
+        ".segmented-control",
+        ".segmented-control .radio-selection",
+        ".blog-intro > img"
 ]

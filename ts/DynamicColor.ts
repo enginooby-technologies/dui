@@ -174,6 +174,7 @@ export class DynamicColor {
                 $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${DynamicColor.baseColor}`);
                 $('.code-block pre code').css('text-shadow', `0 .5px  ${DynamicColor.schemeColor.getInvert()}`);
                 $('.setting-section .setting-panel .background-item').css('border', `${DynamicColor.mutedBaseColor} 2px solid`)
+
                 DynamicUI.currentStyle!.onBaseColorUpdated();
                 this.stylesWithUpdatedBaseColor.length = 0;
                 this.stylesWithUpdatedBaseColor.push(DynamicUI.currentStyle!.name);

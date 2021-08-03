@@ -11,9 +11,12 @@ export class NesStyle extends Style {
         //param: border width
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
+        this.borderInput = "";
+        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(NesSelectors.bgSchemeSelectors)); };
         this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors)); };
         this.getColorHighlightRule = () => { var _a; return (_a = this.colorHighlightRule) !== null && _a !== void 0 ? _a : (this.colorHighlightRule = this.insertEmptyRule(NesSelectors.colorHighlightSelectors)); };
+        this.getBorderInputRule = () => { var _a; return (_a = this.borderInputRule) !== null && _a !== void 0 ? _a : (this.borderInputRule = this.insertEmptyRule(NesSelectors.borderInputSelectors)); };
     }
     static get Instance() {
         var _a;
@@ -34,8 +37,15 @@ export class NesStyle extends Style {
         this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
     }
     onSchemeColorUpdated() {
+        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
     }
     onBaseColorUpdated() {
+        this.updateBorderColor();
+        this.getBorderInputRule().style.setProperty('border-image-source', this.borderInput);
+    }
+    updateBorderColor() {
+        const borderRgb = (DynamicColor.baseColor == '#ffffff') ? "rgb(255,255,255)" : "rgb(0,0,0)";
+        this.borderInput = `url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="${borderRgb}" /></svg>')`;
     }
 }
 //  Singleton Pattern
