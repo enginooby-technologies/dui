@@ -33,7 +33,7 @@ export class DynamicUI {
                 return this.borderRadiusRule ?? (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
         }
 
-        public changeStyle(newStyle: Style) {
+        public setCurrentStyle(newStyle: Style) {
                 DynamicUI.currentStyle?.onDisable();
                 this.$body!.removeClass(DynamicUI.currentStyle?.name);
                 if (DynamicUI.currentStyle) this.dynamicBackground?.removeStylePreferredBgs(DynamicUI.currentStyle);
@@ -41,6 +41,10 @@ export class DynamicUI {
                 DynamicUI.currentStyle = newStyle;
                 this.$body!.addClass(DynamicUI.currentStyle.name);
                 this.dynamicBackground?.addStylePreferredBgs(DynamicUI.currentStyle);
+                if (DynamicUI.currentStyle.preferredFontFamily) {
+                        this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+                        console.log(DynamicUI.currentStyle.preferredFontFamily)
+                }
 
                 $(".customizer").hide();
                 DynamicUI.currentStyle.onEnable();

@@ -22,8 +22,8 @@ export class DynamicUI {
         var _a;
         return (_a = this.borderRadiusRule) !== null && _a !== void 0 ? _a : (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
     }
-    changeStyle(newStyle) {
-        var _a, _b, _c, _d, _e;
+    setCurrentStyle(newStyle) {
+        var _a, _b, _c, _d, _e, _f;
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onDisable();
         this.$body.removeClass((_b = DynamicUI.currentStyle) === null || _b === void 0 ? void 0 : _b.name);
         if (DynamicUI.currentStyle)
@@ -31,9 +31,13 @@ export class DynamicUI {
         DynamicUI.currentStyle = newStyle;
         this.$body.addClass(DynamicUI.currentStyle.name);
         (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.addStylePreferredBgs(DynamicUI.currentStyle);
+        if (DynamicUI.currentStyle.preferredFontFamily) {
+            (_e = this.dynamicFont) === null || _e === void 0 ? void 0 : _e.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+            console.log(DynamicUI.currentStyle.preferredFontFamily);
+        }
         $(".customizer").hide();
         DynamicUI.currentStyle.onEnable();
-        (_e = this.dynamicColor) === null || _e === void 0 ? void 0 : _e.updateChangesFromLastStyle();
+        (_f = this.dynamicColor) === null || _f === void 0 ? void 0 : _f.updateChangesFromLastStyle();
     }
     loadSettingPanel(filePath) {
         return $.get(filePath, function (data) {

@@ -14,7 +14,7 @@ export class StyleRegistry {
         const styleFullname = $(`#dropdown-ui-style .dropdown-item[value=${initStyle}`).text();
         this.$uiStyleDropdownLabel.text(styleFullname);
         this.setupEvents();
-        this.dynamicUI.changeStyle(this.getStyleInstanceByName(initStyle));
+        this.dynamicUI.setCurrentStyle(this.getStyleInstanceByName(initStyle));
     }
     setupEvents() {
         "use strict";
@@ -23,7 +23,7 @@ export class StyleRegistry {
                 const styleName = $(element).attr("value");
                 const optionLabel = $(element).text();
                 this.$uiStyleDropdownLabel.text(optionLabel);
-                this.dynamicUI.changeStyle(this.getStyleInstanceByName(styleName));
+                this.dynamicUI.setCurrentStyle(this.getStyleInstanceByName(styleName));
             });
         });
     }

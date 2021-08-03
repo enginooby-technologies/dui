@@ -13,6 +13,7 @@ class FontPreset {
 export class DynamicFont {
     constructor() {
         this.fontPresets = [];
+        this.downloadedFontFamilies = ["Agency FB"]; // initialize with local fonts
         this.getFontRule = () => { var _a; return (_a = this.fontRule) !== null && _a !== void 0 ? _a : (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors)); };
         this.fontPresets = [
             new FontPreset('Agency FB', 1, 1.45, 1),
@@ -24,12 +25,14 @@ export class DynamicFont {
             // new FontPreset('Press Start 2P', 0.81, 1.35, -8.3),
         ];
         this.currentFontPreset = this.fontPresets[0];
-        this.applyCurrentFontPreset();
+        this.previousFontPreset = this.fontPresets[0];
+        this.applyFontPreset(this.currentFontPreset);
         this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
         this.setupEvents();
     }
-    applyCurrentFontPreset() {
+    applyFontPreset(fontPreset) {
         var _a, _b, _c, _d, _e;
+        this.currentFontPreset = fontPreset;
         if (((_a = this.previousFontPreset) === null || _a === void 0 ? void 0 : _a.letterSpacing) != this.currentFontPreset.letterSpacing) {
             this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
             this.updateLetterSpacing();
@@ -60,8 +63,7 @@ export class DynamicFont {
         $("#dropdown-font-family .dropdown-item").each((index, element) => {
             $(element).on("click", (event) => {
                 const fontName = $(element).text();
-                this.$dropdownLabelFontFamily.text(fontName);
-                this.loadFontByWebFontLoader(fontName);
+                this.loadThenApplyFontFamily(fontName);
             });
         });
         $("#font-panel ,range-slider input").on('input', (event) => {
@@ -90,6 +92,49 @@ export class DynamicFont {
             }
         });
     }
+    loadThenApplyFontFamily(fontFamily) {
+        this.$dropdownLabelFontFamily.text(fontFamily);
+        if (this.downloadedFontFamilies.includes(fontFamily)) {
+            this.applyFontFamily(fontFamily);
+        }
+        else {
+            this.downloadFont(fontFamily);
+        }
+    }
+    downloadFont(fontFamily) {
+        // console.log('downloading ' + fontFamily)
+        // @ts-ignore
+        WebFont.load({
+            google: {
+                families: [fontFamily],
+            },
+            timeout: 2000,
+            active: () => {
+                this.downloadedFontFamilies.push(fontFamily);
+                this.applyFontFamily(fontFamily);
+            },
+            inactive: () => { }
+        });
+    }
+    applyFontFamily(fontFamily) {
+        this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
+        let preset = this.getFontPresetByFamily(fontFamily);
+        if (!preset) {
+            preset = new FontPreset(fontFamily, 1, 1.45, 1);
+            this.fontPresets.push(preset);
+        }
+        this.previousFontPreset = this.currentFontPreset;
+        this.currentFontPreset = preset;
+        this.applyFontPreset(this.currentFontPreset);
+    }
+    getFontPresetByFamily(fontFamily) {
+        for (let i = 0; i < this.fontPresets.length; i++) {
+            if (this.fontPresets[i].fontFamily == fontFamily) {
+                return this.fontPresets[i];
+            }
+        }
+        return null;
+    }
     setSizeScale(scale) {
         // 1: selectors for scaling can not be overlap, for e.g. if <span> text inside <p>, it will be scaled twice!
         //2: use relative units like rem
@@ -108,54 +153,5 @@ export class DynamicFont {
     }
     updateLineHeight() {
         this.getFontRule().style.setProperty('line-height', this.currentFontPreset.lineHeight.toString());
-    }
-    loadFontByWebFontLoader(fontFamily) {
-        // @ts-ignore
-        WebFont.load({
-            google: {
-                families: [fontFamily],
-            },
-            timeout: 2000,
-            active: () => {
-                this.applyFontFamily(fontFamily);
-                let preset = this.getFontPresetByFamily(fontFamily);
-                if (!preset) {
-                    preset = new FontPreset(fontFamily, 1, 1.45, 1);
-                    this.fontPresets.push(preset);
-                }
-                this.previousFontPreset = this.currentFontPreset;
-                this.currentFontPreset = preset;
-                this.applyCurrentFontPreset();
-            },
-            inactive: () => {
-            }
-        });
-    }
-    getFontPresetByFamily(fontFamily) {
-        for (let i = 0; i < this.fontPresets.length; i++) {
-            if (this.fontPresets[i].fontFamily == fontFamily) {
-                return this.fontPresets[i];
-            }
-        }
-        return null;
-    }
-    applyFontFamily(fontFamily) {
-        console.log(fontFamily);
-        this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
-    }
-    loadFontByFontFace() {
-        var junction_font = new FontFace('Palette Mosaic', 'url(https://fonts.googleapis.com/css2?family=Palette+Mosaic)', { style: 'bold', weight: '700' });
-        junction_font.load().then(function (loaded_face) {
-            console.log(' font loaded');
-            $('h2').css('font-family', 'Palette Mosaic, cursive');
-            document.fonts.add(loaded_face);
-            document.body.style.fontFamily = '"Junction Regular", Arial';
-        }).catch(function (error) {
-            // error occurred
-            // $('h2').css('font-family', 'Palette Mosaic, cursive');
-            document.fonts.add(junction_font);
-            document.body.style.fontFamily = '"Palette Mosaic", cursive';
-            console.log(' failed');
-        });
     }
 }

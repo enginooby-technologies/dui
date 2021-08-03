@@ -17,6 +17,7 @@ export class DynamicFont {
         previousFontPreset?: FontPreset;
         currentFontPreset: FontPreset;
 
+        downloadedFontFamilies: string[] = ["Agency FB"]; // initialize with local fonts
         $dropdownLabelFontFamily: JQuery<HTMLElement>;
         fontRule?: CSSStyleRule;
         getFontRule = () => this.fontRule ?? (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors));
@@ -32,12 +33,14 @@ export class DynamicFont {
                         // new FontPreset('Press Start 2P', 0.81, 1.35, -8.3),
                 ];
                 this.currentFontPreset = this.fontPresets[0];
-                this.applyCurrentFontPreset();
+                this.previousFontPreset = this.fontPresets[0];
+                this.applyFontPreset(this.currentFontPreset);
                 this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
                 this.setupEvents();
         }
 
-        applyCurrentFontPreset() {
+        private applyFontPreset(fontPreset: FontPreset) {
+                this.currentFontPreset = fontPreset;
                 if (this.previousFontPreset?.letterSpacing != this.currentFontPreset.letterSpacing) {
                         this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
                         this.updateLetterSpacing();
@@ -70,8 +73,7 @@ export class DynamicFont {
                 $("#dropdown-font-family .dropdown-item").each((index, element) => {
                         $(element).on("click", (event) => {
                                 const fontName = $(element).text();
-                                this.$dropdownLabelFontFamily.text(fontName);
-                                this.loadFontByWebFontLoader(fontName);
+                                this.loadThenApplyFontFamily(fontName);
                         })
                 })
 
@@ -102,7 +104,53 @@ export class DynamicFont {
                 });
         }
 
-        setSizeScale(scale: number) {
+        public loadThenApplyFontFamily(fontFamily: string) {
+                this.$dropdownLabelFontFamily.text(fontFamily);
+                if (this.downloadedFontFamilies.includes(fontFamily)) {
+                        this.applyFontFamily(fontFamily);
+                } else {
+                        this.downloadFont(fontFamily);
+                }
+        }
+
+        private downloadFont(fontFamily: string) {
+                // console.log('downloading ' + fontFamily)
+                // @ts-ignore
+                WebFont.load({
+                        google: {
+                                families: [fontFamily],
+                        },
+                        timeout: 2000,
+                        active: () => {
+                                this.downloadedFontFamilies.push(fontFamily);
+                                this.applyFontFamily(fontFamily);
+                        },
+                        inactive: () => { }
+                });
+        }
+
+        private applyFontFamily(fontFamily: string) {
+                this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
+                let preset: FontPreset | null = this.getFontPresetByFamily(fontFamily);
+                if (!preset) {
+                        preset = new FontPreset(fontFamily, 1, 1.45, 1);
+                        this.fontPresets.push(preset);
+                }
+                this.previousFontPreset = this.currentFontPreset;
+                this.currentFontPreset = preset;
+                this.applyFontPreset(this.currentFontPreset);
+        }
+
+        private getFontPresetByFamily(fontFamily: string): FontPreset | null {
+                for (let i = 0; i < this.fontPresets.length; i++) {
+                        if (this.fontPresets[i].fontFamily == fontFamily) {
+                                return this.fontPresets[i];
+                        }
+                }
+                return null;
+        }
+
+        private setSizeScale(scale: number) {
                 // 1: selectors for scaling can not be overlap, for e.g. if <span> text inside <p>, it will be scaled twice!
                 //2: use relative units like rem
                 // TOFIX: missing elements when try caching this JQuery<HTMLElement>
@@ -116,65 +164,12 @@ export class DynamicFont {
                 })
         }
 
-        updateLetterSpacing() {
+        private updateLetterSpacing() {
                 this.getFontRule().style.setProperty('letter-spacing', `${this.currentFontPreset.letterSpacing / 100}rem`, 'important');
         }
 
         private updateLineHeight() {
                 this.getFontRule().style.setProperty('line-height', this.currentFontPreset.lineHeight.toString());
-        }
-
-        private loadFontByWebFontLoader(fontFamily: string) {
-                // @ts-ignore
-                WebFont.load({
-                        google: {
-                                families: [fontFamily],
-                        },
-                        timeout: 2000,
-                        active: () => {
-                                this.applyFontFamily(fontFamily);
-                                let preset: FontPreset | null = this.getFontPresetByFamily(fontFamily);
-                                if (!preset) {
-                                        preset = new FontPreset(fontFamily, 1, 1.45, 1);
-                                        this.fontPresets.push(preset);
-                                }
-                                this.previousFontPreset = this.currentFontPreset;
-                                this.currentFontPreset = preset;
-                                this.applyCurrentFontPreset();
-                        },
-                        inactive: () => {
-                        }
-                });
-        }
-
-        private getFontPresetByFamily(fontFamily: string): FontPreset | null {
-                for (let i = 0; i < this.fontPresets.length; i++) {
-                        if (this.fontPresets[i].fontFamily == fontFamily) {
-                                return this.fontPresets[i];
-                        }
-                }
-                return null;
-        }
-
-        private applyFontFamily(fontFamily: string) {
-                console.log(fontFamily)
-                this.getFontRule().style.setProperty('font-family', fontFamily, 'important');
-        }
-
-        private loadFontByFontFace() {
-                var junction_font = new FontFace('Palette Mosaic', 'url(https://fonts.googleapis.com/css2?family=Palette+Mosaic)', { style: 'bold', weight: '700' });
-                junction_font.load().then(function (loaded_face) {
-                        console.log(' font loaded');
-                        $('h2').css('font-family', 'Palette Mosaic, cursive');
-                        document.fonts.add(loaded_face);
-                        document.body.style.fontFamily = '"Junction Regular", Arial';
-                }).catch(function (error) {
-                        // error occurred
-                        // $('h2').css('font-family', 'Palette Mosaic, cursive');
-                        document.fonts.add(junction_font);
-                        document.body.style.fontFamily = '"Palette Mosaic", cursive';
-                        console.log(' failed');
-                });
         }
 }
 

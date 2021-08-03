@@ -1,10 +1,11 @@
 import { DynamicUI } from '../DynamicUI.js';
 export class Style {
-    constructor(name, preferredOuterBg, preferredInnerBg) {
+    constructor(name, preferredOuterBg = 'none-bg', preferredInnerBg = 'none-bg', preferredFontFamily) {
         this.insertEmptyRule = (selectors) => DynamicUI.cssRules[DynamicUI.styleSheet.insertRule(`${this.formatSelectorsArray(selectors)} {}`)];
         this.name = name;
-        this.preferredOuterBg = preferredOuterBg !== null && preferredOuterBg !== void 0 ? preferredOuterBg : 'none-bg';
-        this.preferredInnerBg = preferredInnerBg !== null && preferredInnerBg !== void 0 ? preferredInnerBg : 'none-bg';
+        this.preferredOuterBg = preferredOuterBg;
+        this.preferredInnerBg = preferredInnerBg;
+        this.preferredFontFamily = preferredFontFamily;
     }
     formatSelectorsArray(array) {
         return array.map(selector => `.${this.name} ${selector}`).join(", ");

@@ -6,7 +6,7 @@ import { DynamicColor } from '../DynamicColor.js';
 export class NesStyle extends Style {
         //  Singleton Pattern
         private static _instance: NesStyle = new NesStyle();
-        private constructor() { super(StyleName.Nes) }
+        private constructor() { super(StyleName.Nes, 'none-bg', 'none-bg', 'Special Elite') }
         public static get Instance(): NesStyle {
                 NesStyle._instance ??= new NesStyle();
                 return NesStyle._instance;

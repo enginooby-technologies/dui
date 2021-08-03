@@ -7,11 +7,13 @@ export abstract class Style {
         //util we update the property for global from setting panel
         preferredOuterBg: string;
         preferredInnerBg: string;
+        preferredFontFamily?: string;
 
-        constructor(name: StyleName, preferredOuterBg?: string, preferredInnerBg?: string) {
+        constructor(name: StyleName, preferredOuterBg: string = 'none-bg', preferredInnerBg: string = 'none-bg', preferredFontFamily?: string) {
                 this.name = name;
-                this.preferredOuterBg = preferredOuterBg ?? 'none-bg';
-                this.preferredInnerBg = preferredInnerBg ?? 'none-bg';
+                this.preferredOuterBg = preferredOuterBg;
+                this.preferredInnerBg = preferredInnerBg;
+                this.preferredFontFamily = preferredFontFamily;
         }
 
         protected insertEmptyRule = (selectors: string[]): CSSStyleRule => DynamicUI.cssRules![DynamicUI.styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;

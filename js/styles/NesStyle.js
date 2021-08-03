@@ -4,7 +4,7 @@ import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
 export class NesStyle extends Style {
     constructor() {
-        super(StyleName.Nes);
+        super(StyleName.Nes, 'none-bg', 'none-bg', 'Special Elite');
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors)); };
