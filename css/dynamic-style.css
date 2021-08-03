@@ -1196,6 +1196,22 @@ input::-moz-focus-outer {
   border-width: 4px;
   margin-top: 5px;
   margin-bottom: 5px;
+  border-image-width: 3;
+  border-width: 3px;
+}
+
+.nes-style .badge.badge-pill {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 4px;
+  border-image-width: 3;
+  border-width: 3px;
+  border-radius: 0;
 }
 
 .nes-style .dui-radio > input {
@@ -1340,6 +1356,8 @@ input::-moz-focus-outer {
   border-width: 4px;
   border-left: 0;
   border-right: 0;
+  border-image-width: 3;
+  border-width: 3px;
 }
 
 .nes-style .segmented-control input:checked + label {
@@ -1384,6 +1402,17 @@ input::-moz-focus-outer {
 .nes-style .hero-image .floating {
   border: black 4px solid;
   opacity: 1;
+}
+
+.nes-style .blog-intro > img {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: space;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  background-clip: padding-box;
+  border-style: solid;
+  border-width: 4px;
 }
 
 .nes-style .code-block pre {

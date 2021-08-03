@@ -97,6 +97,16 @@
     @include nes_border(space);
     margin-top: 5px;
     margin-bottom: 5px;
+    border-image-width: 3;
+    border-width: 3px;
+    //     border-radius: 0;
+  }
+
+  .badge.badge-pill {
+    @include nes_border(stretch);
+    border-image-width: 3;
+    border-width: 3px;
+    border-radius: 0;
   }
 
   // FORM COMPONENTS
@@ -221,6 +231,10 @@
     @include nes_border(stretch);
     border-left: 0;
     border-right: 0;
+
+    border-image-width: 3;
+    border-width: 3px;
+    //     border-radius: 0;
   }
 
   .segmented-control input:checked + label {
@@ -273,6 +287,10 @@
   .hero-image .floating {
     border: $baseColor 4px solid; //TODO: Dynamic
     opacity: 1;
+  }
+
+  .blog-intro > img {
+    @include nes_border(space);
   }
 
   .code-block pre {
