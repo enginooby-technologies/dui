@@ -13,3 +13,7 @@ export const bgDarkenHighlightSelectors = [
     ".button:not(.radio-button-group .button):hover",
     // ".nes-btn::after",
 ];
+export const colorHighlightSelectors = [
+    // FORM COMPONENTS
+    " .dui-radio span.text::before"
+];

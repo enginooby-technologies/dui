@@ -53,21 +53,21 @@ echo RangeSlider(label: "Dynamic slider",  max: 100);
 </code></pre>
 </div><div class=" d-flex justify-content-center flex-row">
                         <div class='dui-radio'>
-        <input class='state' type='radio' name='group-1' id='radio-1' value='1'>
+        <input class='state' type='radio'  name='group-1' id='radio-1' value='1'>
         <label class='label' for='radio-1'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 1</span>
         </label>
 </div>                        <div class='dui-radio'>
-        <input class='state' type='radio' name='group-1' id='radio-2' value='2'>
+        <input class='state' type='radio' checked name='group-1' id='radio-2' value='2'>
         <label class='label' for='radio-2'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 2</span>
         </label>
 </div>        </div><div class="code-block">
-        <pre><code class="language-php">// optional params: string $id = format($label)        
+        <pre><code class="language-php">// optional params: string $id = format($label), bool $checked = false        
 echo Radio(label: "Radio 1", value: 1, group: "group-1");
-echo Radio(label: "Radio 2", value: 2, group: "group-1");
+echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
 </code></pre>
 </div><div class=" d-flex justify-content-center flex-row">
                         <label class="toggle-label">

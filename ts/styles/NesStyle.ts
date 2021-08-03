@@ -6,7 +6,7 @@ import { DynamicColor } from '../DynamicColor.js';
 export class NesStyle extends Style {
         //  Singleton Pattern
         private static _instance: NesStyle = new NesStyle();
-        private constructor() { super(StyleName.Nes, 'none-bg', 'none-bg', 'Special Elite') }
+        private constructor() { super(StyleName.Nes, 'none-bg', 'none-bg', 'BioRhyme') }
         public static get Instance(): NesStyle {
                 NesStyle._instance ??= new NesStyle();
                 return NesStyle._instance;
@@ -19,35 +19,37 @@ export class NesStyle extends Style {
         getBgHighlightRule = () => this.bgHighlightRule ?? (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors));
         private bgDarkenHighlightRule?: CSSStyleRule;
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
+        private colorHighlightRule?: CSSStyleRule;
+        getColorHighlightRule = () => this.colorHighlightRule ?? (this.colorHighlightRule = this.insertEmptyRule(NesSelectors.colorHighlightSelectors));
 
         setupCustomizeEvents(): void {
         }
 
         init(): void {
-                $('.button, .setting-button').each((index, element) => {
-                        $(element).addClass('nes-btn');
-                });
+                // $('.button, .setting-button').each((index, element) => {
+                //         $(element).addClass('nes-btn');
+                // });
 
-                $(' input[type=checkbox]').each((index, element) => {
-                        // $(element).addClass('nes-checkbox ');
-                });
+                // $(' input[type=checkbox]').each((index, element) => {
+                //         // $(element).addClass('nes-checkbox ');
+                // });
 
-                $('.box-border, .image-border, .setting-panel').each((index, element) => {
-                        $(element).addClass('nes-container').addClass('is-rounded');
-                });
+                // $('.box-border, .image-border, .setting-panel').each((index, element) => {
+                //         $(element).addClass('nes-container').addClass('is-rounded');
+                // });
 
-                $('.badge').each((index, element) => {
-                        // $(element).addClass('nes-badge');
-                });
+                // $('.badge').each((index, element) => {
+                //         // $(element).addClass('nes-badge');
+                // });
         }
 
         onDisable(): void {
-                $('.button,.setting-button').each((index, element) => {
-                        $(element).removeClass('nes-btn');
-                });
-                $('.box-border, .image-border, .setting-panel').each((index, element) => {
-                        $(element).removeClass('nes-container').removeClass('is-rounded');
-                });
+                // $('.button,.setting-button').each((index, element) => {
+                //         $(element).removeClass('nes-btn');
+                // });
+                // $('.box-border, .image-border, .setting-panel').each((index, element) => {
+                //         $(element).removeClass('nes-container').removeClass('is-rounded');
+                // });
         }
 
         onHighlightColorUpdated(): void {
@@ -56,6 +58,7 @@ export class NesStyle extends Style {
                 this.getBgHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
                 this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
                 // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
+                this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
         }
         onSchemeColorUpdated(): void {
         }

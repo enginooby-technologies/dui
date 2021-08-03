@@ -1147,6 +1147,53 @@ input::-moz-focus-outer {
           box-shadow: inset -4px -4px #006bb3;
 }
 
+.nes-style .dui-radio > input {
+  margin-right: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+.nes-style .dui-radio span.text {
+  position: relative;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+}
+
+.nes-style .dui-radio span.text::before {
+  color: #004b97;
+}
+
+.nes-style .dui-radio input:checked + label .text::before,
+.nes-style .dui-radio:hover input + label .text::before {
+  position: absolute;
+  top: 4px;
+  left: -10px;
+  content: "";
+  width: 2px;
+  height: 2px;
+  -webkit-box-shadow: 2px 2px,4px 2px,2px 4px,4px 4px,6px 4px,8px 4px,2px 6px,4px 6px,6px 6px,8px 6px,10px 6px,2px 8px,4px 8px,6px 8px,8px 8px,10px 8px,12px 8px,2px 10px,4px 10px,6px 10px,8px 10px,10px 10px,2px 12px,4px 12px,6px 12px,8px 12px,2px 14px,4px 14px;
+          box-shadow: 2px 2px,4px 2px,2px 4px,4px 4px,6px 4px,8px 4px,2px 6px,4px 6px,6px 6px,8px 6px,10px 6px,2px 8px,4px 8px,6px 8px,8px 8px,10px 8px,12px 8px,2px 10px,4px 10px,6px 10px,8px 10px,10px 10px,2px 12px,4px 12px,6px 12px,8px 12px,2px 14px,4px 14px;
+}
+
+.nes-style .dui-radio:hover input:not(:checked) + label .text::before {
+  -webkit-animation: flash infinite;
+          animation: flash infinite;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
+}
+
 .nes-style .image-border {
   padding: 0;
   margin: 0;

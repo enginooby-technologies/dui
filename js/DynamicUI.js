@@ -33,7 +33,6 @@ export class DynamicUI {
         (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.addStylePreferredBgs(DynamicUI.currentStyle);
         if (DynamicUI.currentStyle.preferredFontFamily) {
             (_e = this.dynamicFont) === null || _e === void 0 ? void 0 : _e.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
-            console.log(DynamicUI.currentStyle.preferredFontFamily);
         }
         $(".customizer").hide();
         DynamicUI.currentStyle.onEnable();

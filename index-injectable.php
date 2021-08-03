@@ -32,11 +32,11 @@
                                 Flexbox(
                                         null,
                                         Radio(label: "Radio 1", value: 1, group: "group-1"),
-                                        Radio(label: "Radio 2", value: 2, group: "group-1"),
+                                        Radio(label: "Radio 2", value: 2, group: "group-1", checked: true),
                                 );
-                                CodeBlock('php', '// optional params: string $id = format($label)                                
+                                CodeBlock('php', '// optional params: string $id = format($label), bool $checked = false                                
                                         echo Radio(label: "Radio 1", value: 1, group: "group-1");
-                                        echo Radio(label: "Radio 2", value: 2, group: "group-1");
+                                        echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
                                         ', 5);
 
                                 Flexbox(

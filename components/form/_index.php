@@ -13,10 +13,10 @@ function getHtmlOutputFromBuffer(): string
         return $output;
 }
 
-function Radio(string $id = null, float $value, string $label, string $group): string
+function Radio(string $id = null, float $value, string $label, string $group, bool $checked = false): string
 {
         $id = $id ?? formatToId($label);
-
+        $checkedAttr = ($checked) ? "checked" : "";
         ob_start();
         include "_radio.php";
         return getHtmlOutputFromBuffer();

@@ -43,7 +43,6 @@ export class DynamicUI {
                 this.dynamicBackground?.addStylePreferredBgs(DynamicUI.currentStyle);
                 if (DynamicUI.currentStyle.preferredFontFamily) {
                         this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
-                        console.log(DynamicUI.currentStyle.preferredFontFamily)
                 }
 
                 $(".customizer").hide();
