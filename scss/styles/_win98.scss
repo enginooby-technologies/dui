@@ -9,17 +9,65 @@
 }
 
 .win98-style {
+        $border_rasied_outer: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+        $border_raised_inner: inset -2px -2px grey, inset 2px 2px #dfdfdf;
+        $button_face: #dfdfdf;
+
+        // SCROLL BAR
+        ::-webkit-scrollbar {
+                width: 16px;
+        }
+        ::-webkit-scrollbar:horizontal {
+                height: 17px;
+        }
+        ::-webkit-scrollbar-corner {
+                background: $button_face;
+        }
+        ::-webkit-scrollbar-track {
+                border-radius: 0;
+                background-color: #dbdbdb;
+        }
+        ::-webkit-scrollbar-thumb {
+                border-radius: 0;
+                background-color: $button_face;
+                box-shadow: $border_rasied_outer, $border_raised_inner;
+        }
+        ::-webkit-scrollbar-button:horizontal:start:decrement,
+        ::-webkit-scrollbar-button:horizontal:end:increment,
+        ::-webkit-scrollbar-button:vertical:start:decrement,
+        ::-webkit-scrollbar-button:vertical:end:increment {
+                display: block;
+        }
+        ::-webkit-scrollbar-button:vertical:start {
+                height: 17px;
+                background-image: url("/dynamic-ui-framework/icons/win98/button-up.svg");
+                background-image: url("../icons/win98/button-up.svg");
+        }
+        ::-webkit-scrollbar-button:vertical:end {
+                height: 17px;
+                background-image: url("/dynamic-ui-framework/icons/win98/button-down.svg");
+                background-image: url("../icons/win98/button-down.svg");
+        }
+        ::-webkit-scrollbar-button:horizontal:start {
+                width: 16px;
+                background-image: url("/dynamic-ui-framework/icons/win98/button-left.svg");
+                background-image: url("../icons/win98/button-left.svg");
+        }
+        ::-webkit-scrollbar-button:horizontal:end {
+                width: 16px;
+                background-image: url("/dynamic-ui-framework/icons/win98/button-right.svg");
+                background-image: url("../icons/win98/button-right.svg");
+        }
+
         // CONTAINER COMPONENTS
         .display-content > .container,
         .setting-panel {
                 background-color: $schemeColor;
                 border-radius: 0 !important;
-
                 background: silver;
                 box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
                         inset -2px -2px grey, inset 2px 2px #fff;
         }
-
         // TODO: media responsive
         .title-bar {
                 display: flex;
@@ -50,7 +98,6 @@
                 .title-bar-text-wrapper {
                         display: none;
                 }
-
                 .title-bar-text {
                         color: #fff;
                         font-weight: 700;
@@ -60,11 +107,9 @@
                         font-size: 1.35rem;
                         font-family: "Agency FB";
                 }
-
                 .title-bar-controls {
                         display: flex;
                 }
-
                 .title-bar-controls button {
                         border: none;
                         border-radius: 0;
@@ -88,26 +133,22 @@
                 .title-bar-controls button:active {
                         padding: 0;
                 }
-
                 .title-bar-controls button[aria-label="Minimize"] {
                         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
                         background-position: bottom 3px left 4px;
                         background-repeat: no-repeat;
                 }
-
                 .title-bar-controls button[aria-label="Maximize"] {
                         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
                         background-position: top 2px left 3px;
                         background-repeat: no-repeat;
                 }
-
                 .title-bar-controls button[aria-label="Close"] {
                         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
                         background-position: top 3px left 4px;
                         background-repeat: no-repeat;
                         //       margin-left: 2px;
                 }
-
                 .title-bar-controls button[aria-label="Restore"] {
                         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M2 0h6v2H2zM7 2h1v4H7zM2 2h1v1H2zM6 5h1v1H6zM0 3h6v2H0zM5 5h1v4H5zM0 5h1v4H0zM1 8h4v1H1z'/%3E%3C/svg%3E");
                         background-position: top 2px left 3px;
@@ -121,7 +162,6 @@
                 display: flex !important;
                 @include position_relative_title_bar_in_container(0px, 180px);
         }
-
         .setting-section .scrollable {
                 height: 445px;
         }
@@ -137,17 +177,14 @@
                 box-sizing: border-box;
                 transition: all 0s !important;
         }
-
         .button.active {
                 box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
                         inset -2px -2px #dfdfdf, inset 2px 2px #808080;
         }
-
         .button:focus {
                 outline: 1.5px dotted #000 !important;
                 outline-offset: -5px;
         }
-
         .button:not(:disabled):active {
                 box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
                         inset -2px -2px #dfdfdf, inset 2px 2px grey;
@@ -170,7 +207,6 @@
                 opacity: 0;
                 position: fixed;
         }
-
         input[type="checkbox"] + label:before {
                 background: #fff;
                 box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
@@ -185,7 +221,6 @@
                 width: 13px;
                 zoom: 1.2;
         }
-
         input[type="checkbox"]:checked + label:after {
                 background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='7' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0H6v1H5v1H4v1H3v1H2V3H1V2H0v3h1v1h1v1h1V6h1V5h1V4h1V3h1V0z' fill='%23000'/%3E%3C/svg%3E");
                 content: "";
@@ -203,11 +238,9 @@
                 margin-left: 18px;
                 position: relative;
         }
-
         .dui-radio .indicator::after {
                 display: none;
         }
-
         input[type="radio"] + label:before {
                 background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0H4v1H2v1H1v2H0v4h1v2h1V8H1V4h1V2h2V1h4v1h2V1H8V0z' fill='gray'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1H4v1H2v2H1v4h1v1h1V8H2V4h1V3h1V2h4v1h2V2H8V1z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 3h1v1H9V3zm1 5V4h1v4h-1zm-2 2V9h1V8h1v2H8zm-4 0v1h4v-1H4zm0 0V9H2v1h2z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 2h-1v2h1v4h-1v2H8v1H4v-1H2v1h2v1h4v-1h2v-1h1V8h1V4h-1V2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2h4v1h1v1h1v4H9v1H8v1H4V9H3V8H2V4h1V3h1V2z' fill='%23fff'/%3E%3C/svg%3E");
                 content: "";
@@ -219,7 +252,6 @@
                 top: 8px;
                 width: 12px;
         }
-
         input[type="radio"]:checked + label:after {
                 background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='4' height='4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H1v1H0v2h1v1h2V3h1V1H3V0z' fill='%23000'/%3E%3C/svg%3E");
                 content: "";

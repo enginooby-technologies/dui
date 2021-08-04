@@ -1649,6 +1649,61 @@ input::-moz-focus-outer {
   /* Input & Textarea field */
 }
 
+.win98-style ::-webkit-scrollbar {
+  width: 16px;
+}
+
+.win98-style ::-webkit-scrollbar:horizontal {
+  height: 17px;
+}
+
+.win98-style ::-webkit-scrollbar-corner {
+  background: #dfdfdf;
+}
+
+.win98-style ::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: #dbdbdb;
+}
+
+.win98-style ::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: #dfdfdf;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+.win98-style ::-webkit-scrollbar-button:horizontal:start:decrement,
+.win98-style ::-webkit-scrollbar-button:horizontal:end:increment,
+.win98-style ::-webkit-scrollbar-button:vertical:start:decrement,
+.win98-style ::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
+}
+
+.win98-style ::-webkit-scrollbar-button:vertical:start {
+  height: 17px;
+  background-image: url("/dynamic-ui-framework/icons/win98/button-up.svg");
+  background-image: url("../icons/win98/button-up.svg");
+}
+
+.win98-style ::-webkit-scrollbar-button:vertical:end {
+  height: 17px;
+  background-image: url("/dynamic-ui-framework/icons/win98/button-down.svg");
+  background-image: url("../icons/win98/button-down.svg");
+}
+
+.win98-style ::-webkit-scrollbar-button:horizontal:start {
+  width: 16px;
+  background-image: url("/dynamic-ui-framework/icons/win98/button-left.svg");
+  background-image: url("../icons/win98/button-left.svg");
+}
+
+.win98-style ::-webkit-scrollbar-button:horizontal:end {
+  width: 16px;
+  background-image: url("/dynamic-ui-framework/icons/win98/button-right.svg");
+  background-image: url("../icons/win98/button-right.svg");
+}
+
 .win98-style .display-content > .container,
 .win98-style .setting-panel {
   background-color: #d4d4d4;
