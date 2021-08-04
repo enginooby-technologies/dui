@@ -167,7 +167,7 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
     height: 2px;
     color: $baseColor; // TODO: Dynamic
     position: absolute;
-    top: 2px;
+    top: 3px;
     left: -1px;
     content: "";
     // prettier-ignore
@@ -228,7 +228,7 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
       12px 18px;
     position: absolute;
     top: calc(50% - 11px);
-    right: 19px;
+    right: 27px;
     pointer-events: none;
     content: "";
     zoom: 0.5;

@@ -1,6 +1,6 @@
 # Dynamic UI  Framework
 
-The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component reusing and delegates layouting  to Bootstrap with supporting OOP ("strongly-typed Bootstrap").
+The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for HTML component reusing and delegates layouting  to Bootstrap with supporting OOP ("strongly-typed Bootstrap").
 
 ## Styles   (w/ class names)
 ### Current
@@ -39,15 +39,15 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
   + Animate [.css] (for animation)
   + Webfont [.js] (for dynamic font loading)
 
-## Development Setup (optional)
+## Installation
+### For development (optional)
 Skip if just use the framework without modification
 1. SCSS
 2. PHP
 3. TypeScript & npm
 4. Gulp
 
-## Usage
-### Setup
+### For usage
 1 - Refer to all of the dependencies CSS & JS.  
 2 - Refer to the framework style sheet (after project style sheet):  
 ```      
@@ -59,6 +59,8 @@ Skip if just use the framework without modification
 ```  
 This script can be imported  asynchronously to reduce page time load since the framework also includes sample/init values for each style in CSS files for  website to use at the first time. This means the script could be skipped if just want to apply a pre-defined style without the "dynamic/runtime customization" ability.  
 After load, the script will AJAX load ```setting.html``` which is a setting panel for dynamic customization.  
+
+## Usage
 ### Initializations
 Any dynamic properties could be initialized at the first time by simply adding pre-defined class names or re-setting SCSS variables:
   + Initial style: add style [class name](#style-names) to ```<body>```. Class names are set in [Config.ts](ts/Config.ts) which are indentical to selectors in [initial SCSS files](./scss/init).  

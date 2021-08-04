@@ -15,9 +15,14 @@ Init values for dynamic properties to reduce  page load time
   left: 55px;
 }
 
+.setting-section .setting-panel * {
+  -webkit-transition: opacity 0s ease !important;
+  transition: opacity 0s ease !important;
+}
+
 .setting-section .setting-panel p:not(.option-label) {
-  font-size: 1.1rem !important;
-  margin-bottom: 6px !important;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
 }
 
 .setting-section .setting-panel p.option-label {
@@ -35,6 +40,7 @@ Init values for dynamic properties to reduce  page load time
 
 .setting-section .setting-panel .dropdown .dropdown-label {
   min-width: 110px;
+  max-width: 120px;
 }
 
 .setting-section .setting-panel .radio-button-group .button-border {
@@ -160,7 +166,7 @@ Init values for dynamic properties to reduce  page load time
   border-radius: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 475px;
+  max-height: 475px;
 }
 
 .setting-save-panel {
@@ -595,6 +601,11 @@ video.lazy.loaded {
   opacity: 1;
 }
 
+p.scalable {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 @media (min-width: 1200px) {
   .display-content > .container {
     max-width: 1100px;
@@ -621,10 +632,22 @@ video.lazy.loaded {
   font-size: 1.3rem;
   font-weight: 500 !important;
   display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .button i {
   font-size: 1rem;
+  position: relative;
+  top: 0.5px;
+  right: 1.5px;
 }
 
 .code-block {
@@ -964,8 +987,8 @@ input::-moz-focus-outer {
 }
 
 .dropdown {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -983,7 +1006,12 @@ input::-moz-focus-outer {
   border-width: 0;
   border-radius: 9px;
   color: black;
-  padding: .375rem .75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.dropdown button p {
+  font-size: 1.1rem;
+  color: black;
 }
 
 .dropdown-label {
@@ -1047,7 +1075,7 @@ input::-moz-focus-outer {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: 9px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 /*-------------------------
@@ -1266,7 +1294,7 @@ input::-moz-focus-outer {
   height: 2px;
   color: black;
   position: absolute;
-  top: 2px;
+  top: 3px;
   left: -1px;
   content: "";
   -webkit-box-shadow: 2px 2px,4px 2px,6px 2px,8px 2px,10px 2px,12px 2px,14px 2px,16px 2px,2px 4px,16px 4px,2px 6px,16px 6px,2px 8px,16px 8px,2px 10px,16px 10px,2px 12px,16px 12px,2px 14px,16px 14px,2px 16px,4px 16px,6px 16px,8px 16px,10px 16px,12px 16px,14px 16px,16px 16px;
@@ -1327,7 +1355,7 @@ input::-moz-focus-outer {
           box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
   position: absolute;
   top: calc(50% - 11px);
-  right: 19px;
+  right: 27px;
   pointer-events: none;
   content: "";
   zoom: 0.5;

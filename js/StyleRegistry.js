@@ -10,7 +10,7 @@ import { NesStyle } from "./styles/NesStyle.js";
 export class StyleRegistry {
     constructor(dynamicUI, initStyle = StyleName.Neu) {
         this.dynamicUI = dynamicUI;
-        this.$uiStyleDropdownLabel = $(`#dropdown-ui-style .dropdown-label`);
+        this.$uiStyleDropdownLabel = $(`#dropdown-ui-style .dropdown-label p`);
         const styleFullname = $(`#dropdown-ui-style .dropdown-item[value=${initStyle}`).text();
         this.$uiStyleDropdownLabel.text(styleFullname);
         this.setupEvents();

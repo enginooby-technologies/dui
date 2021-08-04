@@ -13,10 +13,14 @@ $panelWidth: 180px;
   width: $panelWidth;
   left: 55px;
 
+  * {
+    transition: opacity 0s ease !important;
+  }
+
   // TEXT
   p:not(.option-label) {
-    font-size: 1.1rem * $fontScale !important;
-    margin-bottom: 6px !important;
+    font-size: 1.1rem * $fontScale;
+    margin-bottom: 6px;
   }
 
   p.option-label {
@@ -35,6 +39,7 @@ $panelWidth: 180px;
   // DROPDOWN
   .dropdown .dropdown-label {
     min-width: 110px;
+    max-width: 120px;
   }
 
   // BUTTON-RADIO
@@ -170,7 +175,7 @@ $panelWidth: 180px;
   border-radius: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  height: 475px; //TODO: caculate this for reponsiveness
+  max-height: 475px; //TODO: caculate this for reponsiveness
 }
 
 .setting-save-panel {

@@ -16,7 +16,7 @@ export class StyleRegistry {
 
         constructor(dynamicUI: DynamicUI, initStyle: string = StyleName.Neu) {
                 this.dynamicUI = dynamicUI;
-                this.$uiStyleDropdownLabel = $(`#dropdown-ui-style .dropdown-label`);
+                this.$uiStyleDropdownLabel = $(`#dropdown-ui-style .dropdown-label p`);
                 const styleFullname = $(`#dropdown-ui-style .dropdown-item[value=${initStyle}`).text();
                 this.$uiStyleDropdownLabel.text(styleFullname);
                 this.setupEvents();

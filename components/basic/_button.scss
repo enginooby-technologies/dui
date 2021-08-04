@@ -1,23 +1,24 @@
-// @import "../../scss/base/variables";
-
 .button-border {
-        display: inline-block;
-        padding: 1px;
-        border-radius: $borderRadius;
-        transition: $transitionDuration all ease !important;
-        -webkit-transition: $transitionDuration all ease !important;
+  display: inline-block;
+  padding: 1px;
+  border-radius: $borderRadius;
+  transition: $transitionDuration all ease !important;
+  -webkit-transition: $transitionDuration all ease !important;
 }
 
 .button {
-        color: $highlightColor;
-        border-radius: $borderRadius;
-        padding: 10px 30px;
-        transition: all 0.3s ease;
-        font-size: 1.3rem *$fontScale;
-        font-weight: 500 !important;
-        display: inline-block;
-
-        i {
-                font-size: 1rem;
-        }
+  color: $highlightColor;
+  border-radius: $borderRadius;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+  font-size: 1.3rem * $fontScale;
+  font-weight: 500 !important;
+  display: inline-block;
+  @include center_content_in_div();
+  i {
+    font-size: 1rem;
+    position: relative;
+    top: 0.5px;
+    right: 1.5px;
+  }
 }

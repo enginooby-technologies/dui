@@ -22,6 +22,10 @@ export class DynamicFont {
         $dropdownLabelFontFamily: JQuery<HTMLElement>;
         fontRule?: CSSStyleRule;
         getFontRule = () => this.fontRule ?? (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors));
+        fontScaleRule?: CSSStyleRule;
+        getFontScaleRule = () => this.fontScaleRule ?? (this.fontScaleRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontScaleSelectors));
+
+        initialFontSizes = new Map<CSSStyleRule, number>();
 
         constructor() {
                 this.fontPresets = [
@@ -29,14 +33,17 @@ export class DynamicFont {
                         new FontPreset('Ubuntu', 0.8, 1.4, 0.5),
                         new FontPreset('Style Script', 1, 1.45, 2.3),
                         new FontPreset('BioRhyme', 0.81, 1.35, -8.3),
-                        new FontPreset('Roboto', 0.96, 1.25, -8.7),
+                        new FontPreset('Roboto', 0.96, 1.25, -5.3),
                         new FontPreset('Special Elite', 0.84, 1.45, -7),
                         new FontPreset('Press Start 2P', 0.58, 1.6, -10, ', cursive'),
                 ];
                 this.currentFontPreset = this.fontPresets[0];
                 this.previousFontPreset = this.fontPresets[0];
+                this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label p");
+                this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
+                this.setRangeSliderValue("#range-slider_size-scale", this.currentFontPreset.scale);
+                this.setRangeSliderValue("#range-slider_line-height", this.currentFontPreset.lineHeight);
                 this.applyFontPreset(this.currentFontPreset);
-                this.$dropdownLabelFontFamily = $("#dropdown-font-family .dropdown-label");
                 this.setupEvents();
         }
 
@@ -47,19 +54,13 @@ export class DynamicFont {
                         this.updateLetterSpacing();
                 }
                 if (this.previousFontPreset?.lineHeight != this.currentFontPreset.lineHeight) {
-                        this.setRangeSliderValue("#range-slider_line-height", this.currentFontPreset.lineHeight);
+                        this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
                         this.updateLineHeight();
                 }
+
                 if (this.previousFontPreset?.scale != this.currentFontPreset.scale) {
                         this.setRangeSliderValue("#range-slider_size-scale", this.currentFontPreset.scale);
-                        // restore to original size before scaling , meanwhile disable slider
-                        this.setSizeScale(1 / (this.previousFontPreset?.scale ?? 1));
-                        $("input#range-slider_size-scale ").prop('disabled', true);
-                        // add a delay to ensure finish restoring first
-                        setTimeout(() => {
-                                this.setSizeScale(this.currentFontPreset.scale);
-                                $("input#range-slider_size-scale ").prop('disabled', false);
-                        }, 250)
+                        this.updateSizeScale();
                 }
         }
 
@@ -91,16 +92,8 @@ export class DynamicFont {
                                         this.updateLetterSpacing();
                                         break;
                                 case 'range-slider_size-scale':
-                                        // restore to original size before scaling , meanwhile disable slider
-                                        this.setSizeScale(1 / this.currentFontPreset.scale);
-                                        $("input#range-slider_size-scale ").prop('disabled', true);
                                         this.currentFontPreset.scale = parseFloat(newValue);
-                                        // add a delay to ensure finish restoring first
-                                        setTimeout(() => {
-                                                this.setSizeScale(this.currentFontPreset.scale);
-                                                $("input#range-slider_size-scale ").prop('disabled', false);
-                                        }, 300)
-                                        break;
+                                        this.updateSizeScale();
                         }
                 });
         }
@@ -115,7 +108,6 @@ export class DynamicFont {
         }
 
         private downloadFont(fontFamily: string) {
-                // console.log('downloading ' + fontFamily)
                 // @ts-ignore
                 WebFont.load({
                         google: {
@@ -151,17 +143,8 @@ export class DynamicFont {
                 return null;
         }
 
-        // TOFIX: this will not affect texts which appears after scaling (e.g. texts in lazy loaded modals), consider using CSSStyleRule
-        private setSizeScale(scale: number) {
-                // TOFIX: missing elements when try caching this JQuery<HTMLElement>
-                $(DynamicSelectors.fontScaleSelectors).each((index, element) => {
-                        const $text = $(element);
-                        const currentSizeText = $text.css('font-size');
-                        const currentSize = parseFloat(currentSizeText.replace('px', ''))
-                        //TOFIX: this method leaves dirty rule traces
-                        $text.attr('style', function (i, s) { return (s || '') + `font-size: ${currentSize * scale}px !important;` });
-                        // $text.css('font-size', `${currentSize * scale}px`);
-                })
+        private updateSizeScale() {
+                this.getFontScaleRule().style.setProperty('zoom', this.currentFontPreset.scale.toString());
         }
 
         private updateLetterSpacing() {
