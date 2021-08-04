@@ -218,7 +218,6 @@
                 position: absolute;
                 top: 8px;
                 width: 12px;
-                //     zoom: 1.2;
         }
 
         input[type="radio"]:checked + label:after {
@@ -230,6 +229,19 @@
                 position: absolute;
                 top: 12px;
                 width: 4px;
-                //     zoom: 1.2;
+        }
+
+        /* Input & Textarea field */
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        textarea,
+        textarea:focus {
+                border-radius: 0 !important;
+                background-color: #fff !important;
+                box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
+                        inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+                box-sizing: border-box;
+                padding: 3px 4px;
         }
 }

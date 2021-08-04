@@ -1646,6 +1646,7 @@ input::-moz-focus-outer {
   /* Button */
   /* Checkbox */
   /*Radio */
+  /* Input & Textarea field */
 }
 
 .win98-style .display-content > .container,
@@ -1860,6 +1861,20 @@ input::-moz-focus-outer {
   position: absolute;
   top: 12px;
   width: 4px;
+}
+
+.win98-style input[type="email"],
+.win98-style input[type="password"],
+.win98-style input[type="text"],
+.win98-style textarea,
+.win98-style textarea:focus {
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+          box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3px 4px;
 }
 
 .section,
