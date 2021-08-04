@@ -1,0 +1,31 @@
+.win98-style {
+  .display-content > .container {
+    background-color: $schemeColor;
+  }
+
+  //BASIC
+  .button {
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+      inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    transition: all 0s !important;
+  }
+
+  .button.active {
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  }
+
+  .button:focus {
+    outline: 1.5px dotted #000 !important;
+    outline-offset: -5px;
+  }
+
+  .button:not(:disabled):active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  }
+}
