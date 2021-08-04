@@ -49,6 +49,8 @@ export class DynamicFont {
 
         private applyFontPreset(fontPreset: FontPreset) {
                 this.currentFontPreset = fontPreset;
+                DynamicUI.$body?.removeClass(this.formatFontFamily(this.previousFontPreset?.fontFamily!));
+                DynamicUI.$body?.addClass(this.formatFontFamily(this.currentFontPreset.fontFamily));
                 if (this.previousFontPreset?.letterSpacing != this.currentFontPreset.letterSpacing) {
                         this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
                         this.updateLetterSpacing();
@@ -62,6 +64,12 @@ export class DynamicFont {
                         this.setRangeSliderValue("#range-slider_size-scale", this.currentFontPreset.scale);
                         this.updateSizeScale();
                 }
+        }
+
+        // format to class name (Foo Bar->foo-bar-font) which is added to <body> 
+        //so that each project customize things based on current font
+        private formatFontFamily(fontFamily: string) {
+                return fontFamily.replace(' ', '-').toLowerCase() + '-font';
         }
 
         //HELPER

@@ -37,20 +37,27 @@ export class DynamicFont {
         this.setupEvents();
     }
     applyFontPreset(fontPreset) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e, _f;
         this.currentFontPreset = fontPreset;
-        if (((_a = this.previousFontPreset) === null || _a === void 0 ? void 0 : _a.letterSpacing) != this.currentFontPreset.letterSpacing) {
+        (_a = DynamicUI.$body) === null || _a === void 0 ? void 0 : _a.removeClass(this.formatFontFamily((_b = this.previousFontPreset) === null || _b === void 0 ? void 0 : _b.fontFamily));
+        (_c = DynamicUI.$body) === null || _c === void 0 ? void 0 : _c.addClass(this.formatFontFamily(this.currentFontPreset.fontFamily));
+        if (((_d = this.previousFontPreset) === null || _d === void 0 ? void 0 : _d.letterSpacing) != this.currentFontPreset.letterSpacing) {
             this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
             this.updateLetterSpacing();
         }
-        if (((_b = this.previousFontPreset) === null || _b === void 0 ? void 0 : _b.lineHeight) != this.currentFontPreset.lineHeight) {
+        if (((_e = this.previousFontPreset) === null || _e === void 0 ? void 0 : _e.lineHeight) != this.currentFontPreset.lineHeight) {
             this.setRangeSliderValue("#range-slider_letter-spacing", this.currentFontPreset.letterSpacing);
             this.updateLineHeight();
         }
-        if (((_c = this.previousFontPreset) === null || _c === void 0 ? void 0 : _c.scale) != this.currentFontPreset.scale) {
+        if (((_f = this.previousFontPreset) === null || _f === void 0 ? void 0 : _f.scale) != this.currentFontPreset.scale) {
             this.setRangeSliderValue("#range-slider_size-scale", this.currentFontPreset.scale);
             this.updateSizeScale();
         }
+    }
+    // format to class name (Foo Bar->foo-bar-font) which is added to <body> 
+    //so that each project customize things based on current font
+    formatFontFamily(fontFamily) {
+        return fontFamily.replace(' ', '-').toLowerCase() + '-font';
     }
     //HELPER
     setRangeSliderValue(selector, value) {

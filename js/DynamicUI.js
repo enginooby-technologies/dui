@@ -25,11 +25,11 @@ export class DynamicUI {
     setCurrentStyle(newStyle) {
         var _a, _b, _c, _d, _e, _f;
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onDisable();
-        this.$body.removeClass((_b = DynamicUI.currentStyle) === null || _b === void 0 ? void 0 : _b.name);
+        DynamicUI.$body.removeClass((_b = DynamicUI.currentStyle) === null || _b === void 0 ? void 0 : _b.name);
         if (DynamicUI.currentStyle)
             (_c = this.dynamicBackground) === null || _c === void 0 ? void 0 : _c.removeStylePreferredBgs(DynamicUI.currentStyle);
         DynamicUI.currentStyle = newStyle;
-        this.$body.addClass(DynamicUI.currentStyle.name);
+        DynamicUI.$body.addClass(DynamicUI.currentStyle.name);
         (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.addStylePreferredBgs(DynamicUI.currentStyle);
         if (DynamicUI.currentStyle.preferredFontFamily) {
             (_e = this.dynamicFont) === null || _e === void 0 ? void 0 : _e.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
@@ -51,11 +51,11 @@ export class DynamicUI {
         DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
         this.initSettingPanel();
         this.setupSettingEvents();
-        this.$body = $('body');
+        DynamicUI.$body = $('body');
         this.dynamicColor = new DynamicColor();
         this.dynamicFont = new DynamicFont();
         this.dynamicBackground = new DynamicBackground();
-        const initStyleName = (_a = this.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
+        const initStyleName = (_a = DynamicUI.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
         new StyleRegistry(this, initStyleName);
         $(".status_change .dropdown-item").click(function () {
             var getStatusText = $(this).text();

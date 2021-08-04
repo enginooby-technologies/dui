@@ -6,6 +6,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 ### Current
 <a id="style-names"></a>
 + Flat: ```flat-style```
++ NES/Pixel: ```nes-style```
 + Neumorphism: ```neu-style```
 + Glassmorphism: ```glass-style```
 
@@ -19,7 +20,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 + Neon
 + Cyberpunk
 + Metalic
-+ NES/Pixel/Arcade
++ Arcade
 + Grid
 + 3D
 + Windows
@@ -72,6 +73,15 @@ Any dynamic properties could be initialized at the first time by simply adding p
   + Initial font
 
 Recommend: use Critical to extract critical CSS rules after all initializations. The rest of styles which are not applied at the first time have many unused rules slowing down page load time.  
+
+## Demos
+A few projects I have built making use of this framework:  
+  + [Portfolio](https://enginoobz.com/)
+  + [Corona Checker](https://enginoobz.com/projects/corona-checker/)
+
+## Credits
++ [NES.css](https://github.com/nostalgic-css/NES.css)
+
 ## Stylizing
 ### Global
 + Colours: scheme, highlight, classification (3 elements).

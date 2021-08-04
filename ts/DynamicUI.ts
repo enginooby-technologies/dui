@@ -13,7 +13,7 @@ export class DynamicUI {
         static currentStyle?: Style;
 
         // TODO: cache all jQuery selectors
-        $body?: JQuery<HTMLElement>; //outer background
+        static $body?: JQuery<HTMLElement>; //outer background
 
         borderRadius: number = 9;
 
@@ -35,11 +35,11 @@ export class DynamicUI {
 
         public setCurrentStyle(newStyle: Style) {
                 DynamicUI.currentStyle?.onDisable();
-                this.$body!.removeClass(DynamicUI.currentStyle?.name);
+                DynamicUI.$body!.removeClass(DynamicUI.currentStyle?.name);
                 if (DynamicUI.currentStyle) this.dynamicBackground?.removeStylePreferredBgs(DynamicUI.currentStyle);
 
                 DynamicUI.currentStyle = newStyle;
-                this.$body!.addClass(DynamicUI.currentStyle.name);
+                DynamicUI.$body!.addClass(DynamicUI.currentStyle.name);
                 this.dynamicBackground?.addStylePreferredBgs(DynamicUI.currentStyle);
                 if (DynamicUI.currentStyle.preferredFontFamily) {
                         this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
@@ -69,12 +69,12 @@ export class DynamicUI {
                 DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
                 this.initSettingPanel();
                 this.setupSettingEvents();
-                this.$body = $('body');
+                DynamicUI.$body = $('body');
                 this.dynamicColor = new DynamicColor();
                 this.dynamicFont = new DynamicFont();
                 this.dynamicBackground = new DynamicBackground();
 
-                const initStyleName = this.$body!.attr('class')!.match(/\S*-style\b/i)?.toString();
+                const initStyleName = DynamicUI.$body!.attr('class')!.match(/\S*-style\b/i)?.toString();
                 new StyleRegistry(this, initStyleName);
 
                 $(".status_change .dropdown-item").click(function () {
