@@ -615,6 +615,10 @@ p.scalable {
   }
 }
 
+.display-content > .container > .title-bar {
+  display: none;
+}
+
 .display-content > .title-bar {
   display: none;
 }
@@ -1636,18 +1640,18 @@ input::-moz-focus-outer {
           align-items: center;
   background: -webkit-gradient(linear, left top, right top, from(navy), to(#1084d0));
   background: linear-gradient(90deg, navy, #1084d0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 3px 2px 3px 3px;
   height: 30px;
-  max-width: 1094px;
-  position: absolute;
-  top: 2px;
-  left: 2px;
+  width: 1094px;
+  position: relative;
+  top: -38px;
+  left: -38px;
 }
 
 .win98-style .title-bar .title-bar-text {
@@ -1676,6 +1680,16 @@ input::-moz-focus-outer {
   -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
           box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
   zoom: 1.4;
+}
+
+.win98-style .title-bar button:not(:disabled):active {
+  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+          box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  padding: 2px 11px 0 13px;
+}
+
+.win98-style .title-bar .title-bar-controls button:active {
+  padding: 0;
 }
 
 .win98-style .title-bar .title-bar-controls button[aria-label="Minimize"] {
