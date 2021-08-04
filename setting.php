@@ -15,7 +15,8 @@ include_once "components/basic/_index.php";
                                         "dropdown-ui-style",
                                         // match with style class name
                                         ["label" => "Flat", "value" => "flat-style"],
-                                        ["label" => "NES", "value" => "nes-style"],
+                                        ["label" => "NES - Pixel", "value" => "nes-style"],
+                                        ["label" => "Windows 98", "value" => "win98-style"],
                                         ["label" => "Neumorphism", "value" => "neu-style"],
                                         ["label" => "Glassmorphism", "value" => "glass-style"],
                                 );
@@ -139,6 +140,7 @@ include_once "components/basic/_index.php";
                                                         <div class="col-4 background-item animated-gradient-bg"> </div>
                                                         <div class="col-4 background-item  linear-gradient-bg"> </div>
                                                         <div class="col-4 background-item vanishing-stripes-bg"> </div>
+                                                        <div class="col-4 background-item windows98-bg"> </div>
                                                 </div>
                                         </div>
                                         <div id="inner-background-panel" class="mt-3">
@@ -153,6 +155,7 @@ include_once "components/basic/_index.php";
                                                         <div class="col-4 background-item animated-gradient-bg"> </div>
                                                         <div class="col-4 background-item  linear-gradient-bg"> </div>
                                                         <div class="col-4 background-item vanishing-stripes-bg"> </div>
+                                                        <div class="col-4 background-item windows98-bg"> </div>
                                                 </div>
                                         </div>
                                 </div>

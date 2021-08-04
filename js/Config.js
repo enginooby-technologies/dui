@@ -9,4 +9,5 @@ export var StyleName;
     StyleName["Neu"] = "neu-style";
     StyleName["Glass"] = "glass-style";
     StyleName["Nes"] = "nes-style";
+    StyleName["Win98"] = "win98-style";
 })(StyleName || (StyleName = {}));
