@@ -81,13 +81,16 @@ A few projects I have built making use of this framework:
 
 ## Credits
 + [NES.css](https://github.com/nostalgic-css/NES.css)
++ [PHP Enum](https://github.com/myclabs/php-enum)      
+  
+  And other authors of CSS code, backgrounds... noted in according source files.
 
 ## Stylizing
 ### Global
 + Colours: scheme, highlight, classification (3 elements).
++ Font: family, line height, letter spacing, size scale (w/o affecting other elements)
 + Border: radius
-+ Font
-+ Background outer & inner
++ Background: outer & inner
 + Overlay
   
 ### Basic Components
