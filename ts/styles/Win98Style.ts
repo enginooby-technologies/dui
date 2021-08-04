@@ -1,5 +1,6 @@
 import { Style } from '../base/Style.js';
 import { StyleName } from '../Config.js';
+import *as Win98Seletors from '../selectors/Win98Seletors.js';
 import { DynamicColor } from '../DynamicColor.js';
 
 export class Win98Style extends Style {
@@ -9,6 +10,9 @@ export class Win98Style extends Style {
                 Win98Style._instance ??= new Win98Style();
                 return Win98Style._instance;
         }
+
+        private bgSchemeRule?: CSSStyleRule;
+        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(Win98Seletors.bgSchemeSelectors));
 
         setupCustomizeEvents(): void {
         }
@@ -23,6 +27,7 @@ export class Win98Style extends Style {
         }
 
         onSchemeColorUpdated(): void {
+                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor!.hex, 'important');
         }
 
         onBaseColorUpdated(): void {
