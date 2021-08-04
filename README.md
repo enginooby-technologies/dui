@@ -81,6 +81,7 @@ A few projects I have built making use of this framework:
 
 ## Credits
 + [NES.css](https://github.com/nostalgic-css/NES.css)
++ [98.css](https://github.com/jdan/98.css)
 + [PHP Enum](https://github.com/myclabs/php-enum)      
   
   And other authors of CSS code, backgrounds... noted in according source files.

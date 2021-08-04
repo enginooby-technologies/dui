@@ -2,6 +2,11 @@
   .display-content > .container {
     background-color: $schemeColor;
     border-radius: 0;
+
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+      inset -2px -2px grey, inset 2px 2px #fff;
+    //     padding: 3px;
   }
 
   .title-bar {
@@ -20,6 +25,12 @@
     justify-content: space-between;
     padding: 3px 2px 3px 3px;
     height: 30px;
+
+    // in case include title bar inside the container
+    max-width: 1094px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
 
     .title-bar-text {
       color: #fff;
