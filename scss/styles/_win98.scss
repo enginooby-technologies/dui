@@ -1,7 +1,9 @@
 .win98-style {
-  .display-content > .container {
+  // CONTAINER COMPONENTS
+  .display-content > .container,
+  .setting-panel {
     background-color: $schemeColor;
-    border-radius: 0;
+    border-radius: 0 !important;
 
     background: silver;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
@@ -100,7 +102,16 @@
     }
   }
 
-  //BASIC
+  .setting-panel .title-bar {
+    width: 173px;
+    top: 2px;
+    left: -1px;
+  }
+  .setting-section .scrollable {
+    height: 445px;
+  }
+
+  //BASIC COMPONENTS
   .button {
     background: silver;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
