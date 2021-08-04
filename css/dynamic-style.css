@@ -1623,6 +1623,11 @@ input::-moz-focus-outer {
   width: 8px !important;
 }
 
+.win98-style {
+  /* Button */
+  /* Checkbox */
+}
+
 .win98-style .display-content > .container,
 .win98-style .setting-panel {
   background-color: #d4d4d4;
@@ -1756,6 +1761,49 @@ input::-moz-focus-outer {
 .win98-style .button:not(:disabled):active {
   -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
           box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+}
+
+.win98-style .checkbox label i {
+  display: none;
+}
+
+.win98-style input[type="checkbox"],
+.win98-style input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: 0;
+  border: none;
+  margin: 0;
+  opacity: 0;
+  position: fixed;
+}
+
+.win98-style input[type="checkbox"] + label:before {
+  background: #fff;
+  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+          box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  content: "";
+  display: inline-block;
+  height: 13px;
+  left: 6px;
+  top: 5px;
+  margin-right: 6px;
+  position: absolute;
+  width: 13px;
+  zoom: 1.2;
+}
+
+.win98-style input[type="checkbox"]:checked + label:after {
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='7' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0H6v1H5v1H4v1H3v1H2V3H1V2H0v3h1v1h1v1h1V6h1V5h1V4h1V3h1V0z' fill='%23000'/%3E%3C/svg%3E");
+  content: "";
+  display: block;
+  height: 7px;
+  left: 9.5px;
+  top: 8px;
+  position: absolute;
+  width: 7px;
+  zoom: 1.2;
 }
 
 .section,
