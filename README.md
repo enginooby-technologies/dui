@@ -24,6 +24,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 + Grid
 + 3D
 + Windows
++ Browser
 + Monograph
 + Vintage/Retro
 + Rainbow

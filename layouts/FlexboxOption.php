@@ -2,7 +2,7 @@
 // CONSIDER: update to PHP 8.1 to use built-in enum
 use MyCLabs\Enum\Enum;
 
-include dirname(__FILE__) . "/../Enum.php";
+include_once dirname(__FILE__) . "/../Enum.php";
 
 // https://getbootstrap.com/docs/4.0/utilities/flex
 class FlexboxOption

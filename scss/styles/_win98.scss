@@ -1,220 +1,235 @@
+@mixin position_relative_title_bar_in_container(
+        $container_padding,
+        $container_width
+) {
+        position: relative;
+        width: $container_width - 6px;
+        top: -$container_padding + 2px;
+        left: -$container_padding + 2px;
+}
+
 .win98-style {
-  // CONTAINER COMPONENTS
-  .display-content > .container,
-  .setting-panel {
-    background-color: $schemeColor;
-    border-radius: 0 !important;
+        // CONTAINER COMPONENTS
+        .display-content > .container,
+        .setting-panel {
+                background-color: $schemeColor;
+                border-radius: 0 !important;
 
-    background: silver;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
-      inset -2px -2px grey, inset 2px 2px #fff;
-    //     padding: 3px;
-  }
+                background: silver;
+                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+                        inset -2px -2px grey, inset 2px 2px #fff;
+        }
 
-  // TODO: media responsive
-  .title-bar {
-    // same as container
-    width: 100%;
-    position: relative;
-    max-width: 1100px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+        // TODO: media responsive
+        .title-bar {
+                display: flex;
+                background: linear-gradient(90deg, navy, #1084d0);
+                align-items: center;
+                justify-content: space-between;
+                padding: 3px 2px 3px 3px;
+                height: 30px;
 
-    align-items: center;
-    background: linear-gradient(90deg, navy, #1084d0);
-    display: flex !important;
-    justify-content: space-between;
-    padding: 3px 2px 3px 3px;
-    height: 30px;
+                // in case place  title bar outside  the container
+                // width: 100%;
+                // position: relative;
+                // margin-right: auto;
+                // margin-left: auto;
+                // max-width: 1100px;
+                // padding-right: 15px;
+                // padding-left: 15px;
 
-    // in case include title bar inside the container
-    // Option 1; absolute pos
-    // max-width: 1094px;
-    //     position: absolute;
-    //     top: 2px;
-    //     left: 2px;
-    // Option 2; relatieve pos
-    width: 1094px;
-    position: relative;
-    top: -38px;
-    left: -38px;
+                // in case place  title bar inside the container
+                // Option 1; absolute pos
+                //     position: absolute;
+                //     max-width: 1094px;
+                //     top: 2px;
+                //     left: 2px;
+                //     // Option 2; relatieve pos
+                @include position_relative_title_bar_in_container(40px, 1100px);
 
-    .title-bar-text {
-      color: #fff;
-      font-weight: 700;
-      letter-spacing: 0;
-      margin-right: 24px;
-    }
+                .title-bar-text-wrapper {
+                        display: none;
+                }
 
-    .title-bar-controls {
-      display: flex;
-    }
+                .title-bar-text {
+                        color: #fff;
+                        font-weight: 700;
+                        letter-spacing: 0;
+                        margin-right: 24px;
+                        top: 0;
+                        font-size: 1.35rem;
+                        font-family: "Agency FB";
+                }
 
-    .title-bar-controls button {
-      border: none;
-      border-radius: 0;
-      box-sizing: border-box;
-      display: block;
-      min-height: 14px;
-      min-width: 16px;
-      padding: 0;
-      background: silver;
-      box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
-        inset -2px -2px grey, inset 2px 2px #dfdfdf;
-      zoom: 1.4;
-    }
+                .title-bar-controls {
+                        display: flex;
+                }
 
-    button:not(:disabled):active {
-      box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
-        inset -2px -2px #dfdfdf, inset 2px 2px grey;
-      padding: 2px 11px 0 13px;
-    }
+                .title-bar-controls button {
+                        border: none;
+                        border-radius: 0;
+                        box-sizing: border-box;
+                        display: block;
+                        min-height: 14px;
+                        min-width: 16px;
+                        padding: 0;
+                        background: silver;
+                        box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+                                inset -2px -2px grey, inset 2px 2px #dfdfdf;
+                        zoom: 1.4;
+                }
 
-    .title-bar-controls button:active {
-      padding: 0;
-    }
+                button:not(:disabled):active {
+                        box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+                                inset -2px -2px #dfdfdf, inset 2px 2px grey;
+                        padding: 2px 11px 0 13px;
+                }
 
-    .title-bar-controls button[aria-label="Minimize"] {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
-      background-position: bottom 3px left 4px;
-      background-repeat: no-repeat;
-    }
+                .title-bar-controls button:active {
+                        padding: 0;
+                }
 
-    .title-bar-controls button[aria-label="Maximize"] {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
-      background-position: top 2px left 3px;
-      background-repeat: no-repeat;
-    }
+                .title-bar-controls button[aria-label="Minimize"] {
+                        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+                        background-position: bottom 3px left 4px;
+                        background-repeat: no-repeat;
+                }
 
-    .title-bar-controls button[aria-label="Close"] {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
-      background-position: top 3px left 4px;
-      background-repeat: no-repeat;
-      //       margin-left: 2px;
-    }
+                .title-bar-controls button[aria-label="Maximize"] {
+                        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+                        background-position: top 2px left 3px;
+                        background-repeat: no-repeat;
+                }
 
-    .title-bar-controls button[aria-label="Restore"] {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M2 0h6v2H2zM7 2h1v4H7zM2 2h1v1H2zM6 5h1v1H6zM0 3h6v2H0zM5 5h1v4H5zM0 5h1v4H0zM1 8h4v1H1z'/%3E%3C/svg%3E");
-      background-position: top 2px left 3px;
-      background-repeat: no-repeat;
-    }
-  }
+                .title-bar-controls button[aria-label="Close"] {
+                        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+                        background-position: top 3px left 4px;
+                        background-repeat: no-repeat;
+                        //       margin-left: 2px;
+                }
 
-  .setting-panel .title-bar {
-    width: 173px;
-    top: 2px;
-    left: -1px;
-  }
-  .setting-section .scrollable {
-    height: 445px;
-  }
+                .title-bar-controls button[aria-label="Restore"] {
+                        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M2 0h6v2H2zM7 2h1v4H7zM2 2h1v1H2zM6 5h1v1H6zM0 3h6v2H0zM5 5h1v4H5zM0 5h1v4H0zM1 8h4v1H1z'/%3E%3C/svg%3E");
+                        background-position: top 2px left 3px;
+                        background-repeat: no-repeat;
+                }
+        }
 
-  //BASIC COMPONENTS
-  /* Button */
-  .button {
-    background: silver;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
-      inset -2px -2px grey, inset 2px 2px #dfdfdf;
-    border: none;
-    border-radius: 0;
-    box-sizing: border-box;
-    transition: all 0s !important;
-  }
+        // TODO: find a solution so that don't need to manually define CSS rule
+        //when applying title bar on a container
+        .setting-panel .title-bar {
+                display: flex !important;
+                @include position_relative_title_bar_in_container(0px, 180px);
+        }
 
-  .button.active {
-    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
-      inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-  }
+        .setting-section .scrollable {
+                height: 445px;
+        }
 
-  .button:focus {
-    outline: 1.5px dotted #000 !important;
-    outline-offset: -5px;
-  }
+        //BASIC COMPONENTS
+        /* Button */
+        .button {
+                background: silver;
+                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+                        inset -2px -2px grey, inset 2px 2px #dfdfdf;
+                border: none;
+                border-radius: 0;
+                box-sizing: border-box;
+                transition: all 0s !important;
+        }
 
-  .button:not(:disabled):active {
-    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
-      inset -2px -2px #dfdfdf, inset 2px 2px grey;
-  }
+        .button.active {
+                box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+                        inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+        }
 
-  /* Checkbox */
-  .checkbox {
-    label i {
-      display: none;
-    }
-  }
-  input[type="checkbox"],
-  input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: 0;
-    border: none;
-    margin: 0;
-    opacity: 0;
-    position: fixed;
-  }
+        .button:focus {
+                outline: 1.5px dotted #000 !important;
+                outline-offset: -5px;
+        }
 
-  input[type="checkbox"] + label:before {
-    background: #fff;
-    box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
-      inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-    content: "";
-    display: inline-block;
-    height: 13px;
-    left: 6px;
-    top: 5px;
-    margin-right: 6px;
-    position: absolute;
-    width: 13px;
-    zoom: 1.2;
-  }
+        .button:not(:disabled):active {
+                box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+                        inset -2px -2px #dfdfdf, inset 2px 2px grey;
+        }
 
-  input[type="checkbox"]:checked + label:after {
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='7' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0H6v1H5v1H4v1H3v1H2V3H1V2H0v3h1v1h1v1h1V6h1V5h1V4h1V3h1V0z' fill='%23000'/%3E%3C/svg%3E");
-    content: "";
-    display: block;
-    height: 7px;
-    left: 9.5px;
-    top: 8px;
-    position: absolute;
-    width: 7px;
-    zoom: 1.2;
-  }
+        /* Checkbox */
+        .checkbox {
+                label i {
+                        display: none;
+                }
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: 0;
+                border: none;
+                margin: 0;
+                opacity: 0;
+                position: fixed;
+        }
 
-  /*Radio */
-  input[type="radio"] + label {
-    margin-left: 18px;
-    position: relative;
-  }
+        input[type="checkbox"] + label:before {
+                background: #fff;
+                box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
+                        inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+                content: "";
+                display: inline-block;
+                height: 13px;
+                left: 6px;
+                top: 5px;
+                margin-right: 6px;
+                position: absolute;
+                width: 13px;
+                zoom: 1.2;
+        }
 
-  .dui-radio .indicator::after {
-    display: none;
-  }
+        input[type="checkbox"]:checked + label:after {
+                background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='7' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 0H6v1H5v1H4v1H3v1H2V3H1V2H0v3h1v1h1v1h1V6h1V5h1V4h1V3h1V0z' fill='%23000'/%3E%3C/svg%3E");
+                content: "";
+                display: block;
+                height: 7px;
+                left: 9.5px;
+                top: 8px;
+                position: absolute;
+                width: 7px;
+                zoom: 1.2;
+        }
 
-  input[type="radio"] + label:before {
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0H4v1H2v1H1v2H0v4h1v2h1V8H1V4h1V2h2V1h4v1h2V1H8V0z' fill='gray'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1H4v1H2v2H1v4h1v1h1V8H2V4h1V3h1V2h4v1h2V2H8V1z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 3h1v1H9V3zm1 5V4h1v4h-1zm-2 2V9h1V8h1v2H8zm-4 0v1h4v-1H4zm0 0V9H2v1h2z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 2h-1v2h1v4h-1v2H8v1H4v-1H2v1h2v1h4v-1h2v-1h1V8h1V4h-1V2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2h4v1h1v1h1v4H9v1H8v1H4V9H3V8H2V4h1V3h1V2z' fill='%23fff'/%3E%3C/svg%3E");
-    content: "";
-    display: inline-block;
-    height: 12px;
-    left: 16px;
-    margin-right: 6px;
-    position: absolute;
-    top: 8px;
-    width: 12px;
-    //     zoom: 1.2;
-  }
+        /*Radio */
+        input[type="radio"] + label {
+                margin-left: 18px;
+                position: relative;
+        }
 
-  input[type="radio"]:checked + label:after {
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='4' height='4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H1v1H0v2h1v1h2V3h1V1H3V0z' fill='%23000'/%3E%3C/svg%3E");
-    content: "";
-    display: block;
-    height: 4px;
-    left: 20px;
-    position: absolute;
-    top: 12px;
-    width: 4px;
-    //     zoom: 1.2;
-  }
+        .dui-radio .indicator::after {
+                display: none;
+        }
+
+        input[type="radio"] + label:before {
+                background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0H4v1H2v1H1v2H0v4h1v2h1V8H1V4h1V2h2V1h4v1h2V1H8V0z' fill='gray'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 1H4v1H2v2H1v4h1v1h1V8H2V4h1V3h1V2h4v1h2V2H8V1z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 3h1v1H9V3zm1 5V4h1v4h-1zm-2 2V9h1V8h1v2H8zm-4 0v1h4v-1H4zm0 0V9H2v1h2z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 2h-1v2h1v4h-1v2H8v1H4v-1H2v1h2v1h4v-1h2v-1h1V8h1V4h-1V2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2h4v1h1v1h1v4H9v1H8v1H4V9H3V8H2V4h1V3h1V2z' fill='%23fff'/%3E%3C/svg%3E");
+                content: "";
+                display: inline-block;
+                height: 12px;
+                left: 16px;
+                margin-right: 6px;
+                position: absolute;
+                top: 8px;
+                width: 12px;
+                //     zoom: 1.2;
+        }
+
+        input[type="radio"]:checked + label:after {
+                background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='4' height='4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 0H1v1H0v2h1v1h2V3h1V1H3V0z' fill='%23000'/%3E%3C/svg%3E");
+                content: "";
+                display: block;
+                height: 4px;
+                left: 20px;
+                position: absolute;
+                top: 12px;
+                width: 4px;
+                //     zoom: 1.2;
+        }
 }

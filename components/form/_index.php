@@ -2,16 +2,8 @@
 
 declare(strict_types=1);
 
-include dirname(__FILE__) . "/../../utils/formatter.php";
-
-//UTILS
-// invoke ob_start() & and include php file first
-function getHtmlOutputFromBuffer(): string
-{
-        $output = ob_get_contents();
-        ob_end_clean();
-        return $output;
-}
+include_once dirname(__FILE__) . "/../../utils/formatter.php";
+include_once dirname(__FILE__) . "/../../utils/general.php";
 
 function Radio(string $id = null, float $value, string $label, string $group, bool $checked = false): string
 {

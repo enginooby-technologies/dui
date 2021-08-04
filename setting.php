@@ -1,18 +1,14 @@
 <?php
 include_once "components/form/_index.php";
 include_once "components/basic/_index.php";
+include_once "components/container/_index.php";
 ?>
 
 <div id="setting-section" class="setting-section">
         <div class="text-center setting-panel hide">
-                <div class="title-bar">
-                        <p class="title-bar-text scalable">Setting</p>
-                        <div class="title-bar-controls">
-                                <button aria-label="Minimize"></button>
-                                <button aria-label="Restore"></button>
-                                <button aria-label="Close"></button>
-                        </div>
-                </div>
+                <?php
+                echo TitleBar("Setting");
+                ?>
                 <div class="setting-panel-content">
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
                                 <p class="option-label">UI Style</p>

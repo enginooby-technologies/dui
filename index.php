@@ -21,7 +21,7 @@
 </head>
 
 <body class="nes-style ">
-        <?php include "index-injectable.php"; ?>
+        <?php include_once "index-injectable.php"; ?>
         <!-- <div class="overlay-bg background-2"></div> -->
         <!-- <div class="overlay-bg background-1"></div> -->
 

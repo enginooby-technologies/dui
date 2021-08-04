@@ -20,6 +20,10 @@ Init values for dynamic properties to reduce  page load time
   transition: opacity 0s ease !important;
 }
 
+.setting-section .setting-panel .title-bar {
+  display: none;
+}
+
 .setting-section .setting-panel p:not(.option-label) {
   font-size: 1.1rem;
   margin-bottom: 6px;
@@ -615,18 +619,6 @@ p.scalable {
   }
 }
 
-.display-content > .container > .title-bar {
-  display: none;
-}
-
-.display-content > .title-bar {
-  display: none;
-}
-
-.setting-panel > .title-bar {
-  display: none;
-}
-
 .button-border {
   display: inline-block;
   padding: 1px;
@@ -713,6 +705,31 @@ p.scalable {
 .code-block .token.doctype,
 .code-block .token.prolog {
   color: #4d4d4d;
+}
+
+.title-bar-text-wrapper {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  opacity: 0.12;
+  font-family: "Poppins", sans-serif;
+  margin-top: -18px;
+  color: black;
+}
+
+.title-bar-text {
+  text-align: center;
+  position: relative;
+  top: -48px;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0;
+  color: #004b97;
+}
+
+.title-bar-controls {
+  display: none;
 }
 
 .dui-radio {
@@ -1047,8 +1064,10 @@ input::-moz-focus-outer {
 }
 
 .dropdown .dropdown-arrow {
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: -webkit-transform 0.2s ease !important;
+  transition: -webkit-transform 0.2s ease !important;
+  transition: transform 0.2s ease !important;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease !important;
 }
 
 .dropdown.show .dropdown-arrow {
@@ -1639,30 +1658,27 @@ input::-moz-focus-outer {
 }
 
 .win98-style .title-bar {
-  width: 100%;
-  position: relative;
-  max-width: 1100px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: -webkit-gradient(linear, left top, right top, from(navy), to(#1084d0));
+  background: linear-gradient(90deg, navy, #1084d0);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, right top, from(navy), to(#1084d0));
-  background: linear-gradient(90deg, navy, #1084d0);
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 3px 2px 3px 3px;
   height: 30px;
-  width: 1094px;
   position: relative;
+  width: 1094px;
   top: -38px;
   left: -38px;
+}
+
+.win98-style .title-bar .title-bar-text-wrapper {
+  display: none;
 }
 
 .win98-style .title-bar .title-bar-text {
@@ -1670,6 +1686,9 @@ input::-moz-focus-outer {
   font-weight: 700;
   letter-spacing: 0;
   margin-right: 24px;
+  top: 0;
+  font-size: 1.35rem;
+  font-family: "Agency FB";
 }
 
 .win98-style .title-bar .title-bar-controls {
@@ -1728,9 +1747,13 @@ input::-moz-focus-outer {
 }
 
 .win98-style .setting-panel .title-bar {
-  width: 173px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  position: relative;
+  width: 174px;
   top: 2px;
-  left: -1px;
+  left: 2px;
 }
 
 .win98-style .setting-section .scrollable {
