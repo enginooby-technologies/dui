@@ -56,12 +56,11 @@ Skip if just use the framework without modification
 4. Gulp
 
 ### For usage
-1 - Refer to all of the dependencies CSS & JS.  
-2 - Refer to the framework style sheet (after project style sheet):  
+1 - Refer to the framework style sheet (after project style sheet):  
 ```      
   <link rel="stylesheet" href="<framework_folder_path>/css/dynamic-style.css" type="text/css">
   ```  
-3 - Refer to the framework script:  
+2 - Refer to the framework script:  
 ```  
 <script async src="<framework_folder_path>/js/DynamicUI.js" type="module"></script>
 ```  

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>Dynamic UI Framework</title>
+        <meta charset="UTF-8" />
+        <meta name="author" content="enginoobz" />
+        <meta name="description" content="Demo page for Dynamic Style Framework" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="css/dynamic-style.css" type="text/css" />
+</head>
+
+<body class="neu-style ">
+        <!-- TODO: Add preloader to hide FOUC + Use a few indentical CSS as loading style sheet (e.g. Bootstrap) to reduce FOUC-->
+                                
+        <div class="display-table">
+                <div class="display-content ">
+                        <div class="container ">
+
+                                <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
+                                <hr>
+
+                                <h5 class="my-4">I - Basic Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">II - Container Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">III - Content Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/content/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">IV - Form Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                                <div class='range-slider'>
+                <label for='range-slider_dynamic-slider'>Dynamic slider</label>
+                <input class='range-slider__range' id='range-slider_dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
+                <span class='range-slider__value'>0</span>
+        </div>        </div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
+echo RangeSlider(label: "Dynamic slider",  max: 100);
+</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                        <div class='dui-radio'>
+        <input class='state' type='radio'  name='group-1' id='radio-1' value='1'>
+        <label class='label' for='radio-1'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 1</span>
+        </label>
+</div>                        <div class='dui-radio'>
+        <input class='state' type='radio' checked name='group-1' id='radio-2' value='2'>
+        <label class='label' for='radio-2'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 2</span>
+        </label>
+</div>        </div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = format($label), bool $checked = false        
+echo Radio(label: "Radio 1", value: 1, group: "group-1");
+echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
+</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                        <label class="toggle-label">
+        <div class="toggle" id="toggle_dynamic-toggle">
+                <input class="toggle-state" type="checkbox" name="dynamic-toggle" value="0" />
+                <div class="indicator"></div>
+        </div>
+        <div class="label-text">Dynamic toggle</div>
+</label>        </div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = $name = format($label), float $value = 0
+echo Toggle(label: "Dynamic toggle");
+</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                        <div class="checkbox">
+        <input id="checkbox_dynamic-checkbox" type="checkbox"  value="dynamic-checkbox">
+        <label for="checkbox_dynamic-checkbox">
+                <i class="fas fa-check"></i>
+        </label>
+        <div class="name">Dynamic checkbox</div>
+</div>        </div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = $value = format($name), bool $checked = false  
+echo Checkbox(name:"Dynamic checkbox");
+</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                        <div class="dropdown" id="dropdown-demo">
+        <button type="button" class="dropdown-label">
+                <p class="scalable">Dynamic dropdown</p>
+        </button>
+        <button type="button" class=" dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="fas fa-angle-down dropdown-arrow"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="javascript:;" value="1">Option 1</a>
+                                        <a class="dropdown-item" href="javascript:;" value="2">Option 2</a>
+                                        <a class="dropdown-item" href="javascript:;" value="3">Option 3</a>
+                                <!-- <div class="dropdown-divider"></div> -->
+                <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+        </div>
+</div>        </div><div class="code-block">
+        <pre><code class="language-php">// optional dropdown item keys: "href" =&gt; "javascript:;", "value" = 0
+echo Dropdown(
+  "Dynamic dropdown",
+  "dropdown-demo",
+  ["label" =&gt; "Option 1", "value" =&gt; 1],
+  ["label" =&gt; "Option 2", "value" =&gt; 2],
+  ["label" =&gt; "Option 3", "value" =&gt; 3],
+)</code></pre>
+</div>
+                                <h5 class="my-4">V - Navigation Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/navigation/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">VI - Advanced Components</h5>
+                                <div class="code-block">
+        <pre><code class="language-php">&lt;?= include_once "components/advanced/_index.php";?&gt;</code></pre>
+</div>                        </div>
+                </div>
+        </div>        <script async src="js/main.js" type="module"></script>
+</body>
+
+</html>
