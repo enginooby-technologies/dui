@@ -2,14 +2,30 @@
         font-style: italic;
         // padding: 7px;
         margin: 10px 0 40px;
-        font-size: .93rem;
+        font-size: 0.93rem;
         border-radius: $borderRadius;
 
         pre {
                 background-color: transparent;
+                padding: 1em;
+                margin: 0.5em 0;
+                overflow: auto;
+
+                // indentical rules as Prism so that deferred loadding won't cause noticable FOUC
+                font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+                        monospace;
+                font-size: 1em;
+                text-align: left;
+                white-space: pre;
+                word-spacing: normal;
+                word-break: normal;
+                word-wrap: normal;
+                line-height: 1.5;
+                tab-size: 4;
+                hyphens: none;
 
                 code {
-                        text-shadow: 0 .5px $baseColor;
+                        text-shadow: 0 0.5px $baseColor;
                         display: block;
                         color: $mutedBaseColor;
                         white-space: pre-wrap;

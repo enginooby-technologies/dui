@@ -36,14 +36,16 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
   + Bootstrap 4 [.css,  .js] (for layout, will be updated to version 5 to be independent with jQuery & FontAwesome)
   + jQuery [.js] (will be removed)
   + Popper [.js] (for dropdown component, will be removed)
-  2. Lazily loaded by framework:
-  + Animate [.css] (for animation) 
+  +  Animate [.css] (for animation) 
+  2. Lazy loading by framework:
   + TinyColor [.js] (for color manipulation, will be removed) 
   + Webfont [.js] (for dynamic font loading) 
   + Interactive [.js] (for drag&drop extension) 
-  3. Optional:
+  3. Deferred loading by framework:
++ Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight): only be loaded  if Code block (with class 'code-block') is used in page && the files are not already included in index.html/php
+4. Optional:
  + FontAwesome [.css] (for icons, will be removed)
-  + Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight)
+
 
 ## Installation
 ### For development (optional)
