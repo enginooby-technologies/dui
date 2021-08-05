@@ -1,6 +1,5 @@
 export const bgSchemeSelectors = [
     // CONTAINER
-    ".display-content > .container",
     ".setting-panel",
     //FORM
     ".dropdown button",

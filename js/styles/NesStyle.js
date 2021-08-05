@@ -37,7 +37,7 @@ export class NesStyle extends Style {
         this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
     }
     onSchemeColorUpdated() {
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
+        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
     }
     onBaseColorUpdated() {
         this.updateBorderColor();

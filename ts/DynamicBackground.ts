@@ -78,8 +78,9 @@ export class DynamicBackground {
                                 $(this.innerBgSelector).each((index, element) => {
                                         element.classList.add(this.currentInnerBg!);
                                 });
-                                // remove custom bg also
+                                // remove custom & preferred  bg also
                                 this.$body!.removeClass(this.customBgClassName);
+                                this.$body!.removeClass(DynamicUI.currentStyle?.preferredOuterBg!);
                         }
 
                         this.updateGlobalOuterBgTriggered = true;
@@ -92,6 +93,13 @@ export class DynamicBackground {
 
         private setupInnerBgEvent() {
                 $('#inner-background-panel .background-item').on('click', (event) => {
+                        // first time  select inner  bg 
+                        if (!this.updateGlobalInnerBgTriggered) {
+                                $(this.innerBgSelector).each((index, element) => {
+                                        element.classList.remove(DynamicUI.currentStyle?.preferredInnerBg!);
+                                });
+                        }
+
                         this.updateGlobalInnerBgTriggered = true;
                         const lastInnerBg: string = this.currentInnerBg!;
                         this.currentInnerBg = event.currentTarget.getAttribute('class')!.match(/\S*-bg\b/i)?.toString() ?? 'none-bg';

@@ -57,7 +57,7 @@ export class DynamicBackground {
     }
     setupOuterBgEvent() {
         $('#outer-background-panel .background-item').on('click', (event) => {
-            var _a, _b;
+            var _a, _b, _c;
             //first time  select outer bg 
             if (!this.updateGlobalOuterBgTriggered) {
                 // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
@@ -65,12 +65,13 @@ export class DynamicBackground {
                 $(this.innerBgSelector).each((index, element) => {
                     element.classList.add(this.currentInnerBg);
                 });
-                // remove custom bg also
+                // remove custom & preferred  bg also
                 this.$body.removeClass(this.customBgClassName);
+                this.$body.removeClass((_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.preferredOuterBg);
             }
             this.updateGlobalOuterBgTriggered = true;
             const lastOuterBg = this.currentOuterBg;
-            this.currentOuterBg = (_b = (_a = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : 'none-bg';
+            this.currentOuterBg = (_c = (_b = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _b === void 0 ? void 0 : _b.toString()) !== null && _c !== void 0 ? _c : 'none-bg';
             this.$body.removeClass(lastOuterBg);
             this.$body.addClass(this.currentOuterBg);
         });
@@ -78,6 +79,13 @@ export class DynamicBackground {
     setupInnerBgEvent() {
         $('#inner-background-panel .background-item').on('click', (event) => {
             var _a, _b;
+            // first time  select inner  bg 
+            if (!this.updateGlobalInnerBgTriggered) {
+                $(this.innerBgSelector).each((index, element) => {
+                    var _a;
+                    element.classList.remove((_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.preferredInnerBg);
+                });
+            }
             this.updateGlobalInnerBgTriggered = true;
             const lastInnerBg = this.currentInnerBg;
             this.currentInnerBg = (_b = (_a = event.currentTarget.getAttribute('class').match(/\S*-bg\b/i)) === null || _a === void 0 ? void 0 : _a.toString()) !== null && _b !== void 0 ? _b : 'none-bg';

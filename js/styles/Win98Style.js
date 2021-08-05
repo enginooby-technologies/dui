@@ -21,7 +21,7 @@ export class Win98Style extends Style {
     onHighlightColorUpdated() {
     }
     onSchemeColorUpdated() {
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
+        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
     }
     onBaseColorUpdated() {
     }
