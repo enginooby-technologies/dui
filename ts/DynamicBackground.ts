@@ -11,10 +11,12 @@ export class DynamicBackground {
         $dropdownLabelTextOuterBg?: JQuery<HTMLElement>;
         $dropdownLabelInnerBg?: JQuery<HTMLElement>;
         $dropdownLabelTextInnerBg?: JQuery<HTMLElement>;
+
         currentOuterBg?: string;
         currentInnerBg?: string;
         lastOuterBg?: string;
         lastInnerBg?: string;
+
         // if the main project using this framework has its own bg, use "custom-background" class in <body>
         hasCustomBg?: boolean;  // for now replace only outer background
         // although we select global bg for all UI styles, at the first time before doing that, 
