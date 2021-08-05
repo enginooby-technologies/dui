@@ -1654,6 +1654,7 @@ input::-moz-focus-outer {
   /* Range slider */
   /* Input & Textarea field + dropdown */
   /* Dropdown */
+  /* Segmented control */
 }
 
 .win98-style ::-webkit-scrollbar {
@@ -2082,6 +2083,17 @@ input::-moz-focus-outer {
 
 .win98-style .dropdown .dropdown-arrow {
   display: none;
+}
+
+.win98-style .segmented-control {
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080, inset 1px -2px #808080, inset 2px 2px #ffffff;
+          box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080, inset 1px -2px #808080, inset 2px 2px #ffffff;
+  padding: calc(2 * $border_width + 8px);
+  -webkit-padding-before: 8px;
+          padding-block-start: 8px;
+  margin: 0;
 }
 
 .section,

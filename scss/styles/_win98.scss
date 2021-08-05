@@ -67,6 +67,7 @@
         ::-webkit-scrollbar-button:vertical:end:increment {
                 display: block;
         }
+        // TODO: for setting panel
         ::-webkit-scrollbar-button:vertical:start {
                 height: 17px;
                 background-image: url("/dynamic-ui-framework/icons/win98/button-up.svg");
@@ -384,7 +385,6 @@
                 border-radius: 0 !important;
                 background-color: #fff;
                 box-shadow: $border_field;
-
                 .dropdown-menu {
                         border-radius: 0;
                         background-color: $button_highlight;
@@ -428,5 +428,18 @@
         }
         .dropdown .dropdown-arrow {
                 display: none;
+        }
+
+        /* Segmented control */
+        .segmented-control {
+                border-radius: 0;
+                border: none;
+                box-shadow: inset -1px -1px $button_highlight,
+                        inset -2px 1px$button_shadow,
+                        inset 1px -2px $button_shadow,
+                        inset 2px 2px $button_highlight;
+                padding: calc(2 * $border_width + 8px);
+                padding-block-start: 8px;
+                margin: 0;
         }
 }
