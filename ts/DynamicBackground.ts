@@ -1,19 +1,22 @@
 import { DynamicUI } from "./DynamicUI.js";
 
+const BG_CLASS_SUFFIX: string = '-bg';
+const CUSTOM_BG_CLASS: string = 'custom-bg';
+// TODO: find a way to cache $(innerBgSelector)
+const INNER_BG_SELECTOR: string = ".display-content>.container"; // inner background, default is the scheme color
+
+
 export class DynamicBackground {
         $dropdownLabelOuterBg?: JQuery<HTMLElement>;
         $dropdownLabelTextOuterBg?: JQuery<HTMLElement>;
         $dropdownLabelInnerBg?: JQuery<HTMLElement>;
         $dropdownLabelTextInnerBg?: JQuery<HTMLElement>;
-        // TODO: find a way to cache $(innerBgSelector)
-        innerBgSelector: string = ".display-content>.container"; // inner background, default is the scheme color
         currentOuterBg?: string;
         currentInnerBg?: string;
         lastOuterBg?: string;
         lastInnerBg?: string;
         // if the main project using this framework has its own bg, use "custom-background" class in <body>
         hasCustomBg?: boolean;  // for now replace only outer background
-        customBgClassName: string = "custom-bg"
         // although we select global bg for all UI styles, at the first time before doing that, 
         // each style can have its separate  preferred bg (e.g. glass-style w/ bg-3, neu-style w/o bg),
         // only when we manually update  bg from setting panel, all styles are triggerd to use global bg instead of its preferred one.
@@ -22,15 +25,15 @@ export class DynamicBackground {
 
         constructor() {
                 this.getDomElements();
-                this.hasCustomBg = DynamicUI.$body!.hasClass(this.customBgClassName);
+                this.hasCustomBg = DynamicUI.$body!.hasClass(CUSTOM_BG_CLASS);
                 if (this.hasCustomBg) {
-                        this.currentOuterBg = this.customBgClassName;
-                        $(`.setting-panel .${this.customBgClassName}`).removeClass('hide');
+                        this.currentOuterBg = CUSTOM_BG_CLASS;
+                        $(`.setting-panel .${CUSTOM_BG_CLASS}`).removeClass('hide');
                 } else {
                         this.currentOuterBg = DynamicUI.currentStyle?.preferredOuterBg!
                         DynamicUI.$body!.addClass(this.currentOuterBg!);
                 }
-                $(this.innerBgSelector).each((index, element) => {
+                $(INNER_BG_SELECTOR).each((index, element) => {
                         element.classList.add(DynamicUI.currentStyle?.preferredInnerBg!);
                 })
                 this.currentInnerBg = DynamicUI.currentStyle?.preferredInnerBg!
@@ -75,11 +78,11 @@ export class DynamicBackground {
         }
 
         private bgToClassName(bgName: string) {
-                return bgName.replace(' ', '-').toLowerCase() + '-bg';
+                return bgName.replace(' ', '-').toLowerCase() + BG_CLASS_SUFFIX;
         }
 
         private classNameToBg(className: string) {
-                return this.capitalizeFirstLetter(className).replace('-bg', '').replace('-', ' ');
+                return this.capitalizeFirstLetter(className).replace(BG_CLASS_SUFFIX, '').replace('-', ' ');
         }
 
         private capitalizeFirstLetter(word: string) {
@@ -96,10 +99,10 @@ export class DynamicBackground {
                 //TODO: handle custom bg case -  if (!this.hasCustomBg) 
                 this.lastOuterBg = this.currentOuterBg;
                 this.currentOuterBg = DynamicUI.currentStyle?.preferredOuterBg;
-                this.applyCurrentOuterBg();
+                this.onChangeOuterBg();
         }
 
-        private applyCurrentOuterBg() {
+        private onChangeOuterBg() {
                 DynamicUI.$body!.removeClass(this.lastOuterBg);
                 DynamicUI.$body!.addClass(this.currentOuterBg!);
                 this.updateOuterBgDropdownLabel();
@@ -109,11 +112,11 @@ export class DynamicBackground {
                 if (this.currentInnerBg == DynamicUI.currentStyle?.preferredInnerBg) return;
                 this.lastInnerBg = this.currentInnerBg;
                 this.currentInnerBg = DynamicUI.currentStyle?.preferredInnerBg;
-                this.applyCurrentInnerBg();
+                this.onChangeInnerBg();
         }
 
-        private applyCurrentInnerBg() {
-                $(this.innerBgSelector).each((index, element) => {
+        private onChangeInnerBg() {
+                $(INNER_BG_SELECTOR).each((index, element) => {
                         element.classList.remove(this.lastInnerBg!);
                         element.classList.add(this.currentInnerBg!);
                 });
@@ -121,44 +124,43 @@ export class DynamicBackground {
         }
 
         private setupEvents() {
-                this.setupOuterBgEvent();
-                this.setupInnerBgEvent();
+                this.setupSelectOuterBgEvent();
+                this.setupSelectInnerBgEvent();
         }
 
-        private setupOuterBgEvent() {
-                $('#dropdown-outer-bg .dropdown-item').on('click', (event) => {
+        private setupSelectOuterBgEvent() {
+                $('#dropdown-outer-bg .dropdown-item').on('click', event => {
                         if (!this.updateGlobalOuterBgTriggered) this.onFirstTimeSelectOuterBg();
                         this.lastOuterBg = this.currentOuterBg!;
                         this.currentOuterBg = this.bgToClassName(event.currentTarget.textContent!);
-                        if (this.lastOuterBg != this.currentOuterBg) this.applyCurrentOuterBg();
-                })
+                        if (this.lastOuterBg != this.currentOuterBg) this.onChangeOuterBg();
+                });
         }
 
         private onFirstTimeSelectOuterBg() {
                 this.updateGlobalOuterBgTriggered = true;
                 // TODO: ad-hoc solution in case use PagePiling and load section dynamically after page load, 
                 // therefore all elements with innerBgSelector are not set currentInnerBg yet
-                $(this.innerBgSelector).each((index, element) => {
+                $(INNER_BG_SELECTOR).each((index, element) => {
                         element.classList.add(this.currentInnerBg!);
                 });
-                // remove custom & preferred  bg also
-                DynamicUI.$body!.removeClass(this.customBgClassName);
+                // remove custom & preferred  bg also 
+                DynamicUI.$body!.removeClass(CUSTOM_BG_CLASS);
                 DynamicUI.$body!.removeClass(DynamicUI.currentStyle?.preferredOuterBg!);
         }
 
-        private setupInnerBgEvent() {
-                $('#dropdown-inner-bg .dropdown-item').on('click', (event) => {
-                        // first time  select inner  bg 
+        private setupSelectInnerBgEvent() {
+                $('#dropdown-inner-bg .dropdown-item').on('click', event => {
                         if (!this.updateGlobalInnerBgTriggered) this.onFirstTimeSelectInnerBg();
                         this.lastInnerBg = this.currentInnerBg!;
                         this.currentInnerBg = this.bgToClassName(event.currentTarget.textContent!);
-                        if (this.lastInnerBg != this.currentInnerBg) this.applyCurrentInnerBg();
+                        if (this.lastInnerBg != this.currentInnerBg) this.onChangeInnerBg();
                 });
         }
 
         private onFirstTimeSelectInnerBg() {
                 this.updateGlobalInnerBgTriggered = true;
-                $(this.innerBgSelector).each((index, element) => {
+                $(INNER_BG_SELECTOR).each((index, element) => {
                         element.classList.remove(DynamicUI.currentStyle?.preferredInnerBg!);
                         // hide default bgColor to see new bg
                         element.style.backgroundColor = 'transparent';
