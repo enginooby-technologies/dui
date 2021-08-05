@@ -51,9 +51,10 @@ export class DynamicUI {
         }
 
         constructor() {
-                this.loadSettingPanel(Config.settingFilePath)
-                        .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath)
-                        );
+                this.init();
+                // this.loadSettingPanel(Config.settingFilePath)
+                //         .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath)
+                //         );
         }
 
         private loadSettingPanel(filePath: string) {
@@ -113,11 +114,11 @@ export class DynamicUI {
         }
 
         private setupSettingEvents() {
-                $("#setting-section .setting-button-border").on('click', function () {
-                        $("#setting-section .setting-panel").toggleClass('show');
-                        $(this).toggleClass('active');
-                        $('#setting-section .setting-button').toggleClass('active');
-                });
+                // $(" .setting-button-border").on('click', function () {
+                //         $("#setting-section .setting-panel").toggleClass('show');
+                //         $(this).toggleClass('active');
+                //         $('#setting-section .setting-button').toggleClass('active');
+                // });
                 $('.theme-skin.radio-button-group .button').on('click', event => {
                         $('.theme-skin.radio-button-group .button').removeClass('active');
                         $(event.currentTarget).addClass('active')
