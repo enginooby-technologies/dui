@@ -1,4 +1,5 @@
 "use strict";
+/* FRAMEWORK RESOURCES FOR LAZY LOADING */
 const localFrameworkPath = '/dynamic-ui-framework';
 const remoteFrameworkPath = 'https://enginoobz.com/dynamic-ui-framework';
 const settingFilePath = `${localFrameworkPath}/setting.html`;
@@ -9,6 +10,9 @@ const dynamicUIFilePath = `${localFrameworkPath}/js/DynamicUI.js`;
 const fallbackSettingFilePath = `${remoteFrameworkPath}/setting.html`;
 const fallbackSettingButtonFilePath = `${remoteFrameworkPath}/setting-button.html`;
 const fallbackDynamicUIFilePath = `${remoteFrameworkPath}/js/DynamicUI.js`;
+/* DEPENDENCIES */
+const tinyColorJs = "https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js";
+const tinyColorJsIntegrity = "sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q==";
 let settingPanelLoaded = false;
 let $settingButton;
 let $settingPanel;
@@ -42,20 +46,29 @@ function onSettingPanelLoaded() {
     settingPanelLoaded = true;
     $settingPanel = $("#setting-section .setting-panel");
     // lazy loading main framework script
-    loadScript(dynamicUIFilePath, toggleSettingPanel, () => {
-        loadScript(fallbackDynamicUIFilePath, toggleSettingPanel, () => { });
+    loadScript(dynamicUIFilePath, true, toggleSettingPanel, () => {
+        loadScript(fallbackDynamicUIFilePath, true, toggleSettingPanel);
     });
+    // lazy loading dependencies
+    loadScript(tinyColorJs, false, undefined, undefined, tinyColorJsIntegrity);
 }
 function toggleSettingPanel() {
     $settingPanel.toggleClass('show');
     $settingButton.toggleClass('active');
 }
-function loadScript(src, onload, onerror) {
+function loadScript(src, isModule, onload, onerror, integrity) {
     const script = document.createElement('script');
-    script.onerror = onerror;
-    script.onload = onload;
-    // script.async = true;
+    if (onerror)
+        script.onerror = onerror;
+    if (onload)
+        script.onload = onload;
     script.src = src;
-    script.type = "module";
+    if (isModule)
+        script.type = "module";
+    if (integrity) {
+        script.integrity = integrity;
+        script.crossOrigin = "anonymous";
+        script.referrerPolicy = "no-referrer";
+    }
     document.head.appendChild(script);
 }
