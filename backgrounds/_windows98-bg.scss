@@ -1,6 +1,7 @@
-.windows98-bg::before {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../backgrounds/windows98.jpg) no-repeat center center fixed;
-  background-attachment: fixed;
-  background-size: cover;
+.windows98-bg::before,
+.dropdown .windows98-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../backgrounds/windows98.jpg) no-repeat center center fixed;
+        background-attachment: fixed;
+        background-size: cover;
 }

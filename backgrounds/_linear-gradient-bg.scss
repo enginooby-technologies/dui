@@ -1,6 +1,7 @@
 // https: //codepen.io/hexagoncircle/pen/Exyewjv
 
-.linear-gradient-bg::before {
+.linear-gradient-bg::before,
+.dropdown .linear-gradient-bg {
         --s: 25vmin;
         --p: calc(var(--s) / 2);
         --c1: pink;
@@ -25,7 +26,6 @@
 }
 
 @keyframes color {
-
         0%,
         25% {
                 --bg: var(--c3);
@@ -49,40 +49,35 @@
 
 @keyframes position {
         0% {
-                background-position:
-                        calc(var(--p) * 1) calc(var(--p) * 0),
+                background-position: calc(var(--p) * 1) calc(var(--p) * 0),
                         calc(var(--p) * -1) calc(var(--p) * 1),
                         calc(var(--p) * 1) calc(var(--p) * -1),
                         calc(var(--p) * -1) calc(var(--p) * 0);
         }
 
         25% {
-                background-position:
-                        calc(var(--p) * 1) calc(var(--p) * 4),
+                background-position: calc(var(--p) * 1) calc(var(--p) * 4),
                         calc(var(--p) * -1) calc(var(--p) * 5),
                         calc(var(--p) * 1) calc(var(--p) * 3),
                         calc(var(--p) * -1) calc(var(--p) * 4);
         }
 
         50% {
-                background-position:
-                        calc(var(--p) * 3) calc(var(--p) * 8),
+                background-position: calc(var(--p) * 3) calc(var(--p) * 8),
                         calc(var(--p) * -3) calc(var(--p) * 9),
                         calc(var(--p) * 2) calc(var(--p) * 7),
                         calc(var(--p) * -2) calc(var(--p) * 8);
         }
 
         75% {
-                background-position:
-                        calc(var(--p) * 3) calc(var(--p) * 12),
+                background-position: calc(var(--p) * 3) calc(var(--p) * 12),
                         calc(var(--p) * -3) calc(var(--p) * 13),
                         calc(var(--p) * 2) calc(var(--p) * 11),
                         calc(var(--p) * -2) calc(var(--p) * 12);
         }
 
         100% {
-                background-position:
-                        calc(var(--p) * 5) calc(var(--p) * 16),
+                background-position: calc(var(--p) * 5) calc(var(--p) * 16),
                         calc(var(--p) * -5) calc(var(--p) * 17),
                         calc(var(--p) * 5) calc(var(--p) * 15),
                         calc(var(--p) * -5) calc(var(--p) * 16);

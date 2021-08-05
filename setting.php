@@ -133,34 +133,37 @@ include_once "components/container/_index.php";
                                         <p class="option-label">Background</p>
                                         <div id="outer-background-panel">
                                                 <p> Outer </p>
-                                                <div class="row px-4 justify-content-center">
-                                                        <div class="col-4 background-item " id="none-bg"> </div>
-                                                        <div class="col-4 background-item custom-bg hide" id="custom-bg"> </div>
-                                                </div>
-                                                <div class="row px-4 justify-content-center">
-                                                        <div class="col-4 background-item liquid-cheese-bg"> </div>
-                                                        <div class="col-4 background-item protruding-squares-bg"> </div>
-                                                        <div class="col-4 background-item wintery-sunburst-bg"> </div>
-                                                        <div class="col-4 background-item animated-gradient-bg"> </div>
-                                                        <div class="col-4 background-item  linear-gradient-bg"> </div>
-                                                        <div class="col-4 background-item vanishing-stripes-bg"> </div>
-                                                        <div class="col-4 background-item windows98-bg"> </div>
-                                                </div>
+                                                <?php
+                                                echo Dropdown(
+                                                        "None",
+                                                        "dropdown-outer-bg",
+                                                        ["label" => "None"],
+                                                        ["label" => "Liquid cheese"],
+                                                        ["label" => "Protruding squares"],
+                                                        ["label" => "Wintery sunburst"],
+                                                        ["label" => "Animated gradient"],
+                                                        ["label" => "Linear gradient"],
+                                                        ["label" => "Vanishing stripes"],
+                                                        ["label" => "Windows98"],
+                                                )
+                                                ?>
                                         </div>
                                         <div id="inner-background-panel" class="mt-3">
                                                 <p> Inner </p>
-                                                <div class="row px-4 justify-content-center">
-                                                        <div class="col-4 background-item " id="background-0"> </div>
-                                                </div>
-                                                <div class="row px-4 justify-content-center">
-                                                        <div class="col-4 background-item liquid-cheese-bg"> </div>
-                                                        <div class="col-4 background-item protruding-squares-bg"> </div>
-                                                        <div class="col-4 background-item wintery-sunburst-bg"> </div>
-                                                        <div class="col-4 background-item animated-gradient-bg"> </div>
-                                                        <div class="col-4 background-item  linear-gradient-bg"> </div>
-                                                        <div class="col-4 background-item vanishing-stripes-bg"> </div>
-                                                        <div class="col-4 background-item windows98-bg"> </div>
-                                                </div>
+                                                <?php
+                                                echo Dropdown(
+                                                        "None",
+                                                        "dropdown-inner-bg",
+                                                        ["label" => "None"],
+                                                        ["label" => "Liquid cheese"],
+                                                        ["label" => "Protruding squares"],
+                                                        ["label" => "Wintery sunburst"],
+                                                        ["label" => "Animated gradient"],
+                                                        ["label" => "Linear gradient"],
+                                                        ["label" => "Vanishing stripes"],
+                                                        ["label" => "Windows98"],
+                                                )
+                                                ?>
                                         </div>
                                 </div>
 

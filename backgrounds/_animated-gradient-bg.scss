@@ -2,7 +2,8 @@
 // Manuel Pinto
 // https://manuelpinto.in
 
-.animated-gradient-bg::before {
+.animated-gradient-bg::before,
+.dropdown .animated-gradient-bg {
         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
         background-size: 400% 600%;
         // background-size: cover;
