@@ -175,9 +175,4 @@ include_once "components/container/_index.php";
                         </div>
                 </div>
         </div>
-        <div class="setting-button-border hide animate__animated animate__backInLeft">
-                <div class="setting-button ">
-                        <a href="javascript:;" class="cp-toggle"><i class="fa fa-cog fa-spin" aria-label="Toggle setting button"></i></a>
-                </div>
-        </div>
 </div>

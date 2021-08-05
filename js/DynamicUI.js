@@ -8,8 +8,10 @@ import { DragDropExt } from './extensions/DragDropExt.js';
 export class DynamicUI {
     constructor() {
         this.borderRadius = 9;
-        this.loadSettingPanel(Config.settingFilePath)
-            .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath));
+        this.init();
+        // this.loadSettingPanel(Config.settingFilePath)
+        //         .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath)
+        //         );
     }
     static createStyleSheet() {
         var style = document.createElement("style");
@@ -91,11 +93,11 @@ export class DynamicUI {
         $("#border-radius").next('.range-slider__value').html(this.borderRadius.toString());
     }
     setupSettingEvents() {
-        $("#setting-section .setting-button-border").on('click', function () {
-            $("#setting-section .setting-panel").toggleClass('show');
-            $(this).toggleClass('active');
-            $('#setting-section .setting-button').toggleClass('active');
-        });
+        // $(" .setting-button-border").on('click', function () {
+        //         $("#setting-section .setting-panel").toggleClass('show');
+        //         $(this).toggleClass('active');
+        //         $('#setting-section .setting-button').toggleClass('active');
+        // });
         $('.theme-skin.radio-button-group .button').on('click', event => {
             $('.theme-skin.radio-button-group .button').removeClass('active');
             $(event.currentTarget).addClass('active');

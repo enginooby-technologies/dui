@@ -157,7 +157,7 @@ export const borderRadiusSelectors = formatString([
     ".dui-radio .text",
     // SETTING
     ".setting-section .setting-panel",
-    ".setting-section .setting-button-border",
+    " .setting-button-border",
     ".setting-button",
     ".setting-button a",
     ".color-scheme li a",
