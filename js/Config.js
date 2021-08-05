@@ -11,3 +11,15 @@ export var StyleName;
     StyleName["Nes"] = "nes-style";
     StyleName["Win98"] = "win98-style";
 })(StyleName || (StyleName = {}));
+export const interactJs = {
+    src: "https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"
+};
+export const webfontJs = {
+    src: "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+};
+export const tinyColorJs = {
+    src: "https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js",
+    integrity: "sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q==",
+    crossOrigin: "anonymous",
+    referrerPolicy: "no-referrer"
+};

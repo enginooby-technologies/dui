@@ -1,10 +1,11 @@
-import { fallbackSettingFilePath, settingFilePath } from './Config.js';
+import * as Config from './Config.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js'
 import { Style } from './base/Style.js'
 import { StyleRegistry } from './StyleRegistry.js';
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
+import { DragDropExt } from './extensions/DragDropExt.js';
 
 export class DynamicUI {
         dynamicColor?: DynamicColor;
@@ -14,8 +15,6 @@ export class DynamicUI {
 
         // TODO: cache all jQuery selectors
         static $body?: JQuery<HTMLElement>; //outer background
-
-        borderRadius: number = 9;
 
         static styleSheet?: CSSStyleSheet;
         static cssRules?: CSSRuleList;
@@ -28,6 +27,7 @@ export class DynamicUI {
                 return DynamicUI.cssRules![DynamicUI.styleSheet!.insertRule(`${selector} {}`)] as CSSStyleRule;
         }
 
+        borderRadius: number = 9;
         borderRadiusRule?: CSSStyleRule;
         public getBorderRadiusRule(): CSSStyleRule {
                 return this.borderRadiusRule ?? (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
@@ -51,8 +51,8 @@ export class DynamicUI {
         }
 
         constructor() {
-                this.loadSettingPanel(settingFilePath)
-                        .fail(() => this.loadSettingPanel(fallbackSettingFilePath)
+                this.loadSettingPanel(Config.settingFilePath)
+                        .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath)
                         );
         }
 
@@ -65,24 +65,38 @@ export class DynamicUI {
         }
 
         private init() {
+                DynamicUI.$body = $('body');
                 DynamicUI.styleSheet = DynamicUI.createStyleSheet();
                 DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
+
                 this.initSettingPanel();
                 this.setupSettingEvents();
-                DynamicUI.$body = $('body');
-                this.dynamicColor = new DynamicColor();
-                this.dynamicFont = new DynamicFont();
-                this.dynamicBackground = new DynamicBackground();
 
                 const initStyleName = DynamicUI.$body!.attr('class')!.match(/\S*-style\b/i)?.toString();
                 new StyleRegistry(this, initStyleName);
 
-                $(".status_change .dropdown-item").click(function () {
-                        var getStatusText = $(this).text();
-                        $(this).closest(".status_dropdown").find(".status__btn").text(getStatusText);
-                        var generateStatusClass = `${$(this).attr('data-class')}-status`
-                        $(this).closest(".status_dropdown").attr("data-color", `${generateStatusClass}`);
-                })
+                this.dynamicColor = new DynamicColor();
+                this.dynamicBackground = new DynamicBackground();
+                this.loadScriptDependency(Config.webfontJs.src, () => {
+                        this.dynamicFont = new DynamicFont();
+                        if (DynamicUI.currentStyle?.preferredFontFamily) {
+                                this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+                        }
+                });
+                this.loadScriptDependency(Config.interactJs.src, () => {
+                        new DragDropExt();
+                });
+        }
+
+        private loadScriptDependency(src: string, onload: () => void, integrity?: string, crossOrigin?: string, referrerPolicy?: string) {
+                const script: HTMLScriptElement = document.createElement('script');
+                script.onload = onload;
+                script.async = true;
+                script.src = src;
+                if (integrity) script.integrity = integrity;
+                if (crossOrigin) script.crossOrigin = crossOrigin;
+                if (referrerPolicy) script.referrerPolicy = referrerPolicy;
+                document.head.appendChild(script);
         }
 
         private initSettingPanel() {

@@ -34,12 +34,13 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 ## Dependencies
   + Bootstrap 4 [.css,  .js] (for layout, will be updated to version 5 to be independent with jQuery & FontAwesome)
   + jQuery [.js] (will be removed)
-  + Popper [.js] (will be removed)
+  + Popper [.js] (for dropdown component, will be removed)
   + FontAwesome [.css] (for icons, will be removed)
   + TinyColor [.js] (for color manipulation, will be removed)
   + Prism [.css], Prism core [.js] & Prism autoloader [.js] (for code block syntax highlight)
   + Animate [.css] (for animation)
-  + Webfont [.js] (for dynamic font loading)
+  + Webfont [.js] (for dynamic font loading) {loaded by framework}
+  + Interactive [.js] (for drag&drop extension) {loaded by framework}
 
 ## Installation
 ### For development (optional)

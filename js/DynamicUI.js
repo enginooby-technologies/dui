@@ -1,14 +1,15 @@
-import { fallbackSettingFilePath, settingFilePath } from './Config.js';
+import * as Config from './Config.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js';
 import { StyleRegistry } from './StyleRegistry.js';
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
+import { DragDropExt } from './extensions/DragDropExt.js';
 export class DynamicUI {
     constructor() {
         this.borderRadius = 9;
-        this.loadSettingPanel(settingFilePath)
-            .fail(() => this.loadSettingPanel(fallbackSettingFilePath));
+        this.loadSettingPanel(Config.settingFilePath)
+            .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath));
     }
     static createStyleSheet() {
         var style = document.createElement("style");
@@ -47,22 +48,38 @@ export class DynamicUI {
     }
     init() {
         var _a;
+        DynamicUI.$body = $('body');
         DynamicUI.styleSheet = DynamicUI.createStyleSheet();
         DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
         this.initSettingPanel();
         this.setupSettingEvents();
-        DynamicUI.$body = $('body');
-        this.dynamicColor = new DynamicColor();
-        this.dynamicFont = new DynamicFont();
-        this.dynamicBackground = new DynamicBackground();
         const initStyleName = (_a = DynamicUI.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
         new StyleRegistry(this, initStyleName);
-        $(".status_change .dropdown-item").click(function () {
-            var getStatusText = $(this).text();
-            $(this).closest(".status_dropdown").find(".status__btn").text(getStatusText);
-            var generateStatusClass = `${$(this).attr('data-class')}-status`;
-            $(this).closest(".status_dropdown").attr("data-color", `${generateStatusClass}`);
+        this.dynamicColor = new DynamicColor();
+        this.dynamicBackground = new DynamicBackground();
+        this.loadScriptDependency(Config.webfontJs.src, () => {
+            var _a, _b;
+            this.dynamicFont = new DynamicFont();
+            if ((_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.preferredFontFamily) {
+                (_b = this.dynamicFont) === null || _b === void 0 ? void 0 : _b.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+            }
         });
+        this.loadScriptDependency(Config.interactJs.src, () => {
+            new DragDropExt();
+        });
+    }
+    loadScriptDependency(src, onload, integrity, crossOrigin, referrerPolicy) {
+        const script = document.createElement('script');
+        script.onload = onload;
+        script.async = true;
+        script.src = src;
+        if (integrity)
+            script.integrity = integrity;
+        if (crossOrigin)
+            script.crossOrigin = crossOrigin;
+        if (referrerPolicy)
+            script.referrerPolicy = referrerPolicy;
+        document.head.appendChild(script);
     }
     initSettingPanel() {
         $('#border-radius').attr('value', this.borderRadius);

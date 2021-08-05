@@ -17,6 +17,7 @@
         },
         "homepage": "https://github.com/enginoobz-projects/dynamic-ui-framework#readme",
         "devDependencies": {
+                "@interactjs/types": "^1.10.11",
                 "@types/css-font-loading-module": "0.0.6"
         },
         "dependencies": {
