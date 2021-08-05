@@ -36,17 +36,17 @@ export class DynamicUI {
         public setCurrentStyle(newStyle: Style) {
                 DynamicUI.currentStyle?.onDisable();
                 DynamicUI.$body!.removeClass(DynamicUI.currentStyle?.name);
-                if (DynamicUI.currentStyle) this.dynamicBackground?.removeStylePreferredBgs(DynamicUI.currentStyle);
 
                 DynamicUI.currentStyle = newStyle;
                 DynamicUI.$body!.addClass(DynamicUI.currentStyle.name);
-                this.dynamicBackground?.addStylePreferredBgs(DynamicUI.currentStyle);
+                $(".customizer").hide();
+                DynamicUI.currentStyle.onEnable();
+
+                // update dynamic components
                 if (DynamicUI.currentStyle.preferredFontFamily) {
                         this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
                 }
-
-                $(".customizer").hide();
-                DynamicUI.currentStyle.onEnable();
+                this.dynamicBackground?.onStyleUpdate();
                 this.dynamicColor?.updateChangesFromLastStyle();
         }
 

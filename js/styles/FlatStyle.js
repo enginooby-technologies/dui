@@ -44,7 +44,7 @@ export class FlatStyle extends Style {
     }
     onSchemeColorUpdated() {
         this.lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightSchemeIntensity);
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
+        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
         this.getBgSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');
         this.getBgLightenSchemeRule().style.setProperty('background-color', this.lightenSchemeColor, 'important');
         this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');

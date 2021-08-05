@@ -24,20 +24,19 @@ export class DynamicUI {
         return (_a = this.borderRadiusRule) !== null && _a !== void 0 ? _a : (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
     }
     setCurrentStyle(newStyle) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e;
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onDisable();
         DynamicUI.$body.removeClass((_b = DynamicUI.currentStyle) === null || _b === void 0 ? void 0 : _b.name);
-        if (DynamicUI.currentStyle)
-            (_c = this.dynamicBackground) === null || _c === void 0 ? void 0 : _c.removeStylePreferredBgs(DynamicUI.currentStyle);
         DynamicUI.currentStyle = newStyle;
         DynamicUI.$body.addClass(DynamicUI.currentStyle.name);
-        (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.addStylePreferredBgs(DynamicUI.currentStyle);
-        if (DynamicUI.currentStyle.preferredFontFamily) {
-            (_e = this.dynamicFont) === null || _e === void 0 ? void 0 : _e.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
-        }
         $(".customizer").hide();
         DynamicUI.currentStyle.onEnable();
-        (_f = this.dynamicColor) === null || _f === void 0 ? void 0 : _f.updateChangesFromLastStyle();
+        // update dynamic components
+        if (DynamicUI.currentStyle.preferredFontFamily) {
+            (_c = this.dynamicFont) === null || _c === void 0 ? void 0 : _c.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+        }
+        (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.onStyleUpdate();
+        (_e = this.dynamicColor) === null || _e === void 0 ? void 0 : _e.updateChangesFromLastStyle();
     }
     loadSettingPanel(filePath) {
         return $.get(filePath, function (data) {
