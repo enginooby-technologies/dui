@@ -1643,6 +1643,10 @@ input::-moz-focus-outer {
 }
 
 .win98-style {
+  /* Color */
+  /* Borders */
+  /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
+  /* Code block */
   /* Button */
   /* Checkbox */
   /*Radio */
@@ -1816,6 +1820,15 @@ input::-moz-focus-outer {
   height: 445px;
 }
 
+.win98-style pre {
+  display: block;
+  background: #ffffff;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  padding: 12px 8px;
+  margin: 0;
+}
+
 .win98-style .button {
   background: silver;
   -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
@@ -1922,13 +1935,12 @@ input::-moz-focus-outer {
 .win98-style input[type="password"],
 .win98-style input[type="text"],
 .win98-style textarea,
-.win98-style textarea:focus {
+.win98-style textarea:focus,
+.win98-style pre {
   border-radius: 0 !important;
   background-color: #fff !important;
-  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-          box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
   padding: 3px 4px;
 }
 

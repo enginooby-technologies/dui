@@ -9,9 +9,24 @@
 }
 
 .win98-style {
+        /* Color */
+        $surface: #c0c0c0;
+        $button_face: #dfdfdf;
+        $button_highlight: #ffffff;
+        $button_shadow: #808080;
+        $window_frame: #0a0a0a;
+        $dialog_blue: #000080;
+        $dialog_blue_light: #1084d0;
+        $dialog_gray: #808080;
+        $dialog_gray_light: #b5b5b5;
+        $link_blue: #0000ff;
+        /* Borders */
         $border_rasied_outer: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
         $border_raised_inner: inset -2px -2px grey, inset 2px 2px #dfdfdf;
-        $button_face: #dfdfdf;
+        /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
+        $border_field: inset -1px -1px $button_highlight,
+                inset 1px 1px $button_shadow, inset -2px -2px $button_face,
+                inset 2px 2px $window_frame;
 
         // SCROLL BAR
         ::-webkit-scrollbar {
@@ -166,6 +181,15 @@
                 height: 445px;
         }
 
+        /* Code block */
+        pre {
+                display: block;
+                background: $button_highlight;
+                box-shadow: $border_field;
+                padding: 12px 8px;
+                margin: 0;
+        }
+
         //BASIC COMPONENTS
         /* Button */
         .button {
@@ -268,12 +292,11 @@
         input[type="password"],
         input[type="text"],
         textarea,
-        textarea:focus {
+        textarea:focus,
+        pre {
                 border-radius: 0 !important;
                 background-color: #fff !important;
-                box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
-                        inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-                box-sizing: border-box;
+                box-shadow: $border_field;
                 padding: 3px 4px;
         }
 }
