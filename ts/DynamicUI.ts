@@ -77,12 +77,20 @@ export class DynamicUI {
 
                 this.dynamicColor = new DynamicColor();
                 this.dynamicBackground = new DynamicBackground();
+                this.enableDynamicFont();
+                // this.enableDragDropExtension();
+        }
+
+        private enableDynamicFont() {
                 this.loadScriptDependency(Config.webfontJs.src, () => {
                         this.dynamicFont = new DynamicFont();
                         if (DynamicUI.currentStyle?.preferredFontFamily) {
                                 this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
                         }
                 });
+        }
+
+        private enableDragDropExtension() {
                 this.loadScriptDependency(Config.interactJs.src, () => {
                         new DragDropExt();
                 });
