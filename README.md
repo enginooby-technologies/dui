@@ -32,7 +32,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 </details>
 
 ## Dependencies
-1. Require:
+1. Required:
   + Bootstrap 4 [.css,  .js] (for layout, will be updated to version 5 to be independent with jQuery & FontAwesome)
   + jQuery [.js] (will be removed)
   + Popper [.js] (for dropdown component, will be removed)
