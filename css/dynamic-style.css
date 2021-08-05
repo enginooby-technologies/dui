@@ -1652,7 +1652,8 @@ input::-moz-focus-outer {
   /* Checkbox */
   /*Radio */
   /* Range slider */
-  /* Input & Textarea field */
+  /* Input & Textarea field + dropdown */
+  /* Dropdown */
 }
 
 .win98-style ::-webkit-scrollbar {
@@ -2021,6 +2022,66 @@ input::-moz-focus-outer {
   -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
           box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
   padding: 3px 4px;
+}
+
+.win98-style .dropdown {
+  border-radius: 0 !important;
+  background-color: #fff;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+
+.win98-style .dropdown .dropdown-menu {
+  border-radius: 0;
+  background-color: #ffffff;
+}
+
+.win98-style .dropdown .dropdown-menu .dropdown-item {
+  border-radius: 0;
+}
+
+.win98-style .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #1084d0;
+  color: #ffffff;
+}
+
+.win98-style .dropdown .dropdown-label:focus,
+.win98-style .dropdown.show .dropdown-label {
+  background-color: #000080;
+}
+
+.win98-style .dropdown .dropdown-label:focus p,
+.win98-style .dropdown.show .dropdown-label p {
+  color: #ffffff;
+}
+
+.win98-style .dropdown .dropdown-label {
+  border-radius: 0;
+  background: none;
+  padding: 0 10px;
+}
+
+.win98-style .dropdown .dropdown-toggle {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("/dynamic-ui-framework/icons/win98/button-down.svg");
+  background-image: url("../icons/win98/button-down.svg");
+  background-position: top 1px right 1px;
+  background-repeat: no-repeat;
+  background-size: 23px;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.win98-style .dropdown.show .dropdown-toggle {
+  background-image: url("/dynamic-ui-framework/icons/win98/button-down-active.svg");
+  background-image: url("../icons/win98/button-down-active.svg");
+  background-color: #000080;
+}
+
+.win98-style .dropdown .dropdown-arrow {
+  display: none;
 }
 
 .section,
