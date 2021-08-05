@@ -59,7 +59,7 @@
         ::-webkit-scrollbar-thumb {
                 border-radius: 0;
                 background-color: $button_face;
-                box-shadow: $border_rasied_outer, $border_raised_inner;
+                box-shadow: $border_raised_outer, $border_raised_inner;
         }
         ::-webkit-scrollbar-button:horizontal:start:decrement,
         ::-webkit-scrollbar-button:horizontal:end:increment,
@@ -301,6 +301,76 @@
                 position: absolute;
                 top: 12px;
                 width: 4px;
+        }
+
+        /* Range slider */
+        input[type="range"] {
+                -webkit-appearance: none;
+                width: 95%;
+                background: transparent;
+        }
+
+        input[type="range"]:focus {
+                outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: 21px;
+                width: 11px;
+                background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizontal.svg");
+                background-image: url("../icons/win98/indicator-horizontal.svg");
+                transform: translateY(-8px);
+        }
+
+        input[type="range"].has-box-indicator::-webkit-slider-thumb {
+                background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+                background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
+                transform: translateY(-10px);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+                height: 21px;
+                width: 11px;
+                border: 0;
+                border-radius: 0;
+                background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizonta.svg");
+                background-image: url("../icons/win98/indicator-horizonta.svg");
+                transform: translateY(2px);
+        }
+
+        input[type="range"].has-box-indicator::-moz-range-thumb {
+                background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+                background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
+                transform: translateY(0px);
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 2px;
+                box-sizing: border-box;
+                background: black;
+                border-right: 1px solid grey;
+                border-bottom: 1px solid grey;
+                box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white,
+                        -1px 0 0 darkgrey, -1px -1px 0 darkgrey,
+                        0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+        }
+
+        input[type="range"]::-moz-range-track {
+                width: 100%;
+                height: 2px;
+                box-sizing: border-box;
+                background: black;
+                border-right: 1px solid grey;
+                border-bottom: 1px solid grey;
+                box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white,
+                        -1px 0 0 darkgrey, -1px -1px 0 darkgrey,
+                        0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+        }
+        .range-slider__value {
+                background: none;
+                color: black;
         }
 
         /* Input & Textarea field */

@@ -1645,11 +1645,13 @@ input::-moz-focus-outer {
 .win98-style {
   /* Color */
   /* Borders */
+  /* Window borders flip button-face and button-highlight */
   /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
   /* Code block */
   /* Button */
   /* Checkbox */
   /*Radio */
+  /* Range slider */
   /* Input & Textarea field */
 }
 
@@ -1673,8 +1675,8 @@ input::-moz-focus-outer {
 .win98-style ::-webkit-scrollbar-thumb {
   border-radius: 0;
   background-color: #dfdfdf;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
 }
 
 .win98-style ::-webkit-scrollbar-button:horizontal:start:decrement,
@@ -1820,6 +1822,11 @@ input::-moz-focus-outer {
   height: 445px;
 }
 
+.win98-style code,
+.win98-style code * {
+  font-family: monospace;
+}
+
 .win98-style pre {
   display: block;
   background: #ffffff;
@@ -1830,9 +1837,9 @@ input::-moz-focus-outer {
 }
 
 .win98-style .button {
-  background: silver;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  background: #c0c0c0;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
   border: none;
   border-radius: 0;
   -webkit-box-sizing: border-box;
@@ -1841,9 +1848,10 @@ input::-moz-focus-outer {
   transition: all 0s !important;
 }
 
-.win98-style .button.active {
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+.win98-style .button.active,
+.win98-style .button:not(:disabled):active {
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
 .win98-style .button:focus {
@@ -1851,9 +1859,11 @@ input::-moz-focus-outer {
   outline-offset: -5px;
 }
 
-.win98-style .button:not(:disabled):active {
-  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
-          box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+@media (false) {
+  .win98-style .button:not(:disabled):hover {
+    -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+            box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  }
 }
 
 .win98-style .checkbox label i {
@@ -1862,9 +1872,9 @@ input::-moz-focus-outer {
 
 .win98-style input[type="checkbox"],
 .win98-style input[type="radio"] {
-  appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: 0;
   border: none;
   margin: 0;
@@ -1931,12 +1941,81 @@ input::-moz-focus-outer {
   width: 4px;
 }
 
+.win98-style input[type="range"] {
+  -webkit-appearance: none;
+  width: 95%;
+  background: transparent;
+}
+
+.win98-style input[type="range"]:focus {
+  outline: none;
+}
+
+.win98-style input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 11px;
+  background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizontal.svg");
+  background-image: url("../icons/win98/indicator-horizontal.svg");
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.win98-style input[type="range"].has-box-indicator::-webkit-slider-thumb {
+  background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+  background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.win98-style input[type="range"]::-moz-range-thumb {
+  height: 21px;
+  width: 11px;
+  border: 0;
+  border-radius: 0;
+  background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizonta.svg");
+  background-image: url("../icons/win98/indicator-horizonta.svg");
+  transform: translateY(2px);
+}
+
+.win98-style input[type="range"].has-box-indicator::-moz-range-thumb {
+  background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+  background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
+  transform: translateY(0px);
+}
+
+.win98-style input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  -webkit-box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+          box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+
+.win98-style input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  background: black;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+}
+
+.win98-style .range-slider__value {
+  background: none;
+  color: black;
+}
+
 .win98-style input[type="email"],
 .win98-style input[type="password"],
 .win98-style input[type="text"],
 .win98-style textarea,
-.win98-style textarea:focus,
-.win98-style pre {
+.win98-style textarea:focus {
   border-radius: 0 !important;
   background-color: #fff !important;
   -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
