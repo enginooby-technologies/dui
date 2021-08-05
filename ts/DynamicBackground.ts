@@ -58,7 +58,7 @@ export class DynamicBackground {
 
                 if (!this.updateGlobalInnerBgTriggered) {
                         $(this.innerBgSelector).each((index, element) => {
-                                element.classList.add(style.preferredInnerBg!);
+                                element.classList.add(style.preferredInnerBg);
                         })
                         this.currentInnerBg = style.preferredInnerBg;
                 }
@@ -97,6 +97,8 @@ export class DynamicBackground {
                         if (!this.updateGlobalInnerBgTriggered) {
                                 $(this.innerBgSelector).each((index, element) => {
                                         element.classList.remove(DynamicUI.currentStyle?.preferredInnerBg!);
+                                        // hide default bgColor to see new bg
+                                        element.style.backgroundColor = 'transparent';
                                 });
                         }
 

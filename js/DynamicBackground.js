@@ -84,6 +84,8 @@ export class DynamicBackground {
                 $(this.innerBgSelector).each((index, element) => {
                     var _a;
                     element.classList.remove((_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.preferredInnerBg);
+                    // hide default bgColor to see new bg
+                    element.style.backgroundColor = 'transparent';
                 });
             }
             this.updateGlobalInnerBgTriggered = true;

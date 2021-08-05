@@ -619,6 +619,10 @@ p.scalable {
   }
 }
 
+.display-content > .container {
+  background-color: #d4d4d4;
+}
+
 .button-border {
   display: inline-block;
   padding: 1px;
@@ -2759,7 +2763,7 @@ table,
 }
 
 .none-bg {
-  background-color: #d4d4d4;
+  background-color: #d4d4d4 !important;
   background-image: none;
 }
 
