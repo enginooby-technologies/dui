@@ -1,3 +1,5 @@
+// TODO: Separate static & dynamic properties
+
 @mixin position_relative_title_bar_in_container(
         $container_padding,
         $container_width
@@ -21,8 +23,20 @@
         $dialog_gray_light: #b5b5b5;
         $link_blue: #0000ff;
         /* Borders */
-        $border_rasied_outer: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
-        $border_raised_inner: inset -2px -2px grey, inset 2px 2px #dfdfdf;
+        $border_width: 1px;
+        $border_raised_outer: inset -1px -1px $window_frame,
+                inset 1px 1px $button_highlight;
+        $border_raised_inner: inset -2px -2px $button_shadow,
+                inset 2px 2px $button_face;
+        $border_sunken_outer: inset -1px -1px $button_highlight,
+                inset 1px 1px $window_frame;
+        $border_sunken_inner: inset -2px -2px $button_face,
+                inset 2px 2px $button_shadow;
+        /* Window borders flip button-face and button-highlight */
+        $border_window_outer: inset -1px -1px $window_frame,
+                inset 1px 1px $button_face;
+        $border_window_inner: inset -2px -2px $button_shadow,
+                inset 2px 2px $button_highlight;
         /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
         $border_field: inset -1px -1px $button_highlight,
                 inset 1px 1px $button_shadow, inset -2px -2px $button_face,
@@ -182,6 +196,10 @@
         }
 
         /* Code block */
+        code,
+        code * {
+                font-family: monospace;
+        }
         pre {
                 display: block;
                 background: $button_highlight;
@@ -193,25 +211,25 @@
         //BASIC COMPONENTS
         /* Button */
         .button {
-                background: silver;
-                box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
-                        inset -2px -2px grey, inset 2px 2px #dfdfdf;
+                background: $surface;
+                box-shadow: $border_raised_outer, $border_raised_inner;
                 border: none;
                 border-radius: 0;
                 box-sizing: border-box;
                 transition: all 0s !important;
         }
-        .button.active {
-                box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
-                        inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+        .button.active,
+        .button:not(:disabled):active {
+                box-shadow: $border_sunken_outer, $border_sunken_inner;
         }
         .button:focus {
                 outline: 1.5px dotted #000 !important;
                 outline-offset: -5px;
         }
-        .button:not(:disabled):active {
-                box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
-                        inset -2px -2px #dfdfdf, inset 2px 2px grey;
+        @media (not(hover)) {
+                .button:not(:disabled):hover {
+                        box-shadow: $border_sunken_outer, $border_sunken_inner;
+                }
         }
 
         /* Checkbox */
@@ -223,8 +241,6 @@
         input[type="checkbox"],
         input[type="radio"] {
                 appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
                 background: 0;
                 border: none;
                 margin: 0;
@@ -292,8 +308,7 @@
         input[type="password"],
         input[type="text"],
         textarea,
-        textarea:focus,
-        pre {
+        textarea:focus {
                 border-radius: 0 !important;
                 background-color: #fff !important;
                 box-shadow: $border_field;
