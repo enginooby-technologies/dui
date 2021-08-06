@@ -19,7 +19,7 @@ export function loadFile(filePath) {
     }
 }
 // JS
-function loadScript(script) {
+export function loadScript(script) {
     console.log(`>>> Loading ${script.name.toLocaleUpperCase()} from ${script.src}`);
     const scriptElement = document.createElement('script');
     if (script.onerror)
@@ -104,4 +104,16 @@ export function checkStyleSheetIncludedOrIgnored(sheet) {
                 ((_b = links[i].getAttribute('data-ignore')) === null || _b === void 0 ? void 0 : _b.includes(sheet.name)))
             return true;
     return false;
+}
+export function getDependencies(ref) {
+    var _a;
+    let dependencies = [];
+    for (var i = 0; i < scripts.length; i++) {
+        if ((_a = scripts[i].getAttribute('data-dependency')) === null || _a === void 0 ? void 0 : _a.includes(ref)) {
+            const scriptSrc = scripts[i].getAttribute('data-src');
+            const dependentScript = { src: scriptSrc, name: scriptSrc };
+            dependencies.push(dependentScript);
+        }
+    }
+    return dependencies;
 }

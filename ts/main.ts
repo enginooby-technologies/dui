@@ -16,11 +16,19 @@ Loader.tryLoadStyleSheet(Ref.fontawesomeCss);
 Loader.tryLoadStyleSheet(Ref.bootstrapMinCss);
 
 // in case jquery is included manually
-// TODO: load other jquery-dependent scripts also
-if (Loader.checkScriptIncludedOrIgnored(Ref.jqueryMinJs)) loadSettingButton();
+if (Loader.checkScriptIncludedOrIgnored(Ref.jqueryMinJs)) {
+        loadSettingButton();
+        // ADHOC: load other jquery-dependent scripts also
+        Ref.popperMinJs.onload = () => Loader.tryLoadScript(Ref.bootstrapMinJs);
+        Loader.tryLoadScript(Ref.popperMinJs)
+}
 
 // load required JS
-Ref.jqueryMinJs.onload = () => { Loader.tryLoadScript(Ref.popperMinJs); loadSettingButton() } // HTML/PHP loading dependent on jQuery
+Ref.jqueryMinJs.onload = () => {
+        Loader.getDependencies('jquery').forEach(script => Loader.loadScript(script));
+        Loader.tryLoadScript(Ref.popperMinJs);
+        loadSettingButton();
+} // HTML/PHP loading dependent on jQuery
 Ref.popperMinJs.onload = () => Loader.tryLoadScript(Ref.bootstrapMinJs);
 Loader.tryLoadScript(Ref.jqueryMinJs)
 
@@ -62,12 +70,15 @@ function loadSettingPanel() {
 function onSettingPanelLoaded() {
         settingPanelLoaded = true;
         $settingPanel = $("#setting-section .setting-panel");
-        toggleSettingPanel();
         // lazy loading main framework script
         Ref.dynamicUIJs.onerror = () => Loader.tryLoadScript(Ref.fallbackDynamicUIJs);
         Loader.tryLoadScript(Ref.dynamicUIJs);
         // lazy loading dependencies
         Loader.tryLoadScript(Ref.tinyColorMinJs);
+        // ADHOC: add a delay to hide setting content init process
+        setTimeout(() => {
+                toggleSettingPanel();
+        }, 50)
 }
 
 function toggleSettingPanel() {

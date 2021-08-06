@@ -1,4 +1,4 @@
-import { ScripFile, StyleSheetFile, jqueryMinJs } from "./references.js";
+import { ScriptFile, StyleSheetFile, jqueryMinJs } from "./references.js";
 
 const scripts = document.getElementsByTagName("script");
 const links = document.getElementsByTagName("link");
@@ -21,7 +21,7 @@ export function loadFile(filePath: string) {
 }
 
 // JS
-function loadScript(script: ScripFile) {
+export function loadScript(script: ScriptFile) {
         console.log(`>>> Loading ${script.name.toLocaleUpperCase()} from ${script.src}`);
         const scriptElement: HTMLScriptElement = document.createElement('script');
         if (script.onerror) scriptElement.onerror = script.onerror;
@@ -53,7 +53,7 @@ function loadStyleSheet(sheet: StyleSheetFile) {
 }
 
 // REFACTOR
-export function tryLoadScript(script: ScripFile) {
+export function tryLoadScript(script: ScriptFile) {
         let isFileNeeded: boolean = true;
         if (script.triggerClasses) {
                 isFileNeeded = false;
@@ -82,7 +82,7 @@ export function tryLoadStyleSheet(sheet: StyleSheetFile) {
 // to prevent framework from loading a script/style sheet
 // e.g., <script data-ignore="dont-load-prism-core.min.js-please "></script>
 // REFACTOR
-export function checkScriptIncludedOrIgnored(script: ScripFile) {
+export function checkScriptIncludedOrIgnored(script: ScriptFile) {
         for (var i = 0; i < scripts.length; i++)
                 if (scripts[i].getAttribute('src')?.includes(script.name)
                         ||
@@ -98,4 +98,17 @@ export function checkStyleSheetIncludedOrIgnored(sheet: StyleSheetFile) {
                         links[i].getAttribute('data-ignore')?.includes(sheet.name))
                         return true;
         return false;
+}
+
+export function getDependencies(ref: string) {
+        let dependencies: ScriptFile[] = [];
+        for (var i = 0; i < scripts.length; i++) {
+                if (scripts[i].getAttribute('data-dependency')?.includes(ref)) {
+                        const scriptSrc = scripts[i].getAttribute('data-src')!;
+                        const dependentScript: ScriptFile = { src: scriptSrc, name: scriptSrc }
+                        dependencies.push(dependentScript);
+                }
+        }
+
+        return dependencies;
 }
