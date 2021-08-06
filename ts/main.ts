@@ -1,20 +1,8 @@
-/* FRAMEWORK RESOURCES FOR LAZY LOADING */
-const localFrameworkPath: string = '/dynamic-ui-framework';
-const remoteFrameworkPath: string = 'https://enginoobz.com/dynamic-ui-framework';
-// local paths
-const settingFilePath: string = `${localFrameworkPath}/setting.html`;
-const settingButtonFilePath: string = `${localFrameworkPath}/setting-button.html`;
-const dynamicUIFilePath: string = `${localFrameworkPath}/js/DynamicUI.js`;
-// remote paths: ad-hoc fallback to load file on remote server for different projects
-// TODO: resolve CORS or use CDN
-const fallbackSettingFilePath: string = `${remoteFrameworkPath}/setting.html`;
-const fallbackSettingButtonFilePath: string = `${remoteFrameworkPath}/setting-button.html`;
-const fallbackDynamicUIFilePath: string = `${remoteFrameworkPath}/js/DynamicUI.js`;
 
 // @name is substring of src/href to check if the file is already included manually with <script/link>
 //@triggerClasses are classes needed to appear in page for the file to be loaded 
 //TODO: handle case where element with this class is loaded later into the page
-interface ScripFile {
+export interface ScripFile {
         name: string;
         src: string,
         isModule?: boolean;
@@ -23,44 +11,85 @@ interface ScripFile {
         onerror?: () => void;
         triggerClasses?: string[],
 }
-interface StyleSheetFile {
+export interface StyleSheetFile {
         name: string;
         href: string,
         integrity?: string,
         triggerClasses?: string[],
 }
 
+/* FRAMEWORK  */
+const localFrameworkPath: string = '/dynamic-ui-framework';
+// remote paths: ad-hoc fallback to load file on remote server for different projects
+// TODO: resolve CORS or use CDN
+const remoteFrameworkPath: string = 'https://enginoobz.com/dynamic-ui-framework';
+export const settingFilePath: string = `${localFrameworkPath}/setting.html`;
+export const fallbackSettingFilePath: string = `${remoteFrameworkPath}/setting.html`;
+export const settingButtonFilePath: string = `${localFrameworkPath}/setting-button.html`;
+export const fallbackSettingButtonFilePath: string = `${remoteFrameworkPath}/setting-button.html`;
+export const dynamicUIJs: ScripFile = {
+        name: "DynamicUI.js",
+        src: `${localFrameworkPath}/js/DynamicUI.js`,
+        isModule: true,
+}
+export const fallbackDynamicUIJs: ScripFile = {
+        name: "DynamicUI.js",
+        src: `${remoteFrameworkPath}/js/DynamicUI.js`,
+        isModule: true,
+}
+
 /* DEPENDENCIES */
 // required CSS
-const animateCss: StyleSheetFile = {
+export const animateCss: StyleSheetFile = {
         name: "animate.min.css",
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
         // triggerClasses: ["animate__animated"]
 };
-const bootstrapMinCss: StyleSheetFile = {
+export const bootstrapMinCss: StyleSheetFile = {
         name: "bootstrap.min.css",
         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
         integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 }
-const fontawesomeCss: StyleSheetFile = {
+export const fontawesomeCss: StyleSheetFile = {
         name: "fontawesome",
         href: "https://use.fontawesome.com/releases/v5.15.0/css/all.css",
-        triggerClasses: ["fa", "fab", "fas"]
+        // triggerClasses: ["fa", "fab", "fas"]
 }
+
 // required JS
-const jqueryMinJs = "https://code.jquery.com/jquery-3.6.0.min.js";
-const jqueryMinJsIntegrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=";
-const popperMinJs = "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js";
-const popperMinJsIntegrity = "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo";
-const bootstrapMinJs = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js";
-const bootstrapMinJsIntegrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM";
+const jqueryMinJs: ScripFile = {
+        name: "jquery",
+        src: "https://code.jquery.com/jquery-3.6.0.min.js",
+        integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+}
+const popperMinJs: ScripFile = {
+        name: "popper.min.js",
+        src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
+        integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+}
+const bootstrapMinJs: ScripFile = {
+        name: "bootstrap.min.js",
+        src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+        integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+}
+const tinyColorMinJs: ScripFile = {
+        name: "tinycolor.min.js",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js",
+        integrity: "sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q=="
+}
 //optional
-const tinyColorMinJs = "https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js";
-const tinyColorMinJsIntegrity = "sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q==";
-const prismCoreMinJs = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js";
-const prismCoreMinJsIntegrity = "sha512-hM0R3pW9UdoNG9T+oIW5pG9ndvy3OKChFfVTKzjyxNW9xrt6vAbD3OeFWdSLQ8mjKSgd9dSO3RXn3tojQtiA8Q=="
-const prismAutoloaderMinJs = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js";
-const prismAutoloaderMinJsIntegrity = "sha512-xCfKr8zIONbip3Q1XG/u5x40hoJ0/DtP1bxyMEi0GWzUFoUffE+Dfw1Br8j55RRt9qG7bGKsh+4tSb1CvFHPSA==";
+const prismCoreMinJs: ScripFile = {
+        name: "prism-core.min.js",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js",
+        integrity: "sha512-hM0R3pW9UdoNG9T+oIW5pG9ndvy3OKChFfVTKzjyxNW9xrt6vAbD3OeFWdSLQ8mjKSgd9dSO3RXn3tojQtiA8Q==",
+        triggerClasses: ["code-block"]
+}
+const prismAutoloaderMinJs: ScripFile = {
+        name: "prism-autoloader.min.js",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js",
+        integrity: "sha512-xCfKr8zIONbip3Q1XG/u5x40hoJ0/DtP1bxyMEi0GWzUFoUffE+Dfw1Br8j55RRt9qG7bGKsh+4tSb1CvFHPSA==",
+        triggerClasses: ["code-block"]
+}
 const prismMinCss: StyleSheetFile = {
         name: "prism.min.css",
         href: "https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css",
@@ -75,6 +104,7 @@ const prismMinCss: StyleSheetFile = {
 const scripts = document.getElementsByTagName("script");
 const links = document.getElementsByTagName("link");
 let settingPanelLoaded: boolean = false;
+let settingButtonLoaded: boolean = false;
 let $settingButton: JQuery<HTMLElement>;
 let $settingPanel: JQuery<HTMLElement>;
 
@@ -82,27 +112,27 @@ tryLoadStyleSheet(animateCss);
 tryLoadStyleSheet(fontawesomeCss);
 tryLoadStyleSheet(bootstrapMinCss);
 
+// in case jquery is included manually
+// TODO: load other jquery-dependent scripts also
+if (isScriptIncludedOrIgnored(jqueryMinJs)) loadSettingButton();
+
 // defer loading dependencies (required)
-if (!isScriptIncludedOrIgnored('jquery')) {
-        loadScript(jqueryMinJs, jqueryMinJsIntegrity, undefined, () => {
-                loadScript(popperMinJs, popperMinJsIntegrity, undefined, () => {
-                        loadScript(bootstrapMinJs, bootstrapMinJsIntegrity, undefined, loadSettingButton)
-                })
-        })
-} else loadSettingButton();
+jqueryMinJs.onload = () => { tryLoadScript(popperMinJs); loadSettingButton() } // HTML/PHP loading dependent on jQuery
+popperMinJs.onload = () => tryLoadScript(bootstrapMinJs);
+tryLoadScript(jqueryMinJs)
 
 // defer loading dependencies (optional)
 tryLoadStyleSheet(prismMinCss);
-if (document.querySelector('.code-block')) {
-        // TODO: manually activate Prism to highlight code after load
-        if (!isScriptIncludedOrIgnored('prism-core.min.js'))
-                loadScript(prismCoreMinJs, prismCoreMinJsIntegrity);
-        if (!isScriptIncludedOrIgnored('prism-autoloader.min.js'))
-                loadScript(prismAutoloaderMinJs, prismAutoloaderMinJsIntegrity);
-}
+tryLoadScript(prismCoreMinJs);
+tryLoadScript(prismAutoloaderMinJs);
 
 // defer loading setting button
 function loadSettingButton() {
+        // prevent loading multiple times
+        if (settingButtonLoaded) return;
+        settingButtonLoaded = true;
+
+        console.log(">>> Loading Setting Button")
         loadFile(settingButtonFilePath)
                 .done(setupButtonEvent)
                 .fail(() => loadFile(fallbackSettingButtonFilePath)
@@ -117,11 +147,12 @@ function loadFile(filePath: string) {
 
 // to prevent framework from loading a script/style shet
 // e.g., <script data-ignore="dont-load-prism-core.min.js-please "></script>
-function isScriptIncludedOrIgnored(scriptName: string) {
+// REFACTOR
+function isScriptIncludedOrIgnored(script: ScripFile) {
         for (var i = 0; i < scripts.length; i++)
-                if (scripts[i].getAttribute('src')?.includes(scriptName)
+                if (scripts[i].getAttribute('src')?.includes(script.name)
                         ||
-                        scripts[i].getAttribute('data-ignore')?.includes(scriptName))
+                        scripts[i].getAttribute('data-ignore')?.includes(script.name))
                         return true;
         return false;
 }
@@ -154,12 +185,12 @@ function loadSettingPanel() {
 function onSettingPanelLoaded() {
         settingPanelLoaded = true;
         $settingPanel = $("#setting-section .setting-panel");
+        toggleSettingPanel();
         // lazy loading main framework script
-        loadScript(dynamicUIFilePath, undefined, true, toggleSettingPanel, () => {
-                loadScript(fallbackDynamicUIFilePath, undefined, true, toggleSettingPanel)
-        });
+        dynamicUIJs.onerror = () => tryLoadScript(fallbackDynamicUIJs);
+        tryLoadScript(dynamicUIJs);
         // lazy loading dependencies
-        loadScript(tinyColorMinJs, tinyColorMinJsIntegrity);
+        tryLoadScript(tinyColorMinJs);
 }
 
 function toggleSettingPanel() {
@@ -167,18 +198,33 @@ function toggleSettingPanel() {
         $settingButton.toggleClass('active');
 }
 
-function loadScript(src: string, integrity?: string, isModule?: boolean, onload?: () => void, onerror?: () => void) {
-        const script: HTMLScriptElement = document.createElement('script');
-        if (onerror) script.onerror = onerror;
-        if (onload) script.onload = onload;
-        script.src = src;
-        if (isModule) script.type = "module";
-        if (integrity) {
-                script.integrity = integrity;
-                script.crossOrigin = "anonymous";
-                script.referrerPolicy = "no-referrer";
+function loadScript(script: ScripFile) {
+        console.log(`>>> Loading ${script.name.toLocaleUpperCase()} from ${script.src}`);
+        const scriptElement: HTMLScriptElement = document.createElement('script');
+        if (script.onerror) scriptElement.onerror = script.onerror;
+        if (script.onload) scriptElement.onload = script.onload;
+        scriptElement.src = script.src;
+        if (script.isModule) scriptElement.type = "module";
+        if (script.integrity) {
+                scriptElement.integrity = script.integrity;
+                scriptElement.crossOrigin = "anonymous";
+                scriptElement.referrerPolicy = "no-referrer";
         }
-        document.head.appendChild(script);
+        document.head.appendChild(scriptElement);
+}
+
+// REFACTOR
+function tryLoadScript(script: ScripFile) {
+        let isFileNeeded: boolean = true;
+        if (script.triggerClasses) {
+                isFileNeeded = false;
+                for (let className of script.triggerClasses) {
+                        if (document.querySelector("." + className)) isFileNeeded = true;
+                        break;
+                }
+        }
+        script.triggerClasses?.forEach(className => { if (document.querySelector("." + className)) isFileNeeded = true; })
+        if (isFileNeeded && !isScriptIncludedOrIgnored(script)) loadScript(script);
 }
 
 function tryLoadStyleSheet(sheet: StyleSheetFile) {
