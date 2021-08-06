@@ -31,12 +31,12 @@ export const settingButtonFilePath: string = `${localFrameworkPath}/setting-butt
 export const fallbackSettingButtonFilePath: string = `${remoteFrameworkPath}/setting-button.html`;
 export const dynamicUIJs: ScriptFile = {
         name: "DynamicUI.js",
-        src: `${localFrameworkPath}/js/DynamicUI.js`,
+        src: `${localFrameworkPath}/js/dynamic/DynamicUI.js`,
         isModule: true,
 }
 export const fallbackDynamicUIJs: ScriptFile = {
         name: "DynamicUI.js",
-        src: `${remoteFrameworkPath}/js/DynamicUI.js`,
+        src: `${remoteFrameworkPath}/js/dynamic/DynamicUI.js`,
         isModule: true,
 }
 

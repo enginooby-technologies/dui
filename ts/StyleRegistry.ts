@@ -5,7 +5,7 @@ import { GlassStyle } from "./styles/GlassStyle.js";
 import { NesStyle } from "./styles/NesStyle.js";
 import { Win98Style } from "./styles/Win98Style.js";
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from "./StyleConfig.js";
-import { DynamicUI } from "./DynamicUI.js";
+import { DynamicUI } from "./dynamic/DynamicUI.js";
 
 export class StyleRegistry {
         private dynamicUI: DynamicUI;

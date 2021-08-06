@@ -1,5 +1,5 @@
 // import WebFont from "webfontloader";
-import * as DynamicSelectors from './selectors/DynamicSelectors.js'
+import * as DynamicSelectors from '../selectors/DynamicSelectors.js'
 import { DynamicUI } from "./DynamicUI.js";
 
 class FontPreset {

@@ -1,6 +1,6 @@
 import { Style } from '../base/Style.js';
 import * as Win98Seletors from '../selectors/Win98Seletors.js';
-import { DynamicColor } from '../DynamicColor.js';
+import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { Win98Config } from '../StyleConfig.js';
 export class Win98Style extends Style {
     constructor() {

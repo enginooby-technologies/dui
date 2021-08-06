@@ -1,7 +1,7 @@
-import { TinyColor } from './base/TinyColor.js';
+import { TinyColor } from '../base/TinyColor.js';
 import { DynamicUI } from './DynamicUI.js';
-import * as DynamicSelectors from './selectors/DynamicSelectors.js';
-import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from './StyleConfig.js';
+import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
 export class DynamicColor {

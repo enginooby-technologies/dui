@@ -1,6 +1,6 @@
 import * as NeuSelectors from '../selectors/NeuSelectors.js'
 import { Style } from '../base/Style.js';
-import { DynamicColor } from '../DynamicColor.js';
+import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NeuConfig } from '../StyleConfig.js';
 
 enum BorderStyle { solid, double, dotted, dashed }; // order must matchs with id from HTML radio

@@ -4,7 +4,7 @@ import { TinyColor } from '../base/TinyColor.js';
 //TODO: DRY with FlatStyle
 import * as GlassSelectors from '../selectors/GlassSelectors.js';
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
-import { DynamicColor } from '../DynamicColor.js';
+import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
 export class GlassStyle extends Style {
     constructor() {

@@ -1,6 +1,6 @@
 import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
-import { DynamicColor } from '../DynamicColor.js';
+import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NesConfig } from '../StyleConfig.js';
 
 export class NesStyle extends Style {

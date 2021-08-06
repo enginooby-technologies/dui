@@ -1,4 +1,4 @@
-import { DynamicUI } from '../DynamicUI.js';
+import { DynamicUI } from '../dynamic/DynamicUI.js';
 import { StyleConfig } from '../StyleConfig.js';
 
 export abstract class Style {

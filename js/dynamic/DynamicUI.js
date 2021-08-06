@@ -1,11 +1,11 @@
-import * as DynamicSelectors from './selectors/DynamicSelectors.js';
-import * as Ref from "./references.js";
-import * as Loader from "./loader.js";
+import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
+import * as Ref from "../references.js";
+import * as Loader from "../loader.js";
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
-import { DragDropExt } from './extensions/DragDropExt.js';
-import { StyleRegistry } from './StyleRegistry.js';
+import { DragDropExt } from '../extensions/DragDropExt.js';
+import { StyleRegistry } from '../StyleRegistry.js';
 export class DynamicUI {
     constructor() {
         var _a;

@@ -1,4 +1,4 @@
-import { DynamicUI } from '../DynamicUI.js';
+import { DynamicUI } from '../dynamic/DynamicUI.js';
 export class Style {
     constructor(styleConfig) {
         var _a, _b;

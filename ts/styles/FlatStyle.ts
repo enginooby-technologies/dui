@@ -1,6 +1,6 @@
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { Style } from '../base/Style.js';
-import { DynamicColor } from '../DynamicColor.js';
+import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { FlatConfig } from '../StyleConfig.js';
 
 export class FlatStyle extends Style {
