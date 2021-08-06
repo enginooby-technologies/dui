@@ -1,12 +1,12 @@
 import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { NesConfig } from '../StyleConfig.js';
 
 export class NesStyle extends Style {
         //  Singleton Pattern
         private static _instance: NesStyle = new NesStyle();
-        private constructor() { super(StyleName.Nes, 'wintery-sunburst-bg', 'none-bg', 'Press Start 2P') }
+        private constructor() { super(NesConfig) }
         public static get Instance(): NesStyle {
                 NesStyle._instance ??= new NesStyle();
                 return NesStyle._instance;

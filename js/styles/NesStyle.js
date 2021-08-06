@@ -1,10 +1,10 @@
 import * as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { NesConfig } from '../StyleConfig.js';
 export class NesStyle extends Style {
     constructor() {
-        super(StyleName.Nes, 'wintery-sunburst-bg', 'none-bg', 'Press Start 2P');
+        super(NesConfig);
         // param: border style
         // border-image - repeat: space;
         // border - image - repeat: stretch;

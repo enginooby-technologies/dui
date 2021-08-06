@@ -1,11 +1,11 @@
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import *as Win98Seletors from '../selectors/Win98Seletors.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { Win98Config } from '../StyleConfig.js';
 
 export class Win98Style extends Style {
         private static _instance: Win98Style = new Win98Style();
-        private constructor() { super(StyleName.Win98, 'windows98-bg', 'none-bg') }
+        private constructor() { super(Win98Config) }
         public static get Instance(): Win98Style {
                 Win98Style._instance ??= new Win98Style();
                 return Win98Style._instance;

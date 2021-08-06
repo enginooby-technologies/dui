@@ -1,17 +1,28 @@
-import * as Config from './Config.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js';
-import { StyleRegistry } from './StyleRegistry.js';
+import * as Ref from "./references.js";
+import * as Loader from "./loader.js";
 import { DynamicColor } from './DynamicColor.js';
 import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
 import { DragDropExt } from './extensions/DragDropExt.js';
+import { StyleRegistry } from './StyleRegistry.js';
 export class DynamicUI {
     constructor() {
+        var _a;
+        /* DYNAMIC BORDER */
         this.borderRadius = 9;
-        this.init();
-        // this.loadSettingPanel(Config.settingFilePath)
-        //         .fail(() => this.loadSettingPanel(Config.fallbackSettingFilePath)
-        //         );
+        DynamicUI.$body = $('body');
+        DynamicUI.styleSheet = DynamicUI.createStyleSheet();
+        DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
+        this.initSettingPanel();
+        this.setupSettingEvents();
+        // get init class "...-style" from body
+        const initStyleName = (_a = DynamicUI.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
+        new StyleRegistry(this, initStyleName);
+        this.dynamicColor = new DynamicColor();
+        this.dynamicBackground = new DynamicBackground();
+        this.enableDynamicFont();
+        // this.enableDragDropExtension();
     }
     static createStyleSheet() {
         var style = document.createElement("style");
@@ -20,10 +31,6 @@ export class DynamicUI {
     }
     static insertEmptyRule(selector) {
         return DynamicUI.cssRules[DynamicUI.styleSheet.insertRule(`${selector} {}`)];
-    }
-    getBorderRadiusRule() {
-        var _a;
-        return (_a = this.borderRadiusRule) !== null && _a !== void 0 ? _a : (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
     }
     setCurrentStyle(newStyle) {
         var _a, _b, _c, _d, _e;
@@ -40,29 +47,8 @@ export class DynamicUI {
         (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.onStyleUpdate();
         (_e = this.dynamicColor) === null || _e === void 0 ? void 0 : _e.updateChangesFromLastStyle();
     }
-    loadSettingPanel(filePath) {
-        return $.get(filePath, function (data) {
-            $('body').append(data);
-        }).done(() => {
-            this.init();
-        });
-    }
-    init() {
-        var _a;
-        DynamicUI.$body = $('body');
-        DynamicUI.styleSheet = DynamicUI.createStyleSheet();
-        DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
-        this.initSettingPanel();
-        this.setupSettingEvents();
-        const initStyleName = (_a = DynamicUI.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
-        new StyleRegistry(this, initStyleName);
-        this.dynamicColor = new DynamicColor();
-        this.dynamicBackground = new DynamicBackground();
-        this.enableDynamicFont();
-        // this.enableDragDropExtension();
-    }
     enableDynamicFont() {
-        this.loadScriptDependency(Config.webfontJs.src, () => {
+        Loader.tryLoadScript(Ref.webfontJs, () => {
             var _a, _b;
             this.dynamicFont = new DynamicFont();
             if ((_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.preferredFontFamily) {
@@ -71,38 +57,24 @@ export class DynamicUI {
         });
     }
     enableDragDropExtension() {
-        this.loadScriptDependency(Config.interactJs.src, () => {
+        Loader.tryLoadScript(Ref.interactMinJs, () => {
             new DragDropExt();
         });
-    }
-    loadScriptDependency(src, onload, integrity, crossOrigin, referrerPolicy) {
-        const script = document.createElement('script');
-        script.onload = onload;
-        script.async = true;
-        script.src = src;
-        if (integrity)
-            script.integrity = integrity;
-        if (crossOrigin)
-            script.crossOrigin = crossOrigin;
-        if (referrerPolicy)
-            script.referrerPolicy = referrerPolicy;
-        document.head.appendChild(script);
     }
     initSettingPanel() {
         $('#border-radius').attr('value', this.borderRadius);
         $("#border-radius").next('.range-slider__value').html(this.borderRadius.toString());
     }
     setupSettingEvents() {
-        // $(" .setting-button-border").on('click', function () {
-        //         $("#setting-section .setting-panel").toggleClass('show');
-        //         $(this).toggleClass('active');
-        //         $('#setting-section .setting-button').toggleClass('active');
-        // });
         $('.theme-skin.radio-button-group .button').on('click', event => {
             $('.theme-skin.radio-button-group .button').removeClass('active');
             $(event.currentTarget).addClass('active');
         });
         this.setupRangeSliderEvents();
+    }
+    getBorderRadiusRule() {
+        var _a;
+        return (_a = this.borderRadiusRule) !== null && _a !== void 0 ? _a : (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
     }
     setupRangeSliderEvents() {
         $("#border-radius").on('input', (event) => {

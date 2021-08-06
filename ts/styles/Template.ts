@@ -1,11 +1,11 @@
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { FlatConfig } from '../StyleConfig.js';
 
 export class Template extends Style {
         private static _instance: Template = new Template();
         // change this
-        private constructor() { super(StyleName.Nes, 'wintery-sunburst-bg', 'none-bg', 'Press Start 2P') }
+        private constructor() { super(FlatConfig) }
         public static get Instance(): Template {
                 Template._instance ??= new Template();
                 return Template._instance;

@@ -102,3 +102,11 @@ export const prismMinCss: StyleSheetFile = {
         integrity: "sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==",
         triggerClasses: ["code-block"]
 }
+export const webfontJs: ScriptFile = {
+        name: "webfont.js",
+        src: "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
+}
+export const interactMinJs: ScriptFile = {
+        name: "interact.min.js",
+        src: "https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"
+}

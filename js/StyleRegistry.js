@@ -1,15 +1,11 @@
-/*
-Responsibility: manage, load all styles & initialize current style of the theme
-Reason to change: add/remove a style, change the first style
-*/
 import { FlatStyle } from "./styles/FlatStyle.js";
 import { NeuStyle } from "./styles/NeuStyle.js";
 import { GlassStyle } from "./styles/GlassStyle.js";
-import { StyleName } from "./Config.js";
 import { NesStyle } from "./styles/NesStyle.js";
 import { Win98Style } from "./styles/Win98Style.js";
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from "./StyleConfig.js";
 export class StyleRegistry {
-    constructor(dynamicUI, initStyle = StyleName.Neu) {
+    constructor(dynamicUI, initStyle = NeuConfig.name) {
         this.dynamicUI = dynamicUI;
         this.$uiStyleDropdownLabel = $(`#dropdown-ui-style .dropdown-label p`);
         const styleFullname = $(`#dropdown-ui-style .dropdown-item[value=${initStyle}`).text();
@@ -29,16 +25,16 @@ export class StyleRegistry {
         });
     }
     getStyleInstanceByName(name) {
-        // DR
-        if (name == StyleName.Flat)
+        // DRY
+        if (name == FlatConfig.name)
             return FlatStyle.Instance;
-        if (name == StyleName.Neu)
+        if (name == NeuConfig.name)
             return NeuStyle.Instance;
-        if (name == StyleName.Glass)
+        if (name == GlassConfig.name)
             return GlassStyle.Instance;
-        if (name == StyleName.Nes)
+        if (name == NesConfig.name)
             return NesStyle.Instance;
-        if (name == StyleName.Win98)
+        if (name == Win98Config.name)
             return Win98Style.Instance;
         throw Error("Style instance not found!");
     }

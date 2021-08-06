@@ -1,7 +1,7 @@
 import * as NeuSelectors from '../selectors/NeuSelectors.js';
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { NeuConfig } from '../StyleConfig.js';
 var BorderStyle;
 (function (BorderStyle) {
     BorderStyle[BorderStyle["solid"] = 0] = "solid";
@@ -13,7 +13,7 @@ var BorderStyle;
 // REFACTOR: generic singleton
 export class NeuStyle extends Style {
     constructor() {
-        super(StyleName.Neu);
+        super(NeuConfig);
         this.distanceX = 3;
         this.distanceY = 3;
         this.blur = 4;

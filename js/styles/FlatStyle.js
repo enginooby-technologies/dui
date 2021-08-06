@@ -1,10 +1,10 @@
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { FlatConfig } from '../StyleConfig.js';
 export class FlatStyle extends Style {
     constructor() {
-        super(StyleName.Flat);
+        super(FlatConfig);
         this.lightSchemeIntensity = 5;
         this.lightenSchemeColor = "#e1e1e1";
         this.darkHighlightIntensity = 15;

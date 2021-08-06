@@ -4,11 +4,11 @@ import { TinyColor } from '../base/TinyColor.js';
 //TODO: DRY with FlatStyle
 import * as GlassSelectors from '../selectors/GlassSelectors.js';
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { GlassConfig } from '../StyleConfig.js';
 export class GlassStyle extends Style {
     constructor() {
-        super(StyleName.Glass, 'animated-gradient-bg');
+        super(GlassConfig);
         this.blur = '10';
         this.transparency = '0.6';
         this.borderSize = '1';

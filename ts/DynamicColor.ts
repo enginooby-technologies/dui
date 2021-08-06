@@ -1,8 +1,8 @@
 import { Color } from './base/Color.js';
 import { TinyColor } from './base/TinyColor.js';
-import { StyleName } from './Config.js';
 import { DynamicUI } from './DynamicUI.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js'
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from './StyleConfig.js';
 
 const lightMutedBaseColor: string = "#b2b2b2";
 const darkMutedBaseColor: string = "#4D4D4D";
@@ -31,9 +31,9 @@ export class DynamicColor {
 
         // TODO: remove these and just compare colors between DynamicUI and currentStyle
         //populate all style names since we have init css files
-        stylesWithUpdatedSchemeColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
-        stylesWithUpdatedHighlightColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
-        stylesWithUpdatedBaseColor: StyleName[] = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
+        stylesWithUpdatedSchemeColor: string[] = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
+        stylesWithUpdatedHighlightColor: string[] = this.stylesWithUpdatedSchemeColor;
+        stylesWithUpdatedBaseColor: string[] = this.stylesWithUpdatedSchemeColor;
 
         public getBgHighlightRule(): CSSStyleRule {
                 return this.bgHighlightRule ?? (this.bgHighlightRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgHighlightSelectors));

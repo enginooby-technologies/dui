@@ -1,8 +1,8 @@
 import { Style } from '../base/Style.js';
-import { StyleName } from '../Config.js';
+import { FlatConfig } from '../StyleConfig.js';
 export class Template extends Style {
     // change this
-    constructor() { super(StyleName.Nes, 'wintery-sunburst-bg', 'none-bg', 'Press Start 2P'); }
+    constructor() { super(FlatConfig); }
     static get Instance() {
         var _a;
         (_a = Template._instance) !== null && _a !== void 0 ? _a : (Template._instance = new Template());

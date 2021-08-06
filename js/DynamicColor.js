@@ -1,16 +1,16 @@
 import { TinyColor } from './base/TinyColor.js';
-import { StyleName } from './Config.js';
 import { DynamicUI } from './DynamicUI.js';
 import * as DynamicSelectors from './selectors/DynamicSelectors.js';
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from './StyleConfig.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
 export class DynamicColor {
     constructor() {
         // TODO: remove these and just compare colors between DynamicUI and currentStyle
         //populate all style names since we have init css files
-        this.stylesWithUpdatedSchemeColor = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
-        this.stylesWithUpdatedHighlightColor = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
-        this.stylesWithUpdatedBaseColor = [StyleName.Flat, StyleName.Glass, StyleName.Neu];
+        this.stylesWithUpdatedSchemeColor = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
+        this.stylesWithUpdatedHighlightColor = this.stylesWithUpdatedSchemeColor;
+        this.stylesWithUpdatedBaseColor = this.stylesWithUpdatedSchemeColor;
         this.$squareImg = $(".hero-image .square img");
         $("#scheme-color-picker").attr('value', DynamicColor.schemeColor.hex);
         $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);

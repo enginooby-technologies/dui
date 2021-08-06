@@ -5,13 +5,13 @@ import { TinyColor } from '../base/TinyColor.js';
 //TODO: DRY with FlatStyle
 import * as GlassSelectors from '../selectors/GlassSelectors.js'
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
-import { StyleName } from '../Config.js';
 import { DynamicColor } from '../DynamicColor.js';
+import { GlassConfig } from '../StyleConfig.js';
 
 export class GlassStyle extends Style {
         // Singleton Pattern
         private static _instance: GlassStyle;
-        private constructor() { super(StyleName.Glass, 'animated-gradient-bg') }
+        private constructor() { super(GlassConfig) }
         public static get Instance(): GlassStyle {
                 GlassStyle._instance ??= new GlassStyle();
                 return GlassStyle._instance;
