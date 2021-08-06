@@ -1,0 +1,18 @@
+$transition_duration: 0.8s;
+
+.image-border,
+.box-border,
+.form-group,
+.blog-intro,
+.blog-image,
+.checkbox label,
+.segmented-control,
+.badge-border {
+        transition: $transition_duration all ease !important;
+        -webkit-transition: $transition_duration all ease !important;
+}
+
+.radio-selection {
+        transition: 0.4s all ease !important;
+        -webkit-transition: 0.4s all ease !important;
+}

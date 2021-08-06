@@ -1,5 +1,189 @@
-// can  be scale by zoom without affectting on other elements
+$agencyFbRegular: "/assets/fonts/agency-fb-regular/AgencyFB-Reg";
+$agencyFbBold: "/assets/fonts/agency-fb-bold/AgencyFB-Bold";
+
+@font-face {
+        font-family: "Agency FB";
+        src: url("#{$agencyFbRegular}.ttf");
+        src: url("#{$agencyFbRegular}.eot") format("embedded-opentype"),
+                url("#{$agencyFbRegular}.woff2") format("woff2"),
+                url("#{$agencyFbRegular}.woff") format("woff"),
+                url("#{$agencyFbRegular}.ttf") format("truetype"),
+                url("#{$agencyFbRegular}.svg") format("svg");
+        font-display: swap;
+}
+
+@font-face {
+        font-family: "Agency FB Bold";
+        src: url("#{$agencyFbBold}.ttf");
+        src: url("#{$agencyFbBold}.eot") format("embedded-opentype"),
+                url("#{$agencyFbBold}.woff2") format("woff2"),
+                url("#{$agencyFbBold}.woff") format("woff"),
+                url("#{$agencyFbBold}.ttf") format("truetype"),
+                url("#{$agencyFbBold}.svg") format("svg");
+        font-display: swap;
+}
+
+h2,
+h5 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+}
+a {
+        text-decoration: none;
+        background-color: transparent;
+}
+h2,
+h5 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+}
+h2 {
+        font-size: 2rem;
+}
+h5 {
+        font-size: 1.25rem;
+}
+h2,
+h5 {
+        font-family: "Agency FB Bold", sans-serif;
+        line-height: 1.618;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        line-height: 1.2;
+}
+body {
+        font-family: "Agency FB", sans-serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+}
+h2 {
+        font-size: 3rem;
+}
+h5 {
+        font-size: 1.75rem;
+}
+h2 {
+        font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+        font-family: $fontBold;
+        line-height: 1.618;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        line-height: 1.2;
+}
+
+body {
+        font-family: $fontRegular;
+        font-size: 1.35rem;
+        font-weight: 400;
+}
+
+p {
+        font-size: 1.35rem;
+}
+
+h1,
+.h1 {
+        margin-top: 0;
+        font-size: 4rem;
+}
+
+h2,
+.h2 {
+        font-size: 3rem;
+}
+
+h3,
+.h3 {
+        font-size: 2.5rem;
+}
+
+h4,
+.h4 {
+        font-size: 2rem;
+}
+
+h5,
+.h5 {
+        font-size: 1.75rem;
+}
+
+h6,
+.h6 {
+        font-size: 1.5rem;
+}
+
+.z-index {
+        z-index: 2;
+}
+
+h2,
+h2 span {
+        font-weight: 700;
+}
+
+p {
+        word-break: break-all;
+        /* Non standard for WebKit */
+        word-break: break-word;
+        // insert a hypen before each break
+        hyphens: auto;
+}
+
+.paragraph-title {
+        font-family: $fontBold;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+}
+
+.title-wrapper {
+        text-align: center;
+        font-size: 3.5rem;
+        font-weight: 900;
+        opacity: 0.12;
+        font-family: $fontTitle;
+        margin-top: -18px;
+}
+
+.title-content {
+        text-align: center;
+        position: relative;
+        top: -48px;
+}
+
+.title-content h2 {
+        font-size: 32px;
+        font-weight: 900;
+        font-family: $fontTitle;
+        margin-bottom: 0;
+}
+
 p.scalable {
-  padding: 0 !important;
-  margin: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+}
+
+a:hover {
+        text-decoration: none;
+}
+
+a,
+button {
+        outline: none !important;
+        text-decoration: none;
 }
