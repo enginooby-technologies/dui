@@ -52,6 +52,10 @@ function loadStyleSheet(sheet) {
     document.head.insertBefore(link, document.getElementsByTagName("head")[0].firstChild);
 }
 // REFACTOR
+// callback will excecute regardless the script is loaded or not
+// in case load script, it will be guaranted to execute after finish loading
+// This is used for loading a chain of scripts, when every of them is optional
+// E.g. load jQuery -> Popper -> Bootstrap
 export function tryLoadScript(script, callback) {
     var _a;
     let isFileNeeded = true;

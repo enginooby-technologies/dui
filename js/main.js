@@ -1,8 +1,5 @@
 import * as Ref from "./references.js";
 import * as Loader from "./loader.js";
-/* CUSTOM PROJECT-SPECIFIC JS*/
-// dependent
-// let dependentJquery
 let settingPanelLoaded = false;
 let settingButtonLoaded = false;
 let $settingButton;
@@ -11,30 +8,20 @@ let $settingPanel;
 Loader.tryLoadStyleSheet(Ref.animateCss);
 Loader.tryLoadStyleSheet(Ref.fontawesomeCss);
 Loader.tryLoadStyleSheet(Ref.bootstrapMinCss);
-// in case jquery is included manually
-if (Loader.checkScriptIncludedOrIgnored(Ref.jqueryMinJs)) {
-    loadSettingButton();
-    // ADHOC: load other jquery-dependent scripts also
-    Ref.popperMinJs.onload = () => Loader.tryLoadScript(Ref.bootstrapMinJs);
-    Loader.tryLoadScript(Ref.popperMinJs);
-}
 // load required JS
-Ref.jqueryMinJs.onload = () => {
-    Loader.getDependencies('jquery').forEach(script => Loader.loadScript(script));
-    Loader.tryLoadScript(Ref.popperMinJs);
-    loadSettingButton();
-}; // HTML/PHP loading dependent on jQuery
-Ref.popperMinJs.onload = () => Loader.tryLoadScript(Ref.bootstrapMinJs);
-Loader.tryLoadScript(Ref.jqueryMinJs);
+Loader.tryLoadScript(Ref.jqueryMinJs, () => {
+    loadSettingButton(); // HTML/PHP loading dependent on jQuery
+    Loader.tryLoadScript(Ref.popperMinJs, () => {
+        Loader.tryLoadScript(Ref.bootstrapMinJs);
+    });
+});
 // load option JS & CSS
 Loader.tryLoadScript(Ref.prismCoreMinJs, () => {
     Loader.tryLoadScript(Ref.prismAutoloaderMinJs, () => {
         Loader.tryLoadStyleSheet(Ref.prismMinCss);
         if (Loader.checkScriptIncludedOrIgnored(Ref.prismAutoloaderMinJs)) {
             // @ts-ignore
-            Prism.highlightAll(false, function () {
-                console.log('[Prism] Syntax highlight completed');
-            });
+            Prism.highlightAll(false, function () { });
         }
     });
 });
