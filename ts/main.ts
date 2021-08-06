@@ -1,5 +1,5 @@
 import * as Ref from "./references.js";
-import * as Loader from "./loader.js"
+import { checkScriptIncludedOrIgnored, loadFile, tryLoadScript, tryLoadStyleSheet } from "./loader.js";
 
 let settingPanelLoaded: boolean = false;
 let settingButtonLoaded: boolean = false;
@@ -7,23 +7,23 @@ let $settingButton: JQuery<HTMLElement>;
 let $settingPanel: JQuery<HTMLElement>;
 
 // load required CSS
-Loader.tryLoadStyleSheet(Ref.animateCss);
-Loader.tryLoadStyleSheet(Ref.fontawesomeCss);
-Loader.tryLoadStyleSheet(Ref.bootstrapMinCss);
+tryLoadStyleSheet(Ref.animateCss);
+tryLoadStyleSheet(Ref.fontawesomeCss);
+tryLoadStyleSheet(Ref.bootstrapMinCss);
 
 // load required JS
-Loader.tryLoadScript(Ref.jqueryMinJs, () => {
+tryLoadScript(Ref.jqueryMinJs, () => {
         loadSettingButton(); // HTML/PHP loading dependent on jQuery
-        Loader.tryLoadScript(Ref.popperMinJs, () => {
-                Loader.tryLoadScript(Ref.bootstrapMinJs)
+        tryLoadScript(Ref.popperMinJs, () => {
+                tryLoadScript(Ref.bootstrapMinJs)
         })
 })
 
 // load option JS & CSS
-Loader.tryLoadScript(Ref.prismCoreMinJs, () => {
-        Loader.tryLoadScript(Ref.prismAutoloaderMinJs, () => {
-                Loader.tryLoadStyleSheet(Ref.prismMinCss);
-                if (Loader.checkScriptIncludedOrIgnored(Ref.prismAutoloaderMinJs)) {
+tryLoadScript(Ref.prismCoreMinJs, () => {
+        tryLoadScript(Ref.prismAutoloaderMinJs, () => {
+                tryLoadStyleSheet(Ref.prismMinCss);
+                if (checkScriptIncludedOrIgnored(Ref.prismAutoloaderMinJs)) {
                         // @ts-ignore
                         Prism.highlightAll(false, function () { });
                 }
@@ -37,9 +37,9 @@ function loadSettingButton() {
         settingButtonLoaded = true;
 
         console.log(">>> Loading Setting Button")
-        Loader.loadFile(Ref.settingButtonFilePath)!
+        loadFile(Ref.settingButtonFilePath)!
                 .done(onSettingButtonLoaded)
-                .fail(() => Loader.loadFile(Ref.fallbackSettingButtonFilePath)!
+                .fail(() => loadFile(Ref.fallbackSettingButtonFilePath)!
                         .done(onSettingButtonLoaded));
 }
 
@@ -54,9 +54,9 @@ function onSettingButtonLoaded() {
 }
 
 function loadSettingPanel() {
-        Loader.loadFile(Ref.settingFilePath)!
+        loadFile(Ref.settingFilePath)!
                 .done(onSettingPanelLoaded)
-                .fail(() => Loader.loadFile(Ref.fallbackSettingFilePath)!
+                .fail(() => loadFile(Ref.fallbackSettingFilePath)!
                         .done(onSettingPanelLoaded));
 }
 
@@ -64,10 +64,10 @@ function onSettingPanelLoaded() {
         settingPanelLoaded = true;
         $settingPanel = $("#setting-section .setting-panel");
         // lazy loading main framework script
-        Ref.dynamicUIJs.onerror = () => Loader.tryLoadScript(Ref.fallbackDynamicUIJs);
-        Loader.tryLoadScript(Ref.dynamicUIJs);
+        Ref.dynamicUIJs.onerror = () => tryLoadScript(Ref.fallbackDynamicUIJs);
+        tryLoadScript(Ref.dynamicUIJs);
         // lazy loading dependencies
-        Loader.tryLoadScript(Ref.tinyColorMinJs);
+        tryLoadScript(Ref.tinyColorMinJs);
         // ADHOC: add a delay to hide setting content init process
         setTimeout(() => {
                 toggleSettingPanel();
