@@ -33,9 +33,17 @@ Ref.popperMinJs.onload = () => Loader.tryLoadScript(Ref.bootstrapMinJs);
 Loader.tryLoadScript(Ref.jqueryMinJs)
 
 // load option JS & CSS
-Loader.tryLoadStyleSheet(Ref.prismMinCss);
-Loader.tryLoadScript(Ref.prismCoreMinJs);
-Loader.tryLoadScript(Ref.prismAutoloaderMinJs);
+Loader.tryLoadScript(Ref.prismCoreMinJs, () => {
+        Loader.tryLoadScript(Ref.prismAutoloaderMinJs, () => {
+                Loader.tryLoadStyleSheet(Ref.prismMinCss);
+                if (Loader.checkScriptIncludedOrIgnored(Ref.prismAutoloaderMinJs)) {
+                        // @ts-ignore
+                        Prism.highlightAll(false, function () {
+                                console.log('[Prism] Syntax highlight completed');
+                        });
+                }
+        });
+});
 
 // defer loading setting button
 function loadSettingButton() {

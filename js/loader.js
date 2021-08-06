@@ -52,7 +52,7 @@ function loadStyleSheet(sheet) {
     document.head.insertBefore(link, document.getElementsByTagName("head")[0].firstChild);
 }
 // REFACTOR
-export function tryLoadScript(script) {
+export function tryLoadScript(script, callback) {
     var _a;
     let isFileNeeded = true;
     if (script.triggerClasses) {
@@ -65,8 +65,15 @@ export function tryLoadScript(script) {
     }
     (_a = script.triggerClasses) === null || _a === void 0 ? void 0 : _a.forEach(className => { if (document.querySelector("." + className))
         isFileNeeded = true; });
-    if (isFileNeeded && !checkScriptIncludedOrIgnored(script))
+    if (isFileNeeded && !checkScriptIncludedOrIgnored(script)) {
+        if (callback)
+            script.onload = callback;
         loadScript(script);
+    }
+    else {
+        if (callback)
+            callback();
+    }
 }
 export function tryLoadStyleSheet(sheet) {
     var _a;

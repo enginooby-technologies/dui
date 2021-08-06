@@ -53,7 +53,7 @@ function loadStyleSheet(sheet: StyleSheetFile) {
 }
 
 // REFACTOR
-export function tryLoadScript(script: ScriptFile) {
+export function tryLoadScript(script: ScriptFile, callback?: () => void) {
         let isFileNeeded: boolean = true;
         if (script.triggerClasses) {
                 isFileNeeded = false;
@@ -63,7 +63,12 @@ export function tryLoadScript(script: ScriptFile) {
                 }
         }
         script.triggerClasses?.forEach(className => { if (document.querySelector("." + className)) isFileNeeded = true; })
-        if (isFileNeeded && !checkScriptIncludedOrIgnored(script)) loadScript(script);
+        if (isFileNeeded && !checkScriptIncludedOrIgnored(script)) {
+                if (callback) script.onload = callback;
+                loadScript(script);
+        } else {
+                if (callback) callback();
+        }
 }
 
 export function tryLoadStyleSheet(sheet: StyleSheetFile) {

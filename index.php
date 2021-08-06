@@ -15,7 +15,6 @@
 <body class="neu-style ">
         <!-- TODO: Add preloader to hide FOUC + Use a few indentical CSS as loading style sheet (e.g. Bootstrap) to reduce FOUC-->
         <?php include_once "index-injectable.php"; ?>
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
         <script async src="js/main.js" type="module"></script>
 </body>
 
