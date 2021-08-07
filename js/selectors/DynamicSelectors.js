@@ -2,26 +2,6 @@ export const bgSelectors = formatString([
     ' body',
     '.display-content>.container'
 ]);
-export const colorColorfull1Selectors = formatString([
-    // CONTAINER COMPONENTS
-    ".code-block .token.attr-name",
-    ".code-block .token.builtin",
-    ".code-block .token.char",
-    " .code-block .token.inserted",
-    " .code-block .token.selector",
-    " .code-block .token.string",
-]);
-export const colorColorfull2Selectors = formatString([
-    // CONTAINER COMPONENTS
-    ".code-block .token.important",
-    ".code-block .token.regex",
-    ".code-block .token.variable",
-]);
-export const colorColorfull3Selectors = formatString([
-    // CONTAINER COMPONENTS
-    ".code-block .token.class-name",
-    ".code-block .token.function",
-]);
 export const borderRadiusSelectors = formatString([
     // CONTAINER COMPONENTS
     ".code-block",

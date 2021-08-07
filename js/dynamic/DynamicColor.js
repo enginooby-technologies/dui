@@ -1,14 +1,11 @@
 import { TinyColor } from '../base/TinyColor.js';
 import { DynamicUI } from './DynamicUI.js';
-import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
 const root = document.documentElement;
 export class DynamicColor {
     constructor() {
-        // TODO: remove these and just compare colors between DynamicUI and currentStyle
-        //populate all style names since we have init css files
         this.stylesWithUpdatedSchemeColor = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
         this.stylesWithUpdatedBaseColor = this.stylesWithUpdatedSchemeColor;
         this.$squareImg = $(".hero-image .square img");
@@ -17,18 +14,6 @@ export class DynamicColor {
         DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
         $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
-    }
-    getColorfull1Rule() {
-        var _a;
-        return (_a = this.colorColorfull1Rule) !== null && _a !== void 0 ? _a : (this.colorColorfull1Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
-    }
-    getColorfull2Rule() {
-        var _a;
-        return (_a = this.colorColorfull2Rule) !== null && _a !== void 0 ? _a : (this.colorColorfull2Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull2Selectors));
-    }
-    getColorfull3Rule() {
-        var _a;
-        return (_a = this.colorColorfull3Rule) !== null && _a !== void 0 ? _a : (this.colorColorfull3Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull3Selectors));
     }
     setupColorPickerEvents() {
         $("#highlight-color-picker").on('input', (event) => {
@@ -39,17 +24,22 @@ export class DynamicColor {
         });
         $("#colorfull1-picker").on('input', (event) => {
             DynamicColor.colorfull1.setHex(event.target.value);
-            this.updateColorfull(1);
+            this.updateGroupColorRule(DynamicColor.colorfull1, 1);
         });
         $("#colorfull2-picker").on('input', (event) => {
             DynamicColor.colorfull2.setHex(event.target.value);
-            this.updateColorfull(2);
+            this.updateGroupColorRule(DynamicColor.colorfull2, 2);
         });
         $("#colorfull3-picker").on('input', (event) => {
             DynamicColor.colorfull3.setHex(event.target.value);
-            this.updateColorfull(3);
+            this.updateGroupColorRule(DynamicColor.colorfull3, 3);
         });
     }
+    updateGroupColorRule(color, groupNumber) {
+        root.style.setProperty(`--group-${groupNumber}-color`, color.hex);
+        root.style.setProperty(`--group-${groupNumber}-color-inverted`, color.getInvertBlackWhite());
+    }
+    ;
     updateChangesFromLastStyle() {
         if (!this.stylesWithUpdatedSchemeColor.includes(DynamicUI.currentStyle.name)) {
             DynamicUI.currentStyle.onSchemeColorUpdated();
@@ -60,31 +50,6 @@ export class DynamicColor {
             this.stylesWithUpdatedBaseColor.push(DynamicUI.currentStyle.name);
         }
     }
-    updateColorfull(colorfullNumber) {
-        let colorfull;
-        let timelineSelector;
-        if (colorfullNumber == 1) {
-            colorfull = DynamicColor.colorfull1;
-            timelineSelector = '#education-timeline';
-            this.getColorfull1Rule().style.setProperty('color', DynamicColor.colorfull1.hex, 'important');
-        }
-        if (colorfullNumber == 2) {
-            colorfull = DynamicColor.colorfull2;
-            timelineSelector = '#experience-timeline';
-            this.getColorfull2Rule().style.setProperty('color', DynamicColor.colorfull2.hex, 'important');
-        }
-        if (colorfullNumber == 3) {
-            colorfull = DynamicColor.colorfull3;
-            timelineSelector = '#achievements-timeline';
-            this.getColorfull3Rule().style.setProperty('color', DynamicColor.colorfull3.hex, 'important');
-        }
-        $(`.colorfull${colorfullNumber}, .background-colorfull${colorfullNumber}>.badge`).css('color', colorfull.hex);
-        $(`.background-colorfull${colorfullNumber}`).css('background-color', colorfull.hex);
-        $(`.background-colorfull${colorfullNumber}`).css('color', colorfull.getInvertBlackWhite());
-        $(`${timelineSelector} .timeline-item`).css('border-left-color', colorfull.hex);
-        $(`.badge-pill.background-colorfull${colorfullNumber} .badge`).css('background', colorfull.getInvertBlackWhite());
-    }
-    ;
     updateHighlightColor(hex) {
         var _a;
         DynamicColor.highlightColor.setHex(hex);

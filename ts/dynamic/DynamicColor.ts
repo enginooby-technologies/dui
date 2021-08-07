@@ -20,24 +20,8 @@ export class DynamicColor {
 
         static mutedBaseColor: string = darkMutedBaseColor;
 
-        colorColorfull1Rule?: CSSStyleRule;
-        colorColorfull2Rule?: CSSStyleRule;
-        colorColorfull3Rule?: CSSStyleRule;
-
-        // TODO: remove these and just compare colors between DynamicUI and currentStyle
-        //populate all style names since we have init css files
         stylesWithUpdatedSchemeColor: string[] = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
         stylesWithUpdatedBaseColor: string[] = this.stylesWithUpdatedSchemeColor;
-
-        public getColorfull1Rule(): CSSStyleRule {
-                return this.colorColorfull1Rule ?? (this.colorColorfull1Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
-        }
-        public getColorfull2Rule(): CSSStyleRule {
-                return this.colorColorfull2Rule ?? (this.colorColorfull2Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull2Selectors));
-        }
-        public getColorfull3Rule(): CSSStyleRule {
-                return this.colorColorfull3Rule ?? (this.colorColorfull3Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull3Selectors));
-        }
 
         // TODO: handle specific project element
         $squareImg?: JQuery<HTMLElement>;
@@ -60,17 +44,24 @@ export class DynamicColor {
                 });
                 $("#colorfull1-picker").on('input', (event) => {
                         DynamicColor.colorfull1.setHex((event.target as any).value);
-                        this.updateColorfull(1);
+                        this.updateGroupColorRule(DynamicColor.colorfull1, 1);
+
                 });
                 $("#colorfull2-picker").on('input', (event) => {
                         DynamicColor.colorfull2.setHex((event.target as any).value);
-                        this.updateColorfull(2);
+                        this.updateGroupColorRule(DynamicColor.colorfull2, 2);
+
                 });
                 $("#colorfull3-picker").on('input', (event) => {
                         DynamicColor.colorfull3.setHex((event.target as any).value);
-                        this.updateColorfull(3);
+                        this.updateGroupColorRule(DynamicColor.colorfull3, 3);
                 });
         }
+
+        private updateGroupColorRule(color: Color, groupNumber: number) {
+                root.style.setProperty(`--group-${groupNumber}-color`, color.hex)
+                root.style.setProperty(`--group-${groupNumber}-color-inverted`, color.getInvertBlackWhite())
+        };
 
         public updateChangesFromLastStyle() {
                 if (!this.stylesWithUpdatedSchemeColor.includes(DynamicUI.currentStyle!.name)) {
@@ -82,32 +73,6 @@ export class DynamicColor {
                         this.stylesWithUpdatedBaseColor.push(DynamicUI.currentStyle!.name);
                 }
         }
-
-        private updateColorfull(colorfullNumber: number) {
-                let colorfull: Color;
-                let timelineSelector: string;
-                if (colorfullNumber == 1) {
-                        colorfull = DynamicColor.colorfull1;
-                        timelineSelector = '#education-timeline';
-                        this.getColorfull1Rule().style.setProperty('color', DynamicColor.colorfull1.hex, 'important');
-                }
-                if (colorfullNumber == 2) {
-                        colorfull = DynamicColor.colorfull2;
-                        timelineSelector = '#experience-timeline';
-                        this.getColorfull2Rule().style.setProperty('color', DynamicColor.colorfull2.hex, 'important');
-                }
-                if (colorfullNumber == 3) {
-                        colorfull = DynamicColor.colorfull3;
-                        timelineSelector = '#achievements-timeline';
-                        this.getColorfull3Rule().style.setProperty('color', DynamicColor.colorfull3.hex, 'important');
-                }
-
-                $(`.colorfull${colorfullNumber}, .background-colorfull${colorfullNumber}>.badge`).css('color', colorfull!.hex);
-                $(`.background-colorfull${colorfullNumber}`).css('background-color', colorfull!.hex);
-                $(`.background-colorfull${colorfullNumber}`).css('color', colorfull!.getInvertBlackWhite());
-                $(`${timelineSelector!} .timeline-item`).css('border-left-color', colorfull!.hex);
-                $(`.badge-pill.background-colorfull${colorfullNumber} .badge`).css('background', colorfull!.getInvertBlackWhite());
-        };
 
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
