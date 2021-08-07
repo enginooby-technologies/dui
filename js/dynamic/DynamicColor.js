@@ -18,18 +18,6 @@ export class DynamicColor {
         $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
     }
-    getBgBaseRule() {
-        var _a;
-        return (_a = this.bgBaseRule) !== null && _a !== void 0 ? _a : (this.bgBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgBaseSelectors));
-    }
-    getColorBaseRule() {
-        var _a;
-        return (_a = this.colorBaseRule) !== null && _a !== void 0 ? _a : (this.colorBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.colorBaseSelectors));
-    }
-    getColorMutedBaseRule() {
-        var _a;
-        return (_a = this.colorMutedBaseRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.colorMutedBaseSelectors));
-    }
     getColorfull1Rule() {
         var _a;
         return (_a = this.colorColorfull1Rule) !== null && _a !== void 0 ? _a : (this.colorColorfull1Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
@@ -116,15 +104,14 @@ export class DynamicColor {
         const lastBaseColor = DynamicColor.baseColor;
         DynamicColor.baseColor = DynamicColor.schemeColor.getInvertBlackWhite();
         if (lastBaseColor != DynamicColor.baseColor)
-            this.onBaseColorChanged();
+            this.onBaseColorChange();
     }
-    onBaseColorChanged() {
+    onBaseColorChange() {
         DynamicColor.mutedBaseColor = (DynamicColor.baseColor == '#ffffff') ? lightMutedBaseColor : darkMutedBaseColor;
+        root.style.setProperty('--base-color', DynamicColor.baseColor);
+        root.style.setProperty('--base-color-muted', DynamicColor.mutedBaseColor);
         const heroImg = (DynamicColor.baseColor == '#ffffff') ? "light-element_square" : "dark-element_square";
         this.$squareImg.attr('src', `assets/img/${heroImg}.png`);
-        this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor);
-        this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor);
-        this.getBgBaseRule().style.setProperty('background-color', DynamicColor.baseColor, 'important');
         // specific elements affected by base color
         $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${DynamicColor.baseColor}`);
         $('.code-block pre code').css('text-shadow', `0 .5px  ${DynamicColor.schemeColor.getInvert()}`);

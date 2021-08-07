@@ -32,8 +32,6 @@ export class GlassStyle extends Style {
         private bgSchemeRule?: CSSStyleRule;
         private bgLightenSchemeRule?: CSSStyleRule;
         private bgDarkenHighlightRule?: CSSStyleRule;
-        private colorBaseRule?: CSSStyleRule;
-        private colorMutedBaseRule?: CSSStyleRule;
         private innerBgRule?: CSSStyleRule;
         private innerBgContainerRule?: CSSStyleRule;
 
@@ -42,8 +40,6 @@ export class GlassStyle extends Style {
         getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
         getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
-        getColorBaseRule = () => this.colorBaseRule ?? (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors));
-        getColorMutedBaseRule = () => this.colorMutedBaseRule ?? (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors));
         getBgColorfull1Rule = () => this.bgColorfull1Rule ?? (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)']));
         getBgColorfull2Rule = () => this.bgColorfull2Rule ?? (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)']));
         getBgColorfull3Rule = () => this.bgColorfull3Rule ?? (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)']));
@@ -182,7 +178,5 @@ export class GlassStyle extends Style {
         }
 
         onBaseColorUpdated(): void {
-                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor!, 'important');
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor!, 'important');
         }
 }

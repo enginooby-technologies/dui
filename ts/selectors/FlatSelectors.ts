@@ -19,13 +19,3 @@ export const bgDarkenHighlightSelectors = [
         "::-webkit-slider-thumb:hover",
         ".button:not(.radio-button-group .button):hover",
 ]
-
-export const colorBaseSelectors = [
-        ".radio-button-group .button ",
-];
-
-export const colorMutedBaseSelectors = [
-        ".segmented-control>input:not(:checked):not(:hover)+label",
-        ".checkbox input:not(:checked)~label+.name",
-        ".checkbox input:not(:checked):not(:hover)~label i",
-]

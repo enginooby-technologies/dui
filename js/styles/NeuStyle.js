@@ -35,7 +35,6 @@ export class NeuStyle extends Style {
         this.surfaceCurvature = 0;
         this.bgSurface = '';
         // lazy initializations
-        this.getColorMutedBaseColorRule = () => { var _a; return (_a = this.colorMutedBaseColorRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseColorRule = this.insertEmptyRule(NeuSelectors.colorMutedBaseColorSelectors)); };
         this.getDropBoxShadowRule = () => { var _a; return (_a = this.dropBoxShadowRule) !== null && _a !== void 0 ? _a : (this.dropBoxShadowRule = this.insertEmptyRule(NeuSelectors.dropBoxShadowSelectors)); };
         this.getInsetBoxShadowRule = () => { var _a; return (_a = this.insetBoxShadowRule) !== null && _a !== void 0 ? _a : (this.insetBoxShadowRule = this.insertEmptyRule(NeuSelectors.insetBoxShadowSelectors)); };
         this.getConcaveBoxShadowRule = () => { var _a; return (_a = this.concaveBoxShadowRule) !== null && _a !== void 0 ? _a : (this.concaveBoxShadowRule = this.insertEmptyRule(NeuSelectors.concaveBoxShadowSelectors)); };
@@ -124,10 +123,6 @@ export class NeuStyle extends Style {
         this.updateBorder();
     }
     onBaseColorUpdated() {
-        this.getColorMutedBaseColorRule().style.setProperty('color', DynamicColor.mutedBaseColor);
-        $('.dui-radio label .text').each((index, element) => {
-            element.style.borderColor = DynamicColor.mutedBaseColor;
-        });
     }
     updateBoxShadows() {
         this.lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightenIntensity);

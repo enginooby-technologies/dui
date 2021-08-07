@@ -20,9 +20,6 @@ export class DynamicColor {
 
         static mutedBaseColor: string = darkMutedBaseColor;
 
-        bgBaseRule?: CSSStyleRule;
-        colorBaseRule?: CSSStyleRule;
-        colorMutedBaseRule?: CSSStyleRule;
         colorColorfull1Rule?: CSSStyleRule;
         colorColorfull2Rule?: CSSStyleRule;
         colorColorfull3Rule?: CSSStyleRule;
@@ -31,16 +28,6 @@ export class DynamicColor {
         //populate all style names since we have init css files
         stylesWithUpdatedSchemeColor: string[] = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
         stylesWithUpdatedBaseColor: string[] = this.stylesWithUpdatedSchemeColor;
-
-        public getBgBaseRule(): CSSStyleRule {
-                return this.bgBaseRule ?? (this.bgBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgBaseSelectors));
-        }
-        public getColorBaseRule(): CSSStyleRule {
-                return this.colorBaseRule ?? (this.colorBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.colorBaseSelectors));
-        }
-        public getColorMutedBaseRule(): CSSStyleRule {
-                return this.colorMutedBaseRule ?? (this.colorMutedBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.colorMutedBaseSelectors));
-        }
 
         public getColorfull1Rule(): CSSStyleRule {
                 return this.colorColorfull1Rule ?? (this.colorColorfull1Rule = DynamicUI.insertEmptyRule(DynamicSelectors.colorColorfull1Selectors));
@@ -143,16 +130,16 @@ export class DynamicColor {
         private updateBaseColor() {
                 const lastBaseColor = DynamicColor.baseColor;
                 DynamicColor.baseColor = DynamicColor.schemeColor.getInvertBlackWhite();
-                if (lastBaseColor != DynamicColor.baseColor) this.onBaseColorChanged();
+                if (lastBaseColor != DynamicColor.baseColor) this.onBaseColorChange();
         }
 
-        private onBaseColorChanged() {
+        private onBaseColorChange() {
                 DynamicColor.mutedBaseColor = (DynamicColor.baseColor == '#ffffff') ? lightMutedBaseColor : darkMutedBaseColor;
+                root.style.setProperty('--base-color', DynamicColor.baseColor);
+                root.style.setProperty('--base-color-muted', DynamicColor.mutedBaseColor);
+
                 const heroImg = (DynamicColor.baseColor == '#ffffff') ? "light-element_square" : "dark-element_square";
                 this.$squareImg!.attr('src', `assets/img/${heroImg}.png`);
-                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor);
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor);
-                this.getBgBaseRule().style.setProperty('background-color', DynamicColor.baseColor, 'important');
                 // specific elements affected by base color
                 $('.overlay-menu-toggler lord-icon').attr('colors', `primary:${DynamicColor.baseColor}`);
                 $('.code-block pre code').css('text-shadow', `0 .5px  ${DynamicColor.schemeColor.getInvert()}`);

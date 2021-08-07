@@ -39,7 +39,6 @@ export class NeuStyle extends Style {
         surfaceCurvature: number = 0;
         bgSurface: string = '';
 
-        private colorMutedBaseColorRule?: CSSStyleRule;
         private dropBoxShadowRule?: CSSStyleRule;
         private insetBoxShadowRule?: CSSStyleRule;
         private concaveBoxShadowRule?: CSSStyleRule;
@@ -51,7 +50,6 @@ export class NeuStyle extends Style {
         private dropdownBoxShadowRule?: CSSStyleRule;
 
         // lazy initializations
-        getColorMutedBaseColorRule = () => this.colorMutedBaseColorRule ?? (this.colorMutedBaseColorRule = this.insertEmptyRule(NeuSelectors.colorMutedBaseColorSelectors));
         getDropBoxShadowRule = () => this.dropBoxShadowRule ?? (this.dropBoxShadowRule = this.insertEmptyRule(NeuSelectors.dropBoxShadowSelectors));
         getInsetBoxShadowRule = () => this.insetBoxShadowRule ?? (this.insetBoxShadowRule = this.insertEmptyRule(NeuSelectors.insetBoxShadowSelectors));
         getConcaveBoxShadowRule = () => this.concaveBoxShadowRule ?? (this.concaveBoxShadowRule = this.insertEmptyRule(NeuSelectors.concaveBoxShadowSelectors));
@@ -143,10 +141,6 @@ export class NeuStyle extends Style {
         }
 
         onBaseColorUpdated(): void {
-                this.getColorMutedBaseColorRule().style.setProperty('color', DynamicColor.mutedBaseColor!);
-                $('.dui-radio label .text').each((index, element) => {
-                        element.style.borderColor = DynamicColor.mutedBaseColor!;
-                });
         }
 
         private updateBoxShadows() {

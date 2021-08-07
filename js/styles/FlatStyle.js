@@ -12,8 +12,6 @@ export class FlatStyle extends Style {
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
         // lazy initializations
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
-        this.getColorBaseRule = () => { var _a; return (_a = this.colorBaseRule) !== null && _a !== void 0 ? _a : (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors)); };
-        this.getColorMutedBaseRule = () => { var _a; return (_a = this.colorMutedBaseRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors)); };
     }
     static get Instance() {
         var _a;
@@ -34,7 +32,5 @@ export class FlatStyle extends Style {
         this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');
     }
     onBaseColorUpdated() {
-        this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor, 'important');
-        this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor, 'important');
     }
 }

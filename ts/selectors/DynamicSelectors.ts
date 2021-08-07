@@ -3,24 +3,6 @@ export const bgSelectors = formatString([
         '.display-content>.container'
 ])
 
-// export const bgSchemeSelectors = formatString([
-//         ".none-bg",
-//         "body:not(.glass-style)",
-//         // ".hero-03",
-//         ".segmented-control",
-//         ".image-border",
-//         ".skill-box .skillbar",
-//         ".blog .blog-image",
-//         ".blog .blog-item .before",
-//         "#overlayer",
-//         ".toggle .indicator",
-//         ".dui-radio .indicator::after"
-// ]);
-
-export const bgBaseSelectors = formatString([
-        "#pp-nav li :not(.active) span"
-]);
-
 export const colorColorfull1Selectors = formatString([
         // CONTAINER COMPONENTS
         ".code-block .token.attr-name",
@@ -43,53 +25,6 @@ export const colorColorfull3Selectors = formatString([
         ".code-block .token.class-name",
         ".code-block .token.function",
 ])
-
-export const colorBaseSelectors = formatString([
-        // FORM COMPONENTS
-        ".dropdown button",
-
-        "body",
-        ".logo",
-        ".setting-section .setting-button-border i",
-        ".setting-panel-content p",
-        ".range-slider label",
-        "#color-panel label ",
-        ".follow-label",
-        ".social a i",
-        ".blog-content h6 a",
-        ".form-group input",
-        ".form-group textarea",
-        ".overlay-menu-toggler",
-        ".modal-title",
-        ".portfolio-single .close",
-        ".pp-tooltip",
-        ".blog-label a",
-]);
-
-export const colorMutedBaseSelectors = formatString([
-        // CONTAINER COMPONENTS
-        ".code-block code",
-        ".code-block .token.cdata",
-        ".code-block .token.comment",
-        ".code-block .token.doctype",
-        " .code-block .token.prolog",
-
-        // FORM COMPONENTS
-        ".dropdown-item",
-
-        ".blog-content .list-inline-item span",
-        ".contact-info-text small",
-        ".hero-content p",
-        ".title-wrapper span",
-        ".form-control",
-        ".range-slider__value",
-        "::placeholder",
-        // ".form-control::placeholder",         /* Chrome, Firefox, Opera, Safari 10.1+ */
-        // ".form-control:-ms-input-placeholder",         /* Internet Explorer 10-11 */
-        // ".form-control::-ms-input-placeholder"         /* Microsoft Edge */
-        //COMMON
-        ".dui-radio .label",
-]);
 
 export const borderRadiusSelectors = formatString([
         // CONTAINER COMPONENTS

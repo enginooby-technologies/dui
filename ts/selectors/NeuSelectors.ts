@@ -1,9 +1,3 @@
-export const colorMutedBaseColorSelectors = [
-        ".checkbox input:not(:checked)~label+.name",
-        ".checkbox input:not(:checked):not(:hover)~label i",
-        ".segmented-control>input:not(:checked):not(:hover)+label"
-];
-
 export const dropBoxShadowSelectors = [
         // FORM COMPONENTS
         ".dropdown button.focus",

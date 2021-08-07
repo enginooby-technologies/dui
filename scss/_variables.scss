@@ -1,16 +1,17 @@
 :root {
-        // --scheme-color: #d4d4d4;
-        --scheme-color: #da1313;
+        --scheme-color: #d4d4d4;
         --highlight-color: #004b97;
-        --highlight-color-invert: #d4d4d4;
+        --highlight-color-inverted: #d4d4d4;
+        --base-color: black; // mostly for text <=> --scheme-color-inverted
+        --base-color-muted: #4d4d4d; //lightMuted: #b2b2b2
 }
 
-//SASS variabls just to ease referecing in other SCSS files
+//SASS variables just to ease referecing in other SCSS files
 $schemeColor: var(--scheme-color);
 $highlightColor: var(--highlight-color);
-$contrastHighlightColor: var(--highlight-color-invert);
-$baseColor: black;
-$mutedBaseColor: #4d4d4d; //lightMuted: #b2b2b2
+$contrastHighlightColor: var(--highlight-color-inverted);
+$baseColor: var(--base-color);
+$mutedBaseColor: var(--base-color-muted);
 
 $colorfull1: #01724b;
 $colorfull2: #bc5b00;

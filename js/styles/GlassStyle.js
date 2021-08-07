@@ -20,8 +20,6 @@ export class GlassStyle extends Style {
         this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
-        this.getColorBaseRule = () => { var _a; return (_a = this.colorBaseRule) !== null && _a !== void 0 ? _a : (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors)); };
-        this.getColorMutedBaseRule = () => { var _a; return (_a = this.colorMutedBaseRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors)); };
         this.getBgColorfull1Rule = () => { var _a; return (_a = this.bgColorfull1Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)'])); };
         this.getBgColorfull2Rule = () => { var _a; return (_a = this.bgColorfull2Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)'])); };
         this.getBgColorfull3Rule = () => { var _a; return (_a = this.bgColorfull3Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)'])); };
@@ -148,7 +146,5 @@ export class GlassStyle extends Style {
         this.updateTransparencySchemeColor();
     }
     onBaseColorUpdated() {
-        this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor, 'important');
-        this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor, 'important');
     }
 }

@@ -20,13 +20,9 @@ export class FlatStyle extends Style {
         private bgLightenSchemeRule?: CSSStyleRule;
         private bgDarkenHighlightRule?: CSSStyleRule;
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
-        private colorBaseRule?: CSSStyleRule;
-        private colorMutedBaseRule?: CSSStyleRule;
 
         // lazy initializations
         getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
-        getColorBaseRule = () => this.colorBaseRule ?? (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors));
-        getColorMutedBaseRule = () => this.colorMutedBaseRule ?? (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors));
 
         init() { }
         onDisable(): void { }
@@ -46,7 +42,5 @@ export class FlatStyle extends Style {
         }
 
         public onBaseColorUpdated(): void {
-                this.getColorBaseRule().style.setProperty('color', DynamicColor.baseColor!, 'important');
-                this.getColorMutedBaseRule().style.setProperty('color', DynamicColor.mutedBaseColor!, 'important');
         }
 }
