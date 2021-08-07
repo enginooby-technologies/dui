@@ -689,7 +689,7 @@ code {
   -webkit-transition: 0.8s all ease !important;
 }
 
-.button {
+.button-border .button {
   color: #004b97;
   border-radius: 9px;
   padding: 10px 30px;
@@ -709,7 +709,7 @@ code {
           align-items: center;
 }
 
-.button i {
+.button-border .button i {
   font-size: 1rem;
   position: relative;
   top: 0.5px;
@@ -1304,6 +1304,8 @@ input::-moz-focus-outer {
 }
 
 .nes-style .button {
+  background-color: #004b97;
+  color: #d4d4d4;
   border-image-repeat: stretch;
 }
 

@@ -7,7 +7,7 @@ include_once dirname(__FILE__) . "/../../utils/general.php";
 
 function Radio(string $id = null, float $value, string $label, string $group, bool $checked = false): string
 {
-        $id = $id ?? formatToId($label);
+        $id = $id ?? "radio_" . formatToId($label);
         $checkedAttr = ($checked) ? "checked" : "";
         ob_start();
         include "_radio.php";

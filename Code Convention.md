@@ -3,6 +3,8 @@
 ### Variables
 + Element: eButton
 + NodeListOf\<Element>: esButtons
++ JQuery\<HTMLElement>: $button
++ boolean: ```{tobe}+{noun}+{adj/verb-ed}``` isButtonClicked, areButtonsGreen
 ## Abbreviations
 + Background: bg
 ## Events

@@ -14,7 +14,7 @@
 
 <body class="neu-style ">
         <!-- TODO: Add preloader to hide FOUC + Use a few indentical CSS as loading style sheet (e.g. Bootstrap) to reduce FOUC-->
-                                
+                                        
         <div class="display-table">
                 <div class="display-content ">
                         <div class="container ">
@@ -25,7 +25,14 @@
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <div class="code-block">
         <pre><code class="language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
+                          <div class='button-border'>
+          <a href='javascript:;' class='button' id=' button_dynamic-button'>Dynamic button</a>
+  </div>        </div><div class="code-block">
+        <pre><code class="language-php">// optional params: string $id = "button_".format($label), string $href = "javascript:;"
+echo Button(label: "Dynamic button");</code></pre>
 </div>
+
                                 <h5 class="my-4">II - Container Components</h5>
                                 <div class="code-block">
         <pre><code class="language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
@@ -43,24 +50,24 @@
                 <input class='range-slider__range' id='range-slider_dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
                 <span class='range-slider__value'>0</span>
         </div>        </div><div class="code-block">
-        <pre><code class="language-php">// optional params: string $id = format($label), float $min = $value = 0, float $step = 0.1
+        <pre><code class="language-php">// optional params: string $id = "slider_".format($label), float $min = $value = 0, float $step = 0.1
 echo RangeSlider(label: "Dynamic slider",  max: 100);
 </code></pre>
 </div><div class=" d-flex justify-content-center flex-row">
                         <div class='dui-radio'>
-        <input class='state' type='radio'  name='group-1' id='radio-1' value='1'>
-        <label class='label' for='radio-1'>
+        <input class='state' type='radio'  name='group-1' id='radio_radio-1' value='1'>
+        <label class='label' for='radio_radio-1'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 1</span>
         </label>
 </div>                        <div class='dui-radio'>
-        <input class='state' type='radio' checked name='group-1' id='radio-2' value='2'>
-        <label class='label' for='radio-2'>
+        <input class='state' type='radio' checked name='group-1' id='radio_radio-2' value='2'>
+        <label class='label' for='radio_radio-2'>
                 <div class='indicator'></div>
                 <span class='text'>Radio 2</span>
         </label>
 </div>        </div><div class="code-block">
-        <pre><code class="language-php">// optional params: string $id = format($label), bool $checked = false        
+        <pre><code class="language-php">// optional params: string $id = "radio_".format($label), bool $checked = false        
 echo Radio(label: "Radio 1", value: 1, group: "group-1");
 echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
 </code></pre>
@@ -72,7 +79,7 @@ echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
         </div>
         <div class="label-text">Dynamic toggle</div>
 </label>        </div><div class="code-block">
-        <pre><code class="language-php">// optional params: string $id = $name = format($label), float $value = 0
+        <pre><code class="language-php">// optional params: string $id = $name = "toggle_".format($label), float $value = 0
 echo Toggle(label: "Dynamic toggle");
 </code></pre>
 </div><div class=" d-flex justify-content-center flex-row">
@@ -83,7 +90,7 @@ echo Toggle(label: "Dynamic toggle");
         </label>
         <div class="name">Dynamic checkbox</div>
 </div>        </div><div class="code-block">
-        <pre><code class="language-php">// optional params: string $id = $value = format($name), bool $checked = false  
+        <pre><code class="language-php">// optional params: string $id = $value = "checkbox_".format($name), bool $checked = false  
 echo Checkbox(name:"Dynamic checkbox");
 </code></pre>
 </div><div class=" d-flex justify-content-center flex-row">

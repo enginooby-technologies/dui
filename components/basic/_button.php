@@ -1,3 +1,3 @@
   <div class='button-border'>
-          <a href='<?= $href; ?>' class='button' <?= $idAttr; ?>><?= $label; ?></a>
+          <a href='<?= $href ?>' class='button' id=' <?= $id ?>'><?= $label ?></a>
   </div>
