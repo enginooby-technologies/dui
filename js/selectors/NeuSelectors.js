@@ -10,18 +10,6 @@ export const backgroundSchemeColorSelectors = [
     "::-webkit-scrollbar-thumb",
     ".setting-button a",
 ];
-export const colorHighlightColorSelectors = [
-    // FORM COMPONENTS
-    ".dropdown button:hover",
-    ".dropdown .dropdown-item:hover",
-    ".dropdown-toggle",
-    ".button",
-    " .checkbox input:checked~label+.name",
-    ".checkbox input:checked~label i",
-    ".checkbox input:hover~label i",
-    ".segmented-control>input:checked+label",
-    ".segmented-control>input:hover+label",
-];
 export const colorMutedBaseColorSelectors = [
     ".checkbox input:not(:checked)~label+.name",
     ".checkbox input:not(:checked):not(:hover)~label i",

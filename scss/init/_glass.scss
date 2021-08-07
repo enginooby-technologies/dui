@@ -4,9 +4,10 @@ $borderSize: 1;
 
 $schemeColorA: rgba(212, 212, 212, $transparency);
 $lightenSchemeColorA: rgba(250, 250, 250, $transparency);
-$highlightColorA: rgba(0, 75, 155, $transparency);
+$highlightColorA: $highlightColor;
+// $highlightColorA: rgba(0, 75, 155, $transparency);
 $darkenHighlightColorA: rgba(3, 54, 105, $transparency);
-$contrastHighlightColor: white;
+// $contrastHighlightColor: white;
 
 $colorfull1A: rgba(1, 114, 75, $transparency);
 $colorfull2A: rgba(188, 91, 0, $transparency);

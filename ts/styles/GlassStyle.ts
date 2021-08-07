@@ -31,10 +31,7 @@ export class GlassStyle extends Style {
 
         private bgSchemeRule?: CSSStyleRule;
         private bgLightenSchemeRule?: CSSStyleRule;
-        private bgHighlightRule?: CSSStyleRule;
         private bgDarkenHighlightRule?: CSSStyleRule;
-        private colorHighlightRule?: CSSStyleRule;
-        private colorContrastHighlightRule?: CSSStyleRule;
         private colorBaseRule?: CSSStyleRule;
         private colorMutedBaseRule?: CSSStyleRule;
         private innerBgRule?: CSSStyleRule;
@@ -44,10 +41,7 @@ export class GlassStyle extends Style {
         // lazy initializations
         getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
         getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
-        getBgHighlightRule = () => this.bgHighlightRule ?? (this.bgHighlightRule = this.insertEmptyRule(FlatSelectors.bgHighlightSelectors));
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
-        getColorHighlightRule = () => this.colorHighlightRule ?? (this.colorHighlightRule = this.insertEmptyRule(FlatSelectors.colorHighlightSelectors));
-        getColorContrastHighlightRule = () => this.colorContrastHighlightRule ?? (this.colorContrastHighlightRule = this.insertEmptyRule(FlatSelectors.colorContrastHighlightSelectors));
         getColorBaseRule = () => this.colorBaseRule ?? (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors));
         getColorMutedBaseRule = () => this.colorMutedBaseRule ?? (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors));
         getBgColorfull1Rule = () => this.bgColorfull1Rule ?? (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)']));
@@ -96,7 +90,6 @@ export class GlassStyle extends Style {
                 this.setToCurrentBlur([
                         this.getBgSchemeRule(),
                         this.getBgLightenSchemeRule(),
-                        this.getBgHighlightRule(),
                         this.getBgDarkenHighlightRule(),
                         this.getBgColorfull1Rule(),
                         this.getBgColorfull2Rule(),
@@ -117,7 +110,6 @@ export class GlassStyle extends Style {
                 this.setToCurrentBorderSize([
                         this.getBgSchemeRule(),
                         this.getBgLightenSchemeRule(),
-                        this.getBgHighlightRule(),
                         this.getBgDarkenHighlightRule(),
                         this.getBgColorfull1Rule(),
                         this.getBgColorfull2Rule(),
@@ -169,7 +161,6 @@ export class GlassStyle extends Style {
         }
 
         private updateTransparencyHighlightColor() {
-                this.setToCurrentTransparency(this.getBgHighlightRule(), DynamicColor.highlightColor!);
                 this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicColor.highlightColor!);
         }
 
@@ -183,8 +174,6 @@ export class GlassStyle extends Style {
         onHighlightColorUpdated(): void {
                 this.darkenHighlightColor.setHex(DynamicColor.highlightColor!.getLighten(this.darkHighlightIntensity));
                 this.updateTransparencyHighlightColor();
-                this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.hex, 'important');
-                this.getColorContrastHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
         }
 
         onSchemeColorUpdated(): void {

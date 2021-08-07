@@ -24,12 +24,8 @@ export class NesStyle extends Style {
 
         private bgSchemeRule?: CSSStyleRule;
         getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(NesSelectors.bgSchemeSelectors));
-        private bgHighlightRule?: CSSStyleRule;
-        getBgHighlightRule = () => this.bgHighlightRule ?? (this.bgHighlightRule = this.insertEmptyRule(NesSelectors.bgHighlightSelectors));
         private bgDarkenHighlightRule?: CSSStyleRule;
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
-        private colorHighlightRule?: CSSStyleRule;
-        getColorHighlightRule = () => this.colorHighlightRule ?? (this.colorHighlightRule = this.insertEmptyRule(NesSelectors.colorHighlightSelectors));
         private borderInputRule?: CSSStyleRule;
         getBorderInputRule = () => this.borderInputRule ?? (this.borderInputRule = this.insertEmptyRule(NesSelectors.borderInputSelectors));
 
@@ -44,10 +40,7 @@ export class NesStyle extends Style {
 
         onHighlightColorUpdated(): void {
                 this.darkenHighlightColor = DynamicColor.highlightColor!.getDarken(this.darkHighlightIntensity);
-                this.getBgHighlightRule().style.setProperty('background-color', DynamicColor.highlightColor!.hex, 'important');
-                this.getBgHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
                 this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-                this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
         }
 
         onSchemeColorUpdated(): void {

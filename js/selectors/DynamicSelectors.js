@@ -2,11 +2,6 @@ export const bgSelectors = formatString([
     ' body',
     '.display-content>.container'
 ]);
-export const bgHighlightSelectors = formatString([
-    ".bg-highlight-color",
-    ".border-style",
-    "#pp-nav li .active span",
-]);
 export const bgSchemeSelectors = formatString([
     ".none-bg",
     "body:not(.glass-style)",
@@ -22,28 +17,6 @@ export const bgSchemeSelectors = formatString([
 ]);
 export const bgBaseSelectors = formatString([
     "#pp-nav li :not(.active) span"
-]);
-export const colorHighlightSelectors = formatString([
-    // FORM COMPONENTS
-    ".dui-radio .state:checked~.label .text",
-    // CONTAINER COMPONENTS
-    ".code-block .token.atrule",
-    ".code-block .token.attr-value",
-    ".code-block .token.keyword",
-    ".highlight-color",
-    ".overlay-menu a.active",
-    ".timeline-year",
-    ".portfolio .radio-button-group li a",
-    ".contact .form-item .form-control",
-    ".highlight-portfolio-item.fa-star",
-    //hover
-    ".portfolio-icon a:hover",
-    ".social a i:hover",
-    ".list-inline.socials li a i:hover",
-    ".overlay-menu-toggler:hover",
-    " #myMenu li a:hover",
-    // COMMON
-    ".dui-radio .label:hover .text"
 ]);
 export const colorColorfull1Selectors = formatString([
     // CONTAINER COMPONENTS

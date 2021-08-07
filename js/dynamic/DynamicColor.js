@@ -4,21 +4,19 @@ import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
+const root = document.documentElement;
 export class DynamicColor {
     constructor() {
         // TODO: remove these and just compare colors between DynamicUI and currentStyle
         //populate all style names since we have init css files
         this.stylesWithUpdatedSchemeColor = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
-        this.stylesWithUpdatedHighlightColor = this.stylesWithUpdatedSchemeColor;
         this.stylesWithUpdatedBaseColor = this.stylesWithUpdatedSchemeColor;
         this.$squareImg = $(".hero-image .square img");
         $("#scheme-color-picker").attr('value', DynamicColor.schemeColor.hex);
+        // TOFIX: Can not get initial value of color to init the picker
+        DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
         $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
-    }
-    getBgHighlightRule() {
-        var _a;
-        return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgHighlightSelectors));
     }
     getBgSchemeRule() {
         var _a;
@@ -27,10 +25,6 @@ export class DynamicColor {
     getBgBaseRule() {
         var _a;
         return (_a = this.bgBaseRule) !== null && _a !== void 0 ? _a : (this.bgBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgBaseSelectors));
-    }
-    getColorHighlightRule() {
-        var _a;
-        return (_a = this.colorHighlightRule) !== null && _a !== void 0 ? _a : (this.colorHighlightRule = DynamicUI.insertEmptyRule(DynamicSelectors.colorHighlightSelectors));
     }
     getColorBaseRule() {
         var _a;
@@ -77,10 +71,6 @@ export class DynamicColor {
             DynamicUI.currentStyle.onSchemeColorUpdated();
             this.stylesWithUpdatedSchemeColor.push(DynamicUI.currentStyle.name);
         }
-        if (!this.stylesWithUpdatedHighlightColor.includes(DynamicUI.currentStyle.name)) {
-            DynamicUI.currentStyle.onHighlightColorUpdated();
-            this.stylesWithUpdatedHighlightColor.push(DynamicUI.currentStyle.name);
-        }
         if (!this.stylesWithUpdatedBaseColor.includes(DynamicUI.currentStyle.name)) {
             DynamicUI.currentStyle.onBaseColorUpdated();
             this.stylesWithUpdatedBaseColor.push(DynamicUI.currentStyle.name);
@@ -112,12 +102,11 @@ export class DynamicColor {
     }
     ;
     updateHighlightColor(hex) {
+        var _a;
         DynamicColor.highlightColor.setHex(hex);
-        this.getBgHighlightRule().style.setProperty('background-color', DynamicColor.highlightColor.hex, 'important');
-        this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
-        DynamicUI.currentStyle.onHighlightColorUpdated();
-        this.stylesWithUpdatedHighlightColor.length = 0;
-        this.stylesWithUpdatedHighlightColor.push(DynamicUI.currentStyle.name);
+        root.style.setProperty('--highlight-color-invert', DynamicColor.highlightColor.getInvertBlackWhite());
+        root.style.setProperty('--highlight-color', DynamicColor.highlightColor.hex);
+        (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onHighlightColorUpdated();
     }
     updateSchemeColor(hex) {
         DynamicColor.schemeColor.setHex(hex);
@@ -153,6 +142,5 @@ DynamicColor.colorfull1 = new TinyColor("#01724b");
 DynamicColor.colorfull2 = new TinyColor("#bc5b00");
 DynamicColor.colorfull3 = new TinyColor("#c40639");
 DynamicColor.schemeColor = new TinyColor("#D4D4D4");
-DynamicColor.highlightColor = new TinyColor("#004b97");
 DynamicColor.baseColor = 'black';
 DynamicColor.mutedBaseColor = darkMutedBaseColor;

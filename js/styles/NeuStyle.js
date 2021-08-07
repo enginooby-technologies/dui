@@ -36,7 +36,6 @@ export class NeuStyle extends Style {
         this.bgSurface = '';
         // lazy initializations
         this.getBackgroundSchemeColorRule = () => { var _a; return (_a = this.backgroundSchemeColorRule) !== null && _a !== void 0 ? _a : (this.backgroundSchemeColorRule = this.insertEmptyRule(NeuSelectors.backgroundSchemeColorSelectors)); };
-        this.getColorHighlightColorRule = () => { var _a; return (_a = this.colorHighlightColorRule) !== null && _a !== void 0 ? _a : (this.colorHighlightColorRule = this.insertEmptyRule(NeuSelectors.colorHighlightColorSelectors)); };
         this.getColorMutedBaseColorRule = () => { var _a; return (_a = this.colorMutedBaseColorRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseColorRule = this.insertEmptyRule(NeuSelectors.colorMutedBaseColorSelectors)); };
         this.getDropBoxShadowRule = () => { var _a; return (_a = this.dropBoxShadowRule) !== null && _a !== void 0 ? _a : (this.dropBoxShadowRule = this.insertEmptyRule(NeuSelectors.dropBoxShadowSelectors)); };
         this.getInsetBoxShadowRule = () => { var _a; return (_a = this.insetBoxShadowRule) !== null && _a !== void 0 ? _a : (this.insetBoxShadowRule = this.insertEmptyRule(NeuSelectors.insetBoxShadowSelectors)); };
@@ -119,7 +118,6 @@ export class NeuStyle extends Style {
         });
     }
     onHighlightColorUpdated() {
-        this.getColorHighlightColorRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
     }
     onSchemeColorUpdated() {
         this.getBackgroundSchemeColorRule().style.setProperty('background', DynamicColor.schemeColor.hex, 'important');

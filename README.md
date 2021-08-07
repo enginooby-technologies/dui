@@ -49,7 +49,7 @@ The framework manipulates CSSStyleRule to achieve dynamic customization, defines
 
 ## Installation
 ### For development (optional)
-Skip if just use the framework without modification
+Skip if use framework w/o modification
 1. SCSS
 2. PHP
 3. TypeScript & npm

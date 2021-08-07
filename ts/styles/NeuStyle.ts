@@ -40,7 +40,6 @@ export class NeuStyle extends Style {
         bgSurface: string = '';
 
         private backgroundSchemeColorRule?: CSSStyleRule;
-        private colorHighlightColorRule?: CSSStyleRule;
         private colorMutedBaseColorRule?: CSSStyleRule;
         private dropBoxShadowRule?: CSSStyleRule;
         private insetBoxShadowRule?: CSSStyleRule;
@@ -54,7 +53,6 @@ export class NeuStyle extends Style {
 
         // lazy initializations
         getBackgroundSchemeColorRule = () => this.backgroundSchemeColorRule ?? (this.backgroundSchemeColorRule = this.insertEmptyRule(NeuSelectors.backgroundSchemeColorSelectors));
-        getColorHighlightColorRule = () => this.colorHighlightColorRule ?? (this.colorHighlightColorRule = this.insertEmptyRule(NeuSelectors.colorHighlightColorSelectors));
         getColorMutedBaseColorRule = () => this.colorMutedBaseColorRule ?? (this.colorMutedBaseColorRule = this.insertEmptyRule(NeuSelectors.colorMutedBaseColorSelectors));
         getDropBoxShadowRule = () => this.dropBoxShadowRule ?? (this.dropBoxShadowRule = this.insertEmptyRule(NeuSelectors.dropBoxShadowSelectors));
         getInsetBoxShadowRule = () => this.insetBoxShadowRule ?? (this.insetBoxShadowRule = this.insertEmptyRule(NeuSelectors.insetBoxShadowSelectors));
@@ -138,7 +136,6 @@ export class NeuStyle extends Style {
         }
 
         onHighlightColorUpdated(): void {
-                this.getColorHighlightColorRule().style.setProperty('color', DynamicColor.highlightColor!.hex, 'important');
         }
 
         onSchemeColorUpdated(): void {

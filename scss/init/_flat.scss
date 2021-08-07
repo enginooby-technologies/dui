@@ -1,10 +1,8 @@
-$lightenSchemeColor:#e1e1e1; // distinct sub-containers from container
-$darkenShecmeColor:#c7c7c7;
-$darkenHighlightColor:#033669; // hover, active button
-$contrastHighlightColor: #EBEBEB;
+$lightenSchemeColor: #e1e1e1; // distinct sub-containers from container
+$darkenShecmeColor: #c7c7c7;
+$darkenHighlightColor: #033669; // hover, active button
 
 .flat-style {
-
         /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
@@ -27,7 +25,6 @@ $contrastHighlightColor: #EBEBEB;
 
         //  BUTTON RADIO
         .radio-button-group {
-
                 .button.active,
                 .button:not(.active):hover {
                         background-color: $highlightColor;
@@ -40,7 +37,7 @@ $contrastHighlightColor: #EBEBEB;
         }
 
         .radio-selection,
-        table>tbody>tr:hover {
+        table > tbody > tr:hover {
                 background-color: $highlightColor;
                 color: $contrastHighlightColor;
         }
@@ -57,7 +54,7 @@ $contrastHighlightColor: #EBEBEB;
                 color: $baseColor;
         }
 
-        .display-content>.container.none-bg,
+        .display-content > .container.none-bg,
         .range-slider__range,
         .range-slider__value,
         .modal-content {
@@ -66,27 +63,27 @@ $contrastHighlightColor: #EBEBEB;
         }
 
         // SEGMENTED CONTROL
-        .segmented-control>input:not(:checked):not(:hover)+label {
+        .segmented-control > input:not(:checked):not(:hover) + label {
                 color: $mutedBaseColor;
         }
 
-        .segmented-control>input:hover+label {
+        .segmented-control > input:hover + label {
                 color: $highlightColor;
         }
 
-        .segmented-control>input:checked+label {
+        .segmented-control > input:checked + label {
                 color: $contrastHighlightColor;
         }
 
         // CHECKBOX
-        .checkbox input:not(:checked):not(:hover)~label i,
-        .checkbox input:not(:checked)~label+.name {
+        .checkbox input:not(:checked):not(:hover) ~ label i,
+        .checkbox input:not(:checked) ~ label + .name {
                 color: $mutedBaseColor;
         }
 
-        .checkbox input:checked~label+.name,
-        .checkbox input:checked~label i,
-        .checkbox input:hover~label i {
+        .checkbox input:checked ~ label + .name,
+        .checkbox input:checked ~ label i,
+        .checkbox input:hover ~ label i {
                 color: $highlightColor;
         }
 
@@ -103,7 +100,7 @@ $contrastHighlightColor: #EBEBEB;
                 background: $darkenHighlightColor;
         }
 
-        // RANGE SLIDER 
+        // RANGE SLIDER
         ::-webkit-slider-thumb {
                 background-color: $highlightColor;
         }

@@ -19,10 +19,7 @@ export class GlassStyle extends Style {
         // lazy initializations
         this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
-        this.getBgHighlightRule = () => { var _a; return (_a = this.bgHighlightRule) !== null && _a !== void 0 ? _a : (this.bgHighlightRule = this.insertEmptyRule(FlatSelectors.bgHighlightSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
-        this.getColorHighlightRule = () => { var _a; return (_a = this.colorHighlightRule) !== null && _a !== void 0 ? _a : (this.colorHighlightRule = this.insertEmptyRule(FlatSelectors.colorHighlightSelectors)); };
-        this.getColorContrastHighlightRule = () => { var _a; return (_a = this.colorContrastHighlightRule) !== null && _a !== void 0 ? _a : (this.colorContrastHighlightRule = this.insertEmptyRule(FlatSelectors.colorContrastHighlightSelectors)); };
         this.getColorBaseRule = () => { var _a; return (_a = this.colorBaseRule) !== null && _a !== void 0 ? _a : (this.colorBaseRule = this.insertEmptyRule(FlatSelectors.colorBaseSelectors)); };
         this.getColorMutedBaseRule = () => { var _a; return (_a = this.colorMutedBaseRule) !== null && _a !== void 0 ? _a : (this.colorMutedBaseRule = this.insertEmptyRule(FlatSelectors.colorMutedBaseSelectors)); };
         this.getBgColorfull1Rule = () => { var _a; return (_a = this.bgColorfull1Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)'])); };
@@ -72,7 +69,6 @@ export class GlassStyle extends Style {
         this.setToCurrentBlur([
             this.getBgSchemeRule(),
             this.getBgLightenSchemeRule(),
-            this.getBgHighlightRule(),
             this.getBgDarkenHighlightRule(),
             this.getBgColorfull1Rule(),
             this.getBgColorfull2Rule(),
@@ -91,7 +87,6 @@ export class GlassStyle extends Style {
         this.setToCurrentBorderSize([
             this.getBgSchemeRule(),
             this.getBgLightenSchemeRule(),
-            this.getBgHighlightRule(),
             this.getBgDarkenHighlightRule(),
             this.getBgColorfull1Rule(),
             this.getBgColorfull2Rule(),
@@ -136,7 +131,6 @@ export class GlassStyle extends Style {
         this.setToCurrentTransparency(this.getBgLightenSchemeRule(), this.lightenSchemeColor);
     }
     updateTransparencyHighlightColor() {
-        this.setToCurrentTransparency(this.getBgHighlightRule(), DynamicColor.highlightColor);
         this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicColor.highlightColor);
     }
     updateTransparencyColorfull() {
@@ -148,8 +142,6 @@ export class GlassStyle extends Style {
     onHighlightColorUpdated() {
         this.darkenHighlightColor.setHex(DynamicColor.highlightColor.getLighten(this.darkHighlightIntensity));
         this.updateTransparencyHighlightColor();
-        this.getColorHighlightRule().style.setProperty('color', DynamicColor.highlightColor.hex, 'important');
-        this.getColorContrastHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
     }
     onSchemeColorUpdated() {
         this.lightenSchemeColor.setHex(DynamicColor.schemeColor.getLighten(this.lightenSchemeIntensity));

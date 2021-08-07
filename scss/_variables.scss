@@ -1,9 +1,11 @@
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
+:root {
+        --highlight-color: #004b97;
+        --highlight-color-invert: #d4d4d4;
+}
+
 $schemeColor: #d4d4d4;
-$highlightColor: #004b97;
-$contrastHighlightColor: #d4d4d4;
+$highlightColor: var(--highlight-color);
+$contrastHighlightColor: var(--highlight-color-invert);
 $baseColor: black;
 $mutedBaseColor: #4d4d4d; //lightMuted: #b2b2b2
 

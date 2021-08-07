@@ -1,6 +1,8 @@
-/*
-Init values for dynamic properties to reduce  page load time 
-*/
+:root {
+  --highlight-color: #004b97;
+  --highlight-color-invert: #d4d4d4;
+}
+
 /* FONT */
 /*-------------------------
          SETTING
@@ -690,7 +692,7 @@ code {
 }
 
 .button-border .button {
-  color: #004b97;
+  color: var(--highlight-color);
   border-radius: 9px;
   padding: 10px 30px;
   -webkit-transition: all 0.3s ease;
@@ -756,7 +758,7 @@ code {
 .code-block .token.atrule,
 .code-block .token.attr-value,
 .code-block .token.keyword {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .code-block .token.attr-name,
@@ -804,7 +806,7 @@ code {
   font-weight: 900;
   font-family: "Poppins", sans-serif;
   margin-bottom: 0;
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .title-bar-controls {
@@ -888,17 +890,17 @@ code {
 }
 
 .dui-radio .state:checked ~ .label .text {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .dui-radio .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
           transform: translate3d(8px, 0, 0);
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .dui-radio .label:hover .text {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .range-slider {
@@ -1132,7 +1134,7 @@ input::-moz-focus-outer {
 }
 
 .dropdown-toggle {
-  color: #004b97;
+  color: var(--highlight-color);
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
@@ -1155,7 +1157,7 @@ input::-moz-focus-outer {
 }
 
 .show > .dropdown-toggle {
-  color: #004b97;
+  color: var(--highlight-color);
   background-color: #d4d4d4;
 }
 
@@ -1269,11 +1271,11 @@ input::-moz-focus-outer {
 }
 
 .nes-style .cp-toggle {
-  background-color: #004b97;
+  background-color: var(--highlight-color);
 }
 
 .nes-style .cp-toggle i {
-  color: #d4d4d4 !important;
+  color: var(--highlight-color-invert) !important;
   position: relative;
   top: -5px;
   left: -0.5px;
@@ -1304,8 +1306,8 @@ input::-moz-focus-outer {
 }
 
 .nes-style .button {
-  background-color: #004b97;
-  color: #d4d4d4;
+  background-color: var(--highlight-color);
+  color: var(--highlight-color-invert);
   border-image-repeat: stretch;
 }
 
@@ -1379,7 +1381,7 @@ input::-moz-focus-outer {
 }
 
 .nes-style .dui-radio span.text::before {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .nes-style .dui-radio input:checked + label .text::before,
@@ -1503,7 +1505,7 @@ input::-moz-focus-outer {
 }
 
 .nes-style .segmented-control input:checked + label {
-  color: #d4d4d4;
+  color: var(--highlight-color-invert);
 }
 
 .nes-style .image-border {
@@ -2190,7 +2192,7 @@ body,
 
 .bg-highlight-color,
 .border-style {
-  background-color: #004b97;
+  background-color: var(--highlight-color);
 }
 
 #pp-nav li :not(.active) span {
@@ -2198,7 +2200,7 @@ body,
 }
 
 #pp-nav li .active span {
-  background-color: #004b97;
+  background-color: var(--highlight-color);
 }
 
 .highlight-color,
@@ -2208,7 +2210,7 @@ body,
 .contact .form-item .form-control,
 .highlight-portfolio-item.fa-star,
 .portfolio .portfolio-icon a:hover {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 body,
@@ -2307,11 +2309,11 @@ body,
 .social i:hover,
 .list-inline.socials li a i:hover,
 #myMenu li a:hover {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .loader {
-  border-top-color: #004b97;
+  border-top-color: var(--highlight-color);
 }
 
 #overlayer {
@@ -2488,7 +2490,7 @@ table,
 
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .neu-style .dropdown .dropdown-toggle {
@@ -2562,7 +2564,7 @@ table,
 .neu-style .button,
 .neu-style .segmented-control > input:checked + label,
 .neu-style .segmented-control > input:hover + label {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .neu-style .button:hover,
@@ -2586,7 +2588,7 @@ table,
 .neu-style .checkbox input:checked ~ label + .name,
 .neu-style .checkbox input:checked ~ label i,
 .neu-style .checkbox input:hover ~ label i {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .neu-style ::-webkit-scrollbar-track {
@@ -2615,8 +2617,8 @@ table,
 }
 
 .flat-style .button {
-  background-color: #004b97;
-  color: #EBEBEB;
+  background-color: var(--highlight-color);
+  color: var(--highlight-color-invert);
 }
 
 .flat-style .button:hover {
@@ -2625,18 +2627,18 @@ table,
 
 .flat-style .radio-button-group .button.active,
 .flat-style .radio-button-group .button:not(.active):hover {
-  background-color: #004b97;
-  color: #EBEBEB;
+  background-color: var(--highlight-color);
+  color: var(--highlight-color-invert);
 }
 
 .flat-style .radio-button-group .button:not(.active) {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .flat-style .radio-selection,
 .flat-style table > tbody > tr:hover {
-  background-color: #004b97;
-  color: #EBEBEB;
+  background-color: var(--highlight-color);
+  color: var(--highlight-color-invert);
 }
 
 .flat-style .box-border,
@@ -2664,11 +2666,11 @@ table,
 }
 
 .flat-style .segmented-control > input:hover + label {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .flat-style .segmented-control > input:checked + label {
-  color: #EBEBEB;
+  color: var(--highlight-color-invert);
 }
 
 .flat-style .checkbox input:not(:checked):not(:hover) ~ label i,
@@ -2679,7 +2681,7 @@ table,
 .flat-style .checkbox input:checked ~ label + .name,
 .flat-style .checkbox input:checked ~ label i,
 .flat-style .checkbox input:hover ~ label i {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .flat-style ::-webkit-scrollbar-track {
@@ -2687,7 +2689,7 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-thumb {
-  background-color: #004b97;
+  background-color: var(--highlight-color);
 }
 
 .flat-style ::-webkit-scrollbar-thumb:hover {
@@ -2695,7 +2697,7 @@ table,
 }
 
 .flat-style ::-webkit-slider-thumb {
-  background-color: #004b97;
+  background-color: var(--highlight-color);
 }
 
 .flat-style ::-webkit-slider-thumb:hover {
@@ -2725,8 +2727,8 @@ table,
 .glass-style .radio-button-group .button:not(.active):hover,
 .glass-style .radio-selection,
 .glass-style table > tbody > tr:hover {
-  background-color: rgba(0, 75, 155, 0.6);
-  color: white;
+  background-color: var(--highlight-color);
+  color: var(--highlight-color-invert);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(209, 213, 219, 0.6);
@@ -2759,7 +2761,7 @@ table,
 }
 
 .glass-style .radio-button-group .button:not(.active) {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .glass-style .background-colorfull1:not(.fill-skillbar) {
@@ -2776,7 +2778,7 @@ table,
 
 .glass-style .button:hover {
   background-color: rgba(3, 54, 105, 0.6);
-  color: white;
+  color: var(--highlight-color-invert);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(209, 213, 219, 0.6);
@@ -2787,11 +2789,11 @@ table,
 }
 
 .glass-style .segmented-control > input:hover + label {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .glass-style .segmented-control > input:checked + label {
-  color: white;
+  color: var(--highlight-color-invert);
 }
 
 .glass-style .checkbox input:not(:checked):not(:hover) ~ label i,
@@ -2802,7 +2804,7 @@ table,
 .glass-style .checkbox input:checked ~ label + .name,
 .glass-style .checkbox input:checked ~ label i,
 .glass-style .checkbox input:hover ~ label i {
-  color: #004b97;
+  color: var(--highlight-color);
 }
 
 .glass-style ::-webkit-scrollbar-track {
@@ -2813,7 +2815,7 @@ table,
 }
 
 .glass-style ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 75, 155, 0.6);
+  background-color: var(--highlight-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(209, 213, 219, 0.6);
@@ -2827,7 +2829,7 @@ table,
 }
 
 .glass-style ::-webkit-slider-thumb {
-  background-color: rgba(0, 75, 155, 0.6);
+  background-color: var(--highlight-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(209, 213, 219, 0.6);
