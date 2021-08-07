@@ -132,7 +132,7 @@ include_once "components/container/_index.php";
                                 <div id="background-panel" class="option-panel mb-4">
                                         <p class="option-label">Background</p>
                                         <div id="outer-background-panel">
-                                                <p> Outer </p>
+                                                <p> Page </p>
                                                 <?php
                                                 echo Dropdown(
                                                         "None",
@@ -149,7 +149,7 @@ include_once "components/container/_index.php";
                                                 ?>
                                         </div>
                                         <div id="inner-background-panel" class="mt-3">
-                                                <p> Inner </p>
+                                                <p> Containers </p>
                                                 <?php
                                                 echo Dropdown(
                                                         "None",
