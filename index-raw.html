@@ -14,37 +14,29 @@
 
 <body class="neu-style ">
         <!-- TODO: Add preloader to hide FOUC + Use a few indentical CSS as loading style sheet (e.g. Bootstrap) to reduce FOUC-->
-                                        
+                
         <div class="display-table">
                 <div class="display-content ">
                         <div class="container ">
-
                                 <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
-                                <hr>
-
-                                <h5 class="my-4">I - Basic Components</h5>
+                                <hr><br>
                                 <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/basic/_index.php";?&gt;</code></pre>
-</div><div class=" d-flex justify-content-center flex-row">
+        <pre><code class="language-php">&lt;?= include_once "components/_index.php";?&gt;</code></pre>
+</div>
+                                <h5 class="my-4">I - Basic Components</h5>
+                                <div class=" d-flex justify-content-center flex-row">
                           <div class='button-border'>
           <a href='javascript:;' class='button' id=' button_dynamic-button'>Dynamic button</a>
   </div>        </div><div class="code-block">
         <pre><code class="language-php">// optional params: string $id = "button_".format($label), string $href = "javascript:;"
 echo Button(label: "Dynamic button");</code></pre>
 </div>
-
                                 <h5 class="my-4">II - Container Components</h5>
-                                <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/container/_index.php";?&gt;</code></pre>
-</div>
+
                                 <h5 class="my-4">III - Content Components</h5>
-                                <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/content/_index.php";?&gt;</code></pre>
-</div>
+
                                 <h5 class="my-4">IV - Form Components</h5>
-                                <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/form/_index.php";?&gt;</code></pre>
-</div><div class=" d-flex justify-content-center flex-row">
+                                <div class=" d-flex justify-content-center flex-row">
                                 <div class='range-slider'>
                 <label for='range-slider_dynamic-slider'>Dynamic slider</label>
                 <input class='range-slider__range' id='range-slider_dynamic-slider' type='range' min='0' max='100' step='0.1' value='0'>
@@ -120,13 +112,9 @@ echo Dropdown(
 )</code></pre>
 </div>
                                 <h5 class="my-4">V - Navigation Components</h5>
-                                <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/navigation/_index.php";?&gt;</code></pre>
-</div>
+
                                 <h5 class="my-4">VI - Advanced Components</h5>
-                                <div class="code-block">
-        <pre><code class="language-php">&lt;?= include_once "components/advanced/_index.php";?&gt;</code></pre>
-</div>                        </div>
+                        </div>
                 </div>
         </div>        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->

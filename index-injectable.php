@@ -1,18 +1,17 @@
-        <?php include_once "components/container/_index.php"; ?>
-        <?php include_once "components/basic/_index.php"; ?>
-        <?php include_once "components/form/_index.php"; ?>
-        <?php include_once "layouts/_index.php"; ?>
+        <?php
+        include_once "components/_index.php";
+        include_once "layouts/_index.php";
+        ?>
 
         <div class="display-table">
                 <div class="display-content ">
                         <div class="container ">
-
                                 <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
-                                <hr>
+                                <hr><br>
+                                <?php CodeBlock('php', '<?= include_once "components/_index.php";?>'); ?>
 
                                 <h5 class="my-4">I - Basic Components</h5>
-                                <?php CodeBlock('php', '<?= include_once "components/basic/_index.php";?>');
-
+                                <?php
                                 Flexbox(
                                         null,
                                         Button(label: "Dynamic button")
@@ -21,16 +20,12 @@
                                         echo Button(label: "Dynamic button");', 5)
                                 ?>
 
-
                                 <h5 class="my-4">II - Container Components</h5>
-                                <?= CodeBlock('php', '<?= include_once "components/container/_index.php";?>') ?>
 
                                 <h5 class="my-4">III - Content Components</h5>
-                                <?= CodeBlock('php', '<?= include_once "components/content/_index.php";?>') ?>
 
                                 <h5 class="my-4">IV - Form Components</h5>
-                                <?= CodeBlock('php', '<?= include_once "components/form/_index.php";?>');
-
+                                <?php
                                 Flexbox(
                                         null,
                                         RangeSlider(label: "Dynamic slider",  max: 100)
@@ -86,10 +81,8 @@
                                 ?>
 
                                 <h5 class="my-4">V - Navigation Components</h5>
-                                <?= CodeBlock('php', '<?= include_once "components/navigation/_index.php";?>') ?>
 
                                 <h5 class="my-4">VI - Advanced Components</h5>
-                                <?= CodeBlock('php', '<?= include_once "components/advanced/_index.php";?>') ?>
                         </div>
                 </div>
         </div>
