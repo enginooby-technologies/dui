@@ -16,7 +16,7 @@
                                         null,
                                         Button(label: "Dynamic button")
                                 );
-                                CodeBlock('php', '// optional params: string $id = "button_".format($label), string $href = "javascript:;", string $class = ""
+                                CodeBlock('php', '/* optional params: string $id = "button_".format($label), string $href = "javascript:;", string $class = "", string $onclick = null */
                                         echo Button(label: "Dynamic button");', 5)
                                 ?>
 
@@ -30,7 +30,7 @@
                                         null,
                                         RangeSlider(label: "Dynamic slider",  max: 100)
                                 );
-                                CodeBlock('php', '// optional params: string $id = "slider_".format($label), float $min = $value = 0, float $step = 0.1
+                                CodeBlock('php', '/* optional params: string $id = "slider_".format($label), float $min = $value = 0, float $step = 0.1 */
                                 echo RangeSlider(label: "Dynamic slider",  max: 100);
                                 ', 4);
 
@@ -39,7 +39,7 @@
                                         Radio(label: "Radio 1", value: 1, group: "group-1"),
                                         Radio(label: "Radio 2", value: 2, group: "group-1", checked: true),
                                 );
-                                CodeBlock('php', '// optional params: string $id = "radio_".format($label), bool $checked = false                                
+                                CodeBlock('php', '/* optional params: string $id = "radio_".format($label), bool $checked = false  */                              
                                         echo Radio(label: "Radio 1", value: 1, group: "group-1");
                                         echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
                                         ', 5);
@@ -48,7 +48,7 @@
                                         null,
                                         Toggle(label: "Dynamic toggle")
                                 );
-                                CodeBlock('php', '// optional params: string $id = $name = "toggle_".format($label), float $value = 0
+                                CodeBlock('php', '/* optional params: string $id = $name = "toggle_".format($label), float $value = 0 */
                                 echo Toggle(label: "Dynamic toggle");
                                 ', 4);
 
@@ -56,7 +56,7 @@
                                         null,
                                         Checkbox(name: "Dynamic checkbox")
                                 );
-                                CodeBlock('php', '// optional params: string $id = $value = "checkbox_".format($name), bool $checked = false  
+                                CodeBlock('php', '/* optional params: string $id = $value = "checkbox_".format($name), bool $checked = false  */
                                 echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);
 
@@ -70,7 +70,7 @@
                                                 ["label" => "Option 3", "value" => 3],
                                         )
                                 );
-                                CodeBlock('php', '// optional dropdown item keys: "href" => "javascript:;", "value" = 0
+                                CodeBlock('php', '/* optional dropdown item keys: "href" => "javascript:;", "value" = 0 */
                                         echo Dropdown(
                                                 "Dynamic dropdown",
                                                 "dropdown-demo",
