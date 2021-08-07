@@ -18,10 +18,6 @@ export class DynamicColor {
         $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
     }
-    getBgSchemeRule() {
-        var _a;
-        return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgSchemeSelectors));
-    }
     getBgBaseRule() {
         var _a;
         return (_a = this.bgBaseRule) !== null && _a !== void 0 ? _a : (this.bgBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgBaseSelectors));
@@ -110,8 +106,8 @@ export class DynamicColor {
     }
     updateSchemeColor(hex) {
         DynamicColor.schemeColor.setHex(hex);
+        root.style.setProperty('--scheme-color', DynamicColor.schemeColor.hex);
         this.updateBaseColor();
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
         DynamicUI.currentStyle.onSchemeColorUpdated();
         this.stylesWithUpdatedSchemeColor.length = 0;
         this.stylesWithUpdatedSchemeColor.push(DynamicUI.currentStyle.name);

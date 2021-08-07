@@ -1,4 +1,5 @@
 :root {
+  --scheme-color: #da1313;
   --highlight-color: #004b97;
   --highlight-color-invert: #d4d4d4;
 }
@@ -549,7 +550,7 @@ body {
   line-height: 1.5;
   text-align: left;
   height: 100vh;
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .display-table {
@@ -565,7 +566,7 @@ body {
 }
 
 .display-content > .container {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   position: relative;
 }
 
@@ -873,7 +874,7 @@ code {
 }
 
 .dui-radio .indicator::after {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   -webkit-transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
@@ -1158,7 +1159,7 @@ input::-moz-focus-outer {
 
 .show > .dropdown-toggle {
   color: var(--highlight-color);
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .dropdown-toggle-split {
@@ -1282,7 +1283,7 @@ input::-moz-focus-outer {
 }
 
 .nes-style .setting-panel {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .nes-style .button,
@@ -1452,12 +1453,12 @@ input::-moz-focus-outer {
 }
 
 .nes-style .dropdown button {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   padding: 3px 5px;
 }
 
 .nes-style .dropdown-menu {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   border-image-repeat: space;
 }
 
@@ -1799,7 +1800,7 @@ input::-moz-focus-outer {
 }
 
 .win98-style .setting-panel {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .win98-style .title-bar {
@@ -2187,7 +2188,7 @@ body,
 .blog .blog-image,
 .blog .blog-item .before,
 .toggle .indicator {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .bg-highlight-color,
@@ -2317,7 +2318,7 @@ body,
 }
 
 #overlayer {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .blog .blog-image,
@@ -2443,19 +2444,19 @@ table,
 }
 
 .neu-style .range-slider .range-slider__value {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
 
 .neu-style .range-slider .range-slider__range {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   -webkit-box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
           box-shadow: 3px 3px 4px 0px #c2c2c2, -3px -3px 4px 0px #e6e6e6;
 }
@@ -2478,7 +2479,7 @@ table,
 .neu-style .dropdown .dropdown-menu,
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .neu-style .dropdown.show .dropdown-toggle,
@@ -2554,7 +2555,7 @@ table,
 .neu-style .checkbox label,
 .neu-style .portfolio-single .modal-content,
 .neu-style ::-webkit-scrollbar-track {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .neu-style .segmented-control > input:not(:checked):not(:hover) + label {
@@ -2594,13 +2595,13 @@ table,
 .neu-style ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
           box-shadow: inset 3px 3px 4px 0px #c2c2c2, inset -3px -3px 4px 0px #e6e6e6;
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
           box-shadow: inset -3px -3px 4px 0px #c2c2c2, inset 3px 3px 4px 0px #e6e6e6;
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
 }
 
 .flat-style {
@@ -2657,7 +2658,7 @@ table,
 .flat-style .range-slider__range,
 .flat-style .range-slider__value,
 .flat-style .modal-content {
-  background-color: #d4d4d4;
+  background-color: var(--scheme-color);
   color: black;
 }
 
@@ -2843,7 +2844,7 @@ table,
 }
 
 .none-bg {
-  background-color: #d4d4d4 !important;
+  background-color: var(--scheme-color) !important;
   background-image: none;
 }
 

@@ -1,9 +1,12 @@
 :root {
+        // --scheme-color: #d4d4d4;
+        --scheme-color: #da1313;
         --highlight-color: #004b97;
         --highlight-color-invert: #d4d4d4;
 }
 
-$schemeColor: #d4d4d4;
+//SASS variabls just to ease referecing in other SCSS files
+$schemeColor: var(--scheme-color);
 $highlightColor: var(--highlight-color);
 $contrastHighlightColor: var(--highlight-color-invert);
 $baseColor: black;

@@ -2,19 +2,19 @@ export const bgSelectors = formatString([
     ' body',
     '.display-content>.container'
 ]);
-export const bgSchemeSelectors = formatString([
-    ".none-bg",
-    "body:not(.glass-style)",
-    // ".hero-03",
-    ".segmented-control",
-    ".image-border",
-    ".skill-box .skillbar",
-    ".blog .blog-image",
-    ".blog .blog-item .before",
-    "#overlayer",
-    ".toggle .indicator",
-    ".dui-radio .indicator::after"
-]);
+// export const bgSchemeSelectors = formatString([
+//         ".none-bg",
+//         "body:not(.glass-style)",
+//         // ".hero-03",
+//         ".segmented-control",
+//         ".image-border",
+//         ".skill-box .skillbar",
+//         ".blog .blog-image",
+//         ".blog .blog-item .before",
+//         "#overlayer",
+//         ".toggle .indicator",
+//         ".dui-radio .indicator::after"
+// ]);
 export const bgBaseSelectors = formatString([
     "#pp-nav li :not(.active) span"
 ]);

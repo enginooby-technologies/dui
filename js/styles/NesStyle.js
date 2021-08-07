@@ -12,7 +12,6 @@ export class NesStyle extends Style {
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.borderInput = "";
-        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(NesSelectors.bgSchemeSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors)); };
         this.getBorderInputRule = () => { var _a; return (_a = this.borderInputRule) !== null && _a !== void 0 ? _a : (this.borderInputRule = this.insertEmptyRule(NesSelectors.borderInputSelectors)); };
     }
@@ -32,7 +31,6 @@ export class NesStyle extends Style {
         this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
     }
     onSchemeColorUpdated() {
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
     }
     onBaseColorUpdated() {
         this.updateBorderColor();

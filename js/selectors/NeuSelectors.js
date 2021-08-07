@@ -1,15 +1,3 @@
-export const backgroundSchemeColorSelectors = [
-    // FORM COMPONENTS
-    ".dropdown button",
-    ".dropdown-menu",
-    ".dropdown button:hover",
-    ".dropdown-item:hover",
-    ".display-content>.container.none-bg",
-    ".injected-section .display-content",
-    "::-webkit-scrollbar-track",
-    "::-webkit-scrollbar-thumb",
-    ".setting-button a",
-];
 export const colorMutedBaseColorSelectors = [
     ".checkbox input:not(:checked)~label+.name",
     ".checkbox input:not(:checked):not(:hover)~label i",

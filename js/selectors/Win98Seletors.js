@@ -1,12 +1,3 @@
-export const bgSchemeSelectors = [
-    // CONTAINER
-    ".display-content > .container",
-    ".setting-panel",
-    //FORM
-    // ".dropdown button",
-    // ".dropdown-menu",
-    // ".box-border"
-];
 export const bgDarkenHighlightSelectors = [
     "::-webkit-scrollbar-thumb:hover",
     "::-webkit-slider-thumb:hover",

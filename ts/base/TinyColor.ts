@@ -5,9 +5,11 @@ import { Color } from "./Color.js";
 // TODO: Create my own algorithms for functions and remove TinyColor dependency
 export class TinyColor extends Color {
         getLighten(amount: number): string {
+                // @ts-ignore
                 return tinycolor(this.hex)!.lighten(amount).toString();
         }
         getDarken(amount: number): string {
+                // @ts-ignore
                 return tinycolor(this.hex)!.darken(amount).toString();
         }
 }

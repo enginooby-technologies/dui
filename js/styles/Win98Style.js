@@ -1,12 +1,7 @@
 import { Style } from '../base/Style.js';
-import * as Win98Seletors from '../selectors/Win98Seletors.js';
-import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { Win98Config } from '../StyleConfig.js';
 export class Win98Style extends Style {
-    constructor() {
-        super(Win98Config);
-        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(Win98Seletors.bgSchemeSelectors)); };
-    }
+    constructor() { super(Win98Config); }
     static get Instance() {
         var _a;
         (_a = Win98Style._instance) !== null && _a !== void 0 ? _a : (Win98Style._instance = new Win98Style());
@@ -21,7 +16,6 @@ export class Win98Style extends Style {
     onHighlightColorUpdated() {
     }
     onSchemeColorUpdated() {
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
     }
     onBaseColorUpdated() {
     }

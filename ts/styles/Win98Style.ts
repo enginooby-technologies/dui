@@ -11,9 +11,6 @@ export class Win98Style extends Style {
                 return Win98Style._instance;
         }
 
-        private bgSchemeRule?: CSSStyleRule;
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(Win98Seletors.bgSchemeSelectors));
-
         setupCustomizeEvents(): void {
         }
 
@@ -27,7 +24,6 @@ export class Win98Style extends Style {
         }
 
         onSchemeColorUpdated(): void {
-                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor!.hex);
         }
 
         onBaseColorUpdated(): void {

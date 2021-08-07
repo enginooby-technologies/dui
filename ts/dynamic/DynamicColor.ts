@@ -20,7 +20,6 @@ export class DynamicColor {
 
         static mutedBaseColor: string = darkMutedBaseColor;
 
-        bgSchemeRule?: CSSStyleRule;
         bgBaseRule?: CSSStyleRule;
         colorBaseRule?: CSSStyleRule;
         colorMutedBaseRule?: CSSStyleRule;
@@ -33,10 +32,6 @@ export class DynamicColor {
         stylesWithUpdatedSchemeColor: string[] = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];
         stylesWithUpdatedBaseColor: string[] = this.stylesWithUpdatedSchemeColor;
 
-
-        public getBgSchemeRule(): CSSStyleRule {
-                return this.bgSchemeRule ?? (this.bgSchemeRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgSchemeSelectors));
-        }
         public getBgBaseRule(): CSSStyleRule {
                 return this.bgBaseRule ?? (this.bgBaseRule = DynamicUI.insertEmptyRule(DynamicSelectors.bgBaseSelectors));
         }
@@ -136,8 +131,9 @@ export class DynamicColor {
 
         private updateSchemeColor(hex: string) {
                 DynamicColor.schemeColor.setHex(hex);
+                root.style.setProperty('--scheme-color', DynamicColor.schemeColor.hex);
+
                 this.updateBaseColor();
-                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex, 'important');
 
                 DynamicUI.currentStyle!.onSchemeColorUpdated();
                 this.stylesWithUpdatedSchemeColor.length = 0;

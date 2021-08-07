@@ -17,8 +17,6 @@ export class FlatStyle extends Style {
         darkHighlightIntensity: number = 15;
         darkenHighlightColor: string = "#033669"
 
-        private bgSchemeRule?: CSSStyleRule;
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(FlatSelectors.bgSchemeSelectors));
         private bgLightenSchemeRule?: CSSStyleRule;
         private bgDarkenHighlightRule?: CSSStyleRule;
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
@@ -43,8 +41,6 @@ export class FlatStyle extends Style {
 
         onSchemeColorUpdated(): void {
                 this.lightenSchemeColor = DynamicColor.schemeColor!.getLighten(this.lightSchemeIntensity);
-                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor!.hex);
-                this.getBgSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
                 this.getBgLightenSchemeRule().style.setProperty('background-color', this.lightenSchemeColor, 'important');
                 this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
         }

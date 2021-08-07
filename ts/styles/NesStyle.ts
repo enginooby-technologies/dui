@@ -22,8 +22,6 @@ export class NesStyle extends Style {
         darkenHighlightColor: string = "#033669";
         borderInput: string = "";
 
-        private bgSchemeRule?: CSSStyleRule;
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(NesSelectors.bgSchemeSelectors));
         private bgDarkenHighlightRule?: CSSStyleRule;
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
         private borderInputRule?: CSSStyleRule;
@@ -44,7 +42,6 @@ export class NesStyle extends Style {
         }
 
         onSchemeColorUpdated(): void {
-                this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor!.hex);
         }
 
         onBaseColorUpdated(): void {

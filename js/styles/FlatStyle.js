@@ -9,7 +9,6 @@ export class FlatStyle extends Style {
         this.lightenSchemeColor = "#e1e1e1";
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
-        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(FlatSelectors.bgSchemeSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
         // lazy initializations
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
@@ -31,8 +30,6 @@ export class FlatStyle extends Style {
     }
     onSchemeColorUpdated() {
         this.lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightSchemeIntensity);
-        this.getBgSchemeRule().style.setProperty('background-color', DynamicColor.schemeColor.hex);
-        this.getBgSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');
         this.getBgLightenSchemeRule().style.setProperty('background-color', this.lightenSchemeColor, 'important');
         this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');
     }
