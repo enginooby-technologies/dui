@@ -16,7 +16,7 @@
                                         null,
                                         Button(label: "Dynamic button")
                                 );
-                                CodeBlock('php', '// optional params: string $id = "button_".format($label), string $href = "javascript:;"
+                                CodeBlock('php', '// optional params: string $id = "button_".format($label), string $href = "javascript:;", string $class = ""
                                         echo Button(label: "Dynamic button");', 5)
                                 ?>
 

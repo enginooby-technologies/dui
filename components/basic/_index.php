@@ -5,7 +5,8 @@ declare(strict_types=1);
 include_once dirname(__FILE__) . "/../../utils/general.php";
 include_once dirname(__FILE__) . "/../../utils/formatter.php";
 
-function Button(string $label, string $id = null, string $href = 'javascript:;')
+// @param $class contains additional classes beside the default "button" class, mostly for spacing
+function Button(string $label, string $id = null, string $href = 'javascript:;', string $class = '')
 {
         $id = $id ?? "button_" . formatToId($label);
         ob_start();
