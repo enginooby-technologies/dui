@@ -329,15 +329,15 @@ hr {
 
 @font-face {
   font-family: "Agency FB";
-  src: url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.ttf");
-  src: url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.eot") format("embedded-opentype"), url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.woff2") format("woff2"), url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.woff") format("woff"), url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.ttf") format("truetype"), url("/assets/fonts/agency-fb-regular/AgencyFB-Reg.svg") format("svg");
+  src: url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf");
+  src: url("../fonts/agency-fb-regular/AgencyFB-Reg.eot") format("embedded-opentype"), url("../fonts/agency-fb-regular/AgencyFB-Reg.woff2") format("woff2"), url("../fonts/agency-fb-regular/AgencyFB-Reg.woff") format("woff"), url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf") format("truetype"), url("../fonts/agency-fb-regular/AgencyFB-Reg.svg") format("svg");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Agency FB Bold";
-  src: url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.ttf");
-  src: url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.eot") format("embedded-opentype"), url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.woff2") format("woff2"), url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.woff") format("woff"), url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.ttf") format("truetype"), url("/assets/fonts/agency-fb-bold/AgencyFB-Bold.svg") format("svg");
+  src: url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf");
+  src: url("../fonts/agency-fb-bold/AgencyFB-Bold.eot") format("embedded-opentype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff2") format("woff2"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff") format("woff"), url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf") format("truetype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.svg") format("svg");
   font-display: swap;
 }
 

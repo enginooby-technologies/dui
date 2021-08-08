@@ -2,6 +2,7 @@ import * as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NesConfig } from '../StyleConfig.js';
+import { insertEmptyRule } from '../global.js';
 export class NesStyle extends Style {
     constructor() {
         super(NesConfig);
@@ -12,8 +13,8 @@ export class NesStyle extends Style {
         this.darkHighlightIntensity = 15;
         this.darkenHighlightColor = "#033669";
         this.borderInput = "";
-        this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors)); };
-        this.getBorderInputRule = () => { var _a; return (_a = this.borderInputRule) !== null && _a !== void 0 ? _a : (this.borderInputRule = this.insertEmptyRule(NesSelectors.borderInputSelectors)); };
+        this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors)); };
+        this.getBorderInputRule = () => { var _a; return (_a = this.borderInputRule) !== null && _a !== void 0 ? _a : (this.borderInputRule = insertEmptyRule(NesSelectors.borderInputSelectors)); };
     }
     static get Instance() {
         var _a;

@@ -1,4 +1,5 @@
 // import WebFont from "webfontloader";
+import { insertEmptyRule } from '../global.js';
 import * as DynamicSelectors from '../selectors/DynamicSelectors.js'
 import { DynamicUI } from "./DynamicUI.js";
 
@@ -21,9 +22,9 @@ export class DynamicFont {
         downloadedFontFamilies: string[] = ["Agency FB"]; // initialize with local fonts
         $dropdownLabelFontFamily: JQuery<HTMLElement>;
         fontRule?: CSSStyleRule;
-        getFontRule = () => this.fontRule ?? (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors));
+        getFontRule = () => this.fontRule ?? (this.fontRule = insertEmptyRule(DynamicSelectors.fontSelectors));
         fontScaleRule?: CSSStyleRule;
-        getFontScaleRule = () => this.fontScaleRule ?? (this.fontScaleRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontScaleSelectors));
+        getFontScaleRule = () => this.fontScaleRule ?? (this.fontScaleRule = insertEmptyRule(DynamicSelectors.fontScaleSelectors));
 
         initialFontSizes = new Map<CSSStyleRule, number>();
 

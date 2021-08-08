@@ -1,4 +1,5 @@
 // import WebFont from "webfontloader";
+import { insertEmptyRule } from '../global.js';
 import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
 import { DynamicUI } from "./DynamicUI.js";
 class FontPreset {
@@ -15,8 +16,8 @@ export class DynamicFont {
     constructor() {
         this.fontPresets = [];
         this.downloadedFontFamilies = ["Agency FB"]; // initialize with local fonts
-        this.getFontRule = () => { var _a; return (_a = this.fontRule) !== null && _a !== void 0 ? _a : (this.fontRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontSelectors)); };
-        this.getFontScaleRule = () => { var _a; return (_a = this.fontScaleRule) !== null && _a !== void 0 ? _a : (this.fontScaleRule = DynamicUI.insertEmptyRule(DynamicSelectors.fontScaleSelectors)); };
+        this.getFontRule = () => { var _a; return (_a = this.fontRule) !== null && _a !== void 0 ? _a : (this.fontRule = insertEmptyRule(DynamicSelectors.fontSelectors)); };
+        this.getFontScaleRule = () => { var _a; return (_a = this.fontScaleRule) !== null && _a !== void 0 ? _a : (this.fontScaleRule = insertEmptyRule(DynamicSelectors.fontScaleSelectors)); };
         this.initialFontSizes = new Map();
         this.fontPresets = [
             new FontPreset('Agency FB', 1, 1.45, 1),

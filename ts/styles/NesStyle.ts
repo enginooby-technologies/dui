@@ -2,6 +2,7 @@ import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NesConfig } from '../StyleConfig.js';
+import { insertEmptyRule } from '../global.js';
 
 export class NesStyle extends Style {
         //  Singleton Pattern
@@ -23,9 +24,9 @@ export class NesStyle extends Style {
         borderInput: string = "";
 
         private bgDarkenHighlightRule?: CSSStyleRule;
-        getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
+        getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
         private borderInputRule?: CSSStyleRule;
-        getBorderInputRule = () => this.borderInputRule ?? (this.borderInputRule = this.insertEmptyRule(NesSelectors.borderInputSelectors));
+        getBorderInputRule = () => this.borderInputRule ?? (this.borderInputRule = insertEmptyRule(NesSelectors.borderInputSelectors));
 
         setupCustomizeEvents(): void {
         }

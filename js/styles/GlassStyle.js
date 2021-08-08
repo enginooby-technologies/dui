@@ -6,6 +6,7 @@ import * as GlassSelectors from '../selectors/GlassSelectors.js';
 import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
+import { insertEmptyRule } from '../global.js';
 export class GlassStyle extends Style {
     constructor() {
         super(GlassConfig);
@@ -17,7 +18,7 @@ export class GlassStyle extends Style {
         this.lightenSchemeColor = new TinyColor('#fafafa');
         this.darkenHighlightColor = new TinyColor('#033669');
         // lazy initializations
-        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
+        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
         this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
         this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
         this.getBgColorfull1Rule = () => { var _a; return (_a = this.bgColorfull1Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)'])); };

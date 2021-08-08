@@ -7,8 +7,9 @@
         <meta name="author" content="enginoobz" />
         <meta name="description" content="Demo page for Dynamic Style Framework" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
-        <!-- <link rel="stylesheet" href="critical.css" type="text/css" /> -->
+        <!-- Preload fonts -->
+        <link rel="preload" href="./fonts/agency-fb-regular/AgencyFB-Reg.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="./fonts/agency-fb-bold/AgencyFB-Bold.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="css/dynamic-style.css" type="text/css" />
 </head>
 

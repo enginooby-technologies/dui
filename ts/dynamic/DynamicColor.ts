@@ -28,9 +28,9 @@ export class DynamicColor {
         constructor() {
                 this.$squareImg = $(".hero-image .square img");
                 $("#scheme-color-picker").attr('value', DynamicColor.schemeColor.hex);
-                // TOFIX: Can not get initial value of color to init the picker
                 DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
-                $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
+                // TOFIX: Can not get initial value of color to init the picker
+                // $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
                 this.setupColorPickerEvents();
         }
 

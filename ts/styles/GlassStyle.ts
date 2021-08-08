@@ -7,6 +7,7 @@ import * as GlassSelectors from '../selectors/GlassSelectors.js'
 import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
+import { insertEmptyRule } from '../global.js';
 
 export class GlassStyle extends Style {
         // Singleton Pattern
@@ -37,7 +38,7 @@ export class GlassStyle extends Style {
 
 
         // lazy initializations
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = this.insertEmptyRule(GlassSelectors.bgSchemeSelectors));
+        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = insertEmptyRule(GlassSelectors.bgSchemeSelectors));
         getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
         getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
         getBgColorfull1Rule = () => this.bgColorfull1Rule ?? (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)']));
