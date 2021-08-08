@@ -70,22 +70,22 @@
         // TODO: for setting panel
         ::-webkit-scrollbar-button:vertical:start {
                 height: 17px;
-                background-image: url("/dynamic-ui-framework/icons/win98/button-up.svg");
+                background-image: url("/dui/icons/win98/button-up.svg");
                 background-image: url("../icons/win98/button-up.svg");
         }
         ::-webkit-scrollbar-button:vertical:end {
                 height: 17px;
-                background-image: url("/dynamic-ui-framework/icons/win98/button-down.svg");
+                background-image: url("/dui/icons/win98/button-down.svg");
                 background-image: url("../icons/win98/button-down.svg");
         }
         ::-webkit-scrollbar-button:horizontal:start {
                 width: 16px;
-                background-image: url("/dynamic-ui-framework/icons/win98/button-left.svg");
+                background-image: url("/dui/icons/win98/button-left.svg");
                 background-image: url("../icons/win98/button-left.svg");
         }
         ::-webkit-scrollbar-button:horizontal:end {
                 width: 16px;
-                background-image: url("/dynamic-ui-framework/icons/win98/button-right.svg");
+                background-image: url("/dui/icons/win98/button-right.svg");
                 background-image: url("../icons/win98/button-right.svg");
         }
 
@@ -318,12 +318,12 @@
                 -webkit-appearance: none;
                 height: 21px;
                 width: 11px;
-                background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizontal.svg");
+                background-image: url("/dui/icons/win98/indicator-horizontal.svg");
                 background-image: url("../icons/win98/indicator-horizontal.svg");
                 transform: translateY(-8px);
         }
         input[type="range"].has-box-indicator::-webkit-slider-thumb {
-                background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+                background-image: url("/dui/icons/win98/indicator-rectangle-horizontal.svg");
                 background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
                 transform: translateY(-10px);
         }
@@ -332,12 +332,12 @@
                 width: 11px;
                 border: 0;
                 border-radius: 0;
-                background-image: url("/dynamic-ui-framework/icons/win98/indicator-horizonta.svg");
+                background-image: url("/dui/icons/win98/indicator-horizonta.svg");
                 background-image: url("../icons/win98/indicator-horizonta.svg");
                 transform: translateY(2px);
         }
         input[type="range"].has-box-indicator::-moz-range-thumb {
-                background-image: url("/dynamic-ui-framework/icons/win98/indicator-rectangle-horizontal.svg");
+                background-image: url("/dui/icons/win98/indicator-rectangle-horizontal.svg");
                 background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
                 transform: translateY(0px);
         }
@@ -413,7 +413,7 @@
         }
         .dropdown .dropdown-toggle {
                 appearance: none;
-                background-image: url("/dynamic-ui-framework/icons/win98/button-down.svg");
+                background-image: url("/dui/icons/win98/button-down.svg");
                 background-image: url("../icons/win98/button-down.svg");
                 // TOFIX: not font-responsive
                 background-position: top 1px right 1px;
@@ -423,7 +423,7 @@
                 background-color: transparent;
         }
         .dropdown.show .dropdown-toggle {
-                background-image: url("/dynamic-ui-framework/icons/win98/button-down-active.svg");
+                background-image: url("/dui/icons/win98/button-down-active.svg");
                 background-image: url("../icons/win98/button-down-active.svg");
                 background-color: $dialog_blue;
         }

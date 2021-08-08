@@ -1,5 +1,5 @@
 {
-        "name": "dynamic-ui-framework",
+        "name": "dui",
         "version": "1.0.0",
         "description": "The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component reusing and delegates layouting  to Bootstrap with supporting OOP (\"strongly-typed Bootstrap\").",
         "main": "js/DynamicUI.js",
@@ -8,14 +8,14 @@
         },
         "repository": {
                 "type": "git",
-                "url": "git+https://github.com/enginoobz-projects/dynamic-ui-framework.git"
+                "url": "git+https://github.com/enginoobz-projects/dui.git"
         },
         "author": "Hieu Ngo",
         "license": "ISC",
         "bugs": {
-                "url": "https://github.com/enginoobz-projects/dynamic-ui-framework/issues"
+                "url": "https://github.com/enginoobz-projects/dui/issues"
         },
-        "homepage": "https://github.com/enginoobz-projects/dynamic-ui-framework#readme",
+        "homepage": "https://github.com/enginoobz-projects/dui#readme",
         "devDependencies": {
                 "@interactjs/types": "^1.10.11",
                 "@types/css-font-loading-module": "0.0.6",

@@ -5,7 +5,7 @@
         <title>Dynamic UI Framework</title>
         <meta charset="UTF-8" />
         <meta name="author" content="enginoobz" />
-        <meta name="description" content="Demo page for Dynamic Style Framework" />
+        <meta name="description" content="Demo page for Dynamic UI Framework" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Preload fonts -->
         <link rel="preload" href="../fonts/agency-fb-regular/AgencyFB-Reg.woff2" as="font" type="font/woff2" crossorigin>

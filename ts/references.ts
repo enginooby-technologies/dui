@@ -21,10 +21,10 @@ export interface StyleSheetFile {
 /*-------------------------
       Framework Resources
 -------------------------*/
-const localFrameworkPath: string = '/dynamic-ui-framework';
+const localFrameworkPath: string = '/dui';
 // remote paths: ad-hoc fallback to load file on remote server for different projects
 // TODO: resolve CORS or use CDN
-const remoteFrameworkPath: string = 'https://enginoobz.com/dynamic-ui-framework';
+const remoteFrameworkPath: string = 'https://enginoobz.com/dui';
 export const settingFilePath: string = `${localFrameworkPath}/setting.html`;
 export const fallbackSettingFilePath: string = `${remoteFrameworkPath}/setting.html`;
 export const settingButtonFilePath: string = `${localFrameworkPath}/setting-button.html`;

@@ -1,10 +1,10 @@
 /*-------------------------
       Framework Resources
 -------------------------*/
-const localFrameworkPath = '/dynamic-ui-framework';
+const localFrameworkPath = '/dui';
 // remote paths: ad-hoc fallback to load file on remote server for different projects
 // TODO: resolve CORS or use CDN
-const remoteFrameworkPath = 'https://enginoobz.com/dynamic-ui-framework';
+const remoteFrameworkPath = 'https://enginoobz.com/dui';
 export const settingFilePath = `${localFrameworkPath}/setting.html`;
 export const fallbackSettingFilePath = `${remoteFrameworkPath}/setting.html`;
 export const settingButtonFilePath = `${localFrameworkPath}/setting-button.html`;
