@@ -1,6 +1,6 @@
         <?php
-        include_once "components/_index.php";
-        include_once "layouts/_index.php";
+        include_once "../components/_index.php";
+        include_once "../layouts/_index.php";
         ?>
 
         <div class="display-table">

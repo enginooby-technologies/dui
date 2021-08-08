@@ -8,9 +8,9 @@
         <meta name="description" content="Demo page for Dynamic Style Framework" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <!-- Preload fonts -->
-        <link rel="preload" href="./fonts/agency-fb-regular/AgencyFB-Reg.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="./fonts/agency-fb-bold/AgencyFB-Bold.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="stylesheet" href="css/dynamic-style.css" type="text/css" />
+        <link rel="preload" href="../fonts/agency-fb-regular/AgencyFB-Reg.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="../fonts/agency-fb-bold/AgencyFB-Bold.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="../css/dynamic-style.css" type="text/css" />
 </head>
 
 <body class="neu-style ">
@@ -20,7 +20,7 @@
         <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
         <!-- TOFIX: Error if only include bootstrap js since framework uses jquery & popper which MUST be loaded beforehand -->
         <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-        <script async src="js/main.js" type="module"></script>
+        <script async src="../js/main.js" type="module"></script>
 </body>
 
 </html>

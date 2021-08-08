@@ -2,9 +2,9 @@ var critical = require('critical');
 
 critical.generate({
         inline: true,
-        src: 'index-raw.html',
+        src: 'demo/index-raw.html',
         target: {
-                html: 'index.html',
+                html: 'demo/index.html',
                 css: 'critical.css', // output inline critical css
         },
         // Critial auto detects all css files
