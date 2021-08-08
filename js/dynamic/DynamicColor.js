@@ -1,9 +1,8 @@
 import { TinyColor } from '../base/TinyColor.js';
-import { DynamicUI } from './DynamicUI.js';
+import { DynamicUI, root } from './DynamicUI.js';
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
-const root = document.documentElement;
 export class DynamicColor {
     constructor() {
         this.stylesWithUpdatedSchemeColor = [FlatConfig.name, NeuConfig.name, NesConfig.name, Win98Config.name, GlassConfig.name];

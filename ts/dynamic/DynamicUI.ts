@@ -8,6 +8,8 @@ import { DynamicFont } from './DynamicFont.js';
 import { DragDropExt } from '../extensions/DragDropExt.js';
 import { StyleRegistry } from '../StyleRegistry.js';
 
+export const root = document.documentElement;
+
 export class DynamicUI {
         dynamicColor?: DynamicColor;
         dynamicFont?: DynamicFont;
@@ -49,8 +51,7 @@ export class DynamicUI {
                 DynamicUI.styleSheet = DynamicUI.createStyleSheet();
                 DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
 
-                this.initSettingPanel();
-                this.setupSettingEvents();
+                this.setupSettingPanel();
 
                 // get init class "...-style" from body
                 const initStyleName = DynamicUI.$body!.attr('class')!.match(/\S*-style\b/i)?.toString();
@@ -77,43 +78,27 @@ export class DynamicUI {
                 })
         }
 
-        private initSettingPanel() {
-                $('#border-radius').attr('value', this.borderRadius);
-                $("#border-radius").next('.range-slider__value').html(this.borderRadius.toString());
-        }
-
-        private setupSettingEvents() {
+        private setupSettingPanel() {
                 $('.theme-skin.radio-button-group .button').on('click', event => {
                         $('.theme-skin.radio-button-group .button').removeClass('active');
                         $(event.currentTarget).addClass('active')
                 });
 
-                this.setupRangeSliderEvents();
+                this.setupRangeSliders();
         }
 
         /* DYNAMIC BORDER */
-        borderRadius: number = 9;
-        borderRadiusRule?: CSSStyleRule;
-        public getBorderRadiusRule(): CSSStyleRule {
-                return this.borderRadiusRule ?? (this.borderRadiusRule = DynamicUI.insertEmptyRule(DynamicSelectors.borderRadiusSelectors));
-        }
+        private setupRangeSliders() {
+                const $borderRadiusSlider = $('#border-radius');
+                const initialBorderRadius = 9;
 
-        private setupRangeSliderEvents() {
-                $("#border-radius").on('input', (event) => {
+                $borderRadiusSlider.attr('value', initialBorderRadius);
+                $borderRadiusSlider.next('.range-slider__value').html(initialBorderRadius.toString());
+                $borderRadiusSlider.on('input', (event) => {
                         const newValue = (event.target as HTMLInputElement).value;
                         $("#" + event.target.id).next('.range-slider__value').text(newValue);
-                        switch (event.target.id) {
-                                case 'border-radius':
-                                        this.borderRadius = parseInt(newValue);
-                                        break;
-                        }
-                        this.updateBorder();
+                        root.style.setProperty('--border-radius', newValue + 'px');
                 });
-        }
-
-        private updateBorder() {
-                this.getBorderRadiusRule().style.setProperty('border-radius', `${this.borderRadius}px`);
-                $('.background-item').css('border-radius', this.borderRadius * 6); // since its zoom is 1/6
         }
 }
 

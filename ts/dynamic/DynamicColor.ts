@@ -1,12 +1,11 @@
 import { Color } from '../base/Color.js';
 import { TinyColor } from '../base/TinyColor.js';
-import { DynamicUI } from './DynamicUI.js';
+import { DynamicUI, root } from './DynamicUI.js';
 import * as DynamicSelectors from '../selectors/DynamicSelectors.js'
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
 
 const lightMutedBaseColor: string = "#b2b2b2";
 const darkMutedBaseColor: string = "#4D4D4D";
-const root = document.documentElement;
 
 export class DynamicColor {
 

@@ -1,15 +1,19 @@
 :root {
+        /* Basic colors */
         --scheme-color: #d4d4d4;
         --highlight-color: #004b97;
         --highlight-color-inverted: #d4d4d4;
         --base-color: black; // mostly for text <=> --scheme-color-inverted
         --base-color-muted: #4d4d4d; //lightMuted: #b2b2b2
+        /* Classification colors */
         --group-1-color: #01724b;
         --group-2-color: #bc5b00;
         --group-3-color: #c40639;
         --group-1-color-inverted: white;
         --group-2-color-inverted: white;
         --group-3-color-inverted: white;
+        /* Others */
+        --border-radius: 9px;
 }
 
 //SASS variables just to ease referecing in other SCSS files
@@ -26,7 +30,7 @@ $contrastColorfull1: var(--group-1-color-inverted);
 $contrastColorfull2: var(--group-2-color-inverted);
 $contrastColorfull3: var(--group-3-color-inverted);
 
-$borderRadius: 9px;
+$borderRadius: var(--border-radius);
 $transitionDuration: 0.8s;
 
 /* FONT */
