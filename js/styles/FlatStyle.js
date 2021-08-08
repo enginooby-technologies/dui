@@ -1,4 +1,3 @@
-import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { Style } from '../base/Style.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { FlatConfig } from '../StyleConfig.js';
@@ -6,12 +5,7 @@ export class FlatStyle extends Style {
     constructor() {
         super(FlatConfig);
         this.lightSchemeIntensity = 5;
-        this.lightenSchemeColor = "#e1e1e1";
         this.darkHighlightIntensity = 15;
-        this.darkenHighlightColor = "#033669";
-        this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
-        // lazy initializations
-        this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
     }
     static get Instance() {
         var _a;
@@ -21,16 +15,16 @@ export class FlatStyle extends Style {
     init() { }
     onDisable() { }
     setupCustomizeEvents() { }
+    onBaseColorUpdated() {
+    }
     onHighlightColorUpdated() {
-        this.darkenHighlightColor = DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity);
-        this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-        this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor.getInvertBlackWhite(), 'important');
+        const darkenHighlightColor = DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity);
+        this.cssRule.style.setProperty('--highlight-color-darken', darkenHighlightColor);
+        // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
     }
     onSchemeColorUpdated() {
-        this.lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightSchemeIntensity);
-        this.getBgLightenSchemeRule().style.setProperty('background-color', this.lightenSchemeColor, 'important');
-        this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor.getInvertBlackWhite(), 'important');
-    }
-    onBaseColorUpdated() {
+        const lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightSchemeIntensity);
+        this.cssRule.style.setProperty('--scheme-color-lighten', lightenSchemeColor);
+        // this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
     }
 }

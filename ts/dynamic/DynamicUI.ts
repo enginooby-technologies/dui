@@ -1,4 +1,3 @@
-import * as DynamicSelectors from '../selectors/DynamicSelectors.js'
 import * as Ref from "../references.js";
 import * as Loader from "../loader.js";
 import { Style } from '../base/Style.js'
@@ -7,8 +6,7 @@ import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
 import { DragDropExt } from '../extensions/DragDropExt.js';
 import { StyleRegistry } from '../StyleRegistry.js';
-
-export const root = document.documentElement;
+import { root } from "../global.js";
 
 export class DynamicUI {
         dynamicColor?: DynamicColor;
@@ -18,16 +16,6 @@ export class DynamicUI {
 
         // TODO: cache all jQuery selectors
         static $body?: JQuery<HTMLElement>; //outer background
-        static styleSheet?: CSSStyleSheet;
-        static cssRules?: CSSRuleList;
-        static createStyleSheet(): CSSStyleSheet {
-                var style = document.createElement("style");
-                document.head.appendChild(style);
-                return style.sheet!;
-        }
-        static insertEmptyRule(selector: string): CSSStyleRule {
-                return DynamicUI.cssRules![DynamicUI.styleSheet!.insertRule(`${selector} {}`)] as CSSStyleRule;
-        }
 
         public setCurrentStyle(newStyle: Style) {
                 DynamicUI.currentStyle?.onDisable();
@@ -48,8 +36,6 @@ export class DynamicUI {
 
         constructor() {
                 DynamicUI.$body = $('body');
-                DynamicUI.styleSheet = DynamicUI.createStyleSheet();
-                DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
 
                 this.setupSettingPanel();
 

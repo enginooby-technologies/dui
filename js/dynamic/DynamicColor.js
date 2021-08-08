@@ -1,6 +1,7 @@
 import { TinyColor } from '../base/TinyColor.js';
-import { DynamicUI, root } from './DynamicUI.js';
+import { DynamicUI } from './DynamicUI.js';
 import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from '../StyleConfig.js';
+import { root } from '../global.js';
 const lightMutedBaseColor = "#b2b2b2";
 const darkMutedBaseColor = "#4D4D4D";
 export class DynamicColor {
@@ -52,7 +53,7 @@ export class DynamicColor {
     updateHighlightColor(hex) {
         var _a;
         DynamicColor.highlightColor.setHex(hex);
-        root.style.setProperty('--highlight-color-invert', DynamicColor.highlightColor.getInvertBlackWhite());
+        root.style.setProperty('--highlight-color-inverted', DynamicColor.highlightColor.getInvertBlackWhite());
         root.style.setProperty('--highlight-color', DynamicColor.highlightColor.hex);
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onHighlightColorUpdated();
     }

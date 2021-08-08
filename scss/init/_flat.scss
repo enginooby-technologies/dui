@@ -1,13 +1,15 @@
-$lightenSchemeColor: #e1e1e1; // distinct sub-containers from container
-$darkenShecmeColor: #c7c7c7;
-$darkenHighlightColor: #033669; // hover, active button
-
 .flat-style {
+        --scheme-color-lighten: #e1e1e1; // distinct sub-containers from its container
+        --highlight-color-darken: #033669; //for  hover, active button
+
+        $schemeColorLighten: var(--scheme-color-lighten);
+        $highlightColorDarken: var(--highlight-color-darken);
+
         /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
         .code-block {
-                background-color: $lightenSchemeColor;
+                background-color: $schemeColorLighten;
         }
 
         /*-------------------------
@@ -20,7 +22,7 @@ $darkenHighlightColor: #033669; // hover, active button
         }
 
         .button:hover {
-                background-color: $darkenHighlightColor;
+                background-color: $highlightColorDarken;
         }
 
         //  BUTTON RADIO
@@ -50,7 +52,7 @@ $darkenHighlightColor: #033669; // hover, active button
         .setting-button-border,
         .setting-panel,
         .setting-button {
-                background-color: $lightenSchemeColor;
+                background-color: $schemeColorLighten;
                 color: $baseColor;
         }
 
@@ -89,7 +91,7 @@ $darkenHighlightColor: #033669; // hover, active button
 
         // SCROLLBAR
         ::-webkit-scrollbar-track {
-                background-color: $lightenSchemeColor;
+                background-color: $schemeColorLighten;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -97,7 +99,7 @@ $darkenHighlightColor: #033669; // hover, active button
         }
 
         ::-webkit-scrollbar-thumb:hover {
-                background: $darkenHighlightColor;
+                background: $highlightColorDarken;
         }
 
         // RANGE SLIDER
@@ -106,6 +108,6 @@ $darkenHighlightColor: #033669; // hover, active button
         }
 
         ::-webkit-slider-thumb:hover {
-                background-color: $darkenHighlightColor;
+                background-color: $highlightColorDarken;
         }
 }

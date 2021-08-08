@@ -1,4 +1,4 @@
-import { DynamicUI } from '../dynamic/DynamicUI.js';
+import { insertEmptyRule } from '../global.js';
 import { StyleConfig } from '../StyleConfig.js';
 
 export abstract class Style {
@@ -8,15 +8,17 @@ export abstract class Style {
         preferredOuterBg: string;
         preferredInnerBg: string;
         preferredFontFamily?: string;
+        cssRule: CSSStyleRule; // to change its CSS custom properties
 
         constructor(styleConfig: StyleConfig) {
                 this.name = styleConfig.name;
                 this.preferredOuterBg = styleConfig.outerBackground ?? 'none-bg';
                 this.preferredInnerBg = styleConfig.innerBackground ?? 'none-bg';
                 this.preferredFontFamily = styleConfig.font;
+                this.cssRule = insertEmptyRule('.' + styleConfig.name)
         }
 
-        protected insertEmptyRule = (selectors: string[]): CSSStyleRule => DynamicUI.cssRules![DynamicUI.styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
+        // protected insertEmptyRule = (selectors: string[]): CSSStyleRule => cssRules![styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
 
         private formatSelectorsArray(array: string[]): string {
                 return array.map(selector => `.${this.name} ${selector}`).join(", ");

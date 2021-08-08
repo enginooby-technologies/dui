@@ -5,13 +5,11 @@ import { DynamicBackground } from './DynamicBackground.js';
 import { DynamicFont } from './DynamicFont.js';
 import { DragDropExt } from '../extensions/DragDropExt.js';
 import { StyleRegistry } from '../StyleRegistry.js';
-export const root = document.documentElement;
+import { root } from "../global.js";
 export class DynamicUI {
     constructor() {
         var _a;
         DynamicUI.$body = $('body');
-        DynamicUI.styleSheet = DynamicUI.createStyleSheet();
-        DynamicUI.cssRules = DynamicUI.styleSheet.cssRules || DynamicUI.styleSheet.rules;
         this.setupSettingPanel();
         // get init class "...-style" from body
         const initStyleName = (_a = DynamicUI.$body.attr('class').match(/\S*-style\b/i)) === null || _a === void 0 ? void 0 : _a.toString();
@@ -20,14 +18,6 @@ export class DynamicUI {
         this.dynamicBackground = new DynamicBackground();
         this.enableDynamicFont();
         // this.enableDragDropExtension();
-    }
-    static createStyleSheet() {
-        var style = document.createElement("style");
-        document.head.appendChild(style);
-        return style.sheet;
-    }
-    static insertEmptyRule(selector) {
-        return DynamicUI.cssRules[DynamicUI.styleSheet.insertRule(`${selector} {}`)];
     }
     setCurrentStyle(newStyle) {
         var _a, _b, _c, _d, _e;
