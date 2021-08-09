@@ -14,6 +14,23 @@
         --group-3-color-inverted: white;
         /* Others */
         --border-radius: 9px;
+
+        // lg
+        --container-max-width: 1100px;
+        --container-padding: 40px;
+        // TODO: sm - md...
+
+        // --transparency: 1;
+        // --scheme-color: rgba(212, 212, 212, var(--transparency));
+        // // prettier-ignore
+        // // --scheme-color-lighten: rgba(250,250,250,var(--transparency));
+        // // prettier-ignore
+        // --highlight-color: rgba(0, 75, 151, var(--transparency));
+        // // prettier-ignore
+        // // --highlight-color-darken: rgba(3,54,105,var(--transparency));
+        // --group-1-color: rgba(1, 114, 75, var(--transparency));
+        // --group-2-color: rgba(188, 91, 0, var(--transparency));
+        // --group-3-color: rgba(196, 6, 57, var(--transparency));
 }
 
 //SASS variables just to ease referecing in other SCSS files

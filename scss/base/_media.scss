@@ -21,10 +21,10 @@
 
 @media (min-width: 1200px) {
         .display-content > .container {
-                max-width: 1100px;
+                max-width: var(--container-max-width);
         }
 
         .display-content > .container {
-                padding: 40px;
+                padding: var(--container-padding);
         }
 }
