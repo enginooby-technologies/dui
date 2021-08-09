@@ -3,13 +3,7 @@
 declare(strict_types=1);
 
 include_once dirname(__FILE__) . "/../../utils/general.php";
-
-function TitleBar(string $title)
-{
-        ob_start();
-        include "_title-bar.php";
-        return getHtmlOutputFromBuffer();
-}
+include_once "TitleBar.php";
 
 // @param $currentTabSize: number of spaces per tab configured in the editor
 function CodeBlock(string $language, string $code, int $outdent = 0,  int $currentTabSize = 8)
