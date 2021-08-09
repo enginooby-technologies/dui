@@ -27,4 +27,10 @@ class Input
                 $wrapperClass = $this->wrapperClass;
                 include "input_view.php";
         }
+
+        public function wrapperClass(string $name)
+        {
+                $this->wrapperClass .= (' ' . $name);
+                return $this;
+        }
 }

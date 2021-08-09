@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-// @param $class contains additional classes beside the default "button" class, mostly for spacing
-function Button(?string $id = null, string $class = '', string $label = '',  string $href = 'javascript:;', ?string $onclick = null): Button
+function Button(?string $id = null, string $wrapperClass = '', string $label = '',  string $href = 'javascript:;', ?string $onclick = null): Button
 {
-        return  new Button($id, $class, $label, $href, $onclick);
+        return  new Button($id, $wrapperClass, $label, $href, $onclick);
 }
 
 // CONSIDER: make a base class with id & class members
@@ -13,7 +12,7 @@ class Button
 {
         public function __construct(
                 private ?string $id = null,
-                private ?string $class = null,
+                private ?string $wrapperClass = null,
                 private string $label = '',
                 private string $href = 'javascript:;',
                 private ?string $onclick = null
@@ -23,7 +22,7 @@ class Button
         public function show()
         {
                 $idAttr = $this->id ? "id='$this->id'" : '';
-                $class = $this->class;
+                $wrapperClass = $this->wrapperClass;
                 $label = $this->label;
                 $href = $this->href;
                 $onclickAttr = $this->onclick ? "onclick='$this->onclick'" : '';
@@ -36,9 +35,9 @@ class Button
                 return $this;
         }
 
-        public function class($class)
+        public function wrapperClass(string $name)
         {
-                $this->class = $class;
+                $this->wrapperClass .= (' ' . $name);
                 return $this;
         }
 
