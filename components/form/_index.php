@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+include_once "Input.php";
 include_once dirname(__FILE__) . "/../../utils/formatter.php";
 include_once dirname(__FILE__) . "/../../utils/general.php";
 
