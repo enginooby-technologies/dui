@@ -6,7 +6,6 @@ include_once "FlexboxOption.php";
 function Flexbox(?FlexboxOption $option = null, array $components = [], string $class = ''): Flexbox
 {
         return new Flexbox($class, $components, $option);
-        // include "_flexbox.php";
 }
 
 class Flexbox
@@ -25,6 +24,7 @@ class Flexbox
                 $direction = $this->option?->direction ?? Direction::Default();
                 $components = $this->components;
                 include "flexbox_view.php";
+                return $this;
         }
 
         public function class($class)

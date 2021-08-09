@@ -44,5 +44,7 @@ class Head
                 $title = $this->title;
                 $cssHrefs = $this->cssHrefs;
                 include "head_view.php";
+                // return itself, allow to quickly duplicate: $component->show()->show()...
+                return $this;
         }
 }
