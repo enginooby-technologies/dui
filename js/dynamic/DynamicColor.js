@@ -54,12 +54,15 @@ export class DynamicColor {
         var _a;
         DynamicColor.highlightColor.setHex(hex);
         root.style.setProperty('--highlight-color-inverted', DynamicColor.highlightColor.getInvertBlackWhite());
-        root.style.setProperty('--highlight-color', DynamicColor.highlightColor.hex);
+        this.updateColorCssVar('--highlight-color', DynamicColor.highlightColor);
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onHighlightColorUpdated();
+    }
+    updateColorCssVar(cssVar, color) {
+        root.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
     }
     updateSchemeColor(hex) {
         DynamicColor.schemeColor.setHex(hex);
-        root.style.setProperty('--scheme-color', DynamicColor.schemeColor.hex);
+        this.updateColorCssVar('--scheme-color', DynamicColor.schemeColor);
         this.updateBaseColor();
         DynamicUI.currentStyle.onSchemeColorUpdated();
         this.stylesWithUpdatedSchemeColor.length = 0;

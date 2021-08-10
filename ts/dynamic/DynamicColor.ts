@@ -76,13 +76,17 @@ export class DynamicColor {
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
                 root.style.setProperty('--highlight-color-inverted', DynamicColor.highlightColor.getInvertBlackWhite());
-                root.style.setProperty('--highlight-color', DynamicColor.highlightColor.hex);
+                this.updateColorCssVar('--highlight-color', DynamicColor.highlightColor);
                 DynamicUI.currentStyle?.onHighlightColorUpdated();
+        }
+
+        private updateColorCssVar(cssVar: string, color: Color) {
+                root.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
         }
 
         private updateSchemeColor(hex: string) {
                 DynamicColor.schemeColor.setHex(hex);
-                root.style.setProperty('--scheme-color', DynamicColor.schemeColor.hex);
+                this.updateColorCssVar('--scheme-color', DynamicColor.schemeColor);
 
                 this.updateBaseColor();
 

@@ -1,32 +1,35 @@
-$transparency: 0.6;
-$blur: 10;
-$borderSize: 1;
-
-$schemeColorA: rgba(212, 212, 212, $transparency);
-$lightenSchemeColorA: rgba(250, 250, 250, $transparency);
-$highlightColorA: $highlightColor;
-// $highlightColorA: rgba(0, 75, 155, $transparency);
-$darkenHighlightColorA: rgba(3, 54, 105, $transparency);
-// $contrastHighlightColor: white;
-
-$colorfull1A: rgba(1, 114, 75, $transparency);
-$colorfull2A: rgba(188, 91, 0, $transparency);
-$colorfull3A: rgba(196, 6, 57, $transparency);
-
-@mixin blur-and-border {
-        backdrop-filter: blur(#{$blur}px);
-        -webkit-backdrop-filter: blur(#{$blur}px);
-        border: #{$borderSize}px solid rgba(209, 213, 219, 0.6);
-}
-
 .glass-style {
+        --transparency: 0.6;
+        --blur: 10px;
+        --border-size: 1px;
+
+        // TODO: Calculate derived colors from :root
+        --scheme-color-lighten: 250, 250, 250;
+        --highlight-color-darken: 3, 54, 105;
+
+        --scheme-color-rgba: rgba(var(--scheme-color), var(--transparency));
+        // prettier-ignore
+        --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
+        // prettier-ignore
+        --highlight-color-rgba: rgba(var(--highlight-color), var(--transparency));
+        // prettier-ignore
+        --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
+        --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));
+        --group-2-color-transparent: rgba(188, 91, 0, var(--transparency));
+        --group-3-color-transparent: rgba(196, 6, 57, var(--transparency));
+
+        @mixin blur-and-border {
+                backdrop-filter: blur(var(--blur));
+                -webkit-backdrop-filter: blur(var(--blur));
+                border: var(--border-size) solid rgba(209, 213, 219, 0.6);
+        }
+
         .display-content > .container::before {
-                opacity: $transparency;
-                // @include blur-and-border();
+                opacity: var(--transparency) !important;
         }
 
         .display-content > .container {
-                background-color: $schemeColorA !important;
+                background-color: var(--scheme-color-rgba) !important;
                 @include blur-and-border();
         }
 
@@ -35,8 +38,8 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
         .radio-button-group .button:not(.active):hover,
         .radio-selection,
         table > tbody > tr:hover {
-                background-color: $highlightColorA;
-                color: $contrastHighlightColor;
+                background-color: var(--highlight-color-rgba);
+                color: var(--highlight-color-inverted);
                 @include blur-and-border();
         }
 
@@ -48,8 +51,8 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
         .setting-button-border,
         .setting-panel,
         .setting-button {
-                background-color: $lightenSchemeColorA;
-                color: $baseColor;
+                background-color: var(--scheme-color-lighten-rgba);
+                color: var(--base-color);
                 @include blur-and-border();
         }
 
@@ -57,83 +60,83 @@ $colorfull3A: rgba(196, 6, 57, $transparency);
         .range-slider__range,
         .range-slider__value,
         .modal-content {
-                background-color: $schemeColorA;
-                color: $baseColor;
+                background-color: var(--scheme-color-rgba);
+                color: var(--base-color);
                 @include blur-and-border();
         }
 
         .radio-button-group .button:not(.active) {
-                color: $highlightColor;
+                color: var(--highlight-color);
         }
 
         .background-colorfull1:not(.fill-skillbar) {
-                background-color: $colorfull1A;
+                background-color: var(--group-1-color-transparent);
         }
 
         .background-colorfull2:not(.fill-skillbar) {
-                background-color: $colorfull2A;
+                background-color: var(--group-2-color-transparent);
         }
 
         .background-colorfull3:not(.fill-skillbar) {
-                background-color: $colorfull3A;
+                background-color: var(--group-3-color-transparent);
         }
 
         //HOVER
         .button:hover {
-                background-color: $darkenHighlightColorA;
-                color: $contrastHighlightColor;
+                background-color: var(--highlight-color-darken-rgba);
+                color: var(--highlight-color-inverted);
                 @include blur-and-border();
         }
 
         // RADIO
         .segmented-control > input:not(:checked):not(:hover) + label {
-                color: $mutedBaseColor;
+                color: var(--base-color-muted);
         }
 
         .segmented-control > input:hover + label {
-                color: $highlightColor;
+                color: var(--highlight-color);
         }
 
         .segmented-control > input:checked + label {
-                color: $contrastHighlightColor;
+                color: var(--highlight-color-inverted);
         }
 
         // CHECKBOX
         .checkbox input:not(:checked):not(:hover) ~ label i,
         .checkbox input:not(:checked) ~ label + .name {
-                color: $mutedBaseColor;
+                color: var(--base-color-muted);
         }
 
         .checkbox input:checked ~ label + .name,
         .checkbox input:checked ~ label i,
         .checkbox input:hover ~ label i {
-                color: $highlightColor;
+                color: var(--highlight-color);
         }
 
         // SCROLLBAR
         ::-webkit-scrollbar-track {
-                background-color: $lightenSchemeColorA;
+                background-color: var(--scheme-color-lighten-rgba);
                 @include blur-and-border();
         }
 
         ::-webkit-scrollbar-thumb {
-                background-color: $highlightColorA;
+                background-color: var(--highlight-color-rgba);
                 @include blur-and-border();
         }
 
         ::-webkit-scrollbar-thumb:hover {
-                background: $darkenHighlightColorA;
+                background: var(--highlight-color-darken-rgba);
                 @include blur-and-border();
         }
 
         // RANGE SLIDER
         ::-webkit-slider-thumb {
-                background-color: $highlightColorA;
+                background-color: var(--highlight-color-rgba);
                 @include blur-and-border();
         }
 
         ::-webkit-slider-thumb:hover {
-                background-color: $darkenHighlightColorA;
+                background: var(--highlight-color-darken-rgba);
                 @include blur-and-border();
         }
 }

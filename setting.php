@@ -1,13 +1,11 @@
 <?php
-include_once "components/form/_index.php";
-include_once "components/basic/_index.php";
-include_once "components/container/_index.php";
+include_once "_index.php";
 ?>
 
 <div id="setting-section" class="setting-section">
         <div class="text-center setting-panel hide">
                 <?php
-                echo TitleBar("Setting");
+                TitleBar("Setting")->show();
                 ?>
                 <div class="setting-panel-content">
                         <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">

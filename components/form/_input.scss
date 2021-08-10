@@ -1,8 +1,14 @@
-.form-item .form-control {
-        background: transparent;
-        height: 44px;
-        font-size: 1.25rem;
-        position: relative;
-        transition: border 0.9s ease;
-        padding: 1rem;
+//wrapper
+.form-item {
+        .form-group {
+                margin: 0;
+                .form-control {
+                        background: transparent;
+                        height: 44px;
+                        font-size: 1.25rem;
+                        position: relative;
+                        transition: border 0.9s ease;
+                        padding: 1rem;
+                }
+        }
 }

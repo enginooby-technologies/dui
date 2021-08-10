@@ -7,6 +7,7 @@
         <title><?= $title ?></title>
 
         <link rel="stylesheet" href="dui/css/dynamic-style.css" type="text/css">
+        <!-- TODO: Verify if sheets are in order -->
         <?php foreach ($cssHrefs as $href) : ?>
                 <link rel="stylesheet" href="<?= $href ?>" type="text/css">
         <?php endforeach; ?>

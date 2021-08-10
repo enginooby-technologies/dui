@@ -1,13 +1,8 @@
 import { Color } from '../base/Color.js';
 import { Style } from '../base/Style.js';
 import { TinyColor } from '../base/TinyColor.js';
-// CAUTION: FlatStyle dependent
-//TODO: DRY with FlatStyle
-import * as GlassSelectors from '../selectors/GlassSelectors.js'
-import * as FlatSelectors from '../selectors/FlatSelectors.js'
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
-import { insertEmptyRule } from '../global.js';
 
 export class GlassStyle extends Style {
         // Singleton Pattern
@@ -25,27 +20,6 @@ export class GlassStyle extends Style {
         darkHighlightIntensity: number = 15;
         lightenSchemeColor: Color = new TinyColor('#fafafa');
         darkenHighlightColor: Color = new TinyColor('#033669');
-
-        private bgColorfull1Rule?: CSSStyleRule;
-        private bgColorfull2Rule?: CSSStyleRule;
-        private bgColorfull3Rule?: CSSStyleRule;
-
-        private bgSchemeRule?: CSSStyleRule;
-        private bgLightenSchemeRule?: CSSStyleRule;
-        private bgDarkenHighlightRule?: CSSStyleRule;
-        private innerBgRule?: CSSStyleRule;
-        private innerBgContainerRule?: CSSStyleRule;
-
-
-        // lazy initializations
-        getBgSchemeRule = () => this.bgSchemeRule ?? (this.bgSchemeRule = insertEmptyRule(GlassSelectors.bgSchemeSelectors));
-        getBgLightenSchemeRule = () => this.bgLightenSchemeRule ?? (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors));
-        getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors));
-        getBgColorfull1Rule = () => this.bgColorfull1Rule ?? (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)']));
-        getBgColorfull2Rule = () => this.bgColorfull2Rule ?? (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)']));
-        getBgColorfull3Rule = () => this.bgColorfull3Rule ?? (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)']));
-        getInnerBgRule = () => this.innerBgRule ?? (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before']));
-        getInnerBgContainerRule = () => this.innerBgContainerRule ?? (this.innerBgContainerRule = this.insertEmptyRule(['.display-content>.container']));
 
         init() {
                 this.initRangeSliders();
@@ -69,52 +43,21 @@ export class GlassStyle extends Style {
                         switch (event.target.id) {
                                 case 'glass-transparency':
                                         this.transparency = newValue;
-                                        this.updateTransparency();
+                                        this.cssRule.style.setProperty('--transparency', newValue)
                                         break;
                                 case 'glass-blur':
                                         this.blur = newValue;
-                                        this.updateBlur();
+                                        this.cssRule.style.setProperty('--blur', newValue + 'px')
                                         break;
                                 case 'glass-border-size':
                                         this.borderSize = newValue;
-                                        this.updateBorderSize();
+                                        this.cssRule.style.setProperty('--border-size', newValue + 'px')
                                         break;
                         }
                 });
         }
 
-        updateBlur() {
-                this.setToCurrentBlur([
-                        this.getBgSchemeRule(),
-                        this.getBgLightenSchemeRule(),
-                        this.getBgDarkenHighlightRule(),
-                        this.getBgColorfull1Rule(),
-                        this.getBgColorfull2Rule(),
-                        this.getBgColorfull3Rule(),
-                        // this.getInnerBgRule(), //TOFIX: blur does not have effect on this
-                        this.getInnerBgContainerRule(),
-                ]);
-        }
-
-        setToCurrentBlur(rules: CSSStyleRule[]) {
-                rules.forEach(rule => {
-                        rule.style.setProperty('backdrop-filter', `blur(${this.blur}px)`, 'important');
-                        rule.style.setProperty('-webkit-backdrop-filter', `blur(${this.blur}px)`, 'important');
-                });
-        }
-
         updateBorderSize() {
-                this.setToCurrentBorderSize([
-                        this.getBgSchemeRule(),
-                        this.getBgLightenSchemeRule(),
-                        this.getBgDarkenHighlightRule(),
-                        this.getBgColorfull1Rule(),
-                        this.getBgColorfull2Rule(),
-                        this.getBgColorfull3Rule(),
-                        // this.getInnerBgRule(),
-                        this.getInnerBgContainerRule(),
-                ]);
-
                 // update limit
                 const borderSizeNumber = parseFloat(this.borderSize);
                 //TODO: use Map or Dictionary
@@ -136,46 +79,18 @@ export class GlassStyle extends Style {
                 });
         }
 
-        updateTransparency() {
-                this.updateTransparencySchemeColor();
-                this.updateTransparencyHighlightColor();
-                this.updateTransparencyColorfull();
-                this.getInnerBgRule().style.setProperty('opacity', this.transparency);
-        }
-
-        //CONSIDER: update ::before opacity instead
-        // https://coder-coder.com/background-image-opacity/
-        setToCurrentTransparency(rule: CSSStyleRule, color: Color) {
-                const formattedColor: string = `rgba(${color.rValue}, ${color.gValue}, ${color.bValue}, ${this.transparency})`;
-                const contrastColor: string = color.getInvertBlackWhite();
-                rule.style.setProperty('background-color', formattedColor, 'important');
-                rule.style.setProperty('color', contrastColor, 'important');
-        }
-
-        private updateTransparencySchemeColor() {
-                this.setToCurrentTransparency(this.getBgSchemeRule(), DynamicColor.schemeColor!);
-                this.setToCurrentTransparency(this.getBgLightenSchemeRule(), this.lightenSchemeColor);
-        }
-
-        private updateTransparencyHighlightColor() {
-                this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicColor.highlightColor!);
-        }
-
-        private updateTransparencyColorfull() {
-                //CONSIDER: Separate update functions if optimization needed
-                this.setToCurrentTransparency(this.getBgColorfull1Rule(), DynamicColor.colorfull1!);
-                this.setToCurrentTransparency(this.getBgColorfull2Rule(), DynamicColor.colorfull2!);
-                this.setToCurrentTransparency(this.getBgColorfull3Rule(), DynamicColor.colorfull3!);
+        private updateColorCssVar(cssVar: string, color: Color) {
+                this.cssRule.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
         }
 
         onHighlightColorUpdated(): void {
-                this.darkenHighlightColor.setHex(DynamicColor.highlightColor!.getLighten(this.darkHighlightIntensity));
-                this.updateTransparencyHighlightColor();
+                this.darkenHighlightColor.setHex(DynamicColor.highlightColor!.getDarken(this.darkHighlightIntensity));
+                this.updateColorCssVar('--highlight-color-darken', this.darkenHighlightColor);
         }
 
         onSchemeColorUpdated(): void {
                 this.lightenSchemeColor.setHex(DynamicColor.schemeColor!.getLighten(this.lightenSchemeIntensity));
-                this.updateTransparencySchemeColor();
+                this.updateColorCssVar('--scheme-color-lighten', this.lightenSchemeColor);
         }
 
         onBaseColorUpdated(): void {

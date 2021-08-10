@@ -16,9 +16,14 @@
       FORM COMPONENTS
 -------------------------*/
         // INPUT
-        .form-control {
-                background-color: $schemeColorLighten;
+        .form-item {
+                .form-group {
+                        .form-control {
+                                background-color: $schemeColorLighten;
+                        }
+                }
         }
+
         /*-------------------------
       ELEMENTS
 -------------------------*/

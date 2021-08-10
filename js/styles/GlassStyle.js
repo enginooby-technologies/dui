@@ -1,12 +1,7 @@
 import { Style } from '../base/Style.js';
 import { TinyColor } from '../base/TinyColor.js';
-// CAUTION: FlatStyle dependent
-//TODO: DRY with FlatStyle
-import * as GlassSelectors from '../selectors/GlassSelectors.js';
-import * as FlatSelectors from '../selectors/FlatSelectors.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
-import { insertEmptyRule } from '../global.js';
 export class GlassStyle extends Style {
     constructor() {
         super(GlassConfig);
@@ -17,15 +12,6 @@ export class GlassStyle extends Style {
         this.darkHighlightIntensity = 15;
         this.lightenSchemeColor = new TinyColor('#fafafa');
         this.darkenHighlightColor = new TinyColor('#033669');
-        // lazy initializations
-        this.getBgSchemeRule = () => { var _a; return (_a = this.bgSchemeRule) !== null && _a !== void 0 ? _a : (this.bgSchemeRule = insertEmptyRule(GlassSelectors.bgSchemeSelectors)); };
-        this.getBgLightenSchemeRule = () => { var _a; return (_a = this.bgLightenSchemeRule) !== null && _a !== void 0 ? _a : (this.bgLightenSchemeRule = this.insertEmptyRule(FlatSelectors.bgLightenSchemeSelectors)); };
-        this.getBgDarkenHighlightRule = () => { var _a; return (_a = this.bgDarkenHighlightRule) !== null && _a !== void 0 ? _a : (this.bgDarkenHighlightRule = this.insertEmptyRule(FlatSelectors.bgDarkenHighlightSelectors)); };
-        this.getBgColorfull1Rule = () => { var _a; return (_a = this.bgColorfull1Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull1Rule = this.insertEmptyRule(['.background-colorfull1:not(.fill-skillbar)'])); };
-        this.getBgColorfull2Rule = () => { var _a; return (_a = this.bgColorfull2Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull2Rule = this.insertEmptyRule(['.background-colorfull2:not(.fill-skillbar)'])); };
-        this.getBgColorfull3Rule = () => { var _a; return (_a = this.bgColorfull3Rule) !== null && _a !== void 0 ? _a : (this.bgColorfull3Rule = this.insertEmptyRule(['.background-colorfull3:not(.fill-skillbar)'])); };
-        this.getInnerBgRule = () => { var _a; return (_a = this.innerBgRule) !== null && _a !== void 0 ? _a : (this.innerBgRule = this.insertEmptyRule(['.display-content>.container::before'])); };
-        this.getInnerBgContainerRule = () => { var _a; return (_a = this.innerBgContainerRule) !== null && _a !== void 0 ? _a : (this.innerBgContainerRule = this.insertEmptyRule(['.display-content>.container'])); };
     }
     static get Instance() {
         var _a;
@@ -51,48 +37,20 @@ export class GlassStyle extends Style {
             switch (event.target.id) {
                 case 'glass-transparency':
                     this.transparency = newValue;
-                    this.updateTransparency();
+                    this.cssRule.style.setProperty('--transparency', newValue);
                     break;
                 case 'glass-blur':
                     this.blur = newValue;
-                    this.updateBlur();
+                    this.cssRule.style.setProperty('--blur', newValue + 'px');
                     break;
                 case 'glass-border-size':
                     this.borderSize = newValue;
-                    this.updateBorderSize();
+                    this.cssRule.style.setProperty('--border-size', newValue + 'px');
                     break;
             }
         });
     }
-    updateBlur() {
-        this.setToCurrentBlur([
-            this.getBgSchemeRule(),
-            this.getBgLightenSchemeRule(),
-            this.getBgDarkenHighlightRule(),
-            this.getBgColorfull1Rule(),
-            this.getBgColorfull2Rule(),
-            this.getBgColorfull3Rule(),
-            // this.getInnerBgRule(), //TOFIX: blur does not have effect on this
-            this.getInnerBgContainerRule(),
-        ]);
-    }
-    setToCurrentBlur(rules) {
-        rules.forEach(rule => {
-            rule.style.setProperty('backdrop-filter', `blur(${this.blur}px)`, 'important');
-            rule.style.setProperty('-webkit-backdrop-filter', `blur(${this.blur}px)`, 'important');
-        });
-    }
     updateBorderSize() {
-        this.setToCurrentBorderSize([
-            this.getBgSchemeRule(),
-            this.getBgLightenSchemeRule(),
-            this.getBgDarkenHighlightRule(),
-            this.getBgColorfull1Rule(),
-            this.getBgColorfull2Rule(),
-            this.getBgColorfull3Rule(),
-            // this.getInnerBgRule(),
-            this.getInnerBgContainerRule(),
-        ]);
         // update limit
         const borderSizeNumber = parseFloat(this.borderSize);
         //TODO: use Map or Dictionary
@@ -111,40 +69,16 @@ export class GlassStyle extends Style {
             element.style.setProperty(property, `${processedValue}${unit}`, 'important');
         });
     }
-    updateTransparency() {
-        this.updateTransparencySchemeColor();
-        this.updateTransparencyHighlightColor();
-        this.updateTransparencyColorfull();
-        this.getInnerBgRule().style.setProperty('opacity', this.transparency);
-    }
-    //CONSIDER: update ::before opacity instead
-    // https://coder-coder.com/background-image-opacity/
-    setToCurrentTransparency(rule, color) {
-        const formattedColor = `rgba(${color.rValue}, ${color.gValue}, ${color.bValue}, ${this.transparency})`;
-        const contrastColor = color.getInvertBlackWhite();
-        rule.style.setProperty('background-color', formattedColor, 'important');
-        rule.style.setProperty('color', contrastColor, 'important');
-    }
-    updateTransparencySchemeColor() {
-        this.setToCurrentTransparency(this.getBgSchemeRule(), DynamicColor.schemeColor);
-        this.setToCurrentTransparency(this.getBgLightenSchemeRule(), this.lightenSchemeColor);
-    }
-    updateTransparencyHighlightColor() {
-        this.setToCurrentTransparency(this.getBgDarkenHighlightRule(), DynamicColor.highlightColor);
-    }
-    updateTransparencyColorfull() {
-        //CONSIDER: Separate update functions if optimization needed
-        this.setToCurrentTransparency(this.getBgColorfull1Rule(), DynamicColor.colorfull1);
-        this.setToCurrentTransparency(this.getBgColorfull2Rule(), DynamicColor.colorfull2);
-        this.setToCurrentTransparency(this.getBgColorfull3Rule(), DynamicColor.colorfull3);
+    updateColorCssVar(cssVar, color) {
+        this.cssRule.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
     }
     onHighlightColorUpdated() {
-        this.darkenHighlightColor.setHex(DynamicColor.highlightColor.getLighten(this.darkHighlightIntensity));
-        this.updateTransparencyHighlightColor();
+        this.darkenHighlightColor.setHex(DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity));
+        this.updateColorCssVar('--highlight-color-darken', this.darkenHighlightColor);
     }
     onSchemeColorUpdated() {
         this.lightenSchemeColor.setHex(DynamicColor.schemeColor.getLighten(this.lightenSchemeIntensity));
-        this.updateTransparencySchemeColor();
+        this.updateColorCssVar('--scheme-color-lighten', this.lightenSchemeColor);
     }
     onBaseColorUpdated() {
     }

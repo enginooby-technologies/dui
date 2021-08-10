@@ -25,6 +25,6 @@ class Input extends Component
                 ?string $onclick = null,
                 string $view = '/form/input_view.php',
         ) {
-                parent::__construct($id, $class, $wrapperClass, $onclick, $view);;
+                parent::__construct($id, $class, $wrapperClass, $onclick, $view);
         }
 }
