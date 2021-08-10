@@ -10,6 +10,9 @@ function Button(?string $id = null, string $class = '', string $wrapperClass = '
 
 class Button extends Component
 {
+        use TLabel;
+        use THref;
+
         public function __construct(
                 protected string $label = '',
                 protected string $href = 'javascript:;',

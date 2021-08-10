@@ -20,5 +20,5 @@ if (property_exists($this, 'name'))
         $nameAttr = $this->name ? "name='$this->name'" : '';
 if (property_exists($this, 'placeholder'))
         $placeholderAttr = $this->placeholder ? "placeholder='$this->placeholder'" : '';
-if (property_exists($this, 'isRequired'))
-        $requiredAttr = $this->isRequired ? 'required' : '';
+if (property_exists($this, 'required'))
+        $requiredAttr = $this->required ? 'required' : '';

@@ -50,35 +50,50 @@ abstract class Component implements IShowable
                 $this->onclick = $function;
                 return $this;
         }
+}
 
-        // TODO: Make Labelable or similar class extending this class (not every component has $label)
-        // Use trait
+// Usage: child class of Component having $label property uses trait TLabel to include its function (set label) => multiple inheritance
+trait TLabel
+{
         public function label(string $label)
         {
                 $this->label = $label;
                 return $this;
         }
+}
 
+trait THref
+{
         public function href(string $link)
         {
                 $this->href = $link;
                 return $this;
         }
+}
+
+trait TName
+{
         public function name(string $name)
         {
                 $this->name = $name;
                 return $this;
         }
+}
 
+trait TPlaceholder
+{
         public function placeholder(string $value)
         {
                 $this->placeholder = $value;
                 return $this;
         }
+}
 
-        public function isRequired(string $isRequired)
+trait TRequired
+{
+        public function required(string $required)
         {
-                $this->isRequired = $isRequired;
+                $this->required = $required;
                 return $this;
         }
 }

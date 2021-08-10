@@ -3,17 +3,21 @@
 declare(strict_types=1);
 include_once __DIR__ . "/../Component.php";
 
-function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $isRequired = false, string $wrapperClass = '', string $class = '', ?string $onclick = null): Input
+function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $required = false, string $wrapperClass = '', string $class = '', ?string $onclick = null): Input
 {
-        return new Input($name, $placeholder, $isRequired, $id, $class, $wrapperClass, $onclick);
+        return new Input($name, $placeholder, $required, $id, $class, $wrapperClass, $onclick);
 }
 
 class Input extends Component
 {
+        use TName;
+        use TPlaceholder;
+        use TRequired;
+
         public function __construct(
                 protected ?string $name,
                 protected ?string $placeholder,
-                protected ?bool $isRequired,
+                protected ?bool $required,
 
                 ?string $id = null,
                 string $class = '',
