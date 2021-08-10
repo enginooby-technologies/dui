@@ -1,36 +1,26 @@
 <?php
 
 declare(strict_types=1);
+include_once __DIR__ . "/../Component.php";
 
-function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $isRequired = false, ?string $wrapperClass = null): Input
+function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $isRequired = false, string $wrapperClass = '', string $class = '', ?string $onclick = null): Input
 {
-        return new Input($id, $name, $placeholder, $isRequired, $wrapperClass);
+        return new Input($name, $placeholder, $isRequired, $id, $class, $wrapperClass, $onclick);
 }
 
-class Input
+class Input extends Component
 {
         public function __construct(
-                private ?string $id,
-                private ?string $name,
-                private ?string $placeholder,
-                private ?bool $isRequired,
-                private ?string $wrapperClass
+                protected ?string $name,
+                protected ?string $placeholder,
+                protected ?bool $isRequired,
+
+                ?string $id = null,
+                string $class = '',
+                string $wrapperClass = '',
+                ?string $onclick = null,
+                string $view = '/form/input_view.php',
         ) {
-        }
-
-        public function show()
-        {
-                $idAttr = $this->id ? "id='$this->id'" : '';
-                $nameAttr = $this->name ? "name='$this->name'" : '';
-                $placeholder = $this->placeholder ? "placeholder='$this->placeholder'" : '';
-                $requiredAttr = $this->isRequired ? 'required' : '';
-                $wrapperClass = $this->wrapperClass;
-                include "input_view.php";
-        }
-
-        public function wrapperClass(string $name)
-        {
-                $this->wrapperClass .= (' ' . $name);
-                return $this;
+                parent::__construct($id, $class, $wrapperClass, $onclick, $view);;
         }
 }

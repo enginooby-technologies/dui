@@ -1,5 +1,5 @@
-   <div class="form-item <?= $wrapperClass ?>">
+   <div class="form-item wrapper <?= $wrapperClass ?>">
            <div class="form-group">
-                   <input <?= $idAttr ?> <?= $nameAttr ?> <?= $placeholder ?> <?= $requiredAttr ?> type="text" class="form-control">
+                   <input <?= $idAttr ?> <?= $nameAttr ?> <?= $placeholderAttr ?> <?= $requiredAttr ?> type="text" class="form-control <?= $class ?>" <?= $onclickAttr ?>>
            </div>
    </div>

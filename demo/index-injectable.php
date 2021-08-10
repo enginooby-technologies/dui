@@ -9,13 +9,15 @@
 
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <?php
-                                Flexbox()->add(Button(label: "Dynamic button"))->show();
-                                CodeBlock(
-                                        language: 'php',
-                                        outdent: 5,
-                                        wrapperClass: 'mt-3'
-                                )
+                                Flexbox()
+                                        ->add(Button(label: "Dynamic button"))
+                                        ->show();
+                                CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
                                         ->code('Button(label: "Dynamic button")->show();')
+                                        ->show();
+
+                                Flexbox()
+                                        ->add(Input())
                                         ->show();
                                 ?>
 
