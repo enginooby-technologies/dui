@@ -1,40 +1,38 @@
 <?php
 
 declare(strict_types=1);
+include_once __DIR__ . "/../Component.php";
 
 // @param $currentTabSize: number of spaces per tab configured in the editor
-function CodeBlock(string $language, string $code = '', int $outdent = 0,  int $currentTabSize = 8, string $wrapperClass = ''): CodeBlock
+function CodeBlock(string $language, string $code = '', int $outdent = 0,  int $currentTabSize = 8, ?string $id = null, string $class = '',  string $wrapperClass = '', ?string $onclick = null): CodeBlock
 {
-        return new CodeBlock($code, $language, $outdent, $currentTabSize, $wrapperClass);
+        return new CodeBlock($code, $language, $outdent, $currentTabSize, $id, $class, $wrapperClass, $onclick);
 }
 
-class CodeBlock
+class CodeBlock extends Component
 {
         public function __construct(
-                private string $code,
-                private string $language,
-                private int $outdent = 0,
-                private $currentTabSize = 8,
-                private $wrapperClass = '',
+                protected string $code,
+                protected string $language,
+                protected int $outdent = 0,
+                protected $currentTabSize = 8,
+
+                ?string $id = null,
+                string $class = '',
+                string $wrapperClass = '',
+                ?string $onclick = null,
+                string $view = '/container/code_block_view.php',
         ) {
+
+                parent::__construct($id, $class, $wrapperClass, $onclick, $view);
         }
 
         public function show()
         {
-                $code = $this->code;
-                $language = $this->language;
-                $wrapperClass = $this->wrapperClass;
-                $this->formatSpecialCharacters($code);
-                $this->outdentCodeBlock($code, $this->outdent, $this->currentTabSize);
-                $this->changeTabSizeInCode($code, $this->currentTabSize, 2);
-                include "code_block_view.php";
-                return $this;
-        }
-
-        public function wrapperClass(string $name)
-        {
-                $this->wrapperClass .= (' ' . $name);
-                return $this;
+                $this->formatSpecialCharacters($this->code);
+                $this->outdentCodeBlock($this->code, $this->outdent, $this->currentTabSize);
+                $this->changeTabSizeInCode($this->code, $this->currentTabSize, 2);
+                parent::show();
         }
 
         public function code(string $code)

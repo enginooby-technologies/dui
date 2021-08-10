@@ -5,7 +5,7 @@
                         <div class="container ">
                                 <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
                                 <hr><br>
-                                <?php CodeBlock(language: 'php', code: '<?= include_once "components/_index.php";?>')->show(); ?>
+                                <?php CodeBlock(language: 'php', code: '<?= include_once "dui/_index.php";?>')->show(); ?>
 
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <?php

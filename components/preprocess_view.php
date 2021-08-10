@@ -22,3 +22,9 @@ if (property_exists($this, 'placeholder'))
         $placeholderAttr = $this->placeholder ? "placeholder='$this->placeholder'" : '';
 if (property_exists($this, 'required'))
         $requiredAttr = $this->required ? 'required' : '';
+
+//CODE BLOCK
+if (property_exists($this, 'code'))
+        $code = $this->code;
+if (property_exists($this, 'language'))
+        $language = $this->language;

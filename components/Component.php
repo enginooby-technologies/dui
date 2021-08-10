@@ -35,13 +35,13 @@ abstract class Component implements IShowable
 
         public function class(string $name, bool $append = true)
         {
-                $this->class = $append ? ($this->class . $name . ' ') : $name;
+                $this->class = $append ? ($this->class . ' ' . $name) : $name;
                 return $this;
         }
 
         public function wrapperClass(string $name, bool $append = true)
         {
-                $this->wrapperClass = $append ? ($this->wrapperClass . $name . ' ') : $name;
+                $this->wrapperClass = $append ? ($this->wrapperClass . ' ' . $name) : $name;
                 return $this;
         }
 

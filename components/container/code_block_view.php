@@ -1,3 +1,3 @@
 <div class="code-block wrapper <?= $wrapperClass ?>">
-        <pre><code class="language-<?= $language; ?>"><?= $code; ?></code></pre>
+        <pre class="<?= $class ?>"><code  class="language-<?= $language ?> "  <?= $idAttr ?> <?= $onclickAttr ?>><?= $code; ?></code></pre>
 </div>
