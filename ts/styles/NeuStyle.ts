@@ -21,13 +21,8 @@ export class NeuStyle extends Style {
         spread: number = 0;
         lightenIntensity: number = 6.9;
         darkenIntensity: number = 6.9;
-        lightenSchemeColor: string = "#e6e6e6";
-        darkenSchemeColor: string = "#c2c2c2";
-
-        dropBoxShadow: string = '';
-        insetBoxShadow: string = '';
-        pressedBoxShadow: string = '';
-        thumbScrollbarBoxShadow: string = '';
+        schemeColorLighten: string = "#e6e6e6";
+        schemeColorDarken: string = "#c2c2c2";
 
         borderWidth: number = 0;
         borderBrightness: number = -6.9;
@@ -38,27 +33,6 @@ export class NeuStyle extends Style {
         // negative: concave - 0: flat - positive: convex
         surfaceCurvature: number = 0;
         bgSurface: string = '';
-
-        private dropBoxShadowRule?: CSSStyleRule;
-        private insetBoxShadowRule?: CSSStyleRule;
-        private concaveBoxShadowRule?: CSSStyleRule;
-        private thumbScrollbarBoxShadowRule?: CSSStyleRule;
-        private borderRule?: CSSStyleRule;
-        private surfaceRule?: CSSStyleRule;
-        private radioIndicatorUncheckedRule?: CSSStyleRule;
-        private radioIndicatorCheckedRule?: CSSStyleRule;
-        private dropdownBoxShadowRule?: CSSStyleRule;
-
-        // lazy initializations
-        getDropBoxShadowRule = () => this.dropBoxShadowRule ?? (this.dropBoxShadowRule = this.insertEmptyRule(NeuSelectors.dropBoxShadowSelectors));
-        getInsetBoxShadowRule = () => this.insetBoxShadowRule ?? (this.insetBoxShadowRule = this.insertEmptyRule(NeuSelectors.insetBoxShadowSelectors));
-        getConcaveBoxShadowRule = () => this.concaveBoxShadowRule ?? (this.concaveBoxShadowRule = this.insertEmptyRule(NeuSelectors.concaveBoxShadowSelectors));
-        getThumbScrollbarBoxShadowRule = () => this.thumbScrollbarBoxShadowRule ?? (this.thumbScrollbarBoxShadowRule = this.insertEmptyRule(['::-webkit-scrollbar-thumb']));
-        getBorderRule = () => this.borderRule ?? (this.borderRule = this.insertEmptyRule(NeuSelectors.borderSelectors));
-        getSurfaceRule = () => this.surfaceRule ?? (this.surfaceRule = this.insertEmptyRule(NeuSelectors.surfaceSelectors));
-        getRadioIndicatorUncheckedRule = () => this.radioIndicatorUncheckedRule ?? (this.radioIndicatorUncheckedRule = this.insertEmptyRule(['.dui-radio .indicator::before']));
-        getRadioIndicatorCheckedRule = () => this.radioIndicatorCheckedRule ?? (this.radioIndicatorCheckedRule = this.insertEmptyRule(['.dui-radio .indicator::after']));
-        getDropdownBoxShadowRule = () => this.dropdownBoxShadowRule ?? (this.dropdownBoxShadowRule = this.insertEmptyRule(['.dropdown .dropdown-toggle']));
 
         init() {
                 this.initRangeSliders();
@@ -93,21 +67,27 @@ export class NeuStyle extends Style {
                         switch (event.target.id) {
                                 case 'neu-distance-x':
                                         this.distanceX = parseInt(newValue);
+                                        this.cssRule.style.setProperty('--distance-x', newValue + 'px')
                                         break;
                                 case 'neu-distance-y':
                                         this.distanceY = parseInt(newValue);
+                                        this.cssRule.style.setProperty('--distance-y', newValue + 'px')
                                         break;
                                 case 'blur':
                                         this.blur = parseInt(newValue);
+                                        this.cssRule.style.setProperty('--blur', newValue + 'px')
                                         break;
                                 case 'neu-spread':
                                         this.spread = parseInt(newValue);
+                                        this.cssRule.style.setProperty('--spread', newValue + 'px')
                                         break;
                                 case 'light-intensity':
                                         this.lightenIntensity = parseInt(newValue);
+                                        this.updateSchemeLighten();
                                         break;
                                 case 'dark-intensity':
                                         this.darkenIntensity = parseInt(newValue);
+                                        this.updateSchemeDarken();
                                         break;
                                 case 'neu-border-width':
                                         this.borderWidth = parseInt(newValue);
@@ -122,7 +102,6 @@ export class NeuStyle extends Style {
                                         this.updateSurface();
                                         return;
                         }
-                        this.updateBoxShadows();
                 });
 
                 $('#neu-customizer #neu-border-style-options input').on('input', event => {
@@ -135,58 +114,33 @@ export class NeuStyle extends Style {
         }
 
         onSchemeColorUpdated(): void {
-                this.updateBoxShadows();
                 this.updateSurface();
                 this.updateBorder();
+                this.updateSchemeLighten();
+                this.updateSchemeDarken();
+        }
+
+        private updateSchemeLighten() {
+                this.schemeColorLighten = DynamicColor.schemeColor!.getLighten(this.lightenIntensity);
+                this.cssRule.style.setProperty('--scheme-color-lighten', this.schemeColorLighten);
+        }
+
+        private updateSchemeDarken() {
+                this.schemeColorDarken = DynamicColor.schemeColor!.getDarken(this.darkenIntensity);
+                this.cssRule.style.setProperty('--scheme-color-darken', this.schemeColorDarken);
         }
 
         onBaseColorUpdated(): void {
-        }
-
-        private updateBoxShadows() {
-                this.lightenSchemeColor = DynamicColor.schemeColor!.getLighten(this.lightenIntensity);
-                this.darkenSchemeColor = DynamicColor.schemeColor!.getDarken(this.darkenIntensity);
-                this.dropBoxShadow = `${this.distanceX}px ${this.distanceY}px ${this.blur}px ${this.spread}px ${this.darkenSchemeColor}, -${this.distanceX}px -${this.distanceY}px ${this.blur}px ${this.spread}px ${this.lightenSchemeColor}`;
-                this.insetBoxShadow = `inset ${this.distanceX}px ${this.distanceY}px ${this.blur}px ${this.spread}px ${this.darkenSchemeColor}, inset -${this.distanceX}px -${this.distanceY}px ${this.blur}px ${this.spread}px ${this.lightenSchemeColor}`;
-                this.pressedBoxShadow = `${this.dropBoxShadow}, ${this.insetBoxShadow}`; // TODO: Does not look good!
-                this.thumbScrollbarBoxShadow = `inset -${this.distanceX}px -${this.distanceY}px ${this.blur}px ${this.spread}px ${this.darkenSchemeColor}, inset ${this.distanceX}px ${this.distanceY}px ${this.blur}px${this.spread}px  ${this.lightenSchemeColor}`;
-
-                this.getDropBoxShadowRule().style.setProperty('box-shadow', this.dropBoxShadow, 'important');
-                this.getInsetBoxShadowRule().style.setProperty('box-shadow', this.insetBoxShadow, 'important');
-                this.getConcaveBoxShadowRule().style.setProperty('box-shadow', this.pressedBoxShadow, 'important');
-                this.getThumbScrollbarBoxShadowRule().style.setProperty('box-shadow', this.thumbScrollbarBoxShadow, 'important');
-                // special box shadow
-                this.updateRadio();
-                this.updateDropdown();
         }
 
         private updateSurface() {
                 const leftSurfaceColor = DynamicColor.schemeColor!.getLighten(this.surfaceCurvature);
                 const rightSurfaceColor = DynamicColor.schemeColor!.getDarken(this.surfaceCurvature);
                 this.bgSurface = `linear-gradient(145deg, ${leftSurfaceColor}, ${rightSurfaceColor})`
-                this.getSurfaceRule().style.setProperty('background', this.bgSurface, 'important');
         }
 
         private updateBorder() {
                 const borderColor: string = DynamicColor.schemeColor!.getLighten(this.borderBrightness);
                 const borderStyle: string = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
-                this.getBorderRule().style.setProperty('border', borderStyle);
-        }
-
-        private updateRadio() {
-                //TODO: Variablize
-                const checkBoxShadow = `-4px -2px 4px 0px ${this.lightenSchemeColor}, 4px 2px 8px 0px ${this.darkenSchemeColor}`;
-                const uncheckBoxShadow = `-4px -2px 4px 0px ${this.darkenSchemeColor}, 4px 2px 8px 0px ${this.lightenSchemeColor}`;
-                this.getRadioIndicatorCheckedRule().style.setProperty('box-shadow', checkBoxShadow, 'important');
-                this.getRadioIndicatorUncheckedRule().style.setProperty('box-shadow', uncheckBoxShadow, 'important');
-        }
-
-        private updateDropdown() {
-                //TODO: Variablize
-                const dropdownBoxShadow: string = `3px 3px 4px 0px ${this.darkenSchemeColor}, 0px -3px -4px 0px ${this.lightenSchemeColor}`;
-                // TOFIX: can not set dropdownBoxShadow 
-                // this.getDropdownBoxShadowRule().style.setProperty('box-shadow', dropdownBoxShadow, 'important');
-                this.getDropdownBoxShadowRule().style.setProperty('box-shadow', this.dropBoxShadow, 'important');
-                // console.log(this.getDropdownBoxShadowRule().selectorText);
         }
 }

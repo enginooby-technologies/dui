@@ -1,37 +1,41 @@
-//TODO: Init border and surface
-
-$distanceX:3;
-$distanceY:3;
-$blur:4;
-$spread:0;
-$lightenSchemeColor:#e6e6e6;
-$darkenSchemeColor: #c2c2c2;
-
-$dropBoxShadow : #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
--#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
-
-$insetBoxShadow : inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
-inset -#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
-
-// #{$concaveBoxShadow}; //refer like this to unquote
-$concaveBoxShadow:"#{$dropBoxShadow},  #{$insetBoxShadow}";
-
-$thumbScrollbarBoxShadow:inset -#{$distanceX}px -#{$distanceY}px #{$blur}px #{$spread}px #{$darkenSchemeColor},
-inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeColor};
-
-
-
 .neu-style {
+        //TODO: Init border and surface
 
+        --distance-x: 3px;
+        --distance-y: 3px;
+        --blur: 4px;
+        --spread: 0px;
+        --scheme-color-lighten: #e6e6e6;
+        --scheme-color-darken: #c2c2c2;
+        $dx: var(--distance-x);
+        $ndx: calc(#{var(--distance-x)} * -1);
+        $dy: var(--distance-y);
+        $ndy: calc(#{var(--distance-y)} * -1);
+        $b: var(--blur);
+        $s: var(--spread);
+        $scd: var(--scheme-color-darken);
+        $scl: var(--scheme-color-lighten);
+
+        //prettier-ignore
+        // --drop-box-shadow: var(--distance-x) var(--distance-x) var(--distance-x)var(--distance-x) var(--distance-x),calc(#{var(--distance-y)} * -1) calc(#{var(--distance-y)} * -1) var(--distance-x) var(--distance-x) var(--distance-x);
+        //prettier-ignore
+        $dropBoxShadow: $dx $dy $b $s $scd, $ndx $ndy $b $s $scl;
+        $insetBoxShadow: inset $dx $dy $b $s $scd, inset $ndx $ndy $b $scl;
+
+        // to unquote when referencing: #{$concaveBoxShadow};
+        $concaveBoxShadow: "#{$dropBoxShadow},  #{$insetBoxShadow}";
+
+        $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,
+                inset $dx $dy $b $s$scl;
         /*-------------------------
       FORM COMPONENTS
 -------------------------*/
         //RADIO
         .dui-radio {
-                $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px $darkenSchemeColor,
-                        4px 2px 8px 0px $lightenSchemeColor;
-                $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px $lightenSchemeColor,
-                        4px 2px 8px 0px $darkenSchemeColor;
+                $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px$scd,
+                        4px 2px 8px 0px$scl;
+                $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px$scl,
+                        4px 2px 8px 0px$scd;
 
                 .indicator {
                         box-shadow: $dropBoxShadow;
@@ -64,14 +68,13 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
                 }
 
                 ::-webkit-slider-thumb:hover,
-                input[type=range]:focus {
+                input[type="range"]:focus {
                         box-shadow: #{$concaveBoxShadow};
                 }
         }
 
         // DROPDOWN
         .dropdown {
-
                 button.focus,
                 button:focus,
                 .dropdown-label,
@@ -99,8 +102,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         }
 
         .dropdown .dropdown-toggle {
-                box-shadow: 3px 3px 4px $darkenSchemeColor,
-                        0px -3px 4px $lightenSchemeColor;
+                box-shadow: 3px 3px 4px$scd, 0px -3px 4px$scl;
         }
 
         /*-------------------------
@@ -114,8 +116,8 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         // $x: 2.5;
         // $y: 2.5;
         // $z: 3;
-        // $textDropShadow : -#{$x}px -#{$y}px #{$z}px #{$lightenSchemeColor},
-        // #{$x}px #{$y}px #{$z}px #{$darkenSchemeColor};
+        // $textDropShadow : -#{$x}px -#{$y}px #{$z}px$scl,
+        // #{$x}px #{$y}px #{$z}px$scd;
         // .title-wrapper {
         //         opacity: 1;
         //         margin-bottom: 2rem;
@@ -172,7 +174,7 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         }
 
         .section,
-        .display-content>.container.none-bg,
+        .display-content > .container.none-bg,
         .button,
         .setting-button,
         .setting-button a,
@@ -186,37 +188,37 @@ inset #{$distanceX}px #{$distanceY}px #{$blur}px #{$spread}px #{$lightenSchemeCo
         }
 
         // RADIO
-        .segmented-control>input:not(:checked):not(:hover)+label {
+        .segmented-control > input:not(:checked)px:not(:hover)px + label {
                 color: $mutedBaseColor;
         }
 
         .button,
-        .segmented-control>input:checked+label,
-        .segmented-control>input:hover+label {
+        .segmented-control > input:checked + label,
+        .segmented-control > input:hover + label {
                 color: $highlightColor;
         }
 
         // HOVER
         .button:hover,
         .badge-border:hover,
-        table>tbody>tr:hover,
+        table > tbody > tr:hover,
         .setting-button:hover {
                 box-shadow: $insetBoxShadow;
         }
 
         // CHECKBOX
-        .checkbox input:checked~label {
+        .checkbox input:checked ~ label {
                 box-shadow: $insetBoxShadow;
         }
 
-        .checkbox input:not(:checked):not(:hover)~label i,
-        .checkbox input:not(:checked)~label+.name {
+        .checkbox input:not(:checked)px:not(:hover)px ~ label i,
+        .checkbox input:not(:checked)px ~ label + .name {
                 color: $mutedBaseColor;
         }
 
-        .checkbox input:checked~label+.name,
-        .checkbox input:checked~label i,
-        .checkbox input:hover~label i {
+        .checkbox input:checked ~ label + .name,
+        .checkbox input:checked ~ label i,
+        .checkbox input:hover ~ label i {
                 color: $highlightColor;
         }
 
