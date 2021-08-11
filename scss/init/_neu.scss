@@ -7,6 +7,13 @@
         --spread: 0px;
         --scheme-color-lighten: #e6e6e6;
         --scheme-color-darken: #c2c2c2;
+        --light-surface-color: RGB(var(--scheme-color));
+        --dark-surface-color: RGB(var(--scheme-color));
+        $bgSurface: linear-gradient(
+                145deg,
+                var(--light-surface-color),
+                var(--dark-surface-color)
+        );
         $dx: var(--distance-x);
         $ndx: calc(#{var(--distance-x)} * -1);
         $dy: var(--distance-y);
@@ -53,12 +60,12 @@
         // RANGE SLIDER
         .range-slider {
                 .range-slider__value {
-                        background-color: $schemeColor;
+                        background: $bgSurface;
                         box-shadow: $dropBoxShadow;
                 }
 
                 .range-slider__range {
-                        background-color: $schemeColor;
+                        background: $bgSurface;
                         box-shadow: $insetBoxShadow;
                 }
 
@@ -71,6 +78,10 @@
                 input[type="range"]:focus {
                         box-shadow: #{$concaveBoxShadow};
                 }
+
+                ::-webkit-slider-thumb {
+                        background: $bgSurface;
+                }
         }
 
         // DROPDOWN
@@ -80,6 +91,11 @@
                 .dropdown-label,
                 .dropdown-menu {
                         box-shadow: $dropBoxShadow;
+                        background: $bgSurface;
+                }
+
+                .dropdown-toggle {
+                        background: $bgSurface;
                 }
 
                 button,
@@ -105,11 +121,62 @@
                 box-shadow: 3px 3px 4px$scd, 0px -3px 4px$scl;
         }
 
+        // CHECKBOX
+        .checkbox {
+                label {
+                        background: $bgSurface !important;
+                }
+        }
+
+        // INPUT
+        .form-group {
+                input {
+                        background: $bgSurface !important;
+                }
+        }
+
+        //TEXTAREA
+        .form-group {
+                textarea {
+                        background: $bgSurface;
+                }
+        }
+
+        // SEGMENTED-CONTROL
+        .segmented-control {
+                background: $bgSurface;
+        }
+
         /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
+        // CODE BLOCK
         .code-block {
                 box-shadow: $insetBoxShadow;
+                background: $bgSurface;
+        }
+
+        //
+        .box-border,
+        .image-border,
+        .badge-border,
+        .setting-panel {
+                background: $bgSurface;
+        }
+
+        // TABLE
+        table thead {
+                background: $bgSurface;
+        }
+
+        // PROJECT-SPECIFIC
+        .blog-intro {
+                background: $bgSurface;
+        }
+        .portfolio-single {
+                .modal-content {
+                        background: $bgSurface;
+                }
         }
 
         /* TEXT DROP SHADOW */
@@ -133,6 +200,15 @@
         // .title-content {
         //         display: none;
         // }
+
+        /*-------------------------
+      BASIC COMPONENTS
+-------------------------*/
+        /* BUTTON */
+        .button,
+        .setting-button {
+                background: $bgSurface;
+        }
 
         .button-border,
         .box-border,

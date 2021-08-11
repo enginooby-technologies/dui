@@ -1,4 +1,3 @@
-import * as NeuSelectors from '../selectors/NeuSelectors.js'
 import { Style } from '../base/Style.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NeuConfig } from '../StyleConfig.js';
@@ -134,9 +133,11 @@ export class NeuStyle extends Style {
         }
 
         private updateSurface() {
-                const leftSurfaceColor = DynamicColor.schemeColor!.getLighten(this.surfaceCurvature);
-                const rightSurfaceColor = DynamicColor.schemeColor!.getDarken(this.surfaceCurvature);
-                this.bgSurface = `linear-gradient(145deg, ${leftSurfaceColor}, ${rightSurfaceColor})`
+                const lightSurfaceColor = DynamicColor.schemeColor!.getLighten(this.surfaceCurvature);
+                const darkSurfaceColor = DynamicColor.schemeColor!.getDarken(this.surfaceCurvature);
+                this.cssRule.style.setProperty('--light-surface-color', lightSurfaceColor);
+                this.cssRule.style.setProperty('--dark-surface-color', darkSurfaceColor);
+                // this.bgSurface = `linear-gradient(145deg, ${lightSurfaceColor}, ${darkSurfaceColor})`
         }
 
         private updateBorder() {

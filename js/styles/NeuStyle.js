@@ -124,9 +124,11 @@ export class NeuStyle extends Style {
     onBaseColorUpdated() {
     }
     updateSurface() {
-        const leftSurfaceColor = DynamicColor.schemeColor.getLighten(this.surfaceCurvature);
-        const rightSurfaceColor = DynamicColor.schemeColor.getDarken(this.surfaceCurvature);
-        this.bgSurface = `linear-gradient(145deg, ${leftSurfaceColor}, ${rightSurfaceColor})`;
+        const lightSurfaceColor = DynamicColor.schemeColor.getLighten(this.surfaceCurvature);
+        const darkSurfaceColor = DynamicColor.schemeColor.getDarken(this.surfaceCurvature);
+        this.cssRule.style.setProperty('--light-surface-color', lightSurfaceColor);
+        this.cssRule.style.setProperty('--dark-surface-color', darkSurfaceColor);
+        // this.bgSurface = `linear-gradient(145deg, ${lightSurfaceColor}, ${darkSurfaceColor})`
     }
     updateBorder() {
         const borderColor = DynamicColor.schemeColor.getLighten(this.borderBrightness);
