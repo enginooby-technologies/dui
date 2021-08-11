@@ -50,10 +50,9 @@
                                 echo Toggle(label: "Dynamic toggle");
                                 ', 4);
 
-                                Flexbox(
-                                        // null,
-                                        // Checkbox(name: "Dynamic checkbox")
-                                );
+                                Flexbox()
+                                        ->add(Checkbox(label: "Dynamic checkbox"))
+                                        ->show();
                                 CodeBlock('php', '/* optional params: string $id = $value = "checkbox_".format($name), bool $checked = false  */
                                 echo Checkbox(name:"Dynamic checkbox");
                                 ', 4);

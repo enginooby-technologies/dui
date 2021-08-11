@@ -11,6 +11,7 @@ function T(?string $id = null, string $wrapperClass = '', string $class = '', ?s
 class T extends Component
 {
         // traits
+
         public function __construct(
                 //protected members from traits
 
@@ -18,7 +19,7 @@ class T extends Component
                 string $class = '',
                 string $wrapperClass = '',
                 ?string $onclick = null,
-                string $view = '/T/T_view.php',
+                string $view = '/T/T_view.php', // TODO: change this
         ) {
                 parent::__construct($id, $class, $wrapperClass, $onclick, $view);
         }

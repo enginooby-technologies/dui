@@ -4,8 +4,10 @@
 */
 
 // COMMON 
+$id = $this->id ?? '';
 $idAttr = $this->id ? "id='$this->id'" : '';
 $class = $this->class;
+$classAttr = $this->class ? "id='$this->class'" : '';
 $wrapperClass = $this->wrapperClass;
 $onclickAttr = $this->onclick ? "onclick='$this->onclick'" : '';
 
@@ -28,3 +30,9 @@ if (property_exists($this, 'code'))
         $code = $this->code;
 if (property_exists($this, 'language'))
         $language = $this->language;
+
+// CHECKBOX
+if (property_exists($this, 'value'))
+        $value = $this->value;
+if (property_exists($this, 'checked'))
+        $checkedAttr = $this->checked ? 'checked' : '';

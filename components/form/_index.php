@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 include_once "Input.php";
+include_once "Checkbox.php";
 include_once dirname(__FILE__) . "/../../utils/formatter.php";
 include_once dirname(__FILE__) . "/../../utils/general.php";
 
@@ -33,17 +34,6 @@ function Toggle(string $label, string $id = null, string $name = null, float $va
 
         ob_start();
         include "_toggle.php";
-        return getHtmlOutputFromBuffer();
-}
-
-function Checkbox(string $name, string $id = null, string $value = null, bool $checked = false)
-{
-        $id = $id ?? "checkbox_" . formatToId($name);
-        $value = $value ?? formatToId($name);
-        $checkedAttr = ($checked) ? "checked" : "";
-
-        ob_start();
-        include "_checkbox.php";
         return getHtmlOutputFromBuffer();
 }
 

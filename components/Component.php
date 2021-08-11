@@ -50,6 +50,11 @@ abstract class Component implements IShowable
                 $this->onclick = $function;
                 return $this;
         }
+
+        protected function formatToId(string $componentType, string $label): string
+        {
+                return strtolower($componentType . '_' . str_replace(' ', '-', $label));
+        }
 }
 
 // Usage: child class of Component having $label property uses trait TLabel to include its function (set label) => multiple inheritance
@@ -91,9 +96,29 @@ trait TPlaceholder
 
 trait TRequired
 {
-        public function required(string $required)
+        public function required(bool $required)
         {
                 $this->required = $required;
+                return $this;
+        }
+}
+
+/* Checkbox*/
+trait TChecked
+{
+        public function checked(bool $isChecked)
+        {
+                $this->checked = $isChecked;
+                return $this;
+        }
+}
+
+/* Checkbox, Range slider */
+trait TValue
+{
+        public function value(string $value)
+        {
+                $this->value = $value;
                 return $this;
         }
 }
