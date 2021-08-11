@@ -518,6 +518,10 @@ button {
   text-decoration: none;
 }
 
+small {
+  font-size: 1rem;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -559,7 +563,6 @@ html {
 
 body {
   margin: 0;
-  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
@@ -1208,6 +1211,10 @@ input::-moz-focus-outer {
   transition: all 0.2s ease;
   border-radius: var(--border-radius);
   padding: 0.5rem 1rem;
+}
+
+.form-item {
+  margin-bottom: 10px;
 }
 
 .form-item .form-group {
