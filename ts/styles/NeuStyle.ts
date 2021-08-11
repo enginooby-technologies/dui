@@ -142,6 +142,7 @@ export class NeuStyle extends Style {
 
         private updateBorder() {
                 const borderColor: string = DynamicColor.schemeColor!.getLighten(this.borderBrightness);
-                const borderStyle: string = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
+                const border: string = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
+                this.cssRule.style.setProperty('--border', border);
         }
 }

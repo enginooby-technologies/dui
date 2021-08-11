@@ -1222,7 +1222,6 @@ input::-moz-focus-outer {
   -webkit-transition: border 0.9s ease;
   transition: border 0.9s ease;
   padding: 1rem;
-  border: 0;
 }
 
 img {
@@ -2470,6 +2469,7 @@ table,
   --scheme-color-darken: #c2c2c2;
   --light-surface-color: RGB(var(--scheme-color));
   --dark-surface-color: RGB(var(--scheme-color));
+  --border: 0px solid #fafafa;
   /*-------------------------
       FORM COMPONENTS
 -------------------------*/
@@ -2502,18 +2502,21 @@ table,
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
+  border: var(--border);
 }
 
 .neu-style .range-slider .range-slider__range {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
+  border: var(--border);
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
   background-color: RGB(var(--scheme-color));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
+  border: var(--border);
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb:hover,
@@ -2565,46 +2568,84 @@ table,
 
 .neu-style .checkbox label {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color)) !important;
+  border: var(--border);
 }
 
-.neu-style .form-group input {
-  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color)) !important;
-}
-
+.neu-style .form-group input,
 .neu-style .form-group textarea {
-  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color)) !important;
+  border: var(--border);
 }
 
 .neu-style .segmented-control {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
+}
+
+.neu-style .segmented-control .radio-selection {
+  border: var(--border);
+}
+
+.neu-style .toggle {
+  border: var(--border);
+}
+
+.neu-style .toggle .indicator {
+  border: var(--border);
 }
 
 .neu-style .code-block {
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
 }
 
-.neu-style .box-border,
-.neu-style .image-border,
-.neu-style .badge-border,
-.neu-style .setting-panel {
+.neu-style .badge-border {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+}
+
+.neu-style .image-border {
+  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
+}
+
+.neu-style .box-border {
+  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
+}
+
+.neu-style .setting-panel {
+  border: var(--border);
+  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+}
+
+.neu-style table {
+  border: var(--border);
 }
 
 .neu-style table thead {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
 }
 
-.neu-style .blog-intro {
+.neu-style .blog .blog-intro {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
+}
+
+.neu-style .blog .blog-image .after {
+  border: var(--border);
 }
 
 .neu-style .portfolio-single .modal-content {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
 }
 
-.neu-style .button,
+.neu-style .button {
+  background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
+  border: var(--border);
+}
+
 .neu-style .setting-button {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
 }

@@ -9,6 +9,8 @@
         --scheme-color-darken: #c2c2c2;
         --light-surface-color: RGB(var(--scheme-color));
         --dark-surface-color: RGB(var(--scheme-color));
+        --border: 0px solid #fafafa;
+
         $bgSurface: linear-gradient(
                 145deg,
                 var(--light-surface-color),
@@ -62,16 +64,19 @@
                 .range-slider__value {
                         background: $bgSurface;
                         box-shadow: $dropBoxShadow;
+                        border: var(--border);
                 }
 
                 .range-slider__range {
                         background: $bgSurface;
                         box-shadow: $insetBoxShadow;
+                        border: var(--border);
                 }
 
                 ::-webkit-slider-thumb {
                         background-color: $schemeColor;
                         box-shadow: $dropBoxShadow;
+                        border: var(--border);
                 }
 
                 ::-webkit-slider-thumb:hover,
@@ -125,26 +130,34 @@
         .checkbox {
                 label {
                         background: $bgSurface !important;
+                        border: var(--border);
                 }
         }
 
-        // INPUT
+        // INPUT & TEXAREA
         .form-group {
-                input {
-                        background: $bgSurface !important;
-                }
-        }
-
-        //TEXTAREA
-        .form-group {
+                input,
                 textarea {
-                        background: $bgSurface;
+                        background: $bgSurface !important;
+                        border: var(--border);
                 }
         }
 
         // SEGMENTED-CONTROL
         .segmented-control {
                 background: $bgSurface;
+                border: var(--border);
+                .radio-selection {
+                        border: var(--border);
+                }
+        }
+
+        // TOGGLE
+        .toggle {
+                border: var(--border);
+                .indicator {
+                        border: var(--border);
+                }
         }
 
         /*-------------------------
@@ -154,24 +167,43 @@
         .code-block {
                 box-shadow: $insetBoxShadow;
                 background: $bgSurface;
+                border: var(--border);
         }
 
         //
-        .box-border,
-        .image-border,
-        .badge-border,
+        .badge-border {
+                background: $bgSurface;
+        }
+        .image-border {
+                background: $bgSurface;
+                border: var(--border);
+        }
+        .box-border {
+                background: $bgSurface;
+                border: var(--border);
+        }
         .setting-panel {
+                border: var(--border);
                 background: $bgSurface;
         }
 
         // TABLE
-        table thead {
-                background: $bgSurface;
+        table {
+                border: var(--border);
+                thead {
+                        background: $bgSurface;
+                }
         }
 
         // PROJECT-SPECIFIC
-        .blog-intro {
-                background: $bgSurface;
+        .blog {
+                .blog-intro {
+                        background: $bgSurface;
+                        border: var(--border);
+                }
+                .blog-image .after {
+                        border: var(--border);
+                }
         }
         .portfolio-single {
                 .modal-content {
@@ -205,7 +237,10 @@
       BASIC COMPONENTS
 -------------------------*/
         /* BUTTON */
-        .button,
+        .button {
+                background: $bgSurface;
+                border: var(--border);
+        }
         .setting-button {
                 background: $bgSurface;
         }

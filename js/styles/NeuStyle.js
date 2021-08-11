@@ -132,7 +132,8 @@ export class NeuStyle extends Style {
     }
     updateBorder() {
         const borderColor = DynamicColor.schemeColor.getLighten(this.borderBrightness);
-        const borderStyle = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
+        const border = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
+        this.cssRule.style.setProperty('--border', border);
     }
 }
 //  Singleton Pattern
