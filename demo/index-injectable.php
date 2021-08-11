@@ -13,7 +13,7 @@
                                         ->add(Button(label: "Dynamic button"))
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
-                                        ->code('Button(label: "Dynamic button")->show();')
+                                        ->code('Button(label: "Dynamic button") -> show();')
                                         ->show();
 
                                 Flexbox()
@@ -53,9 +53,9 @@
                                 Flexbox()
                                         ->add(Checkbox(label: "Dynamic checkbox"))
                                         ->show();
-                                CodeBlock('php', '/* optional params: string $id = $value = "checkbox_".format($name), bool $checked = false  */
-                                echo Checkbox(name:"Dynamic checkbox");
-                                ', 4);
+                                CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+                                        ->code('Checkbox(label: "Dynamic checkbox") -> show();')
+                                        ->show();
 
                                 Flexbox(
                                         null,
