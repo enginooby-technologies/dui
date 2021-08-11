@@ -18,24 +18,17 @@ export abstract class Style {
                 this.cssRule = insertEmptyRule('.' + styleConfig.name)
         }
 
-        // protected insertEmptyRule = (selectors: string[]): CSSStyleRule => cssRules![styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
-
-        private formatSelectorsArray(array: string[]): string {
-                return array.map(selector => `.${this.name} ${selector}`).join(", ");
-        }
-
         onEnable(): void {
                 this.init();
                 this.setupCustomizeEvents();
         };
-        abstract setupCustomizeEvents(): void; // events for customize the style in the setting panel
+        // events for customize the style-specific properties in the setting panel
+        abstract setupCustomizeEvents(): void;
         abstract init(): void;
+        onDisable() { };
 
-        abstract onDisable(): void;
-
-        // DRY: update common functions, e.g. bgScheme, bgHighlight....
-        abstract onHighlightColorUpdated(): void;
-        abstract onSchemeColorUpdated(): void;
-        abstract onBaseColorUpdated(): void;
+        onHighlightColorUpdated() { };
+        onSchemeColorUpdated() { };
+        onBaseColorUpdated() { };
 }
 

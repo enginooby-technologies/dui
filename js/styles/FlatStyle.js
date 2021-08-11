@@ -13,18 +13,13 @@ export class FlatStyle extends Style {
         return FlatStyle._instance;
     }
     init() { }
-    onDisable() { }
     setupCustomizeEvents() { }
-    onBaseColorUpdated() {
-    }
     onHighlightColorUpdated() {
         const darkenHighlightColor = DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity);
         this.cssRule.style.setProperty('--highlight-color-darken', darkenHighlightColor);
-        // this.getBgDarkenHighlightRule().style.setProperty('color', DynamicColor.highlightColor!.getInvertBlackWhite(), 'important');
     }
     onSchemeColorUpdated() {
         const lightenSchemeColor = DynamicColor.schemeColor.getLighten(this.lightSchemeIntensity);
         this.cssRule.style.setProperty('--scheme-color-lighten', lightenSchemeColor);
-        // this.getBgLightenSchemeRule().style.setProperty('color', DynamicColor.schemeColor!.getInvertBlackWhite(), 'important');
     }
 }

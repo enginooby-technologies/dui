@@ -7,17 +7,7 @@ export class Win98Style extends Style {
         (_a = Win98Style._instance) !== null && _a !== void 0 ? _a : (Win98Style._instance = new Win98Style());
         return Win98Style._instance;
     }
-    setupCustomizeEvents() {
-    }
-    init() {
-    }
-    onDisable() {
-    }
-    onHighlightColorUpdated() {
-    }
-    onSchemeColorUpdated() {
-    }
-    onBaseColorUpdated() {
-    }
+    setupCustomizeEvents() { }
+    init() { }
 }
 Win98Style._instance = new Win98Style();

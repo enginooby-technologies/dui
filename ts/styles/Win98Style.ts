@@ -1,6 +1,4 @@
 import { Style } from '../base/Style.js';
-import *as Win98Seletors from '../selectors/Win98Seletors.js';
-import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { Win98Config } from '../StyleConfig.js';
 
 export class Win98Style extends Style {
@@ -11,21 +9,6 @@ export class Win98Style extends Style {
                 return Win98Style._instance;
         }
 
-        setupCustomizeEvents(): void {
-        }
-
-        init(): void {
-        }
-
-        onDisable(): void {
-        }
-
-        onHighlightColorUpdated(): void {
-        }
-
-        onSchemeColorUpdated(): void {
-        }
-
-        onBaseColorUpdated(): void {
-        }
+        setupCustomizeEvents(): void { }
+        init(): void { }
 }

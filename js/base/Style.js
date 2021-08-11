@@ -8,13 +8,17 @@ export class Style {
         this.preferredFontFamily = styleConfig.font;
         this.cssRule = insertEmptyRule('.' + styleConfig.name);
     }
-    // protected insertEmptyRule = (selectors: string[]): CSSStyleRule => cssRules![styleSheet!.insertRule(`${this.formatSelectorsArray(selectors)} {}`)] as CSSStyleRule;
-    formatSelectorsArray(array) {
-        return array.map(selector => `.${this.name} ${selector}`).join(", ");
-    }
     onEnable() {
         this.init();
         this.setupCustomizeEvents();
     }
+    ;
+    onDisable() { }
+    ;
+    onHighlightColorUpdated() { }
+    ;
+    onSchemeColorUpdated() { }
+    ;
+    onBaseColorUpdated() { }
     ;
 }

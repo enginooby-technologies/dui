@@ -1,8 +1,6 @@
-import *as NesSelectors from '../selectors/NesSelectors.js';
 import { Style } from '../base/Style.js';
 import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NesConfig } from '../StyleConfig.js';
-import { insertEmptyRule } from '../global.js';
 
 export class NesStyle extends Style {
         //  Singleton Pattern
@@ -24,35 +22,27 @@ export class NesStyle extends Style {
         borderInput: string = "";
 
         private bgDarkenHighlightRule?: CSSStyleRule;
-        getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
+        // getBgDarkenHighlightRule = () => this.bgDarkenHighlightRule ?? (this.bgDarkenHighlightRule = insertEmptyRule(NesSelectors.bgDarkenHighlightSelectors));
         private borderInputRule?: CSSStyleRule;
-        getBorderInputRule = () => this.borderInputRule ?? (this.borderInputRule = insertEmptyRule(NesSelectors.borderInputSelectors));
+        // getBorderInputRule = () => this.borderInputRule ?? (this.borderInputRule = insertEmptyRule(NesSelectors.borderInputSelectors));
 
         setupCustomizeEvents(): void {
         }
 
         init(): void {
         }
-
-        onDisable(): void {
-        }
-
         onHighlightColorUpdated(): void {
                 this.darkenHighlightColor = DynamicColor.highlightColor!.getDarken(this.darkHighlightIntensity);
-                this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
-        }
-
-        onSchemeColorUpdated(): void {
+                // this.getBgDarkenHighlightRule().style.setProperty('background-color', this.darkenHighlightColor, 'important');
         }
 
         onBaseColorUpdated(): void {
                 this.updateBorderColor();
-                this.getBorderInputRule().style.setProperty('border-image-source', this.borderInput);
+                // this.getBorderInputRule().style.setProperty('border-image-source', this.borderInput);
         }
 
         updateBorderColor() {
                 const borderRgb = (DynamicColor.baseColor == '#ffffff') ? "rgb(255,255,255)" : "rgb(0,0,0)";
                 this.borderInput = `url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="${borderRgb}" /></svg>')`;
         }
-
 }

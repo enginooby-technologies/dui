@@ -11,21 +11,15 @@ export class Template extends Style {
                 return Template._instance;
         }
 
-        setupCustomizeEvents(): void {
-        }
+        setupCustomizeEvents(): void { }
 
-        init(): void {
-        }
+        init(): void { }
 
-        onDisable(): void {
-        }
+        onDisable(): void { }
 
-        onHighlightColorUpdated(): void {
-        }
+        onHighlightColorUpdated(): void { }
 
-        onSchemeColorUpdated(): void {
-        }
+        onSchemeColorUpdated(): void { }
 
-        onBaseColorUpdated(): void {
-        }
+        onBaseColorUpdated(): void { }
 }

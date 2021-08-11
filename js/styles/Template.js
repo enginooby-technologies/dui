@@ -8,17 +8,11 @@ export class Template extends Style {
         (_a = Template._instance) !== null && _a !== void 0 ? _a : (Template._instance = new Template());
         return Template._instance;
     }
-    setupCustomizeEvents() {
-    }
-    init() {
-    }
-    onDisable() {
-    }
-    onHighlightColorUpdated() {
-    }
-    onSchemeColorUpdated() {
-    }
-    onBaseColorUpdated() {
-    }
+    setupCustomizeEvents() { }
+    init() { }
+    onDisable() { }
+    onHighlightColorUpdated() { }
+    onSchemeColorUpdated() { }
+    onBaseColorUpdated() { }
 }
 Template._instance = new Template();

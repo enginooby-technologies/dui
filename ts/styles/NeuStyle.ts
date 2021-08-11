@@ -38,8 +38,6 @@ export class NeuStyle extends Style {
                 // TODO: Init radio button
         }
 
-        onDisable(): void { }
-
         private initRangeSliders() {
                 this.initRangeSlider('#neu-distance-x', this.distanceX);
                 this.initRangeSlider('#neu-distance-y', this.distanceY);
@@ -109,9 +107,6 @@ export class NeuStyle extends Style {
                 });
         }
 
-        onHighlightColorUpdated(): void {
-        }
-
         onSchemeColorUpdated(): void {
                 this.updateSurface();
                 this.updateBorder();
@@ -129,15 +124,11 @@ export class NeuStyle extends Style {
                 this.cssRule.style.setProperty('--scheme-color-darken', this.schemeColorDarken);
         }
 
-        onBaseColorUpdated(): void {
-        }
-
         private updateSurface() {
                 const lightSurfaceColor = DynamicColor.schemeColor!.getLighten(this.surfaceCurvature);
                 const darkSurfaceColor = DynamicColor.schemeColor!.getDarken(this.surfaceCurvature);
                 this.cssRule.style.setProperty('--light-surface-color', lightSurfaceColor);
                 this.cssRule.style.setProperty('--dark-surface-color', darkSurfaceColor);
-                // this.bgSurface = `linear-gradient(145deg, ${lightSurfaceColor}, ${darkSurfaceColor})`
         }
 
         private updateBorder() {

@@ -21,7 +21,6 @@ export class GlassStyle extends Style {
     init() {
         this.initRangeSliders();
     }
-    onDisable() { }
     initRangeSliders() {
         $('#glass-transparency').attr('value', this.transparency);
         $("#glass-transparency").next('.range-slider__value').html(this.transparency.toString());
@@ -79,7 +78,5 @@ export class GlassStyle extends Style {
     onSchemeColorUpdated() {
         this.lightenSchemeColor.setHex(DynamicColor.schemeColor.getLighten(this.lightenSchemeIntensity));
         this.updateColorCssVar('--scheme-color-lighten', this.lightenSchemeColor);
-    }
-    onBaseColorUpdated() {
     }
 }

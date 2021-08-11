@@ -1,7 +1,3 @@
-export const bgSelectors = formatString([
-    ' body',
-    '.display-content>.container'
-]);
 export const fontSelectors = formatString([
     // "*:not(i):not(.fas):not(.fa)",
     "body",
