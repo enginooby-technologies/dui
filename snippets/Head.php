@@ -44,6 +44,9 @@ class Head
                 return $this;
         }
 
+        /**
+         * Here an example of the italics tag: <<i>>Hello, world!<<i>>
+         */
         public function meta(
                 string $charset = "UTF-8",
                 string $author = null,

@@ -6,7 +6,7 @@ Head(title: "Dyanmic UI Framework")
         ->meta(
                 author: "enginoobz",
                 description: "Demo page for Dynamic UI Framework",
-                keywords: "ui, dynamic, bootstrap, framework, jquery, php",
+                keywords: "ui, dynamic, bootstrap, framework, jquery, php, flat, nes, pixel, windows, neumorphism, glassmorphism",
         )
         ->init(
                 highlightColor: '#eb4034'
