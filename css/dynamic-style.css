@@ -514,7 +514,7 @@ a:hover {
 
 a,
 button {
-  outline: none !important;
+  outline: none;
   text-decoration: none;
 }
 
@@ -2290,6 +2290,65 @@ img {
   margin: 0;
 }
 
+.winxp-style {
+  --btn-border-width: 1px;
+  --btn-border-style: solid;
+  /*-------------------------
+      BASIC COMPONENTS
+-------------------------*/
+  /* BUTTON */
+}
+
+.winxp-style .button-wrapper .button,
+.winxp-style .button-border .button {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: var(--btn-border-width) var(--btn-border-style) RGB(var(--highlight-color));
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(86%, #ecebe5), to(#d8d0c4));
+  background: linear-gradient(180deg, white 0%, #ecebe5 86%, #d8d0c4 100%);
+}
+
+.winxp-style .button-wrapper .button:not(:disabled):active, .winxp-style .button-wrapper .button:not(:disabled).active,
+.winxp-style .button-border .button:not(:disabled):active,
+.winxp-style .button-border .button:not(:disabled).active {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cdcac3), color-stop(8%, #e3e3db), color-stop(94%, #e5e5de), to(#f2f2f1));
+  background: linear-gradient(180deg, #cdcac3 0%, #e3e3db 8%, #e5e5de 94%, #f2f2f1 100%);
+}
+
+.winxp-style .button-wrapper .button:not(:disabled):hover,
+.winxp-style .button-border .button:not(:disabled):hover {
+  -webkit-box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+          box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+}
+
+.winxp-style .button-wrapper .button:focus, .winxp-style .button-wrapper .button.active,
+.winxp-style .button-border .button:focus,
+.winxp-style .button-border .button.active {
+  -webkit-box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea, inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
+          box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea, inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
+}
+
+.winxp-style .button-wrapper .button:focus::after, .winxp-style .button-wrapper .button.active::after,
+.winxp-style .button-border .button:focus::after,
+.winxp-style .button-border .button.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--base-color);
+}
+
+.winxp-style .button-wrapper .button::-moz-focus-inner,
+.winxp-style .button-border .button::-moz-focus-inner {
+  border: 0;
+}
+
 .section,
 .display-content > .container.none-bg,
 body,
@@ -3253,6 +3312,14 @@ table,
 .dropdown .windows98-bg {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../backgrounds/windows98.jpg) no-repeat center center fixed;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../backgrounds/windows98.jpg) no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.windowsxp-bg::before,
+.dropdown .windowsxp-bg {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../backgrounds/windowsxp.png) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../backgrounds/windowsxp.png) no-repeat center center fixed;
   background-attachment: fixed;
   background-size: cover;
 }

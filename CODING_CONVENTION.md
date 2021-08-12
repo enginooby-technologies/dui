@@ -10,3 +10,22 @@
 ## Events
 + ```on+{verb}+{noun}```: onChangeBg
 + Trigger first time: onFirstTimeChangeBg
+
+## Comments
+### Actions:
++ TODO
++ REFACTOR
++ UTIL
++ TOFIX
+ + TOREMOVE 
+### Sections:
++ Categorize:
+```
+/*-------------------------
+      BASIC COMPONENTS
+-------------------------*/
+```
++ Component:
+```
+/* BUTTON */
+```
