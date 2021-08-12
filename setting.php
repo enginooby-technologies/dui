@@ -19,6 +19,7 @@ include_once "_index.php";
                                         ["label" => "Flat", "value" => "flat-style"],
                                         ["label" => "NES - Pixel", "value" => "nes-style"],
                                         ["label" => "Windows 98", "value" => "win98-style"],
+                                        ["label" => "Windows XP", "value" => "winxp-style"],
                                         ["label" => "Neumorphism", "value" => "neu-style"],
                                         ["label" => "Glassmorphism", "value" => "glass-style"],
                                 );
