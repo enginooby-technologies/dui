@@ -36,6 +36,7 @@
                                 rgba(216, 208, 196, 1) 100%
                         );
 
+                        // hover
                         &:not(:disabled) {
                                 &:active,
                                 &.active {
@@ -55,6 +56,7 @@
                                 }
                         }
 
+                        // forcus & active
                         &:focus,
                         &.active {
                                 box-shadow: inset -2.5px 1px #cee7ff,
