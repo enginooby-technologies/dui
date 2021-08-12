@@ -13,7 +13,6 @@ Head(title: "Dyanmic UI Framework")
 <!-- <head>
         <link rel="preload" href="../fonts/agency-fb-regular/AgencyFB-Reg.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="../fonts/agency-fb-bold/AgencyFB-Bold.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="stylesheet" href="../css/dynamic-style.css" type="text/css" />
 </head> -->
 
 <body class="neu-style ">

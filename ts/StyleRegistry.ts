@@ -4,8 +4,9 @@ import { NeuStyle } from "./styles/NeuStyle.js";
 import { GlassStyle } from "./styles/GlassStyle.js";
 import { NesStyle } from "./styles/NesStyle.js";
 import { Win98Style } from "./styles/Win98Style.js";
-import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from "./StyleConfig.js";
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config, WinXPConfig } from "./StyleConfig.js";
 import { DynamicUI } from "./dynamic/DynamicUI.js";
+import { WinXPStyle } from "./styles/WinXPStyle.js";
 
 export class StyleRegistry {
         private dynamicUI: DynamicUI;
@@ -39,6 +40,7 @@ export class StyleRegistry {
                 if (name == GlassConfig.name) return GlassStyle.Instance;
                 if (name == NesConfig.name) return NesStyle.Instance;
                 if (name == Win98Config.name) return Win98Style.Instance;
+                if (name == WinXPConfig.name) return WinXPStyle.Instance;
 
                 throw Error("Style instance not found!");
         }

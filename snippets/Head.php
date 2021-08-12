@@ -42,17 +42,16 @@ class Head
 
         public function meta(
                 string $charset = "UTF-8",
-                ?string $author = null,
-                ?string $description = null,
-                ?string $keywords = null,
+                string $author = null,
+                string $description = null,
+                string $keywords = null,
                 string $viewport = "width=device-width, initial-scale=1.0, shrink-to-fit=no",
-                ?string $revised = null,
-                ?int $refresh = null,
-                ?string $cookie = null,
-                ?string $redirect = null,
-                ?int $redirectDelay = null
+                string $revised = null,
+                int $refresh = null,
+                string $cookie = null,
+                string $redirect = null,
+                int $redirectDelay = null
         ) {
-                // $this->meta = new Meta($charset . $author, $description, $keywords, $viewport, $revised, $refresh, $cookie);
                 $this->meta = new Meta();
                 $this->meta->charset($charset)->author($author)->description($description)
                         ->keywords($keywords)->viewport($viewport)->revised($revised)

@@ -1,6 +1,5 @@
 <head>
         <title><?= $title ?></title>
-
         <!-- META -->
         <meta charset="<?= $charset ?>">
         <meta name="viewport" content="<?= $viewport ?>">
@@ -25,11 +24,11 @@
         <?php if ($cookie) : ?>
                 <meta http-equiv="cookie" content="<?= $cookie ?>" />
         <?php endif; ?>
-
-
-        <!-- TODO: Use CDN for DUI css -->
+        <!-- FONT PRELOAD -->
+        <!-- CSS -->
+        <!-- Todo: Use CDN for DUI css -->
         <link rel="stylesheet" href="/dui/css/dynamic-style.css" type="text/css">
-        <!-- TODO: Verify if sheets are in order -->
+        <!-- Todo: Verify if sheets are in order -->
         <?php foreach ($cssHrefs as $href) : ?>
                 <link rel="stylesheet" href="<?= $href ?>" type="text/css">
         <?php endforeach; ?>

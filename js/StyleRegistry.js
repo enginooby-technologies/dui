@@ -3,7 +3,8 @@ import { NeuStyle } from "./styles/NeuStyle.js";
 import { GlassStyle } from "./styles/GlassStyle.js";
 import { NesStyle } from "./styles/NesStyle.js";
 import { Win98Style } from "./styles/Win98Style.js";
-import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config } from "./StyleConfig.js";
+import { FlatConfig, GlassConfig, NesConfig, NeuConfig, Win98Config, WinXPConfig } from "./StyleConfig.js";
+import { WinXPStyle } from "./styles/WinXPStyle.js";
 export class StyleRegistry {
     constructor(dynamicUI, initStyle = NeuConfig.name) {
         this.dynamicUI = dynamicUI;
@@ -36,6 +37,8 @@ export class StyleRegistry {
             return NesStyle.Instance;
         if (name == Win98Config.name)
             return Win98Style.Instance;
+        if (name == WinXPConfig.name)
+            return WinXPStyle.Instance;
         throw Error("Style instance not found!");
     }
 }
