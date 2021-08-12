@@ -1,0 +1,7 @@
+.windowsxp-bg::before,
+.dropdown .windowsxp-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../backgrounds/windowsxp.png) no-repeat center center fixed;
+        background-attachment: fixed;
+        background-size: cover;
+}

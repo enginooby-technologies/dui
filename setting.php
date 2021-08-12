@@ -144,6 +144,7 @@ include_once "_index.php";
                                                         ["label" => "Linear gradient"],
                                                         ["label" => "Vanishing stripes"],
                                                         ["label" => "Windows98"],
+                                                        ["label" => "WindowsXP"],
                                                 )
                                                 ?>
                                         </div>
@@ -161,6 +162,7 @@ include_once "_index.php";
                                                         ["label" => "Linear gradient"],
                                                         ["label" => "Vanishing stripes"],
                                                         ["label" => "Windows98"],
+                                                        ["label" => "WindowsXP"],
                                                 )
                                                 ?>
                                         </div>

@@ -16,7 +16,7 @@ export const Win98Config = {
 };
 export const WinXPConfig = {
     name: 'winxp-style',
-    // outerBackground: 'windows98-bg'
+    outerBackground: 'windowsxp-bg'
 };
 export const GlassConfig = {
     name: 'glass-style',
