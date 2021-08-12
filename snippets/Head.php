@@ -14,10 +14,9 @@ declare(strict_types=1);
 
 // delegate class instance init to a function to ease usage
 // e.g. instead of (new Head('title'))->show(), write Head('title')->show()
-function Head(string $title, array $cssHrefs = [], ?Meta $meta = null): Head
+function Head(string $title, array $cssHrefs = [], ?Meta $meta = null, ?Initializer $initializer = null): Head
 {
-        $meta = $meta ?? new Meta();
-        return new Head($title, $cssHrefs, $meta);
+        return new Head($title, $cssHrefs, $meta, $initializer);
 }
 
 class Head
@@ -28,9 +27,14 @@ class Head
                 private string $title,
                 // optional member with default value
                 private array $cssHrefs = [],
-                protected ?Meta $meta,
+
+                ?Meta $meta = null,
+                ?Initializer $initializer = null,
+
                 //TODO: font preload
         ) {
+                $this->initializer = $initializer ?? new Initializer();
+                $this->meta = $meta ?? new Meta();
         }
 
         // make builders/setters for optional members
@@ -59,12 +63,19 @@ class Head
                 return $this;
         }
 
+        public function init(?string $schemeColor = null, ?string $highlightColor = null)
+        {
+                $this->initializer = new Initializer($schemeColor, $highlightColor);
+                return $this;
+        }
+
         // each component has show() method returning its HTML view
         public function show()
         {
                 // shorten variables for its view (just to make the view file look better)
                 $title = $this->title;
                 $cssHrefs = $this->cssHrefs;
+
                 $charset = $this->meta->charset;
                 $author = $this->meta->author;
                 $description = $this->meta->description;
@@ -75,6 +86,10 @@ class Head
                 $redirect = $this->meta->redirect;
                 $redirectDelay = $this->meta->redirectDelay ?? 0;
                 $cookie = $this->meta->cookie;
+
+                $schemeColor = Color::toRgbComponents($this->initializer->schemeColor);
+                $highlightColor = Color::toRgbComponents($this->initializer->highlightColor);
+
                 include "head_view.php";
                 // return itself, allow to quickly duplicate: $component->show()->show()...
                 return $this;

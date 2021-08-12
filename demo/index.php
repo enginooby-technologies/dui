@@ -8,6 +8,9 @@ Head(title: "Dyanmic UI Framework")
                 description: "Demo page for Dynamic UI Framework",
                 keywords: "ui, dynamic, bootstrap, framework, jquery, php",
         )
+        ->init(
+                highlightColor: '#eb4034'
+        )
         ->show();
 ?>
 <!-- <head>
