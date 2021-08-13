@@ -32,15 +32,14 @@
                                 echo RangeSlider(label: "Dynamic slider",  max: 100);
                                 ', 4);
 
-                                Flexbox(
-                                        // null,
-                                        // Radio(label: "Radio 1", value: 1, group: "group-1"),
-                                        // Radio(label: "Radio 2", value: 2, group: "group-1", checked: true),
-                                );
-                                CodeBlock('php', '/* optional params: string $id = "radio_".format($label), bool $checked = false  */                              
-                                        echo Radio(label: "Radio 1", value: 1, group: "group-1");
-                                        echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
-                                        ', 5);
+                                Flexbox()
+                                        ->add(Radio(label: "Radio 1", group: "Group 1"))
+                                        ->add(Radio(label: "Radio 2", group: "Group 1", checked: true))
+                                        ->show();
+                                CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+                                        ->code('Radio(label: "Radio 1", group: "Group 1") -> show();
+                                        Radio(label: "Radio 2", group: "Group 1", checked: true) -> show();')
+                                        ->show();
 
                                 Flexbox()
                                         ->add(Toggle(label: "Dynamic toggle"))

@@ -45,10 +45,10 @@ include_once "_index.php";
                                                 <p>Border style</p>
                                                 <div class="radio-group-wrapper">
                                                         <?php
-                                                        echo Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '');
-                                                        echo Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '');
-                                                        echo Radio(id: 'dotted-border', value: 2, group: 'neu-border-style', label: '');
-                                                        echo Radio(id: 'dashed-border', value: 3, group: 'neu-border-style', label: '');
+                                                        Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '')->show();
+                                                        Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '')->show();
+                                                        Radio(id: 'dotted-border', value: 2, group: 'neu-border-style', label: '')->show();
+                                                        Radio(id: 'dashed-border', value: 3, group: 'neu-border-style', label: '')->show();
                                                         ?>
                                                 </div>
                                                 <?php

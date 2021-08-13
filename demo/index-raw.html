@@ -10,7 +10,7 @@
                         <meta name="author" content="enginoobz">
                                 <meta name="description" content="Demo page for Dynamic UI Framework">
                                 <meta name="keywords" content="ui, dynamic, bootstrap, framework, jquery, php, flat, nes, pixel, windows, neumorphism, glassmorphism">
-                                <meta name="revised" content="2021-08-13 20:12:36">
+                                <meta name="revised" content="2021-08-13 20:31:06">
                                 
         <!-- FONT PRELOAD -->
 
@@ -56,6 +56,22 @@
 
                                 <h5 class="my-4">IV - Form Components</h5>
                                 <div class=" d-flex justify-content-center flex-row">
+                        <div class='dui-radio wrapper radio-wrapper  '>
+        <input class='state' type='radio'  name='Group 1' id='radio_radio-1' value=''>
+        <label class='label ' for='radio_radio-1'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 1</span>
+        </label>
+</div>                        <div class='dui-radio wrapper radio-wrapper  '>
+        <input class='state' type='radio' checked name='Group 1' id='radio_radio-2' value=''>
+        <label class='label ' for='radio_radio-2'>
+                <div class='indicator'></div>
+                <span class='text'>Radio 2</span>
+        </label>
+</div>        </div><div class="code-block wrapper mt-3">
+        <pre class=""><code  class="language-php"   >Radio(label: "Radio 1", group: "Group 1") -&gt; show();
+Radio(label: "Radio 2", group: "Group 1", checked: true) -&gt; show();</code></pre>
+</div><div class=" d-flex justify-content-center flex-row">
                                 <label class="toggle-label wrapper toggle-wrapper  ">
                 <div class="toggle" id="toggle_dynamic-toggle">
                         <input class="toggle-state  " type="checkbox"  value="" />
