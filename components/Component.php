@@ -58,6 +58,7 @@ abstract class Component implements IShowable
 }
 
 // Usage: child class of Component having $label property uses trait TLabel to include its function (set label) => multiple inheritance
+/* Toggle, Checkbox, Button*/
 trait TLabel
 {
         public function label(string $label)
@@ -113,7 +114,7 @@ trait TChecked
         }
 }
 
-/* Checkbox, Range slider */
+/* Checkbox, Range slider , Toggle*/
 trait TValue
 {
         public function value(string $value)

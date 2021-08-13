@@ -8,6 +8,7 @@ function Input(?string $id = null, ?string $name = null, ?string $placeholder = 
         return new Input($name, $placeholder, $required, $id, $class, $wrapperClass, $onclick);
 }
 
+// TODO: create Input base class for InputText, InputCheckbox, etc.
 class Input extends Component
 {
         use TName;

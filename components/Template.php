@@ -15,6 +15,7 @@ class T extends Component
         public function __construct(
                 //protected members from traits
 
+                // common members from Component
                 ?string $id = null,
                 string $class = '',
                 string $wrapperClass = '',

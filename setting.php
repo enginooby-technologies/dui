@@ -171,7 +171,7 @@ include_once "_index.php";
                         </div>
 
                         <div class="setting-save-panel">
-                                <?= Toggle('Save', 'setting-save-button') ?>
+                                <?php Toggle(label: "Save")->show() ?>
                                 <!-- TODO: Random button-->
                         </div>
                 </div>

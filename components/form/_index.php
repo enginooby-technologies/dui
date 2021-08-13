@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 include_once "Input.php";
 include_once "Checkbox.php";
+include_once "Toggle.php";
+
 include_once dirname(__FILE__) . "/../../utils/formatter.php";
 include_once dirname(__FILE__) . "/../../utils/general.php";
 
@@ -23,17 +25,6 @@ function RangeSlider(string $id = null, string $label, float  $min = 0, float $m
 
         ob_start();
         include "_range-slider.php";
-        return getHtmlOutputFromBuffer();
-}
-
-//TODO: use string type for value to cover more cases
-function Toggle(string $label, string $id = null, string $name = null, float $value = 0)
-{
-        $id = $id ?? "toggle_" . formatToId($label);
-        $name = $name ?? formatToId($label);
-
-        ob_start();
-        include "_toggle.php";
         return getHtmlOutputFromBuffer();
 }
 

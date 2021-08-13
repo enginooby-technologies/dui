@@ -10,13 +10,11 @@ function Checkbox(string $label, ?string $value = null, bool $checked = false, ?
 
 class Checkbox extends Component
 {
-        // traits
         use TLabel;
         use TValue;
         use TChecked;
 
         public function __construct(
-                //protected members from traits
                 protected string $label,
                 protected ?string $value = null,
                 protected bool $checked = false,

@@ -42,13 +42,12 @@
                                         echo Radio(label: "Radio 2", value: 2, group: "group-1", checked: true);
                                         ', 5);
 
-                                Flexbox(
-                                        // null,
-                                        // Toggle(label: "Dynamic toggle")
-                                );
-                                CodeBlock('php', '/* optional params: string $id = $name = "toggle_".format($label), float $value = 0 */
-                                echo Toggle(label: "Dynamic toggle");
-                                ', 4);
+                                Flexbox()
+                                        ->add(Toggle(label: "Dynamic toggle"))
+                                        ->show();
+                                CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+                                        ->code('Toggle(label: "Dynamic toggle") -> show();')
+                                        ->show();
 
                                 Flexbox()
                                         ->add(Checkbox(label: "Dynamic checkbox"))
