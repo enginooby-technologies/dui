@@ -10,14 +10,10 @@
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <?php
                                 Flexbox()
-                                        ->add(Button(label: "Dynamic button"))
+                                        ->Button(label: "Dynamic button")
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
                                         ->code('Button(label: "Dynamic button") -> show();')
-                                        ->show();
-
-                                Flexbox()
-                                        ->add(Input())
                                         ->show();
                                 ?>
 
@@ -33,6 +29,13 @@
                                 ', 4);
 
                                 Flexbox()
+                                        ->Input()
+                                        ->show();
+                                CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+                                        ->code('Input() -> show();')
+                                        ->show();
+
+                                Flexbox()
                                         ->Radio(label: "Radio 1", group: "Group 1")
                                         ->Radio(label: "Radio 2", group: "Group 1", checked: true)
                                         ->show();
@@ -42,14 +45,14 @@
                                         ->show();
 
                                 Flexbox()
-                                        ->add(Toggle(label: "Dynamic toggle"))
+                                        ->Toggle(label: "Dynamic toggle")
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
                                         ->code('Toggle(label: "Dynamic toggle") -> show();')
                                         ->show();
 
                                 Flexbox()
-                                        ->add(Checkbox(label: "Dynamic checkbox"))
+                                        ->Checkbox(label: "Dynamic checkbox")
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
                                         ->code('Checkbox(label: "Dynamic checkbox") -> show();')

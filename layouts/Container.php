@@ -17,19 +17,19 @@ abstract class Container
         ) {
         }
 
-        public function class(string $class)
+        function class(string $class)
         {
                 $this->class = $class;
                 return $this;
         }
 
-        public function componentClass(string $name)
+        function componentClass(string $name)
         {
                 $this->componentClass = $name;
                 return $this;
         }
 
-        public function add($component)
+        function add($component)
         {
                 array_push($this->components, $component);
                 return $this;
@@ -38,9 +38,37 @@ abstract class Container
         // Create & add component directly. This shortens systax: 
         // instead of: Container()->add(Button())->add(Button())...
         // we have:      Container()->Button()->Button()...
-        public function Radio(?string $label = null, ?string $group = null, ?string $value = null, bool $checked = false, ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+        function Radio(?string $label = null, ?string $group = null, ?string $value = null, bool $checked = false, ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
         {
                 $component = new Radio($label, $group, $value, $checked, $id, $class, $wrapperClass, $onclick);
+                $this->add($component);
+                return $this;
+        }
+
+        function Button(?string $id = null, string $class = '', string $wrapperClass = '', string $label = '',  string $href = 'javascript:;', ?string $onclick = null)
+        {
+                $component =  new Button($label, $href, $id, $class, $wrapperClass, $onclick);
+                $this->add($component);
+                return $this;
+        }
+
+        function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $required = false, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+        {
+                $component = new Input($name, $placeholder, $required, $id, $class, $wrapperClass, $onclick);
+                $this->add($component);
+                return $this;
+        }
+
+        function Toggle(?string $label = null, ?string $name = null, ?string $value = null, ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+        {
+                $component = new Toggle($label, $name, $value, $id, $class, $wrapperClass, $onclick);
+                $this->add($component);
+                return $this;
+        }
+
+        function Checkbox(string $label, ?string $value = null, bool $checked = false, ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+        {
+                $component = new Checkbox($label, $value, $checked, $id, $class, $wrapperClass, $onclick);
                 $this->add($component);
                 return $this;
         }

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 include_once __DIR__ . "/../Component.php";
 
-function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $required = false, string $wrapperClass = '', string $class = '', ?string $onclick = null): Input
+function Input(?string $id = null, ?string $name = null, ?string $placeholder = null, ?bool $required = false, string $wrapperClass = '', string $class = '', ?string $onclick = null)
 {
         return new Input($name, $placeholder, $required, $id, $class, $wrapperClass, $onclick);
 }
