@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 include_once "FlexboxOption.php";
+include_once "Container.php";
 
 function Flexbox(?FlexboxOption $option = null, array $components = [], string $class = '', string $componentClass = ''): Flexbox
 {
         return new Flexbox($class, $componentClass, $components, $option);
 }
 
-class Flexbox
+class Flexbox extends Container
 {
         public function __construct(
-                private string $class = '',
-                // add common class to each component wrapper
-                private string $componentClass = '',
-                private array $components = [],
+                string $class = '',
+                string $componentClass = '',  // add common class to each component wrapper
+                array $components = [],
                 private ?FlexboxOption $option = null
         ) {
+                parent::__construct($class, $componentClass, $components);
         }
 
         public function show()
@@ -30,24 +31,6 @@ class Flexbox
                         $component->wrapperClass($componentClass);
                 }
                 include "flexbox_view.php";
-                return $this;
-        }
-
-        public function class(string $class)
-        {
-                $this->class = $class;
-                return $this;
-        }
-
-        public function componentClass(string $name)
-        {
-                $this->componentClass = $name;
-                return $this;
-        }
-
-        public function add($component)
-        {
-                array_push($this->components, $component);
                 return $this;
         }
 }
