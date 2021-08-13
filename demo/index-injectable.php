@@ -33,8 +33,8 @@
                                 ', 4);
 
                                 Flexbox()
-                                        ->add(Radio(label: "Radio 1", group: "Group 1"))
-                                        ->add(Radio(label: "Radio 2", group: "Group 1", checked: true))
+                                        ->Radio(label: "Radio 1", group: "Group 1")
+                                        ->Radio(label: "Radio 2", group: "Group 1", checked: true)
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
                                         ->code('Radio(label: "Radio 1", group: "Group 1") -> show();

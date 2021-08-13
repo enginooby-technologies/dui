@@ -34,4 +34,14 @@ abstract class Container
                 array_push($this->components, $component);
                 return $this;
         }
+
+        // Create & add component directly. This shortens systax: 
+        // instead of: Container()->add(Button())->add(Button())...
+        // we have:      Container()->Button()->Button()...
+        public function Radio(?string $label = null, ?string $group = null, ?string $value = null, bool $checked = false, ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+        {
+                $component = new Radio($label, $group, $value, $checked, $id, $class, $wrapperClass, $onclick);
+                $this->add($component);
+                return $this;
+        }
 }
