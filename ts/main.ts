@@ -9,13 +9,13 @@ let $settingPanel: JQuery<HTMLElement>;
 // load required CSS
 tryLoadStyleSheet(Ref.animateCss);
 tryLoadStyleSheet(Ref.fontawesomeCss);
-tryLoadStyleSheet(Ref.bootstrapMinCss);
+tryLoadStyleSheet(Ref.bootstrap5MinCss);
 
 // load required JS
 tryLoadScript(Ref.jqueryMinJs, () => {
         loadSettingButton(); // HTML/PHP loading dependent on jQuery
-        tryLoadScript(Ref.popperMinJs, () => {
-                tryLoadScript(Ref.bootstrapMinJs)
+        tryLoadScript(Ref.popperMinJs, () => { // already included in Bootstrap bundle JS
+                tryLoadScript(Ref.bootstrap5MinBundleJs)
         })
 })
 

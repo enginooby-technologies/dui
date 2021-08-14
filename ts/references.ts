@@ -49,10 +49,15 @@ export const animateCss: StyleSheetFile = {
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
         // triggerClasses: ["animate__animated"]
 };
-export const bootstrapMinCss: StyleSheetFile = {
+export const bootstrap4MinCss: StyleSheetFile = {
         name: "bootstrap.min.css",
         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
         integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+}
+export const bootstrap5MinCss: StyleSheetFile = {
+        name: "bootstrap.min.css",
+        href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css",
+        integrity: "sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
 }
 export const fontawesomeCss: StyleSheetFile = {
         name: "fontawesome",
@@ -70,10 +75,15 @@ export const popperMinJs: ScriptFile = {
         src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
         integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 }
-export const bootstrapMinJs: ScriptFile = {
+export const bootstrap4MinJs: ScriptFile = {
         name: "bootstrap.min.js",
         src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
         integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+}
+export const bootstrap5MinBundleJs: ScriptFile = {
+        name: "bootstrap.bundle.min.js",
+        src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",
+        integrity: "sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 }
 export const tinyColorMinJs: ScriptFile = {
         name: "tinycolor.min.js",

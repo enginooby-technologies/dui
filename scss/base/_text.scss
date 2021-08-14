@@ -144,6 +144,11 @@ p {
         hyphens: auto;
 }
 
+// Bootstrap 5 migration
+.text-justify {
+        text-align: justify;
+}
+
 .paragraph-title {
         font-family: $fontBold;
         font-size: 1.6rem;
