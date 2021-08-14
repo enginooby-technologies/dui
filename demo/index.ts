@@ -1,6 +1,5 @@
 import { Button } from '../js/components/basic/Button.js'
 
-// TODO: strict type for onClick method
-Button("btn-1").onClick = (event, label) => {
-        alert(`Hi. I am ${label}`)
-}
+const btn1 = Button("btn1")
+btn1.onClick = event => alert(`Hi! I am ${btn1.label}`)
+

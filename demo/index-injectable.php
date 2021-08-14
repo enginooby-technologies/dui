@@ -10,10 +10,14 @@
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <?php
                                 Flexbox()
-                                        ->Button(label: "Dynamic button")
+                                        ->Button(label: "Dynamic button", id: "btn1")
                                         ->show();
                                 CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
-                                        ->code('Button(label: "Dynamic button") -> show();')
+                                        ->code('Button(label: "Dynamic button",  id: "btn1") -> show();')
+                                        ->show();
+                                CodeBlock(language: 'ts', outdent: 5, wrapperClass: 'mt-3')
+                                        ->code('const btn1 = Button("btn1")
+                                        btn1.onClick = event => alert(`Hi! I am ${btn1.label}`)')
                                         ->show();
                                 ?>
 

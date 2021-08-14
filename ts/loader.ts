@@ -52,7 +52,7 @@ function loadStyleSheet(sheet: StyleSheetFile) {
         document.head.insertBefore(link, document.getElementsByTagName("head")[0].firstChild);
 }
 
-// REFACTOR
+// REFACTOR: use Promise w/ async-await
 // callback will excecute regardless the script is loaded or not
 // in case load script, it will be guaranted to execute after finish loading
 // This is used for loading a chain of scripts, when every of them is optional

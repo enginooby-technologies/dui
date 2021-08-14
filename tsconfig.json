@@ -23,6 +23,6 @@
                 "checkJs": true // If you are still using some js files
         },
         "include": [
-                "./ts/**/*"
+                "./ts/**/*",
         ],
 }

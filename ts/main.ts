@@ -14,11 +14,12 @@ tryLoadStyleSheet(Ref.bootstrap5MinCss);
 // load required JS
 tryLoadScript(Ref.jqueryMinJs, () => {
         loadSettingButton(); // HTML/PHP loading dependent on jQuery
-        tryLoadScript(Ref.popperMinJs, () => { // already included in Bootstrap bundle JS
-                tryLoadScript(Ref.bootstrap5MinBundleJs)
-        })
+        // tryLoadScript(Ref.popperMinJs, () => { // already included in Bootstrap bundle JS
+        tryLoadScript(Ref.bootstrap5MinBundleJs)
+        // })
 })
 
+// REFACTOR: async-await
 // load option JS & CSS
 tryLoadScript(Ref.prismCoreMinJs, () => {
         tryLoadScript(Ref.prismAutoloaderMinJs, () => {
