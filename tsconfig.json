@@ -25,4 +25,11 @@
         "include": [
                 "./ts/**/*",
         ],
+        "references": [
+                {
+                        "path": "../dui-dom",
+                        // add 'prepend' if you want to include the referenced project in your output file
+                        "prepend": false,
+                }
+        ]
 }
