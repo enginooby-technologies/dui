@@ -15,6 +15,7 @@ tryLoadScript(Ref.jqueryMinJs, () => {
     tryLoadScript(Ref.bootstrap5MinBundleJs);
     // })
 });
+// REFACTOR: async-await
 // load option JS & CSS
 tryLoadScript(Ref.prismCoreMinJs, () => {
     tryLoadScript(Ref.prismAutoloaderMinJs, () => {

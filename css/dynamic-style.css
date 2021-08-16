@@ -197,6 +197,13 @@
   display: block;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .form-group,
 .form-control,
 .form-control:focus,

@@ -3,7 +3,9 @@
         "version": "1.0.0",
         "description": "The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component reusing and delegates layouting  to Bootstrap with supporting OOP (\"strongly-typed Bootstrap\").",
         "main": "js/DynamicUI.js",
-        "scripts": {},
+        "scripts": {
+                "watch-demo": "tsc demo\\index.ts --module es6 -w"
+        },
         "repository": {
                 "type": "git",
                 "url": "git+https://github.com/enginoobz-projects/dui.git"
