@@ -4,3 +4,23 @@
         justify-content: center;
         align-items: center;
 }
+
+@mixin center_div_in_div() {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+// use with :after/:before to achive radius (# normal outline),  parent must specify "position: whatever"
+@mixin outline_pseudo($offset, $radius, $width, $style, $color) {
+        content: "";
+        display: block;
+        position: absolute;
+        top: $offset;
+        bottom: $offset;
+        left: $offset;
+        right: $offset;
+        border-radius: $radius;
+        border: $width $style $color;
+}

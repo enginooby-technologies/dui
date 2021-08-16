@@ -36,6 +36,18 @@
 
         $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,
                 inset $dx $dy $b $s$scl;
+
+        //add an overlay scheme color on the background image
+        .display-content > .container::before {
+                // box-shadow: inset 0 0 0 2000px rgba(var(--scheme-color), 0.85); // PARAM
+        }
+
+        /*-------------------------
+      CONTAINER COMPONENTS
+-------------------------*/
+        .setting-panel {
+                box-shadow: $insetBoxShadow;
+        }
         /*-------------------------
       FORM COMPONENTS
 -------------------------*/
@@ -93,8 +105,7 @@
         .dropdown {
                 button.focus,
                 button:focus,
-                .dropdown-label,
-                .dropdown-menu {
+                .dropdown-label {
                         box-shadow: $dropBoxShadow;
                         background: $bgSurface;
                 }
@@ -104,16 +115,25 @@
                 }
 
                 button,
-                .dropdown-menu,
                 button:hover,
                 .dropdown-item:hover {
                         background-color: $schemeColor;
                 }
 
+                .dropdown-menu {
+                        background: $bgSurface;
+                        box-shadow: $insetBoxShadow;
+                        background-color: $schemeColor;
+                        padding: 10px;
+                }
+
                 &.show .dropdown-toggle,
-                .dropdown-item:hover,
                 button:hover {
                         box-shadow: #{$concaveBoxShadow};
+                }
+
+                .dropdown-item:hover {
+                        box-shadow: $dropBoxShadow;
                 }
 
                 button:hover,
@@ -237,10 +257,26 @@
       BASIC COMPONENTS
 -------------------------*/
         /* BUTTON */
-        .button {
-                background: $bgSurface;
-                border: var(--border);
+
+        .button-wrapper {
+                background-color: $schemeColor;
+                position: relative;
+                .button {
+                        background: $bgSurface;
+                        border: var(--border);
+                }
+
+                // add an outline in case using image background
+                // TODO: do the same for other drop/concave box shadow components, setting button
+                .button::before {
+                        // prettier-ignore
+                        @include outline_pseudo(-7px, $borderRadius,1px,solid,$schemeColor);
+                        background-color: $schemeColor;
+                        z-index: -1;
+                        box-shadow: $insetBoxShadow;
+                }
         }
+
         .setting-button {
                 background: $bgSurface;
         }
@@ -258,7 +294,6 @@
         table thead,
         .form-group input:focus,
         .form-group textarea:focus,
-        .setting-panel,
         .toggle .indicator {
                 box-shadow: $dropBoxShadow;
         }
