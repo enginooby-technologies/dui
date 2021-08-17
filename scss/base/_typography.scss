@@ -1,3 +1,5 @@
+/*  General text rules */
+
 $agencyFbRegular: "../fonts/agency-fb-regular/AgencyFB-Reg";
 $agencyFbBold: "../fonts/agency-fb-bold/AgencyFB-Bold";
 
@@ -21,6 +23,12 @@ $agencyFbBold: "../fonts/agency-fb-bold/AgencyFB-Bold";
                 url("#{$agencyFbBold}.ttf") format("truetype"),
                 url("#{$agencyFbBold}.svg") format("svg");
         font-display: swap;
+}
+
+html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
 }
 
 h2,
@@ -153,6 +161,7 @@ p {
         text-align: justify;
 }
 
+// TODO: move to component
 .paragraph-title {
         font-family: $fontBold;
         font-size: 1.6rem;
@@ -160,6 +169,7 @@ p {
         margin-bottom: 0.2rem;
 }
 
+// TODO: move to component
 .title-wrapper {
         text-align: center;
         font-size: 3.5rem;
@@ -199,4 +209,10 @@ button {
 
 small {
         font-size: 1.1rem;
+}
+
+// Code Block
+code {
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+                "Courier New", monospace;
 }

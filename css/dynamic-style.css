@@ -31,184 +31,6 @@
       PSEUDO  MIXINS 
      To append additional effect w/o extra div
 -------------------------*/
-/*-------------------------
-         SETTING
--------------------------*/
-.setting-button-border {
-  border-left: none !important;
-  top: 75px;
-  z-index: 1000;
-  position: fixed;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  -webkit-transition: left 0.7s ease;
-  transition: left 0.7s ease;
-  display: block;
-  height: 40px;
-  left: 0;
-  width: 40px;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-
-.setting-button-border .setting-button {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  position: fixed;
-  height: 98%;
-}
-
-.setting-button-border .cp-toggle {
-  position: fixed;
-}
-
-.setting-button-border a {
-  width: 40px;
-  height: 40px;
-  display: block;
-  text-align: center;
-}
-
-.setting-button-border i {
-  font-size: 1.25rem;
-  line-height: 40px;
-}
-
-.setting-section .setting-panel {
-  top: 75px;
-  z-index: 1000;
-  position: fixed;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-  width: 180px;
-  left: 55px;
-}
-
-.setting-section .setting-panel * {
-  -webkit-transition: opacity 0s ease !important;
-  transition: opacity 0s ease !important;
-}
-
-.setting-section .setting-panel .title-bar {
-  display: none;
-}
-
-.setting-section .setting-panel p:not(.option-label) {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-}
-
-.setting-section .setting-panel p.option-label {
-  text-align: center;
-  font-size: 1.4rem;
-  margin-top: 10px;
-  margin-bottom: 8px;
-  font-weight: 800;
-  display: block;
-}
-
-.setting-section .setting-panel .customizer p.option-label {
-  margin-top: 0;
-}
-
-.setting-section .setting-panel .dropdown .dropdown-label {
-  min-width: 110px;
-  max-width: 120px;
-}
-
-.setting-section .setting-panel .radio-button-group .button-border {
-  display: inline-block;
-}
-
-.setting-section .setting-panel .radio-button-group .button-border .button {
-  padding: 8px 20px;
-}
-
-.setting-section .setting-panel .radio-group-wrapper {
-  padding: 1px 64px;
-  margin-left: -10px;
-}
-
-.setting-section .setting-panel .radio-group-wrapper .text {
-  margin-left: 10px;
-}
-
-.setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
-  border: 4px solid var(--dui-base-color-mute);
-}
-
-.setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
-  border: 4px double var(--dui-base-color-mute);
-}
-
-.setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
-  border: 4px dotted var(--dui-base-color-mute);
-}
-
-.setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
-  border: 4px dashed var(--dui-base-color-mute);
-}
-
-.setting-section .setting-panel .range-slider__range {
-  width: 6rem;
-}
-
-.setting-section .setting-panel #background-panel .dropdown .dropdown-label {
-  pointer-events: none;
-}
-
-.setting-panel.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.setting-panel.hide .radio-button-group .button-border,
-.setting-panel.hide .radio-button-group .button-border .button {
-  -webkit-transition: opacity 0s linear !important;
-  transition: opacity 0s linear !important;
-}
-
-.setting-panel.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.setting-section .scrollable {
-  padding-top: 1rem;
-  border-radius: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 475px;
-}
-
-.setting-save-panel {
-  height: 45px;
-  padding-top: 8px;
-}
-
-.setting-section .scrollable::-webkit-scrollbar {
-  width: 7px !important;
-}
-
-.setting-section .scrollable::-webkit-scrollbar-thumb {
-  border-radius: 0 !important;
-}
-
-.theme-skin {
-  margin: 0;
-  padding: 8px 0 0 0;
-}
-
-#color-panel label {
-  font-size: 1.1rem !important;
-  margin-bottom: 0.2rem !important;
-}
-
-.color-picker {
-  margin: auto;
-  display: block;
-}
-
 *,
 *::after,
 *::before {
@@ -223,12 +45,11 @@ body {
           box-sizing: border-box;
 }
 
-/* Spacing utilities from Bootstrap */
+/* Utility classes to quickly style HTML w/o writing CSS,
+        if a rule contains many declarations, extract to mixin also */
+/* Spacing utils from Bootstrap */
 .my-4 {
   margin-top: 1.5rem !important;
-}
-
-.my-4 {
   margin-bottom: 1.5rem !important;
 }
 
@@ -382,6 +203,7 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/*  General text rules */
 @font-face {
   font-family: "Agency FB";
   src: url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf");
@@ -394,6 +216,12 @@ hr {
   src: url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf");
   src: url("../fonts/agency-fb-bold/AgencyFB-Bold.eot") format("embedded-opentype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff2") format("woff2"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff") format("woff"), url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf") format("truetype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.svg") format("svg");
   font-display: swap;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 h2,
@@ -583,6 +411,10 @@ small {
   font-size: 1.1rem;
 }
 
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -614,12 +446,6 @@ small {
   .display-content > .container {
     padding: var(--dui-container-padding);
   }
-}
-
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -690,10 +516,6 @@ body::before {
 
 .full-screen {
   height: 100vh;
-}
-
-code {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .flex-row {
@@ -3369,5 +3191,183 @@ table,
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../backgrounds/windowsxp.png) no-repeat center center fixed;
   background-attachment: fixed;
   background-size: cover;
+}
+
+/*-------------------------
+         SETTING
+-------------------------*/
+.setting-button-border {
+  border-left: none !important;
+  top: 75px;
+  z-index: 1000;
+  position: fixed;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transition: left 0.7s ease;
+  transition: left 0.7s ease;
+  display: block;
+  height: 40px;
+  left: 0;
+  width: 40px;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.setting-button-border .setting-button {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  position: fixed;
+  height: 98%;
+}
+
+.setting-button-border .cp-toggle {
+  position: fixed;
+}
+
+.setting-button-border a {
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+}
+
+.setting-button-border i {
+  font-size: 1.25rem;
+  line-height: 40px;
+}
+
+.setting-section .setting-panel {
+  top: 75px;
+  z-index: 1000;
+  position: fixed;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  width: 180px;
+  left: 55px;
+}
+
+.setting-section .setting-panel * {
+  -webkit-transition: opacity 0s ease !important;
+  transition: opacity 0s ease !important;
+}
+
+.setting-section .setting-panel .title-bar {
+  display: none;
+}
+
+.setting-section .setting-panel p:not(.option-label) {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.setting-section .setting-panel p.option-label {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  display: block;
+}
+
+.setting-section .setting-panel .customizer p.option-label {
+  margin-top: 0;
+}
+
+.setting-section .setting-panel .dropdown .dropdown-label {
+  min-width: 110px;
+  max-width: 120px;
+}
+
+.setting-section .setting-panel .radio-button-group .button-border {
+  display: inline-block;
+}
+
+.setting-section .setting-panel .radio-button-group .button-border .button {
+  padding: 8px 20px;
+}
+
+.setting-section .setting-panel .radio-group-wrapper {
+  padding: 1px 64px;
+  margin-left: -10px;
+}
+
+.setting-section .setting-panel .radio-group-wrapper .text {
+  margin-left: 10px;
+}
+
+.setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
+  border: 4px solid var(--dui-base-color-mute);
+}
+
+.setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
+  border: 4px double var(--dui-base-color-mute);
+}
+
+.setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
+  border: 4px dotted var(--dui-base-color-mute);
+}
+
+.setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
+  border: 4px dashed var(--dui-base-color-mute);
+}
+
+.setting-section .setting-panel .range-slider__range {
+  width: 6rem;
+}
+
+.setting-section .setting-panel #background-panel .dropdown .dropdown-label {
+  pointer-events: none;
+}
+
+.setting-panel.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.setting-panel.hide .radio-button-group .button-border,
+.setting-panel.hide .radio-button-group .button-border .button {
+  -webkit-transition: opacity 0s linear !important;
+  transition: opacity 0s linear !important;
+}
+
+.setting-panel.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.setting-section .scrollable {
+  padding-top: 1rem;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 475px;
+}
+
+.setting-save-panel {
+  height: 45px;
+  padding-top: 8px;
+}
+
+.setting-section .scrollable::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+.setting-section .scrollable::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+}
+
+.theme-skin {
+  margin: 0;
+  padding: 8px 0 0 0;
+}
+
+#color-panel label {
+  font-size: 1.1rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.color-picker {
+  margin: auto;
+  display: block;
 }
 /*# sourceMappingURL=dynamic-style.css.map */

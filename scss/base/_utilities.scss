@@ -1,8 +1,9 @@
-/* Spacing utilities from Bootstrap */
+/* Utility classes to quickly style HTML w/o writing CSS,
+        if a rule contains many declarations, extract to mixin also */
+
+/* Spacing utils from Bootstrap */
 .my-4 {
         margin-top: 1.5rem !important;
-}
-.my-4 {
         margin-bottom: 1.5rem !important;
 }
 .p-3 {

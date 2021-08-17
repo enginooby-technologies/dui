@@ -1,9 +1,3 @@
-html {
-        font-family: sans-serif;
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%;
-}
-
 body {
         margin: 0;
         font-weight: 400;
@@ -80,10 +74,4 @@ body::before {
 
 .full-screen {
         height: 100vh;
-}
-
-// Code Block
-code {
-        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-                "Courier New", monospace;
 }
