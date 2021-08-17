@@ -1,0 +1,23 @@
+/* Spacing utilities from Bootstrap */
+.my-4 {
+        margin-top: 1.5rem !important;
+}
+.my-4 {
+        margin-bottom: 1.5rem !important;
+}
+.p-3 {
+        padding: 1rem !important;
+}
+.p-0 {
+        padding: 0rem !important;
+}
+.m-0 {
+        margin: 0 !important ;
+}
+
+// to break new line when using float
+.clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+}
