@@ -2,16 +2,16 @@
         /* Basic colors */
         // --scheme-color: #d4d4d4;
         // --highlight-color: #004b97;
-        --highlight-color-inverted: #d4d4d4;
-        --base-color: black; // mostly for text <=> --scheme-color-inverted
-        --base-color-muted: #4d4d4d; //lightMuted: #b2b2b2
+        --highlight-color-invert: #d4d4d4;
+        --base-color: black; // mostly for text <=> --scheme-color-invert
+        --base-color-mute: #4d4d4d; //lightmute: #b2b2b2
         /* Classification colors */
-        --group-1-color: #01724b;
-        --group-2-color: #bc5b00;
-        --group-3-color: #c40639;
-        --group-1-color-inverted: white;
-        --group-2-color-inverted: white;
-        --group-3-color-inverted: white;
+        --color-1: #01724b;
+        --color-3: #bc5b00;
+        --color-3: #c40639;
+        --color-1-invert: white;
+        --color-3-invert: white;
+        --color-3-invert: white;
         /* Others */
         --border-radius: 9px;
 
@@ -27,16 +27,16 @@
 //SASS variables just to ease referecing in other SCSS files
 $schemeColor: RGB(var(--scheme-color));
 $highlightColor: RGB(var(--highlight-color));
-$contrastHighlightColor: var(--highlight-color-inverted);
+$contrastHighlightColor: var(--highlight-color-invert);
 $baseColor: var(--base-color);
-$mutedBaseColor: var(--base-color-muted);
+$muteBaseColor: var(--base-color-mute);
 
-$colorfull1: var(--group-1-color);
-$colorfull2: var(--group-2-color);
-$colorfull3: var(--group-3-color);
-$contrastColorfull1: var(--group-1-color-inverted);
-$contrastColorfull2: var(--group-2-color-inverted);
-$contrastColorfull3: var(--group-3-color-inverted);
+$colorfull1: var(--color-1);
+$colorfull2: var(--color-3);
+$colorfull3: var(--color-3);
+$contrastColorfull1: var(--color-1-invert);
+$contrastColorfull2: var(--color-3-invert);
+$contrastColorfull3: var(--color-3-invert);
 
 $borderRadius: var(--border-radius);
 $transitionDuration: 0.8s;
