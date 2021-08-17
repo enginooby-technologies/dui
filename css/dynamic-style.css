@@ -45,7 +45,7 @@ body {
           box-sizing: border-box;
 }
 
-/* Utility classes to quickly style HTML w/o writing CSS,
+/* Utility classes to quickly apply common rule by adding class names,
         if a rule contains many declarations, extract to mixin also */
 /* Spacing utils from Bootstrap */
 .my-4 {
@@ -63,6 +63,26 @@ body {
 
 .m-0 {
   margin: 0 !important;
+}
+
+/* Flex utils from Bootstrap */
+.flex-row {
+  -ms-flex-direction: row !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+          flex-direction: row !important;
+}
+
+.justify-content-center {
+  -ms-flex-pack: center !important;
+  -webkit-box-pack: center !important;
+          justify-content: center !important;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .clearfix::after {
@@ -518,27 +538,8 @@ body::before {
   height: 100vh;
 }
 
-.flex-row {
-  -ms-flex-direction: row !important;
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: normal !important;
-          flex-direction: row !important;
-}
-
-.justify-content-center {
-  -ms-flex-pack: center !important;
-  -webkit-box-pack: center !important;
-          justify-content: center !important;
-}
-
 .text-center {
   text-align: center !important;
-}
-
-.d-flex {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
 }
 
 .center-item {
