@@ -7,11 +7,11 @@
         --scheme-color-lighten: 250, 250, 250;
         --highlight-color-darken: 3, 54, 105;
 
-        --scheme-color-rgba: rgba(var(--dui-scheme-color), var(--transparency));
+        --scheme-color-rgba: rgba(var(--dui-scheme), var(--transparency));
         // prettier-ignore
         --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
         // prettier-ignore
-        --highlight-color-rgba: rgba(var(--dui-highlight-color), var(--transparency));
+        --highlight-color-rgba: rgba(var(--dui-highlight), var(--transparency));
         // prettier-ignore
         --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
         --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));

@@ -1,21 +1,21 @@
 :root {
   /* Basic colors */
-  --dui-highlight-color-invert: #d4d4d4;
-  --dui-base-color: black;
-  --dui-base-color-mute: #4d4d4d;
+  --dui-scheme: 212, 212, 212;
+  --dui-highlight: 0, 75, 151;
+  --dui-highlight-invert: #d4d4d4;
+  --dui-base: black;
+  --dui-base-mute: #4d4d4d;
   /* Classification colors */
   --dui-color-1: #01724b;
-  --dui-color-3: #bc5b00;
+  --dui-color-2: #bc5b00;
   --dui-color-3: #c40639;
   --dui-color-1-invert: white;
-  --dui-color-3-invert: white;
+  --dui-color-2-invert: white;
   --dui-color-3-invert: white;
   /* Others */
   --dui-border-radius: 9px;
   --dui-container-max-width: 1100px;
   --dui-container-padding: 40px;
-  --dui-scheme-color: 212, 212, 212;
-  --dui-highlight-color: 0, 75, 151;
 }
 
 /* FONT */
@@ -474,7 +474,7 @@ body {
   line-height: 1.5;
   text-align: left;
   height: 100vh;
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .row {
@@ -500,7 +500,7 @@ body {
 }
 
 .display-content > .container {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   position: relative;
 }
 
@@ -592,7 +592,7 @@ body::before {
 
 .button-border .button,
 .button-wrapper .button {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
   border-radius: var(--dui-border-radius) !important;
   padding: 10px 30px;
   -webkit-transition: all 0.3s ease;
@@ -648,9 +648,9 @@ body::before {
 }
 
 .code-block pre code {
-  text-shadow: 0 0.5px var(--dui-base-color);
+  text-shadow: 0 0.5px var(--dui-base);
   display: block;
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
@@ -659,7 +659,7 @@ body::before {
 .code-block .token.atrule,
 .code-block .token.attr-value,
 .code-block .token.keyword {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .code-block .token.attr-name,
@@ -674,7 +674,7 @@ body::before {
 .code-block .token.important,
 .code-block .token.regex,
 .code-block .token.variable {
-  color: var(--dui-color-3);
+  color: var(--dui-color-2);
 }
 
 .code-block .token.class-name,
@@ -686,7 +686,7 @@ body::before {
 .code-block .token.comment,
 .code-block .token.doctype,
 .code-block .token.prolog {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .title-bar-text-wrapper {
@@ -696,7 +696,7 @@ body::before {
   opacity: 0.12;
   font-family: "Poppins", sans-serif;
   margin-top: -18px;
-  color: var(--dui-base-color);
+  color: var(--dui-base);
 }
 
 .title-bar-text {
@@ -707,7 +707,7 @@ body::before {
   font-weight: 900;
   font-family: "Poppins", sans-serif;
   margin-bottom: 0;
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .title-bar-controls {
@@ -738,7 +738,7 @@ body::before {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  color: var(--dui-base-color);
+  color: var(--dui-base);
   font-size: 1.1rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -774,7 +774,7 @@ body::before {
 }
 
 .dui-radio .indicator::after {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   -webkit-transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
@@ -791,17 +791,17 @@ body::before {
 }
 
 .dui-radio .state:checked ~ .label .text {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .dui-radio .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
           transform: translate3d(8px, 0, 0);
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .dui-radio .label:hover .text {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .range-slider {
@@ -812,7 +812,7 @@ body::before {
 
 .range-slider label {
   border-radius: var(--dui-border-radius);
-  color: var(--dui-base-color);
+  color: var(--dui-base);
   font-size: 1.1rem !important;
   display: block;
   margin: 0px 0 0px;
@@ -866,7 +866,7 @@ body::before {
   font-style: italic;
   font-size: 1rem !important;
   border-radius: var(--dui-border-radius);
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .range-slider__value .after {
@@ -1016,13 +1016,13 @@ input::-moz-focus-outer {
   font-size: 1.1rem;
   border-width: 0;
   border-radius: var(--dui-border-radius);
-  color: var(--dui-base-color);
+  color: var(--dui-base);
   padding: 0.375rem 0.75rem;
 }
 
 .dropdown button p {
   font-size: 1.1rem;
-  color: var(--dui-base-color);
+  color: var(--dui-base);
 }
 
 .dropdown-label {
@@ -1035,7 +1035,7 @@ input::-moz-focus-outer {
 }
 
 .dropdown-toggle {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
@@ -1058,8 +1058,8 @@ input::-moz-focus-outer {
 }
 
 .show > .dropdown-toggle {
-  color: RGB(var(--dui-highlight-color));
-  background-color: RGB(var(--dui-scheme-color));
+  color: RGB(var(--dui-highlight));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .dropdown-toggle-split {
@@ -1075,7 +1075,7 @@ input::-moz-focus-outer {
   display: none;
   padding: 0;
   margin: 10px 0 0;
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
   text-align: left;
   list-style: none;
   background-clip: padding-box;
@@ -1084,7 +1084,7 @@ input::-moz-focus-outer {
 }
 
 .dropdown-item {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: var(--dui-border-radius);
@@ -1199,18 +1199,18 @@ img {
 }
 
 .nes-style .cp-toggle {
-  background-color: RGB(var(--dui-highlight-color));
+  background-color: RGB(var(--dui-highlight));
 }
 
 .nes-style .cp-toggle i {
-  color: var(--dui-highlight-color-invert) !important;
+  color: var(--dui-highlight-invert) !important;
   position: relative;
   top: -5px;
   left: -0.5px;
 }
 
 .nes-style .setting-panel {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .nes-style .button,
@@ -1234,8 +1234,8 @@ img {
 }
 
 .nes-style .button {
-  background-color: RGB(var(--dui-highlight-color));
-  color: var(--dui-highlight-color-invert);
+  background-color: RGB(var(--dui-highlight));
+  color: var(--dui-highlight-invert);
   border-image-repeat: stretch;
 }
 
@@ -1309,7 +1309,7 @@ img {
 }
 
 .nes-style .dui-radio span.text::before {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .nes-style .dui-radio input:checked + label .text::before,
@@ -1334,7 +1334,7 @@ img {
 .nes-style .checkbox label::before {
   width: 2px;
   height: 2px;
-  color: var(--dui-base-color);
+  color: var(--dui-base);
   position: absolute;
   top: 3px;
   left: -1px;
@@ -1380,19 +1380,19 @@ img {
 }
 
 .nes-style .dropdown button {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   padding: 3px 5px;
 }
 
 .nes-style .dropdown-menu {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   border-image-repeat: space;
 }
 
 .nes-style .dropdown .dropdown-arrow::after {
   width: 3px;
   height: 3px;
-  color: var(--dui-base-color);
+  color: var(--dui-base);
   -webkit-box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
           box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
   position: absolute;
@@ -1433,7 +1433,7 @@ img {
 }
 
 .nes-style .segmented-control input:checked + label {
-  color: var(--dui-highlight-color-invert);
+  color: var(--dui-highlight-invert);
 }
 
 .nes-style .image-border {
@@ -1478,7 +1478,7 @@ img {
 }
 
 .nes-style .personal-image img {
-  border: var(--dui-base-color) 4px solid;
+  border: var(--dui-base) 4px solid;
   opacity: 1;
 }
 
@@ -1534,8 +1534,8 @@ img {
   color: #060606;
   -webkit-transform: rotate(0);
           transform: rotate(0);
-  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3), 48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3), 48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3), 60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3), 36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3), 48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3), 60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3), 30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3), 42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3), 54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3), 66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3), 24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3), 36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3), 48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3), 60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3), 72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3), 30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3), 42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3), 78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
-          box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3), 48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3), 48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3), 60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3), 36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3), 48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3), 60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3), 30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3), 42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3), 54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3), 66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3), 24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3), 36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3), 48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3), 60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3), 72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3), 30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3), 42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3), 78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2), 48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2), 48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2), 60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2), 36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2), 48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2), 60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2), 30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2), 42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2), 54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2), 66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2), 24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2), 36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2), 48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2), 60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2), 72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2), 30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2), 42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2), 78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+          box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2), 48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2), 48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2), 60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2), 36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2), 48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2), 60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2), 30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2), 42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2), 54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2), 66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2), 24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2), 36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2), 48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2), 60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2), 72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2), 30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2), 42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2), 78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
   zoom: 0.5;
 }
 
@@ -1727,7 +1727,7 @@ img {
 }
 
 .win98-style .setting-panel {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .win98-style .title-bar {
@@ -2120,7 +2120,7 @@ img {
   -webkit-font-smoothing: antialiased;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: var(--btn-border-width) var(--btn-border-style) RGB(var(--dui-highlight-color));
+  border: var(--btn-border-width) var(--btn-border-style) RGB(var(--dui-highlight));
   background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(86%, #ecebe5), to(#d8d0c4));
   background: linear-gradient(180deg, white 0%, #ecebe5 86%, #d8d0c4 100%);
 }
@@ -2156,7 +2156,7 @@ img {
   content: "";
   display: block;
   border-radius: var(--dui-border-radius);
-  border: 1px dashed var(--dui-base-color);
+  border: 1px dashed var(--dui-base);
 }
 
 .winxp-style .button-wrapper .button::-moz-focus-inner,
@@ -2174,20 +2174,20 @@ body,
 .blog .blog-image,
 .blog .blog-item .before,
 .toggle .indicator {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .bg-highlight-color,
 .border-style {
-  background-color: RGB(var(--dui-highlight-color));
+  background-color: RGB(var(--dui-highlight));
 }
 
 #pp-nav li :not(.active) span {
-  background-color: var(--dui-base-color);
+  background-color: var(--dui-base);
 }
 
 #pp-nav li .active span {
-  background-color: RGB(var(--dui-highlight-color));
+  background-color: RGB(var(--dui-highlight));
 }
 
 .highlight-color,
@@ -2197,7 +2197,7 @@ body,
 .contact .form-item .form-control,
 .highlight-portfolio-item.fa-star,
 .portfolio .portfolio-icon a:hover {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 body,
@@ -2213,7 +2213,7 @@ body,
 .portfolio-single .close,
 .pp-tooltip,
 .blog-label a {
-  color: var(--dui-base-color);
+  color: var(--dui-base);
 }
 
 .blog-content .list-inline-item span,
@@ -2224,7 +2224,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .blog-content .list-inline-item span,
@@ -2235,7 +2235,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .blog-content .list-inline-item span,
@@ -2246,7 +2246,7 @@ body,
 .form-control:-ms-input-placeholder,
 .form-control::-ms-input-placeholder,
 .contact-info-text small {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .colorfull1,
@@ -2256,7 +2256,7 @@ body,
 
 .colorfull2,
 .background-colorfull2 > .badge {
-  color: var(--dui-color-3);
+  color: var(--dui-color-2);
 }
 
 .colorfull3,
@@ -2270,8 +2270,8 @@ body,
 }
 
 .background-colorfull2 {
-  background-color: var(--dui-color-3);
-  color: var(--dui-color-3-invert);
+  background-color: var(--dui-color-2);
+  color: var(--dui-color-2-invert);
 }
 
 .background-colorfull3 {
@@ -2284,7 +2284,7 @@ body,
 }
 
 #experience-timeline .timeline-items .timeline-border {
-  border-color: var(--dui-color-3);
+  border-color: var(--dui-color-2);
 }
 
 #achievements-timeline .timeline-items .timeline-border {
@@ -2296,15 +2296,15 @@ body,
 .social i:hover,
 .list-inline.socials li a i:hover,
 #myMenu li a:hover {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .loader {
-  border-top-color: RGB(var(--dui-highlight-color));
+  border-top-color: RGB(var(--dui-highlight));
 }
 
 #overlayer {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .blog .blog-image,
@@ -2365,7 +2365,7 @@ table,
 }
 
 .checkbox i {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .flat-style .dui-radio .label,
@@ -2411,8 +2411,8 @@ table,
   --spread: 0px;
   --scheme-color-lighten: #e6e6e6;
   --scheme-color-darken: #c2c2c2;
-  --light-surface-color: RGB(var(--dui-scheme-color));
-  --dark-surface-color: RGB(var(--dui-scheme-color));
+  --light-surface-color: RGB(var(--dui-scheme));
+  --dark-surface-color: RGB(var(--dui-scheme));
   --border: 0px solid #fafafa;
   /*-------------------------
       CONTAINER COMPONENTS
@@ -2439,7 +2439,7 @@ table,
   content: "";
   display: inline-block;
   border-radius: var(--dui-border-radius);
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   z-index: -1;
@@ -2480,7 +2480,7 @@ table,
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   border: var(--border);
@@ -2511,14 +2511,14 @@ table,
 .neu-style .dropdown button,
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .neu-style .dropdown .dropdown-menu {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   padding: 10px;
 }
 
@@ -2535,7 +2535,7 @@ table,
 
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .neu-style .dropdown .dropdown-toggle {
@@ -2618,8 +2618,9 @@ table,
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
 }
 
-.neu-style .button-wrapper {
-  background-color: RGB(var(--dui-scheme-color));
+.neu-style .button-wrapper,
+.neu-style .button-border {
+  background-color: RGB(var(--dui-scheme));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   position: relative;
@@ -2627,7 +2628,8 @@ table,
           animation-name: none;
 }
 
-.neu-style .button-wrapper::before {
+.neu-style .button-wrapper::before,
+.neu-style .button-border::before {
   position: absolute;
   top: -7px;
   bottom: -7px;
@@ -2636,13 +2638,14 @@ table,
   content: "";
   display: inline-block;
   border-radius: var(--dui-border-radius);
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
   z-index: -1;
 }
 
-.neu-style .button-wrapper .button {
+.neu-style .button-wrapper .button,
+.neu-style .button-border .button {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
   border: var(--border);
 }
@@ -2700,17 +2703,17 @@ table,
 .neu-style .checkbox label,
 .neu-style .portfolio-single .modal-content,
 .neu-style ::-webkit-scrollbar-track {
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .neu-style .segmented-control > input:not(:checked)px:not(:hover)px + label {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .neu-style .button,
 .neu-style .segmented-control > input:checked + label,
 .neu-style .segmented-control > input:hover + label {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .neu-style .button:hover,
@@ -2728,25 +2731,25 @@ table,
 
 .neu-style .checkbox input:not(:checked)px:not(:hover)px ~ label i,
 .neu-style .checkbox input:not(:checked)px ~ label + .name {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .neu-style .checkbox input:checked ~ label + .name,
 .neu-style .checkbox input:checked ~ label i,
 .neu-style .checkbox input:hover ~ label i {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .neu-style ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-darken), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-darken), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme-color));
+  background-color: RGB(var(--dui-scheme));
 }
 
 .flat-style {
@@ -2772,8 +2775,8 @@ table,
 }
 
 .flat-style .button {
-  background-color: RGB(var(--dui-highlight-color));
-  color: var(--dui-highlight-color-invert);
+  background-color: RGB(var(--dui-highlight));
+  color: var(--dui-highlight-invert);
 }
 
 .flat-style .button:hover {
@@ -2782,18 +2785,18 @@ table,
 
 .flat-style .radio-button-group .button.active,
 .flat-style .radio-button-group .button:not(.active):hover {
-  background-color: RGB(var(--dui-highlight-color));
-  color: var(--dui-highlight-color-invert);
+  background-color: RGB(var(--dui-highlight));
+  color: var(--dui-highlight-invert);
 }
 
 .flat-style .radio-button-group .button:not(.active) {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .flat-style .radio-selection,
 .flat-style table > tbody > tr:hover {
-  background-color: RGB(var(--dui-highlight-color));
-  color: var(--dui-highlight-color-invert);
+  background-color: RGB(var(--dui-highlight));
+  color: var(--dui-highlight-invert);
 }
 
 .flat-style .box-border,
@@ -2805,38 +2808,38 @@ table,
 .flat-style .setting-panel,
 .flat-style .setting-button {
   background-color: var(--scheme-color-lighten);
-  color: var(--dui-base-color);
+  color: var(--dui-base);
 }
 
 .flat-style .display-content > .container.none-bg,
 .flat-style .range-slider__range,
 .flat-style .range-slider__value,
 .flat-style .modal-content {
-  background-color: RGB(var(--dui-scheme-color));
-  color: var(--dui-base-color);
+  background-color: RGB(var(--dui-scheme));
+  color: var(--dui-base);
 }
 
 .flat-style .segmented-control > input:not(:checked):not(:hover) + label {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .flat-style .segmented-control > input:hover + label {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .flat-style .segmented-control > input:checked + label {
-  color: var(--dui-highlight-color-invert);
+  color: var(--dui-highlight-invert);
 }
 
 .flat-style .checkbox input:not(:checked):not(:hover) ~ label i,
 .flat-style .checkbox input:not(:checked) ~ label + .name {
-  color: var(--dui-base-color-mute);
+  color: var(--dui-base-mute);
 }
 
 .flat-style .checkbox input:checked ~ label + .name,
 .flat-style .checkbox input:checked ~ label i,
 .flat-style .checkbox input:hover ~ label i {
-  color: RGB(var(--dui-highlight-color));
+  color: RGB(var(--dui-highlight));
 }
 
 .flat-style ::-webkit-scrollbar-track {
@@ -2844,7 +2847,7 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-thumb {
-  background-color: RGB(var(--dui-highlight-color));
+  background-color: RGB(var(--dui-highlight));
 }
 
 .flat-style ::-webkit-scrollbar-thumb:hover {
@@ -2852,7 +2855,7 @@ table,
 }
 
 .flat-style ::-webkit-slider-thumb {
-  background-color: RGB(var(--dui-highlight-color));
+  background-color: RGB(var(--dui-highlight));
 }
 
 .flat-style ::-webkit-slider-thumb:hover {
@@ -2872,9 +2875,9 @@ table,
   --border-size: 1px;
   --scheme-color-lighten: 250, 250, 250;
   --highlight-color-darken: 3, 54, 105;
-  --scheme-color-rgba: rgba(var(--dui-scheme-color), var(--transparency));
+  --scheme-color-rgba: rgba(var(--dui-scheme), var(--transparency));
   --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
-  --highlight-color-rgba: rgba(var(--dui-highlight-color), var(--transparency));
+  --highlight-color-rgba: rgba(var(--dui-highlight), var(--transparency));
   --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
   --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));
   --group-2-color-transparent: rgba(188, 91, 0, var(--transparency));
@@ -3013,7 +3016,7 @@ table,
 }
 
 .none-bg {
-  background-color: RGB(var(--dui-scheme-color)) !important;
+  background-color: RGB(var(--dui-scheme)) !important;
   background-image: none;
 }
 
@@ -3297,19 +3300,19 @@ table,
 }
 
 .setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
-  border: 4px solid var(--dui-base-color-mute);
+  border: 4px solid var(--dui-base-mute);
 }
 
 .setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
-  border: 4px double var(--dui-base-color-mute);
+  border: 4px double var(--dui-base-mute);
 }
 
 .setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
-  border: 4px dotted var(--dui-base-color-mute);
+  border: 4px dotted var(--dui-base-mute);
 }
 
 .setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
-  border: 4px dashed var(--dui-base-color-mute);
+  border: 4px dashed var(--dui-base-mute);
 }
 
 .setting-section .setting-panel .range-slider__range {

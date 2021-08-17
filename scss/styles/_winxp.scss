@@ -51,7 +51,7 @@
                                         inset 2px -2px #89ade4,
                                         inset 2px -2px #89ade4;
                                 // prettier-ignore
-                                @include outline_pseudo_after(2px,var(--dui-border-radius),1px,dashed,var(--dui-base-color));
+                                @include outline_pseudo_after(2px,var(--dui-border-radius),1px,dashed,var(--dui-base));
                         }
 
                         &::-moz-focus-inner {

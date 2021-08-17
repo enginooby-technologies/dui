@@ -75,8 +75,8 @@ export class DynamicColor {
 
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
-                root.style.setProperty('--dui-highlight-color-invert', DynamicColor.highlightColor.getInvertBlackWhite());
-                this.updateColorCssVar('--dui-highlight-color', DynamicColor.highlightColor);
+                root.style.setProperty('--dui-highlight-invert', DynamicColor.highlightColor.getInvertBlackWhite());
+                this.updateColorCssVar('--dui-highlight', DynamicColor.highlightColor);
                 DynamicUI.currentStyle?.onHighlightColorUpdated();
         }
 
@@ -86,7 +86,7 @@ export class DynamicColor {
 
         private updateSchemeColor(hex: string) {
                 DynamicColor.schemeColor.setHex(hex);
-                this.updateColorCssVar('--dui-scheme-color', DynamicColor.schemeColor);
+                this.updateColorCssVar('--dui-scheme', DynamicColor.schemeColor);
 
                 this.updateBaseColor();
 
@@ -103,8 +103,8 @@ export class DynamicColor {
 
         private onBaseColorChange() {
                 DynamicColor.mutedBaseColor = (DynamicColor.baseColor == '#ffffff') ? lightMutedBaseColor : darkMutedBaseColor;
-                root.style.setProperty('--dui-base-color', DynamicColor.baseColor);
-                root.style.setProperty('--dui-base-color-mute', DynamicColor.mutedBaseColor);
+                root.style.setProperty('--dui-base', DynamicColor.baseColor);
+                root.style.setProperty('--dui-base-mute', DynamicColor.mutedBaseColor);
 
                 // SPECIFIC
                 const heroImg = (DynamicColor.baseColor == '#ffffff') ? "light-element_square" : "dark-element_square";

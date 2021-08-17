@@ -7,8 +7,8 @@
         --spread: 0px;
         --scheme-color-lighten: #e6e6e6;
         --scheme-color-darken: #c2c2c2;
-        --light-surface-color: RGB(var(--dui-scheme-color));
-        --dark-surface-color: RGB(var(--dui-scheme-color));
+        --light-surface-color: RGB(var(--dui-scheme));
+        --dark-surface-color: RGB(var(--dui-scheme));
         --border: 0px solid #fafafa;
 
         $bgSurface: linear-gradient(
@@ -264,7 +264,8 @@
 -------------------------*/
         /* BUTTON */
 
-        .button-wrapper {
+        .button-wrapper,
+        .button-border {
                 background-color: $schemeColor;
                 box-shadow: $dropBoxShadow;
                 position: relative;

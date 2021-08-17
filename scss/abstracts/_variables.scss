@@ -2,16 +2,19 @@
         /* Basic colors */
         // --scheme-color: #d4d4d4;
         // --highlight-color: #004b97;
-        --dui-highlight-color-invert: #d4d4d4;
-        --dui-base-color: black; // mostly for text <=> --dui-scheme-color-invert
-        --dui-base-color-mute: #4d4d4d; //lightmute: #b2b2b2
+        --dui-scheme: 212, 212, 212;
+        --dui-highlight: 0, 75, 151;
+        --dui-highlight-invert: #d4d4d4;
+        --dui-base: black; // mostly for text <=> --dui-scheme-invert
+        --dui-base-mute: #4d4d4d; //lightmute: #b2b2b2
         /* Classification colors */
         --dui-color-1: #01724b;
-        --dui-color-3: #bc5b00;
+        --dui-color-2: #bc5b00;
         --dui-color-3: #c40639;
         --dui-color-1-invert: white;
+        --dui-color-2-invert: white;
         --dui-color-3-invert: white;
-        --dui-color-3-invert: white;
+
         /* Others */
         --dui-border-radius: 9px;
 
@@ -19,23 +22,20 @@
         --dui-container-max-width: 1100px;
         --dui-container-padding: 40px;
         // TODO: sm - md...
-
-        --dui-scheme-color: 212, 212, 212;
-        --dui-highlight-color: 0, 75, 151;
 }
 
 //SASS variables just to ease referecing in other SCSS files
-$schemeColor: RGB(var(--dui-scheme-color));
-$highlightColor: RGB(var(--dui-highlight-color));
-$contrastHighlightColor: var(--dui-highlight-color-invert);
-$baseColor: var(--dui-base-color);
-$mutedBaseColor: var(--dui-base-color-mute);
+$schemeColor: RGB(var(--dui-scheme));
+$highlightColor: RGB(var(--dui-highlight));
+$contrastHighlightColor: var(--dui-highlight-invert);
+$baseColor: var(--dui-base);
+$mutedBaseColor: var(--dui-base-mute);
 
 $colorfull1: var(--dui-color-1);
-$colorfull2: var(--dui-color-3);
+$colorfull2: var(--dui-color-2);
 $colorfull3: var(--dui-color-3);
 $contrastColorfull1: var(--dui-color-1-invert);
-$contrastColorfull2: var(--dui-color-3-invert);
+$contrastColorfull2: var(--dui-color-2-invert);
 $contrastColorfull3: var(--dui-color-3-invert);
 
 $borderRadius: var(--dui-border-radius);
