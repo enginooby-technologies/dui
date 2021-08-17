@@ -10,7 +10,7 @@ export class DynamicColor {
         this.stylesWithUpdatedBaseColor = this.stylesWithUpdatedSchemeColor;
         this.$squareImg = $(".hero-image .square img");
         $("#scheme-color-picker").attr('value', DynamicColor.schemeColor.hex);
-        DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
+        // DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
         // TOFIX: Can not get initial value of color to init the picker
         // $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
@@ -54,15 +54,22 @@ export class DynamicColor {
         var _a;
         DynamicColor.highlightColor.setHex(hex);
         root.style.setProperty('--dui-primary-invert', DynamicColor.highlightColor.getInvertBlackWhite());
-        this.updateColorCssVar('--dui-primary', DynamicColor.highlightColor);
+        this.updateRgbColorCssVar('--dui-primary', DynamicColor.highlightColor);
+        this.updateHexColorCssVar('--dui-primary-lighten-1', DynamicColor.highlightColor.getLighten(5));
+        this.updateHexColorCssVar('--dui-primary-lighten-2', DynamicColor.highlightColor.getLighten(5));
+        this.updateHexColorCssVar('--dui-primary-darken-1', DynamicColor.highlightColor.getDarken(5));
+        this.updateHexColorCssVar('--dui-primary-darken-2', DynamicColor.highlightColor.getDarken(10));
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onHighlightColorUpdated();
     }
-    updateColorCssVar(cssVar, color) {
+    updateRgbColorCssVar(cssVar, color) {
         root.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
+    }
+    updateHexColorCssVar(cssVar, color) {
+        root.style.setProperty(cssVar, color);
     }
     updateSchemeColor(hex) {
         DynamicColor.schemeColor.setHex(hex);
-        this.updateColorCssVar('--dui-scheme', DynamicColor.schemeColor);
+        this.updateRgbColorCssVar('--dui-scheme', DynamicColor.schemeColor);
         this.updateBaseColor();
         DynamicUI.currentStyle.onSchemeColorUpdated();
         this.stylesWithUpdatedSchemeColor.length = 0;
@@ -94,5 +101,6 @@ DynamicColor.colorfull1 = new TinyColor("#01724b");
 DynamicColor.colorfull2 = new TinyColor("#bc5b00");
 DynamicColor.colorfull3 = new TinyColor("#c40639");
 DynamicColor.schemeColor = new TinyColor("#D4D4D4");
+DynamicColor.highlightColor = new TinyColor("#004b97");
 DynamicColor.baseColor = 'black';
 DynamicColor.mutedBaseColor = darkMutedBaseColor;

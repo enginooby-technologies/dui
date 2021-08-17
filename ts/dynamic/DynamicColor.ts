@@ -14,7 +14,7 @@ export class DynamicColor {
         static colorfull3: Color = new TinyColor("#c40639");
 
         static schemeColor: Color = new TinyColor("#D4D4D4");
-        static highlightColor: Color;
+        static highlightColor: Color = new TinyColor("#004b97");
         static baseColor: string = 'black';
 
         static mutedBaseColor: string = darkMutedBaseColor;
@@ -28,7 +28,7 @@ export class DynamicColor {
         constructor() {
                 this.$squareImg = $(".hero-image .square img");
                 $("#scheme-color-picker").attr('value', DynamicColor.schemeColor.hex);
-                DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
+                // DynamicColor.highlightColor = new TinyColor(root.style.getPropertyValue('--highlight-color'));
                 // TOFIX: Can not get initial value of color to init the picker
                 // $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
                 this.setupColorPickerEvents();
@@ -76,17 +76,26 @@ export class DynamicColor {
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
                 root.style.setProperty('--dui-primary-invert', DynamicColor.highlightColor.getInvertBlackWhite());
-                this.updateColorCssVar('--dui-primary', DynamicColor.highlightColor);
+                this.updateRgbColorCssVar('--dui-primary', DynamicColor.highlightColor);
+                this.updateHexColorCssVar('--dui-primary-lighten-1', DynamicColor.highlightColor.getLighten(5));
+                this.updateHexColorCssVar('--dui-primary-lighten-2', DynamicColor.highlightColor.getLighten(5));
+                this.updateHexColorCssVar('--dui-primary-darken-1', DynamicColor.highlightColor.getDarken(5));
+                this.updateHexColorCssVar('--dui-primary-darken-2', DynamicColor.highlightColor.getDarken(10));
                 DynamicUI.currentStyle?.onHighlightColorUpdated();
         }
 
-        private updateColorCssVar(cssVar: string, color: Color) {
+        private updateRgbColorCssVar(cssVar: string, color: Color) {
                 root.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
         }
 
+        private updateHexColorCssVar(cssVar: string, color: string) {
+                root.style.setProperty(cssVar, color);
+        }
+
+
         private updateSchemeColor(hex: string) {
                 DynamicColor.schemeColor.setHex(hex);
-                this.updateColorCssVar('--dui-scheme', DynamicColor.schemeColor);
+                this.updateRgbColorCssVar('--dui-scheme', DynamicColor.schemeColor);
 
                 this.updateBaseColor();
 
