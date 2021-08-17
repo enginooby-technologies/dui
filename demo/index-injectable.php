@@ -2,7 +2,7 @@
 
         <div class="display-table">
                 <div class="display-content ">
-                        <div class="container ">
+                        <div class="container none-bg ">
                                 <h2 class="text-center p-3 highlight-color">Dynamic UI Framework</h2>
                                 <hr><br>
                                 <?php CodeBlock(language: 'php', code: '<?= include_once "dui/_index.php";?>')->show(); ?>

@@ -1,3 +1,19 @@
+/*-------------------------
+      BASE MIXINS 
+      Common mixins used for other mixins
+-------------------------*/
+@mixin abs_pos($top, $right: $top, $bottom: $top, $left: $right) {
+        position: absolute;
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
+}
+
+/*-------------------------
+      LAYOUT MIXINS
+      For centering,...
+-------------------------*/
 //content: text, i....
 @mixin center_content_in_div() {
         display: flex;
@@ -12,15 +28,77 @@
         transform: translate(-50%, -50%);
 }
 
-// use with :after/:before to achive radius (# normal outline),  parent must specify "position: whatever"
+/*-------------------------
+      PSEUDO  MIXINS 
+     To append additional effect w/o extra div
+-------------------------*/
+// to achive radius for outline (# normal outline)
+// [condition]  parent must specify "position: whatever"
 @mixin outline_pseudo($offset, $radius, $width, $style, $color) {
+        @include abs_pos($offset);
         content: "";
         display: block;
-        position: absolute;
-        top: $offset;
-        bottom: $offset;
-        left: $offset;
-        right: $offset;
         border-radius: $radius;
         border: $width $style $color;
+}
+@mixin outline_pseudo_before($offset, $radius, $width, $style, $color) {
+        &::before {
+                @include outline_pseudo(
+                        $offset,
+                        $radius,
+                        $width,
+                        $style,
+                        $color
+                );
+        }
+}
+@mixin outline_pseudo_after($offset, $radius, $width, $style, $color) {
+        &::after {
+                @include outline_pseudo(
+                        $offset,
+                        $radius,
+                        $width,
+                        $style,
+                        $color
+                );
+        }
+}
+
+//  to add additional border
+// [condition] parent  specifies "position: whatever"
+@mixin border_pseudo($width, $radius, $color, $boxShadow: "none") {
+        @include abs_pos(-$width);
+        content: "";
+        display: inline-block;
+        border-radius: $radius;
+        background-color: $color;
+        box-shadow: $boxShadow;
+        z-index: -1;
+}
+@mixin border_pseudo_before($width, $radius, $color, $boxShadow: "none") {
+        &::before {
+                @include border_pseudo($width, $radius, $color, $boxShadow);
+        }
+}
+@mixin border_pseudo_after($width, $radius, $color, $boxShadow: "none") {
+        &::after {
+                @include border_pseudo($width, $radius, $color, $boxShadow);
+        }
+}
+
+// to break new line when using float
+@mixin clearfix_pseudo() {
+        content: "";
+        clear: both;
+        display: table;
+}
+@mixin clearfix_pseudo_before() {
+        &::before {
+                @include clearfix_pseudo();
+        }
+}
+@mixin clearfix_pseudo_after() {
+        &::after {
+                @include clearfix_pseudo();
+        }
 }
