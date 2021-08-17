@@ -125,12 +125,12 @@
                 //     left: 2px;
                 //     // Option 2; relatieve pos
                 position: relative;
-                top: calc(2px - var(--container-padding));
-                left: calc(2px - var(--container-padding));
-                width: calc(var(--container-max-width) + (-5px));
+                top: calc(2px - var(--dui-container-padding));
+                left: calc(2px - var(--dui-container-padding));
+                width: calc(var(--dui-container-max-width) + (-5px));
                 // @include position_relative_title_bar_in_container(
                 //         40px,
-                //         var(--container-max-width)
+                //         var(--dui-container-max-width)
                 // );
 
                 .title-bar-text-wrapper {

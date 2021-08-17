@@ -37,8 +37,8 @@
         <?php endforeach; ?>
         <style>
                 :root {
-                        <?php if ($schemeColor) : ?>--scheme-color: <?= $schemeColor ?>;
-                        <?php endif; ?><?php if ($highlightColor) : ?>--highlight-color: <?= $highlightColor ?> <?php endif; ?>
+                        <?php if ($schemeColor) : ?>--dui-scheme-color: <?= $schemeColor ?>;
+                        <?php endif; ?><?php if ($highlightColor) : ?>--dui-highlight-color: <?= $highlightColor ?> <?php endif; ?>
                 }
         </style>
 </head>

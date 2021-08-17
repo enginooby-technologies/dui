@@ -58,8 +58,8 @@ export class DynamicColor {
         }
 
         private updateGroupColorRule(color: Color, groupNumber: number) {
-                root.style.setProperty(`--group-${groupNumber}-color`, color.hex)
-                root.style.setProperty(`--group-${groupNumber}-color-inverted`, color.getInvertBlackWhite())
+                root.style.setProperty(`--dui-color-${groupNumber}`, color.hex)
+                root.style.setProperty(`--dui-color-${groupNumber}-invert`, color.getInvertBlackWhite())
         };
 
         public updateChangesFromLastStyle() {
@@ -75,8 +75,8 @@ export class DynamicColor {
 
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
-                root.style.setProperty('--highlight-color-inverted', DynamicColor.highlightColor.getInvertBlackWhite());
-                this.updateColorCssVar('--highlight-color', DynamicColor.highlightColor);
+                root.style.setProperty('--dui-highlight-color-invert', DynamicColor.highlightColor.getInvertBlackWhite());
+                this.updateColorCssVar('--dui-highlight-color', DynamicColor.highlightColor);
                 DynamicUI.currentStyle?.onHighlightColorUpdated();
         }
 
@@ -86,7 +86,7 @@ export class DynamicColor {
 
         private updateSchemeColor(hex: string) {
                 DynamicColor.schemeColor.setHex(hex);
-                this.updateColorCssVar('--scheme-color', DynamicColor.schemeColor);
+                this.updateColorCssVar('--dui-scheme-color', DynamicColor.schemeColor);
 
                 this.updateBaseColor();
 
@@ -103,9 +103,10 @@ export class DynamicColor {
 
         private onBaseColorChange() {
                 DynamicColor.mutedBaseColor = (DynamicColor.baseColor == '#ffffff') ? lightMutedBaseColor : darkMutedBaseColor;
-                root.style.setProperty('--base-color', DynamicColor.baseColor);
-                root.style.setProperty('--base-color-muted', DynamicColor.mutedBaseColor);
+                root.style.setProperty('--dui-base-color', DynamicColor.baseColor);
+                root.style.setProperty('--dui-base-color-mute', DynamicColor.mutedBaseColor);
 
+                // SPECIFIC
                 const heroImg = (DynamicColor.baseColor == '#ffffff') ? "light-element_square" : "dark-element_square";
                 this.$squareImg!.attr('src', `assets/img/${heroImg}.png`);
                 // specific elements affected by base color

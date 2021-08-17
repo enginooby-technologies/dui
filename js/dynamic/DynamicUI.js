@@ -64,7 +64,7 @@ export class DynamicUI {
         $borderRadiusSlider.on('input', (event) => {
             const newValue = event.target.value;
             $("#" + event.target.id).next('.range-slider__value').text(newValue);
-            root.style.setProperty('--border-radius', newValue + 'px');
+            root.style.setProperty('--dui-border-radius', newValue + 'px');
         });
     }
 }

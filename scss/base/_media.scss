@@ -21,10 +21,10 @@
 
 @media (min-width: 1200px) {
         .display-content > .container {
-                max-width: var(--container-max-width);
+                max-width: var(--dui-container-max-width);
         }
 
         .display-content > .container {
-                padding: var(--container-padding);
+                padding: var(--dui-container-padding);
         }
 }

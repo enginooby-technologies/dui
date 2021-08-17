@@ -25,16 +25,16 @@ $range-label-width: 2rem !default;
         label {
                 border-radius: $borderRadius;
                 color: $baseColor;
-                font-size: 1.1rem *$fontScale !important;
+                font-size: 1.1rem * $fontScale !important;
                 display: block;
-                margin: 1.5*$sliderMargin 0 $sliderMargin;
+                margin: 1.5 * $sliderMargin 0 $sliderMargin;
         }
 }
 
 .range-slider__range {
         border-radius: $borderRadius;
         -webkit-appearance: none;
-        width: calc(100% - (#{$range-label-width + .8rem}));
+        width: calc(100% - (#{$range-label-width + 0.8rem}));
         height: $range-track-height;
         outline: none;
         padding: 0;
@@ -46,12 +46,14 @@ $range-label-width: 2rem !default;
                 height: $range-handle-size;
                 border-radius: 100%;
                 cursor: pointer;
-                transition: background .15s ease-in-out;
+                transition: background 0.15s ease-in-out;
 
-                &:hover {}
+                &:hover {
+                }
         }
 
-        &:active::-webkit-slider-thumb {}
+        &:active::-webkit-slider-thumb {
+        }
 
         &::-moz-range-thumb {
                 width: $range-handle-size;
@@ -59,12 +61,14 @@ $range-label-width: 2rem !default;
                 border: 0;
                 border-radius: 50%;
                 cursor: pointer;
-                transition: background .15s ease-in-out;
+                transition: background 0.15s ease-in-out;
 
-                &:hover {}
+                &:hover {
+                }
         }
 
-        &:active::-moz-range-thumb {}
+        &:active::-moz-range-thumb {
+        }
 }
 
 .range-slider__value {
@@ -80,7 +84,7 @@ $range-label-width: 2rem !default;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         font-style: italic;
-        font-size: 1rem *$fontScale !important;
+        font-size: 1rem * $fontScale !important;
         border-radius: $borderRadius;
         color: $mutedBaseColor;
 }
@@ -94,7 +98,7 @@ $range-label-width: 2rem !default;
         border-top: 7px solid transparent;
         border-right: 7px solid $range-label-color;
         border-bottom: 7px solid transparent;
-        content: '';
+        content: "";
 }
 
 // Firefox Overrides
