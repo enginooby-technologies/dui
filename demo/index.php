@@ -9,7 +9,7 @@ Head(title: "DUI")
                 keywords: "ui, dynamic, bootstrap, framework, jquery, php, flat, nes, pixel, windows, neumorphism, glassmorphism",
         )
         ->init(
-                highlightColor: '#eb4034'
+                // highlightColor: '#eb4034'
         )
         ->show();
 ?>

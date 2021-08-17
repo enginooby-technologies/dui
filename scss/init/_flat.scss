@@ -1,7 +1,8 @@
 .flat-style {
         --scheme-color-lighten: #e1e1e1; // distinct sub-containers from its container
         --highlight-color-darken: #033669; //for  hover, active button
-
+        // prettier-ignore
+        // --highlight-color-darken: scale-color(#004b97, 15%);  // does not work
         $schemeColorLighten: var(--scheme-color-lighten);
         $highlightColorDarken: var(--highlight-color-darken);
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Dyanmic UI Framework</title>
+        <title>DUI</title>
 
         <!-- META -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
                         <meta name="author" content="enginoobz">
                                 <meta name="description" content="Demo page for Dynamic UI Framework">
                                 <meta name="keywords" content="ui, dynamic, bootstrap, framework, jquery, php, flat, nes, pixel, windows, neumorphism, glassmorphism">
-                                <meta name="revised" content="2021-08-14 09:40:53">
+                                <meta name="revised" content="2021-08-17 04:45:27">
                                 
         <!-- FONT PRELOAD -->
 
@@ -41,9 +41,12 @@
                                 <h5 class="my-4">I - Basic Components</h5>
                                 <div class=" d-flex justify-content-center flex-row">
                           <div class='button-border button-wrapper wrapper  '>
-          <a href='javascript:;' class='button '  >Dynamic button</a>
+          <a href='javascript:;' class='button ' id='btn1' >Dynamic button</a>
   </div>        </div><div class="code-block wrapper mt-3">
-        <pre class=""><code  class="language-php"   >Button(label: "Dynamic button") -&gt; show();</code></pre>
+        <pre class=""><code  class="language-php"   >Button(label: "Dynamic button",  id: "btn1") -&gt; show();</code></pre>
+</div><div class="code-block wrapper mt-3">
+        <pre class=""><code  class="language-ts"   >const btn1 = Button("btn1")
+btn1.onClick = event =&gt; alert(`Hi! I am ${btn1.label}`)</code></pre>
 </div>
                                 <h5 class="my-4">II - Container Components</h5>
 
@@ -97,11 +100,9 @@ Radio(label: "Radio 2", group: "Group 1", checked: true) -&gt; show();</code></p
                                 <h5 class="my-4">VI - Advanced Components</h5>
                         </div>
                 </div>
-        </div>        <script async src="../js/main.js" type="module"></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-        <!-- TOFIX: Error if only include bootstrap js since framework uses jquery & popper which MUST be loaded beforehand -->
-        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+        </div>
+        <script src="./index.js" type="module"></script>
+        <script async src="../js/main.js" type="module"></script>
 </body>
 
 </html>

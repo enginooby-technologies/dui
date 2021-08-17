@@ -1,13 +1,15 @@
-.button-border {
+.button-border,
+.button-wrapper {
         display: inline-block;
+        position: relative;
         padding: 1px;
-        border-radius: $borderRadius;
+        border-radius: $borderRadius !important;
         transition: $transitionDuration all ease !important;
         -webkit-transition: $transitionDuration all ease !important;
 
         .button {
                 color: $highlightColor;
-                border-radius: $borderRadius;
+                border-radius: $borderRadius !important;
                 padding: 10px 30px;
                 transition: all 0.3s ease;
                 font-size: 1.3rem * $fontScale;
