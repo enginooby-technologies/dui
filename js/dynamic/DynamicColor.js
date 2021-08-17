@@ -14,6 +14,8 @@ export class DynamicColor {
         // TOFIX: Can not get initial value of color to init the picker
         // $("#highlight-color-picker").attr('value', DynamicColor.highlightColor.hex);
         this.setupColorPickerEvents();
+        console.log(DynamicColor.highlightColor.getLighten(15));
+        console.log(DynamicColor.highlightColor.getDarken(15));
     }
     setupColorPickerEvents() {
         $("#highlight-color-picker").on('input', (event) => {
@@ -56,9 +58,11 @@ export class DynamicColor {
         root.style.setProperty('--dui-primary-invert', DynamicColor.highlightColor.getInvertBlackWhite());
         this.updateRgbColorCssVar('--dui-primary', DynamicColor.highlightColor);
         this.updateHexColorCssVar('--dui-primary-lighten-1', DynamicColor.highlightColor.getLighten(5));
-        this.updateHexColorCssVar('--dui-primary-lighten-2', DynamicColor.highlightColor.getLighten(5));
+        this.updateHexColorCssVar('--dui-primary-lighten-2', DynamicColor.highlightColor.getLighten(10));
+        this.updateHexColorCssVar('--dui-primary-lighten-3', DynamicColor.highlightColor.getLighten(15));
         this.updateHexColorCssVar('--dui-primary-darken-1', DynamicColor.highlightColor.getDarken(5));
         this.updateHexColorCssVar('--dui-primary-darken-2', DynamicColor.highlightColor.getDarken(10));
+        this.updateHexColorCssVar('--dui-primary-darken-3', DynamicColor.highlightColor.getDarken(15));
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onHighlightColorUpdated();
     }
     updateRgbColorCssVar(cssVar, color) {
