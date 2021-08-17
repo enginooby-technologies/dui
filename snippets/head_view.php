@@ -29,16 +29,16 @@
         <!-- FONT PRELOAD -->
 
         <!-- CSS -->
-        <!-- Todo: Use CDN for DUI css -->
+        <!-- TODO: Use CDN for DUI css -->
         <link rel="stylesheet" href="/dui/css/dynamic-style.css" type="text/css">
-        <!-- Todo: Verify if sheets are in order -->
+        <!-- TODO: Verify if sheets are in order -->
         <?php foreach ($cssHrefs as $href) : ?>
                 <link rel="stylesheet" href="<?= $href ?>" type="text/css">
         <?php endforeach; ?>
         <style>
                 :root {
                         <?php if ($schemeColor) : ?>--dui-scheme: <?= $schemeColor ?>;
-                        <?php endif; ?><?php if ($highlightColor) : ?>--dui-highlight: <?= $highlightColor ?> <?php endif; ?>
+                        <?php endif; ?><?php if ($primaryColor) : ?>--dui-primary: <?= $primaryColor ?> <?php endif; ?>
                 }
         </style>
 </head>

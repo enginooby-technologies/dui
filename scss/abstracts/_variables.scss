@@ -3,8 +3,8 @@
         // --scheme-color: #d4d4d4;
         // --highlight-color: #004b97;
         --dui-scheme: 212, 212, 212;
-        --dui-highlight: 0, 75, 151;
-        --dui-highlight-invert: #d4d4d4;
+        --dui-primary: 0, 75, 151; // for highlighting
+        --dui-primary-invert: #d4d4d4;
         --dui-base: black; // mostly for text <=> --dui-scheme-invert
         --dui-base-mute: #4d4d4d; //lightmute: #b2b2b2
         /* Classification colors */
@@ -26,8 +26,8 @@
 
 //SASS variables just to ease referecing in other SCSS files
 $schemeColor: RGB(var(--dui-scheme));
-$highlightColor: RGB(var(--dui-highlight));
-$contrastHighlightColor: var(--dui-highlight-invert);
+$highlightColor: RGB(var(--dui-primary));
+$contrastHighlightColor: var(--dui-primary-invert);
 $baseColor: var(--dui-base);
 $mutedBaseColor: var(--dui-base-mute);
 

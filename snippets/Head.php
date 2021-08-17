@@ -91,7 +91,7 @@ class Head
                 $cookie = $this->meta->cookie;
 
                 $schemeColor = Color::toRgbComponents($this->initializer->schemeColor);
-                $highlightColor = Color::toRgbComponents($this->initializer->highlightColor);
+                $primaryColor = Color::toRgbComponents($this->initializer->primaryColor);
 
                 include "head_view.php";
                 // return itself, allow to quickly duplicate: $component->show()->show()...

@@ -75,8 +75,8 @@ export class DynamicColor {
 
         private updateHighlightColor(hex: string) {
                 DynamicColor.highlightColor.setHex(hex);
-                root.style.setProperty('--dui-highlight-invert', DynamicColor.highlightColor.getInvertBlackWhite());
-                this.updateColorCssVar('--dui-highlight', DynamicColor.highlightColor);
+                root.style.setProperty('--dui-primary-invert', DynamicColor.highlightColor.getInvertBlackWhite());
+                this.updateColorCssVar('--dui-primary', DynamicColor.highlightColor);
                 DynamicUI.currentStyle?.onHighlightColorUpdated();
         }
 
