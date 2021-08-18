@@ -1,7 +1,7 @@
 :root {
   /* Basic colors */
-  --dui-scheme: 212, 212, 212;
-  --dui-primary: 0, 75, 151;
+  --dui-scheme-rgb: 212, 212, 212;
+  --dui-primary-rgb: 0, 75, 151;
   --dui-primary-invert: #d4d4d4;
   --dui-primary-lighten-1: #0058b0;
   --dui-primary-lighten-2: #0064ca;
@@ -480,7 +480,7 @@ body {
   line-height: 1.5;
   text-align: left;
   height: 100vh;
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .row {
@@ -506,7 +506,7 @@ body {
 }
 
 .display-content > .container {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   position: relative;
 }
 
@@ -598,7 +598,7 @@ body::before {
 
 .button-border .button,
 .button-wrapper .button {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
   border-radius: var(--dui-border-radius) !important;
   padding: 10px 30px;
   -webkit-transition: all 0.3s ease;
@@ -665,7 +665,7 @@ body::before {
 .code-block .token.atrule,
 .code-block .token.attr-value,
 .code-block .token.keyword {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .code-block .token.attr-name,
@@ -713,7 +713,7 @@ body::before {
   font-weight: 900;
   font-family: "Poppins", sans-serif;
   margin-bottom: 0;
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .title-bar-controls {
@@ -780,7 +780,7 @@ body::before {
 }
 
 .dui-radio .indicator::after {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
   -webkit-transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
@@ -797,17 +797,17 @@ body::before {
 }
 
 .dui-radio .state:checked ~ .label .text {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .dui-radio .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
           transform: translate3d(8px, 0, 0);
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .dui-radio .label:hover .text {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .range-slider {
@@ -1041,7 +1041,7 @@ input::-moz-focus-outer {
 }
 
 .dropdown-toggle {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
 }
@@ -1064,8 +1064,8 @@ input::-moz-focus-outer {
 }
 
 .show > .dropdown-toggle {
-  color: RGB(var(--dui-primary));
-  background-color: RGB(var(--dui-scheme));
+  color: RGB(var(--dui-primary-rgb));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .dropdown-toggle-split {
@@ -1205,7 +1205,7 @@ img {
 }
 
 .nes-style .cp-toggle {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
 }
 
 .nes-style .cp-toggle i {
@@ -1216,7 +1216,7 @@ img {
 }
 
 .nes-style .setting-panel {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .nes-style .button,
@@ -1240,7 +1240,7 @@ img {
 }
 
 .nes-style .button {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
   color: var(--dui-primary-invert);
   border-image-repeat: stretch;
 }
@@ -1315,7 +1315,7 @@ img {
 }
 
 .nes-style .dui-radio span.text::before {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .nes-style .dui-radio input:checked + label .text::before,
@@ -1386,12 +1386,12 @@ img {
 }
 
 .nes-style .dropdown button {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   padding: 3px 5px;
 }
 
 .nes-style .dropdown-menu {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   border-image-repeat: space;
 }
 
@@ -1733,7 +1733,7 @@ img {
 }
 
 .win98-style .setting-panel {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .win98-style .title-bar {
@@ -2126,7 +2126,7 @@ img {
   -webkit-font-smoothing: antialiased;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: var(--btn-border-width) var(--btn-border-style) RGB(var(--dui-primary));
+  border: var(--btn-border-width) var(--btn-border-style) RGB(var(--dui-primary-rgb));
   background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(86%, #ecebe5), to(#d8d0c4));
   background: linear-gradient(180deg, white 0%, #ecebe5 86%, #d8d0c4 100%);
 }
@@ -2180,12 +2180,12 @@ body,
 .blog .blog-image,
 .blog .blog-item .before,
 .toggle .indicator {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .bg-highlight-color,
 .border-style {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
 }
 
 #pp-nav li :not(.active) span {
@@ -2193,7 +2193,7 @@ body,
 }
 
 #pp-nav li .active span {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
 }
 
 .highlight-color,
@@ -2203,7 +2203,7 @@ body,
 .contact .form-item .form-control,
 .highlight-portfolio-item.fa-star,
 .portfolio .portfolio-icon a:hover {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 body,
@@ -2302,15 +2302,15 @@ body,
 .social i:hover,
 .list-inline.socials li a i:hover,
 #myMenu li a:hover {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .loader {
-  border-top-color: RGB(var(--dui-primary));
+  border-top-color: RGB(var(--dui-primary-rgb));
 }
 
 #overlayer {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .blog .blog-image,
@@ -2417,8 +2417,8 @@ table,
   --spread: 0px;
   --scheme-color-lighten: #e6e6e6;
   --scheme-color-darken: #c2c2c2;
-  --light-surface-color: RGB(var(--dui-scheme));
-  --dark-surface-color: RGB(var(--dui-scheme));
+  --light-surface-color: RGB(var(--dui-scheme-rgb));
+  --dark-surface-color: RGB(var(--dui-scheme-rgb));
   --border: 0px solid #fafafa;
   /*-------------------------
       CONTAINER COMPONENTS
@@ -2445,7 +2445,7 @@ table,
   content: "";
   display: inline-block;
   border-radius: var(--dui-border-radius);
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   z-index: -1;
@@ -2486,7 +2486,7 @@ table,
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   border: var(--border);
@@ -2517,14 +2517,14 @@ table,
 .neu-style .dropdown button,
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .neu-style .dropdown .dropdown-menu {
   background: linear-gradient(145deg, var(--light-surface-color), var(--dark-surface-color));
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   padding: 10px;
 }
 
@@ -2541,7 +2541,7 @@ table,
 
 .neu-style .dropdown button:hover,
 .neu-style .dropdown .dropdown-item:hover {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .neu-style .dropdown .dropdown-toggle {
@@ -2626,7 +2626,7 @@ table,
 
 .neu-style .button-wrapper,
 .neu-style .button-border {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-lighten);
   position: relative;
@@ -2644,7 +2644,7 @@ table,
   content: "";
   display: inline-block;
   border-radius: var(--dui-border-radius);
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
   z-index: -1;
@@ -2709,7 +2709,7 @@ table,
 .neu-style .checkbox label,
 .neu-style .portfolio-single .modal-content,
 .neu-style ::-webkit-scrollbar-track {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .neu-style .segmented-control > input:not(:checked)px:not(:hover)px + label {
@@ -2719,7 +2719,7 @@ table,
 .neu-style .button,
 .neu-style .segmented-control > input:checked + label,
 .neu-style .segmented-control > input:hover + label {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .neu-style .button:hover,
@@ -2743,19 +2743,19 @@ table,
 .neu-style .checkbox input:checked ~ label + .name,
 .neu-style .checkbox input:checked ~ label i,
 .neu-style .checkbox input:hover ~ label i {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .neu-style ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
           box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-darken), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-darken), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-lighten);
           box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) var(--scheme-color-darken), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) var(--scheme-color-lighten);
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
 }
 
 .flat-style {
@@ -2781,7 +2781,7 @@ table,
 }
 
 .flat-style .button {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
   color: var(--dui-primary-invert);
 }
 
@@ -2791,17 +2791,17 @@ table,
 
 .flat-style .radio-button-group .button.active,
 .flat-style .radio-button-group .button:not(.active):hover {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
   color: var(--dui-primary-invert);
 }
 
 .flat-style .radio-button-group .button:not(.active) {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .flat-style .radio-selection,
 .flat-style table > tbody > tr:hover {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
   color: var(--dui-primary-invert);
 }
 
@@ -2821,7 +2821,7 @@ table,
 .flat-style .range-slider__range,
 .flat-style .range-slider__value,
 .flat-style .modal-content {
-  background-color: RGB(var(--dui-scheme));
+  background-color: RGB(var(--dui-scheme-rgb));
   color: var(--dui-base);
 }
 
@@ -2830,7 +2830,7 @@ table,
 }
 
 .flat-style .segmented-control > input:hover + label {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .flat-style .segmented-control > input:checked + label {
@@ -2845,7 +2845,7 @@ table,
 .flat-style .checkbox input:checked ~ label + .name,
 .flat-style .checkbox input:checked ~ label i,
 .flat-style .checkbox input:hover ~ label i {
-  color: RGB(var(--dui-primary));
+  color: RGB(var(--dui-primary-rgb));
 }
 
 .flat-style ::-webkit-scrollbar-track {
@@ -2853,7 +2853,7 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-thumb {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
 }
 
 .flat-style ::-webkit-scrollbar-thumb:hover {
@@ -2861,7 +2861,7 @@ table,
 }
 
 .flat-style ::-webkit-slider-thumb {
-  background-color: RGB(var(--dui-primary));
+  background-color: RGB(var(--dui-primary-rgb));
 }
 
 .flat-style ::-webkit-slider-thumb:hover {
@@ -3022,7 +3022,7 @@ table,
 }
 
 .none-bg {
-  background-color: RGB(var(--dui-scheme)) !important;
+  background-color: RGB(var(--dui-scheme-rgb)) !important;
   background-image: none;
 }
 

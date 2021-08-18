@@ -7,8 +7,8 @@
         --spread: 0px;
         --scheme-color-lighten: #e6e6e6;
         --scheme-color-darken: #c2c2c2;
-        --light-surface-color: RGB(var(--dui-scheme));
-        --dark-surface-color: RGB(var(--dui-scheme));
+        --light-surface-color: RGB(var(--dui-scheme-rgb));
+        --dark-surface-color: RGB(var(--dui-scheme-rgb));
         --border: 0px solid #fafafa;
 
         $bgSurface: linear-gradient(

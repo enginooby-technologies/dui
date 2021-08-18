@@ -2,8 +2,8 @@
         /* Basic colors */
         // --scheme-color: #d4d4d4;
         // --highlight-color: #004b97;
-        --dui-scheme: 212, 212, 212;
-        --dui-primary: 0, 75, 151; // for highlighting
+        --dui-scheme-rgb: 212, 212, 212;
+        --dui-primary-rgb: 0, 75, 151; // for highlighting
         --dui-primary-invert: #d4d4d4;
         // TODO: calculate following colors base on its origin (primary)
         --dui-primary-lighten-1: #0058b0;
@@ -32,8 +32,8 @@
 }
 
 //SASS variables just to ease referecing in other SCSS files
-$schemeColor: RGB(var(--dui-scheme));
-$highlightColor: RGB(var(--dui-primary));
+$schemeColor: RGB(var(--dui-scheme-rgb));
+$highlightColor: RGB(var(--dui-primary-rgb));
 $contrastHighlightColor: var(--dui-primary-invert);
 $baseColor: var(--dui-base);
 $mutedBaseColor: var(--dui-base-mute);
