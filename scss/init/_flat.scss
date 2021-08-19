@@ -1,16 +1,16 @@
 .flat-style {
-        --scheme-color-lighten: #e1e1e1; // distinct sub-containers from its container
-        --highlight-color-darken: #033669; //for  hover, active button
+        --flat-scheme-distinct-intensity: 4%; // distinct sub-containers from its container
+        --flat-primary-distinct-intensity: -18%; //for  hover, active button
         // prettier-ignore
-        // --highlight-color-darken: scale-color(#004b97, 15%);  // does not work
-        $schemeColorLighten: var(--scheme-color-lighten);
-        $highlightColorDarken: var(--highlight-color-darken);
+        $distinctScheme: lightness(--dui-color-scheme, var(--flat-scheme-distinct-intensity));
+        // prettier-ignore
+        $distinctPrimary: lightness(--dui-color-primary, var(--flat-primary-distinct-intensity));
 
         /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
         .code-block {
-                background-color: $schemeColorLighten;
+                background-color: $distinctScheme;
         }
 
         /*-------------------------
@@ -20,7 +20,7 @@
         .form-item {
                 .form-group {
                         .form-control {
-                                background-color: $schemeColorLighten;
+                                background-color: $distinctScheme;
                         }
                 }
         }
@@ -35,8 +35,7 @@
         }
 
         .button:hover {
-                //sdfsadf
-                background-color: lightness(--dui-color-primary, 20%);
+                background-color: $distinctPrimary;
         }
 
         //  BUTTON RADIO
@@ -66,7 +65,7 @@
         .setting-button-border,
         .setting-panel,
         .setting-button {
-                background-color: $schemeColorLighten;
+                background-color: $distinctScheme;
                 color: $baseColor;
         }
 
@@ -105,7 +104,7 @@
 
         // SCROLLBAR
         ::-webkit-scrollbar-track {
-                background-color: $schemeColorLighten;
+                background-color: $distinctScheme;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -113,7 +112,7 @@
         }
 
         ::-webkit-scrollbar-thumb:hover {
-                background: $highlightColorDarken;
+                background: $distinctPrimary;
         }
 
         // RANGE SLIDER
@@ -122,6 +121,6 @@
         }
 
         ::-webkit-slider-thumb:hover {
-                background-color: $highlightColorDarken;
+                background-color: $distinctPrimary;
         }
 }

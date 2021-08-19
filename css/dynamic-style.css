@@ -2769,8 +2769,8 @@ table,
 }
 
 .flat-style {
-  --scheme-color-lighten: #e1e1e1;
-  --highlight-color-darken: #033669;
+  --flat-scheme-distinct-intensity: 4%;
+  --flat-primary-distinct-intensity: -18%;
   /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
@@ -2783,11 +2783,11 @@ table,
 }
 
 .flat-style .code-block {
-  background-color: var(--scheme-color-lighten);
+  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
 }
 
 .flat-style .form-item .form-group .form-control {
-  background-color: var(--scheme-color-lighten);
+  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
 }
 
 .flat-style .button {
@@ -2796,7 +2796,7 @@ table,
 }
 
 .flat-style .button:hover {
-  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + 20%));
+  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
 }
 
 .flat-style .radio-button-group .button.active,
@@ -2823,7 +2823,7 @@ table,
 .flat-style .setting-button-border,
 .flat-style .setting-panel,
 .flat-style .setting-button {
-  background-color: var(--scheme-color-lighten);
+  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
   color: hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
 }
 
@@ -2859,7 +2859,7 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-track {
-  background-color: var(--scheme-color-lighten);
+  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
 }
 
 .flat-style ::-webkit-scrollbar-thumb {
@@ -2867,7 +2867,7 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-thumb:hover {
-  background: var(--highlight-color-darken);
+  background: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
 }
 
 .flat-style ::-webkit-slider-thumb {
@@ -2875,7 +2875,7 @@ table,
 }
 
 .flat-style ::-webkit-slider-thumb:hover {
-  background-color: var(--highlight-color-darken);
+  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
 }
 
 .pixelart-to-css {

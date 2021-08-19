@@ -20,7 +20,7 @@ export class DynamicUI {
         // this.enableDragDropExtension();
     }
     setCurrentStyle(newStyle) {
-        var _a, _b, _c, _d, _e;
+        var _a, _b, _c, _d;
         (_a = DynamicUI.currentStyle) === null || _a === void 0 ? void 0 : _a.onDisable();
         DynamicUI.$body.removeClass((_b = DynamicUI.currentStyle) === null || _b === void 0 ? void 0 : _b.name);
         DynamicUI.currentStyle = newStyle;
@@ -32,7 +32,7 @@ export class DynamicUI {
             (_c = this.dynamicFont) === null || _c === void 0 ? void 0 : _c.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
         }
         (_d = this.dynamicBackground) === null || _d === void 0 ? void 0 : _d.onStyleUpdate();
-        (_e = this.dynamicColor) === null || _e === void 0 ? void 0 : _e.updateChangesFromLastStyle();
+        // this.dynamicColor?.updateChangesFromLastStyle();
     }
     enableDynamicFont() {
         Loader.tryLoadScript(Ref.webfontJs, () => {

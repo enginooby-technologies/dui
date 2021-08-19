@@ -31,7 +31,7 @@ export class DynamicUI {
                         this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
                 }
                 this.dynamicBackground?.onStyleUpdate();
-                this.dynamicColor?.updateChangesFromLastStyle();
+                // this.dynamicColor?.updateChangesFromLastStyle();
         }
 
         constructor() {
