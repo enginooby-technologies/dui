@@ -2420,16 +2420,16 @@ table,
 }
 
 .neu-style {
-  --distance-x: 3px;
-  --distance-y: 3px;
-  --blur: 4px;
-  --spread: 0px;
-  --lighten-intensity: 6.9%;
-  --darken-intensity: 6.9%;
-  --surface-curvature: 0%;
-  --border-width: 0px;
-  --border-brightness: -6.9%;
-  --border-style: solid;
+  --neu-distance-x: 3px;
+  --neu-distance-y: 3px;
+  --neu-blur: 4px;
+  --neu-spread: 0px;
+  --neu-lighten-intensity: 6.9%;
+  --neu-darken-intensity: 6.9%;
+  --neu-surface-curvature: 0%;
+  --neu-border-width: 0px;
+  --neu-border-brightness: -6.9%;
+  --neu-border-style: solid;
   /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
@@ -2456,72 +2456,72 @@ table,
   display: inline-block;
   border-radius: var(--dui-border-radius);
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   z-index: -1;
 }
 
 .neu-style .setting-panel {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .dui-radio .indicator {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .dui-radio .indicator::before {
-  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .dui-radio .indicator::after {
-  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1)));
-          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1)));
+  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1)));
+          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1)));
 }
 
 .neu-style .range-slider .range-slider__value {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .range-slider .range-slider__range {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb:hover,
 .neu-style .range-slider input[type="range"]:focus {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .dropdown button.focus,
 .neu-style .dropdown button:focus,
 .neu-style .dropdown .dropdown-label {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .dropdown .dropdown-toggle {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .dropdown button,
@@ -2531,22 +2531,22 @@ table,
 }
 
 .neu-style .dropdown .dropdown-menu {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   background-color: var(--dui-color-scheme);
   padding: 10px;
 }
 
 .neu-style .dropdown.show .dropdown-toggle,
 .neu-style .dropdown button:hover {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .dropdown .dropdown-item:hover {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .dropdown button:hover,
@@ -2555,90 +2555,90 @@ table,
 }
 
 .neu-style .dropdown .dropdown-toggle {
-  -webkit-box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .checkbox label {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1)))) !important;
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1)))) !important;
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .form-group input,
 .neu-style .form-group textarea {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1)))) !important;
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1)))) !important;
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .segmented-control {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .segmented-control .radio-selection {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .toggle {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .toggle .indicator {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .code-block {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .badge-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .image-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .box-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .setting-panel {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style table {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style table thead {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .blog .blog-intro {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .blog .blog-image .after {
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .portfolio-single .modal-content {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .button-wrapper,
 .neu-style .button-border {
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   position: relative;
   -webkit-animation-name: none;
           animation-name: none;
@@ -2655,19 +2655,19 @@ table,
   display: inline-block;
   border-radius: var(--dui-border-radius);
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   z-index: -1;
 }
 
 .neu-style .button-wrapper .button,
 .neu-style .button-border .button {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
-  border: var(--border-width) var(--border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--border-brightness)));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
 }
 
 .neu-style .setting-button {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--surface-curvature) * -1))));
+  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
 }
 
 .neu-style .box-border,
@@ -2683,8 +2683,8 @@ table,
 .neu-style .form-group input:focus,
 .neu-style .form-group textarea:focus,
 .neu-style .toggle .indicator {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .button.active,
@@ -2696,16 +2696,16 @@ table,
 .neu-style .setting-section .scrollable,
 .neu-style .timeline-items.box-border,
 .neu-style .radio-selection {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .toggle,
 .neu-style .form-group input,
 .neu-style .form-group textarea,
 .neu-style .skill-box .skillbar {
-  -webkit-box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity))),  inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .section,
@@ -2736,13 +2736,13 @@ table,
 .neu-style .badge-border:hover,
 .neu-style table > tbody > tr:hover,
 .neu-style .setting-button:hover {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .checkbox input:checked ~ label {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .checkbox input:not(:checked)px:not(:hover)px ~ label i,
@@ -2757,14 +2757,14 @@ table,
 }
 
 .neu-style ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   background-color: var(--dui-color-scheme);
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
-          box-shadow: inset calc(var(--distance-x) * -1) calc(var(--distance-y) * -1) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--darken-intensity) * -1))), inset var(--distance-x) var(--distance-y) var(--blur) var(--spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--lighten-intensity)));
+  -webkit-box-shadow: inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   background-color: var(--dui-color-scheme);
 }
 

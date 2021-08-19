@@ -43,7 +43,7 @@ include_once "_index.php";
                                                 ?>
 
                                                 <p>Border style</p>
-                                                <div class="radio-group-wrapper">
+                                                <div class="radio-group-wrapper neu-border-style-options">
                                                         <?php
                                                         Radio(id: 'solid-border', value: 0, group: 'neu-border-style', label: '')->show();
                                                         Radio(id: 'double-border', value: 1, group: 'neu-border-style', label: '')->show();

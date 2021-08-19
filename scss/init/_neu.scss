@@ -1,31 +1,34 @@
 .neu-style {
-        --distance-x: 3px;
-        --distance-y: 3px;
-        --blur: 4px;
-        --spread: 0px;
-        --lighten-intensity: 6.9%;
-        --darken-intensity: 6.9%;
-        --surface-curvature: 0%;
-        --border-width: 0px;
-        --border-brightness: -6.9%;
-        --border-style: solid;
+        --neu-distance-x: 3px;
+        --neu-distance-y: 3px;
+        --neu-blur: 4px;
+        --neu-spread: 0px;
+        --neu-lighten-intensity: 6.9%;
+        --neu-darken-intensity: 6.9%;
+        --neu-surface-curvature: 0%;
+        --neu-border-width: 0px;
+        --neu-border-brightness: -6.9%;
+        --neu-border-style: solid;
 
         // prettier-ignore
-        $lightenSurface: lightness(--dui-color-scheme, var(--surface-curvature));
+        $lightenSurface: lightness(--dui-color-scheme, var(--neu-surface-curvature));
         // prettier-ignore
-        $darkenSurface: lightness(--dui-color-scheme, calc(var(--surface-curvature) * -1));
+        $darkenSurface: lightness(--dui-color-scheme, calc(var(--neu-surface-curvature) * -1));
         // prettier-ignore
         $bgSurface: linear-gradient(145deg,$lightenSurface,$darkenSurface );
 
-        $dx: var(--distance-x);
-        $ndx: calc(#{var(--distance-x)} * -1);
-        $dy: var(--distance-y);
-        $ndy: calc(#{var(--distance-y)} * -1);
-        $b: var(--blur);
-        $s: var(--spread);
+        $dx: var(--neu-distance-x);
+        $ndx: calc(#{var(--neu-distance-x)} * -1);
+        $dy: var(--neu-distance-y);
+        $ndy: calc(#{var(--neu-distance-y)} * -1);
+        $b: var(--neu-blur);
+        $s: var(--neu-spread);
         // lighten & darken scheme color for shadows
-        $scl: lightness(--dui-color-scheme, var(--lighten-intensity));
-        $scd: lightness(--dui-color-scheme, calc(var(--darken-intensity) * -1));
+        $scl: lightness(--dui-color-scheme, var(--neu-lighten-intensity));
+        $scd: lightness(
+                --dui-color-scheme,
+                calc(var(--neu-darken-intensity) * -1)
+        );
         //prettier-ignore
         $dropBoxShadow: $dx $dy $b $s $scd, $ndx $ndy $b $s $scl;
         $insetBoxShadow: inset $dx $dy $b $s $scd, inset $ndx $ndy $b $scl;
@@ -35,7 +38,7 @@
         $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,inset $dx $dy $b $s$scl;
 
         // prettier-ignore
-        $neu-border:var(--border-width) var(--border-style) lightness(--dui-color-scheme, var(--border-brightness)) ;
+        $neu-border:var(--neu-border-width) var(--neu-border-style) lightness(--dui-color-scheme, var(--neu-border-brightness)) ;
 
         /*-------------------------
       CONTAINER COMPONENTS

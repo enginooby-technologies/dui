@@ -1,5 +1,4 @@
 import { Style } from '../base/Style.js';
-import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { NeuConfig } from '../StyleConfig.js';
 var BorderStyle;
 (function (BorderStyle) {
@@ -13,21 +12,7 @@ var BorderStyle;
 export class NeuStyle extends Style {
     constructor() {
         super(NeuConfig);
-        this.distanceX = 3;
-        this.distanceY = 3;
-        this.blur = 4;
-        this.spread = 0;
-        this.lightenIntensity = 6.9;
-        this.darkenIntensity = 6.9;
-        this.schemeColorLighten = "#e6e6e6";
-        this.schemeColorDarken = "#c2c2c2";
-        this.borderWidth = 0;
-        this.borderBrightness = -6.9;
-        // TODO: implement border style
         this.borderStyle = BorderStyle.solid;
-        //TODO: implement curvature for colorful background
-        // negative: concave - 0: flat - positive: convex
-        this.surfaceCurvature = 0;
         this.bgSurface = '';
     }
     static get Instance() {
@@ -36,22 +21,28 @@ export class NeuStyle extends Style {
         return NeuStyle._instance;
     }
     init() {
-        this.initRangeSliders();
-        // TODO: Init radio button
+        this.distanceX = +getComputedStyle(document.body).getPropertyValue("--neu-distance-x").replace('px', '');
+        this.distanceY = +getComputedStyle(document.body).getPropertyValue("--neu-distance-y").replace('px', '');
+        this.blur = +getComputedStyle(document.body).getPropertyValue("--neu-blur").replace('px', '');
+        this.spread = +getComputedStyle(document.body).getPropertyValue("--neu-spread").replace('px', '');
+        this.lightenIntensity = +getComputedStyle(document.body).getPropertyValue("--neu-lighten-intensity").replace('%', '');
+        this.darkenIntensity = +getComputedStyle(document.body).getPropertyValue("--neu-darken-intensity").replace('%', '');
+        this.borderWidth = +getComputedStyle(document.body).getPropertyValue("--neu-border-width").replace('px', '');
+        this.borderBrightness = +getComputedStyle(document.body).getPropertyValue("--neu-border-brightness").replace('%', '');
+        this.surfaceCurvature = +getComputedStyle(document.body).getPropertyValue("--neu-surface-curvature").replace('%', '');
+        this.setSliderValue('#neu-distance-x', this.distanceX);
+        this.setSliderValue('#neu-distance-y', this.distanceY);
+        this.setSliderValue('#blur', this.blur);
+        this.setSliderValue('#neu-spread', this.spread);
+        this.setSliderValue('#light-intensity', this.lightenIntensity);
+        this.setSliderValue('#dark-intensity', this.darkenIntensity);
+        // TODO: init border style
+        this.setSliderValue('#neu-border-width', this.borderWidth);
+        this.setSliderValue('#neu-border-brightness', this.borderBrightness);
+        this.setSliderValue('#surface-curvature', this.surfaceCurvature);
     }
-    initRangeSliders() {
-        this.initRangeSlider('#neu-distance-x', this.distanceX);
-        this.initRangeSlider('#neu-distance-y', this.distanceY);
-        this.initRangeSlider('#blur', this.blur);
-        this.initRangeSlider('#neu-spread', this.spread);
-        this.initRangeSlider('#light-intensity', this.lightenIntensity);
-        this.initRangeSlider('#dark-intensity', this.darkenIntensity);
-        this.initRangeSlider('#neu-border-width', this.borderWidth);
-        this.initRangeSlider('#neu-border-brightness', this.borderBrightness);
-        this.initRangeSlider('#surface-curvature', this.surfaceCurvature);
-    }
-    //HELPER
-    initRangeSlider(selector, value) {
+    //UTIL
+    setSliderValue(selector, value) {
         const $slider = $(selector);
         $slider.attr('value', value);
         $slider.next('.range-slider__value').html(value.toString());
@@ -60,74 +51,50 @@ export class NeuStyle extends Style {
         $("#neu-customizer ,range-slider input").on('input', (event) => {
             const newValue = event.target.value;
             $("#" + event.target.id).next('.range-slider__value').text(newValue);
+            // REFACTOR
             switch (event.target.id) {
                 case 'neu-distance-x':
-                    this.distanceX = parseInt(newValue);
-                    this.cssRule.style.setProperty('--distance-x', newValue + 'px');
+                    this.distanceX = +newValue;
+                    this.cssRule.style.setProperty('--neu-distance-x', newValue + 'px');
                     break;
                 case 'neu-distance-y':
-                    this.distanceY = parseInt(newValue);
-                    this.cssRule.style.setProperty('--distance-y', newValue + 'px');
+                    this.distanceY = +newValue;
+                    this.cssRule.style.setProperty('--neu-distance-y', newValue + 'px');
                     break;
                 case 'blur':
-                    this.blur = parseInt(newValue);
-                    this.cssRule.style.setProperty('--blur', newValue + 'px');
+                    this.blur = +newValue;
+                    this.cssRule.style.setProperty('--neu-blur', newValue + 'px');
                     break;
                 case 'neu-spread':
-                    this.spread = parseInt(newValue);
-                    this.cssRule.style.setProperty('--spread', newValue + 'px');
+                    this.spread = +newValue;
+                    this.cssRule.style.setProperty('--neu-spread', newValue + 'px');
                     break;
                 case 'light-intensity':
-                    this.lightenIntensity = parseInt(newValue);
-                    this.updateSchemeLighten();
+                    this.lightenIntensity = +newValue;
+                    this.cssRule.style.setProperty('--neu-lighten-intensity', newValue + '%');
                     break;
                 case 'dark-intensity':
-                    this.darkenIntensity = parseInt(newValue);
-                    this.updateSchemeDarken();
+                    this.darkenIntensity = +newValue;
+                    this.cssRule.style.setProperty('--neu-darken-intensity', newValue + '%');
                     break;
                 case 'neu-border-width':
-                    this.borderWidth = parseInt(newValue);
-                    this.updateBorder();
+                    this.borderWidth = +newValue;
+                    this.cssRule.style.setProperty('--neu-border-width', newValue + 'px');
                     return;
                 case 'neu-border-brightness':
-                    this.borderBrightness = parseInt(newValue);
-                    this.updateBorder();
+                    this.borderBrightness = +newValue;
+                    this.cssRule.style.setProperty('--neu-border-brightness', newValue + '%');
                     return;
                 case 'surface-curvature':
-                    this.surfaceCurvature = parseInt(newValue);
-                    this.updateSurface();
+                    this.surfaceCurvature = +newValue;
+                    this.cssRule.style.setProperty('--neu-surface-curvature', newValue + '%');
                     return;
             }
         });
-        $('#neu-customizer #neu-border-style-options input').on('input', event => {
-            this.borderStyle = parseInt(event.currentTarget.getAttribute('value'));
-            this.updateBorder();
+        $(' .neu-border-style-options input').on('input', event => {
+            this.borderStyle = +event.currentTarget.getAttribute('value');
+            this.cssRule.style.setProperty('--neu-border-style', BorderStyle[this.borderStyle]);
         });
-    }
-    onSchemeColorUpdated() {
-        this.updateSurface();
-        this.updateBorder();
-        this.updateSchemeLighten();
-        this.updateSchemeDarken();
-    }
-    updateSchemeLighten() {
-        this.schemeColorLighten = DynamicColor.schemeColor.getLighten(this.lightenIntensity);
-        this.cssRule.style.setProperty('--scheme-color-lighten', this.schemeColorLighten);
-    }
-    updateSchemeDarken() {
-        this.schemeColorDarken = DynamicColor.schemeColor.getDarken(this.darkenIntensity);
-        this.cssRule.style.setProperty('--scheme-color-darken', this.schemeColorDarken);
-    }
-    updateSurface() {
-        const lightSurfaceColor = DynamicColor.schemeColor.getLighten(this.surfaceCurvature);
-        const darkSurfaceColor = DynamicColor.schemeColor.getDarken(this.surfaceCurvature);
-        this.cssRule.style.setProperty('--light-surface-color', lightSurfaceColor);
-        this.cssRule.style.setProperty('--dark-surface-color', darkSurfaceColor);
-    }
-    updateBorder() {
-        const borderColor = DynamicColor.schemeColor.getLighten(this.borderBrightness);
-        const border = `${this.borderWidth}px ${BorderStyle[this.borderStyle]} ${borderColor}`;
-        this.cssRule.style.setProperty('--border', border);
     }
 }
 //  Singleton Pattern
