@@ -29,7 +29,8 @@
         }
 
         .display-content > .container {
-                background-color: var(--scheme-color-rgba) !important;
+                // background-color: var(--scheme-color-rgba) !important;
+                background-color: alpha(var(--dui-color-scheme), 0.2);
                 @include blur-and-border();
         }
 
@@ -56,11 +57,12 @@
                 @include blur-and-border();
         }
 
-        .display-content > .container.none-bg,
+        // .display-content > .container.none-bg,
         .range-slider__range,
         .range-slider__value,
         .modal-content {
-                background-color: var(--scheme-color-rgba);
+                // background-color: var(--scheme-color-rgba);
+                background-color: alpha(var(--dui-color-scheme), 0.2);
                 color: var(--base-color);
                 @include blur-and-border();
         }

@@ -4,7 +4,8 @@
         "description": "The framework manipulates CSSStyleRule to achieve dynamic customization, defines PHP functions for component reusing and delegates layouting  to Bootstrap with supporting OOP (\"strongly-typed Bootstrap\").",
         "main": "js/DynamicUI.js",
         "scripts": {
-                "watch-demo": "tsc demo\\index.ts --module es6 -w"
+                "watch-demo": "tsc demo\\index.ts --module es6 -w",
+                "stylelint": "npx stylelint \"**/*.scss\""
         },
         "repository": {
                 "type": "git",
@@ -19,7 +20,9 @@
         "devDependencies": {
                 "@interactjs/types": "^1.10.11",
                 "@types/css-font-loading-module": "0.0.6",
-                "critical": "^4.0.1"
+                "critical": "^4.0.1",
+                "stylelint": "^13.13.1",
+                "stylelint-config-standard": "^22.0.0"
         },
         "dependencies": {
                 "@types/webfontloader": "^1.6.33"
