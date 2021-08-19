@@ -4,6 +4,14 @@ import { Color } from "./Color.js";
 
 // TODO: Create my own algorithms for functions and remove TinyColor dependency
 export class TinyColor extends Color {
+        public getHexByHsl(): string {
+                // @ts-ignore
+                return tinycolor(this.hsl).toHexString();
+        }
+        public getHslByHex(): string {
+                // @ts-ignore
+                return tinycolor(this.hex).toHslString();
+        }
         getLighten(amount: number): string {
                 // @ts-ignore
                 return tinycolor(this.hex)!.lighten(amount).toString();

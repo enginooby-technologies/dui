@@ -69,7 +69,7 @@ export class GlassStyle extends Style {
         });
     }
     updateColorCssVar(cssVar, color) {
-        this.cssRule.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
+        this.cssRule.style.setProperty(cssVar, `${color.rVal}, ${color.gVal}, ${color.bVal}`);
     }
     onHighlightColorUpdated() {
         this.darkenHighlightColor.setHex(DynamicColor.highlightColor.getDarken(this.darkHighlightIntensity));
