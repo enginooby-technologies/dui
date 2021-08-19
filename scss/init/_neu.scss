@@ -1,41 +1,41 @@
 .neu-style {
-        //TODO: Init border and surface
-
         --distance-x: 3px;
         --distance-y: 3px;
         --blur: 4px;
         --spread: 0px;
-        --scheme-color-lighten: #e6e6e6;
-        --scheme-color-darken: #c2c2c2;
-        --light-surface-color: RGB(var(--dui-scheme-rgb));
-        --dark-surface-color: RGB(var(--dui-scheme-rgb));
-        --border: 0px solid #fafafa;
+        --lighten-intensity: 6.9%;
+        --darken-intensity: 6.9%;
+        --surface-curvature: 0%;
+        --border-width: 0px;
+        --border-brightness: -6.9%;
+        --border-style: solid;
 
-        $bgSurface: linear-gradient(
-                145deg,
-                var(--light-surface-color),
-                var(--dark-surface-color)
-        );
+        // prettier-ignore
+        $lightenSurface: lightness(--dui-color-scheme, var(--surface-curvature));
+        // prettier-ignore
+        $darkenSurface: lightness(--dui-color-scheme, calc(var(--surface-curvature) * -1));
+        // prettier-ignore
+        $bgSurface: linear-gradient(145deg,$lightenSurface,$darkenSurface );
+
         $dx: var(--distance-x);
         $ndx: calc(#{var(--distance-x)} * -1);
         $dy: var(--distance-y);
         $ndy: calc(#{var(--distance-y)} * -1);
         $b: var(--blur);
         $s: var(--spread);
-        $scd: var(--scheme-color-darken);
-        $scl: var(--scheme-color-lighten);
-
-        //prettier-ignore
-        // --drop-box-shadow: var(--distance-x) var(--distance-x) var(--distance-x)var(--distance-x) var(--distance-x),calc(#{var(--distance-y)} * -1) calc(#{var(--distance-y)} * -1) var(--distance-x) var(--distance-x) var(--distance-x);
+        // lighten & darken scheme color for shadows
+        $scl: lightness(--dui-color-scheme, var(--lighten-intensity));
+        $scd: lightness(--dui-color-scheme, calc(var(--darken-intensity) * -1));
         //prettier-ignore
         $dropBoxShadow: $dx $dy $b $s $scd, $ndx $ndy $b $s $scl;
         $insetBoxShadow: inset $dx $dy $b $s $scd, inset $ndx $ndy $b $scl;
-
         // to unquote when referencing: #{$concaveBoxShadow};
         $concaveBoxShadow: "#{$dropBoxShadow},  #{$insetBoxShadow}";
+        // prettier-ignore
+        $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,inset $dx $dy $b $s$scl;
 
-        $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,
-                inset $dx $dy $b $s$scl;
+        // prettier-ignore
+        $neu-border:var(--border-width) var(--border-style) lightness(--dui-color-scheme, var(--border-brightness)) ;
 
         /*-------------------------
       CONTAINER COMPONENTS
@@ -82,19 +82,19 @@
                 .range-slider__value {
                         background: $bgSurface;
                         box-shadow: $dropBoxShadow;
-                        border: var(--border);
+                        border: $neu-border;
                 }
 
                 .range-slider__range {
                         background: $bgSurface;
                         box-shadow: $insetBoxShadow;
-                        border: var(--border);
+                        border: $neu-border;
                 }
 
                 ::-webkit-slider-thumb {
                         background-color: $schemeColor;
                         box-shadow: $dropBoxShadow;
-                        border: var(--border);
+                        border: $neu-border;
                 }
 
                 ::-webkit-slider-thumb:hover,
@@ -156,7 +156,7 @@
         .checkbox {
                 label {
                         background: $bgSurface !important;
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
 
@@ -165,24 +165,24 @@
                 input,
                 textarea {
                         background: $bgSurface !important;
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
 
         // SEGMENTED-CONTROL
         .segmented-control {
                 background: $bgSurface;
-                border: var(--border);
+                border: $neu-border;
                 .radio-selection {
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
 
         // TOGGLE
         .toggle {
-                border: var(--border);
+                border: $neu-border;
                 .indicator {
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
 
@@ -193,7 +193,7 @@
         .code-block {
                 box-shadow: $insetBoxShadow;
                 background: $bgSurface;
-                border: var(--border);
+                border: $neu-border;
         }
 
         //
@@ -202,20 +202,20 @@
         }
         .image-border {
                 background: $bgSurface;
-                border: var(--border);
+                border: $neu-border;
         }
         .box-border {
                 background: $bgSurface;
-                border: var(--border);
+                border: $neu-border;
         }
         .setting-panel {
-                border: var(--border);
+                border: $neu-border;
                 background: $bgSurface;
         }
 
         // TABLE
         table {
-                border: var(--border);
+                border: $neu-border;
                 thead {
                         background: $bgSurface;
                 }
@@ -225,10 +225,10 @@
         .blog {
                 .blog-intro {
                         background: $bgSurface;
-                        border: var(--border);
+                        border: $neu-border;
                 }
                 .blog-image .after {
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
         .portfolio-single {
@@ -277,7 +277,7 @@
                 @include border_pseudo_before(7px, $borderRadius ,$schemeColor, $insetBoxShadow);
                 .button {
                         background: $bgSurface;
-                        border: var(--border);
+                        border: $neu-border;
                 }
         }
 
