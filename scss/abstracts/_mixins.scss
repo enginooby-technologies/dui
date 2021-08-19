@@ -2,12 +2,22 @@
       BASE MIXINS 
       Common mixins used for other mixins
 -------------------------*/
-@mixin abs_pos($top, $right: $top, $bottom: $top, $left: $right) {
+// [Conditon] Parent has position: relative
+@mixin abs_pos($top: 0, $right: $top, $bottom: $top, $left: $right) {
         position: absolute;
         top: $top;
         bottom: $bottom;
         left: $left;
         right: $right;
+}
+
+@mixin defineHslColor($color, $hue, $saturation, $lightness) {
+        #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+        #{$color}-h: #{$hue};
+        #{$color}-s: #{$saturation};
+        #{$color}-l: #{$lightness};
+        // prettier-ignore
+        // #{$color}: unquote( "hsl(var(#{$color}-h), var(#{$color}-s), var(#{$color}-l))" );
 }
 
 /*-------------------------

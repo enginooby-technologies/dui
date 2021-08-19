@@ -1,30 +1,19 @@
 :root {
-        /* Basic colors */
-        // --scheme-color: #d4d4d4;
-        // --highlight-color: #004b97;
-        --dui-scheme-rgb: 212, 212, 212;
-        --dui-primary-rgb: 0, 75, 151; // for highlighting
-        --dui-primary-invert: #d4d4d4;
-        // TODO: calculate following colors base on its origin (primary)
-        --dui-primary-lighten-1: #0058b0;
-        --dui-primary-lighten-2: #0064ca;
-        --dui-primary-lighten-3: #0071e3;
-        --dui-primary-darken-1: #003e7d;
-        --dui-primary-darken-2: #003264;
-        --dui-primary-darken-3: #00254a;
-        --dui-base: black; // mostly for text <=> --dui-scheme-invert
-        --dui-base-mute: #4d4d4d; //lightmute: #b2b2b2
-        /* Classification colors */
-        --dui-color-1: #01724b;
-        --dui-color-2: #bc5b00;
-        --dui-color-3: #c40639;
-        --dui-color-1-invert: white;
-        --dui-color-2-invert: white;
-        --dui-color-3-invert: white;
+        /* COLORS */
+        /* Usage: (import abstracts/_functions.scss)
+                        + Set alpha/transparency: alpha(--dui-color-primary, $alpha)
+                        + Modify lightness: lightness(--dui-color-primary, $amount); 
+                        + Get contrast (black/white): contrast(--dui-color-primary);
+                        + Get complement (colorful constract): complement(--dui-color-primary);
+        */
+        @include defineHslColor(--dui-color-primary, 210, 100%, 30%);
+        @include defineHslColor(--dui-color-scheme, 0, 0%, 83%);
+        @include defineHslColor(--dui-color-1, 159, 98%, 23%);
+        @include defineHslColor(--dui-color-2, 29, 100%, 37%);
+        @include defineHslColor(--dui-color-3, 344, 94%, 40%);
 
-        /* Others */
+        /* OTHERS */
         --dui-border-radius: 9px;
-
         // lg
         --dui-container-max-width: 1100px;
         --dui-container-padding: 40px;
@@ -32,18 +21,18 @@
 }
 
 //SASS variables just to ease referecing in other SCSS files
-$schemeColor: RGB(var(--dui-scheme-rgb));
-$highlightColor: RGB(var(--dui-primary-rgb));
-$contrastHighlightColor: var(--dui-primary-invert);
-$baseColor: var(--dui-base);
+$schemeColor: var(--dui-color-scheme);
+$highlightColor: var(--dui-color-primary);
+$contrastHighlightColor: contrast(--dui-color-primary);
+$baseColor: contrast(--dui-color-scheme);
 $mutedBaseColor: var(--dui-base-mute);
 
 $colorfull1: var(--dui-color-1);
 $colorfull2: var(--dui-color-2);
 $colorfull3: var(--dui-color-3);
-$contrastColorfull1: var(--dui-color-1-invert);
-$contrastColorfull2: var(--dui-color-2-invert);
-$contrastColorfull3: var(--dui-color-3-invert);
+$contrastColorfull1: contrast(--dui-color-1);
+$contrastColorfull2: contrast(--dui-color-2);
+$contrastColorfull3: contrast(--dui-color-3);
 
 $borderRadius: var(--dui-border-radius);
 $transitionDuration: 0.8s;
