@@ -1,76 +1,76 @@
 .dui-radio {
-        display: inline-block;
+  display: inline-block;
 
-        input {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-                visibility: hidden;
-        }
+  input {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+  }
 
-        .state {
-                position: absolute;
-                top: 0;
-                right: 0;
-                opacity: 1e-5;
-                pointer-events: none;
-        }
+  .state {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1e-5;
+    pointer-events: none;
+  }
 
-        .label {
-                align-items: center;
-                cursor: pointer;
-                color: $baseColor;
-                font-size: 1.1rem;
-                display: inline-flex;
-        }
+  .label {
+    align-items: center;
+    cursor: pointer;
+    color: $baseColor;
+    font-size: 1.1rem;
+    display: inline-flex;
+  }
 
-        .text {
-                transition: transform .2s ease-out;
-                border-radius: $borderRadius;
-                padding: 5px 15px;
-        }
+  .text {
+    transition: transform 0.2s ease-out;
+    border-radius: $borderRadius;
+    padding: 5px 15px;
+  }
 
-        .indicator {
-                position: relative;
-                height: 25px;
-                width: 25px;
-                border-radius: 50%;
-                overflow: hidden;
-        }
+  .indicator {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
 
-        .indicator::before,
-        .indicator::after {
-                content: '';
-                position: absolute;
-                top: 10%;
-                left: 10%;
-                height: 80%;
-                width: 80%;
-                border-radius: 50%;
-        }
+  .indicator::before,
+  .indicator::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+  }
 
-        .indicator::after {
-                background-color: $schemeColor;
-                transform: scale3d(1, 1, 1);
-                transition: opacity .25s ease-in-out, transform .25s ease-in-out;
-        }
+  .indicator::after {
+    background-color: $schemeColor;
+    transform: scale3d(1, 1, 1);
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  }
 
-        .state:checked~.label .indicator::after,
-        .label:hover .indicator::after {
-                transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
-                opacity: 0;
-        }
+  .state:checked ~ .label .indicator::after,
+  .label:hover .indicator::after {
+    transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
+    opacity: 0;
+  }
 
-        .state:checked~.label .text {
-                color: $highlightColor;
-        }
+  .state:checked ~ .label .text {
+    color: $highlightColor;
+  }
 
-        .state:focus~.label .text {
-                transform: translate3d(8px, 0, 0);
-                color: $highlightColor;
-        }
+  .state:focus ~ .label .text {
+    transform: translate3d(8px, 0, 0);
+    color: $highlightColor;
+  }
 
-        .label:hover .text {
-                color: $highlightColor;
-        }
+  .label:hover .text {
+    color: $highlightColor;
+  }
 }

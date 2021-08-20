@@ -1,16 +1,16 @@
 <div class="dropdown" id="<?= $id ?>">
-        <button type="button" class="dropdown-label">
-                <p class="scalable"><?= $label ?></p>
-        </button>
-        <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="fas fa-angle-down dropdown-arrow"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-                <?php foreach ($items as $item) : ?>
-                        <a class="dropdown-item" href="<?= $item["href"] ?? "javascript:;" ?>" value="<?= $item["value"] ?? 0 ?>"><?= $item["label"] ?></a>
-                <?php endforeach; ?>
-                <!-- <div class="dropdown-divider"></div> -->
-                <!-- <a class="dropdown-item" href="#">Separated link</a> -->
-        </div>
+  <button type="button" class="dropdown-label">
+    <p class="scalable"><?= $label ?></p>
+  </button>
+  <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="fas fa-angle-down dropdown-arrow"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <?php foreach ($items as $item) : ?>
+      <a class="dropdown-item" href="<?= $item["href"] ?? "javascript:;" ?>" value="<?= $item["value"] ?? 0 ?>"><?= $item["label"] ?></a>
+    <?php endforeach; ?>
+    <!-- <div class="dropdown-divider"></div> -->
+    <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+  </div>
 </div>

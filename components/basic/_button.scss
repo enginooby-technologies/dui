@@ -1,27 +1,27 @@
 .button-border,
 .button-wrapper {
-        display: inline-block;
-        position: relative;
-        padding: 1px;
-        border-radius: $borderRadius !important;
-        transition: $transitionDuration all ease !important;
-        -webkit-transition: $transitionDuration all ease !important;
+  display: inline-block;
+  position: relative;
+  padding: 1px;
+  border-radius: $borderRadius !important;
+  transition: $transitionDuration all ease !important;
+  -webkit-transition: $transitionDuration all ease !important;
 
-        .button {
-                color: $highlightColor;
-                border-radius: $borderRadius !important;
-                padding: 10px 30px;
-                transition: all 0.3s ease;
-                font-size: 1.3rem * $fontScale;
-                font-weight: 500 !important;
-                display: inline-block;
-                @include center_content_in_div();
+  .button {
+    color: $highlightColor;
+    border-radius: $borderRadius !important;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    font-size: 1.3rem * $fontScale;
+    font-weight: 500 !important;
+    display: inline-block;
+    @include center_content_in_div();
 
-                i {
-                        font-size: 1rem;
-                        position: relative;
-                        top: 0.5px;
-                        right: 1.5px;
-                }
-        }
+    i {
+      font-size: 1rem;
+      position: relative;
+      top: 0.5px;
+      right: 1.5px;
+    }
+  }
 }

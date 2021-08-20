@@ -1,45 +1,45 @@
-$checkbox-scale:0.5;
+$checkbox-scale: 0.5;
 
 .checkbox {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 
-        label {
-                width: 2.8rem*$checkbox-scale;
-                height: 2.8rem*$checkbox-scale;
-                cursor: pointer;
-                position: relative;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-        }
+  label {
+    width: 2.8rem * $checkbox-scale;
+    height: 2.8rem * $checkbox-scale;
+    cursor: pointer;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 
-        input {
-                display: none;
-        }
+  input {
+    display: none;
+  }
 
-        .name {
-                @include center_content_in_div();
-                font-size: 1.1rem *$fontScale;
-                margin-left: 0.35rem;
-                margin-right: 0.8rem;
-                margin-bottom: 0rem;
-        }
+  .name {
+    @include center_content_in_div();
+    font-size: 1.1rem * $fontScale;
+    margin-left: 0.35rem;
+    margin-right: 0.8rem;
+    margin-bottom: 0rem;
+  }
 
-        i {
-                width: 100%;
-                height: 100%;
-                font-weight: 700;
-                font-size: 0.9rem *$fontScale;
-                -webkit-transition: .3s ease;
-                transition: .3s ease;
-                @include center_content_in_div();
-        }
+  i {
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 0.9rem * $fontScale;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    @include center_content_in_div();
+  }
 }

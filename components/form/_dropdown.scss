@@ -1,90 +1,90 @@
 .dropdown {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-        display: inline-flex;
-        vertical-align: middle;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .dropdown button {
-        margin: 0;
-        position: relative;
-        transition: all 0.2s ease;
-        letter-spacing: 0.025em;
-        font-size: 1.1rem;
-        border-width: 0;
-        border-radius: $borderRadius;
-        color: $baseColor;
-        padding: 0.375rem 0.75rem;
+  margin: 0;
+  position: relative;
+  transition: all 0.2s ease;
+  letter-spacing: 0.025em;
+  font-size: 1.1rem;
+  border-width: 0;
+  border-radius: $borderRadius;
+  color: $baseColor;
+  padding: 0.375rem 0.75rem;
 }
 
 .dropdown button p {
-        font-size: 1.1rem;
-        color: $baseColor;
+  font-size: 1.1rem;
+  color: $baseColor;
 }
 
 // LABEL LEFT BUTTON
 .dropdown-label {
-        border-top-right-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 // TOGGLE RIGHT BUTTON
 //hide default arrow
 .dropdown-toggle::after {
-        display: none;
+  display: none;
 }
 
 .dropdown-toggle {
-        color: $highlightColor;
-        border-top-left-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
+  color: $highlightColor;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .dropdown-toggle,
 .dropdown-toggle:focus {
-        white-space: nowrap;
+  white-space: nowrap;
 }
 
 .dropdown .dropdown-arrow {
-        transition: transform 0.2s ease !important;
+  transition: transform 0.2s ease !important;
 }
 
 .dropdown.show .dropdown-arrow {
-        transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .show > .dropdown-toggle {
-        color: $highlightColor;
-        background-color: $schemeColor;
+  color: $highlightColor;
+  background-color: $schemeColor;
 }
 
 .dropdown-toggle-split {
-        padding-right: 0.7125rem;
-        padding-left: 0.7125rem;
+  padding-right: 0.7125rem;
+  padding-left: 0.7125rem;
 }
 
 //  OPTION MENU
 .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        padding: 0;
-        margin: 10px 0 0;
-        color: $mutedBaseColor;
-        text-align: left;
-        list-style: none;
-        background-clip: padding-box;
-        border-width: 0;
-        border-radius: $borderRadius;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  padding: 0;
+  margin: 10px 0 0;
+  color: $mutedBaseColor;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+  border-width: 0;
+  border-radius: $borderRadius;
 }
 
 .dropdown-item {
-        color: $mutedBaseColor;
-        transition: all 0.2s ease;
-        border-radius: $borderRadius;
-        padding: 0.5rem 1rem;
-        // width: 95%;
+  color: $mutedBaseColor;
+  transition: all 0.2s ease;
+  border-radius: $borderRadius;
+  padding: 0.5rem 1rem;
+  // width: 95%;
 }

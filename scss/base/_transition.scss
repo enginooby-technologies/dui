@@ -9,15 +9,15 @@ $transition_duration: 0.8s;
 .checkbox label,
 .segmented-control,
 .badge-border {
-        transition: $transition_duration all ease !important;
-        -webkit-transition: $transition_duration all ease !important;
+  transition: $transition_duration all ease !important;
+  -webkit-transition: $transition_duration all ease !important;
 }
 
 .form-item input {
-        transition: $transition_duration background-color ease !important;
+  transition: $transition_duration background-color ease !important;
 }
 
 .radio-selection {
-        transition: 0.4s all ease !important;
-        -webkit-transition: 0.4s all ease !important;
+  transition: 0.4s all ease !important;
+  -webkit-transition: 0.4s all ease !important;
 }

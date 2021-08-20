@@ -3,22 +3,22 @@ import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { WinXPConfig } from '../StyleConfig.js';
 
 export class WinXPStyle extends Style {
-        private static _instance: WinXPStyle = new WinXPStyle();
-        private constructor() { super(WinXPConfig) }
-        public static get Instance(): WinXPStyle {
-                WinXPStyle._instance ??= new WinXPStyle();
-                return WinXPStyle._instance;
-        }
+  private static _instance: WinXPStyle = new WinXPStyle();
+  private constructor() { super(WinXPConfig) }
+  public static get Instance(): WinXPStyle {
+    WinXPStyle._instance ??= new WinXPStyle();
+    return WinXPStyle._instance;
+  }
 
-        setupCustomizeEvents(): void { }
+  setupCustomizeEvents(): void { }
 
-        init(): void { }
+  init(): void { }
 
-        onDisable(): void { }
+  onDisable(): void { }
 
-        onHighlightColorUpdated(): void { }
+  onHighlightColorUpdated(): void { }
 
-        onSchemeColorUpdated(): void { }
+  onSchemeColorUpdated(): void { }
 
-        onBaseColorUpdated(): void { }
+  onBaseColorUpdated(): void { }
 }

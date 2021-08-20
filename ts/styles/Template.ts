@@ -3,23 +3,23 @@ import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { FlatConfig } from '../StyleConfig.js';
 
 export class Template extends Style {
-        private static _instance: Template = new Template();
-        // change this
-        private constructor() { super(FlatConfig) }
-        public static get Instance(): Template {
-                Template._instance ??= new Template();
-                return Template._instance;
-        }
+  private static _instance: Template = new Template();
+  // change this
+  private constructor() { super(FlatConfig) }
+  public static get Instance(): Template {
+    Template._instance ??= new Template();
+    return Template._instance;
+  }
 
-        setupCustomizeEvents(): void { }
+  setupCustomizeEvents(): void { }
 
-        init(): void { }
+  init(): void { }
 
-        onDisable(): void { }
+  onDisable(): void { }
 
-        onHighlightColorUpdated(): void { }
+  onHighlightColorUpdated(): void { }
 
-        onSchemeColorUpdated(): void { }
+  onSchemeColorUpdated(): void { }
 
-        onBaseColorUpdated(): void { }
+  onBaseColorUpdated(): void { }
 }

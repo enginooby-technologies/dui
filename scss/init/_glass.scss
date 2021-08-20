@@ -1,144 +1,144 @@
 .glass-style {
-        --transparency: 0.6;
-        --blur: 10px;
-        --border-size: 1px;
+  --transparency: 0.6;
+  --blur: 10px;
+  --border-size: 1px;
 
-        // TODO: Calculate derived colors from :root
-        --scheme-color-lighten: 250, 250, 250;
-        --highlight-color-darken: 3, 54, 105;
+  // TODO: Calculate derived colors from :root
+  --scheme-color-lighten: 250, 250, 250;
+  --highlight-color-darken: 3, 54, 105;
 
-        --scheme-color-rgba: rgba(var(--dui-scheme), var(--transparency));
-        // prettier-ignore
-        --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
-        // prettier-ignore
-        --highlight-color-rgba: rgba(var(--dui-primary), var(--transparency));
-        // prettier-ignore
-        --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
-        --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));
-        --group-2-color-transparent: rgba(188, 91, 0, var(--transparency));
-        --group-3-color-transparent: rgba(196, 6, 57, var(--transparency));
+  --scheme-color-rgba: rgba(var(--dui-scheme), var(--transparency));
+  // prettier-ignore
+  --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
+  // prettier-ignore
+  --highlight-color-rgba: rgba(var(--dui-primary), var(--transparency));
+  // prettier-ignore
+  --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
+  --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));
+  --group-2-color-transparent: rgba(188, 91, 0, var(--transparency));
+  --group-3-color-transparent: rgba(196, 6, 57, var(--transparency));
 
-        @mixin blur-and-border {
-                backdrop-filter: blur(var(--blur));
-                -webkit-backdrop-filter: blur(var(--blur));
-                border: var(--border-size) solid rgba(209, 213, 219, 0.6);
-        }
+  @mixin blur-and-border {
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: var(--border-size) solid rgba(209, 213, 219, 0.6);
+  }
 
-        .display-content > .container::before {
-                opacity: var(--transparency) !important;
-        }
+  .display-content > .container::before {
+    opacity: var(--transparency) !important;
+  }
 
-        .display-content > .container {
-                // background-color: var(--scheme-color-rgba) !important;
-                background-color: alpha(var(--dui-color-scheme), 0.2);
-                @include blur-and-border();
-        }
+  .display-content > .container {
+    // background-color: var(--scheme-color-rgba) !important;
+    background-color: alpha(var(--dui-color-scheme), 0.2);
+    @include blur-and-border();
+  }
 
-        .button:not(.radio-button-group .button),
-        .radio-button-group .button.active,
-        .radio-button-group .button:not(.active):hover,
-        .radio-selection,
-        table > tbody > tr:hover {
-                background-color: var(--highlight-color-rgba);
-                color: var(--highlight-color-inverted);
-                @include blur-and-border();
-        }
+  .button:not(.radio-button-group .button),
+  .radio-button-group .button.active,
+  .radio-button-group .button:not(.active):hover,
+  .radio-selection,
+  table > tbody > tr:hover {
+    background-color: var(--highlight-color-rgba);
+    color: var(--highlight-color-inverted);
+    @include blur-and-border();
+  }
 
-        .box-border,
-        .image-border,
-        .contact .form-item .form-group,
-        .segmented-control,
-        .checkbox label,
-        .setting-button-border,
-        .setting-panel,
-        .setting-button {
-                background-color: var(--scheme-color-lighten-rgba);
-                color: var(--base-color);
-                @include blur-and-border();
-        }
+  .box-border,
+  .image-border,
+  .contact .form-item .form-group,
+  .segmented-control,
+  .checkbox label,
+  .setting-button-border,
+  .setting-panel,
+  .setting-button {
+    background-color: var(--scheme-color-lighten-rgba);
+    color: var(--base-color);
+    @include blur-and-border();
+  }
 
-        // .display-content > .container.none-bg,
-        .range-slider__range,
-        .range-slider__value,
-        .modal-content {
-                // background-color: var(--scheme-color-rgba);
-                background-color: alpha(var(--dui-color-scheme), 0.2);
-                color: var(--base-color);
-                @include blur-and-border();
-        }
+  // .display-content > .container.none-bg,
+  .range-slider__range,
+  .range-slider__value,
+  .modal-content {
+    // background-color: var(--scheme-color-rgba);
+    background-color: alpha(var(--dui-color-scheme), 0.2);
+    color: var(--base-color);
+    @include blur-and-border();
+  }
 
-        .radio-button-group .button:not(.active) {
-                color: var(--highlight-color);
-        }
+  .radio-button-group .button:not(.active) {
+    color: var(--highlight-color);
+  }
 
-        .background-colorfull1:not(.fill-skillbar) {
-                background-color: var(--group-1-color-transparent);
-        }
+  .background-colorfull1:not(.fill-skillbar) {
+    background-color: var(--group-1-color-transparent);
+  }
 
-        .background-colorfull2:not(.fill-skillbar) {
-                background-color: var(--group-2-color-transparent);
-        }
+  .background-colorfull2:not(.fill-skillbar) {
+    background-color: var(--group-2-color-transparent);
+  }
 
-        .background-colorfull3:not(.fill-skillbar) {
-                background-color: var(--group-3-color-transparent);
-        }
+  .background-colorfull3:not(.fill-skillbar) {
+    background-color: var(--group-3-color-transparent);
+  }
 
-        //HOVER
-        .button:hover {
-                background-color: var(--highlight-color-darken-rgba);
-                color: var(--highlight-color-inverted);
-                @include blur-and-border();
-        }
+  //HOVER
+  .button:hover {
+    background-color: var(--highlight-color-darken-rgba);
+    color: var(--highlight-color-inverted);
+    @include blur-and-border();
+  }
 
-        // RADIO
-        .segmented-control > input:not(:checked):not(:hover) + label {
-                color: var(--base-color-muted);
-        }
+  // RADIO
+  .segmented-control > input:not(:checked):not(:hover) + label {
+    color: var(--base-color-muted);
+  }
 
-        .segmented-control > input:hover + label {
-                color: var(--highlight-color);
-        }
+  .segmented-control > input:hover + label {
+    color: var(--highlight-color);
+  }
 
-        .segmented-control > input:checked + label {
-                color: var(--highlight-color-inverted);
-        }
+  .segmented-control > input:checked + label {
+    color: var(--highlight-color-inverted);
+  }
 
-        // CHECKBOX
-        .checkbox input:not(:checked):not(:hover) ~ label i,
-        .checkbox input:not(:checked) ~ label + .name {
-                color: var(--base-color-muted);
-        }
+  // CHECKBOX
+  .checkbox input:not(:checked):not(:hover) ~ label i,
+  .checkbox input:not(:checked) ~ label + .name {
+    color: var(--base-color-muted);
+  }
 
-        .checkbox input:checked ~ label + .name,
-        .checkbox input:checked ~ label i,
-        .checkbox input:hover ~ label i {
-                color: var(--highlight-color);
-        }
+  .checkbox input:checked ~ label + .name,
+  .checkbox input:checked ~ label i,
+  .checkbox input:hover ~ label i {
+    color: var(--highlight-color);
+  }
 
-        // SCROLLBAR
-        ::-webkit-scrollbar-track {
-                background-color: var(--scheme-color-lighten-rgba);
-                @include blur-and-border();
-        }
+  // SCROLLBAR
+  ::-webkit-scrollbar-track {
+    background-color: var(--scheme-color-lighten-rgba);
+    @include blur-and-border();
+  }
 
-        ::-webkit-scrollbar-thumb {
-                background-color: var(--highlight-color-rgba);
-                @include blur-and-border();
-        }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--highlight-color-rgba);
+    @include blur-and-border();
+  }
 
-        ::-webkit-scrollbar-thumb:hover {
-                background: var(--highlight-color-darken-rgba);
-                @include blur-and-border();
-        }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight-color-darken-rgba);
+    @include blur-and-border();
+  }
 
-        // RANGE SLIDER
-        ::-webkit-slider-thumb {
-                background-color: var(--highlight-color-rgba);
-                @include blur-and-border();
-        }
+  // RANGE SLIDER
+  ::-webkit-slider-thumb {
+    background-color: var(--highlight-color-rgba);
+    @include blur-and-border();
+  }
 
-        ::-webkit-slider-thumb:hover {
-                background: var(--highlight-color-darken-rgba);
-                @include blur-and-border();
-        }
+  ::-webkit-slider-thumb:hover {
+    background: var(--highlight-color-darken-rgba);
+    @include blur-and-border();
+  }
 }

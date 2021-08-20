@@ -1,31 +1,31 @@
 // TODO: split to each component and delete this file
 @media (min-width: 576px) {
-        .container {
-                max-width: 540px;
-        }
+  .container {
+    max-width: 540px;
+  }
 }
 @media (min-width: 768px) {
-        .container {
-                max-width: 720px;
-        }
+  .container {
+    max-width: 720px;
+  }
 }
 @media (min-width: 992px) {
-        .container {
-                max-width: 960px;
-        }
+  .container {
+    max-width: 960px;
+  }
 }
 @media (min-width: 1200px) {
-        .container {
-                max-width: 1140px;
-        }
+  .container {
+    max-width: 1140px;
+  }
 }
 
 @media (min-width: 1200px) {
-        .display-content > .container {
-                max-width: var(--dui-container-max-width);
-        }
+  .display-content > .container {
+    max-width: var(--dui-container-max-width);
+  }
 
-        .display-content > .container {
-                padding: var(--dui-container-padding);
-        }
+  .display-content > .container {
+    padding: var(--dui-container-padding);
+  }
 }

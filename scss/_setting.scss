@@ -4,195 +4,195 @@
 
 // SETTING BUTTON
 .setting-button-border {
-        border-left: none !important;
-        top: 75px;
-        z-index: 1000;
-        position: fixed;
-        transition: all 0.3s ease;
-        transition: left 0.7s ease;
-        display: block;
-        height: 40px;
-        left: 0;
-        width: 40px;
-        border-top-left-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
+  border-left: none !important;
+  top: 75px;
+  z-index: 1000;
+  position: fixed;
+  transition: all 0.3s ease;
+  transition: left 0.7s ease;
+  display: block;
+  height: 40px;
+  left: 0;
+  width: 40px;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 
-        .setting-button {
-                border-top-left-radius: 0 !important;
-                border-bottom-left-radius: 0 !important;
-                position: fixed;
-                height: 98%;
-        }
+  .setting-button {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    position: fixed;
+    height: 98%;
+  }
 
-        .cp-toggle {
-                position: fixed;
-        }
+  .cp-toggle {
+    position: fixed;
+  }
 
-        a {
-                width: 40px;
-                height: 40px;
-                display: block;
-                text-align: center;
-        }
+  a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+  }
 
-        i {
-                // position: absolute !important;
-                font-size: 1.25rem;
-                line-height: 40px;
-        }
+  i {
+    // position: absolute !important;
+    font-size: 1.25rem;
+    line-height: 40px;
+  }
 }
 
 //SETTING MAIN PANEL
 $panelWidth: 180px;
 
 .setting-section .setting-panel {
-        top: 75px;
-        z-index: 1000;
-        position: fixed;
-        transition: opacity 0.3s ease;
-        width: $panelWidth;
-        left: 55px;
+  top: 75px;
+  z-index: 1000;
+  position: fixed;
+  transition: opacity 0.3s ease;
+  width: $panelWidth;
+  left: 55px;
 
-        * {
-                transition: opacity 0s ease !important;
-        }
+  * {
+    transition: opacity 0s ease !important;
+  }
 
-        .title-bar {
-                display: none;
-        }
+  .title-bar {
+    display: none;
+  }
 
-        // TEXT
-        p:not(.option-label) {
-                font-size: 1.1rem * $fontScale;
-                margin-bottom: 6px;
-        }
+  // TEXT
+  p:not(.option-label) {
+    font-size: 1.1rem * $fontScale;
+    margin-bottom: 6px;
+  }
 
-        p.option-label {
-                text-align: center;
-                font-size: 1.4rem * $fontScale;
-                margin-top: 10px;
-                margin-bottom: 8px;
-                font-weight: 800;
-                display: block;
-        }
+  p.option-label {
+    text-align: center;
+    font-size: 1.4rem * $fontScale;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-weight: 800;
+    display: block;
+  }
 
-        .customizer p.option-label {
-                margin-top: 0;
-        }
+  .customizer p.option-label {
+    margin-top: 0;
+  }
 
-        // DROPDOWN
-        .dropdown .dropdown-label {
-                min-width: 110px;
-                max-width: 120px;
-        }
+  // DROPDOWN
+  .dropdown .dropdown-label {
+    min-width: 110px;
+    max-width: 120px;
+  }
 
-        // BUTTON-RADIO
-        .radio-button-group .button-border {
-                display: inline-block;
+  // BUTTON-RADIO
+  .radio-button-group .button-border {
+    display: inline-block;
 
-                // BUTTON
-                .button {
-                        padding: 8px 20px;
-                }
-        }
+    // BUTTON
+    .button {
+      padding: 8px 20px;
+    }
+  }
 
-        // RADIO
-        .radio-group-wrapper {
-                padding: 1px 64px;
-                $borderWidthDemo: 4px;
-                margin-left: -10px;
+  // RADIO
+  .radio-group-wrapper {
+    padding: 1px 64px;
+    $borderWidthDemo: 4px;
+    margin-left: -10px;
 
-                .text {
-                        margin-left: 10px;
-                }
+    .text {
+      margin-left: 10px;
+    }
 
-                #solid-border ~ label .text {
-                        border: $borderWidthDemo solid $mutedBaseColor;
-                }
+    #solid-border ~ label .text {
+      border: $borderWidthDemo solid $mutedBaseColor;
+    }
 
-                #double-border ~ label .text {
-                        border: $borderWidthDemo double $mutedBaseColor;
-                }
+    #double-border ~ label .text {
+      border: $borderWidthDemo double $mutedBaseColor;
+    }
 
-                #dotted-border ~ label .text {
-                        border: $borderWidthDemo dotted $mutedBaseColor;
-                }
+    #dotted-border ~ label .text {
+      border: $borderWidthDemo dotted $mutedBaseColor;
+    }
 
-                #dashed-border ~ label .text {
-                        border: $borderWidthDemo dashed $mutedBaseColor;
-                }
-        }
+    #dashed-border ~ label .text {
+      border: $borderWidthDemo dashed $mutedBaseColor;
+    }
+  }
 
-        // RANGE SLIDER
-        .range-slider__range {
-                width: 6rem;
-        }
+  // RANGE SLIDER
+  .range-slider__range {
+    width: 6rem;
+  }
 
-        // BACKGROUND OPTION
-        #background-panel .dropdown .dropdown-label {
-                pointer-events: none;
-        }
+  // BACKGROUND OPTION
+  #background-panel .dropdown .dropdown-label {
+    pointer-events: none;
+  }
 }
 
 .setting-panel.hide {
-        // left: -$panelWidth;
-        opacity: 0;
-        visibility: hidden;
+  // left: -$panelWidth;
+  opacity: 0;
+  visibility: hidden;
 
-        // disable buttons instantly when close the setting panel
-        .radio-button-group .button-border,
-        .radio-button-group .button-border .button {
-                // make
-                transition: opacity 0s linear !important;
-        }
+  // disable buttons instantly when close the setting panel
+  .radio-button-group .button-border,
+  .radio-button-group .button-border .button {
+    // make
+    transition: opacity 0s linear !important;
+  }
 }
 
 .setting-panel.show {
-        // left: 0;
-        opacity: 1;
-        visibility: visible;
+  // left: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .setting-section .scrollable {
-        padding-top: 1rem;
-        border-radius: 0;
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: 475px; //TODO: caculate this for reponsiveness
+  padding-top: 1rem;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 475px; //TODO: caculate this for reponsiveness
 }
 
 .setting-save-panel {
-        height: 45px;
-        padding-top: 8px;
+  height: 45px;
+  padding-top: 8px;
 }
 
 $scrollbarRadius: 16px;
 
 .setting-section .scrollable::-webkit-scrollbar {
-        width: 7px !important;
+  width: 7px !important;
 }
 
 .setting-section .scrollable::-webkit-scrollbar-track {
-        // border-radius: 0 !important;
-        // box-shadow: none !important;
-        // background: transparent !important;
+  // border-radius: 0 !important;
+  // box-shadow: none !important;
+  // background: transparent !important;
 }
 
 .setting-section .scrollable::-webkit-scrollbar-thumb {
-        border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .theme-skin {
-        margin: 0;
-        padding: 8px 0 0 0;
+  margin: 0;
+  padding: 8px 0 0 0;
 }
 
 #color-panel label {
-        font-size: 1.1rem * $fontScale !important;
-        margin-bottom: 0.2rem !important;
+  font-size: 1.1rem * $fontScale !important;
+  margin-bottom: 0.2rem !important;
 }
 
 .color-picker {
-        margin: auto;
-        display: block;
+  margin: auto;
+  display: block;
 }

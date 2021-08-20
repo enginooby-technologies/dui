@@ -1,126 +1,126 @@
 .flat-style {
-        --flat-scheme-distinct-intensity: 13%; // distinct sub-containers from its container
-        --flat-primary-distinct-intensity: -18%; //for  hover, active button
-        // prettier-ignore
-        $schemeDistinct: lightness(--dui-color-scheme, var(--flat-scheme-distinct-intensity));
-        // prettier-ignore
-        $primaryDistinct: lightness(--dui-color-primary, var(--flat-primary-distinct-intensity));
+  --flat-scheme-distinct-intensity: 13%; // distinct sub-containers from its container
+  --flat-primary-distinct-intensity: -18%; //for  hover, active button
+  // prettier-ignore
+  $schemeDistinct: lightness(--dui-color-scheme, var(--flat-scheme-distinct-intensity));
+  // prettier-ignore
+  $primaryDistinct: lightness(--dui-color-primary, var(--flat-primary-distinct-intensity));
 
-        /*-------------------------
+  /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
-        .code-block {
-                background-color: $schemeDistinct;
-        }
+  .code-block {
+    background-color: $schemeDistinct;
+  }
 
-        /*-------------------------
+  /*-------------------------
       FORM COMPONENTS
 -------------------------*/
-        // INPUT
-        .form-item {
-                .form-group {
-                        .form-control {
-                                background-color: $schemeDistinct;
-                        }
-                }
-        }
+  // INPUT
+  .form-item {
+    .form-group {
+      .form-control {
+        background-color: $schemeDistinct;
+      }
+    }
+  }
 
-        /*-------------------------
+  /*-------------------------
       ELEMENTS
 -------------------------*/
-        //BUTTON
-        .button:not(.radio-button-group .button) {
-                background-color: $highlightColor;
-                color: $contrastHighlightColor;
-        }
+  //BUTTON
+  .button:not(.radio-button-group .button) {
+    background-color: $highlightColor;
+    color: $contrastHighlightColor;
+  }
 
-        .button:hover {
-                background-color: $primaryDistinct;
-        }
+  .button:hover {
+    background-color: $primaryDistinct;
+  }
 
-        //  BUTTON RADIO
-        .radio-button-group {
-                .button.active,
-                .button:not(.active):hover {
-                        background-color: $highlightColor;
-                        color: $contrastHighlightColor;
-                }
+  //  BUTTON RADIO
+  .radio-button-group {
+    .button.active,
+    .button:not(.active):hover {
+      background-color: $highlightColor;
+      color: $contrastHighlightColor;
+    }
 
-                .button:not(.active) {
-                        color: $highlightColor;
-                }
-        }
+    .button:not(.active) {
+      color: $highlightColor;
+    }
+  }
 
-        .radio-selection,
-        table > tbody > tr:hover {
-                background-color: $highlightColor;
-                color: $contrastHighlightColor;
-        }
+  .radio-selection,
+  table > tbody > tr:hover {
+    background-color: $highlightColor;
+    color: $contrastHighlightColor;
+  }
 
-        .box-border,
-        .image-border,
-        .contact .form-item .form-group,
-        .segmented-control,
-        .checkbox label,
-        .setting-button-border,
-        .setting-panel,
-        .setting-button {
-                background-color: $schemeDistinct;
-                color: $baseColor;
-        }
+  .box-border,
+  .image-border,
+  .contact .form-item .form-group,
+  .segmented-control,
+  .checkbox label,
+  .setting-button-border,
+  .setting-panel,
+  .setting-button {
+    background-color: $schemeDistinct;
+    color: $baseColor;
+  }
 
-        .display-content > .container.none-bg,
-        .range-slider__range,
-        .range-slider__value,
-        .modal-content {
-                background-color: $schemeColor;
-                color: $baseColor;
-        }
+  .display-content > .container.none-bg,
+  .range-slider__range,
+  .range-slider__value,
+  .modal-content {
+    background-color: $schemeColor;
+    color: $baseColor;
+  }
 
-        // SEGMENTED CONTROL
-        .segmented-control > input:not(:checked):not(:hover) + label {
-                color: $mutedBaseColor;
-        }
+  // SEGMENTED CONTROL
+  .segmented-control > input:not(:checked):not(:hover) + label {
+    color: $mutedBaseColor;
+  }
 
-        .segmented-control > input:hover + label {
-                color: $highlightColor;
-        }
+  .segmented-control > input:hover + label {
+    color: $highlightColor;
+  }
 
-        .segmented-control > input:checked + label {
-                color: $contrastHighlightColor;
-        }
+  .segmented-control > input:checked + label {
+    color: $contrastHighlightColor;
+  }
 
-        // CHECKBOX
-        .checkbox input:not(:checked):not(:hover) ~ label i,
-        .checkbox input:not(:checked) ~ label + .name {
-                color: $mutedBaseColor;
-        }
+  // CHECKBOX
+  .checkbox input:not(:checked):not(:hover) ~ label i,
+  .checkbox input:not(:checked) ~ label + .name {
+    color: $mutedBaseColor;
+  }
 
-        .checkbox input:checked ~ label + .name,
-        .checkbox input:checked ~ label i,
-        .checkbox input:hover ~ label i {
-                color: $highlightColor;
-        }
+  .checkbox input:checked ~ label + .name,
+  .checkbox input:checked ~ label i,
+  .checkbox input:hover ~ label i {
+    color: $highlightColor;
+  }
 
-        // SCROLLBAR
-        ::-webkit-scrollbar-track {
-                background-color: $schemeDistinct;
-        }
+  // SCROLLBAR
+  ::-webkit-scrollbar-track {
+    background-color: $schemeDistinct;
+  }
 
-        ::-webkit-scrollbar-thumb {
-                background-color: $highlightColor;
-        }
+  ::-webkit-scrollbar-thumb {
+    background-color: $highlightColor;
+  }
 
-        ::-webkit-scrollbar-thumb:hover {
-                background: $primaryDistinct;
-        }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primaryDistinct;
+  }
 
-        // RANGE SLIDER
-        ::-webkit-slider-thumb {
-                background-color: $highlightColor;
-        }
+  // RANGE SLIDER
+  ::-webkit-slider-thumb {
+    background-color: $highlightColor;
+  }
 
-        ::-webkit-slider-thumb:hover {
-                background-color: $primaryDistinct;
-        }
+  ::-webkit-slider-thumb:hover {
+    background-color: $primaryDistinct;
+  }
 }

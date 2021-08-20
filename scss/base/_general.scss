@@ -5,117 +5,117 @@
 .form-control,
 .form-control:focus,
 .form-control:hover {
-        background-color: transparent;
+  background-color: transparent;
 }
 
 label.form-control {
-        background: none;
-        border: none;
+  background: none;
+  border: none;
 }
 // placeholder text
 .form-control::placeholder {
-        opacity: 1;
+  opacity: 1;
 }
 
 /* CONTAINER COMPONENTS */
 
 .box-border {
-        background-color: #f1f3f6;
-        padding: 15px 20px 7px;
+  background-color: #f1f3f6;
+  padding: 15px 20px 7px;
 }
 
 .border-style {
-        height: 2px;
-        width: 65px;
-        margin: 16px auto;
-        transition: all 0.5s;
+  height: 2px;
+  width: 65px;
+  margin: 16px auto;
+  transition: all 0.5s;
 }
 
 .resume-title:hover .border-style {
-        width: 90px;
+  width: 90px;
 }
 
 .icon-image i {
-        font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .icon-image img {
-        width: 45px;
-        height: 45px;
+  width: 45px;
+  height: 45px;
 }
 
 /*TABLE */
 table.neumorphic {
-        border-spacing: 0;
-        overflow: hidden;
-        text-align: center;
-        position: relative;
+  border-spacing: 0;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
 }
 
 table.neumorphic th {
-        font-size: 1.35rem * $fontScale;
-        padding: 7px;
-        white-space: pre;
+  font-size: 1.35rem * $fontScale;
+  padding: 7px;
+  white-space: pre;
 }
 
 table.neumorphic tbody {
-        font-size: 1.2rem * $fontScale;
+  font-size: 1.2rem * $fontScale;
 }
 
 table.neumorphic > tbody > tr > td {
-        padding: 10px;
-        position: relative;
+  padding: 10px;
+  position: relative;
 }
 
 table.neumorphic tr td:first-child::before {
-        content: "";
-        position: absolute;
-        padding: 7px;
-        top: 0;
-        left: -5000px;
-        width: 10000px;
-        height: 100%;
-        z-index: -10;
+  content: "";
+  position: absolute;
+  padding: 7px;
+  top: 0;
+  left: -5000px;
+  width: 10000px;
+  height: 100%;
+  z-index: -10;
 }
 
 table.neumorphic td:hover::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: -5000px;
-        height: 10000px;
-        width: 100%;
-        z-index: -1;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
 }
 
 /* IMAGE */
 img.lazy,
 video.lazy {
-        opacity: 0;
-        transition: opacity 0.8s ease;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 img.lazy.loaded,
 video.lazy.loaded {
-        opacity: 1;
+  opacity: 1;
 }
 
 .image-border {
-        background-color: #f1f3f6;
-        padding: 5px;
+  background-color: #f1f3f6;
+  padding: 5px;
 }
 
 .image-border img {
-        width: 100%;
+  width: 100%;
 }
 
 // DIVIDER
 hr {
-        box-sizing: content-box;
-        height: 0;
-        overflow: visible;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }

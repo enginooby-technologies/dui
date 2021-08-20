@@ -18,96 +18,96 @@ $range-label-color: $shade-10 !default;
 $range-label-width: 2rem !default;
 
 .range-slider {
-        width: $range-width;
-        margin: 10px 0 10px 0;
-        display: inline !important;
+  width: $range-width;
+  margin: 10px 0 10px 0;
+  display: inline !important;
 
-        label {
-                border-radius: $borderRadius;
-                color: $baseColor;
-                font-size: 1.1rem * $fontScale !important;
-                display: block;
-                margin: 1.5 * $sliderMargin 0 $sliderMargin;
-        }
+  label {
+    border-radius: $borderRadius;
+    color: $baseColor;
+    font-size: 1.1rem * $fontScale !important;
+    display: block;
+    margin: 1.5 * $sliderMargin 0 $sliderMargin;
+  }
 }
 
 .range-slider__range {
-        border-radius: $borderRadius;
-        -webkit-appearance: none;
-        width: calc(100% - (#{$range-label-width + 0.8rem}));
-        height: $range-track-height;
-        outline: none;
-        padding: 0;
-        margin: 0;
+  border-radius: $borderRadius;
+  -webkit-appearance: none;
+  width: calc(100% - (#{$range-label-width + 0.8rem}));
+  height: $range-track-height;
+  outline: none;
+  padding: 0;
+  margin: 0;
 
-        &::-webkit-slider-thumb {
-                appearance: none;
-                width: $range-handle-size;
-                height: $range-handle-size;
-                border-radius: 100%;
-                cursor: pointer;
-                transition: background 0.15s ease-in-out;
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
 
-                &:hover {
-                }
-        }
+    &:hover {
+    }
+  }
 
-        &:active::-webkit-slider-thumb {
-        }
+  &:active::-webkit-slider-thumb {
+  }
 
-        &::-moz-range-thumb {
-                width: $range-handle-size;
-                height: $range-handle-size;
-                border: 0;
-                border-radius: 50%;
-                cursor: pointer;
-                transition: background 0.15s ease-in-out;
+  &::-moz-range-thumb {
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
 
-                &:hover {
-                }
-        }
+    &:hover {
+    }
+  }
 
-        &:active::-moz-range-thumb {
-        }
+  &:active::-moz-range-thumb {
+  }
 }
 
 .range-slider__value {
-        display: inline-block;
-        position: relative;
-        width: $range-label-width;
-        line-height: 20px;
-        text-align: center;
-        justify-content: center;
-        border-radius: 100%;
-        background: $range-label-color;
-        margin-left: 8px;
-        -webkit-transition: all 0.3s ease;
-        transition: all 0.3s ease;
-        font-style: italic;
-        font-size: 1rem * $fontScale !important;
-        border-radius: $borderRadius;
-        color: $mutedBaseColor;
+  display: inline-block;
+  position: relative;
+  width: $range-label-width;
+  line-height: 20px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 100%;
+  background: $range-label-color;
+  margin-left: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-style: italic;
+  font-size: 1rem * $fontScale !important;
+  border-radius: $borderRadius;
+  color: $mutedBaseColor;
 }
 
 .range-slider__value .after {
-        position: absolute;
-        top: 8px;
-        left: -7px;
-        width: 0;
-        height: 0;
-        border-top: 7px solid transparent;
-        border-right: 7px solid $range-label-color;
-        border-bottom: 7px solid transparent;
-        content: "";
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid $range-label-color;
+  border-bottom: 7px solid transparent;
+  content: "";
 }
 
 // Firefox Overrides
 ::-moz-range-track {
-        background: $range-track-color;
-        border: 0;
+  background: $range-track-color;
+  border: 0;
 }
 
 input::-moz-focus-inner,
 input::-moz-focus-outer {
-        border: 0;
+  border: 0;
 }

@@ -1,310 +1,306 @@
 .neu-style {
-        --neu-distance-x: 3px;
-        --neu-distance-y: 3px;
-        --neu-blur: 4px;
-        --neu-spread: 0px;
-        --neu-lighten-intensity: 6.9%;
-        --neu-darken-intensity: 6.9%;
-        --neu-surface-curvature: 0%;
-        --neu-border-width: 0px;
-        --neu-border-brightness: -6.9%;
-        --neu-border-style: solid;
+  --neu-distance-x: 3px;
+  --neu-distance-y: 3px;
+  --neu-blur: 4px;
+  --neu-spread: 0px;
+  --neu-lighten-intensity: 6.9%;
+  --neu-darken-intensity: 6.9%;
+  --neu-surface-curvature: 0%;
+  --neu-border-width: 0px;
+  --neu-border-brightness: -6.9%;
+  --neu-border-style: solid;
 
-        // prettier-ignore
-        $lightenSurface: lightness(--dui-color-scheme, var(--neu-surface-curvature));
-        // prettier-ignore
-        $darkenSurface: lightness(--dui-color-scheme, calc(var(--neu-surface-curvature) * -1));
-        // prettier-ignore
-        $bgSurface: linear-gradient(145deg,$lightenSurface,$darkenSurface );
+  // prettier-ignore
+  $lightenSurface: lightness(--dui-color-scheme, var(--neu-surface-curvature));
+  // prettier-ignore
+  $darkenSurface: lightness(--dui-color-scheme, calc(var(--neu-surface-curvature) * -1));
+  // prettier-ignore
+  $bgSurface: linear-gradient(145deg,$lightenSurface,$darkenSurface );
 
-        $dx: var(--neu-distance-x);
-        $ndx: calc(#{var(--neu-distance-x)} * -1);
-        $dy: var(--neu-distance-y);
-        $ndy: calc(#{var(--neu-distance-y)} * -1);
-        $b: var(--neu-blur);
-        $s: var(--neu-spread);
-        // lighten & darken scheme color for shadows
-        $scl: lightness(--dui-color-scheme, var(--neu-lighten-intensity));
-        $scd: lightness(
-                --dui-color-scheme,
-                calc(var(--neu-darken-intensity) * -1)
-        );
-        //prettier-ignore
-        $dropBoxShadow: $dx $dy $b $s $scd, $ndx $ndy $b $s $scl;
-        $insetBoxShadow: inset $dx $dy $b $s $scd, inset $ndx $ndy $b $scl;
-        // to unquote when referencing: #{$concaveBoxShadow};
-        $concaveBoxShadow: "#{$dropBoxShadow},  #{$insetBoxShadow}";
-        // prettier-ignore
-        $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,inset $dx $dy $b $s$scl;
+  $dx: var(--neu-distance-x);
+  $ndx: calc(#{var(--neu-distance-x)} * -1);
+  $dy: var(--neu-distance-y);
+  $ndy: calc(#{var(--neu-distance-y)} * -1);
+  $b: var(--neu-blur);
+  $s: var(--neu-spread);
+  // lighten & darken scheme color for shadows
+  $scl: lightness(--dui-color-scheme, var(--neu-lighten-intensity));
+  $scd: lightness(--dui-color-scheme, calc(var(--neu-darken-intensity) * -1));
+  //prettier-ignore
+  $dropBoxShadow: $dx $dy $b $s $scd, $ndx $ndy $b $s $scl;
+  $insetBoxShadow: inset $dx $dy $b $s $scd, inset $ndx $ndy $b $scl;
+  // to unquote when referencing: #{$concaveBoxShadow};
+  $concaveBoxShadow: "#{$dropBoxShadow},  #{$insetBoxShadow}";
+  // prettier-ignore
+  $thumbScrollbarBoxShadow: inset $ndx $ndy $b $s $scd,inset $dx $dy $b $s$scl;
 
-        // prettier-ignore
-        $neu-border:var(--neu-border-width) var(--neu-border-style) lightness(--dui-color-scheme, var(--neu-border-brightness)) ;
+  // prettier-ignore
+  $neu-border:var(--neu-border-width) var(--neu-border-style) lightness(--dui-color-scheme, var(--neu-border-brightness)) ;
 
-        /*-------------------------
+  /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
-        //add an overlay scheme color on the background image
-        .display-content > .container::before {
-                // box-shadow: inset 0 0 0 2000px rgba(var(--scheme-color), 0.85); // PARAM
-        }
+  //add an overlay scheme color on the background image
+  .display-content > .container::before {
+    // box-shadow: inset 0 0 0 2000px rgba(var(--scheme-color), 0.85); // PARAM
+  }
 
-        //add a border  on the background image
-        .display-content > .container:not(.none-bg) {
-                // prettier-ignore
-                @include border_pseudo_before(5px, $borderRadius ,$schemeColor, $dropBoxShadow);
-        }
+  //add a border  on the background image
+  .display-content > .container:not(.none-bg) {
+    // prettier-ignore
+    @include border_pseudo_before(5px, $borderRadius ,$schemeColor, $dropBoxShadow);
+  }
 
-        .setting-panel {
-                box-shadow: $insetBoxShadow;
-        }
-        /*-------------------------
+  .setting-panel {
+    box-shadow: $insetBoxShadow;
+  }
+  /*-------------------------
       FORM COMPONENTS
 -------------------------*/
-        //RADIO
-        .dui-radio {
-                $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px$scd,
-                        4px 2px 8px 0px$scl;
-                $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px$scl,
-                        4px 2px 8px 0px$scd;
+  //RADIO
+  .dui-radio {
+    $radioIndicatorUncheckedBoxShadow: -4px -2px 4px 0px$scd,
+      4px 2px 8px 0px$scl;
+    $radioIndicatorCheckedBoxShadow: -4px -2px 4px 0px$scl, 4px 2px 8px 0px$scd;
 
-                .indicator {
-                        box-shadow: $dropBoxShadow;
-                }
+    .indicator {
+      box-shadow: $dropBoxShadow;
+    }
 
-                .indicator::before {
-                        box-shadow: $radioIndicatorUncheckedBoxShadow;
-                }
+    .indicator::before {
+      box-shadow: $radioIndicatorUncheckedBoxShadow;
+    }
 
-                .indicator::after {
-                        box-shadow: $radioIndicatorCheckedBoxShadow;
-                }
-        }
+    .indicator::after {
+      box-shadow: $radioIndicatorCheckedBoxShadow;
+    }
+  }
 
-        // RANGE SLIDER
-        .range-slider {
-                .range-slider__value {
-                        background: $bgSurface;
-                        box-shadow: $dropBoxShadow;
-                        border: $neu-border;
-                }
+  // RANGE SLIDER
+  .range-slider {
+    .range-slider__value {
+      background: $bgSurface;
+      box-shadow: $dropBoxShadow;
+      border: $neu-border;
+    }
 
-                .range-slider__range {
-                        background: $bgSurface;
-                        box-shadow: $insetBoxShadow;
-                        border: $neu-border;
-                }
+    .range-slider__range {
+      background: $bgSurface;
+      box-shadow: $insetBoxShadow;
+      border: $neu-border;
+    }
 
-                ::-webkit-slider-thumb {
-                        background-color: $schemeColor;
-                        box-shadow: $dropBoxShadow;
-                        border: $neu-border;
-                }
+    ::-webkit-slider-thumb {
+      background-color: $schemeColor;
+      box-shadow: $dropBoxShadow;
+      border: $neu-border;
+    }
 
-                ::-webkit-slider-thumb:hover,
-                input[type="range"]:focus {
-                        box-shadow: #{$concaveBoxShadow};
-                }
+    ::-webkit-slider-thumb:hover,
+    input[type="range"]:focus {
+      box-shadow: #{$concaveBoxShadow};
+    }
 
-                ::-webkit-slider-thumb {
-                        background: $bgSurface;
-                }
-        }
+    ::-webkit-slider-thumb {
+      background: $bgSurface;
+    }
+  }
 
-        // DROPDOWN
-        .dropdown {
-                button.focus,
-                button:focus,
-                .dropdown-label {
-                        box-shadow: $dropBoxShadow;
-                        background: $bgSurface;
-                }
+  // DROPDOWN
+  .dropdown {
+    button.focus,
+    button:focus,
+    .dropdown-label {
+      box-shadow: $dropBoxShadow;
+      background: $bgSurface;
+    }
 
-                .dropdown-toggle {
-                        background: $bgSurface;
-                }
+    .dropdown-toggle {
+      background: $bgSurface;
+    }
 
-                button,
-                button:hover,
-                .dropdown-item:hover {
-                        background-color: $schemeColor;
-                }
+    button,
+    button:hover,
+    .dropdown-item:hover {
+      background-color: $schemeColor;
+    }
 
-                .dropdown-menu {
-                        background: $bgSurface;
-                        box-shadow: $insetBoxShadow;
-                        background-color: $schemeColor;
-                        padding: 10px;
-                }
+    .dropdown-menu {
+      background: $bgSurface;
+      box-shadow: $insetBoxShadow;
+      background-color: $schemeColor;
+      padding: 10px;
+    }
 
-                &.show .dropdown-toggle,
-                button:hover {
-                        box-shadow: #{$concaveBoxShadow};
-                }
+    &.show .dropdown-toggle,
+    button:hover {
+      box-shadow: #{$concaveBoxShadow};
+    }
 
-                .dropdown-item:hover {
-                        box-shadow: $dropBoxShadow;
-                }
+    .dropdown-item:hover {
+      box-shadow: $dropBoxShadow;
+    }
 
-                button:hover,
-                .dropdown-item:hover {
-                        color: $highlightColor;
-                }
-        }
+    button:hover,
+    .dropdown-item:hover {
+      color: $highlightColor;
+    }
+  }
 
-        .dropdown .dropdown-toggle {
-                box-shadow: 3px 3px 4px$scd, 0px -3px 4px$scl;
-        }
+  .dropdown .dropdown-toggle {
+    box-shadow: 3px 3px 4px$scd, 0px -3px 4px$scl;
+  }
 
-        // CHECKBOX
-        .checkbox {
-                label {
-                        background: $bgSurface !important;
-                        border: $neu-border;
-                }
-        }
+  // CHECKBOX
+  .checkbox {
+    label {
+      background: $bgSurface !important;
+      border: $neu-border;
+    }
+  }
 
-        // INPUT & TEXAREA
-        .form-group {
-                input,
-                textarea {
-                        background: $bgSurface !important;
-                        border: $neu-border;
-                }
-        }
+  // INPUT & TEXAREA
+  .form-group {
+    input,
+    textarea {
+      background: $bgSurface !important;
+      border: $neu-border;
+    }
+  }
 
-        // SEGMENTED-CONTROL
-        .segmented-control {
-                background: $bgSurface;
-                border: $neu-border;
-                .radio-selection {
-                        border: $neu-border;
-                }
-        }
+  // SEGMENTED-CONTROL
+  .segmented-control {
+    background: $bgSurface;
+    border: $neu-border;
+    .radio-selection {
+      border: $neu-border;
+    }
+  }
 
-        // TOGGLE
-        .toggle {
-                border: $neu-border;
-                .indicator {
-                        border: $neu-border;
-                }
-        }
+  // TOGGLE
+  .toggle {
+    border: $neu-border;
+    .indicator {
+      border: $neu-border;
+    }
+  }
 
-        /*-------------------------
+  /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
-        // CODE BLOCK
-        .code-block {
-                box-shadow: $insetBoxShadow;
-                background: $bgSurface;
-                border: $neu-border;
-        }
+  // CODE BLOCK
+  .code-block {
+    box-shadow: $insetBoxShadow;
+    background: $bgSurface;
+    border: $neu-border;
+  }
 
-        //
-        .badge-border {
-                background: $bgSurface;
-        }
-        .image-border {
-                background: $bgSurface;
-                border: $neu-border;
-        }
-        .box-border {
-                background: $bgSurface;
-                border: $neu-border;
-        }
-        .setting-panel {
-                border: $neu-border;
-                background: $bgSurface;
-        }
+  //
+  .badge-border {
+    background: $bgSurface;
+  }
+  .image-border {
+    background: $bgSurface;
+    border: $neu-border;
+  }
+  .box-border {
+    background: $bgSurface;
+    border: $neu-border;
+  }
+  .setting-panel {
+    border: $neu-border;
+    background: $bgSurface;
+  }
 
-        // TABLE
-        table {
-                border: $neu-border;
-                thead {
-                        background: $bgSurface;
-                }
-        }
+  // TABLE
+  table {
+    border: $neu-border;
+    thead {
+      background: $bgSurface;
+    }
+  }
 
-        // PROJECT-SPECIFIC
-        .blog {
-                .blog-intro {
-                        background: $bgSurface;
-                        border: $neu-border;
-                }
-                .blog-image .after {
-                        border: $neu-border;
-                }
-        }
-        .portfolio-single {
-                .modal-content {
-                        background: $bgSurface;
-                }
-        }
+  // PROJECT-SPECIFIC
+  .blog {
+    .blog-intro {
+      background: $bgSurface;
+      border: $neu-border;
+    }
+    .blog-image .after {
+      border: $neu-border;
+    }
+  }
+  .portfolio-single {
+    .modal-content {
+      background: $bgSurface;
+    }
+  }
 
-        /* TEXT DROP SHADOW */
-        // $x: 2.5;
-        // $y: 2.5;
-        // $z: 3;
-        // $textDropShadow : -#{$x}px -#{$y}px #{$z}px$scl,
-        // #{$x}px #{$y}px #{$z}px$scd;
-        // .title-wrapper {
-        //         opacity: 1;
-        //         margin-bottom: 2rem;
-        //         margin-top: -1.5rem !important;
-        // }
+  /* TEXT DROP SHADOW */
+  // $x: 2.5;
+  // $y: 2.5;
+  // $z: 3;
+  // $textDropShadow : -#{$x}px -#{$y}px #{$z}px$scl,
+  // #{$x}px #{$y}px #{$z}px$scd;
+  // .title-wrapper {
+  //         opacity: 1;
+  //         margin-bottom: 2rem;
+  //         margin-top: -1.5rem !important;
+  // }
 
-        // .title-wrapper span {
-        //         text-shadow: $textDropShadow;
-        //         color: $schemeColor;
-        //         font-size: 3.5rem;
-        // }
+  // .title-wrapper span {
+  //         text-shadow: $textDropShadow;
+  //         color: $schemeColor;
+  //         font-size: 3.5rem;
+  // }
 
-        // .title-content {
-        //         display: none;
-        // }
+  // .title-content {
+  //         display: none;
+  // }
 
-        /*-------------------------
+  /*-------------------------
       BASIC COMPONENTS
 -------------------------*/
-        /* BUTTON */
+  /* BUTTON */
 
-        .button-wrapper,
-        .button-border {
-                background-color: $schemeColor;
-                box-shadow: $dropBoxShadow;
-                position: relative;
-                // ADHOC: using animation class from Animation.css causes box shadow to disappear
-                animation-name: none;
-                // add an outline in case using image background
-                // TODO: do the same for other drop/concave box shadow components, setting button
-                // prettier-ignore
-                @include border_pseudo_before(7px, $borderRadius ,$schemeColor, $insetBoxShadow);
-                .button {
-                        background: $bgSurface;
-                        border: $neu-border;
-                }
-        }
+  .button-wrapper,
+  .button-border {
+    background-color: $schemeColor;
+    box-shadow: $dropBoxShadow;
+    position: relative;
+    // ADHOC: using animation class from Animation.css causes box shadow to disappear
+    animation-name: none;
+    // add an outline in case using image background
+    // TODO: do the same for other drop/concave box shadow components, setting button
+    // prettier-ignore
+    @include border_pseudo_before(7px, $borderRadius ,$schemeColor, $insetBoxShadow);
+    .button {
+      background: $bgSurface;
+      border: $neu-border;
+    }
+  }
 
-        .setting-button {
-                background: $bgSurface;
-        }
+  .setting-button {
+    background: $bgSurface;
+  }
 
-        .box-border,
-        .image-border,
-        .badge-border,
-        .setting-button-border,
-        .segmented-control,
-        .hero-03 .personal-image img,
-        .checkbox label,
-        .blog-intro,
-        table,
-        table thead,
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .toggle .indicator {
-                box-shadow: $dropBoxShadow;
-        }
+  .box-border,
+  .image-border,
+  .badge-border,
+  .setting-button-border,
+  .segmented-control,
+  .hero-03 .personal-image img,
+  .checkbox label,
+  .blog-intro,
+  table,
+  table thead,
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .toggle .indicator {
+    box-shadow: $dropBoxShadow;
+  }
 
-        .button.active,
+  .button.active,
         .setting-button.active,
         .radio-button-group .button.active,
         .custom-scrollbar,
@@ -314,74 +310,74 @@
         .setting-section .scrollable,
         .timeline-items.box-border,
         .radio-selection {
-                box-shadow: $insetBoxShadow;
-        }
+    box-shadow: $insetBoxShadow;
+  }
 
-        //    .form-group,
-        .toggle,
-        .form-group input,
-        .form-group textarea,
-        .skill-box .skillbar {
-                box-shadow: #{$concaveBoxShadow}; //unquote
-        }
+  //    .form-group,
+  .toggle,
+  .form-group input,
+  .form-group textarea,
+  .skill-box .skillbar {
+    box-shadow: #{$concaveBoxShadow}; //unquote
+  }
 
-        .section,
-        .display-content > .container.none-bg,
-        .button,
-        .setting-button,
-        .setting-button a,
-        .setting-panel,
-        .contact .form-item .form-group,
-        .segmented-control,
-        .checkbox label,
-        .portfolio-single .modal-content,
-        ::-webkit-scrollbar-track {
-                background-color: $schemeColor;
-        }
+  .section,
+  .display-content > .container.none-bg,
+  .button,
+  .setting-button,
+  .setting-button a,
+  .setting-panel,
+  .contact .form-item .form-group,
+  .segmented-control,
+  .checkbox label,
+  .portfolio-single .modal-content,
+  ::-webkit-scrollbar-track {
+    background-color: $schemeColor;
+  }
 
-        // RADIO
-        .segmented-control > input:not(:checked)px:not(:hover)px + label {
-                color: $mutedBaseColor;
-        }
+  // RADIO
+  .segmented-control > input:not(:checked)px:not(:hover)px + label {
+    color: $mutedBaseColor;
+  }
 
-        .button,
-        .segmented-control > input:checked + label,
-        .segmented-control > input:hover + label {
-                color: $highlightColor;
-        }
+  .button,
+  .segmented-control > input:checked + label,
+  .segmented-control > input:hover + label {
+    color: $highlightColor;
+  }
 
-        // HOVER
-        .button:hover,
-        .badge-border:hover,
-        table > tbody > tr:hover,
-        .setting-button:hover {
-                box-shadow: $insetBoxShadow;
-        }
+  // HOVER
+  .button:hover,
+  .badge-border:hover,
+  table > tbody > tr:hover,
+  .setting-button:hover {
+    box-shadow: $insetBoxShadow;
+  }
 
-        // CHECKBOX
-        .checkbox input:checked ~ label {
-                box-shadow: $insetBoxShadow;
-        }
+  // CHECKBOX
+  .checkbox input:checked ~ label {
+    box-shadow: $insetBoxShadow;
+  }
 
-        .checkbox input:not(:checked)px:not(:hover)px ~ label i,
-        .checkbox input:not(:checked)px ~ label + .name {
-                color: $mutedBaseColor;
-        }
+  .checkbox input:not(:checked)px:not(:hover)px ~ label i,
+  .checkbox input:not(:checked)px ~ label + .name {
+    color: $mutedBaseColor;
+  }
 
-        .checkbox input:checked ~ label + .name,
-        .checkbox input:checked ~ label i,
-        .checkbox input:hover ~ label i {
-                color: $highlightColor;
-        }
+  .checkbox input:checked ~ label + .name,
+  .checkbox input:checked ~ label i,
+  .checkbox input:hover ~ label i {
+    color: $highlightColor;
+  }
 
-        // SCROLLBAR
-        ::-webkit-scrollbar-track {
-                box-shadow: $insetBoxShadow;
-                background-color: $schemeColor;
-        }
+  // SCROLLBAR
+  ::-webkit-scrollbar-track {
+    box-shadow: $insetBoxShadow;
+    background-color: $schemeColor;
+  }
 
-        ::-webkit-scrollbar-thumb {
-                box-shadow: $thumbScrollbarBoxShadow;
-                background-color: $schemeColor;
-        }
+  ::-webkit-scrollbar-thumb {
+    box-shadow: $thumbScrollbarBoxShadow;
+    background-color: $schemeColor;
+  }
 }

@@ -1,18 +1,18 @@
 body {
-        margin: 0;
-        font-weight: 400;
-        line-height: 1.5;
-        text-align: left;
-        height: 100vh;
-        // transition: 1s background ease;
-        background-color: $schemeColor;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  height: 100vh;
+  // transition: 1s background ease;
+  background-color: $schemeColor;
 }
 
 // migriate to Bootstrap 5
 .row {
-        position: relative;
-        margin-right: -15px;
-        margin-left: -15px;
+  position: relative;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 // migriate to Bootstrap 5
@@ -22,56 +22,56 @@ body {
 }
 
 .display-table {
-        width: 100%;
-        height: 100%;
-        display: table;
+  width: 100%;
+  height: 100%;
+  display: table;
 }
 
 .display-content {
-        vertical-align: middle;
-        display: table-cell;
-        padding: 3.5rem 0;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 3.5rem 0;
 }
 
 .display-content > .container {
-        background-color: $schemeColor;
-        position: relative;
+  background-color: $schemeColor;
+  position: relative;
 }
 
 .container {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .display-content > .container::before,
 body::before {
-        // set background (regardless of its background-color)opacity without affect child elements
-        // (require parent with position: relative)
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        z-index: -1;
+  // set background (regardless of its background-color)opacity without affect child elements
+  // (require parent with position: relative)
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
 }
 
 body::before {
-        opacity: 1;
-        // set background coverring whole page
-        position: fixed;
-        height: 100%;
-        z-index: -2;
+  opacity: 1;
+  // set background coverring whole page
+  position: fixed;
+  height: 100%;
+  z-index: -2;
 }
 
 // PROJECT-SPECIFIC
 .display-content:not(.injected-section .display-content) {
-        background-color: transparent;
+  background-color: transparent;
 }
 
 .full-screen {
-        height: 100vh;
+  height: 100vh;
 }

@@ -23,13 +23,21 @@
   --dui-color-primary-h: 210;
   --dui-color-primary-s: 100%;
   --dui-color-primary-l: 30%;
-  --dui-color-primary-contrast: hsl(0, 0%, calc((var(--dui-color-primary-l) - 60%) * -100));
+  --dui-color-primary-contrast: hsl(
+    0,
+    0%,
+    calc((var(--dui-color-primary-l) - 60%) * -100)
+  );
   --dui-color-primary-contrast-l: 100%;
   --dui-color-scheme: hsl(0, 0%, 83%);
   --dui-color-scheme-h: 0;
   --dui-color-scheme-s: 0%;
   --dui-color-scheme-l: 83%;
-  --dui-color-scheme-contrast: hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
+  --dui-color-scheme-contrast: hsl(
+    0,
+    0%,
+    calc((var(--dui-color-scheme-l) - 60%) * -100)
+  );
   --dui-color-scheme-contrast-l: 0%;
   --dui-color-1: hsl(159, 98%, 23%);
   --dui-color-1-h: 159;
@@ -62,12 +70,12 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Utility classes to quickly apply common rule by adding class names,
@@ -95,13 +103,13 @@ body {
   -ms-flex-direction: row !important;
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: normal !important;
-          flex-direction: row !important;
+  flex-direction: row !important;
 }
 
 .justify-content-center {
   -ms-flex-pack: center !important;
   -webkit-box-pack: center !important;
-          justify-content: center !important;
+  justify-content: center !important;
 }
 
 .d-flex {
@@ -239,7 +247,7 @@ video.lazy.loaded {
 
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
   margin-top: 1rem;
@@ -252,14 +260,24 @@ hr {
 @font-face {
   font-family: "Agency FB";
   src: url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf");
-  src: url("../fonts/agency-fb-regular/AgencyFB-Reg.eot") format("embedded-opentype"), url("../fonts/agency-fb-regular/AgencyFB-Reg.woff2") format("woff2"), url("../fonts/agency-fb-regular/AgencyFB-Reg.woff") format("woff"), url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf") format("truetype"), url("../fonts/agency-fb-regular/AgencyFB-Reg.svg") format("svg");
+  src: url("../fonts/agency-fb-regular/AgencyFB-Reg.eot")
+      format("embedded-opentype"),
+    url("../fonts/agency-fb-regular/AgencyFB-Reg.woff2") format("woff2"),
+    url("../fonts/agency-fb-regular/AgencyFB-Reg.woff") format("woff"),
+    url("../fonts/agency-fb-regular/AgencyFB-Reg.ttf") format("truetype"),
+    url("../fonts/agency-fb-regular/AgencyFB-Reg.svg") format("svg");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Agency FB Bold";
   src: url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf");
-  src: url("../fonts/agency-fb-bold/AgencyFB-Bold.eot") format("embedded-opentype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff2") format("woff2"), url("../fonts/agency-fb-bold/AgencyFB-Bold.woff") format("woff"), url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf") format("truetype"), url("../fonts/agency-fb-bold/AgencyFB-Bold.svg") format("svg");
+  src: url("../fonts/agency-fb-bold/AgencyFB-Bold.eot")
+      format("embedded-opentype"),
+    url("../fonts/agency-fb-bold/AgencyFB-Bold.woff2") format("woff2"),
+    url("../fonts/agency-fb-bold/AgencyFB-Bold.woff") format("woff"),
+    url("../fonts/agency-fb-bold/AgencyFB-Bold.ttf") format("truetype"),
+    url("../fonts/agency-fb-bold/AgencyFB-Bold.svg") format("svg");
   font-display: swap;
 }
 
@@ -400,8 +418,8 @@ p {
   /* Non standard for WebKit */
   word-break: break-word;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .text-justify {
@@ -457,7 +475,8 @@ small {
 }
 
 code {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 @media (min-width: 576px) {
@@ -508,7 +527,76 @@ body {
   margin-left: -15px;
 }
 
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
   position: relative;
 }
 
@@ -572,15 +660,15 @@ body::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .image-border,
@@ -629,11 +717,11 @@ body::before {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .button-border .button i,
@@ -656,7 +744,7 @@ body::before {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -665,15 +753,16 @@ body::before {
   word-wrap: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -webkit-hyphens: none;
-      -ms-hyphens: none;
-          hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 .code-block pre code {
-  text-shadow: 0 0.5px hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
+  text-shadow: 0 0.5px
+    hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
   display: block;
   color: var(--dui-base-mute);
   white-space: pre-wrap;
@@ -760,8 +849,8 @@ body::before {
 
 .dui-radio .label {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
   color: hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
   font-size: 1.1rem;
@@ -771,10 +860,10 @@ body::before {
 }
 
 .dui-radio .text {
-  -webkit-transition: -webkit-transform .2s ease-out;
-  transition: -webkit-transform .2s ease-out;
-  transition: transform .2s ease-out;
-  transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   border-radius: var(--dui-border-radius);
   padding: 5px 15px;
 }
@@ -789,7 +878,7 @@ body::before {
 
 .dui-radio .indicator::before,
 .dui-radio .indicator::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 10%;
   left: 10%;
@@ -801,17 +890,19 @@ body::before {
 .dui-radio .indicator::after {
   background-color: var(--dui-color-scheme);
   -webkit-transform: scale3d(1, 1, 1);
-          transform: scale3d(1, 1, 1);
-  -webkit-transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
-  transition: opacity .25s ease-in-out, -webkit-transform .25s ease-in-out;
-  transition: opacity .25s ease-in-out, transform .25s ease-in-out;
-  transition: opacity .25s ease-in-out, transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+  transform: scale3d(1, 1, 1);
+  -webkit-transition: opacity 0.25s ease-in-out,
+    -webkit-transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out,
+    -webkit-transform 0.25s ease-in-out;
 }
 
 .dui-radio .state:checked ~ .label .indicator::after,
 .dui-radio .label:hover .indicator::after {
   -webkit-transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
-          transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
+  transform: scale3d(0.975, 0.975, 1) translate3d(0, 10%, 0);
   opacity: 0;
 }
 
@@ -821,7 +912,7 @@ body::before {
 
 .dui-radio .state:focus ~ .label .text {
   -webkit-transform: translate3d(8px, 0, 0);
-          transform: translate3d(8px, 0, 0);
+  transform: translate3d(8px, 0, 0);
   color: var(--dui-color-primary);
 }
 
@@ -855,7 +946,7 @@ body::before {
 
 .range-slider__range::-webkit-slider-thumb {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -881,8 +972,8 @@ body::before {
   line-height: 20px;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-radius: 100%;
   background: #a6c3e0;
   margin-left: 8px;
@@ -921,8 +1012,8 @@ input::-moz-focus-outer {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -950,16 +1041,18 @@ input::-moz-focus-outer {
   width: 200%;
   border-radius: var(--dui-border-radius);
   -webkit-transform: translate3d(-75%, 0, 0);
-          transform: translate3d(-75%, 0, 0);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
+  transform: translate3d(-75%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s
+    cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
   transition: -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
   transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35), -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35),
+    -webkit-transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35) !important;
 }
 
 .toggle .toggle-state:checked ~ .indicator {
   -webkit-transform: translate3d(25%, 0, 0);
-          transform: translate3d(25%, 0, 0);
+  transform: translate3d(25%, 0, 0);
 }
 
 .checkbox {
@@ -993,11 +1086,11 @@ input::-moz-focus-outer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.1rem;
   margin-left: 0.35rem;
   margin-right: 0.8rem;
@@ -1009,17 +1102,17 @@ input::-moz-focus-outer {
   height: 100%;
   font-weight: 700;
   font-size: 0.9rem;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .dropdown {
@@ -1079,7 +1172,7 @@ input::-moz-focus-outer {
 
 .dropdown.show .dropdown-arrow {
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .show > .dropdown-toggle {
@@ -1186,7 +1279,7 @@ img {
 .flat-style ::-webkit-scrollbar-track,
 .flat-style ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .flat-style .radio-button-group .button:not(.active),
@@ -1200,13 +1293,15 @@ img {
 }
 
 .nes-style {
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=),
+    auto;
   /*  Segmented Control*/
   /* Circle */
 }
 
 .nes-style .form-group input {
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=),
+    auto;
 }
 
 .nes-style .button,
@@ -1216,7 +1311,9 @@ img {
 .nes-style .dui-radio span.text,
 .nes-style .checkbox label,
 .nes-style .dropdown button {
-  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC)
+      14 0,
+    pointer;
 }
 
 .nes-style #border-panel {
@@ -1253,9 +1350,9 @@ img {
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .nes-style .button {
@@ -1278,7 +1375,7 @@ img {
   left: -4px;
   content: "";
   -webkit-box-shadow: inset -4px -4px #006bb3;
-          box-shadow: inset -4px -4px #006bb3;
+  box-shadow: inset -4px -4px #006bb3;
 }
 
 .nes-style .skillbar {
@@ -1313,8 +1410,8 @@ img {
 .nes-style .dui-radio > input {
   margin-right: 20px;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -1322,10 +1419,10 @@ img {
   white-space: nowrap;
   border: 0;
   -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   outline: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -1345,15 +1442,21 @@ img {
   content: "";
   width: 2px;
   height: 2px;
-  -webkit-box-shadow: 2px 2px,4px 2px,2px 4px,4px 4px,6px 4px,8px 4px,2px 6px,4px 6px,6px 6px,8px 6px,10px 6px,2px 8px,4px 8px,6px 8px,8px 8px,10px 8px,12px 8px,2px 10px,4px 10px,6px 10px,8px 10px,10px 10px,2px 12px,4px 12px,6px 12px,8px 12px,2px 14px,4px 14px;
-          box-shadow: 2px 2px,4px 2px,2px 4px,4px 4px,6px 4px,8px 4px,2px 6px,4px 6px,6px 6px,8px 6px,10px 6px,2px 8px,4px 8px,6px 8px,8px 8px,10px 8px,12px 8px,2px 10px,4px 10px,6px 10px,8px 10px,10px 10px,2px 12px,4px 12px,6px 12px,8px 12px,2px 14px,4px 14px;
+  -webkit-box-shadow: 2px 2px, 4px 2px, 2px 4px, 4px 4px, 6px 4px, 8px 4px,
+    2px 6px, 4px 6px, 6px 6px, 8px 6px, 10px 6px, 2px 8px, 4px 8px, 6px 8px,
+    8px 8px, 10px 8px, 12px 8px, 2px 10px, 4px 10px, 6px 10px, 8px 10px,
+    10px 10px, 2px 12px, 4px 12px, 6px 12px, 8px 12px, 2px 14px, 4px 14px;
+  box-shadow: 2px 2px, 4px 2px, 2px 4px, 4px 4px, 6px 4px, 8px 4px, 2px 6px,
+    4px 6px, 6px 6px, 8px 6px, 10px 6px, 2px 8px, 4px 8px, 6px 8px, 8px 8px,
+    10px 8px, 12px 8px, 2px 10px, 4px 10px, 6px 10px, 8px 10px, 10px 10px,
+    2px 12px, 4px 12px, 6px 12px, 8px 12px, 2px 14px, 4px 14px;
 }
 
 .nes-style .dui-radio:hover input:not(:checked) + label .text::before {
   -webkit-animation: flash infinite;
-          animation: flash infinite;
+  animation: flash infinite;
   -webkit-animation-duration: 1.3s;
-          animation-duration: 1.3s;
+  animation-duration: 1.3s;
 }
 
 .nes-style .checkbox label::before {
@@ -1364,13 +1467,29 @@ img {
   top: 3px;
   left: -1px;
   content: "";
-  -webkit-box-shadow: 2px 2px,4px 2px,6px 2px,8px 2px,10px 2px,12px 2px,14px 2px,16px 2px,2px 4px,16px 4px,2px 6px,16px 6px,2px 8px,16px 8px,2px 10px,16px 10px,2px 12px,16px 12px,2px 14px,16px 14px,2px 16px,4px 16px,6px 16px,8px 16px,10px 16px,12px 16px,14px 16px,16px 16px;
-          box-shadow: 2px 2px,4px 2px,6px 2px,8px 2px,10px 2px,12px 2px,14px 2px,16px 2px,2px 4px,16px 4px,2px 6px,16px 6px,2px 8px,16px 8px,2px 10px,16px 10px,2px 12px,16px 12px,2px 14px,16px 14px,2px 16px,4px 16px,6px 16px,8px 16px,10px 16px,12px 16px,14px 16px,16px 16px;
+  -webkit-box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px,
+    14px 2px, 16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px,
+    2px 10px, 16px 10px, 2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px,
+    4px 16px, 6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
+  box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px,
+    16px 2px, 2px 4px, 16px 4px, 2px 6px, 16px 6px, 2px 8px, 16px 8px, 2px 10px,
+    16px 10px, 2px 12px, 16px 12px, 2px 14px, 16px 14px, 2px 16px, 4px 16px,
+    6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
 }
 
 .nes-style .checkbox input:checked + ::before {
-  -webkit-box-shadow: 2px 2px,4px 2px,6px 2px,8px 2px,10px 2px,12px 2px,14px 2px,18px 2px,20px 2px,2px 4px,16px 4px,18px 4px,20px 4px,2px 6px,14px 6px,16px 6px,2px 8px,4px 8px,12px 8px,14px 8px,2px 10px,4px 10px,6px 10px,10px 10px,12px 10px,16px 10px,2px 12px,6px 12px,8px 12px,10px 12px,16px 12px,2px 14px,8px 14px,16px 14px,2px 16px,4px 16px,6px 16px,8px 16px,10px 16px,12px 16px,14px 16px,16px 16px;
-          box-shadow: 2px 2px,4px 2px,6px 2px,8px 2px,10px 2px,12px 2px,14px 2px,18px 2px,20px 2px,2px 4px,16px 4px,18px 4px,20px 4px,2px 6px,14px 6px,16px 6px,2px 8px,4px 8px,12px 8px,14px 8px,2px 10px,4px 10px,6px 10px,10px 10px,12px 10px,16px 10px,2px 12px,6px 12px,8px 12px,10px 12px,16px 12px,2px 14px,8px 14px,16px 14px,2px 16px,4px 16px,6px 16px,8px 16px,10px 16px,12px 16px,14px 16px,16px 16px;
+  -webkit-box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px,
+    14px 2px, 18px 2px, 20px 2px, 2px 4px, 16px 4px, 18px 4px, 20px 4px, 2px 6px,
+    14px 6px, 16px 6px, 2px 8px, 4px 8px, 12px 8px, 14px 8px, 2px 10px, 4px 10px,
+    6px 10px, 10px 10px, 12px 10px, 16px 10px, 2px 12px, 6px 12px, 8px 12px,
+    10px 12px, 16px 12px, 2px 14px, 8px 14px, 16px 14px, 2px 16px, 4px 16px,
+    6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
+  box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px,
+    18px 2px, 20px 2px, 2px 4px, 16px 4px, 18px 4px, 20px 4px, 2px 6px, 14px 6px,
+    16px 6px, 2px 8px, 4px 8px, 12px 8px, 14px 8px, 2px 10px, 4px 10px, 6px 10px,
+    10px 10px, 12px 10px, 16px 10px, 2px 12px, 6px 12px, 8px 12px, 10px 12px,
+    16px 12px, 2px 14px, 8px 14px, 16px 14px, 2px 16px, 4px 16px, 6px 16px,
+    8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
 }
 
 .nes-style .checkbox label > i {
@@ -1418,8 +1537,14 @@ img {
   width: 3px;
   height: 3px;
   color: hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
-  -webkit-box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
-          box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
+  -webkit-box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px,
+    21px 3px, 3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px,
+    6px 9px, 9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px,
+    12px 12px, 15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
+  box-shadow: 3px 3px, 6px 3px, 9px 3px, 12px 3px, 15px 3px, 18px 3px, 21px 3px,
+    3px 6px, 6px 6px, 9px 6px, 12px 6px, 15px 6px, 18px 6px, 21px 6px, 6px 9px,
+    9px 9px, 12px 9px, 15px 9px, 18px 9px, 6px 12px, 9px 12px, 12px 12px,
+    15px 12px, 18px 12px, 9px 15px, 12px 15px, 15px 15px, 12px 18px;
   position: absolute;
   top: calc(50% - 11px);
   right: 27px;
@@ -1523,9 +1648,91 @@ img {
   height: 6px;
   color: #060606;
   -webkit-transform: rotate(90);
-          transform: rotate(90);
-  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3), 48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3), 48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3), 60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3), 36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3), 48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3), 60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3), 30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3), 42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3), 54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3), 66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3), 24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3), 36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3), 48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3), 60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3), 72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3), 30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3), 42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3), 78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
-          box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3), 48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3), 48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3), 60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3), 36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3), 48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3), 60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3), 30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3), 42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3), 54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3), 66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3), 24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3), 36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3), 48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3), 60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3), 72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3), 30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3), 42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3), 78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  transform: rotate(90);
+  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px,
+    30px 12px, 36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3),
+    48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3),
+    48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3),
+    60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3),
+    36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3),
+    48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3),
+    60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3),
+    30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3),
+    42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3),
+    54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3),
+    66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3),
+    24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3),
+    36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3),
+    48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3),
+    60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3),
+    72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3),
+    30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3),
+    42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3),
+    78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px,
+    36px 12px var(--dui-color-3), 42px 12px var(--dui-color-3),
+    48px 12px var(--dui-color-3), 54px 12px var(--dui-color-3), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-3), 42px 18px var(--dui-color-3),
+    48px 18px var(--dui-color-3), 54px 18px var(--dui-color-3),
+    60px 18px var(--dui-color-3), 66px 18px var(--dui-color-3), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-3),
+    36px 24px var(--dui-color-3), 42px 24px var(--dui-color-3),
+    48px 24px var(--dui-color-3), 54px 24px var(--dui-color-3),
+    60px 24px var(--dui-color-3), 66px 24px var(--dui-color-3), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-3),
+    30px 30px var(--dui-color-3), 36px 30px var(--dui-color-3),
+    42px 30px var(--dui-color-3), 48px 30px var(--dui-color-3),
+    54px 30px var(--dui-color-3), 60px 30px var(--dui-color-3),
+    66px 30px var(--dui-color-3), 72px 30px var(--dui-color-3), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-3),
+    24px 36px var(--dui-color-3), 30px 36px var(--dui-color-3),
+    36px 36px var(--dui-color-3), 42px 36px var(--dui-color-3),
+    48px 36px var(--dui-color-3), 54px 36px var(--dui-color-3),
+    60px 36px var(--dui-color-3), 66px 36px var(--dui-color-3),
+    72px 36px var(--dui-color-3), 78px 36px var(--dui-color-3), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-3),
+    30px 42px var(--dui-color-3), 36px 42px var(--dui-color-3),
+    42px 42px var(--dui-color-3), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-3), 72px 42px var(--dui-color-3),
+    78px 42px var(--dui-color-3), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-3), 36px 48px var(--dui-color-3),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-3), 78px 48px var(--dui-color-3), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
 }
 
 .nes-style .hero-image .circle::before {
@@ -1538,9 +1745,91 @@ img {
   height: 6px;
   color: #060606;
   -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-1), 42px 12px var(--dui-color-1), 48px 12px var(--dui-color-1), 54px 12px var(--dui-color-1), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-1), 42px 18px var(--dui-color-1), 48px 18px var(--dui-color-1), 54px 18px var(--dui-color-1), 60px 18px var(--dui-color-1), 66px 18px var(--dui-color-1), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-1), 36px 24px var(--dui-color-1), 42px 24px var(--dui-color-1), 48px 24px var(--dui-color-1), 54px 24px var(--dui-color-1), 60px 24px var(--dui-color-1), 66px 24px var(--dui-color-1), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-1), 30px 30px var(--dui-color-1), 36px 30px var(--dui-color-1), 42px 30px var(--dui-color-1), 48px 30px var(--dui-color-1), 54px 30px var(--dui-color-1), 60px 30px var(--dui-color-1), 66px 30px var(--dui-color-1), 72px 30px var(--dui-color-1), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-1), 24px 36px var(--dui-color-1), 30px 36px var(--dui-color-1), 36px 36px var(--dui-color-1), 42px 36px var(--dui-color-1), 48px 36px var(--dui-color-1), 54px 36px var(--dui-color-1), 60px 36px var(--dui-color-1), 66px 36px var(--dui-color-1), 72px 36px var(--dui-color-1), 78px 36px var(--dui-color-1), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-1), 30px 42px var(--dui-color-1), 36px 42px var(--dui-color-1), 42px 42px var(--dui-color-1), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-1), 72px 42px var(--dui-color-1), 78px 42px var(--dui-color-1), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-1), 36px 48px var(--dui-color-1), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-1), 78px 48px var(--dui-color-1), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
-          box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-1), 42px 12px var(--dui-color-1), 48px 12px var(--dui-color-1), 54px 12px var(--dui-color-1), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-1), 42px 18px var(--dui-color-1), 48px 18px var(--dui-color-1), 54px 18px var(--dui-color-1), 60px 18px var(--dui-color-1), 66px 18px var(--dui-color-1), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-1), 36px 24px var(--dui-color-1), 42px 24px var(--dui-color-1), 48px 24px var(--dui-color-1), 54px 24px var(--dui-color-1), 60px 24px var(--dui-color-1), 66px 24px var(--dui-color-1), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-1), 30px 30px var(--dui-color-1), 36px 30px var(--dui-color-1), 42px 30px var(--dui-color-1), 48px 30px var(--dui-color-1), 54px 30px var(--dui-color-1), 60px 30px var(--dui-color-1), 66px 30px var(--dui-color-1), 72px 30px var(--dui-color-1), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-1), 24px 36px var(--dui-color-1), 30px 36px var(--dui-color-1), 36px 36px var(--dui-color-1), 42px 36px var(--dui-color-1), 48px 36px var(--dui-color-1), 54px 36px var(--dui-color-1), 60px 36px var(--dui-color-1), 66px 36px var(--dui-color-1), 72px 36px var(--dui-color-1), 78px 36px var(--dui-color-1), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-1), 30px 42px var(--dui-color-1), 36px 42px var(--dui-color-1), 42px 42px var(--dui-color-1), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-1), 72px 42px var(--dui-color-1), 78px 42px var(--dui-color-1), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-1), 36px 48px var(--dui-color-1), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-1), 78px 48px var(--dui-color-1), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  transform: rotate(0);
+  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px,
+    30px 12px, 36px 12px var(--dui-color-1), 42px 12px var(--dui-color-1),
+    48px 12px var(--dui-color-1), 54px 12px var(--dui-color-1), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-1), 42px 18px var(--dui-color-1),
+    48px 18px var(--dui-color-1), 54px 18px var(--dui-color-1),
+    60px 18px var(--dui-color-1), 66px 18px var(--dui-color-1), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-1),
+    36px 24px var(--dui-color-1), 42px 24px var(--dui-color-1),
+    48px 24px var(--dui-color-1), 54px 24px var(--dui-color-1),
+    60px 24px var(--dui-color-1), 66px 24px var(--dui-color-1), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-1),
+    30px 30px var(--dui-color-1), 36px 30px var(--dui-color-1),
+    42px 30px var(--dui-color-1), 48px 30px var(--dui-color-1),
+    54px 30px var(--dui-color-1), 60px 30px var(--dui-color-1),
+    66px 30px var(--dui-color-1), 72px 30px var(--dui-color-1), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-1),
+    24px 36px var(--dui-color-1), 30px 36px var(--dui-color-1),
+    36px 36px var(--dui-color-1), 42px 36px var(--dui-color-1),
+    48px 36px var(--dui-color-1), 54px 36px var(--dui-color-1),
+    60px 36px var(--dui-color-1), 66px 36px var(--dui-color-1),
+    72px 36px var(--dui-color-1), 78px 36px var(--dui-color-1), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-1),
+    30px 42px var(--dui-color-1), 36px 42px var(--dui-color-1),
+    42px 42px var(--dui-color-1), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-1), 72px 42px var(--dui-color-1),
+    78px 42px var(--dui-color-1), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-1), 36px 48px var(--dui-color-1),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-1), 78px 48px var(--dui-color-1), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px,
+    36px 12px var(--dui-color-1), 42px 12px var(--dui-color-1),
+    48px 12px var(--dui-color-1), 54px 12px var(--dui-color-1), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-1), 42px 18px var(--dui-color-1),
+    48px 18px var(--dui-color-1), 54px 18px var(--dui-color-1),
+    60px 18px var(--dui-color-1), 66px 18px var(--dui-color-1), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-1),
+    36px 24px var(--dui-color-1), 42px 24px var(--dui-color-1),
+    48px 24px var(--dui-color-1), 54px 24px var(--dui-color-1),
+    60px 24px var(--dui-color-1), 66px 24px var(--dui-color-1), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-1),
+    30px 30px var(--dui-color-1), 36px 30px var(--dui-color-1),
+    42px 30px var(--dui-color-1), 48px 30px var(--dui-color-1),
+    54px 30px var(--dui-color-1), 60px 30px var(--dui-color-1),
+    66px 30px var(--dui-color-1), 72px 30px var(--dui-color-1), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-1),
+    24px 36px var(--dui-color-1), 30px 36px var(--dui-color-1),
+    36px 36px var(--dui-color-1), 42px 36px var(--dui-color-1),
+    48px 36px var(--dui-color-1), 54px 36px var(--dui-color-1),
+    60px 36px var(--dui-color-1), 66px 36px var(--dui-color-1),
+    72px 36px var(--dui-color-1), 78px 36px var(--dui-color-1), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-1),
+    30px 42px var(--dui-color-1), 36px 42px var(--dui-color-1),
+    42px 42px var(--dui-color-1), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-1), 72px 42px var(--dui-color-1),
+    78px 42px var(--dui-color-1), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-1), 36px 48px var(--dui-color-1),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-1), 78px 48px var(--dui-color-1), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
 }
 
 .nes-style .hero-image .circle-2 {
@@ -1558,9 +1847,91 @@ img {
   height: 6px;
   color: #060606;
   -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2), 48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2), 48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2), 60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2), 36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2), 48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2), 60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2), 30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2), 42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2), 54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2), 66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2), 24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2), 36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2), 48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2), 60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2), 72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2), 30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2), 42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2), 78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
-          box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px, 36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2), 48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px, 66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff, 36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2), 48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2), 60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px, 12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2), 36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2), 48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2), 60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px, 78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2), 30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2), 42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2), 54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2), 66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px, 6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2), 24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2), 36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2), 48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2), 60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2), 72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px, 6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2), 30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2), 42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px, 66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2), 78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px, 24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2), 42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px, 72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px, 6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px, 42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px, 72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff, 30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff, 60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px, 18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff, 42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff, 72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1, 36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff, 60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px, 36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1, 60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  transform: rotate(0);
+  -webkit-box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px,
+    30px 12px, 36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2),
+    48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2),
+    48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2),
+    60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2),
+    36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2),
+    48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2),
+    60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2),
+    30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2),
+    42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2),
+    54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2),
+    66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2),
+    24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2),
+    36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2),
+    48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2),
+    60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2),
+    72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2),
+    30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2),
+    42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2),
+    78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
+  box-shadow: 36px 6px, 42px 6px, 48px 6px, 54px 6px, 24px 12px, 30px 12px,
+    36px 12px var(--dui-color-2), 42px 12px var(--dui-color-2),
+    48px 12px var(--dui-color-2), 54px 12px var(--dui-color-2), 60px 12px,
+    66px 12px, 18px 18px, 24px 18px #fff, 30px 18px #fff,
+    36px 18px var(--dui-color-2), 42px 18px var(--dui-color-2),
+    48px 18px var(--dui-color-2), 54px 18px var(--dui-color-2),
+    60px 18px var(--dui-color-2), 66px 18px var(--dui-color-2), 72px 18px,
+    12px 24px, 18px 24px #fff, 24px 24px #fff, 30px 24px var(--dui-color-2),
+    36px 24px var(--dui-color-2), 42px 24px var(--dui-color-2),
+    48px 24px var(--dui-color-2), 54px 24px var(--dui-color-2),
+    60px 24px var(--dui-color-2), 66px 24px var(--dui-color-2), 72px 24px,
+    78px 24px, 12px 30px, 18px 30px #fff, 24px 30px var(--dui-color-2),
+    30px 30px var(--dui-color-2), 36px 30px var(--dui-color-2),
+    42px 30px var(--dui-color-2), 48px 30px var(--dui-color-2),
+    54px 30px var(--dui-color-2), 60px 30px var(--dui-color-2),
+    66px 30px var(--dui-color-2), 72px 30px var(--dui-color-2), 78px 30px,
+    6px 36px, 12px 36px #fff, 18px 36px var(--dui-color-2),
+    24px 36px var(--dui-color-2), 30px 36px var(--dui-color-2),
+    36px 36px var(--dui-color-2), 42px 36px var(--dui-color-2),
+    48px 36px var(--dui-color-2), 54px 36px var(--dui-color-2),
+    60px 36px var(--dui-color-2), 66px 36px var(--dui-color-2),
+    72px 36px var(--dui-color-2), 78px 36px var(--dui-color-2), 84px 36px,
+    6px 42px, 12px 42px, 18px 42px, 24px 42px var(--dui-color-2),
+    30px 42px var(--dui-color-2), 36px 42px var(--dui-color-2),
+    42px 42px var(--dui-color-2), 48px 42px, 54px 42px, 60px 42px,
+    66px 42px var(--dui-color-2), 72px 42px var(--dui-color-2),
+    78px 42px var(--dui-color-2), 84px 42px, 6px 48px, 12px 48px, 18px 48px,
+    24px 48px, 30px 48px var(--dui-color-2), 36px 48px var(--dui-color-2),
+    42px 48px, 48px 48px #fff, 54px 48px #fff, 60px 48px #fff, 66px 48px,
+    72px 48px var(--dui-color-2), 78px 48px var(--dui-color-2), 84px 48px,
+    6px 54px, 12px 54px #9fa1a1, 18px 54px #fff, 24px 54px, 30px 54px, 36px 54px,
+    42px 54px, 48px 54px #fff, 54px 54px #fff, 60px 54px #fff, 66px 54px,
+    72px 54px, 78px 54px, 84px 54px, 12px 60px, 18px 60px #fff, 24px 60px #fff,
+    30px 60px #fff, 36px 60px, 42px 60px, 48px 60px #fff, 54px 60px #fff,
+    60px 60px #fff, 66px 60px, 72px 60px #fff, 78px 60px, 12px 66px,
+    18px 66px #fff, 24px 66px #fff, 30px 66px #fff, 36px 66px #fff,
+    42px 66px #fff, 48px 66px, 54px 66px, 60px 66px, 66px 66px #fff,
+    72px 66px #fff, 78px 66px, 18px 72px, 24px 72px #9fa1a1, 30px 72px #9fa1a1,
+    36px 72px #fff, 42px 72px #fff, 48px 72px #fff, 54px 72px #fff,
+    60px 72px #fff, 66px 72px #fff, 72px 72px, 24px 78px, 30px 78px,
+    36px 78px #9fa1a1, 42px 78px #9fa1a1, 48px 78px #9fa1a1, 54px 78px #9fa1a1,
+    60px 78px, 66px 78px, 36px 84px, 42px 84px, 48px 84px, 54px 84px;
   zoom: 0.5;
 }
 
@@ -1585,7 +1956,7 @@ img {
 
 .neu-style .button {
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .neu-style .radio-selection {
@@ -1619,7 +1990,7 @@ img {
 .glass-style .setting-button {
   padding: 0 !important;
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .glass-style .button,
@@ -1642,7 +2013,7 @@ img {
 .glass-style table,
 .glass-style thead {
   -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .glass-style .radio-button-group .button:not(.active),
@@ -1709,8 +2080,10 @@ img {
 .win98-style ::-webkit-scrollbar-thumb {
   border-radius: 0;
   background-color: #dfdfdf;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
 }
 
 .win98-style ::-webkit-scrollbar-button:horizontal:start:decrement,
@@ -1747,8 +2120,10 @@ img {
 .win98-style .display-content > .container,
 .win98-style .setting-panel {
   border-radius: 0 !important;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+    inset -2px -2px grey, inset 2px 2px #fff;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+    inset -2px -2px grey, inset 2px 2px #fff;
 }
 
 .win98-style .setting-panel {
@@ -1759,14 +2134,20 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: -webkit-gradient(linear, left top, right top, from(navy), to(#1084d0));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(navy),
+    to(#1084d0)
+  );
   background: linear-gradient(90deg, navy, #1084d0);
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 3px 2px 3px 3px;
   height: 30px;
   position: relative;
@@ -1799,20 +2180,24 @@ img {
   border: none;
   border-radius: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   min-height: 14px;
   min-width: 16px;
   padding: 0;
   background: silver;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+    inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey,
+    inset 2px 2px #dfdfdf;
   zoom: 1.4;
 }
 
 .win98-style .title-bar button:not(:disabled):active {
-  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
-          box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px grey;
   padding: 2px 11px 0 13px;
 }
 
@@ -1866,28 +2251,34 @@ img {
 .win98-style pre {
   display: block;
   background: #ffffff;
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
   padding: 12px 8px;
   margin: 0;
 }
 
 .win98-style .button {
   background: #c0c0c0;
-  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
-          box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  -webkit-box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff,
+    inset -2px -2px #808080, inset 2px 2px #dfdfdf;
   border: none;
   border-radius: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 0s !important;
   transition: all 0s !important;
 }
 
 .win98-style .button.active,
 .win98-style .button:not(:disabled):active {
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
 .win98-style .button:focus {
@@ -1897,8 +2288,10 @@ img {
 
 @media (false) {
   .win98-style .button:not(:disabled):hover {
-    -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-            box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+      inset -2px -2px #dfdfdf, inset 2px 2px #808080;
   }
 }
 
@@ -1909,8 +2302,8 @@ img {
 .win98-style input[type="checkbox"],
 .win98-style input[type="radio"] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: 0;
   border: none;
   margin: 0;
@@ -1920,8 +2313,10 @@ img {
 
 .win98-style input[type="checkbox"] + label:before {
   background: #fff;
-  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-          box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  -webkit-box-shadow: inset -1px -1px #fff, inset 1px 1px grey,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
   content: "";
   display: inline-block;
   height: 13px;
@@ -1994,14 +2389,14 @@ img {
   background-image: url("/dui/icons/win98/indicator-horizontal.svg");
   background-image: url("../icons/win98/indicator-horizontal.svg");
   -webkit-transform: translateY(-8px);
-          transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .win98-style input[type="range"].has-box-indicator::-webkit-slider-thumb {
   background-image: url("/dui/icons/win98/indicator-rectangle-horizontal.svg");
   background-image: url("../icons/win98/indicator-rectangle-horizontal.svg");
   -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .win98-style input[type="range"]::-moz-range-thumb {
@@ -2024,12 +2419,15 @@ img {
   width: 100%;
   height: 2px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  -webkit-box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
-          box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  -webkit-box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white,
+    -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white,
+    1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
 }
 
 .win98-style input[type="range"]::-moz-range-track {
@@ -2039,7 +2437,8 @@ img {
   background: black;
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
-  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey, -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
+  box-shadow: 1px 0 0 white, 1px 1px 0 white, 0 1px 0 white, -1px 0 0 darkgrey,
+    -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
 }
 
 .win98-style .range-slider__value {
@@ -2054,16 +2453,20 @@ img {
 .win98-style textarea:focus {
   border-radius: 0 !important;
   background-color: #fff !important;
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
   padding: 3px 4px;
 }
 
 .win98-style .dropdown {
   border-radius: 0 !important;
   background-color: #fff;
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
-          box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #808080,
+    inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
 }
 
 .win98-style .dropdown .dropdown-menu {
@@ -2098,8 +2501,8 @@ img {
 
 .win98-style .dropdown .dropdown-toggle {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-image: url("/dui/icons/win98/button-down.svg");
   background-image: url("../icons/win98/button-down.svg");
   background-position: top 1px right 1px;
@@ -2122,11 +2525,13 @@ img {
 .win98-style .segmented-control {
   border-radius: 0;
   border: none;
-  -webkit-box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080, inset 1px -2px #808080, inset 2px 2px #ffffff;
-          box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080, inset 1px -2px #808080, inset 2px 2px #ffffff;
+  -webkit-box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080,
+    inset 1px -2px #808080, inset 2px 2px #ffffff;
+  box-shadow: inset -1px -1px #ffffff, inset -2px 1px #808080,
+    inset 1px -2px #808080, inset 2px 2px #ffffff;
   padding: calc(2 * $border_width + 8px);
   -webkit-padding-before: 8px;
-          padding-block-start: 8px;
+  padding-block-start: 8px;
   margin: 0;
 }
 
@@ -2144,33 +2549,62 @@ img {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: var(--btn-border-width) var(--btn-border-style) var(--dui-color-primary);
-  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(86%, #ecebe5), to(#d8d0c4));
+  box-sizing: border-box;
+  border: var(--btn-border-width) var(--btn-border-style)
+    var(--dui-color-primary);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(white),
+    color-stop(86%, #ecebe5),
+    to(#d8d0c4)
+  );
   background: linear-gradient(180deg, white 0%, #ecebe5 86%, #d8d0c4 100%);
 }
 
-.winxp-style .button-wrapper .button:not(:disabled):active, .winxp-style .button-wrapper .button:not(:disabled).active,
+.winxp-style .button-wrapper .button:not(:disabled):active,
+.winxp-style .button-wrapper .button:not(:disabled).active,
 .winxp-style .button-border .button:not(:disabled):active,
 .winxp-style .button-border .button:not(:disabled).active {
-  background: -webkit-gradient(linear, left top, left bottom, from(#cdcac3), color-stop(8%, #e3e3db), color-stop(94%, #e5e5de), to(#f2f2f1));
-  background: linear-gradient(180deg, #cdcac3 0%, #e3e3db 8%, #e5e5de 94%, #f2f2f1 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#cdcac3),
+    color-stop(8%, #e3e3db),
+    color-stop(94%, #e5e5de),
+    to(#f2f2f1)
+  );
+  background: linear-gradient(
+    180deg,
+    #cdcac3 0%,
+    #e3e3db 8%,
+    #e5e5de 94%,
+    #f2f2f1 100%
+  );
 }
 
 .winxp-style .button-wrapper .button:not(:disabled):hover,
 .winxp-style .button-border .button:not(:disabled):hover {
-  -webkit-box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
-          box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889, inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+  -webkit-box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889,
+    inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
+  box-shadow: inset -1px 1px #fff0cf, inset 1px 2px #fdd889,
+    inset -2px 2px #fbc761, inset 2px -2px #e5a01a;
 }
 
-.winxp-style .button-wrapper .button:focus, .winxp-style .button-wrapper .button.active,
+.winxp-style .button-wrapper .button:focus,
+.winxp-style .button-wrapper .button.active,
 .winxp-style .button-border .button:focus,
 .winxp-style .button-border .button.active {
-  -webkit-box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea, inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
-          box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea, inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
+  -webkit-box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea,
+    inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
+  box-shadow: inset -2.5px 1px #cee7ff, inset 2px 2px #98b8ea,
+    inset -2px 2px #bcd4f6, inset 2px -2px #89ade4, inset 2px -2px #89ade4;
 }
 
-.winxp-style .button-wrapper .button:focus::after, .winxp-style .button-wrapper .button.active::after,
+.winxp-style .button-wrapper .button:focus::after,
+.winxp-style .button-wrapper .button.active::after,
 .winxp-style .button-border .button:focus::after,
 .winxp-style .button-border .button.active::after {
   position: absolute;
@@ -2466,72 +2900,415 @@ table,
   display: inline-block;
   border-radius: var(--dui-border-radius);
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   z-index: -1;
 }
 
 .neu-style .setting-panel {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .dui-radio .indicator {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .dui-radio .indicator::before {
-  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + calc(var(--neu-darken-intensity) * -1))),
+    4px 2px 8px 0px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + calc(var(--neu-darken-intensity) * -1))),
+    4px 2px 8px 0px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .dui-radio .indicator::after {
-  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1)));
-          box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))), 4px 2px 8px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1)));
+  -webkit-box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + var(--neu-lighten-intensity))),
+    4px 2px 8px 0px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      );
+  box-shadow: -4px -2px 4px 0px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + var(--neu-lighten-intensity))),
+    4px 2px 8px 0px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      );
 }
 
 .neu-style .range-slider .range-slider__value {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .range-slider .range-slider__range {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb:hover,
 .neu-style .range-slider input[type="range"]:focus {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .range-slider ::-webkit-slider-thumb {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .dropdown button.focus,
 .neu-style .dropdown button:focus,
 .neu-style .dropdown .dropdown-label {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .dropdown .dropdown-toggle {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .dropdown button,
@@ -2541,22 +3318,140 @@ table,
 }
 
 .neu-style .dropdown .dropdown-menu {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   background-color: var(--dui-color-scheme);
   padding: 10px;
 }
 
 .neu-style .dropdown.show .dropdown-toggle,
 .neu-style .dropdown button:hover {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .dropdown .dropdown-item:hover {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .dropdown button:hover,
@@ -2565,93 +3460,358 @@ table,
 }
 
 .neu-style .dropdown .dropdown-toggle {
-  -webkit-box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: 3px 3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), 0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: 3px 3px 4px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + var(--neu-lighten-intensity)));
+  box-shadow: 3px 3px 4px
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    0px -3px 4px hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(
+              --dui-color-scheme-l
+            ) + var(--neu-lighten-intensity)));
 }
 
 .neu-style .checkbox label {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1)))) !important;
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  ) !important;
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .form-group input,
 .neu-style .form-group textarea {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1)))) !important;
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  ) !important;
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .segmented-control {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .segmented-control .radio-selection {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .toggle {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .toggle .indicator {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .code-block {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .badge-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .image-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .box-border {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .setting-panel {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style table {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style table thead {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .blog .blog-intro {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .blog .blog-image .after {
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .portfolio-single .modal-content {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .button-wrapper,
 .neu-style .button-border {
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   position: relative;
   -webkit-animation-name: none;
-          animation-name: none;
+  animation-name: none;
 }
 
 .neu-style .button-wrapper::before,
@@ -2665,19 +3825,74 @@ table,
   display: inline-block;
   border-radius: var(--dui-border-radius);
   background-color: var(--dui-color-scheme);
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   z-index: -1;
 }
 
 .neu-style .button-wrapper .button,
 .neu-style .button-border .button {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
-  border: var(--neu-border-width) var(--neu-border-style) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-border-brightness)));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
+  border: var(--neu-border-width) var(--neu-border-style)
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-border-brightness))
+    );
 }
 
 .neu-style .setting-button {
-  background: linear-gradient(145deg, hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))), hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))));
+  background: linear-gradient(
+    145deg,
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + var(--neu-surface-curvature))
+    ),
+    hsl(
+      var(--dui-color-scheme-h),
+      var(--dui-color-scheme-s),
+      calc(var(--dui-color-scheme-l) + calc(var(--neu-surface-curvature) * -1))
+    )
+  );
 }
 
 .neu-style .box-border,
@@ -2693,8 +3908,34 @@ table,
 .neu-style .form-group input:focus,
 .neu-style .form-group textarea:focus,
 .neu-style .toggle .indicator {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .button.active,
@@ -2706,16 +3947,96 @@ table,
 .neu-style .setting-section .scrollable,
 .neu-style .timeline-items.box-border,
 .neu-style .radio-selection {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .toggle,
 .neu-style .form-group input,
 .neu-style .form-group textarea,
 .neu-style .skill-box .skillbar {
-  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .section,
@@ -2746,13 +4067,65 @@ table,
 .neu-style .badge-border:hover,
 .neu-style table > tbody > tr:hover,
 .neu-style .setting-button:hover {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .checkbox input:checked ~ label {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
 }
 
 .neu-style .checkbox input:not(:checked)px:not(:hover)px ~ label i,
@@ -2767,14 +4140,66 @@ table,
 }
 
 .neu-style ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y)
+      var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1)
+      var(--neu-blur)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   background-color: var(--dui-color-scheme);
 }
 
 .neu-style ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
-          box-shadow: inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  -webkit-box-shadow: inset calc(var(--neu-distance-x) * -1)
+      calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
+  box-shadow: inset calc(var(--neu-distance-x) * -1)
+      calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))
+      ),
+    inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur)
+      var(--neu-spread)
+      hsl(
+        var(--dui-color-scheme-h),
+        var(--dui-color-scheme-s),
+        calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))
+      );
   background-color: var(--dui-color-scheme);
 }
 
@@ -2793,11 +4218,19 @@ table,
 }
 
 .flat-style .code-block {
-  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity))
+  );
 }
 
 .flat-style .form-item .form-group .form-control {
-  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity))
+  );
 }
 
 .flat-style .button {
@@ -2806,7 +4239,11 @@ table,
 }
 
 .flat-style .button:hover {
-  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-primary-h),
+    var(--dui-color-primary-s),
+    calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity))
+  );
 }
 
 .flat-style .radio-button-group .button.active,
@@ -2833,7 +4270,11 @@ table,
 .flat-style .setting-button-border,
 .flat-style .setting-panel,
 .flat-style .setting-button {
-  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity))
+  );
   color: hsl(0, 0%, calc((var(--dui-color-scheme-l) - 60%) * -100));
 }
 
@@ -2869,7 +4310,11 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-track {
-  background-color: hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    calc(var(--dui-color-scheme-l) + var(--flat-scheme-distinct-intensity))
+  );
 }
 
 .flat-style ::-webkit-scrollbar-thumb {
@@ -2877,7 +4322,11 @@ table,
 }
 
 .flat-style ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
+  background: hsl(
+    var(--dui-color-primary-h),
+    var(--dui-color-primary-s),
+    calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity))
+  );
 }
 
 .flat-style ::-webkit-slider-thumb {
@@ -2885,12 +4334,186 @@ table,
 }
 
 .flat-style ::-webkit-slider-thumb:hover {
-  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity)));
+  background-color: hsl(
+    var(--dui-color-primary-h),
+    var(--dui-color-primary-s),
+    calc(var(--dui-color-primary-l) + var(--flat-primary-distinct-intensity))
+  );
 }
 
 .pixelart-to-css {
-  -webkit-box-shadow: 10px 10px 0 0 #303f46, 20px 10px 0 0 #303f46, 30px 10px 0 0 #303f46, 40px 10px 0 0 #303f46, 50px 10px 0 0 #303f46, 60px 10px 0 0 #303f46, 70px 10px 0 0 #ffffff, 80px 10px 0 0 #303f46, 90px 10px 0 0 #303f46, 100px 10px 0 0 #303f46, 110px 10px 0 0 #303f46, 120px 10px 0 0 #ffffff, 130px 10px 0 0 #303f46, 140px 10px 0 0 #303f46, 150px 10px 0 0 #303f46, 160px 10px 0 0 #303f46, 10px 20px 0 0 #303f46, 20px 20px 0 0 #303f46, 30px 20px 0 0 #303f46, 40px 20px 0 0 #303f46, 50px 20px 0 0 #303f46, 60px 20px 0 0 #ffffff, 70px 20px 0 0 #ffcdd2, 80px 20px 0 0 #ffffff, 90px 20px 0 0 #303f46, 100px 20px 0 0 #303f46, 110px 20px 0 0 #ffffff, 120px 20px 0 0 #ffcdd2, 130px 20px 0 0 #ffffff, 140px 20px 0 0 #303f46, 150px 20px 0 0 #303f46, 160px 20px 0 0 #303f46, 10px 30px 0 0 #303f46, 20px 30px 0 0 #303f46, 30px 30px 0 0 #303f46, 40px 30px 0 0 #303f46, 50px 30px 0 0 #303f46, 60px 30px 0 0 #ffffff, 70px 30px 0 0 #ffcdd2, 80px 30px 0 0 #ffcdd2, 90px 30px 0 0 #ffffff, 100px 30px 0 0 #ffffff, 110px 30px 0 0 #ffcdd2, 120px 30px 0 0 #ffcdd2, 130px 30px 0 0 #ffffff, 140px 30px 0 0 #303f46, 150px 30px 0 0 #303f46, 160px 30px 0 0 #303f46, 10px 40px 0 0 #303f46, 20px 40px 0 0 #303f46, 30px 40px 0 0 #303f46, 40px 40px 0 0 #303f46, 50px 40px 0 0 #303f46, 60px 40px 0 0 #ffffff, 70px 40px 0 0 #ffcdd2, 80px 40px 0 0 #ffffff, 90px 40px 0 0 #ffffff, 100px 40px 0 0 #ffffff, 110px 40px 0 0 #ffffff, 120px 40px 0 0 #ffcdd2, 130px 40px 0 0 #ffffff, 140px 40px 0 0 #303f46, 150px 40px 0 0 #303f46, 160px 40px 0 0 #303f46, 10px 50px 0 0 #303f46, 20px 50px 0 0 #303f46, 30px 50px 0 0 #303f46, 40px 50px 0 0 #303f46, 50px 50px 0 0 #303f46, 60px 50px 0 0 #ffffff, 70px 50px 0 0 #ffffff, 80px 50px 0 0 #ffffff, 90px 50px 0 0 #ffffff, 100px 50px 0 0 #ffffff, 110px 50px 0 0 #ffffff, 120px 50px 0 0 #ffffff, 130px 50px 0 0 #ffffff, 140px 50px 0 0 #303f46, 150px 50px 0 0 #303f46, 160px 50px 0 0 #303f46, 10px 60px 0 0 #303f46, 20px 60px 0 0 #303f46, 30px 60px 0 0 #303f46, 40px 60px 0 0 #303f46, 50px 60px 0 0 #303f46, 60px 60px 0 0 #ffffff, 70px 60px 0 0 #000000, 80px 60px 0 0 #ffffff, 90px 60px 0 0 #ffffff, 100px 60px 0 0 #000000, 110px 60px 0 0 #ffffff, 120px 60px 0 0 #ffffff, 130px 60px 0 0 #ffffff, 140px 60px 0 0 #303f46, 150px 60px 0 0 #303f46, 160px 60px 0 0 #303f46, 10px 70px 0 0 #303f46, 20px 70px 0 0 #303f46, 30px 70px 0 0 #303f46, 40px 70px 0 0 #303f46, 50px 70px 0 0 #303f46, 60px 70px 0 0 #ffffff, 70px 70px 0 0 #ffffff, 80px 70px 0 0 #000000, 90px 70px 0 0 #ffffff, 100px 70px 0 0 #ffffff, 110px 70px 0 0 #ffffff, 120px 70px 0 0 #ffffff, 130px 70px 0 0 #ffffff, 140px 70px 0 0 #303f46, 150px 70px 0 0 #303f46, 160px 70px 0 0 #303f46, 10px 80px 0 0 #303f46, 20px 80px 0 0 #303f46, 30px 80px 0 0 #303f46, 40px 80px 0 0 #303f46, 50px 80px 0 0 #303f46, 60px 80px 0 0 #ffffff, 70px 80px 0 0 #ffffff, 80px 80px 0 0 #ffffff, 90px 80px 0 0 #ffffff, 100px 80px 0 0 #ffffff, 110px 80px 0 0 #ffffff, 120px 80px 0 0 #ffffff, 130px 80px 0 0 #ffffff, 140px 80px 0 0 #303f46, 150px 80px 0 0 #303f46, 160px 80px 0 0 #303f46, 10px 90px 0 0 #303f46, 20px 90px 0 0 #303f46, 30px 90px 0 0 #303f46, 40px 90px 0 0 #303f46, 50px 90px 0 0 #303f46, 60px 90px 0 0 #303f46, 70px 90px 0 0 #ffffff, 80px 90px 0 0 #ffffff, 90px 90px 0 0 #ffffff, 100px 90px 0 0 #ffffff, 110px 90px 0 0 #ffffff, 120px 90px 0 0 #ffffff, 130px 90px 0 0 #303f46, 140px 90px 0 0 #303f46, 150px 90px 0 0 #303f46, 160px 90px 0 0 #303f46, 10px 100px 0 0 #303f46, 20px 100px 0 0 #303f46, 30px 100px 0 0 #303f46, 40px 100px 0 0 #303f46, 50px 100px 0 0 #303f46, 60px 100px 0 0 #303f46, 70px 100px 0 0 #303f46, 80px 100px 0 0 #ffffff, 90px 100px 0 0 #ffffff, 100px 100px 0 0 #ffffff, 110px 100px 0 0 #ffffff, 120px 100px 0 0 #303f46, 130px 100px 0 0 #303f46, 140px 100px 0 0 #ffffff, 150px 100px 0 0 #303f46, 160px 100px 0 0 #303f46, 10px 110px 0 0 #303f46, 20px 110px 0 0 #303f46, 30px 110px 0 0 #303f46, 40px 110px 0 0 #303f46, 50px 110px 0 0 #303f46, 60px 110px 0 0 #303f46, 70px 110px 0 0 #303f46, 80px 110px 0 0 #ffffff, 90px 110px 0 0 #ffffff, 100px 110px 0 0 #ffffff, 110px 110px 0 0 #ffffff, 120px 110px 0 0 #303f46, 130px 110px 0 0 #303f46, 140px 110px 0 0 #303f46, 150px 110px 0 0 #ffffff, 160px 110px 0 0 #303f46, 10px 120px 0 0 #303f46, 20px 120px 0 0 #303f46, 30px 120px 0 0 #303f46, 40px 120px 0 0 #303f46, 50px 120px 0 0 #303f46, 60px 120px 0 0 #303f46, 70px 120px 0 0 #ffffff, 80px 120px 0 0 #ffffff, 90px 120px 0 0 #ffffff, 100px 120px 0 0 #ffffff, 110px 120px 0 0 #ffffff, 120px 120px 0 0 #ffffff, 130px 120px 0 0 #303f46, 140px 120px 0 0 #303f46, 150px 120px 0 0 #ffffff, 160px 120px 0 0 #303f46, 10px 130px 0 0 #303f46, 20px 130px 0 0 #303f46, 30px 130px 0 0 #303f46, 40px 130px 0 0 #303f46, 50px 130px 0 0 #ffffff, 60px 130px 0 0 #ffffff, 70px 130px 0 0 #ffffff, 80px 130px 0 0 #ffffff, 90px 130px 0 0 #ffffff, 100px 130px 0 0 #ffffff, 110px 130px 0 0 #ffffff, 120px 130px 0 0 #ffffff, 130px 130px 0 0 #303f46, 140px 130px 0 0 #303f46, 150px 130px 0 0 #ffffff, 160px 130px 0 0 #303f46, 10px 140px 0 0 #303f46, 20px 140px 0 0 #303f46, 30px 140px 0 0 #303f46, 40px 140px 0 0 #303f46, 50px 140px 0 0 #ffffff, 60px 140px 0 0 #ffffff, 70px 140px 0 0 #ffffff, 80px 140px 0 0 #ffffff, 90px 140px 0 0 #ffffff, 100px 140px 0 0 #ffffff, 110px 140px 0 0 #ffffff, 120px 140px 0 0 #ffffff, 130px 140px 0 0 #303f46, 140px 140px 0 0 #ffffff, 150px 140px 0 0 #ffffff, 160px 140px 0 0 #303f46, 10px 150px 0 0 #303f46, 20px 150px 0 0 #303f46, 30px 150px 0 0 #303f46, 40px 150px 0 0 #ffffff, 50px 150px 0 0 #ffffff, 60px 150px 0 0 #ffffff, 70px 150px 0 0 #ffffff, 80px 150px 0 0 #ffffff, 90px 150px 0 0 #ffffff, 100px 150px 0 0 #ffffff, 110px 150px 0 0 #ffffff, 120px 150px 0 0 #ffffff, 130px 150px 0 0 #ffffff, 140px 150px 0 0 #ffffff, 150px 150px 0 0 #303f46, 160px 150px 0 0 #303f46, 10px 160px 0 0 #607d8b, 20px 160px 0 0 #607d8b, 30px 160px 0 0 #607d8b, 40px 160px 0 0 #607d8b, 50px 160px 0 0 #607d8b, 60px 160px 0 0 #ffffff, 70px 160px 0 0 #ffffff, 80px 160px 0 0 #607d8b, 90px 160px 0 0 #607d8b, 100px 160px 0 0 #607d8b, 110px 160px 0 0 #ffffff, 120px 160px 0 0 #ffffff, 130px 160px 0 0 #607d8b, 140px 160px 0 0 #607d8b, 150px 160px 0 0 #607d8b, 160px 160px 0 0 #607d8b;
-          box-shadow: 10px 10px 0 0 #303f46, 20px 10px 0 0 #303f46, 30px 10px 0 0 #303f46, 40px 10px 0 0 #303f46, 50px 10px 0 0 #303f46, 60px 10px 0 0 #303f46, 70px 10px 0 0 #ffffff, 80px 10px 0 0 #303f46, 90px 10px 0 0 #303f46, 100px 10px 0 0 #303f46, 110px 10px 0 0 #303f46, 120px 10px 0 0 #ffffff, 130px 10px 0 0 #303f46, 140px 10px 0 0 #303f46, 150px 10px 0 0 #303f46, 160px 10px 0 0 #303f46, 10px 20px 0 0 #303f46, 20px 20px 0 0 #303f46, 30px 20px 0 0 #303f46, 40px 20px 0 0 #303f46, 50px 20px 0 0 #303f46, 60px 20px 0 0 #ffffff, 70px 20px 0 0 #ffcdd2, 80px 20px 0 0 #ffffff, 90px 20px 0 0 #303f46, 100px 20px 0 0 #303f46, 110px 20px 0 0 #ffffff, 120px 20px 0 0 #ffcdd2, 130px 20px 0 0 #ffffff, 140px 20px 0 0 #303f46, 150px 20px 0 0 #303f46, 160px 20px 0 0 #303f46, 10px 30px 0 0 #303f46, 20px 30px 0 0 #303f46, 30px 30px 0 0 #303f46, 40px 30px 0 0 #303f46, 50px 30px 0 0 #303f46, 60px 30px 0 0 #ffffff, 70px 30px 0 0 #ffcdd2, 80px 30px 0 0 #ffcdd2, 90px 30px 0 0 #ffffff, 100px 30px 0 0 #ffffff, 110px 30px 0 0 #ffcdd2, 120px 30px 0 0 #ffcdd2, 130px 30px 0 0 #ffffff, 140px 30px 0 0 #303f46, 150px 30px 0 0 #303f46, 160px 30px 0 0 #303f46, 10px 40px 0 0 #303f46, 20px 40px 0 0 #303f46, 30px 40px 0 0 #303f46, 40px 40px 0 0 #303f46, 50px 40px 0 0 #303f46, 60px 40px 0 0 #ffffff, 70px 40px 0 0 #ffcdd2, 80px 40px 0 0 #ffffff, 90px 40px 0 0 #ffffff, 100px 40px 0 0 #ffffff, 110px 40px 0 0 #ffffff, 120px 40px 0 0 #ffcdd2, 130px 40px 0 0 #ffffff, 140px 40px 0 0 #303f46, 150px 40px 0 0 #303f46, 160px 40px 0 0 #303f46, 10px 50px 0 0 #303f46, 20px 50px 0 0 #303f46, 30px 50px 0 0 #303f46, 40px 50px 0 0 #303f46, 50px 50px 0 0 #303f46, 60px 50px 0 0 #ffffff, 70px 50px 0 0 #ffffff, 80px 50px 0 0 #ffffff, 90px 50px 0 0 #ffffff, 100px 50px 0 0 #ffffff, 110px 50px 0 0 #ffffff, 120px 50px 0 0 #ffffff, 130px 50px 0 0 #ffffff, 140px 50px 0 0 #303f46, 150px 50px 0 0 #303f46, 160px 50px 0 0 #303f46, 10px 60px 0 0 #303f46, 20px 60px 0 0 #303f46, 30px 60px 0 0 #303f46, 40px 60px 0 0 #303f46, 50px 60px 0 0 #303f46, 60px 60px 0 0 #ffffff, 70px 60px 0 0 #000000, 80px 60px 0 0 #ffffff, 90px 60px 0 0 #ffffff, 100px 60px 0 0 #000000, 110px 60px 0 0 #ffffff, 120px 60px 0 0 #ffffff, 130px 60px 0 0 #ffffff, 140px 60px 0 0 #303f46, 150px 60px 0 0 #303f46, 160px 60px 0 0 #303f46, 10px 70px 0 0 #303f46, 20px 70px 0 0 #303f46, 30px 70px 0 0 #303f46, 40px 70px 0 0 #303f46, 50px 70px 0 0 #303f46, 60px 70px 0 0 #ffffff, 70px 70px 0 0 #ffffff, 80px 70px 0 0 #000000, 90px 70px 0 0 #ffffff, 100px 70px 0 0 #ffffff, 110px 70px 0 0 #ffffff, 120px 70px 0 0 #ffffff, 130px 70px 0 0 #ffffff, 140px 70px 0 0 #303f46, 150px 70px 0 0 #303f46, 160px 70px 0 0 #303f46, 10px 80px 0 0 #303f46, 20px 80px 0 0 #303f46, 30px 80px 0 0 #303f46, 40px 80px 0 0 #303f46, 50px 80px 0 0 #303f46, 60px 80px 0 0 #ffffff, 70px 80px 0 0 #ffffff, 80px 80px 0 0 #ffffff, 90px 80px 0 0 #ffffff, 100px 80px 0 0 #ffffff, 110px 80px 0 0 #ffffff, 120px 80px 0 0 #ffffff, 130px 80px 0 0 #ffffff, 140px 80px 0 0 #303f46, 150px 80px 0 0 #303f46, 160px 80px 0 0 #303f46, 10px 90px 0 0 #303f46, 20px 90px 0 0 #303f46, 30px 90px 0 0 #303f46, 40px 90px 0 0 #303f46, 50px 90px 0 0 #303f46, 60px 90px 0 0 #303f46, 70px 90px 0 0 #ffffff, 80px 90px 0 0 #ffffff, 90px 90px 0 0 #ffffff, 100px 90px 0 0 #ffffff, 110px 90px 0 0 #ffffff, 120px 90px 0 0 #ffffff, 130px 90px 0 0 #303f46, 140px 90px 0 0 #303f46, 150px 90px 0 0 #303f46, 160px 90px 0 0 #303f46, 10px 100px 0 0 #303f46, 20px 100px 0 0 #303f46, 30px 100px 0 0 #303f46, 40px 100px 0 0 #303f46, 50px 100px 0 0 #303f46, 60px 100px 0 0 #303f46, 70px 100px 0 0 #303f46, 80px 100px 0 0 #ffffff, 90px 100px 0 0 #ffffff, 100px 100px 0 0 #ffffff, 110px 100px 0 0 #ffffff, 120px 100px 0 0 #303f46, 130px 100px 0 0 #303f46, 140px 100px 0 0 #ffffff, 150px 100px 0 0 #303f46, 160px 100px 0 0 #303f46, 10px 110px 0 0 #303f46, 20px 110px 0 0 #303f46, 30px 110px 0 0 #303f46, 40px 110px 0 0 #303f46, 50px 110px 0 0 #303f46, 60px 110px 0 0 #303f46, 70px 110px 0 0 #303f46, 80px 110px 0 0 #ffffff, 90px 110px 0 0 #ffffff, 100px 110px 0 0 #ffffff, 110px 110px 0 0 #ffffff, 120px 110px 0 0 #303f46, 130px 110px 0 0 #303f46, 140px 110px 0 0 #303f46, 150px 110px 0 0 #ffffff, 160px 110px 0 0 #303f46, 10px 120px 0 0 #303f46, 20px 120px 0 0 #303f46, 30px 120px 0 0 #303f46, 40px 120px 0 0 #303f46, 50px 120px 0 0 #303f46, 60px 120px 0 0 #303f46, 70px 120px 0 0 #ffffff, 80px 120px 0 0 #ffffff, 90px 120px 0 0 #ffffff, 100px 120px 0 0 #ffffff, 110px 120px 0 0 #ffffff, 120px 120px 0 0 #ffffff, 130px 120px 0 0 #303f46, 140px 120px 0 0 #303f46, 150px 120px 0 0 #ffffff, 160px 120px 0 0 #303f46, 10px 130px 0 0 #303f46, 20px 130px 0 0 #303f46, 30px 130px 0 0 #303f46, 40px 130px 0 0 #303f46, 50px 130px 0 0 #ffffff, 60px 130px 0 0 #ffffff, 70px 130px 0 0 #ffffff, 80px 130px 0 0 #ffffff, 90px 130px 0 0 #ffffff, 100px 130px 0 0 #ffffff, 110px 130px 0 0 #ffffff, 120px 130px 0 0 #ffffff, 130px 130px 0 0 #303f46, 140px 130px 0 0 #303f46, 150px 130px 0 0 #ffffff, 160px 130px 0 0 #303f46, 10px 140px 0 0 #303f46, 20px 140px 0 0 #303f46, 30px 140px 0 0 #303f46, 40px 140px 0 0 #303f46, 50px 140px 0 0 #ffffff, 60px 140px 0 0 #ffffff, 70px 140px 0 0 #ffffff, 80px 140px 0 0 #ffffff, 90px 140px 0 0 #ffffff, 100px 140px 0 0 #ffffff, 110px 140px 0 0 #ffffff, 120px 140px 0 0 #ffffff, 130px 140px 0 0 #303f46, 140px 140px 0 0 #ffffff, 150px 140px 0 0 #ffffff, 160px 140px 0 0 #303f46, 10px 150px 0 0 #303f46, 20px 150px 0 0 #303f46, 30px 150px 0 0 #303f46, 40px 150px 0 0 #ffffff, 50px 150px 0 0 #ffffff, 60px 150px 0 0 #ffffff, 70px 150px 0 0 #ffffff, 80px 150px 0 0 #ffffff, 90px 150px 0 0 #ffffff, 100px 150px 0 0 #ffffff, 110px 150px 0 0 #ffffff, 120px 150px 0 0 #ffffff, 130px 150px 0 0 #ffffff, 140px 150px 0 0 #ffffff, 150px 150px 0 0 #303f46, 160px 150px 0 0 #303f46, 10px 160px 0 0 #607d8b, 20px 160px 0 0 #607d8b, 30px 160px 0 0 #607d8b, 40px 160px 0 0 #607d8b, 50px 160px 0 0 #607d8b, 60px 160px 0 0 #ffffff, 70px 160px 0 0 #ffffff, 80px 160px 0 0 #607d8b, 90px 160px 0 0 #607d8b, 100px 160px 0 0 #607d8b, 110px 160px 0 0 #ffffff, 120px 160px 0 0 #ffffff, 130px 160px 0 0 #607d8b, 140px 160px 0 0 #607d8b, 150px 160px 0 0 #607d8b, 160px 160px 0 0 #607d8b;
+  -webkit-box-shadow: 10px 10px 0 0 #303f46, 20px 10px 0 0 #303f46,
+    30px 10px 0 0 #303f46, 40px 10px 0 0 #303f46, 50px 10px 0 0 #303f46,
+    60px 10px 0 0 #303f46, 70px 10px 0 0 #ffffff, 80px 10px 0 0 #303f46,
+    90px 10px 0 0 #303f46, 100px 10px 0 0 #303f46, 110px 10px 0 0 #303f46,
+    120px 10px 0 0 #ffffff, 130px 10px 0 0 #303f46, 140px 10px 0 0 #303f46,
+    150px 10px 0 0 #303f46, 160px 10px 0 0 #303f46, 10px 20px 0 0 #303f46,
+    20px 20px 0 0 #303f46, 30px 20px 0 0 #303f46, 40px 20px 0 0 #303f46,
+    50px 20px 0 0 #303f46, 60px 20px 0 0 #ffffff, 70px 20px 0 0 #ffcdd2,
+    80px 20px 0 0 #ffffff, 90px 20px 0 0 #303f46, 100px 20px 0 0 #303f46,
+    110px 20px 0 0 #ffffff, 120px 20px 0 0 #ffcdd2, 130px 20px 0 0 #ffffff,
+    140px 20px 0 0 #303f46, 150px 20px 0 0 #303f46, 160px 20px 0 0 #303f46,
+    10px 30px 0 0 #303f46, 20px 30px 0 0 #303f46, 30px 30px 0 0 #303f46,
+    40px 30px 0 0 #303f46, 50px 30px 0 0 #303f46, 60px 30px 0 0 #ffffff,
+    70px 30px 0 0 #ffcdd2, 80px 30px 0 0 #ffcdd2, 90px 30px 0 0 #ffffff,
+    100px 30px 0 0 #ffffff, 110px 30px 0 0 #ffcdd2, 120px 30px 0 0 #ffcdd2,
+    130px 30px 0 0 #ffffff, 140px 30px 0 0 #303f46, 150px 30px 0 0 #303f46,
+    160px 30px 0 0 #303f46, 10px 40px 0 0 #303f46, 20px 40px 0 0 #303f46,
+    30px 40px 0 0 #303f46, 40px 40px 0 0 #303f46, 50px 40px 0 0 #303f46,
+    60px 40px 0 0 #ffffff, 70px 40px 0 0 #ffcdd2, 80px 40px 0 0 #ffffff,
+    90px 40px 0 0 #ffffff, 100px 40px 0 0 #ffffff, 110px 40px 0 0 #ffffff,
+    120px 40px 0 0 #ffcdd2, 130px 40px 0 0 #ffffff, 140px 40px 0 0 #303f46,
+    150px 40px 0 0 #303f46, 160px 40px 0 0 #303f46, 10px 50px 0 0 #303f46,
+    20px 50px 0 0 #303f46, 30px 50px 0 0 #303f46, 40px 50px 0 0 #303f46,
+    50px 50px 0 0 #303f46, 60px 50px 0 0 #ffffff, 70px 50px 0 0 #ffffff,
+    80px 50px 0 0 #ffffff, 90px 50px 0 0 #ffffff, 100px 50px 0 0 #ffffff,
+    110px 50px 0 0 #ffffff, 120px 50px 0 0 #ffffff, 130px 50px 0 0 #ffffff,
+    140px 50px 0 0 #303f46, 150px 50px 0 0 #303f46, 160px 50px 0 0 #303f46,
+    10px 60px 0 0 #303f46, 20px 60px 0 0 #303f46, 30px 60px 0 0 #303f46,
+    40px 60px 0 0 #303f46, 50px 60px 0 0 #303f46, 60px 60px 0 0 #ffffff,
+    70px 60px 0 0 #000000, 80px 60px 0 0 #ffffff, 90px 60px 0 0 #ffffff,
+    100px 60px 0 0 #000000, 110px 60px 0 0 #ffffff, 120px 60px 0 0 #ffffff,
+    130px 60px 0 0 #ffffff, 140px 60px 0 0 #303f46, 150px 60px 0 0 #303f46,
+    160px 60px 0 0 #303f46, 10px 70px 0 0 #303f46, 20px 70px 0 0 #303f46,
+    30px 70px 0 0 #303f46, 40px 70px 0 0 #303f46, 50px 70px 0 0 #303f46,
+    60px 70px 0 0 #ffffff, 70px 70px 0 0 #ffffff, 80px 70px 0 0 #000000,
+    90px 70px 0 0 #ffffff, 100px 70px 0 0 #ffffff, 110px 70px 0 0 #ffffff,
+    120px 70px 0 0 #ffffff, 130px 70px 0 0 #ffffff, 140px 70px 0 0 #303f46,
+    150px 70px 0 0 #303f46, 160px 70px 0 0 #303f46, 10px 80px 0 0 #303f46,
+    20px 80px 0 0 #303f46, 30px 80px 0 0 #303f46, 40px 80px 0 0 #303f46,
+    50px 80px 0 0 #303f46, 60px 80px 0 0 #ffffff, 70px 80px 0 0 #ffffff,
+    80px 80px 0 0 #ffffff, 90px 80px 0 0 #ffffff, 100px 80px 0 0 #ffffff,
+    110px 80px 0 0 #ffffff, 120px 80px 0 0 #ffffff, 130px 80px 0 0 #ffffff,
+    140px 80px 0 0 #303f46, 150px 80px 0 0 #303f46, 160px 80px 0 0 #303f46,
+    10px 90px 0 0 #303f46, 20px 90px 0 0 #303f46, 30px 90px 0 0 #303f46,
+    40px 90px 0 0 #303f46, 50px 90px 0 0 #303f46, 60px 90px 0 0 #303f46,
+    70px 90px 0 0 #ffffff, 80px 90px 0 0 #ffffff, 90px 90px 0 0 #ffffff,
+    100px 90px 0 0 #ffffff, 110px 90px 0 0 #ffffff, 120px 90px 0 0 #ffffff,
+    130px 90px 0 0 #303f46, 140px 90px 0 0 #303f46, 150px 90px 0 0 #303f46,
+    160px 90px 0 0 #303f46, 10px 100px 0 0 #303f46, 20px 100px 0 0 #303f46,
+    30px 100px 0 0 #303f46, 40px 100px 0 0 #303f46, 50px 100px 0 0 #303f46,
+    60px 100px 0 0 #303f46, 70px 100px 0 0 #303f46, 80px 100px 0 0 #ffffff,
+    90px 100px 0 0 #ffffff, 100px 100px 0 0 #ffffff, 110px 100px 0 0 #ffffff,
+    120px 100px 0 0 #303f46, 130px 100px 0 0 #303f46, 140px 100px 0 0 #ffffff,
+    150px 100px 0 0 #303f46, 160px 100px 0 0 #303f46, 10px 110px 0 0 #303f46,
+    20px 110px 0 0 #303f46, 30px 110px 0 0 #303f46, 40px 110px 0 0 #303f46,
+    50px 110px 0 0 #303f46, 60px 110px 0 0 #303f46, 70px 110px 0 0 #303f46,
+    80px 110px 0 0 #ffffff, 90px 110px 0 0 #ffffff, 100px 110px 0 0 #ffffff,
+    110px 110px 0 0 #ffffff, 120px 110px 0 0 #303f46, 130px 110px 0 0 #303f46,
+    140px 110px 0 0 #303f46, 150px 110px 0 0 #ffffff, 160px 110px 0 0 #303f46,
+    10px 120px 0 0 #303f46, 20px 120px 0 0 #303f46, 30px 120px 0 0 #303f46,
+    40px 120px 0 0 #303f46, 50px 120px 0 0 #303f46, 60px 120px 0 0 #303f46,
+    70px 120px 0 0 #ffffff, 80px 120px 0 0 #ffffff, 90px 120px 0 0 #ffffff,
+    100px 120px 0 0 #ffffff, 110px 120px 0 0 #ffffff, 120px 120px 0 0 #ffffff,
+    130px 120px 0 0 #303f46, 140px 120px 0 0 #303f46, 150px 120px 0 0 #ffffff,
+    160px 120px 0 0 #303f46, 10px 130px 0 0 #303f46, 20px 130px 0 0 #303f46,
+    30px 130px 0 0 #303f46, 40px 130px 0 0 #303f46, 50px 130px 0 0 #ffffff,
+    60px 130px 0 0 #ffffff, 70px 130px 0 0 #ffffff, 80px 130px 0 0 #ffffff,
+    90px 130px 0 0 #ffffff, 100px 130px 0 0 #ffffff, 110px 130px 0 0 #ffffff,
+    120px 130px 0 0 #ffffff, 130px 130px 0 0 #303f46, 140px 130px 0 0 #303f46,
+    150px 130px 0 0 #ffffff, 160px 130px 0 0 #303f46, 10px 140px 0 0 #303f46,
+    20px 140px 0 0 #303f46, 30px 140px 0 0 #303f46, 40px 140px 0 0 #303f46,
+    50px 140px 0 0 #ffffff, 60px 140px 0 0 #ffffff, 70px 140px 0 0 #ffffff,
+    80px 140px 0 0 #ffffff, 90px 140px 0 0 #ffffff, 100px 140px 0 0 #ffffff,
+    110px 140px 0 0 #ffffff, 120px 140px 0 0 #ffffff, 130px 140px 0 0 #303f46,
+    140px 140px 0 0 #ffffff, 150px 140px 0 0 #ffffff, 160px 140px 0 0 #303f46,
+    10px 150px 0 0 #303f46, 20px 150px 0 0 #303f46, 30px 150px 0 0 #303f46,
+    40px 150px 0 0 #ffffff, 50px 150px 0 0 #ffffff, 60px 150px 0 0 #ffffff,
+    70px 150px 0 0 #ffffff, 80px 150px 0 0 #ffffff, 90px 150px 0 0 #ffffff,
+    100px 150px 0 0 #ffffff, 110px 150px 0 0 #ffffff, 120px 150px 0 0 #ffffff,
+    130px 150px 0 0 #ffffff, 140px 150px 0 0 #ffffff, 150px 150px 0 0 #303f46,
+    160px 150px 0 0 #303f46, 10px 160px 0 0 #607d8b, 20px 160px 0 0 #607d8b,
+    30px 160px 0 0 #607d8b, 40px 160px 0 0 #607d8b, 50px 160px 0 0 #607d8b,
+    60px 160px 0 0 #ffffff, 70px 160px 0 0 #ffffff, 80px 160px 0 0 #607d8b,
+    90px 160px 0 0 #607d8b, 100px 160px 0 0 #607d8b, 110px 160px 0 0 #ffffff,
+    120px 160px 0 0 #ffffff, 130px 160px 0 0 #607d8b, 140px 160px 0 0 #607d8b,
+    150px 160px 0 0 #607d8b, 160px 160px 0 0 #607d8b;
+  box-shadow: 10px 10px 0 0 #303f46, 20px 10px 0 0 #303f46,
+    30px 10px 0 0 #303f46, 40px 10px 0 0 #303f46, 50px 10px 0 0 #303f46,
+    60px 10px 0 0 #303f46, 70px 10px 0 0 #ffffff, 80px 10px 0 0 #303f46,
+    90px 10px 0 0 #303f46, 100px 10px 0 0 #303f46, 110px 10px 0 0 #303f46,
+    120px 10px 0 0 #ffffff, 130px 10px 0 0 #303f46, 140px 10px 0 0 #303f46,
+    150px 10px 0 0 #303f46, 160px 10px 0 0 #303f46, 10px 20px 0 0 #303f46,
+    20px 20px 0 0 #303f46, 30px 20px 0 0 #303f46, 40px 20px 0 0 #303f46,
+    50px 20px 0 0 #303f46, 60px 20px 0 0 #ffffff, 70px 20px 0 0 #ffcdd2,
+    80px 20px 0 0 #ffffff, 90px 20px 0 0 #303f46, 100px 20px 0 0 #303f46,
+    110px 20px 0 0 #ffffff, 120px 20px 0 0 #ffcdd2, 130px 20px 0 0 #ffffff,
+    140px 20px 0 0 #303f46, 150px 20px 0 0 #303f46, 160px 20px 0 0 #303f46,
+    10px 30px 0 0 #303f46, 20px 30px 0 0 #303f46, 30px 30px 0 0 #303f46,
+    40px 30px 0 0 #303f46, 50px 30px 0 0 #303f46, 60px 30px 0 0 #ffffff,
+    70px 30px 0 0 #ffcdd2, 80px 30px 0 0 #ffcdd2, 90px 30px 0 0 #ffffff,
+    100px 30px 0 0 #ffffff, 110px 30px 0 0 #ffcdd2, 120px 30px 0 0 #ffcdd2,
+    130px 30px 0 0 #ffffff, 140px 30px 0 0 #303f46, 150px 30px 0 0 #303f46,
+    160px 30px 0 0 #303f46, 10px 40px 0 0 #303f46, 20px 40px 0 0 #303f46,
+    30px 40px 0 0 #303f46, 40px 40px 0 0 #303f46, 50px 40px 0 0 #303f46,
+    60px 40px 0 0 #ffffff, 70px 40px 0 0 #ffcdd2, 80px 40px 0 0 #ffffff,
+    90px 40px 0 0 #ffffff, 100px 40px 0 0 #ffffff, 110px 40px 0 0 #ffffff,
+    120px 40px 0 0 #ffcdd2, 130px 40px 0 0 #ffffff, 140px 40px 0 0 #303f46,
+    150px 40px 0 0 #303f46, 160px 40px 0 0 #303f46, 10px 50px 0 0 #303f46,
+    20px 50px 0 0 #303f46, 30px 50px 0 0 #303f46, 40px 50px 0 0 #303f46,
+    50px 50px 0 0 #303f46, 60px 50px 0 0 #ffffff, 70px 50px 0 0 #ffffff,
+    80px 50px 0 0 #ffffff, 90px 50px 0 0 #ffffff, 100px 50px 0 0 #ffffff,
+    110px 50px 0 0 #ffffff, 120px 50px 0 0 #ffffff, 130px 50px 0 0 #ffffff,
+    140px 50px 0 0 #303f46, 150px 50px 0 0 #303f46, 160px 50px 0 0 #303f46,
+    10px 60px 0 0 #303f46, 20px 60px 0 0 #303f46, 30px 60px 0 0 #303f46,
+    40px 60px 0 0 #303f46, 50px 60px 0 0 #303f46, 60px 60px 0 0 #ffffff,
+    70px 60px 0 0 #000000, 80px 60px 0 0 #ffffff, 90px 60px 0 0 #ffffff,
+    100px 60px 0 0 #000000, 110px 60px 0 0 #ffffff, 120px 60px 0 0 #ffffff,
+    130px 60px 0 0 #ffffff, 140px 60px 0 0 #303f46, 150px 60px 0 0 #303f46,
+    160px 60px 0 0 #303f46, 10px 70px 0 0 #303f46, 20px 70px 0 0 #303f46,
+    30px 70px 0 0 #303f46, 40px 70px 0 0 #303f46, 50px 70px 0 0 #303f46,
+    60px 70px 0 0 #ffffff, 70px 70px 0 0 #ffffff, 80px 70px 0 0 #000000,
+    90px 70px 0 0 #ffffff, 100px 70px 0 0 #ffffff, 110px 70px 0 0 #ffffff,
+    120px 70px 0 0 #ffffff, 130px 70px 0 0 #ffffff, 140px 70px 0 0 #303f46,
+    150px 70px 0 0 #303f46, 160px 70px 0 0 #303f46, 10px 80px 0 0 #303f46,
+    20px 80px 0 0 #303f46, 30px 80px 0 0 #303f46, 40px 80px 0 0 #303f46,
+    50px 80px 0 0 #303f46, 60px 80px 0 0 #ffffff, 70px 80px 0 0 #ffffff,
+    80px 80px 0 0 #ffffff, 90px 80px 0 0 #ffffff, 100px 80px 0 0 #ffffff,
+    110px 80px 0 0 #ffffff, 120px 80px 0 0 #ffffff, 130px 80px 0 0 #ffffff,
+    140px 80px 0 0 #303f46, 150px 80px 0 0 #303f46, 160px 80px 0 0 #303f46,
+    10px 90px 0 0 #303f46, 20px 90px 0 0 #303f46, 30px 90px 0 0 #303f46,
+    40px 90px 0 0 #303f46, 50px 90px 0 0 #303f46, 60px 90px 0 0 #303f46,
+    70px 90px 0 0 #ffffff, 80px 90px 0 0 #ffffff, 90px 90px 0 0 #ffffff,
+    100px 90px 0 0 #ffffff, 110px 90px 0 0 #ffffff, 120px 90px 0 0 #ffffff,
+    130px 90px 0 0 #303f46, 140px 90px 0 0 #303f46, 150px 90px 0 0 #303f46,
+    160px 90px 0 0 #303f46, 10px 100px 0 0 #303f46, 20px 100px 0 0 #303f46,
+    30px 100px 0 0 #303f46, 40px 100px 0 0 #303f46, 50px 100px 0 0 #303f46,
+    60px 100px 0 0 #303f46, 70px 100px 0 0 #303f46, 80px 100px 0 0 #ffffff,
+    90px 100px 0 0 #ffffff, 100px 100px 0 0 #ffffff, 110px 100px 0 0 #ffffff,
+    120px 100px 0 0 #303f46, 130px 100px 0 0 #303f46, 140px 100px 0 0 #ffffff,
+    150px 100px 0 0 #303f46, 160px 100px 0 0 #303f46, 10px 110px 0 0 #303f46,
+    20px 110px 0 0 #303f46, 30px 110px 0 0 #303f46, 40px 110px 0 0 #303f46,
+    50px 110px 0 0 #303f46, 60px 110px 0 0 #303f46, 70px 110px 0 0 #303f46,
+    80px 110px 0 0 #ffffff, 90px 110px 0 0 #ffffff, 100px 110px 0 0 #ffffff,
+    110px 110px 0 0 #ffffff, 120px 110px 0 0 #303f46, 130px 110px 0 0 #303f46,
+    140px 110px 0 0 #303f46, 150px 110px 0 0 #ffffff, 160px 110px 0 0 #303f46,
+    10px 120px 0 0 #303f46, 20px 120px 0 0 #303f46, 30px 120px 0 0 #303f46,
+    40px 120px 0 0 #303f46, 50px 120px 0 0 #303f46, 60px 120px 0 0 #303f46,
+    70px 120px 0 0 #ffffff, 80px 120px 0 0 #ffffff, 90px 120px 0 0 #ffffff,
+    100px 120px 0 0 #ffffff, 110px 120px 0 0 #ffffff, 120px 120px 0 0 #ffffff,
+    130px 120px 0 0 #303f46, 140px 120px 0 0 #303f46, 150px 120px 0 0 #ffffff,
+    160px 120px 0 0 #303f46, 10px 130px 0 0 #303f46, 20px 130px 0 0 #303f46,
+    30px 130px 0 0 #303f46, 40px 130px 0 0 #303f46, 50px 130px 0 0 #ffffff,
+    60px 130px 0 0 #ffffff, 70px 130px 0 0 #ffffff, 80px 130px 0 0 #ffffff,
+    90px 130px 0 0 #ffffff, 100px 130px 0 0 #ffffff, 110px 130px 0 0 #ffffff,
+    120px 130px 0 0 #ffffff, 130px 130px 0 0 #303f46, 140px 130px 0 0 #303f46,
+    150px 130px 0 0 #ffffff, 160px 130px 0 0 #303f46, 10px 140px 0 0 #303f46,
+    20px 140px 0 0 #303f46, 30px 140px 0 0 #303f46, 40px 140px 0 0 #303f46,
+    50px 140px 0 0 #ffffff, 60px 140px 0 0 #ffffff, 70px 140px 0 0 #ffffff,
+    80px 140px 0 0 #ffffff, 90px 140px 0 0 #ffffff, 100px 140px 0 0 #ffffff,
+    110px 140px 0 0 #ffffff, 120px 140px 0 0 #ffffff, 130px 140px 0 0 #303f46,
+    140px 140px 0 0 #ffffff, 150px 140px 0 0 #ffffff, 160px 140px 0 0 #303f46,
+    10px 150px 0 0 #303f46, 20px 150px 0 0 #303f46, 30px 150px 0 0 #303f46,
+    40px 150px 0 0 #ffffff, 50px 150px 0 0 #ffffff, 60px 150px 0 0 #ffffff,
+    70px 150px 0 0 #ffffff, 80px 150px 0 0 #ffffff, 90px 150px 0 0 #ffffff,
+    100px 150px 0 0 #ffffff, 110px 150px 0 0 #ffffff, 120px 150px 0 0 #ffffff,
+    130px 150px 0 0 #ffffff, 140px 150px 0 0 #ffffff, 150px 150px 0 0 #303f46,
+    160px 150px 0 0 #303f46, 10px 160px 0 0 #607d8b, 20px 160px 0 0 #607d8b,
+    30px 160px 0 0 #607d8b, 40px 160px 0 0 #607d8b, 50px 160px 0 0 #607d8b,
+    60px 160px 0 0 #ffffff, 70px 160px 0 0 #ffffff, 80px 160px 0 0 #607d8b,
+    90px 160px 0 0 #607d8b, 100px 160px 0 0 #607d8b, 110px 160px 0 0 #ffffff,
+    120px 160px 0 0 #ffffff, 130px 160px 0 0 #607d8b, 140px 160px 0 0 #607d8b,
+    150px 160px 0 0 #607d8b, 160px 160px 0 0 #607d8b;
   height: 20px;
   width: 20px;
 }
@@ -2902,9 +4525,15 @@ table,
   --scheme-color-lighten: 250, 250, 250;
   --highlight-color-darken: 3, 54, 105;
   --scheme-color-rgba: rgba(var(--dui-scheme), var(--transparency));
-  --scheme-color-lighten-rgba: rgba(var(--scheme-color-lighten),var(--transparency));
+  --scheme-color-lighten-rgba: rgba(
+    var(--scheme-color-lighten),
+    var(--transparency)
+  );
   --highlight-color-rgba: rgba(var(--dui-primary), var(--transparency));
-  --highlight-color-darken-rgba: rgba(var(--highlight-color-darken),var(--transparency));
+  --highlight-color-darken-rgba: rgba(
+    var(--highlight-color-darken),
+    var(--transparency)
+  );
   --group-1-color-transparent: rgba(1, 114, 75, var(--transparency));
   --group-2-color-transparent: rgba(188, 91, 0, var(--transparency));
   --group-3-color-transparent: rgba(196, 6, 57, var(--transparency));
@@ -2915,7 +4544,12 @@ table,
 }
 
 .glass-style .display-content > .container {
-  background-color: hsla(var(--dui-color-scheme-h), var(--dui-color-scheme-s), var(--dui-color-scheme-l), 0.2);
+  background-color: hsla(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    var(--dui-color-scheme-l),
+    0.2
+  );
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   border: var(--border-size) solid rgba(209, 213, 219, 0.6);
@@ -2951,7 +4585,12 @@ table,
 .glass-style .range-slider__range,
 .glass-style .range-slider__value,
 .glass-style .modal-content {
-  background-color: hsla(var(--dui-color-scheme-h), var(--dui-color-scheme-s), var(--dui-color-scheme-l), 0.2);
+  background-color: hsla(
+    var(--dui-color-scheme-h),
+    var(--dui-color-scheme-s),
+    var(--dui-color-scheme-l),
+    0.2
+  );
   color: var(--base-color);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
@@ -3073,7 +4712,7 @@ table,
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 600%;
   -webkit-animation: gradient 15s ease infinite;
-          animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
 }
 
 @-webkit-keyframes gradient {
@@ -3111,11 +4750,19 @@ table,
   --d: 4000ms;
   --e: cubic-bezier(0.76, 0, 0.24, 1);
   background-color: var(--bg);
-  background-image: linear-gradient(45deg, var(--c1) 25%, transparent 25%), linear-gradient(-45deg, var(--c1) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--c2) 75%), linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+  background-image: linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
   background-size: var(--s) var(--s);
-  background-position: calc(var(--p) * 1) calc(var(--p) * 0), calc(var(--p) * -1) calc(var(--p) * 1), calc(var(--p) * 1) calc(var(--p) * -1), calc(var(--p) * -1) calc(var(--p) * 0);
-  -webkit-animation: color var(--d) var(--e) infinite, position var(--d) var(--e) infinite;
-          animation: color var(--d) var(--e) infinite, position var(--d) var(--e) infinite;
+  background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+    calc(var(--p) * -1) calc(var(--p) * 1),
+    calc(var(--p) * 1) calc(var(--p) * -1),
+    calc(var(--p) * -1) calc(var(--p) * 0);
+  -webkit-animation: color var(--d) var(--e) infinite,
+    position var(--d) var(--e) infinite;
+  animation: color var(--d) var(--e) infinite,
+    position var(--d) var(--e) infinite;
 }
 
 @-webkit-keyframes color {
@@ -3158,44 +4805,74 @@ table,
 
 @-webkit-keyframes position {
   0% {
-    background-position: calc(var(--p) * 1) calc(var(--p) * 0), calc(var(--p) * -1) calc(var(--p) * 1), calc(var(--p) * 1) calc(var(--p) * -1), calc(var(--p) * -1) calc(var(--p) * 0);
+    background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+      calc(var(--p) * -1) calc(var(--p) * 1),
+      calc(var(--p) * 1) calc(var(--p) * -1),
+      calc(var(--p) * -1) calc(var(--p) * 0);
   }
   25% {
-    background-position: calc(var(--p) * 1) calc(var(--p) * 4), calc(var(--p) * -1) calc(var(--p) * 5), calc(var(--p) * 1) calc(var(--p) * 3), calc(var(--p) * -1) calc(var(--p) * 4);
+    background-position: calc(var(--p) * 1) calc(var(--p) * 4),
+      calc(var(--p) * -1) calc(var(--p) * 5),
+      calc(var(--p) * 1) calc(var(--p) * 3),
+      calc(var(--p) * -1) calc(var(--p) * 4);
   }
   50% {
-    background-position: calc(var(--p) * 3) calc(var(--p) * 8), calc(var(--p) * -3) calc(var(--p) * 9), calc(var(--p) * 2) calc(var(--p) * 7), calc(var(--p) * -2) calc(var(--p) * 8);
+    background-position: calc(var(--p) * 3) calc(var(--p) * 8),
+      calc(var(--p) * -3) calc(var(--p) * 9),
+      calc(var(--p) * 2) calc(var(--p) * 7),
+      calc(var(--p) * -2) calc(var(--p) * 8);
   }
   75% {
-    background-position: calc(var(--p) * 3) calc(var(--p) * 12), calc(var(--p) * -3) calc(var(--p) * 13), calc(var(--p) * 2) calc(var(--p) * 11), calc(var(--p) * -2) calc(var(--p) * 12);
+    background-position: calc(var(--p) * 3) calc(var(--p) * 12),
+      calc(var(--p) * -3) calc(var(--p) * 13),
+      calc(var(--p) * 2) calc(var(--p) * 11),
+      calc(var(--p) * -2) calc(var(--p) * 12);
   }
   100% {
-    background-position: calc(var(--p) * 5) calc(var(--p) * 16), calc(var(--p) * -5) calc(var(--p) * 17), calc(var(--p) * 5) calc(var(--p) * 15), calc(var(--p) * -5) calc(var(--p) * 16);
+    background-position: calc(var(--p) * 5) calc(var(--p) * 16),
+      calc(var(--p) * -5) calc(var(--p) * 17),
+      calc(var(--p) * 5) calc(var(--p) * 15),
+      calc(var(--p) * -5) calc(var(--p) * 16);
   }
 }
 
 @keyframes position {
   0% {
-    background-position: calc(var(--p) * 1) calc(var(--p) * 0), calc(var(--p) * -1) calc(var(--p) * 1), calc(var(--p) * 1) calc(var(--p) * -1), calc(var(--p) * -1) calc(var(--p) * 0);
+    background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+      calc(var(--p) * -1) calc(var(--p) * 1),
+      calc(var(--p) * 1) calc(var(--p) * -1),
+      calc(var(--p) * -1) calc(var(--p) * 0);
   }
   25% {
-    background-position: calc(var(--p) * 1) calc(var(--p) * 4), calc(var(--p) * -1) calc(var(--p) * 5), calc(var(--p) * 1) calc(var(--p) * 3), calc(var(--p) * -1) calc(var(--p) * 4);
+    background-position: calc(var(--p) * 1) calc(var(--p) * 4),
+      calc(var(--p) * -1) calc(var(--p) * 5),
+      calc(var(--p) * 1) calc(var(--p) * 3),
+      calc(var(--p) * -1) calc(var(--p) * 4);
   }
   50% {
-    background-position: calc(var(--p) * 3) calc(var(--p) * 8), calc(var(--p) * -3) calc(var(--p) * 9), calc(var(--p) * 2) calc(var(--p) * 7), calc(var(--p) * -2) calc(var(--p) * 8);
+    background-position: calc(var(--p) * 3) calc(var(--p) * 8),
+      calc(var(--p) * -3) calc(var(--p) * 9),
+      calc(var(--p) * 2) calc(var(--p) * 7),
+      calc(var(--p) * -2) calc(var(--p) * 8);
   }
   75% {
-    background-position: calc(var(--p) * 3) calc(var(--p) * 12), calc(var(--p) * -3) calc(var(--p) * 13), calc(var(--p) * 2) calc(var(--p) * 11), calc(var(--p) * -2) calc(var(--p) * 12);
+    background-position: calc(var(--p) * 3) calc(var(--p) * 12),
+      calc(var(--p) * -3) calc(var(--p) * 13),
+      calc(var(--p) * 2) calc(var(--p) * 11),
+      calc(var(--p) * -2) calc(var(--p) * 12);
   }
   100% {
-    background-position: calc(var(--p) * 5) calc(var(--p) * 16), calc(var(--p) * -5) calc(var(--p) * 17), calc(var(--p) * 5) calc(var(--p) * 15), calc(var(--p) * -5) calc(var(--p) * 16);
+    background-position: calc(var(--p) * 5) calc(var(--p) * 16),
+      calc(var(--p) * -5) calc(var(--p) * 17),
+      calc(var(--p) * 5) calc(var(--p) * 15),
+      calc(var(--p) * -5) calc(var(--p) * 16);
   }
 }
 
 @media (prefers-reduced-motion) {
   body {
     -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 }
 
@@ -3208,16 +4885,32 @@ table,
 
 .windows98-bg::before,
 .dropdown .windows98-bg {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../backgrounds/windows98.jpg) no-repeat center center fixed;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../backgrounds/windows98.jpg) no-repeat center center fixed;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.5))
+    ),
+    url(../backgrounds/windows98.jpg) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../backgrounds/windows98.jpg) no-repeat center center fixed;
   background-attachment: fixed;
   background-size: cover;
 }
 
 .windowsxp-bg::before,
 .dropdown .windowsxp-bg {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../backgrounds/windowsxp.png) no-repeat center center fixed;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../backgrounds/windowsxp.png) no-repeat center center fixed;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.5)),
+      to(rgba(0, 0, 0, 0.5))
+    ),
+    url(../backgrounds/windowsxp.png) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../backgrounds/windowsxp.png) no-repeat center center fixed;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -3324,19 +5017,39 @@ table,
   margin-left: 10px;
 }
 
-.setting-section .setting-panel .radio-group-wrapper #solid-border ~ label .text {
+.setting-section
+  .setting-panel
+  .radio-group-wrapper
+  #solid-border
+  ~ label
+  .text {
   border: 4px solid var(--dui-base-mute);
 }
 
-.setting-section .setting-panel .radio-group-wrapper #double-border ~ label .text {
+.setting-section
+  .setting-panel
+  .radio-group-wrapper
+  #double-border
+  ~ label
+  .text {
   border: 4px double var(--dui-base-mute);
 }
 
-.setting-section .setting-panel .radio-group-wrapper #dotted-border ~ label .text {
+.setting-section
+  .setting-panel
+  .radio-group-wrapper
+  #dotted-border
+  ~ label
+  .text {
   border: 4px dotted var(--dui-base-mute);
 }
 
-.setting-section .setting-panel .radio-group-wrapper #dashed-border ~ label .text {
+.setting-section
+  .setting-panel
+  .radio-group-wrapper
+  #dashed-border
+  ~ label
+  .text {
   border: 4px dashed var(--dui-base-mute);
 }
 

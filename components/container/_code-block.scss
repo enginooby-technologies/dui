@@ -1,70 +1,69 @@
 .code-block {
-        font-style: italic;
-        // padding: 7px;
-        margin: 10px 0 40px;
-        font-size: 0.93rem;
-        border-radius: $borderRadius;
+  font-style: italic;
+  // padding: 7px;
+  margin: 10px 0 40px;
+  font-size: 0.93rem;
+  border-radius: $borderRadius;
 
-        pre {
-                background-color: transparent;
-                padding: 1em;
-                margin: 0.5em 0;
-                overflow: auto;
+  pre {
+    background-color: transparent;
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
 
-                // indentical rules as Prism so that deferred loadding won't cause noticable FOUC
-                font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
-                        monospace;
-                font-size: 1em;
-                text-align: left;
-                white-space: pre;
-                word-spacing: normal;
-                word-break: normal;
-                word-wrap: normal;
-                line-height: 1.5;
-                tab-size: 4;
-                hyphens: none;
+    // indentical rules as Prism so that deferred loadding won't cause noticable FOUC
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    hyphens: none;
 
-                code {
-                        text-shadow: 0 0.5px $baseColor;
-                        display: block;
-                        color: $mutedBaseColor;
-                        white-space: pre-wrap;
-                        white-space: -moz-pre-wrap;
-                        white-space: -o-pre-wrap;
-                }
-        }
+    code {
+      text-shadow: 0 0.5px $baseColor;
+      display: block;
+      color: $mutedBaseColor;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -o-pre-wrap;
+    }
+  }
 
-        .token.atrule,
-        .token.attr-value,
-        .token.keyword {
-                color: $highlightColor;
-        }
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: $highlightColor;
+  }
 
-        // override Prism colors with classification colors
-        .token.attr-name,
-        .token.builtin,
-        .token.char,
-        .token.inserted,
-        .token.selector,
-        .token.string {
-                color: $colorfull1;
-        }
+  // override Prism colors with classification colors
+  .token.attr-name,
+  .token.builtin,
+  .token.char,
+  .token.inserted,
+  .token.selector,
+  .token.string {
+    color: $colorfull1;
+  }
 
-        .token.important,
-        .token.regex,
-        .token.variable {
-                color: $colorfull2;
-        }
+  .token.important,
+  .token.regex,
+  .token.variable {
+    color: $colorfull2;
+  }
 
-        .token.class-name,
-        .token.function {
-                color: $colorfull3;
-        }
+  .token.class-name,
+  .token.function {
+    color: $colorfull3;
+  }
 
-        .token.cdata,
-        .token.comment,
-        .token.doctype,
-        .token.prolog {
-                color: $mutedBaseColor;
-        }
+  .token.cdata,
+  .token.comment,
+  .token.doctype,
+  .token.prolog {
+    color: $mutedBaseColor;
+  }
 }

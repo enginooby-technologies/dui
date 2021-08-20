@@ -3,36 +3,36 @@
 
 /* Spacing utils from Bootstrap */
 .my-4 {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 .p-3 {
-        padding: 1rem !important;
+  padding: 1rem !important;
 }
 .p-0 {
-        padding: 0rem !important;
+  padding: 0rem !important;
 }
 .m-0 {
-        margin: 0 !important ;
+  margin: 0 !important ;
 }
 
 /* Flex utils from Bootstrap */
 .flex-row {
-        -ms-flex-direction: row !important;
-        flex-direction: row !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
 }
 .justify-content-center {
-        -ms-flex-pack: center !important;
-        justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
 }
 
 .d-flex {
-        display: flex !important;
+  display: flex !important;
 }
 
 // to break new line when using float
 .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
+  content: "";
+  clear: both;
+  display: table;
 }

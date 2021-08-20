@@ -2,7 +2,7 @@
 
 // REFACTOR: use mixin? to generate global variables for each color
 @mixin test {
-        $csl-25: lightness(--dui-color-scheme, 25%) !global;
+  $csl-25: lightness(--dui-color-scheme, 25%) !global;
 }
 // @include test();
 

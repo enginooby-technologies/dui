@@ -7,33 +7,33 @@ include_once dirname(__FILE__) . "/../Enum.php";
 // https://getbootstrap.com/docs/4.0/utilities/flex
 class FlexboxOption
 {
-        public function __construct(
-                // can not init default enum value => define default in enum and init when create flexbox instead 
-                public ?JustifyContent $justifyContent = null,
-                public ?Direction $direction = null,
-        ) {
-        }
+  public function __construct(
+    // can not init default enum value => define default in enum and init when create flexbox instead 
+    public ?JustifyContent $justifyContent = null,
+    public ?Direction $direction = null,
+  ) {
+  }
 }
 
 // https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content
 final class JustifyContent extends Enum
 {
-        const Default = "center";
-        const Start = "start";
-        const End = "end";
-        const Center = "center";
-        const Between = "between";
-        const Around = "around";
+  const Default = "center";
+  const Start = "start";
+  const End = "end";
+  const Center = "center";
+  const Between = "between";
+  const Around = "around";
 }
 
 // https://getbootstrap.com/docs/4.0/utilities/flex/#direction
 final class Direction extends Enum
 {
-        const Default = "row";
-        const Row = "row";
-        const RowReverse = "row-reverse";
-        const Column = "column";
-        const ColumnReverse = "column-reverse";
+  const Default = "row";
+  const Row = "row";
+  const RowReverse = "row-reverse";
+  const Column = "column";
+  const ColumnReverse = "column-reverse";
 }
 
 // https://getbootstrap.com/docs/4.0/utilities/flex/#align-content
