@@ -8,12 +8,12 @@
                 !!! Can not define CSS variable using those functions, only for reference !!!
         */
         @include defineHslColor(--dui-color-primary, 210, 100%, 30%);
-        // @include defineHslColor(--dui-color-scheme, 0, 0%, 83%);
-        @include defineHslColor(--dui-color-scheme, 120, 100%, 13%);
+        @include defineHslColor(--dui-color-scheme, 0, 0%, 83%);
+        // @include defineHslColor(--dui-color-scheme, 120, 100%, 13%);
         @include defineHslColor(--dui-color-1, 159, 98%, 23%);
         @include defineHslColor(--dui-color-2, 29, 100%, 37%);
         @include defineHslColor(--dui-color-3, 344, 94%, 40%);
-
+        // --dui-color-base: contrast(--dui-color-scheme);
         /* OTHERS */
         --dui-border-radius: 9px;
         // lg
@@ -21,20 +21,6 @@
         --dui-container-padding: 40px;
         // TODO: sm - md...
 }
-
-//SASS variables just to ease referecing in other SCSS files
-$schemeColor: var(--dui-color-scheme);
-$highlightColor: var(--dui-color-primary);
-$contrastHighlightColor: contrast(--dui-color-primary);
-$baseColor: contrast(--dui-color-scheme);
-$mutedBaseColor: var(--dui-base-mute);
-
-$colorfull1: var(--dui-color-1);
-$colorfull2: var(--dui-color-2);
-$colorfull3: var(--dui-color-3);
-$contrastColorfull1: contrast(--dui-color-1);
-$contrastColorfull2: contrast(--dui-color-2);
-$contrastColorfull3: contrast(--dui-color-3);
 
 $borderRadius: var(--dui-border-radius);
 $transitionDuration: 0.8s;

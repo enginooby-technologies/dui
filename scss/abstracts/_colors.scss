@@ -1,0 +1,52 @@
+// SASS color variables derived from global CSS variables for easy references
+
+// REFACTOR: use mixin? to generate global variables for each color
+@mixin test {
+        $csl-25: lightness(--dui-color-scheme, 25%) !global;
+}
+// @include test();
+
+$cs: var(--dui-color-scheme);
+$csl-5: lightness(--dui-color-scheme, 5%);
+$csl-10: lightness(--dui-color-scheme, 10%);
+$csl-15: lightness(--dui-color-scheme, 15%);
+$csl-20: lightness(--dui-color-scheme, 20%);
+$csd-5: lightness(--dui-color-scheme, -5%);
+$csd-10: lightness(--dui-color-scheme, -10%);
+$csd-15: lightness(--dui-color-scheme, -15%);
+$csd-20: lightness(--dui-color-scheme, -20%);
+
+$csc: var(--dui-color-scheme-contrast);
+$cscm-5: mute-contrast(--dui-color-scheme-contrast, 5%);
+$cscm-10: mute-contrast(--dui-color-scheme-contrast, 10%);
+$cscm-15: mute-contrast(--dui-color-scheme-contrast, 15%);
+$cscm-20: mute-contrast(--dui-color-scheme-contrast, 20%);
+
+$cp: var(--dui-color-primary);
+$cpl-5: lightness(--dui-color-primary, 5%);
+$cpl-10: lightness(--dui-color-primary, 10%);
+$cpl-15: lightness(--dui-color-primary, 15%);
+$cpl-20: lightness(--dui-color-primary, 20%);
+$cpd-5: lightness(--dui-color-primary, -5%);
+$cpd-10: lightness(--dui-color-primary, -10%);
+$cpd-15: lightness(--dui-color-primary, -15%);
+$cpd-20: lightness(--dui-color-primary, -20%);
+
+$cpc: var(--dui-color-primary-contrast);
+$cpcm-5: mute-contrast(--dui-color-primary-contrast, 5%);
+$cpcm-10: mute-contrast(--dui-color-primary-contrast, 10%);
+$cpcm-15: mute-contrast(--dui-color-primary-contrast, 15%);
+$cpcm-20: mute-contrast(--dui-color-primary-contrast, 20%);
+
+$schemeColor: var(--dui-color-scheme);
+$highlightColor: var(--dui-color-primary);
+$contrastHighlightColor: contrast(--dui-color-primary);
+$baseColor: contrast(--dui-color-scheme);
+$mutedBaseColor: var(--dui-base-mute);
+
+$colorfull1: var(--dui-color-1);
+$colorfull2: var(--dui-color-2);
+$colorfull3: var(--dui-color-3);
+$contrastColorfull1: contrast(--dui-color-1);
+$contrastColorfull2: contrast(--dui-color-2);
+$contrastColorfull3: contrast(--dui-color-3);
