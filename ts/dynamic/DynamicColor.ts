@@ -67,5 +67,6 @@ export class DynamicColor {
                 root.style.setProperty(`${cssVar}-h`, color.hVal);
                 root.style.setProperty(`${cssVar}-s`, color.sVal);
                 root.style.setProperty(`${cssVar}-l`, color.lVal);
+                root.style.setProperty(`${cssVar}-contrast-l`, color.getContrastL().toString());
         }
 }

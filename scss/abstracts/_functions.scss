@@ -21,7 +21,7 @@ recommended 50 - 70 */
 
 // TODO
 // if color is 100% l (white)/0% l (black), descrease/ increase its lightness
-@function mute($color, $amount) {
+@function mute-contrast($color, $amount) {
         // if light = 0 %               => return light/100*(-2)*amount+amount+light = light+amount
         // if light = 100 %         => return light/100*(-2)*amount+amount+light = light-amount
         // prettier-ignore

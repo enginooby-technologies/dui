@@ -17,14 +17,11 @@
         #{$color}-s: #{$saturation};
         #{$color}-l: #{$lightness};
         #{$color}-contrast: contrast(#{$color});
-
         @if ($lightness>60%) {
                 #{$color}-contrast-l: 0%;
         } @else {
                 #{$color}-contrast-l: 100%;
         }
-        // prettier-ignore
-        // #{$color}: unquote( "hsl(var(#{$color}-h), var(#{$color}-s), var(#{$color}-l))" );
 }
 
 /*-------------------------

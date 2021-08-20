@@ -17,6 +17,9 @@ export class Color {
         this.hsl = this.getHslByHex();
         [this.hVal, this.sVal, this.lVal] = this.hsl.replace(/[^\d,.%]/g, '').split(',');
     }
+    getContrastL() {
+        return parseInt(this.lVal) > 60 ? "0%" : "100%";
+    }
     extractR(hex) { return parseInt((this.cutHex(hex)).substring(0, 2), 16); }
     extractG(hex) { return parseInt((this.cutHex(hex)).substring(2, 4), 16); }
     extractB(hex) { return parseInt((this.cutHex(hex)).substring(4, 6), 16); }

@@ -1,16 +1,16 @@
 .flat-style {
-        --flat-scheme-distinct-intensity: 4%; // distinct sub-containers from its container
+        --flat-scheme-distinct-intensity: 13%; // distinct sub-containers from its container
         --flat-primary-distinct-intensity: -18%; //for  hover, active button
         // prettier-ignore
-        $distinctScheme: lightness(--dui-color-scheme, var(--flat-scheme-distinct-intensity));
+        $schemeDistinct: lightness(--dui-color-scheme, var(--flat-scheme-distinct-intensity));
         // prettier-ignore
-        $distinctPrimary: lightness(--dui-color-primary, var(--flat-primary-distinct-intensity));
+        $primaryDistinct: lightness(--dui-color-primary, var(--flat-primary-distinct-intensity));
 
         /*-------------------------
       CONTAINER COMPONENTS
 -------------------------*/
         .code-block {
-                background-color: $distinctScheme;
+                background-color: $schemeDistinct;
         }
 
         /*-------------------------
@@ -20,7 +20,7 @@
         .form-item {
                 .form-group {
                         .form-control {
-                                background-color: $distinctScheme;
+                                background-color: $schemeDistinct;
                         }
                 }
         }
@@ -35,7 +35,7 @@
         }
 
         .button:hover {
-                background-color: $distinctPrimary;
+                background-color: $primaryDistinct;
         }
 
         //  BUTTON RADIO
@@ -65,7 +65,7 @@
         .setting-button-border,
         .setting-panel,
         .setting-button {
-                background-color: $distinctScheme;
+                background-color: $schemeDistinct;
                 color: $baseColor;
         }
 
@@ -104,7 +104,7 @@
 
         // SCROLLBAR
         ::-webkit-scrollbar-track {
-                background-color: $distinctScheme;
+                background-color: $schemeDistinct;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -112,7 +112,7 @@
         }
 
         ::-webkit-scrollbar-thumb:hover {
-                background: $distinctPrimary;
+                background: $primaryDistinct;
         }
 
         // RANGE SLIDER
@@ -121,6 +121,6 @@
         }
 
         ::-webkit-slider-thumb:hover {
-                background-color: $distinctPrimary;
+                background-color: $primaryDistinct;
         }
 }

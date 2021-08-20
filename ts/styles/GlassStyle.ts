@@ -78,7 +78,7 @@ export class GlassStyle extends Style {
         }
 
         private updateColorCssVar(cssVar: string, color: Color) {
-                this.cssRule.style.setProperty(cssVar, `${color.rValue}, ${color.gValue}, ${color.bValue}`);
+                this.cssRule.style.setProperty(cssVar, `${color.rVal}, ${color.gVal}, ${color.bVal}`);
         }
 
         onHighlightColorUpdated(): void {
