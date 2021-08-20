@@ -1,266 +1,289 @@
-
 <div id="setting-section" class="setting-section">
-        <div class="text-center setting-panel hide">
-                <div class="title-bar wrapper">
-        <div class="title-bar-text-wrapper scalable">Setting</div>
-        <div class="title-bar-text scalable">Setting</div>
-        <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Restore"></button>
-                <button aria-label="Close"></button>
+  <div class="text-center setting-panel hide">
+    <div class="title-bar wrapper">
+      <div class="title-bar-text-wrapper scalable">Setting</div>
+      <div class="title-bar-text scalable">Setting</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Restore"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="setting-panel-content">
+      <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
+        <p class="option-label">UI Style</p>
+        <!-- TODO: make buttons  equal widths -->
+        <div class="dropdown" id="dropdown-ui-style">
+          <button type="button" class="dropdown-label">
+            <p class="scalable">Select style</p>
+          </button>
+          <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="fas fa-angle-down dropdown-arrow"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:;" value="flat-style">Flat</a>
+            <a class="dropdown-item" href="javascript:;" value="nes-style">NES - Pixel</a>
+            <a class="dropdown-item" href="javascript:;" value="win98-style">Windows 98</a>
+            <a class="dropdown-item" href="javascript:;" value="winxp-style">Windows XP</a>
+            <a class="dropdown-item" href="javascript:;" value="neu-style">Neumorphism</a>
+            <a class="dropdown-item" href="javascript:;" value="glass-style">Glassmorphism</a>
+            <!-- <div class="dropdown-divider"></div> -->
+            <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+          </div>
         </div>
-</div>                <div class="setting-panel-content">
-                        <ul class="theme-skin mb-1 radio-button-group" id="ui-style-panel">
-                                <p class="option-label">UI Style</p>
-                                <!-- TODO: make buttons  equal widths -->
-                                <div class="dropdown" id="dropdown-ui-style">
-        <button type="button" class="dropdown-label">
-                <p class="scalable">Select style</p>
-        </button>
-        <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="fas fa-angle-down dropdown-arrow"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:;" value="flat-style">Flat</a>
-                                        <a class="dropdown-item" href="javascript:;" value="nes-style">NES - Pixel</a>
-                                        <a class="dropdown-item" href="javascript:;" value="win98-style">Windows 98</a>
-                                        <a class="dropdown-item" href="javascript:;" value="winxp-style">Windows XP</a>
-                                        <a class="dropdown-item" href="javascript:;" value="neu-style">Neumorphism</a>
-                                        <a class="dropdown-item" href="javascript:;" value="glass-style">Glassmorphism</a>
-                                <!-- <div class="dropdown-divider"></div> -->
-                <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+      </ul>
+
+      <div class="scrollable ">
+        <!-- STYLE CUSTOMIZER -->
+        <div id="customizer-panel">
+          <div class="customizer  option-panel mb-3" id="neu-customizer">
+            <p class="option-label">Neu Custom</p>
+            <div class='range-slider'>
+              <label for='neu-distance-x'>Distance X</label>
+              <input class='range-slider__range' id='neu-distance-x' type='range' min='0' max='20' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='neu-distance-y'>Distance Y</label>
+              <input class='range-slider__range' id='neu-distance-y' type='range' min='0' max='20' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='blur'>Blur</label>
+              <input class='range-slider__range' id='blur' type='range' min='0' max='20' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='neu-spread'>Spread</label>
+              <input class='range-slider__range' id='neu-spread' type='range' min='-5' max='5' step='0.1' value='-5'>
+              <span class='range-slider__value'>-5</span>
+            </div>
+            <div class='range-slider'>
+              <label for='light-intensity'>Light intensity</label>
+              <input class='range-slider__range' id='light-intensity' type='range' min='0' max='20' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='dark-intensity'>Dark intensity</label>
+              <input class='range-slider__range' id='dark-intensity' type='range' min='0' max='20' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='surface-curvature'>Surface curvature</label>
+              <input class='range-slider__range' id='surface-curvature' type='range' min='-20' max='20' step='0.1' value='-20'>
+              <span class='range-slider__value'>-20</span>
+            </div>
+            <p>Border style</p>
+            <div class="radio-group-wrapper neu-border-style-options">
+              <div class='dui-radio wrapper radio-wrapper '>
+                <input class='state' type='radio' name='neu-border-style' id='solid-border' value='0'>
+                <label class='label ' for='solid-border'>
+                  <div class='indicator'></div>
+                  <span class='text'></span>
+                </label>
+              </div>
+              <div class='dui-radio wrapper radio-wrapper '>
+                <input class='state' type='radio' name='neu-border-style' id='double-border' value='1'>
+                <label class='label ' for='double-border'>
+                  <div class='indicator'></div>
+                  <span class='text'></span>
+                </label>
+              </div>
+              <div class='dui-radio wrapper radio-wrapper '>
+                <input class='state' type='radio' name='neu-border-style' id='dotted-border' value='2'>
+                <label class='label ' for='dotted-border'>
+                  <div class='indicator'></div>
+                  <span class='text'></span>
+                </label>
+              </div>
+              <div class='dui-radio wrapper radio-wrapper '>
+                <input class='state' type='radio' name='neu-border-style' id='dashed-border' value='3'>
+                <label class='label ' for='dashed-border'>
+                  <div class='indicator'></div>
+                  <span class='text'></span>
+                </label>
+              </div>
+            </div>
+            <div class='range-slider'>
+              <label for='neu-border-width'>Border width</label>
+              <input class='range-slider__range' id='neu-border-width' type='range' min='0' max='10' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='neu-border-brightness'>Border brightness</label>
+              <input class='range-slider__range' id='neu-border-brightness' type='range' min='-100' max='100' step='0.1' value='-100'>
+              <span class='range-slider__value'>-100</span>
+            </div>
+          </div>
+          <div class="customizer" id="flat-customizer-in-progress">
+            <p class="option-label">Flat Custom</p>
+          </div>
+          <div class="customizer" id="glass-customizer">
+            <p class="option-label">Glass Custom</p>
+            <div class='range-slider'>
+              <label for='glass-transparency'>Transparency</label>
+              <input class='range-slider__range' id='glass-transparency' type='range' min='0' max='1' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='glass-blur'>Blur</label>
+              <input class='range-slider__range' id='glass-blur' type='range' min='0' max='30' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+            <div class='range-slider'>
+              <label for='glass-border-size'>Border size</label>
+              <input class='range-slider__range' id='glass-border-size' type='range' min='0' max='10' step='0.1' value='0'>
+              <span class='range-slider__value'>0</span>
+            </div>
+          </div>
         </div>
-</div>                        </ul>
-
-                        <div class="scrollable ">
-                                <!-- STYLE CUSTOMIZER -->
-                                <div id="customizer-panel">
-                                        <div class="customizer  option-panel mb-3" id="neu-customizer">
-                                                <p class="option-label">Neu Custom</p>
-                                                        <div class='range-slider'>
-                <label for='neu-distance-x'>Distance X</label>
-                <input class='range-slider__range' id='neu-distance-x' type='range' min='0' max='20' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='neu-distance-y'>Distance Y</label>
-                <input class='range-slider__range' id='neu-distance-y' type='range' min='0' max='20' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='blur'>Blur</label>
-                <input class='range-slider__range' id='blur' type='range' min='0' max='20' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='neu-spread'>Spread</label>
-                <input class='range-slider__range' id='neu-spread' type='range' min='-5' max='5' step='0.1' value='-5'>
-                <span class='range-slider__value'>-5</span>
-        </div>        <div class='range-slider'>
-                <label for='light-intensity'>Light intensity</label>
-                <input class='range-slider__range' id='light-intensity' type='range' min='0' max='20' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='dark-intensity'>Dark intensity</label>
-                <input class='range-slider__range' id='dark-intensity' type='range' min='0' max='20' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='surface-curvature'>Surface curvature</label>
-                <input class='range-slider__range' id='surface-curvature' type='range' min='-20' max='20' step='0.1' value='-20'>
-                <span class='range-slider__value'>-20</span>
+        <!-- GLOBAL CUSTOMIZER -->
+        <div id="color-panel" class="option-panel mb-3">
+          <p class="option-label">Colour</p>
+          <div class="row px-4">
+            <div class="col-6 p-0">
+              <label for="highlight-color-picker">Primary</label>
+              <input type="color" id="highlight-color-picker" value="#0000ff">
+            </div>
+            <div class="col-6 p-0">
+              <label for="scheme-color-picker">Scheme</label>
+              <input type="color" id="scheme-color-picker" value="#f1f3f6">
+            </div>
+          </div>
+          <p>Classification</p>
+          <div class="row mt-1 px-4">
+            <div class="col-4 p-0 ">
+              <input class="color-picker" type="color" id="colorfull1-picker" value="#01724b">
+            </div>
+            <div class="col-4 p-0 ">
+              <input class="color-picker" type="color" id="colorfull2-picker" value="#b44700">
+            </div>
+            <div class="col-4 p-0">
+              <input class="color-picker" type="color" id="colorfull3-picker" value="#c40639">
+            </div>
+          </div>
         </div>
-                                                <p>Border style</p>
-                                                <div class="radio-group-wrapper neu-border-style-options">
-                                                        <div class='dui-radio wrapper radio-wrapper '>
-        <input class='state' type='radio'  name='neu-border-style' id='solid-border' value='0'>
-        <label class='label ' for='solid-border'>
-                <div class='indicator'></div>
-                <span class='text'></span>
-        </label>
-</div><div class='dui-radio wrapper radio-wrapper '>
-        <input class='state' type='radio'  name='neu-border-style' id='double-border' value='1'>
-        <label class='label ' for='double-border'>
-                <div class='indicator'></div>
-                <span class='text'></span>
-        </label>
-</div><div class='dui-radio wrapper radio-wrapper '>
-        <input class='state' type='radio'  name='neu-border-style' id='dotted-border' value='2'>
-        <label class='label ' for='dotted-border'>
-                <div class='indicator'></div>
-                <span class='text'></span>
-        </label>
-</div><div class='dui-radio wrapper radio-wrapper '>
-        <input class='state' type='radio'  name='neu-border-style' id='dashed-border' value='3'>
-        <label class='label ' for='dashed-border'>
-                <div class='indicator'></div>
-                <span class='text'></span>
-        </label>
-</div>                                                </div>
-                                                        <div class='range-slider'>
-                <label for='neu-border-width'>Border width</label>
-                <input class='range-slider__range' id='neu-border-width' type='range' min='0' max='10' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='neu-border-brightness'>Border brightness</label>
-                <input class='range-slider__range' id='neu-border-brightness' type='range' min='-100' max='100' step='0.1' value='-100'>
-                <span class='range-slider__value'>-100</span>
-        </div>                                        </div>
-                                        <div class="customizer" id="flat-customizer-in-progress">
-                                                <p class="option-label">Flat Custom</p>
-                                        </div>
-                                        <div class="customizer" id="glass-customizer">
-                                                <p class="option-label">Glass Custom</p>
-                                                        <div class='range-slider'>
-                <label for='glass-transparency'>Transparency</label>
-                <input class='range-slider__range' id='glass-transparency' type='range' min='0' max='1' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='glass-blur'>Blur</label>
-                <input class='range-slider__range' id='glass-blur' type='range' min='0' max='30' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>        <div class='range-slider'>
-                <label for='glass-border-size'>Border size</label>
-                <input class='range-slider__range' id='glass-border-size' type='range' min='0' max='10' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>                                        </div>
-                                </div>
-                                <!-- GLOBAL CUSTOMIZER -->
-                                <div id="color-panel" class="option-panel mb-3">
-                                        <p class="option-label">Colour</p>
-                                        <div class="row px-4">
-                                                <div class="col-6 p-0">
-                                                        <label for="highlight-color-picker">Primary</label>
-                                                        <input type="color" id="highlight-color-picker" value="#0000ff">
-                                                </div>
-                                                <div class="col-6 p-0">
-                                                        <label for="scheme-color-picker">Scheme</label>
-                                                        <input type="color" id="scheme-color-picker" value="#f1f3f6">
-                                                </div>
-                                        </div>
-                                        <p>Classification</p>
-                                        <div class="row mt-1 px-4">
-                                                <div class="col-4 p-0 ">
-                                                        <input class="color-picker" type="color" id="colorfull1-picker" value="#01724b">
-                                                </div>
-                                                <div class="col-4 p-0 ">
-                                                        <input class="color-picker" type="color" id="colorfull2-picker" value="#b44700">
-                                                </div>
-                                                <div class="col-4 p-0">
-                                                        <input class="color-picker" type="color" id="colorfull3-picker" value="#c40639">
-                                                </div>
-                                        </div>
-                                </div>
 
-                                <!-- BORDER -->
-                                <div id="border-panel" class="option-panel mb-3">
-                                        <p class="option-label">Border</p>
-                                                <div class='range-slider'>
-                <label for='border-radius'>Radius</label>
-                <input class='range-slider__range' id='border-radius' type='range' min='0' max='50' step='0.1' value='0'>
-                <span class='range-slider__value'>0</span>
-        </div>                                </div>
+        <!-- BORDER -->
+        <div id="border-panel" class="option-panel mb-3">
+          <p class="option-label">Border</p>
+          <div class='range-slider'>
+            <label for='border-radius'>Radius</label>
+            <input class='range-slider__range' id='border-radius' type='range' min='0' max='50' step='0.1' value='0'>
+            <span class='range-slider__value'>0</span>
+          </div>
+        </div>
 
-                                <!-- FONT -->
-                                <div id="font-panel" class="option-panel mb-4">
-                                        <p class="option-label">Text</p>
-                                        <div id="font-family-panel">
-                                                <p class="mb-0">Font</p>
-                                                <div class="dropdown" id="dropdown-font-family">
-        <button type="button" class="dropdown-label">
+        <!-- FONT -->
+        <div id="font-panel" class="option-panel mb-4">
+          <p class="option-label">Text</p>
+          <div id="font-family-panel">
+            <p class="mb-0">Font</p>
+            <div class="dropdown" id="dropdown-font-family">
+              <button type="button" class="dropdown-label">
                 <p class="scalable">Agency FB</p>
-        </button>
-        <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fas fa-angle-down dropdown-arrow"></span>
                 <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:;" value="0">Agency FB</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Style Script</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Ubuntu</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">BioRhyme</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Roboto</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Special Elite</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Press Start 2P</a>
-                                <!-- <div class="dropdown-divider"></div> -->
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:;" value="0">Agency FB</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Style Script</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Ubuntu</a>
+                <a class="dropdown-item" href="javascript:;" value="0">BioRhyme</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Roboto</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Special Elite</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Press Start 2P</a>
+                <!-- <div class="dropdown-divider"></div> -->
                 <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+              </div>
+            </div>
+            <div class='range-slider'>
+              <label for='range-slider_size-scale'>Size scale</label>
+              <input class='range-slider__range' id='range-slider_size-scale' type='range' min='0.5' max='1.4' step='0.01' value='0.5'>
+              <span class='range-slider__value'>0.5</span>
+            </div>
+            <div class='range-slider'>
+              <label for='range-slider_line-height'>Line height</label>
+              <input class='range-slider__range' id='range-slider_line-height' type='range' min='1' max='2' step='0.05' value='1'>
+              <span class='range-slider__value'>1</span>
+            </div>
+            <div class='range-slider'>
+              <label for='range-slider_letter-spacing'>Letter spacing</label>
+              <input class='range-slider__range' id='range-slider_letter-spacing' type='range' min='-10' max='20' step='0.1' value='-10'>
+              <span class='range-slider__value'>-10</span>
+            </div>
+          </div>
         </div>
-</div>        <div class='range-slider'>
-                <label for='range-slider_size-scale'>Size scale</label>
-                <input class='range-slider__range' id='range-slider_size-scale' type='range' min='0.5' max='1.4' step='0.01' value='0.5'>
-                <span class='range-slider__value'>0.5</span>
-        </div>        <div class='range-slider'>
-                <label for='range-slider_line-height'>Line height</label>
-                <input class='range-slider__range' id='range-slider_line-height' type='range' min='1' max='2' step='0.05' value='1'>
-                <span class='range-slider__value'>1</span>
-        </div>        <div class='range-slider'>
-                <label for='range-slider_letter-spacing'>Letter spacing</label>
-                <input class='range-slider__range' id='range-slider_letter-spacing' type='range' min='-10' max='20' step='0.1' value='-10'>
-                <span class='range-slider__value'>-10</span>
-        </div>                                        </div>
-                                </div>
 
-                                <!-- BACKGROUND -->
-                                <div id="background-panel" class="option-panel mb-4">
-                                        <p class="option-label">Background</p>
-                                        <div id="outer-background-panel">
-                                                <p> Page </p>
-                                                <div class="dropdown" id="dropdown-outer-bg">
-        <button type="button" class="dropdown-label">
+        <!-- BACKGROUND -->
+        <div id="background-panel" class="option-panel mb-4">
+          <p class="option-label">Background</p>
+          <div id="outer-background-panel">
+            <p> Page </p>
+            <div class="dropdown" id="dropdown-outer-bg">
+              <button type="button" class="dropdown-label">
                 <p class="scalable">None</p>
-        </button>
-        <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fas fa-angle-down dropdown-arrow"></span>
                 <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:;" value="0">None</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Liquid cheese</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Protruding squares</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Wintery sunburst</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Animated gradient</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Linear gradient</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Vanishing stripes</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Windows98</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">WindowsXP</a>
-                                <!-- <div class="dropdown-divider"></div> -->
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:;" value="0">None</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Liquid cheese</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Protruding squares</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Wintery sunburst</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Animated gradient</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Linear gradient</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Vanishing stripes</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Windows98</a>
+                <a class="dropdown-item" href="javascript:;" value="0">WindowsXP</a>
+                <!-- <div class="dropdown-divider"></div> -->
                 <!-- <a class="dropdown-item" href="#">Separated link</a> -->
-        </div>
-</div>                                        </div>
-                                        <div id="inner-background-panel" class="mt-3">
-                                                <p> Containers </p>
-                                                <div class="dropdown" id="dropdown-inner-bg">
-        <button type="button" class="dropdown-label">
+              </div>
+            </div>
+          </div>
+          <div id="inner-background-panel" class="mt-3">
+            <p> Containers </p>
+            <div class="dropdown" id="dropdown-inner-bg">
+              <button type="button" class="dropdown-label">
                 <p class="scalable">None</p>
-        </button>
-        <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <button type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="fas fa-angle-down dropdown-arrow"></span>
                 <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:;" value="0">None</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Liquid cheese</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Protruding squares</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Wintery sunburst</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Animated gradient</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Linear gradient</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Vanishing stripes</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">Windows98</a>
-                                        <a class="dropdown-item" href="javascript:;" value="0">WindowsXP</a>
-                                <!-- <div class="dropdown-divider"></div> -->
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript:;" value="0">None</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Liquid cheese</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Protruding squares</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Wintery sunburst</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Animated gradient</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Linear gradient</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Vanishing stripes</a>
+                <a class="dropdown-item" href="javascript:;" value="0">Windows98</a>
+                <a class="dropdown-item" href="javascript:;" value="0">WindowsXP</a>
+                <!-- <div class="dropdown-divider"></div> -->
                 <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+              </div>
+            </div>
+          </div>
         </div>
-</div>                                        </div>
-                                </div>
 
-                        </div>
+      </div>
 
-                        <div class="setting-save-panel">
-                                        <label class="toggle-label wrapper toggle-wrapper ">
-                <div class="toggle" id="toggle_save">
-                        <input class="toggle-state  " type="checkbox"  value="" />
-                        <div class="indicator"></div>
-                </div>
-                <div class="label-text">Save</div>
-        </label>                                <!-- TODO: Random button-->
-                        </div>
-                </div>
-        </div>
+      <div class="setting-save-panel">
+        <label class="toggle-label wrapper toggle-wrapper ">
+          <div class="toggle" id="toggle_save">
+            <input class="toggle-state  " type="checkbox" value="" />
+            <div class="indicator"></div>
+          </div>
+          <div class="label-text">Save</div>
+        </label> <!-- TODO: Random button-->
+      </div>
+    </div>
+  </div>
 </div>
