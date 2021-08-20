@@ -1,17 +1,13 @@
 // return css color variable w/ different opacity value
 @function alpha($color, $opacity) {
         $hsl: get-hsl($color);
-        @return hsla(nth($hsl, 1), nth($hsl, 2), nth($hsl, 3), $opacity);
+        @return hsla(get-h($color), get-s($color), get-l($color), $opacity);
 }
 
 // return css color variable w/ modified lightness value
 @function lightness($color, $amount) {
-        $hsl: get-hsl($color);
-        @return hsl(
-                nth($hsl, 1),
-                nth($hsl, 2),
-                calc(#{nth($hsl, 3)} + #{$amount})
-        );
+        // prettier-ignore
+        @return hsl(get-h($color), get-s($color),calc(#{get-l($color)} + #{$amount}));
 }
 
 // https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/
@@ -19,18 +15,47 @@
         /* the threshold at which colors are considered "light." Range: integers from 0 to 100,
 recommended 50 - 70 */
         $threshold: 60%;
-        $hsl: get-hsl($color);
-        $switch: calc((#{nth($hsl, 3)} - #{$threshold}) * -100);
+        $switch: calc((#{get-l($color)} - #{$threshold}) * -100);
         @return hsl(0, 0%, $switch);
 }
 
-@function get-hsl($color) {
+// TODO
+// if color is 100% l (white)/0% l (black), descrease/ increase its lightness
+@function mute($color, $amount) {
+        // if light = 0 %               => return light/100*(-2)*amount+amount+light = light+amount
+        // if light = 100 %         => return light/100*(-2)*amount+amount+light = light-amount
+        // prettier-ignore
+        $switch: calc((#{get-l($color)} / 100 * (-2) * #{strip-unit($amount)} + #{$amount} + #{get-l($color)}));
+        @return hsl(0, 0%, $switch);
+}
+
+@function strip-unit($number) {
+        @if type-of($number) == "number" and not unitless($number) {
+                @return $number / ($number * 0 + 1);
+        }
+
+        @return $number;
+}
+
+@function get-h($color) {
         $color: str-replace($color, "var(");
         $color: str-replace($color, ")");
         $h: var(#{$color + "-h"});
+        @return $h;
+}
+
+@function get-s($color) {
+        $color: str-replace($color, "var(");
+        $color: str-replace($color, ")");
         $s: var(#{$color + "-s"});
+        @return $s;
+}
+
+@function get-l($color) {
+        $color: str-replace($color, "var(");
+        $color: str-replace($color, ")");
         $l: var(#{$color + "-l"});
-        @return $h, $s, $l;
+        @return $l;
 }
 
 // replace substring with another string
