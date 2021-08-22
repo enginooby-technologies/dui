@@ -1,4 +1,4 @@
-<nav class="sidebar <?= $class ?> <?= $wrapperClass ?>">
+<nav class="sidebar <?= $class ?> d-flex <?= $flexOption ?>">
   <ul class="side-nav">
     <?php foreach ($components as $item) : ?>
       <li class='side-nav__item <?php echo $item->isActive ? "side-nav__item--active" : "" ?>'>
@@ -6,7 +6,9 @@
           <svg class='side-nav__icon'>
             <use href='<?= $item->icon ?>'></use>
           </svg>
-          <span class='side-nav__link'><?= $item->label ?></span>
+          <?php if ($item->label) : ?>
+            <span class='side-nav__label'><?= $item->label ?></span>
+          <?php endif; ?>
         </a>
       </li>
     <?php endforeach; ?>

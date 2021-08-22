@@ -88,26 +88,28 @@
       Flexbox()
         ->componentClass("m-2")
         ->add(
-          Sidebar(class: "neu-style-1")
+          SidebarFlex(class: "neu-style-1")
+            ->option(JustifyContent::Center(), Direction::Column())
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
             ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
             ->Item(label: "Tours", icon: "$sprite#icon-map")
         )
         ->add(
-          Sidebar(class: "neu-style-2")
+          SidebarFlex(class: "neu-style-2")
+            ->option(JustifyContent::Center(), Direction::Column())
             ->Item(icon: "$sprite#icon-home")
             ->Item(icon: "$sprite#icon-aircraft-take-off", isActive: true)
             ->Item(icon: "$sprite#icon-map")
         )
         ->show();
       CodeBlock(language: 'php',  wrapperClass: 'mt-3')
-        ->code('Sidebar()
+        ->code('SidebarFlex()
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
             ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
             ->Item(label: "Tours", icon: "$sprite#icon-map")
             ->show();
             
-        Sidebar(class: "neu-style-2")
+        SidebarFlex(class: "neu-style-2")
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
             ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
             ->Item(label: "Tours", icon: "$sprite#icon-map")

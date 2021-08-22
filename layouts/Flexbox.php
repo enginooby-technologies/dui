@@ -21,11 +21,19 @@ class Flexbox extends Container
     parent::__construct($class, $componentClass, $components, $view);
   }
 
+  public function option(?JustifyContent $justifyContent = null, ?Direction $direction = null, ?Basis $basis = null)
+  {
+    $this->option = new FlexboxOption($justifyContent, $direction, $basis);
+    return $this;
+  }
+
   public function show()
   {
     $class = $this->class;
     $justifyContent = $this->option?->justifyContent ?? JustifyContent::Default();
     $direction = $this->option?->direction ?? Direction::Default();
+    $basis = $this->option?->basis ?? Basis::Default();
+    $flexOption = "$justifyContent $direction $basis";
     $components = $this->components;
     $componentClass = $this->componentClass;
     foreach ($components as $component) {

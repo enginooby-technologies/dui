@@ -81,9 +81,9 @@ abstract class Container
   //   return $this;
   // }
 
-  function Sidebar(?FlexboxOption $option = null, array $components = [], string $class = '', string $componentClass = '')
+  function SidebarFlex(?FlexboxOption $option = null, array $components = [], string $class = '', string $componentClass = '')
   {
-    $component = new Sidebar($class, $componentClass, $components, $option);
+    $component = new SidebarFlex($class, $componentClass, $components, $option);
     $this->add($component);
     return $this;
   }

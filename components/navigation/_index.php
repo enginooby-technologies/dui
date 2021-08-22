@@ -2,4 +2,4 @@
 
 declare(strict_types=1);
 
-include_once "Sidebar.php";
+include_once "SidebarFlex.php";
