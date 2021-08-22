@@ -375,36 +375,50 @@
   .sidebar {
     background-color: $cs;
     box-shadow: $inset-bs;
-    padding-left: 0.4rem;
-    padding-right: 0.3rem;
 
     .legal {
       color: $csc;
     }
-  }
 
-  .side-nav {
-    &__link:link,
-    &__link:visited {
-      color: $cp;
+    .side-nav {
+      &__link:link,
+      &__link:visited {
+        color: $cp;
+      }
+
+      &__link:hover,
+      &__item--active > &__link {
+        color: $cp;
+      }
+
+      &__item--active,
+      &__item:hover {
+        box-shadow: $concave-bs !important;
+      }
+
+      &__item {
+        margin: calc(#{$dy}* 2.5) calc(#{$dx}* 2.5);
+
+        box-shadow: $drop-bs;
+        border-radius: var(--dui-border-radius);
+
+        &::before {
+          display: none;
+        }
+      }
     }
 
-    &__link:hover,
-    &__item--active > &__link {
-      color: $cp;
-    }
-
-    &__item--active,
-    &__item:hover {
-      box-shadow: $concave-bs !important; //unquote
-    }
-
-    &__item {
+    &.neu-style-2 {
       box-shadow: $drop-bs;
-      border-radius: var(--dui-border-radius);
-
-      &::before {
-        display: none;
+      margin: calc(#{$dy}* 2) calc(#{$dx}* 2);
+      .side-nav {
+        &__item--active,
+        &__item:hover {
+          box-shadow: $inset-bs !important;
+        }
+        &__item {
+          box-shadow: none;
+        }
       }
     }
   }

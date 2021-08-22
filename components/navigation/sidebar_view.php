@@ -1,4 +1,4 @@
-<nav class="sidebar">
+<nav class="sidebar <?= $class ?>">
   <ul class="side-nav">
     <?php foreach ($items as $item) : ?>
       <li class='side-nav__item <?php echo $item->isActive ? "side-nav__item--active" : "" ?>'>

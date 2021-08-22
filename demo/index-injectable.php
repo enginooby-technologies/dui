@@ -87,7 +87,13 @@
       $sprite = "img/sprite.svg";
       Flexbox()
         ->add(
-          Sidebar()
+          Sidebar(class: "neu-style-1")
+            ->Item(label: "Hotel", icon: "$sprite#icon-home")
+            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(label: "Tours", icon: "$sprite#icon-map")
+        )
+        ->add(
+          Sidebar(class: "neu-style-2")
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
             ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
             ->Item(label: "Tours", icon: "$sprite#icon-map")
@@ -97,7 +103,14 @@
         ->code('Sidebar()
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
             ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
-            ->Item(label: "Tours", icon: "$sprite#icon-map")')
+            ->Item(label: "Tours", icon: "$sprite#icon-map")
+            ->show();
+            
+        Sidebar(class: "neu-style-2")
+            ->Item(label: "Hotel", icon: "$sprite#icon-home")
+            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(label: "Tours", icon: "$sprite#icon-map")
+            ->show();')
         ->show();
       ?>
 
