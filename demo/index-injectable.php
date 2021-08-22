@@ -12,12 +12,12 @@
       Flexbox()
         ->Button(label: "Dynamic button", id: "btn1")
         ->show();
-      CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'php', wrapperClass: 'mt-3')
         ->code('Button(label: "Dynamic button",  id: "btn1") -> show();')
         ->show();
-      CodeBlock(language: 'ts', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'ts', wrapperClass: 'mt-3')
         ->code('const btn1 = Button("btn1")
-                                btn1.onClick = event => alert(`Hi! I am ${btn1.label}`)')
+                btn1.onClick = event => alert(`Hi! I am ${btn1.label}`)')
         ->show();
       ?>
 
@@ -35,7 +35,7 @@
       Flexbox()
         ->Input()
         ->show();
-      CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'php', wrapperClass: 'mt-3')
         ->code('Input() -> show();')
         ->show();
 
@@ -43,22 +43,22 @@
         ->Radio(label: "Radio 1", group: "Group 1")
         ->Radio(label: "Radio 2", group: "Group 1", checked: true)
         ->show();
-      CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'php', wrapperClass: 'mt-3')
         ->code('Radio(label: "Radio 1", group: "Group 1") -> show();
-                                Radio(label: "Radio 2", group: "Group 1", checked: true) -> show();')
+                Radio(label: "Radio 2", group: "Group 1", checked: true) -> show();')
         ->show();
 
       Flexbox()
         ->Toggle(label: "Dynamic toggle")
         ->show();
-      CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'php', wrapperClass: 'mt-3')
         ->code('Toggle(label: "Dynamic toggle") -> show();')
         ->show();
 
       Flexbox()
         ->Checkbox(label: "Dynamic checkbox")
         ->show();
-      CodeBlock(language: 'php', outdent: 5, wrapperClass: 'mt-3')
+      CodeBlock(language: 'php', wrapperClass: 'mt-3')
         ->code('Checkbox(label: "Dynamic checkbox") -> show();')
         ->show();
 
@@ -73,16 +73,33 @@
         // )
       );
       CodeBlock('php', '/* optional dropdown item keys: "href" => "javascript:;", "value" = 0 */
-                                echo Dropdown(
-                                        "Dynamic dropdown",
-                                        "dropdown-demo",
-                                        ["label" => "Option 1", "value" => 1],
-                                        ["label" => "Option 2", "value" => 2],
-                                        ["label" => "Option 3", "value" => 3],
-                                )', 5);
+        echo Dropdown(
+                "Dynamic dropdown",
+                "dropdown-demo",
+                ["label" => "Option 1", "value" => 1],
+                ["label" => "Option 2", "value" => 2],
+                ["label" => "Option 3", "value" => 3],
+        )', 5);
       ?>
 
       <h5 class="my-4">V - Navigation Components</h5>
+      <?php
+      $sprite = "img/sprite.svg";
+      Flexbox()
+        ->add(
+          Sidebar()
+            ->Item(label: "Hotel", icon: "$sprite#icon-home")
+            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(label: "Tours", icon: "$sprite#icon-map")
+        )
+        ->show();
+      CodeBlock(language: 'php',  wrapperClass: 'mt-3')
+        ->code('Sidebar()
+            ->Item(label: "Hotel", icon: "$sprite#icon-home")
+            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(label: "Tours", icon: "$sprite#icon-map")')
+        ->show();
+      ?>
 
       <h5 class="my-4">VI - Advanced Components</h5>
     </div>

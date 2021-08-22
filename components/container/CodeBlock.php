@@ -4,7 +4,7 @@ declare(strict_types=1);
 include_once __DIR__ . "/../Component.php";
 
 // @param $currentTabSize: number of spaces per tab configured in the editor
-function CodeBlock(string $language, string $code = '', int $outdent = 0,  int $currentTabSize = 8, ?string $id = null, string $class = '',  string $wrapperClass = '', ?string $onclick = null): CodeBlock
+function CodeBlock(string $language, string $code = '', int $outdent = 1,  int $currentTabSize = 8, ?string $id = null, string $class = '',  string $wrapperClass = '', ?string $onclick = null): CodeBlock
 {
   return new CodeBlock($code, $language, $outdent, $currentTabSize, $id, $class, $wrapperClass, $onclick);
 }
@@ -14,8 +14,8 @@ class CodeBlock extends Component
   public function __construct(
     protected string $code,
     protected string $language,
-    protected int $outdent = 0,
-    protected $currentTabSize = 8,
+    protected int $outdent = 1,
+    protected $currentTabSize = 2,
 
     ?string $id = null,
     string $class = '',
@@ -31,7 +31,7 @@ class CodeBlock extends Component
   {
     $this->formatSpecialCharacters($this->code);
     $this->outdentCodeBlock($this->code, $this->outdent, $this->currentTabSize);
-    $this->changeTabSizeInCode($this->code, $this->currentTabSize, 2);
+    $this->changeTabSizeInCode($this->code, $this->currentTabSize, 1);
     parent::show();
   }
 
