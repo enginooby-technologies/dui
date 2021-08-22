@@ -2452,8 +2452,11 @@ table,
   /* TEXT DROP SHADOW */
   /*-------------------------
       BASIC COMPONENTS
--------------------------*/
+  -------------------------*/
   /* BUTTON */
+  /*-------------------------
+      NAVIGATION COMPONENTS
+  -------------------------*/
 }
 
 .neu-style .display-content > .container:not(.none-bg)::before {
@@ -2764,6 +2767,38 @@ table,
 .neu-style .checkbox input:checked ~ label i,
 .neu-style .checkbox input:hover ~ label i {
   color: var(--dui-color-primary);
+}
+
+.neu-style .sidebar {
+  background-color: var(--dui-color-scheme);
+  -webkit-box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  padding-left: 0.4rem;
+  padding-right: 0.3rem;
+}
+
+.neu-style .side-nav__link:link, .neu-style .side-nav__link:visited {
+  color: var(--dui-color-primary);
+}
+
+.neu-style .side-nav__link:hover,
+.neu-style .side-nav__item--active > .neu-style .side-nav__link {
+  color: var(--dui-color-primary);
+}
+
+.neu-style .side-nav__item--active, .neu-style .side-nav__item:hover {
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))) !important;
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))),  inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity))) !important;
+}
+
+.neu-style .side-nav__item {
+  -webkit-box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+          box-shadow: var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
+  border-radius: var(--dui-border-radius);
+}
+
+.neu-style .side-nav__item::before {
+  display: none;
 }
 
 .neu-style ::-webkit-scrollbar-track {
