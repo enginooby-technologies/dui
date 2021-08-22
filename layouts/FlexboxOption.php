@@ -18,7 +18,7 @@ class FlexboxOption
 // https://getbootstrap.com/docs/4.0/utilities/flex/#justify-content
 final class JustifyContent extends Enum
 {
-  const Default = "around";
+  const Default = "center";
   const Start = "start";
   const End = "end";
   const Center = "center";

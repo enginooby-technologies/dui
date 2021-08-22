@@ -14,6 +14,7 @@ abstract class Container
     protected string $class = '',
     protected string $componentClass = '',  // add common class to each component wrapper
     protected array $components = [],
+    protected string $view
   ) {
   }
 
@@ -29,7 +30,7 @@ abstract class Container
     return $this;
   }
 
-  function add($component)
+  function add(Component | Container $component)
   {
     array_push($this->components, $component);
     return $this;
@@ -73,9 +74,16 @@ abstract class Container
     return $this;
   }
 
-  function Sidebar(array $items = [], ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+  // function Sidebar(array $items = [], ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+  // {
+  //   $component = new Sidebar($items, $id, $class, $wrapperClass, $onclick);
+  //   $this->add($component);
+  //   return $this;
+  // }
+
+  function Sidebar(?FlexboxOption $option = null, array $components = [], string $class = '', string $componentClass = '')
   {
-    $component = new Sidebar($items, $id, $class, $wrapperClass, $onclick);
+    $component = new Sidebar($class, $componentClass, $components, $option);
     $this->add($component);
     return $this;
   }

@@ -86,6 +86,7 @@
       <?php
       $sprite = "img/sprite.svg";
       Flexbox()
+        ->componentClass("m-2")
         ->add(
           Sidebar(class: "neu-style-1")
             ->Item(label: "Hotel", icon: "$sprite#icon-home")
@@ -94,9 +95,9 @@
         )
         ->add(
           Sidebar(class: "neu-style-2")
-            ->Item(label: "Hotel", icon: "$sprite#icon-home")
-            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
-            ->Item(label: "Tours", icon: "$sprite#icon-map")
+            ->Item(icon: "$sprite#icon-home")
+            ->Item(icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(icon: "$sprite#icon-map")
         )
         ->show();
       CodeBlock(language: 'php',  wrapperClass: 'mt-3')
