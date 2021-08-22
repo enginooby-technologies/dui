@@ -72,4 +72,11 @@ abstract class Container
     $this->add($component);
     return $this;
   }
+
+  function Sidebar(array $items = [], ?string $id = null, string $wrapperClass = '', string $class = '', ?string $onclick = null)
+  {
+    $component = new Sidebar($items, $id, $class, $wrapperClass, $onclick);
+    $this->add($component);
+    return $this;
+  }
 }

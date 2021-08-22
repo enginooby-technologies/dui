@@ -36,3 +36,7 @@ if (property_exists($this, 'value'))
   $value = $this->value;
 if (property_exists($this, 'checked'))
   $checkedAttr = $this->checked ? 'checked' : '';
+
+// SIDEBAR
+if (property_exists($this, 'items'))
+  $items = $this->items;

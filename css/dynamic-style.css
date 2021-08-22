@@ -1138,6 +1138,101 @@ img {
   border-radius: var(--border-radius);
 }
 
+.sidebar {
+  background-color: hsl(0, 0%, calc((var(--dui-color-scheme-contrast-l) / 100 * (-2) * 25 + 25% + var(--dui-color-scheme-contrast-l))));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 18%;
+          flex: 0 0 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.sidebar .legal {
+  color: var(--dui-color-scheme);
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.side-nav {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.side-nav__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+  margin-right: 1rem;
+}
+
+.side-nav__link:link, .side-nav__link:visited {
+  text-transform: uppercase;
+  color: var(--dui-color-scheme);
+  -webkit-transition: color 1s;
+  transition: color 1s;
+  display: block;
+  padding: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.side-nav__link:hover,
+.side-nav__item--active > .side-nav__link {
+  color: var(--dui-color-primary-contrast);
+}
+
+.side-nav__item {
+  position: relative;
+}
+
+.side-nav__item:not(:last-child) {
+  margin-bottom: 0.35rem;
+}
+
+.side-nav__item::before {
+  -webkit-transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+  transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 5px;
+  background-color: var(--dui-color-primary);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.side-nav__item:hover::before, .side-nav__item--active::before {
+  width: 100%;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.side-nav__item:active::before {
+  background-color: hsl(var(--dui-color-primary-h), var(--dui-color-primary-s), calc(var(--dui-color-primary-l) + 5%));
+}
+
 .flat-style #flat-customizer {
   display: block !important;
 }
@@ -2775,6 +2870,10 @@ table,
           box-shadow: inset var(--neu-distance-x) var(--neu-distance-y) var(--neu-blur) var(--neu-spread) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + calc(var(--neu-darken-intensity) * -1))), inset calc(var(--neu-distance-x) * -1) calc(var(--neu-distance-y) * -1) var(--neu-blur) hsl(var(--dui-color-scheme-h), var(--dui-color-scheme-s), calc(var(--dui-color-scheme-l) + var(--neu-lighten-intensity)));
   padding-left: 0.4rem;
   padding-right: 0.3rem;
+}
+
+.neu-style .sidebar .legal {
+  color: var(--dui-color-scheme-contrast);
 }
 
 .neu-style .side-nav__link:link, .neu-style .side-nav__link:visited {
