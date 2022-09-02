@@ -1,18 +1,21 @@
-import * as Ref from "../references.js";
-import * as Loader from "../loader.js";
-import { Style } from '../base/Style.js'
-import { DynamicColor } from './DynamicColor.js';
-import { DynamicBackground } from './DynamicBackground.js';
-import { DynamicFont } from './DynamicFont.js';
+import { Style } from '../base/Style.js';
 import { DragDropExt } from '../extensions/DragDropExt.js';
-import { StyleRegistry } from '../StyleRegistry.js';
 import { root } from "../global.js";
+import * as Loader from "../loader.js";
+import * as Ref from "../references.js";
+import { StyleRegistry } from '../StyleRegistry.js';
+import { DynamicBackground } from './DynamicBackground.js';
+import { DynamicColor } from './DynamicColor.js';
+import { DynamicFont } from './DynamicFont.js';
 
 export class DynamicUI {
   dynamicColor?: DynamicColor;
   dynamicFont?: DynamicFont;
   dynamicBackground?: DynamicBackground;
   static currentStyle?: Style;
+
+  private $borderRadiusSlider?: JQuery<HTMLElement>;
+  private $borderValueLabel?: JQuery<HTMLElement>;
 
   // TODO: cache all jQuery selectors
   static $body?: JQuery<HTMLElement>; //outer background
@@ -27,9 +30,13 @@ export class DynamicUI {
     DynamicUI.currentStyle.onEnable();
 
     // update dynamic components
-    if (DynamicUI.currentStyle.preferredFontFamily) {
-      this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+    if (DynamicUI.currentStyle.fontFamily) {
+      this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.fontFamily);
     }
+
+    // this.$borderRadiusSlider!.attr('value', DynamicUI.currentStyle.borderRadius!.toString());
+    this.setBorderRadius(DynamicUI.currentStyle.borderRadius!.toString());
+
     this.dynamicBackground?.onStyleUpdate();
     // this.dynamicColor?.updateChangesFromLastStyle();
   }
@@ -52,8 +59,8 @@ export class DynamicUI {
   private enableDynamicFont() {
     Loader.tryLoadScript(Ref.webfontJs, () => {
       this.dynamicFont = new DynamicFont();
-      if (DynamicUI.currentStyle?.preferredFontFamily) {
-        this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.preferredFontFamily);
+      if (DynamicUI.currentStyle?.fontFamily) {
+        this.dynamicFont?.loadThenApplyFontFamily(DynamicUI.currentStyle.fontFamily);
       }
     })
   }
@@ -75,16 +82,22 @@ export class DynamicUI {
 
   /* DYNAMIC BORDER */
   private setupRangeSliders() {
-    const $borderRadiusSlider = $('#border-radius');
+    this.$borderRadiusSlider = $('#border-radius');
+    this.$borderValueLabel = this.$borderRadiusSlider.next('.range-slider__value');
     const initialBorderRadius = 9;
 
-    $borderRadiusSlider.attr('value', initialBorderRadius);
-    $borderRadiusSlider.next('.range-slider__value').html(initialBorderRadius.toString());
-    $borderRadiusSlider.on('input', (event) => {
+    // this.$borderRadiusSlider.attr('value', initialBorderRadius);
+    this.$borderValueLabel.html(initialBorderRadius.toString());
+    this.$borderRadiusSlider.on('input', (event) => {
       const newValue = (event.target as HTMLInputElement).value;
-      $("#" + event.target.id).next('.range-slider__value').text(newValue);
-      root.style.setProperty('--dui-border-radius', newValue + 'px');
+      this.setBorderRadius(newValue);
     });
+  }
+
+  private setBorderRadius(value: string) {
+    this.$borderValueLabel!.text(value);
+    this.$borderRadiusSlider!.attr('value', value);
+    root.style.setProperty('--dui-border-radius', value + 'px');
   }
 }
 

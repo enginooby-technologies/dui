@@ -3,19 +3,21 @@ import { StyleConfig } from '../StyleConfig.js';
 
 export abstract class Style {
   name: string;
-  // preffered properies are applied to a style at the first time, 
-  //util we update the property for global from setting panel
-  preferredOuterBg: string;
-  preferredInnerBg: string;
-  preferredFontFamily?: string;
   cssRule: CSSStyleRule; // to change its CSS custom properties
 
-  constructor(styleConfig: StyleConfig) {
-    this.name = styleConfig.name;
-    this.preferredOuterBg = styleConfig.outerBackground ?? 'none-bg';
-    this.preferredInnerBg = styleConfig.innerBackground ?? 'none-bg';
-    this.preferredFontFamily = styleConfig.font;
-    this.cssRule = insertEmptyRule('.' + styleConfig.name)
+  // preffered properies are applied to a style at the first time, util we update the property for global from setting panel
+  outerBg: string;
+  innerBg: string;
+  fontFamily?: string;
+  borderRadius?: number;
+
+  constructor(config: StyleConfig) {
+    this.name = config.name;
+    this.outerBg = config.defaultOuterBackground ?? 'none-bg';
+    this.innerBg = config.defaultInnerBackground ?? 'none-bg';
+    this.fontFamily = config.defaultFont;
+    this.borderRadius = config.defaultBorderRadius ?? 9;
+    this.cssRule = insertEmptyRule('.' + config.name)
   }
 
   onEnable(): void {

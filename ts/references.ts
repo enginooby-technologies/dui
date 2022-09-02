@@ -1,6 +1,6 @@
 
 // @name is substring of src/href to check if the file is already included manually with <script/link>
-//@triggerClasses are classes needed to appear in page for the file to be loaded 
+// @triggerClasses are classes needed to appear in page for the file to be loaded 
 //TODO: handle case where element with this class is loaded later into the page
 export interface ScriptFile {
   name: string;

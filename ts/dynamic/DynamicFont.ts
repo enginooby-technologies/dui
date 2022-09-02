@@ -1,6 +1,6 @@
 // import WebFont from "webfontloader";
 import { insertEmptyRule } from '../global.js';
-import * as DynamicSelectors from '../selectors/DynamicSelectors.js'
+import * as DynamicSelectors from '../selectors/DynamicSelectors.js';
 import { DynamicUI } from "./DynamicUI.js";
 
 class FontPreset {
@@ -164,5 +164,3 @@ export class DynamicFont {
     this.getFontRule().style.setProperty('line-height', this.currentFontPreset.lineHeight.toString());
   }
 }
-
-

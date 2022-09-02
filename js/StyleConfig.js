@@ -1,24 +1,30 @@
 // centralized config for all styles
 export const FlatConfig = {
-  name: 'flat-style'
+    name: 'flat-style',
+    defaultFont: 'Agency FB'
 };
 export const NeuConfig = {
-  name: 'neu-style'
+    name: 'neu-style',
+    defaultFont: 'Agency FB'
 };
 export const NesConfig = {
-  name: 'nes-style',
-  outerBackground: 'wintery-sunburst-bg',
-  font: 'Press Start 2P'
+    name: 'nes-style',
+    defaultOuterBackground: 'wintery-sunburst-bg',
+    defaultFont: 'Press Start 2P'
 };
 export const Win98Config = {
-  name: 'win98-style',
-  outerBackground: 'windows98-bg'
+    name: 'win98-style',
+    defaultOuterBackground: 'windows98-bg',
+    defaultBorderRadius: 0,
+    defaultFont: 'Agency FB'
 };
 export const WinXPConfig = {
-  name: 'winxp-style',
-  outerBackground: 'windowsxp-bg'
+    name: 'winxp-style',
+    defaultOuterBackground: 'windowsxp-bg',
+    defaultFont: 'Agency FB'
 };
 export const GlassConfig = {
-  name: 'glass-style',
-  outerBackground: 'animated-gradient-bg'
+    name: 'glass-style',
+    defaultOuterBackground: 'animated-gradient-bg',
+    defaultFont: 'Agency FB'
 };

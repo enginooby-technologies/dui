@@ -35,7 +35,7 @@
   align-items: center;
 }
 
-@mixin center_div_in_div() {
+@mixin center_block_in_block() {
   position: absolute;
   top: 50%;
   left: 50%;

@@ -110,9 +110,9 @@
             ->show();
             
         SidebarFlex(class: "neu-style-2")
-            ->Item(label: "Hotel", icon: "$sprite#icon-home")
-            ->Item(label: "Flight", icon: "$sprite#icon-aircraft-take-off", isActive: true)
-            ->Item(label: "Tours", icon: "$sprite#icon-map")
+            ->Item(icon: "$sprite#icon-home")
+            ->Item(icon: "$sprite#icon-aircraft-take-off", isActive: true)
+            ->Item(icon: "$sprite#icon-map")
             ->show();')
         ->show();
       ?>

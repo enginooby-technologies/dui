@@ -48,16 +48,16 @@ export class DynamicBackground {
       this.currentOuterBg = CUSTOM_BG_CLASS;
       document.querySelector(`.setting-panel .${CUSTOM_BG_CLASS}`)?.classList.remove('hide');
     } else {
-      this.currentOuterBg = DynamicUI.currentStyle?.preferredOuterBg!;
+      this.currentOuterBg = DynamicUI.currentStyle?.outerBg!;
       DynamicUI.$body!.addClass(this.currentOuterBg!);
     }
   }
 
   private initInnerBg() {
     this.esInnerBgContainers?.forEach((element) => {
-      element.classList.add(DynamicUI.currentStyle?.preferredInnerBg!);
+      element.classList.add(DynamicUI.currentStyle?.innerBg!);
     });
-    this.currentInnerBg = DynamicUI.currentStyle?.preferredInnerBg!;
+    this.currentInnerBg = DynamicUI.currentStyle?.innerBg!;
   }
 
   private initDropdowns() {
@@ -107,17 +107,17 @@ export class DynamicBackground {
   }
 
   private applyCurrentStyleOuterBg() {
-    if (this.currentOuterBg == DynamicUI.currentStyle?.preferredOuterBg) return;
+    if (this.currentOuterBg == DynamicUI.currentStyle?.outerBg) return;
     //TODO: handle custom bg case -  if (!this.hasCustomBg) 
     this.lastOuterBg = this.currentOuterBg;
-    this.currentOuterBg = DynamicUI.currentStyle?.preferredOuterBg;
+    this.currentOuterBg = DynamicUI.currentStyle?.outerBg;
     this.onChangeOuterBg();
   }
 
   private applyCurrentStyleInnerBg() {
-    if (this.currentInnerBg == DynamicUI.currentStyle?.preferredInnerBg) return;
+    if (this.currentInnerBg == DynamicUI.currentStyle?.innerBg) return;
     this.lastInnerBg = this.currentInnerBg;
-    this.currentInnerBg = DynamicUI.currentStyle?.preferredInnerBg;
+    this.currentInnerBg = DynamicUI.currentStyle?.innerBg;
     this.onChangeInnerBg();
   }
 
@@ -147,7 +147,7 @@ export class DynamicBackground {
     });
     // remove custom & preferred  bg also 
     DynamicUI.$body!.removeClass(CUSTOM_BG_CLASS);
-    DynamicUI.$body!.removeClass(DynamicUI.currentStyle?.preferredOuterBg!);
+    DynamicUI.$body!.removeClass(DynamicUI.currentStyle?.outerBg!);
   }
 
   private onChangeOuterBg() {
@@ -166,7 +166,7 @@ export class DynamicBackground {
   private onFirstTimeSelectInnerBg() {
     this.updateGlobalInnerBgTriggered = true;
     this.esInnerBgContainers!.forEach((element) => {
-      element.classList.remove(DynamicUI.currentStyle?.preferredInnerBg!);
+      element.classList.remove(DynamicUI.currentStyle?.innerBg!);
       // hide default bgColor to see new bg
       (element as HTMLElement).style.backgroundColor = 'transparent';
     });

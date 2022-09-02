@@ -1,7 +1,31 @@
 /* Utility classes to quickly apply common rule by adding class names,
 if a rule contains many declarations, extract to mixin also */
 
-/* Bootstrap spacing utils */
+// CONSIDER: add prefix u_ for utility classes?
+
+// TEXT //
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+// DISPLAY //
+.d-inline {
+  display: inline !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-table {
+  display: table !important;
+}
+
+// BOOTSTRAP SPACING //
 .my-4 {
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
@@ -16,9 +40,8 @@ if a rule contains many declarations, extract to mixin also */
   margin: 0 !important ;
 }
 
-/* Bootstrap flexbox utils */
+// BOOTSTRAP FLEXBOX //
 .flex-row {
-  -ms-flex-direction: row !important;
   flex-direction: row !important;
 }
 .justify-content-center {
@@ -29,7 +52,7 @@ if a rule contains many declarations, extract to mixin also */
   display: flex !important;
 }
 
-/* Custom flexbox utils */
+// CUSTOM FLEXBOX //
 // TODO: add fill, max...
 .flex-basis-content {
   flex-basis: content !important;
@@ -53,6 +76,7 @@ if a rule contains many declarations, extract to mixin also */
   flex-basis: 50% !important;
 }
 
+// OTHERS //
 // to break new line when using float
 .clearfix::after {
   content: "";

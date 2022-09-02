@@ -5,9 +5,11 @@ import { DynamicColor } from '../dynamic/DynamicColor.js';
 import { GlassConfig } from '../StyleConfig.js';
 
 export class GlassStyle extends Style {
-  // Singleton Pattern
+  // Singleton
   private static _instance: GlassStyle;
+
   private constructor() { super(GlassConfig) }
+
   public static get Instance(): GlassStyle {
     GlassStyle._instance ??= new GlassStyle();
     return GlassStyle._instance;

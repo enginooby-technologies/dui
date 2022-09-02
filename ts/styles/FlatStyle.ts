@@ -2,9 +2,11 @@ import { Style } from '../base/Style.js';
 import { FlatConfig } from '../StyleConfig.js';
 
 export class FlatStyle extends Style {
-  // Singleton Pattern
+  // Singleton
   private static _instance: FlatStyle;
+
   private constructor() { super(FlatConfig) }
+
   public static get Instance(): FlatStyle {
     FlatStyle._instance ??= new FlatStyle();
     return FlatStyle._instance;
@@ -14,11 +16,10 @@ export class FlatStyle extends Style {
   primaryDistinctIntensity?: number;
 
   init() { }
+
   setupCustomizeEvents() { }
 
-  onHighlightColorUpdated(): void {
-  }
+  onHighlightColorUpdated(): void { }
 
-  onSchemeColorUpdated(): void {
-  }
+  onSchemeColorUpdated(): void { }
 }

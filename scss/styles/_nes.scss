@@ -39,6 +39,7 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
   .dui-radio span.text,
   .checkbox label,
   .dropdown button {
+    color: $contrastHighlightColor !important;
     cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC)
         14 0,
       pointer;
@@ -188,9 +189,11 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
   .form-group input,
   textarea {
     @include nes_border(space, $blackInputBorderImg);
+    border-image-repeat: stretch;
     width: calc(100% - 8px);
     padding: 0.5rem 1rem;
     margin: 4px;
+    // background-color: aqua !important;
   }
 
   .dropdown,
@@ -255,7 +258,8 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
   }
 
   .segmented-control input:checked + label {
-    color: $contrastHighlightColor;
+    // color: $contrastHighlightColor;
+    color: $highlightColor;
   }
 
   // CONTENT COMPONENTS
@@ -284,7 +288,7 @@ $whiteButtonBorderImg: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding
     border-width: 4px;
     border-image-slice: 3;
     border-image-width: 3;
-    border-image-repeat: space;
+    // border-image-repeat: space;
     border-image-repeat: stretch;
     // TODO: Dynamic
     // dark

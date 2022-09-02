@@ -3,20 +3,20 @@
 import { Color } from "./Color.js";
 // TODO: Create my own algorithms for functions and remove TinyColor dependency
 export class TinyColor extends Color {
-  getHexByHsl() {
-    // @ts-ignore
-    return tinycolor(this.hsl).toHexString();
-  }
-  getHslByHex() {
-    // @ts-ignore
-    return tinycolor(this.hex).toHslString();
-  }
-  getLighten(amount) {
-    // @ts-ignore
-    return tinycolor(this.hex).lighten(amount).toString();
-  }
-  getDarken(amount) {
-    // @ts-ignore
-    return tinycolor(this.hex).darken(amount).toString();
-  }
+    getHexByHsl() {
+        // @ts-ignore
+        return tinycolor(this.hsl).toHexString();
+    }
+    getHslByHex() {
+        // @ts-ignore
+        return tinycolor(this.hex).toHslString();
+    }
+    getLighten(amount) {
+        // @ts-ignore
+        return tinycolor(this.hex).lighten(amount).toString();
+    }
+    getDarken(amount) {
+        // @ts-ignore
+        return tinycolor(this.hex).darken(amount).toString();
+    }
 }

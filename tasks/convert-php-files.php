@@ -6,7 +6,7 @@ declare(strict_types=1);
 include_once dirname(__FILE__) . "/../utils/file-converter.php";
 
 // TODO: run this task automatically on server reload/input file change
-// option 1: open  this task file in browser when running PHP server live
+// option 1: open this task file in browser when running PHP server live
 
 phpToHtml('../demo/index.php', '../demo/index-raw.html');
 phpToHtml('../setting.php');
