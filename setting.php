@@ -34,7 +34,7 @@ include_once "_index.php";
             <?php
             // NOTICE: echo can only used in "<?php", not "<=?"
             echo RangeSlider(label: 'Distance X', id: 'neu-distance-x',  max: 20);
-            echo  RangeSlider(label: 'Distance Y', id: 'neu-distance-y', max: 20);
+            echo RangeSlider(label: 'Distance Y', id: 'neu-distance-y', max: 20);
             echo RangeSlider(label: 'Blur', id: 'blur', max: 20);
             echo RangeSlider(label: 'Spread', id: 'neu-spread', min: -5, max: 5);
             echo RangeSlider(label: 'Light intensity', id: 'light-intensity', max: 20);

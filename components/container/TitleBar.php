@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 function TitleBar(string $title = ''): TitleBar
 {
-  return new  TitleBar($title);
+  return new TitleBar($title);
 }
 
 class TitleBar
